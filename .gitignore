@@ -2,11 +2,11 @@
 *.lnk
 *.pk3
 *.pk7
+*.7z
 
 # folders with big bulky things that shouldn't go on git like psd files
 /artsrc/*
 /txtsrc/*
-/builds/*
 
 # gzdoom builder detritus
 /metadoom-dev/maps/*.dbs
