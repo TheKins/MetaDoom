@@ -13,4 +13,5 @@ Stable Releases and Actual Info
 How to Build
 ------------
 Run _main_zip.bat to quickly compile a PK3 or PK7 of the main mod.
+
 Run _optional_zip.bat to quickly compile a PK3 or PK7 of the Optional Content.
