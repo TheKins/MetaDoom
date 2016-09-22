@@ -1,0 +1,179 @@
+// weapons
+$random weapons/swap { weapons/swap1 weapons/swap2 weapons/swap3 weapons/swap4 weapons/swap5 }
+weapons/swap1				swap1
+weapons/swap2				swap2
+weapons/swap3				swap3
+weapons/swap4				swap4
+weapons/swap5				swap5
+
+// Casings - Ported from Reelism
+$random weapons/casing1	{weapons/casings/bullet1 weapons/casings/bullet2 weapons/casings/bullet3 weapons/casings/bullet4 weapons/casings/bullet5}
+weapons/casings/bullet1	bcase1
+weapons/casings/bullet2	bcase2
+weapons/casings/bullet3	bcase3
+weapons/casings/bullet4	bcase4
+weapons/casings/bullet5	bcase5
+
+$random weapons/casing2	{weapons/casings/shell1 weapons/casings/shell2 weapons/casings/shell3 weapons/casings/shell4 weapons/casings/shell5}
+weapons/casings/shell1	scase1
+weapons/casings/shell2	scase2
+weapons/casings/shell3	scase3
+weapons/casings/shell4	scase4
+weapons/casings/shell5	scase5
+
+// painsaw
+weapons/chainsaw/get		csawget
+weapons/chainsaw/use		csawuse
+weapons/chainsaw/idle		csawidle
+weapons/chainsaw/attack		csawloop
+weapons/chainsaw/attackhit	csawflsh
+weapons/chainsaw/slash		csawslsh
+weapons/chainsaw/slashhit	csawwack
+weapons/chainsaw/off		csawoff
+
+// pistol
+weapons/pistol/use			pistuse
+weapons/pistol/fire			pistfire
+weapons/pistol/hitwall		pistwall
+weapons/pistol/get			pistget
+
+$random weapons/pistol/hit	{ weapons/pistol/hit1 weapons/pistol/hit2 weapons/pistol/hit3 }
+weapons/pistol/hit1			pisthit1
+weapons/pistol/hit2			pisthit2
+weapons/pistol/hit3			pisthit3
+
+weapons/flashlight/on		fliton
+weapons/flashlight/off		flitoff
+
+// shotgun
+weapons/shotgun/get			shtget
+weapons/shotgun/fire		shtfire
+weapons/shotgun/cock1		shtcock1
+weapons/shotgun/cock2		shtcock2
+weapons/shotgun/gfire		shtgfire
+weapons/shotgun/dry			shtgdryf
+
+$random weapons/shotgun/grenade 	{ weapons/shotgun/grenade1 weapons/shotgun/grenade2 weapons/shotgun/grenade3 }
+weapons/shotgun/grenade1	shtxpl1
+weapons/shotgun/grenade2	shtxpl2
+weapons/shotgun/grenade3	shtxpl3
+
+// holy water pistol
+weapons/waterpistol/fire		HWPFIRE
+weapons/waterpistol/get			HWPGET
+weapons/waterpistol/empty		HWPMT
+weapons/waterpistol/flare		HWPFLAM
+weapons/waterpistol/ammo		HWPAMMO
+weapons/waterpistol/heal		HWPheal
+
+// ssg
+weapons/ssg/get				ssgget
+weapons/ssg/use				ssguse
+weapons/ssg/fire			ssgfire
+weapons/ssg/open			ssgopen
+weapons/ssg/close			ssgclose
+$random weapons/ssg/load 	{ weapons/ssg/load1 weapons/ssg/load2 weapons/ssg/load3 }
+weapons/ssg/load1			ssgload1
+weapons/ssg/load2			ssgload2
+weapons/ssg/load3			ssgload3
+
+$random weapons/explosion { weapons/explosion1 weapons/explosion2 weapons/explosion3 }
+weapons/explosion1			explo1
+weapons/explosion2			explo2
+weapons/explosion3			explo3
+
+// machinegun
+weapons/machinegun/fire		mgfire
+weapons/machinegun/rackout	mgrack1
+weapons/machinegun/rackin	mgrack2
+weapons/machinegun/dry		mgdryf
+weapons/machinegun/get		mgget
+weapons/machinegun/use		mguse
+
+$random weapons/machinegun/missile	{ weapons/machinegun/missile1 weapons/machinegun/missile2 weapons/machinegun/missile3 weapons/machinegun/missile4 }
+weapons/machinegun/missile1	mgrock1
+weapons/machinegun/missile2	mgrock2
+weapons/machinegun/missile3	mgrock3
+weapons/machinegun/missile4	mgrock4
+
+// rocketlauncher
+weapons/rocketlauncher/fire	rlncfire
+weapons/rocketlauncher/get	rlncget
+weapons/rocketlauncher/use	rlncuse
+weapons/rocketlauncher/deto	rlncdet
+weapons/rocketlauncher/loop	rlncloop
+
+// PLASMA RIFLE
+weapons/plasmarifle/fire	plasfire
+weapons/plasmarifle/pop		plasaltf
+weapons/plasmarifle/get		plasget
+weapons/plasmarifle/use		plasuse
+weapons/plasmarifle/dry		plasdryf
+weapons/plasmarifle/hit		plashit
+weapons/plasmarifle/loop	plasloop
+
+// bfg
+weapons/bfg/get		bfgget
+weapons/bfg/use		bfguse
+weapons/bfg/charge	bfgchrg
+weapons/bfg/fire1	bfgfire1
+weapons/bfg/fire2	bfgfire2
+weapons/bfg/fly		bfgfly
+weapons/bfg/explode	bfgxplo
+weapons/bfg/spray	bfgspry
+
+// melee system
+$random weapons/melee/wiff	{ weapons/melee/wiff1 weapons/melee/wiff2 weapons/melee/wiff3 }
+weapons/melee/wiff1		melwiff1
+weapons/melee/wiff2		melwiff2
+weapons/melee/wiff3		melwiff3
+
+$random weapons/melee/hit	{ weapons/melee/hit1 weapons/melee/hit2 }
+weapons/melee/hit1		melhit1
+weapons/melee/hit2		melhit2
+
+weapons/melee/hitwall	melwall
+
+// axe
+weapons/axe/get		axeget
+weapons/axe/use		axeuse
+weapons/axe/fire	axefire
+weapons/axe/hitwall	axehitw
+$random weapons/axe/hit { weapons/axe/hit1 weapons/axe/hit2 weapons/axe/hit3 }
+weapons/axe/hit1	axehit1
+weapons/axe/hit2	axehit2
+weapons/axe/hit3	axehit3
+
+// chaingun
+weapons/chaingun/get		cgunget
+weapons/chaingun/use		cgunuse
+weapons/chaingun/windup		cgunwiup
+weapons/chaingun/winddown	cgunwidn
+weapons/chaingun/loop		cgunloop
+weapons/chaingun/fire		cgunfire
+
+weapons/chaingun/turretup	turrup
+weapons/chaingun/turretdown	turrdn
+weapons/chaingun/turretfire	turrfire
+weapons/chaingun/turretend	turrend
+
+$volume weapons/chaingun/turretfire 2.0
+$volume weapons/chaingun/turretend 2.0
+
+// gauss
+weapons/gauss/fire		gausfire
+weapons/gauss/get		gausget
+weapons/gauss/use		gaususe
+weapons/gauss/zoomin	gauszin
+weapons/gauss/zoomout	gauszout
+
+// fire extinguisher
+weapons/fireextinguisher/get		fiexget
+weapons/fireextinguisher/use		fiexuse
+weapons/fireextinguisher/fire		fiexfire
+weapons/fireextinguisher/burst		fiexbrst
+
+// dog gun
+$random weapons/doggun/bite { weapons/doggun/bite1 weapons/doggun/bite2 }
+weapons/doggun/bite1	dgunbit1
+weapons/doggun/bite2	dgunbit2

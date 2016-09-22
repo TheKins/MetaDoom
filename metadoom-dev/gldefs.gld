@@ -1,0 +1,6 @@
+#include "gldefs/flashlight.gld"
+#include "gldefs/weapons.gld"
+#include "gldefs/healtharmor.gld"
+#include "gldefs/monsters.gld"
+#include "gldefs/powerups.gld"
+#include "gldefs/inventory.gld"

@@ -1,0 +1,297 @@
+ACTOR MetaDoomImp : MonsterCore
+{
+	Health 60
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 8
+	PainChance 200
+	Monster
+	+FLOORCLIP
+	SeeSound "imp/sight"
+	PainSound "imp/pain"
+	DeathSound "imp/death"
+	ActiveSound "imp/active"
+	HitObituary "$OB_IMPHIT"
+	Obituary "$OB_IMP"
+	painchance HolyWater, 255
+	States
+	{
+	Spawn:
+		TROO AB 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		TROO AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		TROO EF 8 A_FaceTarget
+		TROO G 6 A_CustomComboAttack("MetaDoomImpBall", 32, 3 * random(1, 8), "imp/melee")
+		Goto See
+	Pain:
+		TROO H 0
+		TROO H 2
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		TROO H 2 A_Pain
+		Goto See
+	Pain.HolyWater:
+		TROO G 3
+		TROO G 3 A_Pain
+		Goto Scurred
+	Punched:
+		TROO G 3 
+		TROO G 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		TROO G 12 A_Pain
+		Goto See
+	Scurred:
+		TROO A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		TROO A 0 A_GiveInventory("ScurredCounter", 1)
+		TROO A 2 A_Chase("", "")
+		TROO A 2 A_Chase("", "")
+		TROO A 0 A_SpawnItem("HolySweat",0,54)
+		TROO B 2 A_Chase("", "")
+		TROO B 2 A_Chase("", "")
+		TROO C 2 A_Chase("", "")
+		TROO C 2 A_Chase("", "")
+		TROO C 0 A_SpawnItem("HolySweat",0,54)
+		TROO D 2 A_Chase("", "")
+		TROO D 2 A_Chase("", "")
+		TROO D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		TROO D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Death:
+		TROO I 0 A_Jump (128, 2)
+		TROO I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TROO I 8 A_GiveToTarget("ScoreItem", 150)
+		TROO J 8 A_Scream
+		TROO K 6
+		TROO L 6 A_NoBlocking
+		TROO M -1 A_PlaySound("bodyfalls/medium")
+		Stop
+	XDeath:
+		TROO N 5 A_GiveToTarget("ScoreItem", 150)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		TROO M 0 A_SetScale(1,1)
+		TROO MLKJI 8
+		Goto See
+	}
+}
+
+ACTOR MetaDoomImpBall
+{
+	Radius 6
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 3
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	SeeSound "imp/attack"
+	DeathSound "monsters/imp/fireball/hit"
+	decal DoomImpScorch
+	States
+	{
+	Spawn:
+		BAL1 A 0
+		BAL1 A 0 A_PlaySoundEx("monsters/imp/fireball/loop", "Body", 1)
+		BAL1 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL1 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		BAL1 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL1 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		Loop
+	Death:
+		BAL1 CDE 6 BRIGHT
+		Stop
+	Extinguished:
+		BAL1 A 0 A_PlaySound("monsters/lostsoul/extinguish")
+		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		stop
+	}
+}
+
+ACTOR DoomImpBallEffect
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+   Radius 0
+   Height 1
+   Speed 0
+   PROJECTILE
+   RENDERSTYLE ADD
+   ALPHA 0.85
+   scale 0.65
+   States
+   {
+   Spawn:
+      RPUF A 2 Bright
+      RPUF ABCDE 2 Bright
+      Stop 
+ }
+} 
+
+ACTOR MetaNightmareImp : MonsterCore
+{
+	Health 60
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 16
+	FastSpeed 16
+	PainChance 200
+	scale 0.6
+	Monster
+	+FLOORCLIP
+	-NEVERFAST
+	SeeSound "monsters/nightmareimp/see"
+	PainSound "monsters/nightmareimp/pain"
+	DeathSound "monsters/nightmareimp/die"
+	ActiveSound "monsters/nightmareimp/act"
+	HitObituary "$OB_NIGHTMAREIMPHIT"
+	Obituary "$OB_NIGHTMAREIMP"
+	renderstyle Translucent
+	alpha 0.75
+	painchance HolyWater, 255
+	States
+	{
+	Spawn:
+		2ROO AB 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		2ROO AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		2ROO EF 8 A_FaceTarget
+		2ROO G 6 A_CustomComboAttack("MetaNightmareImpBall", 32, 3 * random(1, 8), "monsters/nightmareimp/claw")
+		Goto See
+	Missile:
+		2ROO IJ 4 A_FaceTarget
+		2ROO K 4 A_CustomComboAttack("MetaNightmareImpBall", 32, 3 * random(1, 8), "monsters/nightmareimp/claw")
+		Goto See
+	Pain:
+		2ROO H 0
+		2ROO H 2
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		2ROO H 2 A_Pain
+		Goto See
+		Pain.HolyWater:
+		2ROO G 3
+		2ROO G 3 A_Pain
+		Goto Scurred
+	Scurred:
+		2ROO A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		2ROO A 0 A_GiveInventory("ScurredCounter", 1)
+		2ROO A 2 A_Chase("", "")
+		2ROO A 2 A_Chase("", "")
+		2ROO A 0 A_SpawnItem("HolySweat",0,54)
+		2ROO B 2 A_Chase("", "")
+		2ROO B 2 A_Chase("", "")
+		2ROO C 2 A_Chase("", "")
+		2ROO C 2 A_Chase("", "")
+		2ROO C 0 A_SpawnItem("HolySweat",0,54)
+		2ROO D 2 A_Chase("", "")
+		2ROO D 2 A_Chase("", "")
+		2ROO D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		2ROO D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Death:
+		2ROO L 0 A_Jump (128, 2)
+		2ROO L 0 A_SetScale(-0.6,0.6) // random chance of sprite flipping
+		2ROO L 8 A_GiveToTarget("ScoreItem", 250)
+		2ROO M 8 A_Scream
+		2ROO N 6
+		2ROO O 6 A_NoBlocking
+		2ROO P -1 A_PlaySound("bodyfalls/medium")
+		Stop
+	XDeath:
+		2ROO Q 5 A_GiveToTarget("ScoreItem", 250)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		2ROO P 0 A_SetScale(1,1)
+		2ROO PONML 8
+		Goto See
+	}
+}
+
+ACTOR MetaNightmareImpBall
+{
+	Radius 6
+	Height 8
+	Speed 20
+	FastSpeed 20
+	Damage 3
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	scale 0.6
+	SeeSound "monsters/nightmareimp/shoot"
+	DeathSound "monsters/nightmareimp/explode"
+	decal DoomImpScorch
+	States
+	{
+	Spawn:
+		BAL3 A 0
+		BAL3 A 0 A_PlaySoundEx("monsters/imp/fireball/loop", "Body", 1)
+		BAL3 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL3 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		BAL3 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL3 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		Loop
+	Death:
+		BAL3 CDE 6 BRIGHT
+		Stop
+	Extinguished:
+		BAL1 A 0 A_PlaySound("monsters/lostsoul/extinguish")
+		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		stop
+	}
+}

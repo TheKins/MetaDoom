@@ -1,0 +1,200 @@
+v.1.1 "Slayer" (22/09/16)
+=========================
+Some quick, but vital bug-fixes for issues raised after 1.0 was launched.
+
+- Blood Splats are completely reprogrammed to be far less resource-intense
+  (Thanks Major Cooke!)
+- Dog Collar now ignores Switch on Pickup setting and makes you switch to
+  the Hellhound as intended.
+- Fixed Mancubus shots not generating decals.
+- Fixed Cyberdemon not spawning in Doom 1. (Thanks Techokami!)
+
+Optional Content:
+- Keens no longer block the player after death.
+
+v.1.0 "Slayer" (19/09/16)
+========================
+There's enough changes in this release that I feel very comfortable calling it
+a first proper release instead of another tech demo! That being said: I'm still
+far, FAR from done. Please keep providing feedback and if you feel you have
+something to offer, you're more than welcome to let me know! Thanks for
+playing my mod!
+
+- Added 1 new weapon! (Fire Extinguisher)
+- Added 2 new enemies! (Hell Razer, Phantom)
+- Revamped 2 old enemies! (Hell Knight, Baron of Hell)
+- Revamped the Scripted Marines that nobody uses in their maps anymore!
+  (Because nobody makes ZDoom maps anymore! Sadly!)
+- Added 2 new inventory items! (Siphon Grenade, Dog Collar)
+- Added treasure items from the Press Release beta!
+- Added low health warning!
+- Added an optional addon to Meta-fy the extra MAP31/32 enemies!
+- Revamped the powerup sphere sprites!
+
+Changes to Weapons:
+- Buffed the Shotgun Grenade explosion to be identical to a standard rocket.
+- Re-added a cooldown to the Rocket Launcher primary fire, and made this period
+  interruptable by the altfire.
+- Holy Water takes twice as long to acquire (1 ammo per second)
+- Holy Water now also rewarded if you're underwater
+- Made the Chaingun turret firing louder
+- Fixed bug where dying while using the Chaingun turret would result in the
+  firing sound looping forever, mortally wounding your ears
+- Fixed being unable to melee in netplay
+- Buffed the Gauss Cannon's damage, but lowered its firing rate to compensate
+- Added Shivers' revamped SSG sprites!
+- Machinegun now takes selection precedence over chaingun
+
+Changes to Spawners:
+- Changed New Item spawning method to something lamer, so as to prevent items
+  being spawned inside of walls
+- Dramatically reduced spawn rate of the Shield Wall
+- Doom 1 SSG spawning altered to now allow SSG alts to spawn in Doom 1
+- Minor monster spawner tweak so that they look right on their first frame
+  (for summon cheat, dormant actors in old maps etc.)
+- Fixed a bug in the Chaingun Guy spawner code that'd cause Minigunners to spawn
+  way more frequently than they should.
+- Added proper spawners for Cyberdemon and Spiderdemon, allowing for future extensions
+
+Changes to Performance:
+- Added Blood fadeout timer option (meta_perf_bloodtime) for how long you want
+  blood to last before fading. Default is a little over 190 seconds (or 6666 tics)
+- Old Blood Fadeout option has been renamed and repurposed to force nigh-instant
+  blood fadeout, as a sort of a "panic button" for low-perf situations
+- Made floor blood way less framerate intense by making it cull splats that are
+  within a user-defined radius of where it spawned. MAP06 no longer tanks the FPS on UV!
+  
+Changes to Monsters:
+- Added new sounds to the Revenant and Archvile
+- Fixed bug where Revenant was rewarding points twice
+- Archvile spawns some blood and guts upon death because, you know...
+
+Other Changes:
+- Added proper credits for the Former Commando
+- Tweaks and improvements to the HUD and associated graphics
+- Some minor sound tweaks
+- Minor text adjustments
+- All FLATSPRITE usage adjusted for the new implementation
+
+
+v.TD2.1 "Kane" (26/08/16)
+========================
+A little less buggy, a little prettier.
+
+- Fixed the Chaingun tag being missing
+- Tweaked Chaingun firing sound
+- Halved Chaingun primary ammo consumption
+- Reduced cooldown on melee attacks
+- Many monsters now react to melee attacks in a "fairer" way
+- Made the Shield Wall actually spawn. Oops.
+- Tesla Rocket and BFG zappers now properly award points for killing monsters
+  (only awards them to player 1 right now, sorry co-op fans. debugging pointer bugs is hard af)
+- Fixed Z-Sec roll not resetting when damaged by Holy Water (thanks murb)
+- Made the Revenant missile both prettier and more accurate to its original behavior
+- Slashed 30hp off the Hellhound
+- Cacodemons and Pain Elementals can now be scared by Holy Water
+- Made the Lost Soul all pretty-like, including a custom death sequence for Holy Water
+- Stopped the "kill monsters" cheat from killing the framerate on maps with hundreds of monsters
+- Removed randomization from Gauss Cannon puffsplosion
+- Added system for negating Archvile attacks in preparation for a future weapon
+- Added a new cheat...
+
+v.TD2 "Kane" (22/08/16)
+=======================
+Development continues! Lots of new toys and even some new friends to try them on.
+
+- Added 2 new weapons! (Chaingun, Gauss Cannon)
+- Added 2 new inventory items! (Tesla Rocket, Shield Wall)
+- Added 2 new monsters! (Nightmare Imp, Former Commando)
+- Original Chaingun Guy is now the Former Lieutenant.
+- New sprites for the Z-Sec!
+- Lowered the Nightmare Spectre's health a bunch, subtly increased his overall speed
+- Cacodemons now have a fancy gib effect
+- Reduced the -fast speed of Hellhounds to be more managable
+- Fixed some BFG obituary stuff
+- Added GLDEFs for the player
+- Sped up the Plasma Rifle by a single tic. WOW.
+- LANGUAGE tweaks, including proper capitalization of Doom 2 intermission texts
+- Fixed a bug where collecting a Berserk while under the effects of a Berserk
+  would break the entire Berserk system. Thanks to Techokami for helping diagnose!
+- Re-ordered some weapons to ensure you select better weapons when using number keys.
+- Added a "Potential Map-Breakers" cvar, to toggle or alter things that might
+  let players or monsters go places they aren't supposed to go. You know, like
+  jumping in BOOM maps. Not very useful right NOW, but in the future...
+
+
+v.TD1.3 "Flynn" (18/08/16)
+==========================
+This should hopefully be the last hotfix for TD1 before I start cracking down
+on new content.
+
+- Completely redrew Machine Gun pickup sprite from scratch
+- Added a replacement HELP screen which addresses common questions
+- Fixed Lost Souls and Hellhounds generating state errors when punched hard enough
+- Invulnerability Sphere now has a pickup sound and uses a blue screen tint
+  (ala GBA Doom 1)
+- Disabled alwayspickup on weapons by request, to see if something bad happens
+  again
+- Added Shivers' Shotgun cocking animation and OSJClatchford's updated Shotgun
+  alt-fire cocking sprites for consistency's sake
+- Added a little extra zing to the green armor pickup sound
+- Added Captain J's new barrel gibs, ammo sprites and improved player head gib
+  (the latter being with OSJClatchford's help). Thanks!
+- Berserk Fists, the Axe and terrain splashes no longer alert enemies
+- Externalized Titlemap and Ironman Death subtitles to LANGUAGE
+
+v.TD1.2 "Flynn" (15/08/16)
+=========================
+More clean-up duty and other balance tweaks. This doesn't cover ALL feedback, but
+it should improve things a bunch. Also: New Hellhound sprite!
+
+- Bleeding now plays a sound effect
+- Fixed the Nightmare Spectre never bleeding when hit with an Axe
+- Axe kills and bleeding deaths now spawn health pinata items
+- Health pinata items now stick around longer
+- Scaled down gib sprites by 25%
+- Fixed enemies not dropping their item drops when gibbed
+- The IDKFA cheat now gives out inventory items like it should
+- Tweaked some sounds for the Axe and Holy Water Pistol
+- Moved the Chainsaw and Axe to slot 8
+- Made the Hellhound larger, slower-attacking and easier to hit
+- Added new Hellhound sprites by Captain J
+- Axe damage buffed a little bit
+- Blood decals now wait a little bit before fading out
+- Fixed the Arachnotron being all stoppy-starty
+- SSG now has altfire (identical to primary fire)
+- BFG now uses old Doom splash/spray behavior on impact
+- Axe now destroys barrels in one shot
+- Non-berserk fist can no longer damage barrels
+
+v.TD1.1 "Flynn" (14/08/16)
+==========================
+A hotfix for some last minute issues that people found in the
+first release. Always happens, eh?
+
+- Fixed the Hellhound refusing to stop being scared. Thanks Rapid Marine!
+- Added a performance mode to fade floor blood out, which should hopefully
+  help out people with 486s
+- Added the missing random damage variance to Berserk punches, buffing them greatly
+- Fixed Shotgun Grenades, Assault Rifle Micro Missiles, BFG and many monsters
+  generating no or incorrect decals. Thanks Captain J!
+- Added a trail to the Shotgun Grenades, and slightly bumped up their damage
+- Fixed barrels still being partially solid after being destroyed
+- Fixed all weapons being considered "dropped", making them crushable
+
+v.TD1 "Flynn" (13/08/16)
+========================
+The first public release. A "proof of concept" of sorts after
+the first two months of development. Some stuff is still pretty
+rough, but all in all it's still a fun gameplay experience.
+
+- All "base" weapons are replaced
+- Three "alternate" weapons
+- Offhand melee systems
+- Berserk altered, BlurSphere replaced with haste
+- Monsters have appropriate new behaviors for new things
+- Three new "alternate" monsters
+- One new inventory item
+- Fancy fake floor decals
+- First person death animations
+- Probably tons of bugs!

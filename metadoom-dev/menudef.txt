@@ -1,0 +1,181 @@
+DEFAULTLISTMENU
+{
+	Font "BigFont", "Untranslated"
+
+	Selector "M_SKULL1", -32, -5
+	Linespacing 16
+	Font "BigFont", "Red"
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// The main menu. There's a lot of differences here between the games
+//
+//-------------------------------------------------------------------------------------------
+
+LISTMENU "MainMenu"
+{
+	StaticPatch 94, 2, "M_DOOM"
+	Font "SMALLFONT", WHITE
+	StaticText 0, 211, "$VERSION"
+	
+	Position 97, 72
+	Font "BigFont", "Red"
+
+	TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+	TextItem "$MNU_LOADGAME", "l", "LoadGameMenu"
+	TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
+	TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+	TextItem "$MNU_INFO", "i", "ReadThisMenu"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// Important note about the following template menus:
+// Don't even think about replacing them with something that's not an empty menu
+// with some static elements only. Proper function is not guaranteed then.
+//
+//-------------------------------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------------------------------
+//
+// The episode menu
+// The init code will set the first item to 'autoselect' if it's the only one.
+//
+//-------------------------------------------------------------------------------------------
+
+ListMenu "EpisodeMenu"
+{
+	NetgameMessage "$NEWGAME"
+	Position 48, 63
+	StaticText 54, 38, "$MNU_EPISODE"
+	// items will be filled in by MAPINFO
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// The skill menu
+// Most of this will be filled in at runtime
+//
+//-------------------------------------------------------------------------------------------
+
+ListMenu "SkillMenu"
+{
+		StaticText 96, 14, "$MNU_NEWGAME"
+		StaticText 54, 38, "$MNU_CHOOSESKILL"
+		Position 48, 63
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// Base definition for load game menu. Only the configurable part is done here
+//
+//-------------------------------------------------------------------------------------------
+
+ListMenu "LoadGameMenu"
+{
+	NetgameMessage "$LOADNET"
+	StaticTextCentered 160, -20, "$MNU_LOADGAME"
+	Position 80,54
+	Class "LoadMenu"	// uses its own implementation
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// Base definition for save game menu. Only the configurable part is done here
+//
+//-------------------------------------------------------------------------------------------
+
+ListMenu "SaveGameMenu"
+{
+	StaticTextCentered 160, -20, "$MNU_SAVEGAME"
+	Position 80,54
+	Class "SaveMenu"	// uses its own implementation
+}
+
+//-------------------------------------------------------------------------------------------
+//
+// The option menu
+//
+//-------------------------------------------------------------------------------------------
+
+OptionValue "YesNo"
+{
+	0, "$TXT_NO"
+	1, "$TXT_YES"
+}
+
+OptionValue "NoYes"
+{
+	0, "$TXT_YES"
+	1, "$TXT_NO"
+}
+
+OptionValue "OnOff"
+{
+	0, "$OPTVAL_OFF"
+	1, "$OPTVAL_ON"
+}
+
+OptionValue "OffOn"
+{
+	0, "$OPTVAL_ON"
+	1, "$OPTVAL_OFF"
+}
+
+OptionMenuSettings
+{
+	Linespacing 8
+}
+
+DefaultOptionMenu
+{
+	Position -15
+}
+
+OptionMenu "OptionsMenu"
+{
+	Title "$OPTMNU_TITLE"
+	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
+	StaticText " "
+	Submenu "$OPTMNU_CONTROLS",			"CustomizeControls"
+	Submenu "$OPTMNU_MOUSE",			"MouseOptions"
+	Submenu "$OPTMNU_JOYSTICK",			"JoystickOptions"
+	StaticText " "
+	Submenu "$OPTMNU_PLAYER",			"PlayerMenu"
+	Submenu "$OPTMNU_GAMEPLAY",			"GameplayOptions"
+	Submenu "$OPTMNU_COMPATIBILITY",	"CompatibilityOptions"
+	Submenu "$OPTMNU_AUTOMAP",			"AutomapOptions"
+	Submenu "$OPTMNU_HUD",				"HUDOptions"
+	Submenu "$OPTMNU_MISCELLANEOUS",	"MiscOptions"
+	Submenu "$OPTMNU_NETWORK",			"NetworkOptions"
+	Submenu "$OPTMNU_SOUND",			"SoundOptions"
+	Submenu "$OPTMNU_DISPLAY",			"VideoOptions"
+	Submenu "$OPTMNU_VIDEO",			"VideoModeMenu"
+	StaticText " "
+	SafeCommand "$OPTMNU_DEFAULTS",	"reset2defaults"
+	SafeCommand	"$OPTMNU_RESETTOSAVED",	"reset2saved"
+	Command "$OPTMNU_CONSOLE",			"menuconsole"
+}
+
+OptionMenu "MetaMenu"
+{
+	Title "$OPTMNU_METADOOM"
+	Option "$METAMENU_DEBUG",              "meta_developer", "OnOff"
+	StaticText " "
+	StaticText "$METAMENU_SPAWNINGHEADER"
+	Option "$METAMENU_SPAWNINGGUNS",              "meta_noalts_weapons", "OffOn"
+	Option "$METAMENU_SPAWNINGDUDES",              "meta_noalts_actors", "OffOn"
+	Option "$METAMENU_MAPBREAKERS",					"meta_mapbreakers", "OnOff"
+	Option "$METAMENU_SPAWNINGLIMITS",				"meta_contentlocust", "OnOff"
+	StaticText " "
+	StaticText "$METAMENU_ITEMHEADER"
+	Option "$METAMENU_RETROBERSERK",              "meta_retroberserk", "OnOff"
+	StaticText " "
+	StaticText "$METAMENU_PERFHEADER"
+	Option "$METAMENU_PERFBLOOD",              "meta_perf_fadeblood", "OnOff"
+	Slider "$METAMENU_PERFBLOODTIME",			"meta_perf_bloodtime", "0", "10500", "175", "0"
+	Slider "$METAMENU_PERFCULLER",			"meta_perf_bloodcullradius", "0", "16", "1", "0"
+}

@@ -1,0 +1,253 @@
+// One ugly work around to add item pickup sounds without
+// defining new ammo types, coming right up!
+
+ACTOR Clip2 : Clip replaces Clip
+{
+	Game Doom
+	SpawnID 11
+	Inventory.PickupMessage "$GOTCLIP"
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	Inventory.Icon "CLIPA0"
+	inventory.pickupsound "items/clip"
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	}
+}
+
+ACTOR ClipBox2 : Clip replaces ClipBox
+{
+	Game Doom
+	SpawnID 139
+	Inventory.PickupMessage "$GOTCLIPBOX"
+	Inventory.Amount 50
+	inventory.pickupsound "items/clipx"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		AMMO A 0
+		AMMO A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		AMMO A 0 A_Jump(256, "DogCollar")
+		goto Chill
+	DogCollar:
+		AMMO A 0 A_SpawnItemEx("DogCollarPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill
+	Chill:
+		AMMO A -1
+		Stop
+	}
+}
+
+ACTOR RocketAmmo2 : RocketAmmo replaces RocketAmmo
+{
+	Game Doom
+	SpawnID 140
+	Inventory.PickupMessage "$GOTROCKET"
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "ROCKA0"
+	inventory.pickupsound "items/rocket"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		ROCK A 0
+		ROCK A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		ROCK A 0 A_Jump(256, "HandGrenade")
+		goto Chill
+	HandGrenade:
+		ROCK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill
+	Chill:
+		ROCK A -1
+		Stop
+	}
+}
+
+ACTOR RocketBox2 : RocketAmmo replaces RocketBox
+{
+	Game Doom
+	SpawnID 141
+	Inventory.PickupMessage "$GOTROCKBOX"
+	Inventory.Amount 5
+	inventory.pickupsound "items/rocketx"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		BROK A 0
+		BROK A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		BROK A 0 A_Jump(256, "HandGrenade")
+		goto Chill
+	HandGrenade:
+		BROK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill
+	Chill:
+		BROK A -1
+		Stop
+	}
+}
+
+ACTOR Cell2 : Cell replaces Cell
+{
+	Game Doom
+	SpawnID 75
+	Inventory.PickupMessage "$GOTCELL"
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "CELLA0"
+	inventory.pickupsound "items/cell"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		CELL A 0
+		CELL A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		BROK A 0 A_Jump(128, "Siphon")
+		BROK A 0 A_Jump(256, "Tesla")
+		goto Chill
+	Tesla:
+		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill	
+	Siphon:
+		BROK A 0 A_SpawnItemEx("SiphonGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill	
+	Chill:
+		CELL A -1
+		Stop
+	}
+}
+
+ACTOR CellPack2 : Cell replaces CellPack
+{
+	Game Doom
+	SpawnID 142
+	Inventory.PickupMessage "$GOTCELLBOX"
+	Inventory.Amount 100 
+	inventory.pickupsound "items/cellx"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		CELP A 0
+		CELP A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		BROK A 0 A_Jump(256, "BFGAmmo")
+		goto Chill
+	BFGAmmo:
+		BROK A 0 A_SpawnItemEx("BFGAmmo",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_Jump(128, "Tesla")
+		goto Chill	
+	Tesla:
+		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill	
+	Chill:
+		CELP A -1
+		Stop
+	}
+}
+
+ACTOR Shell2 : Shell replaces Shell
+{
+	Game Doom
+	SpawnID 12
+	Inventory.PickupMessage "$GOTSHELLS"
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELA0"
+	inventory.pickupsound "items/shell"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	}
+}
+
+ACTOR ShellBox2 : Shell replaces ShellBox
+{
+	Game Doom
+	SpawnID 143
+	Inventory.PickupMessage "$GOTSHELLBOX"
+	inventory.pickupsound "items/shellx"
+	Inventory.Amount 20
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SBOX A -1
+		Stop
+	}
+}
+
+// And a backpack too.
+
+ACTOR Backpack2 : BackpackItem replaces Backpack
+{
+	Game Doom
+	SpawnID 144
+	Height 26
+	Inventory.PickupMessage "$GOTBACKPACK"
+    inventory.pickupsound "items/pack"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		BPAK A -1
+		Stop
+	}
+}
+
+// New Ammos
+
+ACTOR BFGAmmo : Ammo
+{
+	Inventory.PickupMessage "$GOTARGENT"
+	Inventory.Amount 1
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 10
+	Inventory.Icon "ARGAA0"
+	inventory.pickupsound "items/bfg"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	States
+	{
+	Spawn:
+		ARGA AB 4
+		loop
+	}
+}

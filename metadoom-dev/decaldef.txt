@@ -1,0 +1,10 @@
+decal FireExtinguisherSpray
+{
+	pic SCORCH1
+	shade "ff ff ff"
+	x-scale 0.5
+	y-scale 0.25
+	randomflipx
+	randomflipy
+	animator GoAway
+}

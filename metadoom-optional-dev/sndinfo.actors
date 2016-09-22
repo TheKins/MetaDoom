@@ -1,0 +1,41 @@
+monsters/wolfss/fire		wssfire
+
+$random monsters/wolfsnes/see { monsters/wolfsnes/see1 monsters/wolfsnes/see2 }
+monsters/wolfsnes/see1		snessee1
+monsters/wolfsnes/see2		snessee2
+monsters/wolfsnes/fire		snesfire
+monsters/wolfsnes/die		snesdie
+monsters/wolfsnes/pain		snespain
+
+$random monsters/wolfapple/see { monsters/wolfapple/see1 monsters/wolfapple/see2 monsters/wolfapple/see3 monsters/wolfapple/see4 }
+monsters/wolfapple/see1		applsee1
+monsters/wolfapple/see2		applsee2
+monsters/wolfapple/see3		applsee3
+monsters/wolfapple/see4		applsee4
+
+$random monsters/wolfapple/die { monsters/wolfapple/die1 monsters/wolfapple/die2 monsters/wolfapple/die3 }
+monsters/wolfapple/die1		appldie1
+monsters/wolfapple/die2		appldie2
+monsters/wolfapple/die3		appldie3
+monsters/wolfapple/pain		applpain
+monsters/wolfapple/fire		applfire
+
+$random monsters/wolfmac/see { monsters/wolfmac/see1 monsters/wolfmac/see2 }
+monsters/wolfmac/see1		wmacsee1
+monsters/wolfmac/see2		wmacsee2
+$random monsters/wolfmac/die { monsters/wolfmac/die1 monsters/wolfmac/die2 }
+monsters/wolfmac/die1		wmacdie1
+monsters/wolfmac/die2		wmacdie2
+
+monsters/wolfmac/pain		wmacpain
+monsters/wolfmac/fire		wmacfire
+monsters/wolfmac/body		wmacbody
+
+keens/keen/hit		keenhit
+keens/keen/die		keendie
+
+keens/budo/hit		keenpcs1
+keens/budo/die		keenbudo
+
+keens/dave/hit		keenpcs1
+keens/dave/die		keendave

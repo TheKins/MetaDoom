@@ -1,0 +1,28 @@
+object MetaSoulSphere
+{
+    frame SOUL { light SOULSPHERE }
+}
+
+object MetaInvulnerabilitySphere
+{
+    frame PINV { light INVULN }
+}
+
+object MetaHasteSphere
+{
+    frame HAST { light BLURSPHERE1 }
+}
+
+pulselight MEGASPHERE
+{
+    color 0.8 0.6 0.6
+    size 40
+    secondarySize 42
+    interval 2.0
+    offset 0 16 0
+}
+
+object MetaMegaSphere
+{
+    frame MEGA { light MEGASPHERE }
+}

@@ -1,0 +1,78 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Index
+----------------------------
+*/
+
+// Core Actors that a bunch of shit inherits from: define above everything else!
+#include "actors/core.dec"
+
+// Our Hero.
+#include "actors/player.dec"
+
+// Other Stuff
+#include "actors/fx.dec"
+#include "actors/blood.dec"
+#include "actors/gibs.dec"
+#include "actors/props.dec"
+
+// Weapons
+#include "actors/weapons/spawners.dec"
+#include "actors/weapons/core.dec"
+#include "actors/weapons/fx.dec"
+#include "actors/weapons/chainsaw.dec"
+ #include "actors/weapons/axe.dec"
+#include "actors/weapons/berserkfist.dec"
+#include "actors/weapons/pistol.dec"
+ #include "actors/weapons/pistol_flashlight.dec"
+#include "actors/weapons/shotgun.dec"
+ #include "actors/weapons/holywaterpistol.dec"
+#include "actors/weapons/ssg.dec"
+ #include "actors/weapons/fireextinguisher.dec"
+#include "actors/weapons/machinegun.dec"
+ #include "actors/weapons/chaingun.dec"
+#include "actors/weapons/rocketlauncher.dec"
+#include "actors/weapons/plasmarifle.dec"
+ #include "actors/weapons/gauss.dec"
+#include "actors/weapons/bfg.dec"
+
+// Items
+#include "actors/items/health.dec"
+#include "actors/items/armor.dec"
+#include "actors/items/ammo.dec"
+#include "actors/items/keys.dec"
+#include "actors/items/powerups.dec"
+#include "actors/items/loot.dec"
+
+// Inventory
+#include "actors/inventory/core.dec"
+#include "actors/inventory/handgrenade.dec"
+#include "actors/inventory/teslarocket.dec"
+#include "actors/inventory/shieldwall.dec"
+#include "actors/inventory/siphongrenade.dec"
+#include "actors/inventory/dogcollar.dec"
+ #include "actors/weapons/doggun.dec"
+
+// Monsters
+#include "actors/monsters/spawners.dec"
+#include "actors/monsters/core.dec"
+#include "actors/monsters/zombieman.dec"
+#include "actors/monsters/shotgunguy.dec"
+#include "actors/monsters/chaingunguy.dec"
+#include "actors/monsters/imp.dec"
+#include "actors/monsters/demon.dec"
+ #include "actors/monsters/spectre.dec"
+ #include "actors/monsters/hellhound.dec"
+#include "actors/monsters/bruisers.dec"
+#include "actors/monsters/cacodemon.dec"
+#include "actors/monsters/arachnotron.dec"
+#include "actors/monsters/mancubus.dec"
+#include "actors/monsters/painelemental.dec"
+#include "actors/monsters/lostsoul.dec"
+#include "actors/monsters/archvile.dec"
+#include "actors/monsters/revenant.dec"
+#include "actors/monsters/scriptedmarine.dec"
+#include "actors/monsters/cyberdemon.dec"
+#include "actors/monsters/spiderdemon.dec"

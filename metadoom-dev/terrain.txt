@@ -1,0 +1,177 @@
+splash Water
+{
+	smallclass		WaterSplash
+	smallclip		12
+	smallsound		world/drip
+
+	baseclass		WaterSplashBase
+	chunkclass		WaterSplash
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	2
+	sound			world/watersplash
+	noalert
+}
+
+splash Blood
+{
+	smallclass		BloodSplash
+	smallclip		12
+	smallsound		world/sludgegloop
+
+	baseclass		BloodSplashBase
+	chunkclass		BloodSplash
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	1
+	sound			world/sludgegloop
+	noalert
+}
+
+splash Nuke
+{
+	smallclass		LavaSmoke
+	smallclip		12
+	smallsound		world/lavasizzle
+
+	baseclass		SlimeSplash
+	chunkclass		LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+	noalert
+}
+
+splash Lava
+{
+	smallclass		LavaSmoke
+	smallclip		12
+	smallsound		world/lavasizzle
+
+	baseclass		LavaSplash
+	chunkclass		LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+	noalert
+}
+
+splash Slime
+{
+	smallclass		SludgeChunk
+	smallclip		12
+	smallsound		world/sludgegloop
+
+	baseclass		SludgeSplash
+	chunkclass		SludgeChunk
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	1
+	sound			world/sludgegloop
+	noalert
+}
+
+splash Hot
+{
+	smallclass		LavaSmoke
+	smallclip		12
+	smallsound		world/hotsiz
+
+	baseclass		SlimeChunk
+	chunkclass		LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/hotsiz
+	noalert
+}
+
+terrain Lava
+{
+	splash			Lava
+	footclip		10
+	liquid
+}
+
+terrain Blood
+{
+	splash			Blood
+	footclip		10
+	liquid
+}
+
+terrain Nuke
+{
+	splash			Nuke
+	footclip		10
+	liquid
+}
+
+terrain Slime
+{
+	splash			Slime
+	footclip		10
+	liquid
+}
+
+terrain Hot
+{
+	splash			Hot
+	footclip		0
+	liquid
+}
+
+ifdoom
+floor BLOOD1 Blood
+floor BLOOD2 Blood
+floor BLOOD3 Blood
+floor SLIME01 Slime
+floor SLIME02 Slime
+floor SLIME03 Slime
+floor SLIME04 Slime
+floor SLIME05 Slime
+floor SLIME06 Slime
+floor SLIME07 Slime
+floor SLIME08 Slime
+floor NUKAGE1 Nuke
+floor NUKAGE2 Nuke
+floor NUKAGE3 Nuke
+floor FWATER1 Water
+floor FWATER2 Water
+floor FWATER3 Water
+floor FWATER4 Water
+floor LAVA1 Lava
+floor LAVA2 Lava
+floor LAVA3 Lava
+floor LAVA4 Lava
+floor RROCK05 Hot
+floor RROCK06 Hot
+floor RROCK07 Hot
+floor RROCK08 Hot
+floor SLIME09 Hot
+floor SLIME10 Hot
+floor SLIME11 Hot
+floor SLIME12 Hot
+
+// PSX Doom Shit
+floor WATER01 Water
+floor WATER02 Water
+floor WATER03 Water
+floor WATER04 Water
+floor BSLIME01 Slime
+floor BSLIME02 Slime
+floor BSLIME03 Slime
+floor BSLIME04 Slime
+floor CSLIME01 Slime
+floor CSLIME02 Slime
+floor CSLIME03 Slime
+floor CSLIME04 Slime
+endif

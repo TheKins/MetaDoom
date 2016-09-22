@@ -1,0 +1,123 @@
+
+// items
+items/armor/shard			armrshrd
+items/armor/green			armrgrn
+items/armor/blue			armrblue
+
+items/health/shard			healshrd
+items/health/stim			healstim
+items/health/medi			healmedi
+
+items/clip		clipget
+items/clipx		clipxget
+items/shell		shelget
+items/shellx	shelxget      
+items/rocket	rockget
+items/rocketx	rockxget
+items/cell		cellget
+items/cellx		cellxget
+items/pack		packget
+items/bfg		argeget
+
+items/keycard	keycard
+items/keyskull	keyskull
+
+locks/keycard	keylock
+locks/skull		skullock
+locks/null		nullock
+
+items/soulsphere	getsoul
+items/megasphere	getmega
+items/automap		getmap
+items/lightamp		getlamp
+
+powerups/berserk	getbzrk
+powerups/radsuit	getsuit
+powerups/haste		gethast
+powerups/invuln		getinvl
+
+items/loot			getloot
+
+// props
+barrel/explode				barrel1
+barrel/break	brlbrk
+
+$random barrel/hit { barrel/hit1 barrel/hit2 barrel/hit3 }
+barrel/hit1		brlhit1
+barrel/hit2		brlhit2
+barrel/hit3		brlhit3
+
+$random barrel/gib { barrel/gib1 barrel/gib2 barrel/gib3 }
+barrel/gib1		brlgib1
+barrel/gib2		brlgib2
+barrel/gib3		brlgib3
+
+$random effects/blood		{ effects/blood1 effects/blood2 effects/blood3 effects/blood4 }
+effects/blood1				blood1
+effects/blood2				blood2
+effects/blood3				blood3
+effects/blood4				blood4
+
+// menu
+titlemap/rpgbad				rpgbad
+titlemap/rpggib				rpggib
+umpulse/default				dstaunt
+
+menu/activate			menusel	// Activate a new menu
+menu/backup			menusel	// Backup to previous menu
+menu/prompt			menusel	// Activate a prompt "menu"
+menu/cursor			menucurs		// Move cursor up/down
+menu/change			menuslid	// Select new value for option
+menu/invalid			menuerr		// Menu not available
+menu/dismiss			dsswtchx	// Dismiss a prompt message
+menu/choose			menuentr	// Choose a menu item
+menu/clear			dsswtchx	// Close top menu
+
+// wildweasel
+$random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }
+$random whiz { whiz1 whiz2 whiz3 }
+$random hitflesh { hitflesh1 hitflesh2 hitflesh3 hitflesh4 hitflesh5 hitflesh6 hitflesh7 hitflesh8 hitflesh9 }
+rico1 trceric1
+rico2 trceric2
+rico3 trceric3
+rico4 trceric4
+rico5 trceric5
+rico6 trceric6
+rico7 trceric7
+rico8 trceric8
+rico9 trceric9
+whiz1 trcefly1
+whiz2 trcefly2
+whiz3 trcefly3
+hitflesh1 trcehit1
+hitflesh2 trcehit2
+hitflesh3 trcehit3
+hitflesh4 trcehit4
+hitflesh5 trcehit5
+hitflesh6 trcehit6
+hitflesh7 trcehit7
+hitflesh8 trcehit8
+hitflesh9 trcehit9
+
+// terrain
+world/watersplash		dssplash
+world/sludgegloop		dsploosh
+world/lavasizzle		dslvsiz
+world/drip				dsdrip
+world/hotsiz			dshtsiz
+
+// world
+plats/start				plstart
+plats/mid				plmid
+plats/stop				plstop
+
+doors/slow/open			DSDOROPN
+doors/slow/openstop		DSDOROPX
+
+doors/slow/close		DSDORCLS
+doors/slow/closestop	DSDORCLX
+
+// ignore this if you want to find cheats by yourself!
+
+cheats/doom3			cheatd3
+cheats/snes				cheat16b

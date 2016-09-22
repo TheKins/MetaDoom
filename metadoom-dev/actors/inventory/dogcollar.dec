@@ -1,0 +1,112 @@
+// sleep tight pupper
+actor DogCollarPickup : CustomInventory
+{
+	inventory.pickupmessage "$GOTCOLLAR"
+	Tag "$TACOLLAR"
+	inventory.icon "INVDOGC"
+	inventory.pickupsound "inventory/dogcollar/get"
+	+INVENTORY.ALWAYSPICKUP
+	scale 0.5
+	states
+	{
+	Spawn:
+		DOGC Z -1
+		stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("DogCollar", 1)
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3)
+		stop
+	}
+}
+
+actor DogCollar : CustomInventory
+{
+	inventory.pickupmessage "$GOTCOLLAR"
+	Tag "$TACOLLAR"
+	inventory.icon "INVDOGC"
+	inventory.pickupsound "inventory/grenade/get"
+	inventory.amount 1
+	inventory.maxamount 1
+	+INVENTORY.INVBAR
+	scale 0.5
+	states
+	{
+	Spawn:
+		DOGC Z -1
+		stop
+	Use:
+		TNT1 A 0 A_JumpIfInventory("MetaDogGun_HellHound", 0, "Failure2")
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
+		goto Failure
+	Fire:
+		TNT1 A 0 A_FireCustomMissile("DogCollarProj",0,0)
+		TNT1 A 0 A_PlaySound("inventory/dogcollar/toss")
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)
+		fail
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid")
+		TNT1 A 0 A_Log("You don't have any grenades!")
+		fail
+	Failure2:
+		TNT1 A 0 A_PlaySound("menu/invalid")
+		TNT1 A 0 A_Log("You already have a Dog!")
+		fail
+	}
+}
+
+ACTOR DogCollarProj
+{
+	Radius 13
+	Height 8
+	Speed 15
+	Damage (1)
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 0.75
+	//Obituary "$OB_MPPLASMARIFLE"
+	//Decal PlasmaScorch
+	damagetype DogCollar
+	States
+	{
+	Spawn:
+		COLR AAAAAABBBBBBBAAAAAABBBBBBB 1 Bright 
+	Fadeout:
+		COLR AAAAAABBBBBBB 1 Bright A_FadeOut(0.05)
+		Loop
+	Death:
+		COLR A 0 
+		{
+		A_PlaySound("inventory/dogcollar/miss");
+		A_SetTranslucent (0.75, 1);
+		}
+		COLR CDEF 4 Bright
+		Stop
+	}
+}
+
+ACTOR CollarSpark
+{
+	Health 12
+	radius 3
+	height 6
+	speed .1
+	RenderStyle ADD
+	Alpha		1
+	Scale 0.5
+	Mass		0
+	+missile
+	+doombounce
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	States
+	{
+		COLR F 1
+		COLR FFFFF 1  Bright A_SetTranslucent(.8,1)
+		COLR FFFFFF 1  Bright A_SetTranslucent(.6,1)
+		COLR FFFFFFFF 1  Bright A_SetTranslucent(.4,1)
+		COLR FFFFFFFFFF 1 Bright A_SetTranslucent(.2,1)
+		Stop
+	}
+}

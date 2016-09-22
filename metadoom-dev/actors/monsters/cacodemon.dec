@@ -1,0 +1,247 @@
+ACTOR MetaCacodemon : MonsterCore
+{
+	Health 400
+	GibHealth 50
+	Radius 31
+	Height 56
+	Mass 400
+	Speed 8
+	PainChance 128
+	Monster
+	+FLOAT +NOGRAVITY +FLOATBOB
+	SeeSound "caco/sight"
+	PainSound "caco/pain"
+	DeathSound "caco/death"
+	ActiveSound "caco/active"
+	Obituary "$OB_CACO"
+	HitObituary "$OB_CACOHIT"
+	Bloodtype Blueblood
+	BloodColor "0 0 80"
+	Decal "bluebloodsplat"
+	States
+	{
+	Spawn:
+		HEAD A 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("BlueFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		HEAD A 3 A_Chase
+		Loop
+	Scurred:
+		HEAD A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		HEAD A 0 A_GiveInventory("ScurredCounter", 1)
+		HEAD A 2 A_Chase("", "")
+		HEAD A 2 A_Chase("", "")
+		HEAD E 0 A_SpawnItem("HolySweat",0,54)
+		HEAD E 2 A_Chase("", "")
+		HEAD E 2 A_Chase("", "")
+		HEAD F 2 A_Chase("", "")
+		HEAD F 2 A_Chase("", "")
+		HEAD F 0 A_SpawnItem("HolySweat",0,54)
+		HEAD E 2 A_Chase("", "")
+		HEAD E 2 A_Chase("", "")
+		HEAD E 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		HEAD D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Missile:
+		HEAD B 5 A_FaceTarget
+		HEAD C 5 A_FaceTarget
+		HEAD D 5 BRIGHT A_CustomComboAttack("MetaCacodemonBall", 32, 10 * random(1, 6))
+		Goto See
+	Pain:
+		HEAD E 3
+		HEAD E 3 A_Pain
+		HEAD F 6
+		Goto See
+	Pain.HolyWater:
+		HEAD E 3
+		HEAD E 3 A_Pain
+		HEAD F 6
+		Goto Scurred
+	Death:
+		HEAD G 0 A_GiveToTarget("ScoreItem", 400)
+		HEAD G 8 A_ChangeFlag("FLOATBOB", FALSE)
+		HEAD H 8 A_Scream
+		HEAD I 8 
+		HEAD J 8
+		HEAD K 8 A_NoBlocking
+		HEAD L -1 A_SetFloorClip
+		Stop
+	Death.Gauss:
+	XDeath:
+		HEAD G 0 A_GiveToTarget("ScoreItem", 400)
+		HEAD G 0 A_ChangeFlag("FLOATBOB", FALSE)
+		HEAD G 3 A_Fall
+		TNT1 A 0 A_PlaySound("monsters/caco/gib")
+		TNT1 A 0
+		{
+			A_CustomMissile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplatBlue");
+		}
+        TNT1 A 1 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 1 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 1 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+		Stop
+	Raise:
+		HEAD L 8 A_UnSetFloorClip
+		HEAD KJIHG 8
+		Goto See
+	}
+}
+
+ACTOR MetaCacodemonBall
+{
+	Radius 6
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 5
+	Projectile 
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	SeeSound "caco/attack"
+	//DeathSound "weapons/plasmarifle/hit"
+	decal CacoScorch
+	States
+	{
+	Spawn:
+		BAL2 A 0
+		BAL2 A 0 A_PlaySoundEx("monsters/caco/lightningball/loop", "Body", 1)
+		BAL2 AB 4 BRIGHT
+		Loop
+	Death:
+		BAL2 C 0 A_PlaySound("monsters/caco/lightningball/hit", CHAN_BODY)
+		BAL2 CDE 6 BRIGHT
+		Stop
+	}
+}
+
+// Gibs
+actor CacoGib1
+{
+	+DOOMBOUNCE
+	PROJECTILE
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-NOTELEPORT
+	-SOLID
+	Radius 2
+	Damage 0
+	Decal BloodSplat
+	bouncefactor 0.5
+	SeeSound "gibbage/gibphys"
+	gravity 0.5
+	Speed 5
+	scale 0.75
+	States
+	{
+	Spawn:
+		CAGI A 0
+		CAGI A 0 ThrustThingZ (0, random(32,45), 0, 1)
+		CAGI A 0 A_Jump(128,"Flipper") 
+		CAGI A 0 A_Jump(128,"Alt") 
+		goto See
+	Flipper:
+		CAGI A 0 A_SetScale(-1,1)
+		CAGI A 0 A_Jump(128,"Alt") 
+		goto See
+	See:
+		CAGI ABCDEFG 1 
+		{
+			A_SpawnItem("BlueFlyingBloodCheap");
+			ThrustThingZ(0,6,1,1);
+		}
+		loop
+	Alt:
+		CAGI GFEDCBA 1 
+		{
+			A_SpawnItem("BlueFlyingBloodCheap");
+			ThrustThingZ(0,6,1,1);
+		}
+		loop
+	Death:
+		CAGI H 0 A_ChangeFlag(NOBLOCKMAP, 0)
+		CAGI A 0 A_SetScale(1,1)
+		CAGI A 0 A_Jump(128,"Death2")
+		goto Death1
+	Death1:
+		CAGI H -1
+		Stop
+	Death2:
+		CAGI H 0 A_SetScale(-1,1)
+		CAGI H -1
+		Stop
+    }	
+}
+
+actor CacoGib2 : MetaGib1
+{
+	States
+	{
+	Spawn:
+		CAGI I 0
+		goto Setup
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1)
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") 
+		goto See
+	See:
+		"####" # 0 A_SpawnItem("BlueFlyingBloodCheap")
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Alt:
+		"####" # 0 A_SpawnItem("BlueFlyingBloodCheap")
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll - 5))
+		loop
+	Death:
+		CAGI J 0 A_ChangeFlag(NOBLOCKMAP, 0)
+		CAGI J 0 A_SetRoll(0)
+		CAGI J 0 A_Jump(128,"Death2")
+		goto Death1
+	Death1:
+		CAGI J -1
+		Stop
+	Death2:
+		CAGI J 0 A_SetScale(-1,1)
+		CAGI J -1
+		Stop
+    }
+}

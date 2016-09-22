@@ -1,0 +1,16 @@
+:DoorOpenNormal
+	play		doors/slow/open
+	stopsound	doors/slow/openstop
+end
+
+:DoorCloseNormal
+	play		doors/slow/close
+	stopsound	doors/slow/closestop
+end
+
+
+:Platform
+	playuntildone plats/start
+	playrepeat plats/mid
+	stopsound plats/stop
+end

@@ -1,0 +1,268 @@
+// GL Definitions
+// Point Lights
+PointLight FLASHLIGHT1
+{
+	Color 1.0 1.0 1.0
+	Size 1
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT2
+{
+	Color 1.0 1.0 1.0
+	Size 1
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT3
+{
+	Color 1.0 1.0 1.0
+	Size 1
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT4
+{
+	Color 1.0 1.0 1.0
+	Size 1
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT5
+{
+	Color 1.0 1.0 1.0
+	Size 1
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT6
+{
+	Color 1.0 1.0 1.0
+	Size 2
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT7
+{
+	Color 1.0 1.0 1.0
+	Size 2
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT8
+{
+	Color 1.0 1.0 1.0
+	Size 3
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT9
+{
+	Color 1.0 1.0 1.0
+	Size 4
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT10
+{
+	Color 1.0 1.0 1.0
+	Size 5
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT11
+{
+	Color 1.0 1.0 1.0
+	Size 7
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT12
+{
+	Color 1.0 1.0 1.0
+	Size 9
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT13
+{
+	Color 1.0 1.0 1.0
+	Size 12
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT14
+{
+	Color 1.0 1.0 1.0
+	Size 16
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT15
+{
+	Color 1.0 1.0 1.0
+	Size 22
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT16
+{
+	Color 1.0 1.0 1.0
+	Size 29
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT17
+{
+	Color 1.0 1.0 1.0
+	Size 39
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT18
+{
+	Color 1.0 1.0 1.0
+	Size 52
+	Offset 0 0 0
+}
+
+PointLight FLASHLIGHT19
+{
+	Color 1.0 1.0 1.0
+	Size 69
+	Offset 0 0 0
+}
+
+// Objects
+Object FlashLightBeam1
+{
+	Frame TNT1A { Light FLASHLIGHT1}
+	Frame TNT1B { Light FLASHLIGHT2}
+	Frame TNT1B { Light FLASHLIGHT3}
+}
+
+Object FlashLightBeam2
+{
+	Frame TNT1A { Light FLASHLIGHT2}
+	Frame TNT1B { Light FLASHLIGHT3}
+	Frame TNT1B { Light FLASHLIGHT4}
+}
+
+Object FlashLightBeam3
+{
+	Frame TNT1A { Light FLASHLIGHT3}
+	Frame TNT1B { Light FLASHLIGHT4}
+	Frame TNT1B { Light FLASHLIGHT5}
+}
+
+Object FlashLightBeam4
+{
+	Frame TNT1A { Light FLASHLIGHT4}
+	Frame TNT1B { Light FLASHLIGHT5}
+	Frame TNT1B { Light FLASHLIGHT6}
+}
+
+Object FlashLightBeam5
+{
+	Frame TNT1A { Light FLASHLIGHT5}
+	Frame TNT1B { Light FLASHLIGHT6}
+	Frame TNT1B { Light FLASHLIGHT7}
+}
+
+Object FlashLightBeam6
+{
+	Frame TNT1A { Light FLASHLIGHT6}
+	Frame TNT1B { Light FLASHLIGHT7}
+	Frame TNT1B { Light FLASHLIGHT8}
+}
+
+Object FlashLightBeam7
+{
+	Frame TNT1A { Light FLASHLIGHT7}
+	Frame TNT1B { Light FLASHLIGHT8}
+	Frame TNT1B { Light FLASHLIGHT9}
+}
+
+Object FlashLightBeam8
+{
+	Frame TNT1A { Light FLASHLIGHT8}
+	Frame TNT1B { Light FLASHLIGHT9}
+	Frame TNT1B { Light FLASHLIGHT10}
+}
+
+Object FlashLightBeam9
+{
+	Frame TNT1A { Light FLASHLIGHT9}
+	Frame TNT1B { Light FLASHLIGHT10}
+	Frame TNT1B { Light FLASHLIGHT11}
+}
+
+Object FlashLightBeam10
+{
+	Frame TNT1A { Light FLASHLIGHT10}
+	Frame TNT1B { Light FLASHLIGHT11}
+	Frame TNT1B { Light FLASHLIGHT12}
+}
+
+Object FlashLightBeam11
+{
+	Frame TNT1A { Light FLASHLIGHT11}
+	Frame TNT1B { Light FLASHLIGHT12}
+	Frame TNT1B { Light FLASHLIGHT13}
+}
+
+Object FlashLightBeam12
+{
+	Frame TNT1A { Light FLASHLIGHT12}
+	Frame TNT1B { Light FLASHLIGHT13}
+	Frame TNT1B { Light FLASHLIGHT14}
+}
+
+Object FlashLightBeam13
+{
+	Frame TNT1A { Light FLASHLIGHT13}
+	Frame TNT1B { Light FLASHLIGHT14}
+	Frame TNT1B { Light FLASHLIGHT15}
+}
+
+Object FlashLightBeam14
+{
+	Frame TNT1A { Light FLASHLIGHT14}
+	Frame TNT1B { Light FLASHLIGHT15}
+	Frame TNT1B { Light FLASHLIGHT16}
+}
+
+Object FlashLightBeam15
+{
+	Frame TNT1A { Light FLASHLIGHT15}
+	Frame TNT1B { Light FLASHLIGHT16}
+	Frame TNT1B { Light FLASHLIGHT17}
+}
+
+Object FlashLightBeam16
+{
+	Frame TNT1A { Light FLASHLIGHT16}
+	Frame TNT1B { Light FLASHLIGHT17}
+	Frame TNT1B { Light FLASHLIGHT18}
+}
+
+Object FlashLightBeam17
+{
+	Frame TNT1A { Light FLASHLIGHT17}
+	Frame TNT1B { Light FLASHLIGHT18}
+	Frame TNT1B { Light FLASHLIGHT19}
+}
+
+Object FlashLightBeam18
+{
+	Frame TNT1A { Light FLASHLIGHT18}
+	Frame TNT1B { Light FLASHLIGHT19}
+	Frame TNT1B { Light FLASHLIGHT20}
+}
+
+Object FlashLightBeam19
+{
+	Frame TNT1A { Light FLASHLIGHT19}
+	Frame TNT1B { Light FLASHLIGHT20}
+	Frame TNT1B { Light FLASHLIGHT21}
+}

@@ -1,0 +1,129 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Effects - Both Visual and Practical
+----------------------------
+*/
+
+ACTOR Explosion
+{
+	Radius 10
+	Height 10
+	Speed 5
+	PROJECTILE
+	+NOCLIP
+	Decal Scorch
+	States
+	{
+		Spawn:
+		EXPL A 0
+		EXPL A 2 BRIGHT
+		{
+			A_PlaySound("weapons/explosion", CHAN_WEAPON);
+			A_Explode;
+			A_Quake (3,10,0,750,0);
+			A_SpawnItem("Shockwave",0,0);
+			
+			if (z <= (floorz + 64))
+			{
+				A_SpawnItem("ExplosionScorchMark",0,0);
+			}
+		}
+		EXPL B 2 BRIGHT 
+		EXPL C 2 BRIGHT 
+		EXPL DEF 2
+		Stop
+	}
+}
+
+ACTOR Shockwave
+{
+	radius 10
+	height 10
+	+NOCLIP
+	+FLATSPRITE
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+ROLLCENTER
+	Renderstyle add
+	states
+	{
+		Spawn:
+		SHOK A 0
+		SHOK A 0 A_SetAngle (random(0,365))
+		//SHOK A 0 A_SetRoll (random(0,365))
+		SHOK A 0 A_SetPitch(-32,32) //A_SetPitch(random(45,128)) // A_SetPitch(90)
+	DoTheThing:
+		SHOK A 1
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scaleX + 0.1);
+		}
+		loop
+	}
+}
+
+actor ExplosionScorchMark
+{
+	radius 1
+	height 1
+	+NOCLIP
+	+FLATSPRITE
+	+ROLLCENTER
+	+DONTSPLASH
+	Renderstyle Shaded
+	StencilColor "00 00 00"
+	states
+	{
+		Spawn:
+		SCRH A 0
+		SCRH A 0 A_SetAngle (random(0,365))
+		SCRH A 0 //A_SetPitch(90)
+		SCRH A 1 a_warp(aaptr_default, x,y,floorz + 0.01, 0, warpf_absoluteposition | WARPF_COPYINTERPOLATION)
+		wait
+	}
+}
+
+ACTOR RocketTrailSmoke
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  states
+  {
+  Spawn:
+    PUF2 ABC 2 A_FadeOut
+  Finalize:
+    PUF2 D 2 A_FadeOut
+   loop
+ }
+}
+
+ACTOR GrenadeTrailSmoke
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  alpha 0.75
+  states
+  {
+  Spawn:
+    PUFF ABC 2 A_FadeOut
+  Finalize:
+    PUFF D 2 A_FadeOut
+   loop
+ }
+}
+
+ACTOR MetaItemFog replaces ItemFog
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+	IFOG A 0
+	IFOG A 0 A_PlaySound("misc/spawn")
+    IFOG ABABCDE 6 Bright
+    Stop
+  }
+}

@@ -1,0 +1,255 @@
+gameinfo
+{
+	titlemusic = "M_LWAI"
+	intermissionmusic = "M_INTER"
+	quitsound = "titlemap/rpggib" //"menu/quit2"
+	playerclasses = "MetaDoomPlayer"
+	CursorPic = "CURSOR"
+	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+				   "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14",
+				   "$QUITMSG15", "$QUITMSG16", "$QUITMSG17", "$QUITMSG18", "$QUITMSG19", "$QUITMSG20", "$QUITMSG21",
+				   "$QUITMSG22", "$QUITMSG23", "$QUITMSG24"
+	
+	weaponslot = 1, "MetaPistol", "MetaBerserkFist", "MetaCheatDetector"
+	weaponslot = 2, "HolyWaterPistol", "MetaShotgun"
+	weaponslot = 3, "MetaFireExtinguisher", "MetaSuperShotgun"
+	weaponslot = 4, "MetaChaingun", "MetaMachineGun"
+	weaponslot = 5, "MetaRocketLauncher"
+	weaponslot = 6, "MetaPlasmaRifle", "MetaGaussCannon"
+	weaponslot = 7, "MetaBFG9000"
+	weaponslot = 8, "MetaChainsaw", "MetaAxe"
+}
+
+clearskills
+
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DamageFactor = 0.5
+	EasyBossBrain
+	SpawnFilter = Baby
+	Name = "$SKILL_JKILL"
+	Key = "j"
+}
+
+skill easy
+{
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "$SKILL_EASY"
+	Key = "h"
+}
+
+skill normal
+{
+	SpawnFilter = Normal
+	Key = "h"
+	Name = "$SKILL_NORMAL"
+	DefaultSkill
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "$SKILL_HARD"
+	Key = "u"
+}
+
+skill nightmare
+{
+	FastMonsters
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "$SKILL_NIGHTMARE"
+	MustConfirm
+	Key = "n"
+}
+
+skill ironman
+{
+	FastMonsters
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "$SKILL_IRONMAN"
+	MustConfirm = "$IRONMANCONFIRM"
+	ACSReturn = 666
+	Key = "x"
+}
+
+map TITLEMAP "Welcome to MetaDoom"
+{
+    ResetHealth
+    ResetInventory
+}
+
+// Gross workaround for Ironman Cluster Stuffs
+
+map DEAD0 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 0
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD1 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 1
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD2 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 2
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD3 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 3
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD4 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 4
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD5 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 5
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD6 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 6
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD7 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 7
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD8 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 8
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD9 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 9
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD10 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 10
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD11 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 11
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD12 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 12
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD13 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 13
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD14 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 14
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD15 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 15
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD16 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 16
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD17 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 17
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD18 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 18
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD19 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 19
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD20 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+

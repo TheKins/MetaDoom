@@ -1,0 +1,29 @@
+inventory/throw				invtoss
+
+inventory/grenade/get		getgren
+
+$random inventory/grenade/bounce 	{ inventory/grenade/bounce1 inventory/grenade/bounce2 }
+inventory/grenade/bounce1	grenbnc1
+inventory/grenade/bounce2	grenbnc2
+
+inventory/teslarocket/get		gettesl
+
+inventory/teslarocket/throw		tesltoss
+inventory/teslarocket/loop		teslloop
+inventory/teslarocket/explode	teslboom
+
+inventory/shieldwall/start		shldstrt
+inventory/shieldwall/loop		shldloop
+inventory/shieldwall/end		shldend
+inventory/shieldwall/get		getshld
+
+$volume inventory/shieldwall/start 0.3
+$volume inventory/shieldwall/loop 0.3
+$volume inventory/shieldwall/end 0.3
+
+inventory/siphongrenade/explode	siphon
+
+inventory/dogcollar/get			collget
+inventory/dogcollar/toss			colltoss
+inventory/dogcollar/activate			collact
+inventory/dogcollar/miss			collmiss

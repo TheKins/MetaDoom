@@ -1,0 +1,447 @@
+// ----------------------------
+// MetaDoom
+// Language Definitions
+// ----------------------------
+
+[enu default]
+
+//VERSION = "Development Build";
+VERSION = "v.1.1 ''Slayer'' - 22/09/2016";
+
+// Startup Text
+STARTUP1 = "===========================================================";
+STARTUP2 = "ATTENTION:  This version of DOOM has been metafied.  If you";
+STARTUP3 = "would like to get a copy of this mod, go to TheKinsie.com";
+STARTUP4 = "You will not receive technical support for metafied games.";
+STARTUP5 = "===========================================================";
+
+// Menu
+MNU_NEWGAME			= "New Game";
+MNU_OPTIONS			= "Options";
+MNU_GAMEFILES		= "Game Files";
+MNU_INFO			= "Read This!";
+MNU_QUITGAME		= "Quit Game";
+MNU_CHOOSESKILL		= "Choose Skill Level";
+MNU_CHOOSECLASS		= "Choose Class";
+MNU_LOADGAME		= "Load Game";
+MNU_SAVEGAME		= "Save Game";
+MNU_EPISODE			= "Which Episode?";
+
+OPTMNU_METADOOM		= "MetaDoom Options";
+
+OPTMNU_TITLE				= "Options";
+CNTRLMNU_TITLE				= "Customize Controls";
+MOUSEMNU_TITLE				= "Mouse Options";
+JOYMNU_CONFIG				= "Configure Controller";
+JOYMNU_OPTIONS				= "Controller Options";
+MNU_PLAYERSETUP		= "Player Setup";
+DSPLYMNU_TITLE					= "Display Options";
+AUTOMAPMNU_TITLE				= "Automap Options";
+MAPCNTRLMNU_TITLE 			= "Customize Map Controls";
+MAPCOLORMNU_TITLE 						= "Customize Map Colors";
+MSGMNU_TITLE				= "Messages";
+SCRBRDMNU_TITLE				= "Scoreboard Options";
+GMPLYMNU_TITLE				= "Gameplay Options";
+CMPTMNU_TITLE				= "Grognard Options";
+SNDMNU_TITLE			= "Sound Options";
+FMODMNU_TITLE			= "FMod Options";
+OPENALMNU_TITLE				= "OpenAL Options";
+ADVSNDMNU_TITLE				= "Advanced Sound Options";
+MODMNU_TITLE			= "Module Replayer Options";
+VIDMNU_TITLE			= "Video Mode";
+NETMNU_TITLE					= "Network Options";
+MNU_COLORPICKER		= "Select Color";
+GLMNU_TITLE		= "OpenGL Options";
+GLTEXMNU_TITLE			= "Texture Options";
+GLLIGHTMNU_TITLE 			= "Dynamic Lights";
+GLPREFMNU_TITLE 				= "OpenGL Preferences";
+
+// MetaDoom Menu
+METAMENU_DEBUG = "Debug Messages";
+
+METAMENU_SPAWNINGHEADER = "Spawning Controls";
+METAMENU_SPAWNINGGUNS = "More Weapons";
+METAMENU_SPAWNINGDUDES = "More Actors";
+METAMENU_SPAWNINGLIMITS = "Content Locust Mode";
+METAMENU_MAPBREAKERS = "Potential Map-Breakers";
+
+METAMENU_ITEMHEADER = "Item Behavior";
+METAMENU_RETROBERSERK = "Traditional Berserk";
+
+METAMENU_PERFHEADER = "Performance Controls";
+METAMENU_PERFCULLER = "Blood Cull Radius";
+METAMENU_PERFBLOOD = "Force Blood to Fade Out";
+METAMENU_PERFBLOODTIME = "Blood Lifetime (in gametics)";
+
+
+// Skills
+SKILL_JKILL = "I Just Wanna Kill";
+SKILL_EASY = "Hey, Not Too Rough";
+SKILL_NORMAL = "Hurt Me Plenty";
+SKILL_HARD = "Ultra-Violence";
+SKILL_NIGHTMARE = "Nightmare!";
+SKILL_IRONMAN = "Ultra-Nightmare!!";
+
+NIGHTMARE = "Are you sure? This skill level\nisn't even REMOTELY fair.\n\n(NOTE: In MetaDoom, Nightmare doesn't\nhave monster respawns, effectively\nmaking it UV + -fast. Still hard!)";
+IRONMANCONFIRM = "Warning: Ultra-Nightmare\nis an Ironman mode.\nYou only have one life.\n\nJust to be sure, are you willing\nto put yourself through this?";
+
+// Items
+GOTPINATAHEALTH = "Picked up some Health.";
+GOTPINATAAMMO = "Picked up some Ammo.";
+GOTHOLYWATER = "Created some Holy Water.";
+GOTHTHBONUS = "Picked up a Health Bonus.";
+GOTARMBONUS = "Picked up an Armor Shard.";
+
+GOTARMOR = "Picked up the Security Armor.";
+GOTMEGA = "Picked up the Mega Armor!";
+
+GOTLOOT1 = "Picked up a Demonic Dagger.";
+GOTLOOT2 = "Picked up a Skullchest.";
+GOTLOOT3 = "Picked up an Evil Sceptre.";
+GOTLOOT4 = "Picked up an Unholy Bible.";
+GOTLOOT5 = "Picked up an Demonic Crown.";
+GOTLOOT6 = "Picked up a Sacrificial Goblet.";
+
+// Weapons
+GOTPISTOL = "You got the EKG Sidearm!";
+GOTMACGUN = "You got the Machine Gun!";
+GOTHWP = "You got the Holy Water Pistol!";
+GOTCHAINSAW = "You got the Chainsaw!  Find some meat!";
+GOTLAUNCHER = "You got the Rocket Launcher!";
+GOTPLASMA = "You got the Plasma Gun!";
+GOTSHOTGUN = "You got the Shotgun!";
+GOTSHOTGUN2 = "You got the Super Shotgun!";
+GOTAXE = "You got the Axe! Zombies beware...";
+GOTCHAINGUN = "You got the Chaingun!";
+GOTGAUSS = "You got the Gauss Cannon!";
+GOTBFG9000 = "You got the BFG9000!  Oh, yes.";
+GOTFIREX = "You got a Fire Extinguisher!";
+
+TAGPISTOL = "EKG Sidearm";
+TAGMACGUN = "Machine Gun";
+TAGHWP = "Holy Water Pistol";
+TAGAXE = "Fire Axe";
+TAG_FIST = "Berserk!";
+TAGGAUSS = "Gauss Cannon";
+TAGFIREX = "Fire Extinguisher";
+
+TAGHDOG = "Hellhound";
+
+// Inventory
+GOTGRENADES = "Picked up some Hand Grenades!";
+GOTARGENT = "Picked up an Argent Core.";
+TAGGRENADES = "Hand Grenade";
+GOTTESLA = "Picked up some Tesla Rockets!";
+TAGTESLA = "Tesla Rocket";
+GOTSHIELDWALL = "Picked up a Shield Wall!";
+TAGSHIELDWALL = "Shield Wall";
+GOTSIPHON = "Picked up some Siphon Grenades!";
+TAGSIPHON = "Siphon Grenade";
+GOTCOLLAR = "Picked up some Dog Collars!";
+TACOLLAR = "Dog Collar";
+
+// Powerups
+GOTHASTE = "HasteSphere!";
+
+// Quit Messages
+QUITMSG = "Are you sure you want to\nquit this great game?";
+QUITMSG1 = "Leave the number one global\ncause of decreased productivity?";												// Doom1 prerelease press
+QUITMSG2 = "Cease the Broadcast\nPacket Meltdown?";																		// Carmack effed up the netcode
+QUITMSG3 = "I play Doom and\nI can't get up!";																			// Doom 64 mockplayer
+QUITMSG4 = "Well, go click on\nyour icons, then.\nI'll be waiting.";													// Doom for Mac OS
+QUITMSG5 = "Let the demons give\nyou the boot?";																		// Doom 64 mockplayer
+QUITMSG6 = "Press Y to leave a world\nwhere the sanest place is\nbehind a trigger.";									// Doom1 prerelease press
+QUITMSG7 = "Amazing things will happen\nhere soon... you just wait.";													// Doom 3, Dr. Bertruger
+QUITMSG8 = "Return to the\nHall of Tortured Souls?";																	// Microsoft Excel
+QUITMSG9 = "But the day of Doom shall\nbe the end of this time...";														// Doom 3 BFG Edition
+QUITMSG10 = "There's nowhere to run!\nI am everywhere!";																// Doom 3, Dr. Bertruger
+QUITMSG11 = "...in due time their foot will slip;\ntheir day of disaster is near\nand their Doom rushes upon them.";	// Doom 3 BFG Edition
+QUITMSG12 = "He cannot be allowed\nto leave this place.\n\nHe would ruin everything.";									// Doom 4, Dr. Pierce
+QUITMSG13 = "Don't quit now! We're still\nspending your money!";														// Doom Source Code Release
+QUITMSG14 = "We will be back\nto square one...\n\nWell... that's it then.";												// Doom 4, Samuel Hayden
+QUITMSG15 = "Hey, man - If this gets out, you can\nall kiss your autographed Doom\nhintbooks goodbye!";					// v0.4 Alpha
+QUITMSG16 = "Your duty has always\nbeen to die, soldier!";																// Doom 3, Sabaoth
+QUITMSG17 = "No, John.\nYou are the demons.";																			// Repercussions of Evil, kek
+QUITMSG18 = "This mod proudly sponsored by\nMartianBuddy, the greatest\ncompany ever conceived!";						// Doom 3 promotional thingy
+QUITMSG19 = "Gwocklego!";																								// Doom 2 RPG, what an Imp sounds like
+QUITMSG20 = "Making progress, Marine?\nYour journey is futile.\nYou will die, and your\nsoul will be mine!";  			// Doom 3, Dr. Bertruger
+QUITMSG21 = "You will never find\nthe thing you seek!\n\nIt is trapped in\nHell forever!";								// Doom 3, Dr. Bertruger
+QUITMSG22 = "The desktop isn't safe. You're\ncrazy if you're going there!";												// Doom 3, T. Ryan
+QUITMSG23 = "Your Hell awaits!";																						// Doom 3, Dr. Bertruger
+QUITMSG24 = "Marine...?\nMarine...\n\nWelcome home.";																	// Doom 3 Expansion, Dr. McNeil
+QUITMSG25 = "Don't leave now.\nWe need your help!";
+QUITMSG26 = "I hope you're just taking a\nbreak for Chex(R) party mix.";
+QUITMSG27 = "Don't quit now!\nWe need your help!";
+QUITMSG28 = "Don't abandon the\nIntergalactic Federation of Cereals!";
+QUITMSG29 = "The real Chex(R) Warrior\nwouldn't give up so fast!";
+
+// Obituary strings
+// First the self-kills, then the other-kills
+OB_SUICIDE = "%o suicides.";
+OB_FALLING = "%o took a dive.";
+OB_CRUSH = "%o was squished.";
+OB_EXIT = "%o did a bad thing."; // also used for cheating
+OB_WATER = "%o drowned.";
+OB_SLIME = "%o melted.";
+OB_LAVA = "%o went up in flames.";
+OB_BARREL = "%o went boom.";
+OB_SPLASH = "%o stood in the wrong spot.";
+OB_R_SPLASH = "%o should have stood back.";
+OB_ROCKET = "%o should have stood back.";
+OB_KILLEDSELF = "%o killed %hself.";
+
+OB_VOODOO = "%o did that Voodoo you do.";
+OB_UNDEADHIT = "%o was punched by a Revenant.";
+OB_IMPHIT = "%o was slashed by an Imp.";
+OB_CACOHIT = "%o tried to pet a Cacodemon.";
+OB_DEMONHIT = "%o was chewed up by a Demon.";
+OB_SPECTREHIT = "%o was surprised by a Spectre.";
+OB_BARONHIT = "%o was ripped open by a Baron of Hell.";
+OB_KNIGHTHIT = "%o was gutted by a Hell Knight.";
+OB_ZOMBIE = "%o was killed by a Former Trooper.";
+OB_SHOTGUY = "%o was shot by a Former Sergeant.";
+OB_VILE = "%o was incinerated by an Archvile.";
+OB_UNDEAD = "%o couldn't evade a Revenant's fireball.";
+OB_FATSO = "%o was squashed by a Mancubus.";
+OB_CHAINGUY = "%o was perforated by a Chaingunner.";
+OB_SKULL = "%o was spooked by a Lost Soul.";
+OB_IMP = "%o was burned by an Imp.";
+OB_CACO = "%o was shocked by a Cacodemon.";
+OB_BARON = "%o was bruised by a Baron of Hell.";
+OB_KNIGHT = "%o was splayed by a Hell Knight.";
+OB_SPIDER = "%o stood in awe of the Spider Mastermind!";
+OB_BABY = "%o let an Arachnotron get %h.";
+OB_CYBORG = "%o was splattered by the Cyberdemon!";
+
+OB_WOLFSS = "%o fell to the SS.";
+OB_WOLFSNES = "%o succumbed to the NOA Licensed Software Approval Process.";
+OB_WOLFAPPLE = "%o considered %p Muse.";
+OB_WOLFMAC = "%o ate a Burger.";
+OB_WOLFRTCW = "%o took one right in the ol' Gray Matter.";
+OB_WOLFRAVEN = "%o couldn't evade a Revenant... Nevermore!";
+OB_WOLFTNO = "%o fell to some kind of freaky ManMachine.";
+
+OB_MARINE = "%o was killed by a Space Marine.";
+OB_MARINE_FIST = "%o was punched in the face by a Space Marine.";
+OB_MARINE_BERSERK = "%o ate the Berserker Rage of %k.";
+OB_MARINE_SAW = "%o was impaled by a Space Marine's Chainsaw.";
+OB_MARINE_PISTOL = "%o was popped by a Space Marine's EKG Sidearm.";
+OB_MARINE_SHOTGUN = "%o was peppered by a Space Marine's Shotgun.";
+OB_MARINE_SSG = "%o was splintered by a Space Marine's Super Shotgun.";
+OB_MARINE_MACHINEGUN = "%o was ventilated by a Space Marine's Machine Gun.";
+OB_MARINE_ROCKET = "%o rode a Space Marine's Rocket.";
+OB_MARINE_PLASMA = "%o was melted by a Space Marine's Plasma Rifle.";
+OB_MARINE_GAUSS = "%o was railed by a Space Marine's Gauss Cannon";
+OB_MARINE_BFG = "%o was splintered by a Space Marine's BFG.";
+
+OB_DOG1 = "%o was savaged by a Hellhound.";
+OB_DOG2 = "%o was mauled by a Demon Dog.";
+OB_DOG3 = "%o was torn apart by a Cerberus.";
+OB_SPECTRENIGHTMARE = "%o was caught by a Nightmare Spectre.";
+OB_ZSEC = "%o was rolled over by Z-Sec.";
+OB_MGUNGUY = "%o was gunned down by a Former Lieutenant.";
+OB_CGUNGUY = "%o was torn to ribbons by a Former Commando.";
+OB_NIGHTMAREIMPHIT = "%o was sliced by a Nightmare Imp.";
+OB_NIGHTMAREIMP = "%o was torched by a Nightmare Imp.";
+OB_HELLRAZER = "%o was blasted by a Hell Razer.";
+OB_SKULL2 = "%o was haunted by a Phantom.";
+
+OB_METAFIST = "%o was Gloriously Killed by %k.";
+OB_BERSERK = "%o ate the Berserker Rage of %k.";
+OB_METACHAINSAW = "%o was impaled by %k's Chainsaw.";
+OB_METACHAINSAW_SLASH = "%o was cleft in twain by %k's Chainsaw.";
+OB_AXE = "%o was murdered by %k's Axe.";
+OB_METAPISTOL = "%o was popped by %k's EKG Sidearm.";
+OB_METASHOTGUN_SHELL = "%o was peppered by %k's Shotgun.";
+OB_METASHOTGUN_GREN = "%o was splattered by %k's Shotgun.";
+OB_HOLYWATER = "%o was exorcised by %k's Holy Water Pistol.";
+OB_MPSSHOTGUN = "%o was splintered by %k's Super Shotgun.";
+OB_METAMG_BULLET = "%o was ventilated by %k's Machine Gun.";
+OB_METAMG_MISSILE = "%o was exploded by %k's Machine Gun.";
+OB_MPCHAINGUN = "%o was mowed down by %k's Chaingun.";
+OB_MPROCKET = "%o rode %k's Rocket.";
+OB_MPR_SPLASH = "%o almost dodged %k's Rocket.";
+OB_MPPLASMARIFLE = "%o was melted by %k's Plasma Rifle.";
+OB_MPBFG_BOOM = "%o was splintered by %k's BFG.";
+OB_MPBFG_SPLASH = "%o couldn't hide from %k's BFG.";
+OB_MPTELEFRAG = "%o had their personal space invaded by %k.";
+OB_RAILGUN = "%o was railed by %k.";
+OB_MPBFG_MBF = "%o was burned by %k's BFG.";
+OB_GAUSS = "%o was railed by %k's Gauss Cannon";
+
+OB_MPGRENADE = "%o was splashed by %k's Hand Grenade.";
+OB_TESLA = "%o was shocked by %k's Tesla Rocket.";
+OB_SIPHON = "%o was sucked dry by %k's Siphon Grenade.";
+
+OB_METADOG_BITE = "%o was mauled by %k's Collared Dog.";
+OB_METADOG_HELLHOUND = "%o was nailed by %k's well-thrown Hellhound.";
+
+OB_MONTELEFRAG = "%o was telefragged.";
+
+OB_DEFAULT = "%o died.";
+OB_MPDEFAULT = "%o was killed by %k.";
+OB_FRIENDLY1 = "%k mows down a teammate.";
+OB_FRIENDLY2 = "%k checks %p glasses.";
+OB_FRIENDLY3 = "%k gets a frag for the other team.";
+OB_FRIENDLY4 = "%k loses another friend.";
+
+LOWHEALTHWARNING = "Low Health!";
+
+// Scoreboard text
+SCORE_ITEMS = "Items";
+SCORE_BONUS = "Bonus";
+SCORE_COLOR = "Color";
+SCORE_SECRET = "Secret";
+SCORE_NAME = "Name";
+SCORE_DELAY = "Ping";
+SCORE_KILLS = "Kills";
+SCORE_FRAGS = "Frags";
+SCORE_DEATHS = "Deaths";
+SCORE_MISSED = "Missed";
+SCORE_TOTAL = "Total";
+SCORE_LVLTIME = "Map Time";
+
+// Titlemap Subtitles
+TITLEMAP0 = "Press ESC to Begin";
+TITLEMAP1 = "Press ESC to End All Productivity";
+TITLEMAP2 = "What the...? Creepy Bone!";
+TITLEMAP3 = "Press ESC to Die";
+TITLEMAP4 = "Abandon Hope, All Ye Who Enter";
+TITLEMAP5 = "Where the sanest place is behind a trigger.";
+TITLEMAP6 = "It's Green and Pissed!";
+TITLEMAP7 = "BFG Edition";
+TITLEMAP8 = "A thesis on Maneuverability as Defense.";
+TITLEMAP9 = "...until it is done.";
+TITLEMAP10 = "Snap those Maps!";
+TITLEMAP11 = "''...doesn't suck!'' - GM";
+TITLEMAP12 = "There's no Absolution here...";
+TITLEMAP13 = "pukename umpulse ...";
+TITLEMAP14 = "Lock, Load and Pray.";
+TITLEMAP15 = "Powered by V.I.O.S.!";
+TITLEMAP16 = "You know nothing of dying. Yet.";
+TITLEMAP17 = "3D Alien Busters!";
+TITLEMAP18 = "Go to Hell! Bring a friend.";
+TITLEMAP19 = "Get ready to toast some Demon Flesh!";
+TITLEMAP20 = "Let the obsession begin! Again!";
+TITLEMAP21 = "Because True Evil Never Dies.";
+
+// Ironman Death Subtitles
+IRONMANDEAD1 = "Hahaha!";
+IRONMANDEAD2 = "You shouldn't have done that.";
+IRONMANDEAD3 = "Try an easier level...";
+IRONMANDEAD4 = "Wow! Look at those Demon Feet.";
+IRONMANDEAD5 = "I play Doom and I can't get up!";
+IRONMANDEAD6 = "Ouch! That had to hurt.";
+IRONMANDEAD7 = "Look at me! I'm flat!";
+IRONMANDEAD8 = "Thanks for playing!";
+IRONMANDEAD9 = "You lazy @#$%!";
+IRONMANDEAD10 = "Have you had enough?";
+IRONMANDEAD11 = "The demons gave you the boot!";
+IRONMANDEAD12 = "The lead demon vanquished you!";
+IRONMANDEAD13 = "At least you play better than Kaiser!";
+IRONMANDEAD14 = "Back to HNTR with you...!";
+IRONMANDEAD15 = "You'll never impress Doomworld like that.";
+
+// End Messages that were previous allcaps/nocaps and fucked up
+E4TEXT =
+	"The Spider Mastermind must have sent forth\n"
+	"its legions of hellspawn before your\n"
+	"final confrontation with that terrible\n"
+	"beast from Hell.  But you stepped forward\n"
+	"and brought forth eternal damnation and\n"
+	"suffering upon the horde as a true hero\n"
+	"would in the face of something so evil.\n"
+	"\n"
+	"Besides, someone was gonna pay for what\n"
+	"happened to Daisy, your pet rabbit.\n"
+	"\n"
+	"But now, you see spread before you more\n"
+	"potential pain and gibbitude as a nation\n"
+	"of demons run amok among our cities.\n"
+	"\n"
+	"Next stop, Hell on Earth!";
+C1TEXT =
+	"You have entered deeply into the infested\n"
+	"starport. But something is wrong. The\n"
+	"monsters have brought their own reality\n"
+	"with them, and the starport's technology\n"
+	"is being subverted by their presence.\n"
+	"\n"
+	"Ahead, you see an outpost of Hell, a\n"
+	"fortified zone. If you can get past it,\n"
+	"you can penetrate into the haunted heart\n"
+	"of the starbase and find the controlling\n"
+	"switch which holds Earth's population\n"
+	"hostage.";
+C2TEXT =
+	"You have won! Your victory has enabled\n"
+	"humankind to evacuate earth and escape\n"
+	"the nightmare.  Now you are the only\n"
+	"human left on the face of the planet.\n"
+	"Cannibal mutations, carnivorous aliens,\n"
+	"and evil spirits are your only neighbors.\n"
+	"You sit back and wait for death, content\n"
+	"that you have saved your species.\n"
+	"\n"
+	"But then, Earth Control beams down a\n"
+	"message from space: \"Sensors have located\n"
+	"the source of the alien invasion. If you\n"
+	"go there, you may be able to block their\n"
+	"entry.  The alien base is in the heart of\n"
+	"your own home city, not far from the\n"
+	"starport.\" Slowly and painfully you get\n"
+	"up and return to the fray.";
+C3TEXT =
+	"You are at the corrupt heart of the city,\n"
+	"surrounded by the corpses of your enemies.\n"
+	"You see no way to destroy the creatures'\n"
+	"entryway on this side, so you clench your\n"
+	"teeth and plunge through it.\n"
+	"\n"
+	"There must be a way to close it on the\n"
+	"other side. What do you care if you've\n"
+	"got to go through Hell to get to it?";
+C4TEXT =
+	"The horrendous visage of the biggest\n"
+	"demon you've ever seen crumbles before\n"
+	"you, after you pump your rockets into\n"
+	"his exposed brain. The monster shrivels\n"
+	"up and dies, its thrashing limbs\n"
+	"devastating untold miles of Hell's\n"
+	"surface.\n"
+	"\n"
+	"You've done it. The invasion is over.\n"
+	"Earth is saved. Hell is a wreck. You\n"
+	"wonder where bad folks will go when they\n"
+	"die, now. Wiping the sweat from your\n"
+	"forehead you begin the long trek back\n"
+	"home. Rebuilding earth ought to be a\n"
+	"lot more fun than ruining it was.\n";
+C5TEXT =
+	"Congratulations, you've found the secret\n"
+	"level! Looks like it's been built by\n"
+	"humans, rather than demons. You wonder\n"
+	"who the inmates of this corner of Hell\n"
+	"will be.";
+C6TEXT =
+	"Congratulations, you've found the\n"
+	"super secret level!  You'd better\n"
+	"BLAZE through this one!\n";
+NERVETEXT =
+	"Trouble was brewing again in your favorite\n"
+	"vacation spot... Hell. Some Cyberdemon\n"
+	"punk thought he could turn Hell into a\n"
+	"personal amusement park, and make Earth\n"
+	"the ticket booth.\n"
+	"\n"
+	"Well that half-robot freak show didn't\n"
+	"know who was coming to the fair. There's\n"
+	"nothing like a shooting gallery full of\n"
+	"hellspawn to get the blood pumping...\n"
+	"\n"
+	"Now the walls of the demon's labyrinth\n"
+	"echo with the sound of his metallic limbs\n"
+	"hitting the floor. His death moan gurgles\n"
+	"out through the mess you left of his face.\n"
+	"\n"
+	"This ride is CLOSED.\n";

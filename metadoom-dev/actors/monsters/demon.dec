@@ -1,0 +1,104 @@
+ACTOR MetaDemon : MonsterCore
+{
+	Health 150
+	PainChance 180
+	Speed 10
+	Radius 30
+	Height 56
+	Mass 400
+	Monster
+	+FLOORCLIP
+	SeeSound "demon/sight"
+	AttackSound "demon/melee"
+	PainSound "demon/pain"
+	DeathSound "demon/death"
+	ActiveSound "demon/active"
+	Obituary "$OB_DEMONHIT"
+	painchance HolyWater, 255
+	States
+	{
+	Spawn:
+		SARG AB 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		SARG AABBCCDD 2 Fast A_Chase
+		Loop
+	Melee:
+		SARG EF 8 Fast A_FaceTarget
+		SARG G 8 Fast A_SargAttack
+		Goto See
+	Pain:
+		SARG H 0
+		SARG H 2 Fast
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		SARG H 2 Fast A_Pain
+		Goto See
+	Pain.HolyWater:
+		SARG H 3
+		SARG H 3 A_Pain
+		Goto Scurred
+	Punched:
+		SARG H 3 
+		SARG H 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		SARG H 12 A_Pain
+		Goto See
+	Scurred:
+		SARG A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		SARG A 0 Fast A_GiveInventory("ScurredCounter", 1)
+		SARG A 2 Fast A_Chase("", "")
+		SARG A 2 Fast A_Chase("", "")
+		SARG A 0 Fast A_SpawnItem("HolySweat",0,54)
+		SARG B 2 Fast A_Chase("", "")
+		SARG B 2 Fast A_Chase("", "")
+		SARG C 2 Fast A_Chase("", "")
+		SARG C 2 Fast A_Chase("", "")
+		SARG C 0 Fast A_SpawnItem("HolySweat",0,54)
+		SARG D 2 Fast A_Chase("", "")
+		SARG D 2 Fast A_Chase("", "")
+		SARG D 0 Fast A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		SARG D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Death:
+		SARG I 0 A_Jump (128, 2)
+		SARG I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		SARG I 8 A_GiveToTarget("ScoreItem", 200)
+		SARG J 8 A_Scream
+		SARG K 4
+		SARG L 4 A_NoBlocking
+		SARG M 4 A_PlaySound("bodyfalls/heavy")
+		SARG N -1
+		Stop
+	XDeath:
+		SARG I 5 A_GiveToTarget("ScoreItem", 200)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		SARG N 5 A_SetScale(1,1)
+		SARG MLKJI 5
+		Goto See
+	}
+}

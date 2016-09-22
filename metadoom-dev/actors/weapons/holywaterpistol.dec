@@ -1,0 +1,183 @@
+actor HolyWaterPistolEquipped : Boolean {}
+
+ACTOR HolyWater : Ammo
+{
+	Inventory.PickupMessage "Created some Holy Water."
+	Inventory.Amount 1
+	Inventory.MaxAmount 15
+	Ammo.BackpackAmount 5
+	Ammo.BackpackMaxAmount 15
+	Inventory.Icon "HWPAA0"
+	Inventory.PickupSound "weapons/waterpistol/ammo"
+	States
+	{
+	Spawn:
+		TNT1 A 8
+		Stop
+	}
+}
+
+ACTOR HolyWaterPistol : MetaDoomWeapon
+{
+	Weapon.SelectionOrder 1900
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 5
+	Weapon.AmmoType "HolyWater"
+	Obituary "$OB_HOLYWATER"
+	+WEAPON.WIMPY_WEAPON
+	Inventory.Pickupmessage "$GOTHWP"
+	Tag "$TAGHWP"
+	+WEAPON.AMMO_OPTIONAL
+	Inventory.PickupSound "weapons/waterpistol/get"
+	scale 0.5
+	States
+	{
+	Ready:
+		HWPH A 1 A_WeaponReady
+		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		Loop
+	Deselect:
+		HWPH A 1 A_TakeInventory("HolyWaterPistolEquipped",999)
+		HWPH A 0 A_JumpIf(health <= 0, "DeadDude")
+		HWPH A 1 Offset(0,33) A_PlaySound("weapons/swap")
+		HWPH A 1 Offset(0,35)
+		HWPH A 1 Offset(0,39)
+		HWPH A 1 Offset(0,44)
+		HWPH A 1 Offset(0,49)
+		HWPH A 1 Offset(0,55)
+		HWPH A 1 Offset(0,60)
+		HWPH A 1 Offset(0,70)
+		HWPH A 1 Offset(0,80)
+		HWPH A 1 Offset(0,90)
+	FinishDeselect:
+		HWPH A 0 A_Lower
+		Loop
+	Select:
+		HWPH A 1 Offset(0,90) A_PlaySound("weapons/waterpistol/empty")
+		HWPH A 1 Offset(0,80)
+		HWPH A 1 Offset(0,70)
+		HWPH A 1 Offset(0,60)
+		HWPH A 1 Offset(0,55)
+		HWPH A 1 Offset(0,49)
+		HWPH A 1 Offset(0,44)
+		HWPH A 1 Offset(0,39)
+		HWPH A 1 Offset(0,35)
+		HWPH A 1 Offset(0,33)
+		HWPH A 1 Offset(0,32) A_GiveInventory("HolyWaterPistolEquipped",1)
+		goto Ready
+	Fire:
+		HWPH A 4
+		HWPH A 0 A_JumpIfNoAmmo("NoAmmo")
+		HWPH A 0 A_PlaySound("weapons/waterpistol/fire", CHAN_WEAPON)
+		HWPH A 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 1, 0, 5, FPF_NOAUTOAIM, random(-4,4))
+		HWPH AAAAAAAAAA 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 0, 0, 5, FPF_NOAUTOAIM, random(-4,4))
+		HWPH BBBBBBBBBB 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 0, 0, 5, FPF_NOAUTOAIM, random(-4,4))
+		HWPH B 4
+		HWPH A 5 
+		Goto Ready
+	AltFire:
+		HWPH A 4
+		HWPH A 0 A_JumpIf(health >= 100, "NoAmmo")
+		HWPH A 0 A_JumpIf(CountInv("HolyWater") < 3, "NoAmmo")
+		HWPH A 1 
+		HWPH A 1 Offset(0,33) A_PlaySound("weapons/swap")
+		HWPH A 1 Offset(0,35)
+		HWPH A 1 Offset(0,39)
+		HWPH B 1 Offset(0,44)
+		HWPH B 1 Offset(0,49)
+		HWPH B 1 Offset(0,55)
+		HWPH B 1 Offset(0,60)
+		HWPH B 1 Offset(0,70)
+		HWPH B 1 Offset(0,80)
+		HWPH B 1 Offset(0,90)
+		TNT1 A 10
+		TNT1 A 0 A_TakeInventory("HolyWater", 3)
+		TNT1 A 0 A_PlaySound("weapons/waterpistol/heal", CHAN_WEAPON)
+		TNT1 A 0 A_GiveInventory("MetaStimpack",1)
+		TNT1 A 10
+		TNT1 A 0 A_JumpIf(CountInv("HolyWater") < 3, "Select")
+		TNT1 A 0 A_TakeInventory("HolyWater", 3)
+		TNT1 A 0 A_PlaySound("weapons/waterpistol/heal", CHAN_WEAPON)
+		TNT1 A 0 A_GiveInventory("MetaStimpack",1)
+		TNT1 A 10
+		goto Select
+	NoAmmo:
+		HWPH A 4 A_PlaySound("weapons/waterpistol/empty", CHAN_WEAPON)
+		HWPH B 4
+		HWPH A 4
+		goto Ready
+ 	Spawn:
+		HWPP A -1
+		Stop
+	}
+}
+
+ACTOR HolyWaterShot
+{
+  Speed 25
+  Height 8
+  Radius 8
+  Mass 1
+  Damage 1
+  Projectile
+  -NOGRAVITY
+  Obituary "%o was exorcised by %k."
+  scale 0.25
+  damagetype HolyWater
+  States
+  {
+  Spawn:
+    HWPW A 1 Bright
+    Loop
+  Crash:
+  Death:
+    TNT1 A 0
+    Stop
+  XDeath:
+    TNT1 A 0 A_SpawnItem("HolyWaterFire")
+    Stop
+  }
+}
+
+ACTOR HolyWaterFire
+{
+	+NOBLOCKMAP +NOGRAVITY
+	RenderStyle Add
+	Alpha 1
+	scale 0.3
+	States
+	{
+	Spawn:
+		FIRE A 0
+		FIRE A 0 A_PlaySound("kinsie/waterpistol/flare")
+		FIRE ABCDEH 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR HolySweat
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP 
+	+MISSILE 
+	+DROPOFF
+	+NOTELEPORT
+	+LOWGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	+DONTBLAST
+	alpha 0.75
+	States
+	{
+	Spawn:
+		SWET A 0
+		SWET A 0 ThrustThingZ(0,8,0,1)
+		SWET ABC 8
+		SWET D 16
+		Stop
+	Death:
+		TNT1 A 0
+		Stop
+	}
+}

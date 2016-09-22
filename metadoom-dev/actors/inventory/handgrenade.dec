@@ -1,0 +1,124 @@
+// Grenades
+actor HandGrenadePickup : CustomInventory
+{
+	inventory.pickupmessage "$GOTGRENADES"
+	Tag "$TAGGRENADES"
+	inventory.icon "INVGREN"
+	inventory.pickupsound "inventory/grenade/get"
+	+INVENTORY.ALWAYSPICKUP
+	scale 0.5
+	states
+	{
+	Spawn:
+		HGRE Z -1
+		stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("HandGrenade", 1)
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3)
+		stop
+	}
+}
+
+actor HandGrenade : CustomInventory
+{
+	inventory.pickupmessage "$GOTGRENADES"
+	Tag "$TAGGRENADES"
+	inventory.icon "INVGREN"
+	inventory.pickupsound "inventory/grenade/get"
+	inventory.amount 1
+	inventory.maxamount 1
+	+INVENTORY.INVBAR
+	scale 0.5
+	states
+	{
+	Spawn:
+		HGRE Z -1
+		stop
+	Use:
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
+		goto Failure
+	Fire:
+		TNT1 A 0 A_FireCustomMissile("HandGrenadeProj",0,0)
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)
+		fail
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid")
+		TNT1 A 0 A_Log("You don't have any grenades!")
+		fail
+	}
+}
+
+actor HandGrenadeProj
+{
+	+CANBOUNCEWATER
+	Radius 8
+	Height 8
+	Speed 15
+	Damage 0
+	PROJECTILE
+	+RANDOMIZE
+	-NOGRAVITY
+	+USEBOUNCESTATE
+	+ROLLSPRITE
+	BounceType "Doom"
+	SeeSound "inventory/throw"
+	BounceSound "inventory/grenade/bounce"
+	Obituary "$OB_MPGRENADE"
+	scale 0.5
+	ReactionTime 60	//Just over five seconds
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ThrustThingZ(0,32,0,1)
+		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
+		goto Flying
+	Flying:
+		HGRE ABCDEF 3 A_CountDown
+		loop
+	Bounce:
+		"####" # 0 A_Jump(128, "Bounce2", "Flying")
+		goto Bounce1
+	Bounce1:
+		"####" # 0 A_CountDown
+		"####" # 1 A_SetRoll((roll + 5))
+		"####" # 1 A_SetRoll((roll + 5))
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Bounce2:
+		"####" # 0 A_CountDown
+		"####" # 1 A_SetRoll((roll - 5))
+		"####" # 1 A_SetRoll((roll - 5))
+		"####" # 1 A_SetRoll((roll - 5))
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	}
+}
+
+ACTOR HandGrenadeExplosion : Explosion
+{
+	scale 1.5
+	States
+	{
+		Spawn:
+		EXPL A 0
+		EXPL A 2 BRIGHT
+		{
+			A_PlaySound("weapons/explosion", CHAN_WEAPON);
+			A_Explode(128,192);
+			A_Quake (3,10,0,750,0);
+			A_SpawnItem("Shockwave",0,0);
+			
+			if (z <= (floorz + 64))
+			{
+				A_SpawnItem("ExplosionScorchMark",0,0);
+			}
+		}
+		EXPL B 2 BRIGHT 
+		EXPL C 2 BRIGHT 
+		EXPL DEF 2
+		Stop
+	}
+}

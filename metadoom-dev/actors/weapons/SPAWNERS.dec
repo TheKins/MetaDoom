@@ -1,0 +1,154 @@
+// Yarrrrp
+
+actor ChainsawSpawner replaces Chainsaw
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(128,"Axe")
+		goto Chainsaw
+	Axe:
+		TNT1 A 0 A_SpawnItemEx("MetaAxe",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	Chainsaw:
+		TNT1 A 0 A_SpawnItemEx("MetaChainsaw",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor PistolSpawner replaces Pistol
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MetaPistol",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor ShotgunSpawner replaces Shotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "Shotgun")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_Shotgun", 0, 0, 0) == 1, "Shotgun")
+		TNT1 A 0 A_JumpIf(CallACS("Item_Shotgun", 0, 0, 0) == 2, "VarietyPack")
+		goto Shotgun
+	VarietyPack:
+		TNT1 A 0 A_JumpIf(CallACS("Item_GameDetector", 0, 0, 0) == 2, "Doom1VarietyPack")
+		TNT1 A 0 A_Jump(64,"HolyWaterPistol")
+		goto Shotgun
+	Doom1VarietyPack:
+		TNT1 A 0 A_Jump(64,"HolyWaterPistol", "SSG")
+		goto Shotgun
+	Shotgun:
+		TNT1 A 0 A_SpawnItemEx("MetaShotgun",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	SSG:
+		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	HolyWaterPistol:
+		TNT1 A 0 A_SpawnItemEx("HolyWaterPistol",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor SuperShotgunSpawner replaces SuperShotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "SuperShotgun")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_SuperShotgun", 0, 0, 0) == 1, "SuperShotgun")
+		TNT1 A 0 A_JumpIf(CallACS("Item_SuperShotgun", 0, 0, 0) == 2, "VarietyPack")
+		goto SuperShotgun
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(64,"FireExt")
+		goto SuperShotgun
+	FireExt:
+		TNT1 A 0 A_SpawnItemEx("MetaFireExtinguisher",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	SuperShotgun:
+		TNT1 A 0 A_SpawnItemEx("MetaSuperShotgun",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor ChaingunSpawner replaces Chaingun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "Machinegun")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_Machinegun", 0, 0, 0) == 1, "Machinegun")
+		TNT1 A 0 A_JumpIf(CallACS("Item_Machinegun", 0, 0, 0) == 2, "VarietyPack")
+		goto Machinegun
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(64,"Chaingun")
+		goto Machinegun
+	Machinegun:
+		TNT1 A 0 A_SpawnItemEx("MetaMachineGun",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	Chaingun:
+		TNT1 A 0 A_SpawnItemEx("MetaChaingun",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor RocketLauncherSpawner replaces RocketLauncher
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MetaRocketLauncher",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor PlasmaRifleSpawner replaces PlasmaRifle
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "PlasmaRifle")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_PlasmaRifle", 0, 0, 0) == 1, "PlasmaRifle")
+		TNT1 A 0 A_JumpIf(CallACS("Item_PlasmaRifle", 0, 0, 0) == 2, "VarietyPack")
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(64,"Gauss")
+		goto PlasmaRifle
+	Gauss:
+		TNT1 A 0 A_SpawnItemEx("MetaGaussCannon",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	PlasmaRifle:
+		TNT1 A 0 A_SpawnItemEx("MetaPlasmaRifle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor BFGSpawner replaces BFG9000
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MetaBFG9000",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}

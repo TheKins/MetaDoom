@@ -1,0 +1,12 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Index
+----------------------------
+*/
+
+// LOAD ME WITH ANCIENT ALIENS AT YOUR PERIL AND SHIT
+
+#include "actors/monsters/wolfss.dec"
+#include "actors/monsters/keen.dec"

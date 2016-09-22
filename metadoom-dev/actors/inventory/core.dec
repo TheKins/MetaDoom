@@ -1,0 +1,23 @@
+ACTOR GrenadeAmmo : Ammo
+{
+	Inventory.PickupMessage "$GOTROCKET"
+	Inventory.Amount 1
+	Inventory.MaxAmount 25
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 25
+	Inventory.Icon "ROCKA0"
+	States
+	{
+	Spawn:
+		ROCK A -1
+		Stop
+	}
+}
+
+// This is used to detect usage of the IDKFA cheat
+// and dole out inventory items as appopriate
+
+ACTOR MetaCheatDetector : MetaPistol
+{
+	Weapon.SelectionOrder 0
+}

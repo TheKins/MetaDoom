@@ -1,0 +1,17 @@
+# loose files of no real point since we post releases elsewhere
+*.lnk
+*.pk3
+*.pk7
+
+# folders with big bulky things that shouldn't go on git like psd files
+/artsrc/*
+/txtsrc/*
+/builds/*
+
+# gzdoom builder detritus
+/metadoom-dev/maps/*.dbs
+/metadoom-dev/maps/*.backup*
+
+# text files i use to write down everything i do. pointless to include when commit logs exist
+/metadoom-dev/diary.txt
+/metadoom-optional-dev/diary.txt

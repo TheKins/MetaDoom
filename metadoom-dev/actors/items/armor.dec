@@ -1,0 +1,75 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Armor Pickups
+----------------------------
+*/
+
+Actor MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
+{
+	Radius 20
+	Height 16
+	Inventory.Pickupmessage "$GOTARMBONUS"
+	Inventory.Icon "BON2A0"
+	Armor.Savepercent 33.335
+	Armor.Saveamount 1
+	Armor.Maxsaveamount 200
+	Inventory.PickupSound "items/armor/shard"
+	Scale 0.66
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SHRD A 0
+		SHRD A 0 A_SpawnItem("LootSpawner")
+	DoALoop:
+		SHRD A 6 BRIGHT
+		SHRD BCB 4
+		loop
+	}
+}
+
+Actor MetaGreenArmor : BasicArmorPickup replaces GreenArmor
+{
+	Radius 20
+	Height 16
+	Inventory.Pickupmessage "$GOTARMOR"
+	Inventory.Icon "GARMA0"
+	Inventory.PickupSound "items/armor/green"
+	Armor.SavePercent 33.335
+	Armor.SaveAmount 100
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		GARM A 6 bright
+		GARM BCB 4 
+		loop
+	}
+}
+
+Actor MetaBlueArmor : BasicArmorPickup replaces BlueArmor
+{
+	Radius 20
+	Height 16
+	Inventory.Pickupmessage "$GOTMEGA"
+	Inventory.Icon "BARMA0"
+	Inventory.PickupSound "items/armor/blue"
+	Armor.Savepercent 50
+	Armor.Saveamount 200
+	Scale 0.66
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		BARM A 6 bright
+		BARM BCB 4 
+		loop
+	}
+}

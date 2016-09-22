@@ -1,0 +1,84 @@
+ACTOR MetaSpiderMastermind : MonsterCore
+{
+	Health 3000
+	Radius 128
+	Height 100
+	Mass 1000
+	Speed 12
+	PainChance 40
+	Monster
+	MinMissileChance 160
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	//+BOSSDEATH
+	SeeSound "spider/sight"
+	AttackSound "spider/attack"
+	PainSound "spider/pain"
+	DeathSound "spider/death"
+	ActiveSound "spider/active"
+	Obituary "$OB_SPIDER"
+	damagefactor ChaingunTurret, 0.2
+	painchance ChaingunTurret, 0
+	States
+	{
+	Spawn:
+		SPID A 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		SPID A 3 A_Metal
+		SPID ABB 3 A_Chase
+		SPID C 3 A_Metal
+		SPID CDD 3 A_Chase
+		SPID E 3 A_Metal
+		SPID EFF 3 A_Chase
+		Loop
+	Missile:
+		SPID A 20 BRIGHT A_FaceTarget  
+		SPID G 4 BRIGHT 
+		{
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer");
+			A_PlaySound("shotguy/attack");
+		}
+		SPID H 4 BRIGHT 
+		{
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer");
+			A_PlaySound("shotguy/attack");
+		}
+		SPID H 1 BRIGHT A_SpidRefire
+		Goto Missile+1
+	Pain.Axe:
+	Pain.Fist:
+	Pain.BerserkFist:
+	Pain:
+		SPID I 3
+		SPID I 3 A_Pain
+		Goto See
+	Death:
+		SPID J 0 A_GiveToTarget("ScoreItem", 10000)
+		SPID J 20 A_Scream
+		SPID K 10 A_NoBlocking
+		SPID LMNOPQR 10
+		SPID S 30
+		SPID S -1 A_KillMaster //A_BossDeath
+		Stop
+	}
+}

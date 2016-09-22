@@ -1,0 +1,16 @@
+// developer barf
+server int meta_developer = 0;
+
+// spawn control
+server int meta_noalts_weapons = 0;
+server int meta_noalts_actors = 0;
+server int meta_mapbreakers = 1;
+server int meta_contentlocust = 0;
+
+// tyson support
+server int meta_retroberserk = 0;
+
+// performance
+server int meta_perf_fadeblood = 0;
+server int meta_perf_bloodcullradius = 4;
+server int meta_perf_bloodtime = 6666;

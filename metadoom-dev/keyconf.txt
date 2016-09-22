@@ -1,0 +1,5 @@
+addkeysection "MetaDoomery" MetaDoomActions
+
+addmenukey "Melee Attack" metadoom_melee
+alias metadoom_melee "pukename MeleePunch"
+defaultbind F metadoom_melee

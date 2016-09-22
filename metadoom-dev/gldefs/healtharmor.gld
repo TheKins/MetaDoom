@@ -1,0 +1,66 @@
+pulselight ARMORCRUMB
+{
+    color 0.0 0.6 0.0
+    size 9
+    secondarySize 11
+    interval 1
+}
+
+object MetaArmorBonus
+{
+    frame SHRD { light ARMORCRUMB }
+}
+
+pulselight ARMORGREEN
+{
+    color 0.0 0.6 0.0
+    size 32
+    secondarySize 24
+    interval 1
+}
+
+object MetaGreenArmor
+{
+    frame GARM { light ARMORGREEN }
+}
+
+pulselight ARMORBLUE
+{
+    color 0.0 0.0 0.6
+    size 32
+    secondarySize 24
+    interval 1
+}
+
+object MetaBlueArmor
+{
+    frame BARM { light ARMORBLUE }
+}
+
+pulselight HEALTHCRUMB
+{
+    color 0.0 0.0 1.0
+    size 9
+    secondarySize 11
+    interval 1
+}
+
+object MetaHealthBonus
+{
+    frame BON1 { light HEALTHCRUMB }
+}
+
+object MetaHealthPinata
+{
+    frame PINH { light HEALTHCRUMB }
+}
+
+object MetaStimpack
+{
+    frame STIM { light HEALTHCRUMB }
+}
+
+object MetaMedikit
+{
+    frame MEDI { light ARMORBLUE }
+}

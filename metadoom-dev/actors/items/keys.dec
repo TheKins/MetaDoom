@@ -1,0 +1,129 @@
+// "Borrowed" from Samsara.
+
+actor RedCard2 : CustomInventory replaces RedCard
+{
+    inventory.pickupmessage "$GOTREDCARD" // "Picked up a red keycard."
+    //inventory.icon "STKEYS2"
+    inventory.pickupsound "items/keycard"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+    States
+    {
+      Spawn:
+        RKEY A 10
+        RKEY B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("RedCard")
+        stop
+    }
+}
+
+actor YellowCard2 : CustomInventory replaces YellowCard
+{
+    inventory.pickupmessage "$GOTYELWCARD"
+    inventory.pickupsound "items/keycard"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+    States
+    {
+      Spawn:
+        YKEY A 10
+        YKEY B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("YellowCard")
+        stop
+    }
+}
+
+actor BlueCard2 : CustomInventory replaces BlueCard
+{
+    inventory.pickupmessage "$GOTBLUECARD"
+    inventory.pickupsound "items/keycard"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+    States
+    {
+      Spawn:
+        BKEY A 10
+        BKEY B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("BlueCard")
+        stop
+    }
+}
+
+actor RedSkull2: CustomInventory replaces RedSkull
+{
+    inventory.pickupmessage "$GOTREDSKUL"
+    inventory.pickupsound "items/keyskull"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+
+    States
+    {
+      Spawn:
+        RSKU A 10
+        RSKU B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("RedSkull")
+        stop
+    }
+}
+
+actor YellowSkull2: CustomInventory replaces YellowSkull
+{
+    inventory.pickupmessage "$GOTYELWSKUL"
+    inventory.pickupsound "items/keyskull"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+    States
+    {
+      Spawn:
+        YSKU A 10
+        YSKU B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("YellowSkull")
+        stop
+    }
+}
+
+actor BlueSkull2: CustomInventory replaces BlueSkull
+{
+    inventory.pickupmessage "$GOTBLUESKUL"
+    inventory.pickupsound "items/keyskull"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+    +NOTDMATCH
+    +DONTGIB
+    States
+    {
+      Spawn:
+        BSKU A 10
+        BSKU B 10 bright
+        loop
+
+      Pickup:
+        TNT1 A 1 A_GiveInventory("BlueSkull")
+        stop
+    }
+}

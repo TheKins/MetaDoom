@@ -1,0 +1,121 @@
+pointlight MetaPistolGlow
+{
+    color 0.4 0.5 1.0
+    size 16
+}
+
+pointlight MetaPistolGlowSmall
+{
+    color 0.4 0.5 1.0
+    size 8
+}
+
+object PistolTracer
+{
+    frame PLSE { light MetaPistolGlow }
+}
+
+object PistolTracerTrail
+{
+    frame PLSE { light MetaPistolGlowSmall }
+}
+
+object PistolTracerSpark
+{
+    frame PLSE { light MetaPistolGlowSmall }
+}
+
+pointlight MetaRocketGlow
+{              
+	color 1.0 0.7 0.0
+	size 50
+}
+
+Object MetaLauncherRocket
+{
+	frame MISL { light MetaRocketGlow }
+}
+
+pulselight MetaExplosion
+{
+    color 1.0 0.7 0.0
+    size 48
+    secondarySize 0
+    interval 2
+} 
+
+pulselight MetaExplosionSmall
+{
+    color 1.0 0.7 0.0
+    size 24
+    secondarySize 0
+    interval 2
+} 
+
+Object Explosion
+{
+	frame EXPL { light MetaExplosion }
+}
+
+Object ShotgunGrenadeExplosion
+{
+	frame EXPL { light MetaExplosionSmall }
+}
+
+Object MicroRocketExplosion
+{
+	frame EXPL { light MetaExplosionSmall }
+}
+
+Object HandGrenadeExplosion
+{
+	frame EXPL { light MetaExplosion }
+}
+
+pointlight MetaPlasmaBall
+{
+    color 0.0 0.1 1.0
+    size 48
+}
+
+pulselight MetaPlasmaBallExplosion
+{
+    color 0.0 0.1 1.0
+    size 64
+    secondarySize 0
+    interval 0.5
+} 
+
+object MetaPlasmaBall
+{
+    frame PLSS { light MetaPlasmaBall }
+    frame PLSE { light MetaPlasmaBallExplosion }
+}
+
+flickerlight MetaBFGBall
+{
+    color 0.2 1.0 0.2
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+pulselight MetaBFGBallExplosion
+{
+    color 0.2 1.0 0.2
+    size 80
+    secondarySize 0
+    interval 0.75
+} 
+
+object MetaBFGBall
+{
+    frame BFS1 { light MetaBFGBall }
+	
+    frame BFE1A { light BFGBALL_X1 }
+    frame BFE1B { light BFGBALL_X2 }
+    frame BFE1C { light BFGBALL_X3 }
+    frame BFE1D { light BFGBALL_X1 }
+    frame BFE1E { light BFGBALL_X4 }
+    frame BFE1F { light BFGBALL_X5 }
+}

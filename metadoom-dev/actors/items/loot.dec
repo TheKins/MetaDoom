@@ -1,0 +1,129 @@
+// pointless but fun - score items
+
+actor LootSpawner
+{
+	radius 64
+	height 32
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(64, "Loot1", "Loot2", "Loot6")
+		TNT1 A 0 A_Jump(32, "Loot3", "Loot4", "Loot5")
+		stop
+	Loot1:
+		TNT1 A 0 A_SpawnItemEx("LootDagger",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot2:
+		TNT1 A 0 A_SpawnItemEx("LootChest",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot3:
+		TNT1 A 0 A_SpawnItemEx("LootSceptre",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot4:
+		TNT1 A 0 A_SpawnItemEx("LootBible",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot5:
+		TNT1 A 0 A_SpawnItemEx("LootCrown",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot6:
+		TNT1 A 0 A_SpawnItemEx("LootGoblet",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	}
+}
+
+Actor LootGoblet : ScoreItem
+{
+	Inventory.Amount 500
+	Inventory.PickupMessage "$GOTLOOT6"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT F 6
+		Loop
+	}
+}
+
+Actor LootDagger : ScoreItem
+{
+	Inventory.Amount 500
+	Inventory.PickupMessage "$GOTLOOT1"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT A 6
+		Loop
+	}
+}
+
+Actor LootChest : ScoreItem
+{
+	Inventory.Amount 1000
+	Inventory.PickupMessage "$GOTLOOT2"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT B 6
+		Loop
+	}
+}
+
+Actor LootSceptre : ScoreItem
+{
+	Inventory.Amount 1500
+	Inventory.PickupMessage "$GOTLOOT3"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT C 6
+		Loop
+	}
+}
+
+Actor LootBible : ScoreItem
+{
+	Inventory.Amount 2000
+	Inventory.PickupMessage "$GOTLOOT4"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT D 6
+		Loop
+	}
+}
+
+Actor LootCrown : ScoreItem
+{
+	Inventory.Amount 2500
+	Inventory.PickupMessage "$GOTLOOT5"
+	inventory.pickupsound "items/loot"
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT E 6
+		Loop
+	}
+}

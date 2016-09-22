@@ -1,0 +1,202 @@
+// Radsuit
+ACTOR MetaRadSuit : PowerupGiver replaces RadSuit
+{
+	Height 46
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$GOTSUIT"
+	Powerup.Type IronFeet
+	Inventory.PickupSound "powerups/radsuit"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright
+		Stop
+	}
+}
+
+// Berserk
+ACTOR MetaBerserk : CustomInventory replaces Berserk
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "$GOTBERSERK"
+	Inventory.PickupSound "powerups/berserk"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		PSTR A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIf(GetCvar("meta_retroberserk") == 1, "ClassicPickup")
+		TNT1 A 0 A_TakeInventory("PowerWeaponLevel2", 999)
+		TNT1 A 0 A_GiveInventory("MetaBerserkTimer")
+		TNT1 A 0 A_GiveInventory("MetaBerserkFist")
+		TNT1 A 0 HealThing(100, 0)
+		TNT1 A 0 A_SelectWeapon("MetaBerserkFist")
+		Stop
+	ClassicPickup:
+		TNT1 A 0 A_GiveInventory("PowerStrength")
+		TNT1 A 0 A_GiveInventory("MetaBerserkFist")
+		TNT1 A 0 HealThing(100, 0)
+		TNT1 A 0 A_SelectWeapon("MetaBerserkFist")
+		Stop
+	}
+}
+
+ACTOR MetaBerserkTimer : PowerupGiver
+{
+	+INVENTORY.AUTOACTIVATE
+	Powerup.Type WeaponLevel2
+	Powerup.Duration -60
+	Powerup.Color 255, 0, 0, 0.3
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright
+		Stop
+	}
+}
+
+// LightAmp
+ACTOR MetaLightAmp : PowerupGiver replaces Infrared
+{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Powerup.Type LightAmp
+	Inventory.PickupMessage "$GOTVISOR"
+	Inventory.PickupSound "items/lightamp"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		PVIS A 6 Bright
+		PVIS B 6
+		Loop
+	}
+}
+
+// Haste
+ACTOR MetaHasteSphere : PowerupGiver replaces BlurSphere
+{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	+FLOATBOB
+	Inventory.MaxAmount 0
+	Powerup.Type Speed
+	Speed 1.5
+	scale 0.75
+	RenderStyle Translucent
+	Inventory.PickupMessage "$GOTHASTE"
+	Inventory.PickupSound "powerups/haste"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		HAST ABCD 2 Bright
+		Loop
+	}
+}
+
+// Invuln
+ACTOR MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
+{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	+FLOATBOB
+	scale 0.75
+	Inventory.MaxAmount 0
+	Powerup.Type Invulnerable
+	//Powerup.Color InverseMap
+	Powerup.Color 0, 0, 255, 0.3 //1.0, 1.0, 0.3
+	Inventory.PickupMessage "$GOTINVUL"
+	Inventory.PickupSound "powerups/invuln"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		PINV ABCDCB 6 Bright
+		Loop
+	}
+}
+
+// Soulsphere
+
+ACTOR MetaSoulsphere : Health replaces Soulsphere
+{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.FANCYPICKUPSOUND
+	+FLOATBOB
+	scale 0.75
+	Inventory.Amount 100
+	Inventory.MaxAmount 200
+	Inventory.PickupMessage "$GOTSUPER"
+	Inventory.PickupSound "items/soulsphere"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright
+		Loop
+	}
+}
+
+ACTOR MetaMegasphere : CustomInventory replaces Megasphere
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	+FLOATBOB
+	scale 0.75
+	Inventory.PickupMessage "$GOTMSPHERE"
+	Inventory.PickupSound "items/megasphere"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	States
+	{
+	Spawn:
+		MEGA ABCD 6 BRIGHT
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere", 1)
+		TNT1 A 0 A_GiveInventory("MegasphereHealth", 1)
+		Stop
+	}
+}	
+
+ACTOR MetaAllmap : MapRevealer replaces Allmap
+{
+	+COUNTITEM
+	+INVENTORY.FANCYPICKUPSOUND
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Inventory.PickupSound "items/automap"
+	Inventory.PickupMessage "$GOTMAP"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	States
+	{
+	Spawn:
+		PMAP ABCDCB 3 Bright
+		Loop
+	}
+}
