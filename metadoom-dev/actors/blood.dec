@@ -510,9 +510,9 @@ Actor BloodSplat
 			user_z = z;
 			
 			//Ordinary splat?
-			if (CheckClass("BloodSplatMod",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatGreenMod",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatBlueMod",AAPTR_DEFAULT))
+			if (CheckClass("BloodSplat",AAPTR_DEFAULT) ||
+				CheckClass("BloodSplatGreen",AAPTR_DEFAULT) ||
+				CheckClass("BloodSplatBlue",AAPTR_DEFAULT))
 			{
 				if (user_water == 3)	{ return state("W"); }
 				if (user_water == 2)	{ return state("X"); }
