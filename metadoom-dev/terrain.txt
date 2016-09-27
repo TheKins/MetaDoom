@@ -174,4 +174,7 @@ floor CSLIME01 Slime
 floor CSLIME02 Slime
 floor CSLIME03 Slime
 floor CSLIME04 Slime
+
+// BTSX Shit
+floor FWATER02 Water
 endif

@@ -100,9 +100,11 @@ Script "TakeWater" ENTER
 		if (CheckActorFloorTexture(0, "BLOOD2")) ACS_NamedExecute("GimmeWater",0);
 		if (CheckActorFloorTexture(0, "BLOOD3")) ACS_NamedExecute("GimmeWater",0);
 		// PSX Doom
-		else if (CheckActorFloorTexture(0, "WATER01")) ACS_NamedExecute("GimmeWater",0);
-		else if (CheckActorFloorTexture(0, "BSLIME01")) ACS_NamedExecute("GimmeWater",0);
-		else if (CheckActorFloorTexture(0, "CSLIME01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "WATER01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "BSLIME01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "CSLIME01")) ACS_NamedExecute("GimmeWater",0);
+		// BTSX
+		if (CheckActorFloorTexture(0, "FWATER02")) ACS_NamedExecute("GimmeWater",0);
 	}
 	
 	if (CheckInventory("HolyWaterPistol") && GetActorProperty (0, APROP_Waterlevel) >= 2 && CheckInventory("HolyWater") < 15)
@@ -181,6 +183,8 @@ Script "BloodFX_Water" ENTER
 		else if (CheckActorFloorTexture(0, "WATER01")) SetResultValue(2);
 		else if (CheckActorFloorTexture(0, "BSLIME01")) SetResultValue(2);
 		else if (CheckActorFloorTexture(0, "CSLIME01")) SetResultValue(2);
+		// BTSX
+		else if (CheckActorFloorTexture(0, "FWATER02")) SetResultValue(2);
 		else SetResultValue(1);
 }
 

@@ -30,6 +30,8 @@ warp2 flat BSPLX0
 warp flat BSPLY0
 warp2 flat BSPLZ0
 
+warp2 flat FWATER02
+
 flat FWATER1
     pic 1 tics 1
     pic 1 tics 1
