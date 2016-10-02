@@ -59,6 +59,7 @@ ACTOR MetaScriptedMarine : MonsterCore replaces ScriptedMarine
 ACTOR MetaMarineFist : MetaScriptedMarine replaces MarineFist
 {
 	Obituary "$OB_MARINE_FIST"
+	DropItem "ArmorBonus"
 	States
 	{
 	Spawn:
@@ -80,6 +81,7 @@ ACTOR MetaMarineFist : MetaScriptedMarine replaces MarineFist
 ACTOR MetaMarineBerserk : MetaMarineFist replaces MarineBerserk
 {
 	Obituary "$OB_MARINE_BERSERK"
+	DropItem "ArmorBonus"
 	States
 	{
 	Spawn:
@@ -99,6 +101,8 @@ ACTOR MetaMarineBerserk : MetaMarineFist replaces MarineBerserk
 ACTOR MetaMarineChainsaw : MetaScriptedMarine replaces MarineChainsaw
 {
 	Obituary "$OB_MARINE_SAW"
+	DropItem "ArmorBonus", 255
+	DropItem "MetaChainsaw", 32
 	States
 	{
 	Spawn:
@@ -123,6 +127,7 @@ ACTOR MetaMarineChainsaw : MetaScriptedMarine replaces MarineChainsaw
 ACTOR MetaMarinePistol : MetaScriptedMarine replaces MarinePistol
 {
 	Obituary "$OB_MARINE_PISTOL"
+	DropItem "Clip"
 	States
 	{
 	Spawn:
@@ -146,6 +151,8 @@ ACTOR MetaMarinePistol : MetaScriptedMarine replaces MarinePistol
 ACTOR MetaMarineShotgun : MetaScriptedMarine replaces MarineShotgun
 {
 	Obituary "$OB_MARINE_SHOTGUN"
+	DropItem "Shell", 255
+	DropItem "MetaShotgun", 32
 	States
 	{
 	Spawn:
@@ -175,6 +182,8 @@ ACTOR MetaMarineShotgun : MetaScriptedMarine replaces MarineShotgun
 ACTOR MetaMarineSSG : MetaScriptedMarine replaces MarineSSG
 {
 	Obituary "$OB_MARINE_SSG"
+	DropItem "Shell", 255
+	DropItem "MetaSuperShotgun", 32
 	States
 	{
 	Spawn:
@@ -209,6 +218,8 @@ ACTOR MetaMarineSSG : MetaScriptedMarine replaces MarineSSG
 ACTOR MetaMarineChaingun : MetaScriptedMarine replaces MarineChaingun
 {
 	Obituary "$OB_MARINE_MACHINEGUN"
+	DropItem "Clip", 255
+	DropItem "MetaMachineGun", 32
 	States
 	{
 	Spawn:
@@ -232,6 +243,8 @@ ACTOR MetaMarineChaingun : MetaScriptedMarine replaces MarineChaingun
 ACTOR MetaMarineRocket : MetaScriptedMarine replaces MarineRocket
 {
 	Obituary "$OB_MARINE_ROCKET"
+	DropItem "RocketAmmo", 255
+	DropItem "MetaRocketLauncher", 32
 	States
 	{
 	Spawn:
@@ -255,6 +268,8 @@ ACTOR MetaMarineRocket : MetaScriptedMarine replaces MarineRocket
 ACTOR MetaMarinePlasma : MetaScriptedMarine replaces MarinePlasma
 {
 	Obituary "$OB_MARINE_PLASMA"
+	DropItem "Cell", 255
+	DropItem "MetaPlasmaRifle", 32
 	States
 	{
 	Spawn:
@@ -278,6 +293,8 @@ ACTOR MetaMarinePlasma : MetaScriptedMarine replaces MarinePlasma
 ACTOR MetaMarineRailgun : MetaScriptedMarine replaces MarineRailgun
 {
 	Obituary "$OB_MARINE_GAUSS"
+	DropItem "Cell", 255
+	DropItem "MetaGaussCannon", 32
 	States
 	{
 	Spawn:
@@ -302,6 +319,8 @@ ACTOR MetaMarineRailgun : MetaScriptedMarine replaces MarineRailgun
 ACTOR MetaMarineBFG : MetaScriptedMarine replaces MarineBFG
 {
 	Obituary "$OB_MARINE_BFG"
+	DropItem "BFGAmmo", 255
+	DropItem "MetaBFG9000", 32
 	States
 	{
 	Spawn:
