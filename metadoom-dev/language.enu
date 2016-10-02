@@ -223,7 +223,7 @@ OB_WOLFTNO = "%o fell to some kind of freaky ManMachine.";
 
 OB_MARINE = "%o was killed by a Space Marine.";
 OB_MARINE_FIST = "%o was punched in the face by a Space Marine.";
-OB_MARINE_BERSERK = "%o ate the Berserker Rage of %k.";
+OB_MARINE_BERSERK = "%o ate the Berserker Rage of a Space Marine.";
 OB_MARINE_SAW = "%o was impaled by a Space Marine's Chainsaw.";
 OB_MARINE_PISTOL = "%o was popped by a Space Marine's EKG Sidearm.";
 OB_MARINE_SHOTGUN = "%o was peppered by a Space Marine's Shotgun.";
