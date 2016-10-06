@@ -149,7 +149,7 @@ actor PinkySpawner replaces Demon
 		TNT1 A 0
 		TNT1 A 0 A_JumpIfInventory("PossessedRadar", 1, "DogsWeighted")
 	DogsUnweighted:
-		TNT1 A 0 A_Log("Demon Bias!")
+		TNT1 A 0 //A_Log("Demon Bias!")
 		TNT1 A 0 A_Jump(64, "LotsofDogs")
 		goto Pinky
 	DogsWeighted:
