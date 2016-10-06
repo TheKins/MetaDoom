@@ -1,3 +1,20 @@
+v1.2 "Slayer" (06/10/16)
+========================
+Development has been fairly slow recently, but there have been some important
+and not so important changes that necessitate a proper release.
+
+- Fixed missing change from Bloodsplat rewrite implementation, oops
+- Pinky spawners are now less likely to spawn dogs unless within 512 units
+  of a Possessed spawner
+- Cleaned up and removed old TEXTURES-based SSG assets from before Shivers
+  made it less painful to witness
+- Monster spawners now pass on TID (thx Yholl!)
+- Added support for Back to Saturn X to the Water Pistol
+- Fixed an obit for Berserk ZDoom Marines (Thanks Techokami!)
+- ZDoom Marines now drop stuff when killed (Thanks Techokami!)
+- Fixed gibs and debris telefragging Voodoo Dolls, rendering TNT MAP30
+  extremely difficult to complete
+
 v.1.1 "Slayer" (22/09/16)
 =========================
 Some quick, but vital bug-fixes for issues raised after 1.0 was launched.
