@@ -61,11 +61,11 @@ ACTOR MetaBaronOfHell : MonsterCore
 		BARO K 1 A_JumpIf(momz == 0, "JumpAttackLanding")
 		wait
 	JumpAttackLanding:
+		BARO L 0 A_Quake (3,10,0,2048,0)
 		BARO L 15
 		{
 			A_Stop;
 			A_PlaySound("monsters/hellknight/land");
-			A_Quake (3,10,0,2048,0);
 			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
 			A_SpawnItem("BaronShockwave",1,1);
 			A_CustomMissile("BaronSpikeStrip",1,0,0,CMF_AIMDIRECTION, 0);
@@ -152,11 +152,11 @@ ACTOR MetaHellKnight : MonsterCore
 		HNGT K 1 A_JumpIf(momz == 0, "JumpAttackLanding")
 		wait
 	JumpAttackLanding:
+		HNGT L 0 A_Quake (3,10,0,750,0)
 		HNGT L 15
 		{
 			A_Stop;
 			A_PlaySound("monsters/hellknight/land");
-			A_Quake (3,10,0,750,0);
 			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
 			A_SpawnItem("HellKnightShockwave",1,1);
 		}
