@@ -47,6 +47,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		
 	Missile:
 		CYBR E 0 
+		CYBR E 0 //A_Jump(256, "MissileCharge")
 		CYBR E 0 A_Jump(64, "MissileWalking", "MissileCharge")
 		goto MissileStanding
 		
