@@ -72,11 +72,11 @@ ACTOR MetaCyberdemon : MonsterCore
 	MissileWalking:
 		CYBR F 12 A_FaceTarget
 		CYBF A 0 A_Quake (3,4,0,750,0)
-		CYBF A 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); }
-		CYBF ABBCC 3 A_Chase("","")
+		CYBF A 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
+		CYBF ABBCC 3 { A_Chase("",""); A_FaceTarget; }
 		CYBF D 0 A_Quake (3,4,0,750,0)
-		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk"); }
-		CYBF D 3 A_Chase("","")
+		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk");  A_FaceTarget; }
+		CYBF D 3 { A_Chase("",""); A_FaceTarget; }
 		CYBF E 3 BRIGHT
 		{
 			A_FaceTarget;
@@ -84,11 +84,11 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_CustomMissile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
 		}
-		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); }
-		CYBF BBCC 3 A_Chase("","")
+		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
+		CYBF BBCC 3 { A_Chase("",""); A_FaceTarget; }
 		CYBF D 0 A_Quake (3,4,0,750,0)
-		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk"); }
-		CYBF D 3 A_Chase("","")
+		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk"); A_FaceTarget; }
+		CYBF D 3 { A_Chase("",""); A_FaceTarget; }
 		CYBF E 3 BRIGHT
 		{
 			A_FaceTarget;
@@ -96,18 +96,18 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_CustomMissile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
 		}
-		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); }
-		CYBF BBCC 3 A_Chase("","")
+		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
+		CYBF BBCC 3 { A_Chase("",""); A_FaceTarget; }
 		CYBF D 0 A_Quake (3,4,0,750,0)
-		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk"); }
-		CYBF D 3 A_Chase("","")
+		CYBF D 3 { A_Chase("",""); A_PlaySound("spider/walk"); A_FaceTarget; }
+		CYBF D 3 { A_Chase("",""); A_FaceTarget; }
 		CYBR E 12 BRIGHT
 		{
 			A_FaceTarget;
 			A_CustomMissile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
 		}
-		CYBR F 6
+		CYBR F 6 A_FaceTarget
 		Goto See
 		
 	Pain.Axe:
