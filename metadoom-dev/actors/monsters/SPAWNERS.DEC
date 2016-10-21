@@ -172,6 +172,17 @@ actor PinkySpawner replaces Demon
 	}
 }
 
+actor DogSpawner : PinkySpawner replaces MBFHelperDog
+{
+	States
+	{
+	Spawn:
+		DOGS A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "Hellhound")
+		goto LotsOfDogs
+	}
+}
+
 actor SpectreSpawner replaces Spectre
 {
 	+ISMONSTER
