@@ -14,10 +14,10 @@ ACTOR MetaCyberdemon : MonsterCore
 	+NORADIUSDMG
 	+DONTMORPH
 	//+BOSSDEATH
-	SeeSound "cyber/sight"
-	PainSound "cyber/pain"
-	DeathSound "cyber/death"
-	ActiveSound "cyber/active"
+	SeeSound "monsters/cyberdemon/see"
+	PainSound "monsters/cyberdemon/pain"
+	DeathSound "monsters/cyberdemon/die1"
+	ActiveSound "monsters/cyberdemon/idle"
 	Obituary "$OB_CYBORG"
 	damagefactor ChaingunTurret, 0.2
 	painchance ChaingunTurret, 0
@@ -38,9 +38,11 @@ ACTOR MetaCyberdemon : MonsterCore
 				A_PlaySound("monsters/bleed", CHAN_5);
 			}
 		}
-		CYBR A 3 A_Hoof
+		CYBR A 0 A_Quake (3,4,0,750,0)
+		CYBR A 3 { A_Chase; A_PlaySound("monsters/cyberdemon/hoof"); }
 		CYBR ABBCC 3 A_Chase
-		CYBR D 3 A_Metal
+		CYBR D 0 A_Quake (3,4,0,750,0)
+		CYBR D 3 { A_Chase; A_PlaySound("spider/walk"); }
 		CYBR D 3 A_Chase
 		Loop
 	Missile:
