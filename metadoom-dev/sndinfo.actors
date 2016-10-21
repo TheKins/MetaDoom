@@ -235,3 +235,21 @@ monsters/baron/die		barndie
 $random monsters/baron/idle { monsters/baron/idle1 monsters/baron/idle2 }
 monsters/baron/idle1	barnidl1
 monsters/baron/idle2	barnidl2
+
+// Cyberdemon!
+monsters/cyberdemon/see			cybrsee
+monsters/cyberdemon/pain		cybrpain
+monsters/cyberdemon/die1		cybrdie1
+monsters/cyberdemon/die2		cybrdie2
+
+$random monsters/cyberdemon/idle		{ monsters/cyberdemon/idle1 monsters/cyberdemon/idle2 monsters/cyberdemon/idle3 monsters/cyberdemon/idle4 }
+monsters/cyberdemon/idle1		cybridl1
+monsters/cyberdemon/idle2		cybridl2
+monsters/cyberdemon/idle3		cybridl3
+monsters/cyberdemon/idle4		cybridl4
+
+$random monsters/cyberdemon/hoof 		{ monsters/cyberdemon/hoof1 monsters/cyberdemon/hoof2 monsters/cyberdemon/hoof3 monsters/cyberdemon/hoof4 }
+monsters/cyberdemon/hoof1		dshoof1
+monsters/cyberdemon/hoof2		dshoof2
+monsters/cyberdemon/hoof3		dshoof3
+monsters/cyberdemon/hoof4		dshoof4
