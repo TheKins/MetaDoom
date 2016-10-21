@@ -70,6 +70,8 @@ ACTOR MetaCyberdemon : MonsterCore
 		}
 		Goto See
 	MissileWalking:
+		CYBR F 0
+		CYBR F 0 A_PlaySound("monsters/cyberdemon/switch")
 		CYBR F 12 A_FaceTarget
 		CYBF A 0 A_Quake (3,4,0,750,0)
 		CYBF A 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
