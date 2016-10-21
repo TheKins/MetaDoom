@@ -54,19 +54,19 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR E 12 BRIGHT
 		{
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 12 A_FaceTarget
 		CYBR E 12 BRIGHT
 		{
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 12 A_FaceTarget
 		CYBR E 12 BRIGHT
 		{
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		Goto See
 	MissileWalking:
@@ -84,7 +84,7 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_FaceTarget;
 			A_Chase("","");
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
 		CYBF BBCC 3 { A_Chase("",""); A_FaceTarget; }
@@ -96,7 +96,7 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_FaceTarget;
 			A_Chase("","");
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
 		CYBF BBCC 3 { A_Chase("",""); A_FaceTarget; }
@@ -107,7 +107,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		{
 			A_FaceTarget;
 			A_CustomMissile("CyberdemonRocket", 48, -16);
-			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
+			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 6 A_FaceTarget
 		Goto See

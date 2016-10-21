@@ -254,3 +254,7 @@ monsters/cyberdemon/hoof1		dshoof1
 monsters/cyberdemon/hoof2		dshoof2
 monsters/cyberdemon/hoof3		dshoof3
 monsters/cyberdemon/hoof4		dshoof4
+
+$random monsters/cyberdemon/fire		{ monsters/cyberdemon/fire1 monsters/cyberdemon/fire2 }
+monsters/cyberdemon/fire1		cybrfir1
+monsters/cyberdemon/fire2		cybrfir2
