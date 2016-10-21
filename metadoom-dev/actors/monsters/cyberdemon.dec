@@ -21,6 +21,7 @@ ACTOR MetaCyberdemon : MonsterCore
 	Obituary "$OB_CYBORG"
 	damagefactor ChaingunTurret, 0.2
 	painchance ChaingunTurret, 0
+	scale 0.75
 	States
 	{
 	Spawn:
