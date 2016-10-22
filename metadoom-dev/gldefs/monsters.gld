@@ -243,3 +243,10 @@ object BaronSpike
 {
     frame BSPK { light BARONSPIKE }
 }
+
+// Cyberdemon
+
+Object CyberdemonRocket
+{
+	frame MISL { light MetaRocketGlow }
+}
