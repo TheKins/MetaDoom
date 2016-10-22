@@ -1,3 +1,13 @@
+NEXT VERSION
+============
+
+- Revamped the Cyberdemon with new attacks and surprises...!
+- Updated Hellknight sprites to Zaneion's latest version, featuring more detail!
+- Replaced stealth monsters with normal MetaDoom spawners, because stealth
+  monsters suck no matter how much DUMP maps try to redeem them.
+- MBF Helper Dogs are replaced with MetaDoom Hellhounds.
+- Fixed Hellhounds shrinking a little sometimes when killed.
+
 v1.2 "Slayer" (06/10/16)
 ========================
 Development has been fairly slow recently, but there have been some important
