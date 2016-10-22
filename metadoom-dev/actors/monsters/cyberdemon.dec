@@ -137,7 +137,8 @@ ACTOR MetaCyberdemon : MonsterCore
 	Pain.Fist:
 	Pain.BerserkFist:
 	Pain:
-		CYBR G 10 A_Pain
+		CYBR F 0
+		CYBR F 10 A_Pain
 		Goto See+1
 	Death:
 		CYBR G 0 A_GiveToTarget("ScoreItem", 10000)
