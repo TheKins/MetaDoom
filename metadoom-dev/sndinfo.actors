@@ -242,6 +242,7 @@ monsters/cyberdemon/pain		cybrpain
 monsters/cyberdemon/die1		cybrdie1
 monsters/cyberdemon/die2		cybrdie2
 monsters/cyberdemon/switch		cybrswtc
+monsters/cyberdemon/charge		cybrchrg
 
 $random monsters/cyberdemon/idle		{ monsters/cyberdemon/idle1 monsters/cyberdemon/idle2 monsters/cyberdemon/idle3 monsters/cyberdemon/idle4 }
 monsters/cyberdemon/idle1		cybridl1

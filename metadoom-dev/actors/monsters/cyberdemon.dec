@@ -47,7 +47,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		
 	Missile:
 		CYBR E 0 
-		CYBR E 0 A_Jump(256, "MissileCharge")
+		CYBR E 0 //A_Jump(256, "MissileCharge") // for debug
 		CYBR E 0 A_Jump(64, "MissileWalking", "MissileCharge")
 		goto MissileStanding
 		
@@ -114,7 +114,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR F 0
 		CYBR F 0 A_PlaySound("monsters/cyberdemon/switch")
 		CYBR F 12 A_FaceTarget
-		CYBR F 0 A_PlaySound("weapons/plasmarifle/pop")
+		CYBR F 0 A_PlaySound("monsters/cyberdemon/charge")
 		CYBR B 0 ThrustThing(angle*256/360, 15, 0, 0)
 		CYBR B 0 A_ChangeFlag("SKULLFLY",1)
 		CYBR BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB 1 
