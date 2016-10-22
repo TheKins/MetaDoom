@@ -1,6 +1,6 @@
 Id Software (...for everything.)
 
-Raven Software (Quake 4 sounds, Heretic sounds)
+Raven Software (Quake 4 sounds, Heretic sounds, Wolfenstein sounds)
 The Bloated Corpse Of Midway (PSX/N64 sounds)
 Irrational Games (SWAT 4 flashlight sounds)
 Rogue Entertainment (Strife item sounds)
