@@ -169,6 +169,8 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
+			A_SpawnItem("CyberdemonExplosionShockwave",0,55);
 		}
 		CYBR I 5 
 		CYBR JKL 5
@@ -275,4 +277,23 @@ ACTOR CyberdemonChargeFire
 		FIRE ABCDEH 2 BRIGHT
 		Stop
 	}
+}
+
+actor CyberdemonExplosionScorchMark : ExplosionScorchMark { scale 3.0 }
+
+ACTOR CyberdemonExplosionShockwave : Shockwave 
+{ 
+	scale 2.0 
+	
+	states
+	{
+	DoTheThing:
+		SHOK A 1
+		{
+			A_FadeOut(0.0001);
+			A_SetScale(scaleX + 0.1);
+		}
+		loop
+	}
+	
 }
