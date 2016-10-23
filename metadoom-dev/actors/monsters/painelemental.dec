@@ -61,6 +61,13 @@ ACTOR MetaPainElemental : MonsterCore
 		PAIN F 5 BRIGHT A_FaceTarget
 		PAIN F 0 BRIGHT A_PainAttack("MetaLostSoul")
 		Goto See
+	Melee:
+		PAIN D 4 A_FaceTarget
+		PAIN E 4 A_FaceTarget
+		PAIN F 4 BRIGHT A_FaceTarget
+		PAIN F 0 BRIGHT A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", PainElementalBite, 1)
+		PAIN E 4 A_FaceTarget
+		Goto See
 	Pain:
 		PAIN G 6
 		PAIN G 6 A_Pain
