@@ -60,6 +60,7 @@ actor SiphonGrenadeProj
 	-NOGRAVITY
 	//+USEBOUNCESTATE
 	+ROLLSPRITE
+	+FORCERADIUSDMG
 	//BounceType "Doom"
 	SeeSound "inventory/throw"
 	//BounceSound "inventory/grenade/bounce"
