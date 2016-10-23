@@ -207,6 +207,7 @@ OB_CHAINGUY = "%o was perforated by a Chaingunner.";
 OB_SKULL = "%o was spooked by a Lost Soul.";
 OB_IMP = "%o was burned by an Imp.";
 OB_CACO = "%o was shocked by a Cacodemon.";
+OB_PAINELEMENTAL = "%o was humiliated by a Pain Elemental.";
 OB_BARON = "%o was bruised by a Baron of Hell.";
 OB_KNIGHT = "%o was splayed by a Hell Knight.";
 OB_SPIDER = "%o stood in awe of the Spider Mastermind!";

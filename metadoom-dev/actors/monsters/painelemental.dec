@@ -14,6 +14,7 @@ ACTOR MetaPainElemental : MonsterCore
 	PainSound "monsters/painelemental/pain"
 	DeathSound "monsters/painelemental/die"
 	ActiveSound "monsters/painelemental/idle"
+	Obituary "$OB_PAINELEMENTAL"
 	States
 	{
 	Spawn:
