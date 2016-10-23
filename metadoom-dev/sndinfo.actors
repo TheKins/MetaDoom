@@ -101,6 +101,13 @@ monsters/caco/lightningball/hit3		lball3
 
 monsters/caco/gib						cacogib
 
+// Pain Elemental
+monsters/painelemental/see		pelesee
+monsters/painelemental/pain 	pelepain
+monsters/painelemental/die		peledie
+monsters/painelemental/idle		peleidle
+monsters/painelemental/bite		pelebite
+
 // Revenant
 monsters/revenant/missile/beep			dsbeep!
 monsters/revenant/see		revesee

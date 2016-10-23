@@ -10,10 +10,10 @@ ACTOR MetaPainElemental : MonsterCore
 	+FLOAT 
 	+NOGRAVITY
 	+FLOATBOB
-	SeeSound "pain/sight"
-	PainSound "pain/pain"
-	DeathSound "pain/death"
-	ActiveSound "pain/active"
+	SeeSound "monsters/painelemental/see"
+	PainSound "monsters/painelemental/pain"
+	DeathSound "monsters/painelemental/die"
+	ActiveSound "monsters/painelemental/idle"
 	States
 	{
 	Spawn:
