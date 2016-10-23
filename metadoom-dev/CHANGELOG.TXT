@@ -7,6 +7,9 @@ NEXT VERSION
   monsters suck no matter how much DUMP maps try to redeem them.
 - MBF Helper Dogs are replaced with MetaDoom Hellhounds.
 - Fixed Hellhounds shrinking a little sometimes when killed.
+- Pain Elemental will now bite your shit if you try to bait his hungry mouth.
+- Fixed some cut-off on one sprite of the first person death animation.
+- Fixed Siphon Grenade not affecting bosses.
 
 v1.2 "Slayer" (06/10/16)
 ========================
