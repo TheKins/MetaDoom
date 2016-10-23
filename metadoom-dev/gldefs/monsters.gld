@@ -248,5 +248,5 @@ object BaronSpike
 
 Object CyberdemonRocket
 {
-	frame MISL { light MetaRocketGlow }
+	frame CISL { light MetaRocketGlow }
 }
