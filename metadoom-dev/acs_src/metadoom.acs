@@ -412,7 +412,7 @@ script "InventoryCheat" ENTER
 }
 
 // New Cheat System
-Script "Umpulse" (int n)
+Script "Impulse" (int n)
 {
 	int i;
 	AmbientSound("umpulse/default",127); // HENH HEEEEEEEEH
