@@ -1,3 +1,5 @@
+actor DemonKey : Counter { Inventory.MaxAmount 3 }
+
 ACTOR MetaUnmaker : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 1900
@@ -45,6 +47,11 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE)
 		goto Ready
 	Fire:
+		UNMA A 0
+		UNMA A 0 A_JumpIfInventory("DemonKey", 3, "Fire_Keys3")
+		UNMA A 0 A_JumpIfInventory("DemonKey", 2, "Fire_Keys2")
+		UNMA A 0 A_JumpIfInventory("DemonKey", 1, "Fire_Keys1")
+	Fire_Keys0:
 		UNMA A 4
 		UNMA B 1 bright
 		{
@@ -59,6 +66,56 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 1 Offset(0,32)
 		UNMA A 1
 		Goto Ready
+	Fire_Keys1:
+		UNMA A 2
+		UNMA B 1 bright
+		{
+			A_FireCustomMissile("UnmakerTracer");
+			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
+			A_GunFlash;
+			A_AlertMonsters;
+		}
+		UNMA B 1 bright Offset(0,40)
+		UNMA A 1 Offset(0,33)
+		UNMA A 1 Offset(0,32)
+		Goto Ready
+	Fire_Keys2:
+		UNMA A 2
+		UNMA B 1 bright
+		{
+			A_FireCustomMissile("UnmakerTracer", -3);
+			A_FireCustomMissile("UnmakerTracer", 3, 0);
+			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
+			A_GunFlash;
+			A_AlertMonsters;
+		}
+		UNMA B 1 bright Offset(0,40)
+		UNMA A 1 Offset(0,33)
+		UNMA A 1 Offset(0,32)
+		Goto Ready
+	Fire_Keys3:
+		UNMA A 2
+		UNMA B 1 bright
+		{
+			A_FireCustomMissile("UnmakerTracer", -4, 0);
+			A_FireCustomMissile("UnmakerTracer", 4, 0);
+			A_FireCustomMissile("UnmakerTracer");
+			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
+			A_GunFlash;
+			A_AlertMonsters;
+		}
+		UNMA B 1 bright Offset(0,40)
+		UNMA A 1 Offset(0,33)
+		UNMA A 1 Offset(0,32)
+		Goto Ready
+	AltFire:
+		UNMA A 0
+	AltFire_Keys0:
+		UNMA A 1 Offset(0,34) A_PlaySound("weapons/rocketlauncher/deto", CHAN_BODY)
+		UNMA A 1 Offset(0,33)
+		UNMA A 1 Offset(0,32) A_TakeInventory("RLDetonator", 1)
+		UNMA A 10
+		goto Ready
 	Flash:
 		TNT1 A 4 Bright A_Light1
 		Goto LightDone
@@ -148,5 +205,22 @@ ACTOR UnmakerTracerSpark
 		PLSE EEEEEEEE 1  Bright A_SetTranslucent(.4,1)
 		PLSE EEEEEEEEEE 1 Bright A_SetTranslucent(.2,1)
 		Stop
+	}
+}
+
+actor DemonKeyPickup : CustomInventory
+{
+	inventory.pickupmessage "$GOTARTIFACT1"
+	inventory.pickupsound "weapons/unmaker/demonkey"
+	+INVENTORY.ALWAYSPICKUP
+	+FLOATBOB
+	states
+	{
+	Spawn:
+		ART1 ABCDE 3 bright
+		loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("DemonKey", 1)
+		stop
 	}
 }
