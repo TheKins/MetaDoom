@@ -116,6 +116,10 @@ GOTCHAINGUN = "You got the Chaingun!";
 GOTGAUSS = "You got the Gauss Cannon!";
 GOTBFG9000 = "You got the BFG9000!  Oh, yes.";
 GOTFIREX = "You got a Fire Extinguisher!";
+GOTUNMAKER = "You got the... what the !@#%* is this?!";
+GOTARTIFACT1 = "You have a feeling that it wasn't to be touched...";
+GOTARTIFACT2 = "Whatever it is, it doesn't belong in this world...";
+GOTARTIFACT3 = "It must do something...";
 
 TAGPISTOL = "EKG Sidearm";
 TAGMACGUN = "Machine Gun";
@@ -124,6 +128,7 @@ TAGAXE = "Fire Axe";
 TAG_FIST = "Berserk!";
 TAGGAUSS = "Gauss Cannon";
 TAGFIREX = "Fire Extinguisher";
+TAGUNMAKER = "Unmaker";
 
 TAGHDOG = "Hellhound";
 
