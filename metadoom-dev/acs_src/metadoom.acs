@@ -255,6 +255,36 @@ script "Item_PlasmaRifle" (void)
 	}
 }
 
+script "Item_BFG9000" (void)
+{
+	for(int i = 1337; i < 1400; i++)
+	{
+		if(CheckActorInventory(i,"MetaBFG9000"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Someone has a BFG9000! Alternate weapon drops enabled.");
+			
+			SetResultValue(2);
+			break;
+		}
+	}
+}
+
+script "Item_Unmaker" (void)
+{
+	for(int i = 1337; i < 1400; i++)
+	{
+		if(CheckActorInventory(i,"MetaUnmaker"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Someone has an Unmaker! Demon Key drops enabled.");
+			
+			SetResultValue(2);
+			break;
+		}
+	}
+}
+
 script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);

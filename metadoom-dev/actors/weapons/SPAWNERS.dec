@@ -148,7 +148,27 @@ actor BFGSpawner replaces BFG9000
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "BFG9000")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 1, "BFG9000")
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "VarietyPack")
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(128,"PrepareForUnmaker")
+		goto BFG9000
+	PrepareForUnmaker:
+		TNT1 A 0 A_JumpIf(CallACS("Item_Unmaker", 0, 0, 0) == 1, "Unmaker")
+		TNT1 A 0 A_JumpIf(CallACS("Item_Unmaker", 0, 0, 0) == 2, "DemonKeySpawning")
+		goto BFG9000
+	DemonKeySpawning:
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_Jump(128,"Unmaker")
+		goto BFG9000
+	BFG9000:
 		TNT1 A 0 A_SpawnItemEx("MetaBFG9000",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	Unmaker:
+		TNT1 A 0 A_SpawnItemEx("MetaUnmaker",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	}
 }
