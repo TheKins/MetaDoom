@@ -31,7 +31,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Player.WeaponSlot 4, MetaChaingun, MetaMachineGun
 	Player.WeaponSlot 5, MetaRocketLauncher
 	Player.WeaponSlot 6, MetaPlasmaRifle, MetaGaussCannon
-	Player.WeaponSlot 7, MetaBFG9000
+	Player.WeaponSlot 7, MetaBFG9000, MetaUnmaker
 	Player.WeaponSlot 8, MetaChainsaw, MetaAxe
 	
 	Player.ColorRange 112, 127
