@@ -119,3 +119,30 @@ object MetaBFGBall
     frame BFE1E { light BFGBALL_X4 }
     frame BFE1F { light BFGBALL_X5 }
 }
+
+pointlight UnmakerGlow
+{
+    color 1.0 0.4 0.0
+    size 10
+}
+
+pointlight UnmakerGlowSmall
+{
+    color 1.0 0.4 0.0
+    size 8
+}
+
+object UnmakerTracer
+{
+    frame LASS { light UnmakerGlow }
+}
+
+object UnmakerTracerTrail
+{
+    frame LASS { light UnmakerGlow }
+}
+
+object UnmakerTracerSpark
+{
+    frame PLSE { light UnmakerGlowSmall }
+}
