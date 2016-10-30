@@ -37,6 +37,7 @@ Index
 #include "actors/weapons/plasmarifle.dec"
  #include "actors/weapons/gauss.dec"
 #include "actors/weapons/bfg.dec"
+ #include "actors/weapons/unmaker.dec"
 
 // Items
 #include "actors/items/health.dec"
