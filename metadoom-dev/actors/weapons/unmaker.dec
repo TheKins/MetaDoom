@@ -208,7 +208,7 @@ ACTOR UnmakerTracerSpark
 	}
 }
 
-actor DemonKeyPickup : CustomInventory
+actor DemonKeyPickup1 : CustomInventory
 {
 	inventory.pickupmessage "$GOTARTIFACT1"
 	inventory.pickupsound "weapons/unmaker/demonkey"
@@ -222,5 +222,27 @@ actor DemonKeyPickup : CustomInventory
 	Pickup:
 		TNT1 A 0 A_GiveInventory("DemonKey", 1)
 		stop
+	}
+}
+
+actor DemonKeyPickup2 : DemonKeyPickup1
+{
+	inventory.pickupmessage "$GOTARTIFACT2"
+	states
+	{
+	Spawn:
+		ART2 ABCDE 3 bright
+		loop
+	}
+}
+
+actor DemonKeyPickup3 : DemonKeyPickup1
+{
+	inventory.pickupmessage "$GOTARTIFACT3"
+	states
+	{
+	Spawn:
+		ART3 ABCDE 3 bright
+		loop
 	}
 }
