@@ -48,7 +48,7 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 4
 		UNMA B 1 bright
 		{
-			A_FireCustomMissile("PistolTracer");
+			A_FireCustomMissile("UnmakerTracer");
 			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
 			A_GunFlash;
 			A_AlertMonsters;
@@ -66,6 +66,87 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		Goto LightDone
  	Spawn:
 		UNMA Z -1
+		Stop
+	}
+}
+
+// Level 1
+ACTOR UnmakerTracer : FastProjectile
+{
+	Alpha 1
+	RenderStyle Add
+	Radius 2
+	Height 2
+	damage 7
+	Speed 75
+	PROJECTILE
+	+BLOODSPLATTER
+	+NOEXTREMEDEATH
+	Scale 1
+	MissileType UnmakerTracerTrail
+	MissileHeight 8
+	Decal BulletChip
+	Obituary "$OB_METAPISTOL"
+	States
+	{
+	Spawn:
+		LASS AB 1 BRIGHT
+		Loop
+	Death:
+	Crash:
+		PUFF A 0 A_PlaySound("weapons/pistol/hitwall", CHAN_BODY, frandom(0.5,1.0))
+		PUFF A 2 BRIGHT A_SpawnDebris("UnmakerTracerSpark")
+		PUFF B 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF CD 2 BRIGHT
+		Stop
+	XDeath:
+		TNT1 A 3 A_PlaySound("weapons/pistol/hit")
+		Stop
+	}
+}
+
+ACTOR UnmakerTracerTrail
+{ 
+	Alpha 1
+	RenderStyle Add
+	Speed 0
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOTELEPORT
+	+CANNOTPUSH
+	+NODAMAGETHRUST
+	Scale 0.75
+	States
+	{
+	Spawn:
+		LASS AB 1 BRIGHT A_FadeOut(0.1)
+		Loop
+	}
+}
+
+ACTOR UnmakerTracerSpark
+{
+	Health 4
+	radius 3
+	height 6
+	speed .1
+	RenderStyle ADD
+	Alpha		1
+	Scale 0.5
+	Mass		0
+	translation "224:224=176:176", "192:197=180:191"
+	+missile
+	+doombounce
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	States
+	{
+		PLSE E 1
+		PLSE EEEEE 1  Bright A_SetTranslucent(.8,1)
+		PLSE EEEEEE 1  Bright A_SetTranslucent(.6,1)
+		PLSE EEEEEEEE 1  Bright A_SetTranslucent(.4,1)
+		PLSE EEEEEEEEEE 1 Bright A_SetTranslucent(.2,1)
 		Stop
 	}
 }
