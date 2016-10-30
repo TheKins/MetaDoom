@@ -177,3 +177,12 @@ weapons/fireextinguisher/burst		fiexbrst
 $random weapons/doggun/bite { weapons/doggun/bite1 weapons/doggun/bite2 }
 weapons/doggun/bite1	dgunbit1
 weapons/doggun/bite2	dgunbit2
+
+// unmaker
+weapons/unmaker/get			unmaget
+weapons/unmaker/use			unmause
+weapons/unmaker/fire		unmafire
+weapons/unmaker/altfire1	unmaalt1
+weapons/unmaker/altfire2	unmaalt2
+weapons/unmaker/altfire3	unmaalt3
+weapons/unmaker/demonkey	unmadkey
