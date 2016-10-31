@@ -4,6 +4,9 @@ NEXT VERSION
 - Added # new weapons! (Unmaker)
 - Revamped # old enemies! (Cyberdemon)
 - Updated Hellknight sprites to Zaneion's latest version, featuring more detail!
+- Added awesome new art for the Dog Collar, Shield Wall and Tesla Rocket!
+  Thanks Capn J!
+- Adjusted alignment on inventory icons to look a little more centered.
 - Replaced stealth monsters with normal MetaDoom spawners, because stealth
   monsters suck no matter how much DUMP maps try to redeem them.
 - MBF Helper Dogs are replaced with MetaDoom Hellhounds.
