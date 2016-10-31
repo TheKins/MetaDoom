@@ -3,7 +3,7 @@ actor DemonKey : Counter { Inventory.MaxAmount 3 }
 ACTOR MetaUnmaker : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 1900
-	Obituary "$OB_METAPISTOL"
+	Obituary "$OB_UNMAKER"
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 40
 	Weapon.AmmoType "Cell"
@@ -143,7 +143,7 @@ ACTOR UnmakerTracer : FastProjectile
 	MissileType UnmakerTracerTrail
 	MissileHeight 8
 	Decal BulletChip
-	Obituary "$OB_METAPISTOL"
+	Obituary "$OB_UNMAKER"
 	States
 	{
 	Spawn:

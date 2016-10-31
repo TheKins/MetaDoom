@@ -273,7 +273,8 @@ OB_MPBFG_SPLASH = "%o couldn't hide from %k's BFG.";
 OB_MPTELEFRAG = "%o had their personal space invaded by %k.";
 OB_RAILGUN = "%o was railed by %k.";
 OB_MPBFG_MBF = "%o was burned by %k's BFG.";
-OB_GAUSS = "%o was railed by %k's Gauss Cannon";
+OB_GAUSS = "%o was railed by %k's Gauss Cannon.";
+OB_UNMAKER = "%o was ripped apart by %k's Unmaker.";
 
 OB_MPGRENADE = "%o was splashed by %k's Hand Grenade.";
 OB_TESLA = "%o was shocked by %k's Tesla Rocket.";
