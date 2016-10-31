@@ -55,6 +55,8 @@ Index
 #include "actors/inventory/siphongrenade.dec"
 #include "actors/inventory/dogcollar.dec"
  #include "actors/weapons/doggun.dec"
+ 
+#include "actors/inventory/cheats.dec"
 
 // Monsters
 #include "actors/monsters/spawners.dec"
