@@ -58,14 +58,14 @@ ACTOR TeslaRocketProj
 	Projectile
 	+RANDOMIZE
 	+RIPPER
-	scale 1.5
+	scale 0.5
 	Obituary "$OB_TESLA"
 	Decal CacoScorch
 	States
 	{
 	Spawn:
-		SGRN A 0 A_PlaySound ("inventory/teslarocket/loop", CHAN_BODY, 1.0, 1)
-		SGRN A 1 Bright 
+		TSLA A 0 A_PlaySound ("inventory/teslarocket/loop", CHAN_BODY, 1.0, 1)
+		TSLA ACBC 1 Bright 
 		{
 			A_SpawnItem("TeslaZapperTrail",random(-8,8),random(-8,8));
 			A_CustomMissile("TeslaZapper", -4, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
@@ -129,8 +129,8 @@ ACTOR TeslaZapperTrail
 	States
 	{
 	Spawn:
-		PLSE E 2 Bright
-		PLSE E 1 Bright
+		TSPK A 2 Bright
+		TSPK B 1 Bright
 		Stop
 	}
 }
