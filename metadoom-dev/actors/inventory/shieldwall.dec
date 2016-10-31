@@ -61,7 +61,7 @@ actor ShieldWallProj
 	+ROLLSPRITE
 	SeeSound "inventory/throw"
 	Obituary "$OB_MPGRENADE"
-	scale 1
+	scale 0.5
 	ReactionTime 60	//Just over five seconds
 	States
 	{
@@ -71,7 +71,7 @@ actor ShieldWallProj
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
 		goto Flying
 	Flying:
-		SGRN A 3
+		SHLD Y 1
 		loop
 	
 	Death:
