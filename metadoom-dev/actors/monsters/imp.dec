@@ -8,10 +8,10 @@ ACTOR MetaDoomImp : MonsterCore
 	PainChance 200
 	Monster
 	+FLOORCLIP
-	SeeSound "imp/sight"
-	PainSound "imp/pain"
-	DeathSound "imp/death"
-	ActiveSound "imp/active"
+	SeeSound "monsters/imp/see"
+	PainSound "monsters/imp/pain"
+	DeathSound "monsters/imp/die"
+	ActiveSound "monsters/imp/idle"
 	HitObituary "$OB_IMPHIT"
 	Obituary "$OB_IMP"
 	painchance HolyWater, 255
@@ -36,7 +36,7 @@ ACTOR MetaDoomImp : MonsterCore
 	Melee:
 	Missile:
 		TROO EF 8 A_FaceTarget
-		TROO G 6 A_CustomComboAttack("MetaDoomImpBall", 32, 3 * random(1, 8), "imp/melee")
+		TROO G 6 A_CustomComboAttack("MetaDoomImpBall", 32, 3 * random(1, 8), "monsters/imp/claw")
 		Goto See
 	Pain:
 		TROO H 0
@@ -114,7 +114,7 @@ ACTOR MetaDoomImpBall
 	+RANDOMIZE
 	RenderStyle Add
 	Alpha 1
-	SeeSound "imp/attack"
+	SeeSound "monsters/imp/shoot"
 	DeathSound "monsters/imp/fireball/hit"
 	decal DoomImpScorch
 	States

@@ -86,6 +86,19 @@ bodyfalls/revenant3		bdrv3
 monsters/bleed			actbleed
 
 // Imp
+$random monsters/imp/see 	{ monsters/imp/see1 monsters/imp/see2 }
+monsters/imp/see1			imp1see1
+monsters/imp/see2			imp1see2
+
+$random monsters/imp/die 	{ monsters/imp/die1 monsters/imp/die2 }
+monsters/imp/die1			imp1die1
+monsters/imp/die2			imp1die2
+
+monsters/imp/idle			imp1idle
+monsters/imp/pain			imp1pain
+monsters/imp/shoot			imp1sht
+monsters/imp/claw			imp1claw
+
 monsters/imp/fireball/loop		fballoop
 $random monsters/imp/fireball/hit	{ monsters/imp/fireball/hit1 monsters/imp/fireball/hit2 monsters/imp/fireball/hit3 }
 monsters/imp/fireball/hit1		fball1
