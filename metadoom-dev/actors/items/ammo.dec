@@ -251,3 +251,23 @@ ACTOR BFGAmmo : Ammo
 		loop
 	}
 }
+
+ACTOR SoulAmmo : Ammo
+{
+	Inventory.PickupMessage "$GOTSOUL"
+	Inventory.Amount 1
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 10
+	Inventory.Icon "ARGAA0"
+	inventory.pickupsound "weapons/soulcube/ammo"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	States
+	{
+	Spawn:
+		ARGA AB 4
+		loop
+	}
+}

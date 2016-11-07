@@ -2,7 +2,7 @@ actor DemonKey : Counter { Inventory.MaxAmount 3 }
 
 ACTOR MetaUnmaker : MetaDoomWeapon
 {
-	Weapon.SelectionOrder 1900
+	Weapon.SelectionOrder 2900
 	Obituary "$OB_UNMAKER"
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 40
