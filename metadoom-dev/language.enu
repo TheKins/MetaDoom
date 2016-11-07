@@ -120,7 +120,7 @@ GOTUNMAKER = "You got the... what the !@#%* is this?!";
 GOTARTIFACT1 = "You have a feeling that it wasn't to be touched...";
 GOTARTIFACT2 = "Whatever it is, it doesn't belong in this world...";
 GOTARTIFACT3 = "It must do something...";
-GOTSOULCUBE = "We are many, we are one. We are the Praeleanthor, you know us as the SoulCube.";
+GOTSOULCUBE = "We are the Praeleanthor, you know us as the SoulCube.";
 
 TAGPISTOL = "EKG Sidearm";
 TAGMACGUN = "Machine Gun";
