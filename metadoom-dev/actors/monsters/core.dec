@@ -152,6 +152,80 @@ actor MonsterCore
 	Death.Massacre:
 		"####" # 0 A_Jump(256,"Death")
 		stop
+	Death.SoulCube:
+	XDeath.SoulCube:
+		"####" # 0
+		{
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthBonus",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Clip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Shell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("RocketAmmo",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("Cell",0,0,32,random(0,8),0,random(0,8),random(0,360));			
+		}
+			"####" # 0 A_Jump (256, "XDeath")
+			stop
+		XDeath: //catchall
+			"####" # 0 A_Jump (256, "Death")
+			stop
 	}
 }
 
