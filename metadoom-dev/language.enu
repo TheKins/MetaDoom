@@ -120,6 +120,7 @@ GOTUNMAKER = "You got the... what the !@#%* is this?!";
 GOTARTIFACT1 = "You have a feeling that it wasn't to be touched...";
 GOTARTIFACT2 = "Whatever it is, it doesn't belong in this world...";
 GOTARTIFACT3 = "It must do something...";
+GOTSOULCUBE = "We are many, we are one. We are the Praeleanthor, you know us as the SoulCube.";
 
 TAGPISTOL = "EKG Sidearm";
 TAGMACGUN = "Machine Gun";
@@ -129,12 +130,14 @@ TAG_FIST = "Berserk!";
 TAGGAUSS = "Gauss Cannon";
 TAGFIREX = "Fire Extinguisher";
 TAGUNMAKER = "Unmaker";
+TAGSOULCUBE = "SoulCube";
 
 TAGHDOG = "Hellhound";
 
 // Inventory
 GOTGRENADES = "Picked up some Hand Grenades!";
 GOTARGENT = "Picked up an Argent Core.";
+GOTSOUL = "Picked up some Soul Essence.";
 TAGGRENADES = "Hand Grenade";
 GOTTESLA = "Picked up some Tesla Rockets!";
 TAGTESLA = "Tesla Rocket";
@@ -275,6 +278,7 @@ OB_RAILGUN = "%o was railed by %k.";
 OB_MPBFG_MBF = "%o was burned by %k's BFG.";
 OB_GAUSS = "%o was railed by %k's Gauss Cannon.";
 OB_UNMAKER = "%o was ripped apart by %k's Unmaker.";
+OB_METASOULCUBE = "%o was sliced into ribbons by %k's SoulCube.";
 
 OB_MPGRENADE = "%o was splashed by %k's Hand Grenade.";
 OB_TESLA = "%o was shocked by %k's Tesla Rocket.";
