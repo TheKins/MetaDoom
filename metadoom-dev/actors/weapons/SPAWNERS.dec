@@ -6,15 +6,22 @@ actor ChainsawSpawner replaces Chainsaw
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "ShowUsYourSoul")
 	VarietyPack:
 		TNT1 A 0 
 		TNT1 A 0 A_Jump(128,"Axe")
 		goto Chainsaw
+	ShowUsYourSoul:
+		TNT1 A 0 A_JumpIf(CallACS("Item_SoulCube", 0, 0, 0) == 1, "SoulCube")
+		goto VarietyPack
 	Axe:
 		TNT1 A 0 A_SpawnItemEx("MetaAxe",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	Chainsaw:
 		TNT1 A 0 A_SpawnItemEx("MetaChainsaw",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	SoulCube:
+		TNT1 A 0 A_SpawnItemEx("MetaSoulCube",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	}
 }

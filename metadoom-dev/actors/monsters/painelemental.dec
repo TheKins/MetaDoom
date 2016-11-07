@@ -79,6 +79,7 @@ ACTOR MetaPainElemental : MonsterCore
 		Goto Scurred
 	Death:
 		PAIN H 0 A_GiveToTarget("ScoreItem", 500)
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		PAIN H 8 BRIGHT A_ChangeFlag("FLOATBOB", FALSE)
 		PAIN I 8 BRIGHT A_Scream
 		PAIN JK 8 BRIGHT 

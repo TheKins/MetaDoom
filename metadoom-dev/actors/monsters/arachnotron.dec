@@ -48,6 +48,7 @@ ACTOR MetaArachnotron : MonsterCore
 		Goto See+2
 	Death:
 		BSPI J 0 A_GiveToTarget("ScoreItem", 600)
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		BSPI J 20 A_Scream
 		BSPI K 7 A_NoBlocking
 		BSPI LMNO 7

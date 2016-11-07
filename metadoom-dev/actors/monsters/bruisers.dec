@@ -83,6 +83,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 	Death:
 		BARO O 0 A_Jump (128, 2)
 		BARO O 0 A_SetScale(-0.6,0.6) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		BARO O  8 A_GiveToTarget("ScoreItem", 400)
 		BARO P  8 A_Scream
 		BARO Q  8 A_NoBlocking
@@ -170,6 +171,7 @@ ACTOR MetaHellKnight : MonsterCore
 	Death:
 		HNGT O 0 A_Jump (128, 2)
 		HNGT O 0 A_SetScale(-0.6,0.6) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		HNGT O  8 A_GiveToTarget("ScoreItem", 400)
 		HNGT P  8 A_Scream
 		HNGT Q  8 A_NoBlocking

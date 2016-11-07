@@ -285,6 +285,21 @@ script "Item_Unmaker" (void)
 	}
 }
 
+script "Item_SoulCube" (void)
+{
+	for(int i = 1337; i < 1400; i++)
+	{
+		if(CheckActorInventory(i,"MetaSoulCube"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Someone has a SoulCube! SoulAmmo drops enabled.");
+			
+			SetResultValue(2);
+			break;
+		}
+	}
+}
+
 script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);

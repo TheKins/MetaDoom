@@ -263,11 +263,31 @@ ACTOR SoulAmmo : Ammo
 	inventory.pickupsound "weapons/soulcube/ammo"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
-	scale 0.75
+	renderstyle Add
+	scale 1
 	States
 	{
 	Spawn:
-		ARGA AB 4
+		APLS AB 4
 		loop
+	}
+}
+
+actor SoulSpawner
+{
+	radius 16
+	height 16
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("Item_SoulCube", 0, 0, 0) == 2, "GimmeTheSouls")
+		stop
+	GimmeTheSouls:
+		TNT1 A 0 A_Jump(128, "NoReallyGiveMeTheSouls")
+		stop
+	NoReallyGiveMeTheSouls:
+		TNT1 A 0 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,8),random(0,8),8,random(0,360))
+		stop
 	}
 }

@@ -97,6 +97,7 @@ ACTOR MetaShotgunGuy : MonsterCore
 	Death:
 		SPOS H 0 A_Jump (128, 2)
 		SPOS H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		SPOS H 5 A_GiveToTarget("ScoreItem", 150)
 		SPOS I 5 A_Scream
 		SPOS J 5 A_NoBlocking
@@ -271,6 +272,7 @@ ACTOR MetaZSec : MonsterCore
 		ZSEC H 0 A_SetRoll(0)
 		ZSEC H 0 A_Jump (128, 2)
 		ZSEC H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		ZSEC H 5 A_GiveToTarget("ScoreItem", 150)
 		ZSEC I 5 A_Scream
 		ZSEC J 5 A_NoBlocking

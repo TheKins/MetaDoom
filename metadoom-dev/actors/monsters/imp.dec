@@ -86,6 +86,7 @@ ACTOR MetaDoomImp : MonsterCore
 	Death:
 		TROO I 0 A_Jump (128, 2)
 		TROO I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		TROO I 8 A_GiveToTarget("ScoreItem", 150)
 		TROO J 8 A_Scream
 		TROO K 6

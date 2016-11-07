@@ -76,6 +76,7 @@ ACTOR MetaCacodemon : MonsterCore
 		Goto Scurred
 	Death:
 		HEAD G 0 A_GiveToTarget("ScoreItem", 400)
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		HEAD G 8 A_ChangeFlag("FLOATBOB", FALSE)
 		HEAD H 8 A_Scream
 		HEAD I 8 
