@@ -186,3 +186,11 @@ weapons/unmaker/altfire1	unmaalt1
 weapons/unmaker/altfire2	unmaalt2
 weapons/unmaker/altfire3	unmaalt3
 weapons/unmaker/demonkey	unmadkey
+
+// soulcube
+weapons/soulcube/get		solcget
+weapons/soulcube/use		solcuse
+weapons/soulcube/ammo		solcammo
+weapons/soulcube/fire		solcfire
+weapons/soulcube/loop		solcloop
+weapons/soulcube/end		solcend
