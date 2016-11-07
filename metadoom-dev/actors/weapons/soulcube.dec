@@ -15,7 +15,7 @@ ACTOR MetaSoulcube : MetaDoomWeapon
 	States
 	{
 	Ready:
-		SOLG AAAABBCCDDEEFFGGGGHHIIJJKKLLMM 1 
+		SOLG AAAAAABBCCDDEEFFGGGGGGHHIIJJKKLLMM 1 
 		{
 			A_WeaponReady;
 			return A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
