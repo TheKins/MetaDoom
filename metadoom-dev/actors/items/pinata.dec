@@ -28,6 +28,16 @@ ACTOR MetaHealthPinata : Health
 		PINH A 4
 		PINH A 4 bright
 		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
 	Fade:
 		PINH A 4 bright A_FadeOut(0.2)
 		PINH A 4 A_FadeOut(0.2)
