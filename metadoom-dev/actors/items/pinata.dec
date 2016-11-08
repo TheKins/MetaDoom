@@ -37,6 +37,7 @@ ACTOR MetaHealthPinata : Health
 
 ACTOR MetaHealthPinataPerm : MetaHealthPinata
 {
+	Inventory.Amount 4
 	States
 	{
 	Spawn:
@@ -51,7 +52,7 @@ ACTOR MetaArmorPinata : BasicArmorBonus
 	-COUNTITEM
 	+INVENTORY.ALWAYSPICKUP
 	Armor.Savepercent 33.335
-	Armor.Saveamount 2
+	Armor.Saveamount 4
 	Armor.Maxsaveamount 100
 	Inventory.PickupSound "items/armor/shard"
 	Inventory.PickupMessage "$GOTPINATAARMOR"
