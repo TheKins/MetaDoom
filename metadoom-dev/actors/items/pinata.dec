@@ -1,0 +1,141 @@
+ACTOR MetaHealthPinata : Health
+{
+	-COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 2
+	Inventory.PickupMessage "$GOTPINATAHEALTH"
+	Inventory.PickupSound "items/health/shard"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+		PINH A 4 bright
+		PINH A 4
+	Fade:
+		PINH A 4 bright A_FadeOut(0.2)
+		PINH A 4 A_FadeOut(0.2)
+		loop
+	}
+}
+
+ACTOR MetaHealthPinataPerm : MetaHealthPinata
+{
+	States
+	{
+	Spawn:
+		PINH A 4 bright
+		PINH A 4
+		loop
+	}
+}	
+
+ACTOR MetaArmorPinata : BasicArmorBonus
+{
+	-COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Armor.Savepercent 33.335
+	Armor.Saveamount 2
+	Armor.Maxsaveamount 100
+	Inventory.PickupSound "items/armor/shard"
+	Inventory.PickupMessage "$GOTPINATAARMOR"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINH A 4 bright
+		PINH A 4
+		loop
+	}
+}
+
+ACTOR MetaPinataClip : Clip
+{
+	Inventory.PickupMessage "$GOTPINATAAMMO_CLIP"
+	Inventory.Amount 5
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	inventory.pickupsound "items/clip"
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINM A 4 bright
+		PINM A 4
+		loop
+	}
+}
+
+ACTOR MetaPinataShell : Shell
+{
+	Inventory.PickupMessage "$GOTPINATAAMMO_SHELL"
+	Inventory.Amount 2
+	inventory.pickupsound "items/shell"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINM B 4 bright
+		PINM B 4
+		loop
+	}
+}
+
+ACTOR MetaPinataRocket : RocketAmmo
+{
+	Inventory.PickupMessage "$GOTPINATAAMMO_ROCKET"
+	Inventory.Amount 2
+	inventory.pickupsound "items/rocket"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINM C 4 bright
+		PINM C 4
+		loop
+	}
+}
+
+ACTOR MetaPinataCell : Cell
+{
+	Inventory.PickupMessage "$GOTPINATAAMMO_CELL"
+	Inventory.Amount 10
+	inventory.pickupsound "items/cell"
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
+	scale 0.75
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		PINM D 4 bright
+		PINM D 4
+		loop
+	}
+}

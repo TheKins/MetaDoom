@@ -87,7 +87,13 @@ IRONMANCONFIRM = "Warning: Ultra-Nightmare\nis an Ironman mode.\nYou only have o
 
 // Items
 GOTPINATAHEALTH = "Picked up some Health.";
+GOTPINATAARMOR = "Picked up some Armor.";
 GOTPINATAAMMO = "Picked up some Ammo.";
+GOTPINATAAMMO_CLIP = "Picked up some Bullets.";
+GOTPINATAAMMO_SHELL = "Picked up some Shells.";
+GOTPINATAAMMO_ROCKET = "Picked up some Rockets.";
+GOTPINATAAMMO_CELL = "Picked up some Cells.";
+
 GOTHOLYWATER = "Created some Holy Water.";
 GOTHTHBONUS = "Picked up a Health Bonus.";
 GOTARMBONUS = "Picked up an Armor Shard.";

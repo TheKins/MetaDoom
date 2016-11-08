@@ -19,44 +19,6 @@ ACTOR MetaHealthBonus : Health replaces HealthBonus
 	}
 }
 
-ACTOR MetaHealthPinata : Health
-{
-	-COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.Amount 2
-	//Inventory.MaxAmount 200
-	Inventory.PickupMessage "$GOTPINATAHEALTH"
-	Inventory.PickupSound "items/health/shard"
-	TeleFogSourceType MetaItemFog
-	TeleFogDestType MetaItemFog
-	scale 0.75
-	RenderStyle Add
-	States
-	{
-	Spawn:
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-		PINH A 4 bright
-		PINH A 4
-	Fade:
-		PINH A 4 bright A_FadeOut(0.2)
-		PINH A 4 A_FadeOut(0.2)
-		loop
-	}
-}
-	
 ACTOR MetaStimpack : Health replaces Stimpack
 {
 	Inventory.Amount 10

@@ -55,6 +55,16 @@ object MetaHealthPinata
     frame PINH { light HEALTHCRUMB }
 }
 
+object MetaHealthPinataPerm
+{
+    frame PINH { light HEALTHCRUMB }
+}
+
+object MetaArmorPinata
+{
+    frame PINA { light ARMORCRUMB }
+}
+
 object MetaStimpack
 {
     frame STIM { light HEALTHCRUMB }

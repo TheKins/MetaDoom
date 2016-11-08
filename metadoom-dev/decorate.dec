@@ -47,6 +47,7 @@ Index
 #include "actors/items/keys.dec"
 #include "actors/items/powerups.dec"
 #include "actors/items/loot.dec"
+#include "actors/items/pinata.dec"
 
 // Inventory
 #include "actors/inventory/core.dec"
