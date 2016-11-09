@@ -4,7 +4,7 @@ ACTOR MetaSoulcube : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2900
 	Obituary "$OB_METASOULCUBE"
-	Weapon.AmmoUse 10
+	Weapon.AmmoUse 5
 	Weapon.AmmoType "SoulAmmo"
 	Inventory.Pickupmessage "$GOTSOULCUBE"
 	Inventory.PickupSound "weapons/soulcube/get"
@@ -83,7 +83,7 @@ ACTOR MetaSoulCubeProj
 	Radius 13
 	Height 8
 	Speed 35
-	Damage (2000)
+	Damage (1000)
 	damagetype SoulCube
 	Projectile
 	+RANDOMIZE
