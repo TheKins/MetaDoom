@@ -35,6 +35,7 @@ ACTOR MetaScriptedMarine : MonsterCore replaces ScriptedMarine
 		"####" G 4 A_Pain
 		Goto See
 	Death:
+		"####" H 0 A_SpawnItem("SoulSpawner")
 		"####" H 10 A_StopSound(CHAN_BODY)
 		"####" I 10 A_Scream
 		"####" J 10 A_NoBlocking
@@ -44,6 +45,7 @@ ACTOR MetaScriptedMarine : MonsterCore replaces ScriptedMarine
 		"####" N -1
 		Stop
 	XDeath:
+		"####" O 0 A_SpawnItem("SoulSpawner")
 		"####" O 5 A_StopSound(CHAN_BODY)
 		"####" # 0 A_Fall
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
