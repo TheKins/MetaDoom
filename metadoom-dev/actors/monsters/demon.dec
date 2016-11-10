@@ -94,6 +94,7 @@ ACTOR MetaDemon : MonsterCore
 		SARG N -1
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		SARG I 5 A_GiveToTarget("ScoreItem", 200)
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop

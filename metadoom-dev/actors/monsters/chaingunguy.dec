@@ -102,6 +102,7 @@ ACTOR MetaMachineGunGuy : MonsterCore
 		MPOS M -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		CPOS O 5 A_GiveToTarget("ScoreItem", 300)
 		"####" # 0 A_Fall
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
@@ -227,6 +228,7 @@ ACTOR MetaChainGunGuy : MonsterCore
 		CPOS N -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		CPOS G 0
 		CPOS G 0 A_StopSound(CHAN_WEAPON)
 		CPOS O 5 A_GiveToTarget("ScoreItem", 300)

@@ -96,6 +96,7 @@ ACTOR MetaHellhound : MonsterCore
 		HDOG K 4 A_PlaySound("bodyfalls/medium")
 		HDOG K -1 
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		HDOG H 5 A_GiveToTarget("ScoreItem", 250)
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop

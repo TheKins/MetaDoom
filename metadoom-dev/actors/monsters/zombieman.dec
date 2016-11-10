@@ -98,6 +98,7 @@ ACTOR MetaZombieMan : MonsterCore
 		POSS L -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		POSS M 5 A_GiveToTarget("ScoreItem", 100)
 		"####" # 0 A_Fall
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
@@ -215,6 +216,7 @@ ACTOR MetaHellRazer : MonsterCore
 		HRAZ P -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		HRAZ L 5 A_GiveToTarget("ScoreItem", 500)
 		"####" # 0 A_Fall
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)

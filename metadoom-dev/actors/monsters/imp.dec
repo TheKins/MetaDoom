@@ -94,6 +94,7 @@ ACTOR MetaDoomImp : MonsterCore
 		TROO M -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		TROO N 5 A_GiveToTarget("ScoreItem", 150)
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
@@ -252,6 +253,7 @@ ACTOR MetaNightmareImp : MonsterCore
 		2ROO P -1 A_PlaySound("bodyfalls/medium")
 		Stop
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		2ROO Q 5 A_GiveToTarget("ScoreItem", 250)
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop

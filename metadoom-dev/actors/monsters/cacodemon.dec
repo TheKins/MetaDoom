@@ -86,6 +86,7 @@ ACTOR MetaCacodemon : MonsterCore
 		Stop
 	Death.Gauss:
 	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		HEAD G 0 A_GiveToTarget("ScoreItem", 400)
 		HEAD G 0 A_ChangeFlag("FLOATBOB", FALSE)
 		HEAD G 3 A_Fall
