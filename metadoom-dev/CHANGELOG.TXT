@@ -15,6 +15,7 @@ NEXT VERSION
 - Fixed some cut-off on one sprite of the first person death animation.
 - Fixed Siphon Grenade not affecting bosses.
 - Changed the cheat command from "pukename umpulse #" to "impulse #"
+- Re-enabled font monospacing in SBARINFO
 
 Optional Content:
 - Added DONTFALL flag to Keens to fix a visual bug
