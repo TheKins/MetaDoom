@@ -259,16 +259,17 @@ ACTOR SoulAmmo : Ammo
 	Inventory.MaxAmount 5
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 5
-	Inventory.Icon "ARGAA0"
+	Inventory.Icon "SOLAAA0"
 	inventory.pickupsound "weapons/soulcube/ammo"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	renderstyle Add
 	scale 1
+	scale 0.5
 	States
 	{
 	Spawn:
-		APLS AB 4
+		SOLA ABCB 4 bright
 		loop
 	}
 }
