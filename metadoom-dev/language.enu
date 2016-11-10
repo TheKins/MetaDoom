@@ -393,7 +393,7 @@ C1TEXT =
 	"hostage.";
 C2TEXT =
 	"You have won! Your victory has enabled\n"
-	"humankind to evacuate earth and escape\n"
+	"humankind to evacuate Earth and escape\n"
 	"the nightmare.  Now you are the only\n"
 	"human left on the face of the planet.\n"
 	"Cannibal mutations, carnivorous aliens,\n"
@@ -433,7 +433,7 @@ C4TEXT =
 	"wonder where bad folks will go when they\n"
 	"die, now. Wiping the sweat from your\n"
 	"forehead you begin the long trek back\n"
-	"home. Rebuilding earth ought to be a\n"
+	"home. Rebuilding Earth ought to be a\n"
 	"lot more fun than ruining it was.\n";
 C5TEXT =
 	"Congratulations, you've found the secret\n"
