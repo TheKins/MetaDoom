@@ -179,7 +179,7 @@ Script "SoulCubeMsg_Clear" ENTER
 {
 	if (CheckInventory("SoulAmmo") != 5 && CheckInventory("SoulCubeMessagePopped"))
 	{
-		TakeInventory("PlayerHealthWarning", 999);
+		TakeInventory("SoulCubeMessagePopped", 999);
 	}
 	delay(1);
 	restart;
