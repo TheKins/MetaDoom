@@ -146,3 +146,40 @@ object UnmakerTracerSpark
 {
     frame PLSE { light UnmakerGlowSmall }
 }
+
+// soulcube
+
+pulselight SOULAMMO
+{
+    color 0.0 0.0 0.6
+    size 16
+    secondarySize 8
+    interval 1
+}
+
+object SoulAmmo
+{
+    frame SOLA { light SOULAMMO }
+}
+
+pointlight SOULCUBESHOT
+{
+    color 1.0 0.8 0.4
+    size 64
+}
+
+pointlight SOULCUBETRAIL
+{
+    color 1.0 0.8 0.4
+    size 32
+}
+
+object MetaSoulCubeProj
+{
+    frame SOLP { light SOULCUBESHOT }
+}
+
+object SoulCubeTrail2
+{
+    frame APBX { light SOULCUBETRAIL }
+}
