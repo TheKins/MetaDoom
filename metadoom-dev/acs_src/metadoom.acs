@@ -154,6 +154,37 @@ Script "FireSelfSpray_FX" ENTER
 	restart;
 }
 
+// Soulcube Popup
+Script "SoulCubeMsg_Warn" ENTER
+{
+	if (CheckInventory("SoulAmmo") == 5 && !CheckInventory("SoulCubeMessagePopped"))
+	{
+		LocalAmbientSound("weapons/soulcube/ready", 127);
+		GiveInventory("SoulCubeMessagePopped", 1);
+		SetHudSize(320,200,1);
+		SetFont("SmallFont");
+		HudMessage(l:"SOULCUBEREADY"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 155.0, 1.0, 0.01, 1.0);
+		delay(1);
+		HudMessage(l:"SOULCUBEREADY"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 145.0, 1.0, 0.01, 1.0);
+		delay(1);
+		HudMessage(l:"SOULCUBEREADY"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 153.0, 1.0, 0.01, 1.0);
+		delay(1);
+		HudMessage(l:"SOULCUBEREADY"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 150.0, 1.0, 0.01, 1.0);
+	}
+	delay(1);
+	restart;
+}
+
+Script "SoulCubeMsg_Clear" ENTER
+{
+	if (CheckInventory("SoulAmmo") != 5 && CheckInventory("SoulCubeMessagePopped"))
+	{
+		TakeInventory("PlayerHealthWarning", 999);
+	}
+	delay(1);
+	restart;
+}
+
 // Blood is thicker...
 Script "BloodFX_Water" ENTER
 {

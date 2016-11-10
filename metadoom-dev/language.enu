@@ -303,6 +303,7 @@ OB_FRIENDLY3 = "%k gets a frag for the other team.";
 OB_FRIENDLY4 = "%k loses another friend.";
 
 LOWHEALTHWARNING = "Low Health!";
+SOULCUBEREADY = "SoulCube Ready!";
 
 // Scoreboard text
 SCORE_ITEMS = "Items";

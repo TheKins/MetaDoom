@@ -1,4 +1,5 @@
 actor SoulCubeUsed : Boolean {}
+actor SoulCubeMessagePopped : Boolean {}
 
 ACTOR MetaSoulcube : MetaDoomWeapon
 {
