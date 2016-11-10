@@ -1,5 +1,6 @@
 height 32;
 Resolution 320, 200;
+monospacefonts true, "0";
 
 statusbar fullscreen
 {
