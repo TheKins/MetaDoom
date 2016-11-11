@@ -280,3 +280,16 @@ monsters/cyberdemon/hoof4		dshoof4
 $random monsters/cyberdemon/fire		{ monsters/cyberdemon/fire1 monsters/cyberdemon/fire2 }
 monsters/cyberdemon/fire1		cybrfir1
 monsters/cyberdemon/fire2		cybrfir2
+
+// fatso
+monsters/mancubus/see		mancsee
+monsters/mancubus/pain		mancpain
+monsters/mancubus/attack	mancatk1
+monsters/mancubus/die		mancdie
+monsters/mancubus/body		mancbody
+monsters/mancubus/melt		mancmelt
+monsters/mancubus/fire		mancfire
+
+$random monsters/mancubus/idle { monsters/mancubus/idle1 monsters/mancubus/idle2 }
+monsters/mancubus/idle1		mancidl1
+monsters/mancubus/idle2		mancidl2

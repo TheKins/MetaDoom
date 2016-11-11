@@ -9,10 +9,10 @@ ACTOR MetaMancubus : MonsterCore
 	Monster
 	+FLOORCLIP
 	//+BOSSDEATH
-	SeeSound "fatso/sight"
-	PainSound "fatso/pain"
-	DeathSound "fatso/death"
-	ActiveSound "fatso/active"
+	SeeSound "monsters/mancubus/see"
+	PainSound "monsters/mancubus/pain"
+	DeathSound "monsters/mancubus/die"
+	ActiveSound "monsters/mancubus/idle"
 	Obituary "$OB_FATSO"
 	States
 	{
@@ -33,7 +33,7 @@ ACTOR MetaMancubus : MonsterCore
 		FATT AABBCCDDEEFF 4 A_Chase
 		Loop
 	Missile:
-		FATT G 20 A_FatRaise
+		FATT G 20 { A_FaceTarget; A_PlaySound("monsters/mancubus/attack"); }
 		FATT H 10 BRIGHT A_FatAttack1("MetaFatShot")
 		FATT IG 5 A_FaceTarget
 		FATT H 10 BRIGHT A_FatAttack2("MetaFatShot")
@@ -50,9 +50,13 @@ ACTOR MetaMancubus : MonsterCore
 		FATT K 6 A_GiveToTarget("ScoreItem", 500)
 		FATT L 6 A_Scream
 		FATT M 6 A_NoBlocking
-		FATT NOPQRS 6
+		FATT N 6
+		FATT O 6 A_PlaySound("monsters/mancubus/body")
+		FATT P 6 
+		FATT Q 6 A_PlaySound("monsters/mancubus/melt")
+		FATT RS 6
 		FATT T -1 A_KillMaster //A_BossDeath
-	     Stop
+	    Stop
 	 Raise:
 		FATT R 5 A_SetScale(1,1)
 		FATT QPONMLK 5
@@ -69,7 +73,7 @@ ACTOR MetaFatShot
 	+RANDOMIZE
 	RenderStyle Add
 	Alpha 1
-	SeeSound "fatso/attack"
+	SeeSound "monsters/mancubus/fire"
 	DeathSound "fatso/shotx"
 	decal Scorch
 	States
