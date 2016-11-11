@@ -35,14 +35,14 @@ statusbar fullscreen
 		
 		drawimage "HUDSTAT2", 96, 169;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Items, 121, 181;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 121, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
 
 		//keys
 		
@@ -148,14 +148,14 @@ statusbar normal // Standard Doom Status bar
 		
 		drawimage "HUDSTAT", 96, 169;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Items, 121, 181;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 121, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
 		
-		drawnumber 3, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
-		drawnumber 3, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
 
 		//keys
 		drawimage "HUDKEYS", 281, 170;
