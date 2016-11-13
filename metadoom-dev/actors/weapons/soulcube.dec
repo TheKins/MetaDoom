@@ -105,7 +105,11 @@ ACTOR MetaSoulCubeProj
 		SOLP A 0 A_SeekerMissile(0, 90)
 		SOLP A 0 A_SpawnItem("SoulCubeTrail1")
 		SOLP A 0 A_SpawnItem("SoulCubeTrail2")
-		SOLP A 1 Bright A_SetRoll((roll + 15))
+		SOLP A 1 Bright
+		{
+			A_SetRoll(roll + 15);
+			A_SetPitch(pitch + 15);
+		}
 		Loop
 	Death:
 	Crash:
