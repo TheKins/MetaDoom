@@ -74,7 +74,7 @@ ACTOR MetaFatShot
 	RenderStyle Add
 	Alpha 1
 	SeeSound "monsters/mancubus/fire"
-	DeathSound "fatso/shotx"
+	DeathSound "monsters/mancubus/boom"
 	decal Scorch
 	States
 	{
@@ -87,6 +87,7 @@ ACTOR MetaFatShot
 		MANF B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
 		Loop
 	Death:
+		MISL B 0 A_Quake (3,5,0,750,0)
 		MISL B 8 BRIGHT
 		MISL C 6 BRIGHT
 		MISL D 4 BRIGHT
