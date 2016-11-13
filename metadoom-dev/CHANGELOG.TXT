@@ -4,8 +4,7 @@ NEXT VERSION
 - Added # new weapons! (Unmaker, SoulCube)
 - Revamped # old enemies! (Cyberdemon)
 - Updated Hellknight sprites to Zaneion's latest version, featuring more detail!
-- Added awesome new art for the Dog Collar, Shield Wall and Tesla Rocket!
-  Thanks Capn J!
+- Added awesome new art for the Dog Collar, Shield Wall and Tesla Rocket! Thanks Capn J!
 - Adjusted alignment on inventory icons to look a little more centered.
 - Replaced stealth monsters with normal MetaDoom spawners, because stealth
   monsters suck no matter how much DUMP maps try to redeem them.
@@ -15,7 +14,8 @@ NEXT VERSION
 - Fixed some cut-off on one sprite of the first person death animation.
 - Fixed Siphon Grenade not affecting bosses.
 - Changed the cheat command from "pukename umpulse #" to "impulse #"
-- Re-enabled font monospacing in SBARINFO
+- Re-enabled font monospacing in SBARINFO.
+- Lots of tweaks and edits for pre-existing sounds.
 
 Optional Content:
 - Added DONTFALL flag to Keens to fix a visual bug
