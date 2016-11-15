@@ -169,6 +169,11 @@ ACTOR MetaDemonDog : MetaHellhound
 		"####" AABB 2 Fast A_Chase("Melee","")
 		"####" CCDD 2 Fast A_Chase("Melee","",CHF_FASTCHASE)
 		Loop
+	Melee:
+		"####" EF 2 A_FaceTarget
+		"####" G 8 A_SargAttack
+		"####" FE 2
+		Goto See
 	Pain:
 		"####" H 0
 		"####" H 2
@@ -212,4 +217,114 @@ ACTOR MetaDemonDog : MetaHellhound
 		"####" A 0 A_GiveToTarget("MakeMeGrabTheDogGun_DemonDog", 1)
 		stop
 	}
+}
+
+ACTOR MetaCerberus : MetaHellhound
+{
+	Health 150
+	Speed 17
+	ActiveSound "monsters/demondog/bark"
+	SeeSound "monsters/demondog/see"
+	Obituary "$OB_DOG3"
+	States
+	{
+	Spawn:
+		CDOG AB 10 A_Look
+		Loop
+	See:
+		"####" A 0
+		{
+			if (CountInv("BleedingCounter") > 0)
+			{
+				A_DamageSelf ((5), "Bleeding");
+				A_TakeInventory("BleedingCounter", 1);
+				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
+				A_PlaySound("monsters/bleed", CHAN_5);
+			}
+		}
+		"####" AABBCCDD 2 Fast A_Chase("Melee","Missile")
+		Loop
+	Melee:
+		"####" EF 2 A_FaceTarget
+		"####" G 8 A_SargAttack
+		"####" FE 2
+		Goto See
+	Missile:
+		"####" A 4 A_PlaySound("monsters/demondog/bark")
+		"####" E 2
+		{
+			A_FaceTarget;
+			ThrustThingZ(0,32,0,0);
+			ThrustThing(angle*256/360, 16, 0, 0);
+		}
+		"####" F 2
+		"####" GGGGGGGG 1 A_CheckFloor("MissileLanding")
+	MissileLoop:
+		"####" G 1
+		{
+			return A_JumpIf(momz == 0, "MissileLanding");
+		}
+		loop
+	MissileLanding:
+		"####" A 0 A_PlaySound("bodyfalls/medium")
+		"####" A 4 A_Stop
+		goto See
+	Pain:
+		"####" H 0
+		"####" H 2
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 2 A_Pain
+		Goto See
+	Pain.HolyWater:
+		"####" H 2
+		"####" H 2 A_Pain
+		Goto Scurred
+	Punched:
+		"####" H 3 
+		"####" H 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 12 A_Pain
+		Goto See
+	Death:
+		"####" H 0 A_Jump (128, 2)
+		"####" H 0 A_SetScale(-1.25,1.25) // random chance of sprite flipping
+		"####" H 0 A_SpawnItem("SoulSpawner")
+		"####" H 8 A_GiveToTarget("ScoreItem", 350)
+		"####" I 8 A_Scream
+		"####" J 4 A_Fall
+		"####" K 4 A_PlaySound("bodyfalls/medium")
+		"####" K -1 
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		"####" H 5 A_GiveToTarget("ScoreItem", 350)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Death.DogCollar:
+		"####" A 0 A_PlaySound("inventory/dogcollar/activate")
+		"####" A 0 A_SpawnDebris("CollarSpark")
+		"####" A 0 A_GiveToTarget("MetaDogGun_Cerberus", 1)
+		"####" A 0 A_GiveToTarget("MakeMeGrabTheDogGun_Cerberus", 1)
+		stop
+	}
+}
+
+ACTOR MakeMeGrabTheDogGun_Cerberus : CustomInventory
+{
+  +COUNTITEM
+  +INVENTORY.ALWAYSPICKUP
+  States
+  {
+  Spawn:
+    TNT1 A 1 Bright
+    Loop
+  Pickup:
+    TNT1 A 0 A_SelectWeapon("MetaDogGun_Cerberus")
+    Stop
+  }
 }

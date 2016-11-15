@@ -293,6 +293,7 @@ OB_SIPHON = "%o was sucked dry by %k's Siphon Grenade.";
 OB_METADOG_BITE = "%o was mauled by %k's Collared Dog.";
 OB_METADOG_HELLHOUND = "%o was nailed by %k's well-thrown Hellhound.";
 OB_METADOG_DEMONDOG = "%o was nailed by %k's carefully-pitched Demon Dog.";
+OB_METADOG_DEMONDOG = "%o was nailed by %k's perfectly-hurdled Cerberus.";
 
 OB_MONTELEFRAG = "%o was telefragged.";
 
