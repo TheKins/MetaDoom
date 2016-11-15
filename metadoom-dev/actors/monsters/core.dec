@@ -8,6 +8,7 @@ actor MonsterCore
 	painchance Axe, 255
 	painchance Vampire, 255
 	painchance Bleeding, 0
+	painchance SoulCube, 255
 	damagefactor FireExtinguisher, 0
 	damagefactor DogCollar, 0
 	painchance DogCollar, 0
@@ -152,6 +153,90 @@ actor MonsterCore
 	Death.Massacre:
 		"####" # 0 A_Jump(256,"Death")
 		stop
+		
+	Pain.SoulCube:
+		"####" # 0
+		{
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
+
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));			
+		}
+			"####" # 0 A_Jump (256, "Pain")
+			stop
 	Death.SoulCube:
 	XDeath.SoulCube:
 		"####" # 0
