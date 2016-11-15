@@ -154,6 +154,15 @@ monsters/demondog/bark1	dog2brk1
 monsters/demondog/bark2	dog2brk2
 monsters/demondog/bark3	dog2brk3
 
+monsters/cerberus/see		dog3reco
+monsters/cerberus/jump		dog3jump
+monsters/cerberus/land		dog3land
+
+$random monsters/cerberus/bark { monsters/cerberus/bark1 monsters/cerberus/bark2 monsters/cerberus/bark3 }
+monsters/cerberus/bark1	dog3brk1
+monsters/cerberus/bark2	dog3brk2
+monsters/cerberus/bark3	dog3brk3
+
 // nightmare spectre
 monsters/nightmarespectre/see		nmspsee
 monsters/nightmarespectre/bite		nmspbite

@@ -223,8 +223,8 @@ ACTOR MetaCerberus : MetaHellhound
 {
 	Health 150
 	Speed 17
-	ActiveSound "monsters/demondog/bark"
-	SeeSound "monsters/demondog/see"
+	ActiveSound "monsters/cerberus/bark"
+	SeeSound "monsters/cerberus/see"
 	Obituary "$OB_DOG3"
 	States
 	{
@@ -250,7 +250,7 @@ ACTOR MetaCerberus : MetaHellhound
 		"####" FE 2
 		Goto See
 	Missile:
-		"####" A 4 A_PlaySound("monsters/demondog/bark")
+		"####" A 4 A_PlaySound("monsters/cerberus/jump")
 		"####" E 2
 		{
 			A_FaceTarget;
@@ -258,15 +258,16 @@ ACTOR MetaCerberus : MetaHellhound
 			ThrustThing(angle*256/360, 16, 0, 0);
 		}
 		"####" F 2
-		"####" GGGGGGGG 1 A_CheckFloor("MissileLanding")
+		"####" FFFFFFF 1 A_CheckFloor("MissileLanding")
 	MissileLoop:
-		"####" G 1
+		"####" F 1
 		{
 			return A_JumpIf(momz == 0, "MissileLanding");
+			return A_CheckFloor("MissileLanding");
 		}
 		loop
 	MissileLanding:
-		"####" A 0 A_PlaySound("bodyfalls/medium")
+		"####" A 0 A_PlaySound("monsters/cerberus/land")
 		"####" A 4 A_Stop
 		goto See
 	Pain:
