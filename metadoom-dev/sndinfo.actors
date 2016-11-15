@@ -147,6 +147,13 @@ monsters/hellhound/bark1	dog1brk1
 monsters/hellhound/bark2	dog1brk2
 monsters/hellhound/bark3	dog1brk3
 
+monsters/demondog/see		dog2reco
+
+$random monsters/demondog/bark { monsters/demondog/bark1 monsters/demondog/bark2 monsters/demondog/bark3 }
+monsters/demondog/bark1	dog2brk1
+monsters/demondog/bark2	dog2brk2
+monsters/demondog/bark3	dog2brk3
+
 // nightmare spectre
 monsters/nightmarespectre/see		nmspsee
 monsters/nightmarespectre/bite		nmspbite

@@ -162,9 +162,22 @@ actor PinkySpawner replaces Demon
 		goto Pinky
 	LotsOfDogs:
 		TNT1 A 0 //A_Log("Dog Spawned")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "ContentLocustDogs")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 7, "DogsTier2")
+		goto Hellhound
+	DogsTier2:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(128, "DemonDog")
+		goto Hellhound
+	ContentLocustDogs:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(128, "DemonDog")
 		goto Hellhound
 	Hellhound:
 		TNT1 A 0 A_SpawnItemEx("MetaHellhound",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	DemonDog:
+		TNT1 A 0 A_SpawnItemEx("MetaDemonDog",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		stop
 	Pinky:
 		TNT1 A 0 A_SpawnItemEx("MetaDemon",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
