@@ -12,6 +12,7 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 	Inventory.Pickupmessage "$GOTUNMAKER"
 	Inventory.PickupSound "weapons/unmaker/get"
 	Tag "$TAGUNMAKER"
+	Decal Scorch
 	States
 	{
 	Ready:
