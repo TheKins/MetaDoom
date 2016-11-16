@@ -260,6 +260,7 @@ OB_NIGHTMAREIMPHIT = "%o was sliced by a Nightmare Imp.";
 OB_NIGHTMAREIMP = "%o was torched by a Nightmare Imp.";
 OB_HELLRAZER = "%o was blasted by a Hell Razer.";
 OB_SKULL2 = "%o was haunted by a Phantom.";
+OB_MALWRAITH = "%o was forked up by a Malwraith.";
 
 OB_METAFIST = "%o was Gloriously Killed by %k.";
 OB_BERSERK = "%o ate the Berserker Rage of %k.";
