@@ -17,7 +17,6 @@ ACTOR MetaDoomWeapon : Weapon
 	Weapon.BobStyle Smooth
 	//+INVENTORY.ALWAYSPICKUP
 	+DONTGIB
-	-DROPPED
   	States
 	{
 	DeadDude:
