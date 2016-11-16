@@ -182,6 +182,7 @@ weapons/doggun/bite2	dgunbit2
 weapons/unmaker/get			unmaget
 weapons/unmaker/use			unmause
 weapons/unmaker/fire		unmafire
+weapons/unmaker/altcharge	unmachrg
 weapons/unmaker/altfire1	unmaalt1
 weapons/unmaker/altfire2	unmaalt2
 weapons/unmaker/altfire3	unmaalt3
