@@ -5,8 +5,10 @@ ACTOR MetaSoulcube : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2900
 	Obituary "$OB_METASOULCUBE"
-	Weapon.AmmoUse 5
-	Weapon.AmmoType "SoulAmmo"
+	Weapon.AmmoUse1 5
+	Weapon.AmmoType1 "SoulAmmo"
+	Weapon.AmmoUse2 5
+	Weapon.AmmoType2 "SoulAmmo"
 	Inventory.Pickupmessage "$GOTSOULCUBE"
 	Inventory.PickupSound "weapons/soulcube/get"
 	Tag "$TAGSOULCUBE"
@@ -55,6 +57,7 @@ ACTOR MetaSoulcube : MetaDoomWeapon
 		SOLG A 1 Offset(0,32)
 		SOLG A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE)
 		goto Ready
+	AltFire:
 	Fire:
 		SOLW A 4
 		SOLW B 3 bright A_PlaySound("weapons/soulcube/fire", CHAN_WEAPON)
