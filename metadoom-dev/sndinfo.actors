@@ -106,6 +106,7 @@ monsters/imp/fireball/hit2		fball2
 monsters/imp/fireball/hit3		fball3
 
 // Cacodemon
+monsters/caco/lightningball/fire		lballfir
 monsters/caco/lightningball/loop		lballoop
 $random monsters/caco/lightningball/hit	{ monsters/caco/lightningball/hit1 monsters/caco/lightningball/hit2 monsters/caco/lightningball/hit3 }
 monsters/caco/lightningball/hit1		lball1
@@ -113,6 +114,13 @@ monsters/caco/lightningball/hit2		lball2
 monsters/caco/lightningball/hit3		lball3
 
 monsters/caco/gib						cacogib
+
+//malwraith
+monsters/malwraith/see		malwsee
+monsters/malwraith/idle		malwidle
+monsters/malwraith/pain		malwpain
+monsters/malwraith/die		malwdie
+monsters/malwraith/attack	malwattk
 
 // Pain Elemental
 monsters/painelemental/see		pelesee
