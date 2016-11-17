@@ -53,6 +53,7 @@ Unnamed Artists Not Listed In Brutal Doom's "Detailed" Credits List (Lost Soul s
 Megaherz (Hell Razor sprites)
 Zaneion (Hell Knight sprites, Baron of Hell sprites)
 TorridGristle (Siphon Grenade sprite)
+Merser (Wretched sprite)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 Captain Toenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)

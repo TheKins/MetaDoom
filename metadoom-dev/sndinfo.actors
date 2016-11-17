@@ -115,12 +115,21 @@ monsters/caco/lightningball/hit3		lball3
 
 monsters/caco/gib						cacogib
 
-//malwraith
+// malwraith
 monsters/malwraith/see		malwsee
 monsters/malwraith/idle		malwidle
 monsters/malwraith/pain		malwpain
 monsters/malwraith/die		malwdie
 monsters/malwraith/attack	malwattk
+
+// wretched!
+monsters/wretched/see		wretsee
+monsters/wretched/pain		wretpain
+monsters/wretched/die		wretdie
+monsters/wretched/tongue	wrettung
+$random monsters/wretched/idle { monsters/wretched/idle1 monsters/wretched/idle2 }
+monsters/wretched/idle1		wretidl1
+monsters/wretched/idle2		wretidl2
 
 // Pain Elemental
 monsters/painelemental/see		pelesee
