@@ -1,7 +1,7 @@
 actor MachinegunRockets: Boolean {}
 actor MachinegunCheat: Boolean {}
 
-ACTOR MetaMachineGun : WeaponGiver
+ACTOR MetaMachineGunPickup : WeaponGiver
 {
 	DropItem "MetaMachineGun"
 	Inventory.PickupMessage "$GOTMACGUN"
