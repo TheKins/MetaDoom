@@ -1,5 +1,20 @@
 actor RLDetonator : Boolean {}
 
+ACTOR MetaRocketLauncherPickup : WeaponGiver
+{
+	DropItem "MetaRocketLauncher"
+	Inventory.PickupMessage "$GOTLAUNCHER"
+	Inventory.PickupSound "weapons/rocketlauncher/get"
+	States
+	{
+	Spawn:
+		RLAU Z 0
+		RLAU Z 0 A_ChangeFlag ("DROPPED", 0)
+		RLAU Z -1
+		Stop
+	}
+}
+
 ACTOR MetaRocketLauncher : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2500

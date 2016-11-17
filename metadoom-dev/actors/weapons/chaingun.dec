@@ -1,5 +1,20 @@
 actor ChaingunTurretMode : Boolean {}
 
+ACTOR MetaChaingunPickup : WeaponGiver
+{
+	DropItem "MetaChaingun"
+	Inventory.PickupMessage "$GOTCHAINGUN"
+	Inventory.PickupSound "weapons/chaingun/get"
+	States
+	{
+	Spawn:
+		CHGN Z 0
+		CHGN Z 0 A_ChangeFlag ("DROPPED", 0)
+		CHGN Z -1
+		Stop
+	}
+}
+
 ACTOR MetaChaingun : MetaDoomWeapon
 {
 	Inventory.PickupMessage "$GOTCHAINGUN"

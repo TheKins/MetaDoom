@@ -8,6 +8,21 @@ Pistol
 
 actor PistolFlashlight: Boolean {}
 
+ACTOR MetaPistolPickup : WeaponGiver
+{
+	DropItem "MetaPistol"
+	Inventory.Pickupmessage "$GOTPISTOL"
+	Inventory.PickupSound "weapons/pistol/get"
+	States
+	{
+	Spawn:
+		PIST Z 0
+		PIST Z 0 A_ChangeFlag ("DROPPED", 0)
+		PIST Z -1
+		Stop
+	}
+}
+
 ACTOR MetaPistol : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 1900

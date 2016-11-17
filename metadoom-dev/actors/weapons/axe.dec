@@ -1,3 +1,18 @@
+ACTOR MetaAxePickup : WeaponGiver
+{
+	DropItem "MetaAxe"
+	Inventory.PickupMessage "$GOTAXE"
+	Inventory.PickupSound "weapons/axe/get"
+	States
+	{
+	Spawn:
+		AXEG Z 0
+		AXEG Z 0 A_ChangeFlag ("DROPPED", 0)
+		AXEG Z -1
+		Stop
+	}
+}
+
 ACTOR MetaAxe : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2400

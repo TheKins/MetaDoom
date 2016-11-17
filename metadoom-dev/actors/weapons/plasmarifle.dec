@@ -1,6 +1,21 @@
 actor PlasmaHeat : Counter { Inventory.MaxAmount 5 }
 actor PlasmaFired : Counter { Inventory.MaxAmount 10 }
 
+ACTOR MetaPlasmaRiflePickup : WeaponGiver
+{
+	DropItem "MetaPlasmaRifle"
+	Inventory.PickupMessage "$GOTPLASMA"
+	Inventory.PickupSound "weapons/plasmarifle/get"
+	States
+	{
+	Spawn:
+		PLA0 Z 0
+		PLA0 Z 0 A_ChangeFlag ("DROPPED", 0)
+		PLA0 Z -1
+		Stop
+	}
+}
+
 ACTOR MetaPlasmaRifle : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 100

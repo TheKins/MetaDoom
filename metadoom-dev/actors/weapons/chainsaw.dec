@@ -1,3 +1,18 @@
+ACTOR MetaChainsawPickup : WeaponGiver
+{
+	DropItem "MetaChainsaw"
+	Inventory.PickupMessage "$GOTCHAINSAW"
+	Inventory.PickupSound "weapons/chainsaw/get"
+	States
+	{
+	Spawn:
+		CSAW Z 0
+		CSAW Z 0 A_ChangeFlag ("DROPPED", 0)
+		CSAW Z -1
+		Stop
+	}
+}
+
 ACTOR MetaChainsaw : MetaDoomWeapon
 {
 	Weapon.Kickback 0

@@ -17,6 +17,21 @@ ACTOR HalonCannister : Ammo
 	}
 }
 
+ACTOR MetaFireExtinguisherPickup : WeaponGiver
+{
+	DropItem "MetaFireExtinguisher"
+	Inventory.Pickupmessage "$GOTFIREX"
+	Inventory.PickupSound "weapons/fireextinguisher/get"
+	States
+	{
+	Spawn:
+		FIEX Z 0
+		FIEX Z 0 A_ChangeFlag ("DROPPED", 0)
+		FIEX Z -1
+		Stop
+	}
+}
+
 ACTOR MetaFireExtinguisher : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 1900

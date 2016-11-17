@@ -1,5 +1,20 @@
 actor DemonKey : Counter { Inventory.MaxAmount 3 }
 
+ACTOR MetaUnmakerPickup : WeaponGiver
+{
+	DropItem "MetaUnmaker"
+	Inventory.Pickupmessage "$GOTUNMAKER"
+	Inventory.PickupSound "weapons/unmaker/get"
+	States
+	{
+	Spawn:
+		UNMA Z 0
+		UNMA Z 0 A_ChangeFlag ("DROPPED", 0)
+		UNMA Z -1
+		Stop
+	}
+}
+
 ACTOR MetaUnmaker : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2900

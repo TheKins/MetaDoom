@@ -17,6 +17,21 @@ ACTOR HolyWater : Ammo
 	}
 }
 
+ACTOR HolyWaterPistolPickup : WeaponGiver
+{
+	DropItem "HolyWaterPistol"
+	Inventory.Pickupmessage "$GOTHWP"
+	Inventory.PickupSound "weapons/waterpistol/get"
+	States
+	{
+	Spawn:
+		HWPP A 0
+		HWPP A 0 A_ChangeFlag ("DROPPED", 0)
+		HWPP A -1
+		Stop
+	}
+}
+
 ACTOR HolyWaterPistol : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 1900

@@ -6,6 +6,21 @@ Super Shotgun
 ----------------------------
 */
 
+ACTOR MetaSuperShotgunPickup : WeaponGiver
+{
+	DropItem "MetaSuperShotgun"
+	Inventory.PickupMessage "$GOTSHOTGUN2"
+	Inventory.PickupSound "weapons/ssg/get"
+	States
+	{
+	Spawn:
+		SSG2 Z 0
+		SSG2 Z 0 A_ChangeFlag ("DROPPED", 0)
+		SSG2 Z -1
+		Stop
+	}
+}
+
 ACTOR MetaSuperShotgun : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 400

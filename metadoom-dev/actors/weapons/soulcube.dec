@@ -1,6 +1,22 @@
 actor SoulCubeUsed : Boolean {}
 actor SoulCubeMessagePopped : Boolean {}
 
+ACTOR MetaSoulcubePickup : WeaponGiver
+{
+	DropItem "MetaSoulcube"
+	Inventory.Pickupmessage "$GOTSOULCUBE"
+	Inventory.PickupSound "weapons/soulcube/get"
+	States
+	{
+	Spawn:
+		SOLP Z 0
+		SOLP Z 0 A_ChangeFlag ("DROPPED", 0)
+	Animation:
+		SOLP XYZY 10 bright
+		Stop
+	}
+}
+
 ACTOR MetaSoulcube : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2900

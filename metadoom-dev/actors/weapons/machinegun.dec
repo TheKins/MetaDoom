@@ -1,6 +1,21 @@
 actor MachinegunRockets: Boolean {}
 actor MachinegunCheat: Boolean {}
 
+ACTOR MetaMachineGun : WeaponGiver
+{
+	DropItem "MetaMachineGun"
+	Inventory.PickupMessage "$GOTMACGUN"
+	Inventory.PickupSound "weapons/machinegun/get"
+	States
+	{
+	Spawn:
+		MACG Z 0
+		MACG Z 0 A_ChangeFlag ("DROPPED", 0)
+		MACG Z -1
+		Stop
+	}
+}
+
 ACTOR MetaMachineGun : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 700
