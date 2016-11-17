@@ -17,6 +17,7 @@ NEXT VERSION
 - Changed the cheat command from "pukename umpulse #" to "impulse #"
 - Re-enabled font monospacing in SBARINFO.
 - Lots of tweaks and edits for pre-existing sounds.
+- Fixed weapon stay/respawn in multiplayer
 
 Optional Content:
 - Added DONTFALL flag to Keens to fix a visual bug
