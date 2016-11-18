@@ -529,7 +529,7 @@ ACTOR WretchedTongue : LoreShot
     WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("WretchedTongueTrail")
     stop
   Death:
-	WTNG A 0 A_PlaySound("monsters/wretched/tongue")
+	WTNG A 0 A_PlaySound("monsters/wretched/pull")
     Stop
   }
 }
