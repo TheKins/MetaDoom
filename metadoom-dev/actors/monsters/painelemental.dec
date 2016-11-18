@@ -94,7 +94,7 @@ ACTOR MetaPainElemental : MonsterCore
 
 ACTOR MetaBeholder : MonsterCore
 {
-	Health 400
+	Health 300
 	Radius 31
 	Height 56
 	Mass 400
