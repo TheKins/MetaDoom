@@ -106,7 +106,7 @@ ACTOR MetaBeholder : MonsterCore
 	+FLOATBOB
 	SeeSound "monsters/beholder/see"
 	PainSound "monsters/beholder/pain"
-	DeathSound "monsters/beholder/die
+	DeathSound "monsters/beholder/die"
 	ActiveSound "monsters/painelemental/idle"
 	Obituary "$OB_BEHOLDER"
 	States
