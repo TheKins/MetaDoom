@@ -165,6 +165,13 @@ ACTOR MetaBeholder : MonsterCore
 		BEHO CB 5
 		BEHO A 10
 		Goto See
+	Melee:
+		PAIN B 4 A_FaceTarget
+		PAIN C 4 A_FaceTarget
+		PAIN D 4 BRIGHT A_FaceTarget
+		PAIN A 0 BRIGHT A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", PainElementalBite, 1)
+		PAIN A 4 A_FaceTarget
+		Goto See
 	Pain:
 		BEHO E 3
 		BEHO E 3 A_Pain
