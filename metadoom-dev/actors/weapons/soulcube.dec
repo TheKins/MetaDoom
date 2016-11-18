@@ -6,6 +6,7 @@ ACTOR MetaSoulcubePickup : WeaponGiver
 	DropItem "MetaSoulcube"
 	Inventory.Pickupmessage "$GOTSOULCUBE"
 	Inventory.PickupSound "weapons/soulcube/get"
+	+FLOATBOB
 	States
 	{
 	Spawn:
@@ -13,7 +14,7 @@ ACTOR MetaSoulcubePickup : WeaponGiver
 		SOLP Z 0 A_ChangeFlag ("DROPPED", 0)
 	Animation:
 		SOLP XYZY 10 bright
-		Stop
+		loop
 	}
 }
 
