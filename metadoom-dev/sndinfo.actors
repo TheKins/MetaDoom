@@ -327,3 +327,8 @@ monsters/mancubus/boom		mancboom
 $random monsters/mancubus/idle { monsters/mancubus/idle1 monsters/mancubus/idle2 }
 monsters/mancubus/idle1		mancidl1
 monsters/mancubus/idle2		mancidl2
+
+// Beholder
+$random monsters/forgottenone/attack { monsters/forgottenone/attack1 monsters/forgottenone/attack2 }
+monsters/forgottenone/attack1	frgtn1
+monsters/forgottenone/attack2	frgtn2

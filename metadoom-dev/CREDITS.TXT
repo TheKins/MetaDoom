@@ -54,6 +54,7 @@ Megaherz (Hell Razor sprites)
 Zaneion (Hell Knight sprites, Baron of Hell sprites)
 TorridGristle (Siphon Grenade sprite)
 Merser (Wretched sprite)
+Eriance (Beholder sprite)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 Captain Toenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
