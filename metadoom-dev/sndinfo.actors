@@ -329,6 +329,11 @@ monsters/mancubus/idle1		mancidl1
 monsters/mancubus/idle2		mancidl2
 
 // Beholder
+monsters/beholder/see		behosee
+monsters/beholder/pain		behopain
+monsters/beholder/fire		behofire
+monsters/beholder/die		behodie
+
 $random monsters/forgottenone/attack { monsters/forgottenone/attack1 monsters/forgottenone/attack2 }
 monsters/forgottenone/attack1	frgtn1
 monsters/forgottenone/attack2	frgtn2
