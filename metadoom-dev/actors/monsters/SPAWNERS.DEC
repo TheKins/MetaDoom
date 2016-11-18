@@ -317,7 +317,22 @@ actor PainElementalSpawner replaces PainElemental
 	{
 	Spawn:
 		PAIN A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "PainElemental")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "ContentLocustVarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 10, "Tier2")
+		goto PainElemental
+	ContentLocustVarietyPack:
+	Tier2:
+		TNT1 A 0 A_Jump(64, "Beholder", "Rahovart")
+		goto PainElemental
+	PainElemental:
 		TNT1 A 0 A_SpawnItemEx("MetaPainElemental",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	Beholder:
+		TNT1 A 0 A_SpawnItemEx("MetaBeholder",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	Rahovart:
+		TNT1 A 0 A_SpawnItemEx("MetaRahovart",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		stop
 	}
 }

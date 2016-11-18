@@ -2,8 +2,8 @@ NEXT VERSION
 ============
 
 - Added 2 new weapons! (Unmaker, SoulCube)
-- Added # new enemies! (Demon Dog, Cerberus, Malwrath, Wretched, Beholder, )
-- Revamped # old enemies! (Cyberdemon)
+- Added 6 new enemies! (Demon Dog, Cerberus, Malwrath, Wretched, Beholder, Rahovart)
+- Revamped 1 old enemy! (Cyberdemon)
 - Updated Hellknight sprites to Zaneion's latest version, featuring more detail!
 - Added awesome new art for the Dog Collar, Shield Wall and Tesla Rocket! Thanks Capn J!
 - Adjusted alignment on inventory icons to look a little more centered.
