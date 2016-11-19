@@ -16,7 +16,7 @@ engine developers helping me out like SOME mod projects out there...
 - MBF Helper Dogs are replaced with MetaDoom Hellhounds.
 - Fixed Hellhounds shrinking a little sometimes when killed.
 - Fixed some cut-off on one sprite of the first person death animation.
-- Fixed Siphon Grenade not affecting bosses.
+- Fixed Siphon Grenade not affecting bosses, and reduced both damage and effect.
 - Changed the cheat command from "pukename umpulse #" to "impulse #".
 - Re-enabled font monospacing in SBARINFO.
 - Lots of tweaks and edits for pre-existing sounds.
