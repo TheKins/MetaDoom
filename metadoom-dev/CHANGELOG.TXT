@@ -1,4 +1,4 @@
-v2.0 "Olivia" (##/11/16)
+v2.0 "Olivia" (20/11/16)
 ========================
 And we are back! Lots of fixes, tweaks, improvements and new content this time around!
 Sorry that it took so long - it's not like I have any game publishers and/or
