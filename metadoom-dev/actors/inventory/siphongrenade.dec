@@ -71,11 +71,13 @@ actor SiphonGrenadeProj
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 ThrustThingZ(0,32,0,1)
-		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
 		SIPH A 0
-		goto Bounce1
+		SIPH A 0
+		{
+			ThrustThingZ(0,32,0,1);
+			A_PlaySound("weapons/grenadethrow");
+		}
+		goto Bounce
 	Bounce:
 		"####" # 0 A_Jump(128, "Bounce2")
 		goto Bounce1
@@ -94,7 +96,7 @@ actor SiphonGrenadeProj
 	Death:
 		TNT1 A 0 A_PlaySound("inventory/siphongrenade/explode")
 		TNT1 A 0 A_SpawnItem("SiphonExplosionFX")
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_Explode((5), 256, !XF_HURTSOURCE)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_Explode((8), 256, !XF_HURTSOURCE)
 		Stop
 	}
 }
