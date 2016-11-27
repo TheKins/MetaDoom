@@ -99,6 +99,8 @@ ACTOR MetaLostSoulFire
 	Alpha 0.5
 	VSpeed 1
 	Mass 5
+	height 1
+	radius 1
 	States
 	{
 	Spawn:
@@ -529,6 +531,8 @@ ACTOR MetaForgottenOneFire
 	Alpha 0.5
 	VSpeed 1
 	Mass 5
+	height 1
+	radius 1
 	States
 	{
 	Spawn:
