@@ -127,7 +127,7 @@ ACTOR MetaGaussCannon : MetaDoomWeapon
 		GAUS Y 3
 		GAUS Y 1 bright
 		{
-			A_RailAttack((100),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT|RGF_NOPIERCING,0,"GaussExplosion");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT|RGF_NOPIERCING,0,"GaussExplosion");
 			A_PlaySound ("weapons/gauss/fire", CHAN_WEAPON);
 			A_GunFlash;
 			A_Quake (3,5,0,750,0);
@@ -139,7 +139,7 @@ ACTOR MetaGaussCannon : MetaDoomWeapon
 		GAUS Y 1 bright A_SetPitch(pitch+1)
 		GAUS Y 1 A_SetPitch(pitch+1)
 		GAUS Y 1 A_SetPitch(pitch+1) 
-		GAUS Y 12 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE|WRF_NOBOB)
+		GAUS Y 19 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE|WRF_NOBOB)
 		Goto Ready
 	}
 }
