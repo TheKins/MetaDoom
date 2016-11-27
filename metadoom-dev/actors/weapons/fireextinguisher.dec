@@ -121,6 +121,7 @@ ACTOR MetaFireExtinguisherSpray
 	Projectile
 	+RANDOMIZE
 	+DONTSPLASH
+	+BLOODLESSIMPACT
 	RenderStyle Add
 	Alpha 0.75
 	scale 0.05
