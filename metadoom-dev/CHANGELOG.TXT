@@ -1,3 +1,15 @@
+v2.1 "Olivia" (##/12/16)
+========================
+
+- Firing off the SoulCube now tries to switch to the Unmaker if you have it.
+- Fixed Gauss Cannon doing less damage than intended when zoomed in.
+- Fixed Fire Extinguisher generating blood decals when hitting something it can't damage.
+- Defined a physical height and radius for Lost Soul fire particles, potentially improving performance.
+- Lowered Malwrath sprite offsets, fixing its hitbox mostly being "under" it
+
+Optional Content:
+- Fixed the Optional Content crashing at startup when playing Doom 1
+
 v2.0 "Olivia" (20/11/16)
 ========================
 And we are back! Lots of fixes, tweaks, improvements and new content this time around!
