@@ -39,8 +39,10 @@ powerups/invuln		getinvl
 items/loot			getloot
 
 // props
-barrel/explode				barrel1
-barrel/break	brlbrk
+$random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }
+barrel/explode1				barrel1
+barrel/explode2				barrel2
+barrel/explode3				barrel3
 
 $random barrel/hit { barrel/hit1 barrel/hit2 barrel/hit3 }
 barrel/hit1		brlhit1
@@ -51,6 +53,8 @@ $random barrel/gib { barrel/gib1 barrel/gib2 barrel/gib3 }
 barrel/gib1		brlgib1
 barrel/gib2		brlgib2
 barrel/gib3		brlgib3
+
+barrel/break	brlbrk
 
 $random effects/blood		{ effects/blood1 effects/blood2 effects/blood3 effects/blood4 }
 effects/blood1				blood1
