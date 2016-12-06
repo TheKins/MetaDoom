@@ -349,6 +349,8 @@ TITLEMAP18 = "Go to Hell! Bring a friend.";
 TITLEMAP19 = "Get ready to toast some Demon Flesh!";
 TITLEMAP20 = "Let the obsession begin! Again!";
 TITLEMAP21 = "Because True Evil Never Dies.";
+TITLEMAP22 = "''They might be Vampires...''";
+TITLEMAP23 = "We're handing you a ticket...";
 
 // Ironman Death Subtitles
 IRONMANDEAD1 = "Hahaha!";
