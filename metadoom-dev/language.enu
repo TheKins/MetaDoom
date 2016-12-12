@@ -183,6 +183,7 @@ QUITMSG21 = "You will never find\nthe thing you seek!\n\nIt is trapped in\nHell 
 QUITMSG22 = "The desktop isn't safe. You're\ncrazy if you're going there!";												// Doom 3, T. Ryan
 QUITMSG23 = "Your Hell awaits!";																						// Doom 3, Dr. Bertruger
 QUITMSG24 = "Marine...?\nMarine...\n\nWelcome home.";																	// Doom 3 Expansion, Dr. McNeil
+QUITMSG25 = "When it finally went into\nthe box, we were like\n''Don't breath on it, it works!\nDon't even LOOK at it!''";	// Noclip Documentary, Hugo Martin
 QUITMSG26 = "I hope you're just taking a\nbreak for Chex(R) party mix.";
 QUITMSG27 = "Don't quit now!\nWe need your help!";
 QUITMSG28 = "Don't abandon the\nIntergalactic Federation of Cereals!";
