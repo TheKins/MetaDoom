@@ -197,3 +197,16 @@ weapons/soulcube/loop		solcloop
 weapons/soulcube/end		solcend
 weapons/soulcube/kill		solckill
 weapons/soulcube/ready		solcredy
+
+// grenade launcher
+weapons/grenadelauncher/fire		glaufire
+
+$random weapons/grenadelauncher/bounce		{ weapons/grenadelauncher/bounce1 weapons/grenadelauncher/bounce2 weapons/grenadelauncher/bounce3 }
+weapons/grenadelauncher/bounce1		glaubnc1
+weapons/grenadelauncher/bounce2		glaubnc2
+weapons/grenadelauncher/bounce3		glaubnc3
+
+$random weapons/grenadelauncher/explode		{ weapons/grenadelauncher/explode1 weapons/grenadelauncher/explode2 weapons/grenadelauncher/explode3 }
+weapons/grenadelauncher/explode1		glauexp1
+weapons/grenadelauncher/explode2		glauexp2
+weapons/grenadelauncher/explode3		glauexp3
