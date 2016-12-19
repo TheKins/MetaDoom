@@ -200,6 +200,8 @@ weapons/soulcube/ready		solcredy
 
 // grenade launcher
 weapons/grenadelauncher/fire		glaufire
+weapons/grenadelauncher/get			glauget
+weapons/grenadelauncher/use			glauuse
 
 $random weapons/grenadelauncher/bounce		{ weapons/grenadelauncher/bounce1 weapons/grenadelauncher/bounce2 weapons/grenadelauncher/bounce3 }
 weapons/grenadelauncher/bounce1		glaubnc1
