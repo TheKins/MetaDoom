@@ -14,7 +14,7 @@ gameinfo
 	weaponslot = 2, "HolyWaterPistol", "MetaShotgun"
 	weaponslot = 3, "MetaFireExtinguisher", "MetaSuperShotgun"
 	weaponslot = 4, "MetaChaingun", "MetaMachineGun"
-	weaponslot = 5, "MetaRocketLauncher"
+	weaponslot = 5, "MetaGrenadeLauncher", "MetaRocketLauncher"
 	weaponslot = 6, "MetaPlasmaRifle", "MetaGaussCannon"
 	weaponslot = 7, "MetaBFG9000", "MetaUnmaker", "MetaSoulcube"
 	weaponslot = 8, "MetaChainsaw", "MetaAxe"
