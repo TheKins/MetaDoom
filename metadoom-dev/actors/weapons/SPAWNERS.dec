@@ -121,7 +121,20 @@ actor RocketLauncherSpawner replaces RocketLauncher
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_weapons) == 1, "RocketLauncher")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "VarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Item_RocketLauncher", 0, 0, 0) == 1, "RocketLauncher")
+		TNT1 A 0 A_JumpIf(CallACS("Item_RocketLauncher", 0, 0, 0) == 2, "VarietyPack")
+		goto RocketLauncher
+	VarietyPack:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(64,"GrenadeLauncher")
+		goto RocketLauncher
+	RocketLauncher:
 		TNT1 A 0 A_SpawnItemEx("MetaRocketLauncherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	GrenadeLauncher:
+		TNT1 A 0 A_SpawnItemEx("MetaGrenadeLauncherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	}
 }

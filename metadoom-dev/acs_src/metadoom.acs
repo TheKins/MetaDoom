@@ -256,6 +256,21 @@ script "Item_SuperShotgun" (void)
 	}
 }
 
+script "Item_RocketLauncher" (void)
+{
+	for(int i = 1337; i < 1400; i++)
+	{
+		if(CheckActorInventory(i,"MetaRocketLauncher"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Someone has a Rocket Launcher! Alternate weapon drops enabled.");
+			
+			SetResultValue(2);
+			break;
+		}
+	}
+}
+
 script "Item_Machinegun" (void)
 {
 	for(int i = 1337; i < 1400; i++)
