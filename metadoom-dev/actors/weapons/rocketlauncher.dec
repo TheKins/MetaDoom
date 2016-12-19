@@ -5,6 +5,7 @@ ACTOR MetaRocketLauncherPickup : WeaponGiver
 	DropItem "MetaRocketLauncher"
 	Inventory.PickupMessage "$GOTLAUNCHER"
 	Inventory.PickupSound "weapons/rocketlauncher/get"
+	scale 0.75
 	States
 	{
 	Spawn:
