@@ -17,11 +17,11 @@ ACTOR MetaGrenadeLauncher : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2500
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 2
+	Weapon.AmmoGive 4
 	Weapon.AmmoType "RocketAmmo"
 	+WEAPON.NOAUTOFIRE
-	Inventory.PickupMessage "$GOTLAUNCHER"
-	Tag "$TAG_ROCKETLAUNCHER"
+	Inventory.PickupMessage "$GOTGRENLAUN"
+	Tag "$TAGGRENLAUN"
 	Inventory.PickupSound "weapons/rocketlauncher/get"
 	+WEAPON.NOALERT
 	Weapon.BobRangeX 0.5
@@ -111,7 +111,7 @@ actor GrenadeLauncherProj
 	+ROLLSPRITE
 	BounceType "Doom"
 	BounceSound "weapons/grenadelauncher/bounce"
-	Obituary "$OB_MPGRENADE"
+	Obituary "$OB_GRENLAUNCHER"
 	scale 0.5
 	ReactionTime 60	//Just over five seconds
 	States
