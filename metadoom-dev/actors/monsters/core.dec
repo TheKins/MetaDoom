@@ -327,6 +327,22 @@ actor MonsterCore
 	}
 }
 
+ACTOR MetaCrush replaces RealGibs
+{
+	+DROPOFF
+	+CORPSE
+	+NOTELEPORT
+	+DONTGIB
+	States
+	{
+		Spawn:
+			POL5 A 0
+			POL5 A 0 A_PlaySound("monsters/crushed")
+			POL5 A -1
+			Stop
+	}
+}
+
 // Wild Weasel's tracers. Again. Yup.
 
 ACTOR MonsterTracer : FastProjectile

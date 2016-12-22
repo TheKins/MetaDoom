@@ -86,6 +86,7 @@ bodyfalls/revenant2		bdrv2
 bodyfalls/revenant3		bdrv3
 
 monsters/bleed			actbleed
+monsters/crushed		actcrush
 
 // Imp
 $random monsters/imp/see 	{ monsters/imp/see1 monsters/imp/see2 }
