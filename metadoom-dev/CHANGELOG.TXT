@@ -1,3 +1,18 @@
+NEXT VERSION
+============
+
+- Added X new weapons (Grenade Launcher)
+- Added X new enemies
+- Reamped X enemies
+- Added X inventory items
+
+- Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
+- Redid a whole heap of sounds!
+- Fixed scaling on Rocket Launcher spawns
+- Added an ENDOOM!
+- Added new sound and fx for corpses crushed by movers
+- Added some of Capn J's sounds for Revenant
+
 v2.1 "Olivia" (01/12/16)
 ========================
 Just a quick bug-fix update before both Cacowards season and DECORATE-based mods become

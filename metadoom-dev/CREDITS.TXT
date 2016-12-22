@@ -27,7 +27,6 @@ WildWeasel (Tracer fastprojectiles effect)
 
 Perkristian (High-Res Doom sounds)
 Jer Sypault (Some sounds from Quake Mindgrind mods)
-EliTe (Some Doom 4 sound rips)
 
 The Zombie Killer (Flashlight system, footsteps system)
 Smooth Doom Team (Explosion sprites, blood effects, Chaingun sprites)
