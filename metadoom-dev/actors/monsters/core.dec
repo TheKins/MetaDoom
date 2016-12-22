@@ -337,7 +337,17 @@ ACTOR MetaCrush replaces RealGibs
 	{
 		Spawn:
 			POL5 A 0
-			POL5 A 0 A_PlaySound("monsters/crushed")
+			POL5 A 0 
+			{	
+				A_PlaySound("monsters/crushed");
+				A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnItem("BloodSplat");
+			}
 			POL5 A -1
 			Stop
 	}
