@@ -90,7 +90,6 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
 			A_GunFlash;
-			A_TakeInventory("Clip", 5);
 			A_AlertMonsters;
 			if (CountInv("MachinegunCheat") > 0)
 			{
@@ -98,6 +97,7 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 			} else {
 				A_FireCustomMissile("MicroRocket");
 			}
+			A_TakeInventory("Clip", 5);
 		}
 		MACG K 1 bright Offset(0,35)
 		MACG L 1 Offset(0,35)
