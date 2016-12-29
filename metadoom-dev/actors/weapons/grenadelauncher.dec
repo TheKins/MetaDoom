@@ -226,7 +226,7 @@ actor GasBombProj
 	BounceType "Doom"
 	-BOUNCEONFLOORS
 	BounceSound "weapons/grenadelauncher/bounce"
-	Obituary "$OB_GRENLAUNCHER"
+	Obituary "$OB_GRENLAUNCHER_GAS"
 	scale 0.5
 	States
 	{
@@ -266,6 +266,7 @@ ACTOR GasBombExplosion
 	PROJECTILE
 	+NOCLIP
 	Decal Scorch
+	Obituary "$OB_GRENLAUNCHER_GAS"
 	States
 	{
 		Spawn:
@@ -303,6 +304,7 @@ ACTOR GasBombCloud
 	+DONTSPLASH +BLOODLESSIMPACT -BLOCKEDBYSOLIDACTORS
 	//+FLOATBOB
 	RenderStyle Translucent
+	Obituary "$OB_GRENLAUNCHER_GAS"
 	Alpha 0.6
 	DamageType PoisonCloud
 
