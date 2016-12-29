@@ -222,8 +222,10 @@ actor GasBombProj
 	+RANDOMIZE
 	-NOGRAVITY
 	+USEBOUNCESTATE
-	+RIPPER
-	damage 0
+	+ROLLSPRITE
+	BounceType "Doom"
+	-BOUNCEONFLOORS
+	BounceSound "weapons/grenadelauncher/bounce"
 	Obituary "$OB_GRENLAUNCHER"
 	scale 0.5
 	States
@@ -234,6 +236,21 @@ actor GasBombProj
 		goto Flying
 	Flying:
 		GBOM ABCD 4
+		loop
+		Bounce:
+		"####" # 0 A_Jump(128, "Bounce2", "Flying")
+		goto Bounce1
+	Bounce1:
+		"####" # 0 A_CountDown
+		"####" # 1 A_SetRoll((roll + 5))
+		"####" # 1 A_SetRoll((roll + 5))
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Bounce2:
+		"####" # 0 A_CountDown
+		"####" # 1 A_SetRoll((roll - 5))
+		"####" # 1 A_SetRoll((roll - 5))
+		"####" # 1 A_SetRoll((roll - 5))
 		loop
 	Death:
 		TNT1 A 0 A_SpawnItemEx("GasBombExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS)
@@ -256,6 +273,7 @@ ACTOR GasBombExplosion
 		EXPL A 2 BRIGHT
 		{
 			A_PlaySound("weapons/grenadelauncher/gasbomb", CHAN_WEAPON);
+			A_Explode(32,128);
 			A_Quake (3,10,0,750,0);
 			
 			if (z <= (floorz + 64))
@@ -263,10 +281,10 @@ ACTOR GasBombExplosion
 				A_SpawnItem("ExplosionScorchMark",0,0);
 			}
 			
-			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
-			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
-			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
-			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,4,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,4,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,4,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,4,random(0,1),random(0,1),0,random(0,360));
 		}
 		EXPL B 2 BRIGHT 
 		EXPL C 2 BRIGHT 
@@ -277,13 +295,13 @@ ACTOR GasBombExplosion
 
 ACTOR GasBombCloud
 {
-	Radius 20
-	Height 30
+	Radius 32
+	Height 32
 	Mass 0x7fffffff
-	+NOBLOCKMAP +NOGRAVITY +DROPOFF
-	+NODAMAGETHRUST
-	+DONTSPLASH +FOILINVUL +CANBLAST +BLOODLESSIMPACT +BLOCKEDBYSOLIDACTORS
-	+FLOATBOB
+	+NOBLOCKMAP +NOGRAVITY +DROPOFF -SOLID
+	//+NODAMAGETHRUST
+	+DONTSPLASH +BLOODLESSIMPACT -BLOCKEDBYSOLIDACTORS
+	//+FLOATBOB
 	RenderStyle Translucent
 	Alpha 0.6
 	DamageType PoisonCloud
@@ -291,10 +309,10 @@ ACTOR GasBombCloud
 	States
 	{
 	Spawn:
-		GBOC X 1
-		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,128)
-		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,128)
-		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,128)
+		GBOC X 0
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,64)
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,64)
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,64)
 	Death:
 		GBOC X 1 A_FadeOut(0.05)
 		loop
