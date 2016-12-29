@@ -16,14 +16,17 @@ ACTOR MetaGrenadeLauncherPickup : WeaponGiver
 ACTOR MetaGrenadeLauncher : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2500
-	Weapon.AmmoUse 1
+	Weapon.AmmoUse1 1
+	Weapon.AmmoUse2 3
 	Weapon.AmmoGive 4
-	Weapon.AmmoType "RocketAmmo"
+	Weapon.AmmoType1 "RocketAmmo"
+	Weapon.AmmoType2 "RocketAmmo"
 	+WEAPON.NOAUTOFIRE
 	Inventory.PickupMessage "$GOTGRENLAUN"
 	Tag "$TAGGRENLAUN"
 	Inventory.PickupSound "weapons/grenadelauncher/get"
 	+WEAPON.NOALERT
+	+WEAPON.ALT_AMMO_OPTIONAL
 	Weapon.BobRangeX 0.5
 	Weapon.BobRangey 0.75
 	States
@@ -86,6 +89,38 @@ ACTOR MetaGrenadeLauncher : MetaDoomWeapon
 		GLAU A 2
 		GLAU A 0 A_Refire
 		Goto Ready
+	AltFire:
+		GLAU A 0 A_JumpIfInventory("RocketAmmo",3,"GasShot")
+		GLAU A 1 Offset(0,34) A_PlaySound("weapons/grenadelauncher/altdeny", CHAN_BODY)
+		GLAU A 1 Offset(0,33)
+		GLAU A 1 Offset(0,32)
+		GLAU A 10
+		goto Ready
+	GasShot:
+		GLAU B 0 A_GunFlash
+		GLAU A 0 
+		{
+		A_FireCustomMissile ("GasBombProj");
+		A_PlaySound ("weapons/grenadelauncher/altfire", CHAN_WEAPON);
+		A_GunFlash;
+		A_AlertMonsters;
+		}
+		GLAU B 1 bright Offset(0,45) A_SetPitch(pitch-2)
+		GLAU B 1 bright Offset(0,48) A_SetPitch(pitch-2)
+		GLAU C 1 bright Offset(0,47)
+		GLAU C 1 bright Offset(0,46) A_SetPitch(pitch+1)
+		GLAU D 1 bright Offset(0,44) A_SetPitch(pitch+1)
+		GLAU D 1 bright Offset(0,42) A_SetPitch(pitch+1)
+		GLAU E 1 bright Offset(0,38) A_SetPitch(pitch+1) 
+		GLAU E 1 bright Offset(0,36) 
+		GLAU F 1 Offset(0,34) 
+		GLAU F 1 Offset(0,33) 
+		GLAU A 1 Offset(0,32) 
+		GLAU A 1 
+		GLAU GHIJA 2
+		GLAU A 2
+		GLAU A 0 A_Refire
+		Goto Ready
 	Flash:
 		TNT1 A 3 Bright A_Light1
 		TNT1 A 4 Bright
@@ -122,7 +157,7 @@ actor GrenadeLauncherProj
 		TNT1 A 0 //A_PlaySound("weapons/grenadethrow")
 		goto Flying
 	Flying:
-		HGRE ABCDEF 3 A_CountDown
+		GBOM ABCD 4 A_CountDown
 		loop
 	Bounce:
 		"####" # 0 A_Jump(128, "Bounce2", "Flying")
@@ -173,5 +208,93 @@ ACTOR GrenadeLauncherExplosion
 		EXPL C 2 BRIGHT 
 		EXPL DEF 2
 		Stop
+	}
+}
+
+actor GasBombProj
+{
+	+CANBOUNCEWATER
+	Radius 8
+	Height 8
+	Speed 30
+	Damage 0
+	PROJECTILE
+	+RANDOMIZE
+	-NOGRAVITY
+	+USEBOUNCESTATE
+	Obituary "$OB_GRENLAUNCHER"
+	scale 0.5
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ThrustThingZ(0,16,0,1)
+		goto Flying
+	Flying:
+		GBOM ABCD 4
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("GasBombExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	}
+}
+
+ACTOR GasBombExplosion
+{
+	Radius 10
+	Height 10
+	Speed 5
+	PROJECTILE
+	+NOCLIP
+	Decal Scorch
+	States
+	{
+		Spawn:
+		EXPL A 0
+		EXPL A 2 BRIGHT
+		{
+			A_PlaySound("weapons/grenadelauncher/gasbomb", CHAN_WEAPON);
+			A_Quake (3,10,0,750,0);
+			
+			if (z <= (floorz + 64))
+			{
+				A_SpawnItem("ExplosionScorchMark",0,0);
+			}
+			
+			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
+			A_SpawnItemEx("GasBombCloud",0,0,0,random(0,1),random(0,1),0,random(0,360));
+		}
+		EXPL B 2 BRIGHT 
+		EXPL C 2 BRIGHT 
+		EXPL DEF 2
+		Stop
+	}
+}
+
+ACTOR GasBombCloud
+{
+	Radius 20
+	Height 30
+	Mass 0x7fffffff
+	+NOBLOCKMAP +NOGRAVITY +DROPOFF
+	+NODAMAGETHRUST
+	+DONTSPLASH +FOILINVUL +CANBLAST +BLOODLESSIMPACT +BLOCKEDBYSOLIDACTORS
+	+FLOATBOB
+	RenderStyle Translucent
+	Alpha 0.6
+	DamageType PoisonCloud
+
+	States
+	{
+	Spawn:
+		GBOC X 1
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,64)
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,64)
+		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(1,64)
+	Death:
+		GBOC X 1 A_FadeOut(0.05)
+		loop
 	}
 }

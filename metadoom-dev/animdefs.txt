@@ -29,7 +29,7 @@ warp flat BSPLW0
 warp2 flat BSPLX0
 warp flat BSPLY0
 warp2 flat BSPLZ0
-
+warp flat GBOCX0
 warp2 flat FWATER02
 
 flat FWATER1
