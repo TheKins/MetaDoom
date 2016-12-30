@@ -6,12 +6,15 @@ NEXT VERSION
 - Reamped X enemies
 - Added X inventory items
 
-- Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
 - Redid a whole heap of sounds!
 - Fixed scaling on Rocket Launcher spawns
-- Added an ENDOOM!
-- Added new sound and fx for corpses crushed by movers
+- Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
+- Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
+  you'd spend the bullets and play the sound but not actually fire the projectile.
+- Added a new sprite for the Radiation Suit
+- Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
+- Added an ENDOOM! This is important.
 
 v2.1 "Olivia" (01/12/16)
 ========================
