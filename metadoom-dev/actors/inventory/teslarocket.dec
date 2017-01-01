@@ -101,7 +101,7 @@ ACTOR TeslaZapper
 	See:
 		TNT1 A 1 {
 			A_FaceTarget;
-			if (GetDistance <= 256)
+			if (GetDistance(1,AAPTR_TARGET) <= 256)
 			{
 				A_PlaySound("weapons/bfg/spray");
 				A_CustomRailgun((5), 0, None, None, RGF_SILENT | RGF_NOPIERCING, 1, 0, "MetaBulletPuff", 0, 0, 256, 0, 4, 0, "TeslaZapperTrail");
