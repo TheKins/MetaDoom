@@ -1,6 +1,7 @@
 # loose files of no real point since we post releases elsewhere
 *.lnk
 *.pk3
+*.bak
 *.pk7
 *.7z
 

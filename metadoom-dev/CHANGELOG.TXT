@@ -16,6 +16,12 @@ NEXT VERSION
 - Added some of Capn J's sounds for Revenant
 - Added an ENDOOM! This is important.
 
+v2.11 "Olivia" (02/01/17)
+=========================
+A quick bugfix for a startup issue with the very latest version of GZDoom. Sorry for the inconvenience.
+
+- Fixed a GetDistance issue that prevented startup on GZDoom 2.3.0
+
 v2.1 "Olivia" (01/12/16)
 ========================
 Just a quick bug-fix update before both Cacowards season and DECORATE-based mods become
