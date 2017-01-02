@@ -1,0 +1,15 @@
+class MetaDoomActor : Actor
+{
+	int user_pinatacount;
+
+	// A_MetaPinata("ActorName", amount)
+	// Spews the stated actor out from the caller.
+	// Used for the "item pinata" effects
+	void A_MetaPinata(class<Actor> spawntype, int spawnamount)
+	{
+		for (user_pinatacount = spawnamount; user_pinatacount > 0; user_pinatacount --)
+		{
+			A_SpawnItemEx(spawntype,0,0,32,random(0,8),0,random(0,8),random(0,360));
+		}
+	}
+}

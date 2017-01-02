@@ -2,7 +2,7 @@
 actor ScurredCounter : Counter { Inventory.MaxAmount 20 }
 actor BleedingCounter : Counter { Inventory.MaxAmount 20 }
 
-actor MonsterCore
+actor MonsterCore : MetaDoomActor
 {
 	painchance Fist, 255
 	painchance Axe, 255
@@ -22,9 +22,7 @@ actor MonsterCore
 		"####" # 0
 		{
 			A_GiveInventory("BleedingCounter", 4);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 3);
 			ThrustThing(angle*256/360+128, 8, 1, 0);
 		}
 		"####" # 0 A_Jump(256,"Pain")
@@ -34,11 +32,7 @@ actor MonsterCore
 		{
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 8, 1, 0);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 5);
 		}
 		"####" # 0 A_Jump(256,"Death")
 		stop
@@ -47,22 +41,14 @@ actor MonsterCore
 		{
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 8, 1, 0);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 5);
 		}
 		"####" # 0 A_Jump(256,"XDeath")
 		stop
 	Death.Bleeding:
 		"####" # 0
 		{
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 5);
 		}
 		"####" # 0 A_Jump(256,"Death")
 		stop
@@ -72,8 +58,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 8, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 2);
 			A_ChangeFlag("FRIGHTENED", FALSE);
 			A_TakeInventory("ScurredCounter",999);
 		}
@@ -88,11 +73,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 8, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 5);
 		}
 		"####" # 0 A_Jump(256,"Death")
 		stop
@@ -102,16 +83,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 8, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 10);
 		}
 		"####" # 0 A_Jump(256,"XDeath")
 		stop
@@ -121,7 +93,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 1);
 			A_ChangeFlag("FRIGHTENED", FALSE);
 			A_TakeInventory("ScurredCounter",999);
 		}
@@ -133,8 +105,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 2);
 		}
 		"####" # 0 A_Jump(256,"Death")
 		stop
@@ -144,9 +115,7 @@ actor MonsterCore
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_MetaPinata("MetaHealthPinata", 3);
 		}
 		"####" # 0 A_Jump(256,"XDeath")
 		stop
@@ -157,83 +126,12 @@ actor MonsterCore
 	Pain.SoulCube:
 		"####" # 0
 		{
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));			
+			A_MetaPinata("MetaHealthPinataPerm", 12);
+			A_MetaPinata("MetaArmorPinata", 12);
+			A_MetaPinata("MetaPinataClip", 12);
+			A_MetaPinata("MetaPinataShell", 12);
+			A_MetaPinata("MetaPinataRocket", 12);
+			A_MetaPinata("MetaPinataCell", 12);
 		}
 			"####" # 0 A_Jump (256, "Pain")
 			stop
@@ -241,83 +139,12 @@ actor MonsterCore
 	XDeath.SoulCube:
 		"####" # 0
 		{
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinataPerm",0,0,32,random(0,8),0,random(0,8),random(0,360));
-
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaArmorPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataClip",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataShell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataRocket",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaPinataCell",0,0,32,random(0,8),0,random(0,8),random(0,360));			
+			A_MetaPinata("MetaHealthPinataPerm", 12);
+			A_MetaPinata("MetaArmorPinata", 12);
+			A_MetaPinata("MetaPinataClip", 12);
+			A_MetaPinata("MetaPinataShell", 12);
+			A_MetaPinata("MetaPinataRocket", 12);
+			A_MetaPinata("MetaPinataCell", 12);			
 		}
 			"####" # 0 A_Jump (256, "XDeath")
 			stop

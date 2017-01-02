@@ -1,0 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+ZScript
+----------------------------
+*/
+
+// Monsters
+#include "actors/monsters/metadoomactor.zsc"
