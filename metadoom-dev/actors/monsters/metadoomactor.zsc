@@ -15,12 +15,13 @@ class MetaDoomActor : Actor
 	
 	// A_MetaBleed("ActorName")
 	// Handles bleeding from Axe wounds
+	// The specified actor is spawned as the blood
 	void A_MetaBleed(class<Actor> spawntype)
 	{
 		if (CountInv("BleedingCounter") > 0)
 		{
 			A_DamageSelf ((5), "Bleeding");
-			A_CustomMissile (spawntype, 0, 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile (spawntype, (height / 2), 0, random (0, 360), 2, random (0, 160));
 			A_PlaySound("monsters/bleed", CHAN_5);
 			A_TakeInventory("BleedingCounter", 1);
 		}
