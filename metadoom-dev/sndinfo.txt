@@ -84,6 +84,8 @@ intermission/paststats		endlnext
 intermission/pastcoopstats	endlnext
 intermission/pastdmstats	endlcopd
 
+menu/100percent				100it
+
 // wildweasel
 $random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }
 $random whiz { whiz1 whiz2 whiz3 }
