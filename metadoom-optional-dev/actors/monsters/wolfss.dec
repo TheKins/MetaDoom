@@ -44,16 +44,7 @@ ACTOR MetaWolfensteinSS : MonsterCore
 		SSWV AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		SSWV AABBCCDD 3 A_Chase
 		Loop
 	Scurred:
@@ -156,16 +147,7 @@ ACTOR MetaWolfensteinSNES : MonsterCore
 		WSNS E 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		WSNS AABBCCDD 4 A_Chase
 		Loop
 	Scurred:
@@ -260,16 +242,7 @@ ACTOR MetaWolfensteinApple : MonsterCore
 		APPL A 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		APPL AABBAACC 4 A_Chase
 		Loop
 	Scurred:
@@ -369,16 +342,7 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 		WMAC A 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		WMAC AABBCCDD 3 A_Chase
 		Loop
 	Scurred:
