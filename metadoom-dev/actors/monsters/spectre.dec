@@ -28,16 +28,7 @@ ACTOR MetaNightmareSpectre : MetaDemon
 	States
 	{
 	See:
-		SARG A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		SARG A 0 A_MetaBleed("FlyingBlood")
 		SARG AABBCCDD 2 A_Chase
 		Loop
 	Melee:

@@ -24,16 +24,7 @@ ACTOR MetaHellhound : MonsterCore
 		HDOG AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		"####" AABBCCDD 2 Fast A_Chase
 		Loop
 	Melee:
@@ -156,16 +147,7 @@ ACTOR MetaDemonDog : MetaHellhound
 		DDOG AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		"####" AABB 2 Fast A_Chase("Melee","")
 		"####" CCDD 2 Fast A_Chase("Melee","",CHF_FASTCHASE)
 		Loop
@@ -232,16 +214,7 @@ ACTOR MetaCerberus : MetaHellhound
 		CDOG AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		"####" AABBCCDD 2 Fast A_Chase("Melee","Missile")
 		Loop
 	Melee:

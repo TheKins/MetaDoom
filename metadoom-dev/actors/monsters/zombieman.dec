@@ -24,16 +24,7 @@ ACTOR MetaZombieMan : MonsterCore
 		POSS AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		POSS AABBCCDD 4 A_Chase
 		Loop
 	Scurred:
@@ -135,16 +126,7 @@ ACTOR MetaHellRazer : MonsterCore
 		HRAZ AB 10 A_Look
 		Loop
 	See:
-		"####" A 0
-		{
-			if (CountInv("BleedingCounter") > 0)
-			{
-				A_DamageSelf ((5), "Bleeding");
-				A_TakeInventory("BleedingCounter", 1);
-				A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-				A_PlaySound("monsters/bleed", CHAN_5);
-			}
-		}
+		"####" A 0 A_MetaBleed("FlyingBlood")
 		HRAZ AABBCCDD 4 A_Chase
 		Loop
 	Scurred:
