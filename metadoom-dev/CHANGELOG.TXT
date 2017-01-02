@@ -11,6 +11,7 @@ NEXT VERSION
 - Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
 - Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
   you'd spend the bullets and play the sound but not actually fire the projectile.
+- Many bug-fixes and cosmetic improvements to the Axe's bleeding effect
 - Added a new sprite for the Radiation Suit
 - Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
