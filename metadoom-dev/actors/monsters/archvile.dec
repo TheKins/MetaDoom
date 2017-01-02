@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Archvile
+----------------------------
+*/
+
+// Currently more or less identical to the original Doom monster, behavior-wise.
+// TODO: Twiddle with, add at least one variant!
+
 ACTOR MetaArchvile : MonsterCore
 {
 	Health 700
@@ -92,8 +103,8 @@ ACTOR MetaArchvile : MonsterCore
 		}
 		goto See
 	Death:
-		VILE Q 7 
-		{
+		VILE Q 7 			// Make a filthy great mess once the Archvile dies,
+		{					// to make a point of it not being rez-ible.
 			A_GiveToTarget("ScoreItem", 1000);
 			A_PlaySound("monsters/archvile/gib",CHAN_AUTO,0.8);
 			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));

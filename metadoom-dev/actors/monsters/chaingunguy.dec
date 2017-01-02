@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Heavy Weapons Dude
+----------------------------
+*/
+
+// Uggh, these fuckers. This one is more or less the same as he always was, but
+// reskinned to use an Assault Rifle instead of a Chaingun.
+
 ACTOR MetaMachineGunGuy : MonsterCore
 {
 	Health 70
@@ -104,6 +115,9 @@ ACTOR MetaMachineGunGuy : MonsterCore
 		Goto See
 	}
 }
+
+// The upgraded version. Takes a little while to spin up, but fires at a far
+// greater firing rate (and a much lower accuracy) to keep things interesting.
 
 ACTOR MetaChainGunGuy : MonsterCore
 {

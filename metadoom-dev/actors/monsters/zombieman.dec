@@ -1,3 +1,13 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Zombieman
+----------------------------
+*/
+
+// The original cannon fodder, de-hitscan-ized.
+
 ACTOR MetaZombieMan : MonsterCore
 {
 	Health 20
@@ -101,7 +111,9 @@ ACTOR MetaZombieMan : MonsterCore
 	}
 }
 
-// HELL RAZER!
+// The Hell Razer from Doom 4! This guy uses an annoying charge-up beam and has
+// more health. He's also really loud and annoying.
+
 ACTOR MetaHellRazer : MonsterCore
 {
 	Health 80

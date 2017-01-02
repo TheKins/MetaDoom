@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Hellhound
+----------------------------
+*/
+
+// The Zombie Wolfenstein dogs from Doom RPG, with fancy new sprites.
+// Faster, but more fragile than Pinkies.
+
 ACTOR MetaHellhound : MonsterCore
 {
 	Health 100
@@ -104,35 +115,25 @@ ACTOR MetaHellhound : MonsterCore
 	}
 }
 
+// Stuff for the Dog Gun malarkey.
+
 ACTOR MakeMeGrabTheDogGun_Hellhound : CustomInventory
 {
-  +COUNTITEM
-  +INVENTORY.ALWAYSPICKUP
-  States
-  {
-  Spawn:
-    TNT1 A 1 Bright
-    Loop
-  Pickup:
-    TNT1 A 0 A_SelectWeapon("MetaDogGun_HellHound")
-    Stop
-  }
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_SelectWeapon("MetaDogGun_HellHound")
+		Stop
+	}
 }
 
-ACTOR MakeMeGrabTheDogGun_DemonDog : CustomInventory
-{
-  +COUNTITEM
-  +INVENTORY.ALWAYSPICKUP
-  States
-  {
-  Spawn:
-    TNT1 A 1 Bright
-    Loop
-  Pickup:
-    TNT1 A 0 A_SelectWeapon("MetaDogGun_DemonDog")
-    Stop
-  }
-}
+// The Demon Dog is a variant that's keeps dodging around wildly, making it
+// a real pain to kill.
 
 ACTOR MetaDemonDog : MetaHellhound
 {
@@ -200,6 +201,26 @@ ACTOR MetaDemonDog : MetaHellhound
 		stop
 	}
 }
+
+// Gun doggery.
+
+ACTOR MakeMeGrabTheDogGun_DemonDog : CustomInventory
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_SelectWeapon("MetaDogGun_DemonDog")
+		Stop
+	}
+}
+
+// The last of the variants, the Cerberus has a lunging jump attack, ala the
+// Fiend from Quake.
 
 ACTOR MetaCerberus : MetaHellhound
 {
@@ -287,6 +308,8 @@ ACTOR MetaCerberus : MetaHellhound
 		stop
 	}
 }
+
+// Dog Gun. Dog. Gun. Say it out loud, and try not to smile.
 
 ACTOR MakeMeGrabTheDogGun_Cerberus : CustomInventory
 {

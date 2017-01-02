@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Spectre
+----------------------------
+*/
+
+// The original method of defining Spectres, retuned to use MetaDoom's Pinkies
+// as a base.
+
 ACTOR MetaSpectre : MetaDemon
 {
 	+SHADOW
@@ -10,6 +21,9 @@ ACTOR MetaSpectre : MetaDemon
 	ActiveSound "spectre/active"
 	HitObituary "$OB_SPECTREHIT"
 }
+
+// The Nightmare Spectre from PSX Doom has more health, semitransparency and
+// doesn't speed up in Nightmare. Confusingly.
 
 ACTOR MetaNightmareSpectre : MetaDemon
 {

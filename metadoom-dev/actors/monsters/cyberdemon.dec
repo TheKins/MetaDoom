@@ -1,3 +1,17 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Cyberdemon
+----------------------------
+*/
+
+// Everyone's favorite boss monster. Uses the Doom 64 sprites, brightened up to
+// fit within the original game. Has two new abilities so far:
+// - Moving around while shooting, aim locked to target.
+// - Turbo launch across the map.
+// There's also a useless melee attack, I should prob. remove that?
+
 ACTOR MetaCyberdemon : MonsterCore
 {
 	Health 4000
@@ -42,7 +56,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR E 0 //A_Jump(256, "MissileCharge") // for debug
 		CYBR E 0 A_Jump(64, "MissileWalking", "MissileCharge")
 		goto MissileStanding
-		
+	// Standing attack
 	MissileStanding:
 		CYBR F 6 A_FaceTarget
 		CYBR E 12 BRIGHT
@@ -63,6 +77,7 @@ ACTOR MetaCyberdemon : MonsterCore
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		Goto See+1
+	// Moving attack
 	MissileWalking:
 		CYBR F 0
 		CYBR F 0 A_PlaySound("monsters/cyberdemon/switch")
@@ -101,7 +116,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		}
 		CYBR F 6 A_FaceTarget
 		Goto See
-		
+	// Vroom!
 	MissileCharge:
 		CYBR F 0
 		CYBR F 0 A_PlaySound("monsters/cyberdemon/switch")
@@ -118,6 +133,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		}
 		CYBR F 0 A_ChangeFlag("SKULLFLY",0)
 		goto See
+	// About to fall off a ledge and break the map! Abort! Abort!
 	MissileChargeAbort:
 		CYBR F 0 A_ChangeFlag("SKULLFLY",0)
 		CYBR F 0 A_Stop
@@ -125,7 +141,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR F 0 ThrustThingZ(0,8,0,0)
 		CYBR F 0 A_PlaySound("monsters/cyberdemon/chargebrake", CHAN_6)
 		goto See
-		
+	// This sucks and either needs new sprites or removal
 	Melee:
 		CYBF A 5
 		CYBR F 10
@@ -137,7 +153,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBF A 4
 		CYBR A 4
 		goto See+1
-		
+	// YOUR PUNY MITTS DO NOT WORK HERE
 	Pain.Axe:
 	Pain.Fist:
 	Pain.BerserkFist:

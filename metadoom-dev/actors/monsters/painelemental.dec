@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Pain Elemental
+----------------------------
+*/
+
+// The original Meatball Demon, with one new nasty twist - you can no longer
+// cockblock it, because it'll bite your face off.
+
 ACTOR MetaPainElemental : MonsterCore
 {
 	Health 400
@@ -82,6 +93,9 @@ ACTOR MetaPainElemental : MonsterCore
 		Goto See
 	}
 }
+
+// This horrible thing uses some mediocre custom sprite and fires out Forgotten
+// Ones like a shotgun. I'd like to revise this a little one day.
 
 ACTOR MetaBeholder : MonsterCore
 {
@@ -174,6 +188,9 @@ ACTOR MetaBeholder : MonsterCore
 		Stop
 	}
 }
+
+// Rahovart is the Doom 64 Pain Elemental, popping out two Lost Souls at once.
+// TODO: Add some interesting disadvantage
 
 ACTOR MetaRahovart : MonsterCore
 {

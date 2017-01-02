@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Imp
+----------------------------
+*/
+
+// The original. Basically the same as he was in 1993. Possibly earlier.
+// TODO: MORE. VARIANTS.
+
 ACTOR MetaDoomImp : MonsterCore
 {
 	Health 60
@@ -132,23 +143,26 @@ ACTOR MetaDoomImpBall
 
 ACTOR DoomImpBallEffect
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-   Radius 0
-   Height 1
-   Speed 0
-   PROJECTILE
-   RENDERSTYLE ADD
-   ALPHA 0.85
-   scale 0.65
-   States
-   {
-   Spawn:
-      RPUF A 2 Bright
-      RPUF ABCDE 2 Bright
-      Stop 
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	Radius 0
+	Height 1
+	Speed 0
+	PROJECTILE
+	RENDERSTYLE ADD
+	ALPHA 0.85
+	scale 0.65
+	States
+	{
+	Spawn:
+		RPUF A 2 Bright
+		RPUF ABCDE 2 Bright
+		Stop 
+	}
 } 
+
+// The Nightmare Imp from Doom 64. Purple, semi-transparent, fast, makes you hate
+// your life. Any questions?
 
 ACTOR MetaNightmareImp : MonsterCore
 {

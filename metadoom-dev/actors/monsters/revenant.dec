@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Revenant
+----------------------------
+*/
+
+// Currently more or less identical to the original Doom monster, behavior-wise.
+// TODO: Twiddle with, add at least one variant!
+
 ACTOR MetaRevenant : MonsterCore
 {
 	Health 300

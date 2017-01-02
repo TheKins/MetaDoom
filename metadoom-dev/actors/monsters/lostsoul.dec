@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Lost Soul
+----------------------------
+*/
+
+// The original enemy, more or less, with a new weakness - water and fire
+// extinguishers. It only makes sense!
+
 ACTOR MetaLostSoul : MonsterCore
 {
 	Health 100
@@ -246,17 +257,21 @@ ACTOR MetaLostSoulSteam
 {
 	vspeed 2
 	scale 2
-  +NOBLOCKMAP
-  +NOGRAVITY
-  states
-  {
-  Spawn:
-    PUF2 ABC 2 A_FadeOut
-  Finalize:
-    PUF2 D 2 A_FadeOut
-   loop
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	states
+	{
+	Spawn:
+		PUF2 ABC 2 A_FadeOut
+	Finalize:
+		PUF2 D 2 A_FadeOut
+		loop
+	}
 }
+
+// The Phantom, based off the Doom Alpha sprites. Does a little shooty-dodgy
+// dance before charging you, changing things up and usually triggering copious
+// infighting because it's dumb.
 
 ACTOR MetaPhantom : MonsterCore
 {
@@ -441,7 +456,8 @@ ACTOR MetaPhantomExplosion
 	}
 }
 
-// D3-style Lost Soul for the Beholder
+// D3-style Lost Soul for the Beholder (see painelemental.dec). Boring and not
+// really worth discussing, more or a nuisance than anything.
 
 ACTOR MetaForgottenOne : MonsterCore
 {

@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Spiderdemon
+----------------------------
+*/
+
+// Currently more or less identical to the original Doom monster, behavior-wise.
+// TODO: Twiddle with, add at least one variant!
+
 ACTOR MetaSpiderMastermind : MonsterCore
 {
 	Health 3000

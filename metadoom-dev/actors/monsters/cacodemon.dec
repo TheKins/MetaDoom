@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Cacodemon
+----------------------------
+*/
+
+// The normal Cacodemon is more or less the same as its original form.
+// Why mess with perfection?
+
 ACTOR MetaCacodemon : MonsterCore
 {
 	Health 400
@@ -239,6 +250,9 @@ actor CacoGib2 : MetaGib1
     }
 }
 
+// The Malwrath (who I keep misspelling) is the Doom 64 Caco visually. It fires
+// a split fireball attack, to mix things up a bit.
+
 ACTOR MetaMalwraith : MonsterCore
 {
 	Health 450
@@ -359,7 +373,9 @@ actor MetaMalwraithBall : MetaCacodemonBall
 	SeeSound ""
 }
 
-// Wretched
+// The Wretched is based on Doom 4's Caco, and has a version of the nasty tongue
+// attack from the Hell Followed DLC. I don't much like it's sprites, just
+// quietly, but they'll do for now.
 
 ACTOR MetaWretched : MonsterCore
 {

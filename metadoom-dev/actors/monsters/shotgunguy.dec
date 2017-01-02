@@ -1,3 +1,14 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Shotgun Guy
+----------------------------
+*/
+
+// The original enemy, converted to use tracer projectiles instead of hitscans.
+// Nothing more, nothing less.
+
 ACTOR MetaShotgunGuy : MonsterCore
 {
 	Health 30
@@ -107,6 +118,8 @@ ACTOR MetaShotgunGuy : MonsterCore
 		Goto See
 	}
 }
+
+// ZSEC from Doom 3. This variant has a ROTT/Goldeneye style Dodge Roll.
 
 ACTOR MetaZSec : MonsterCore
 {
@@ -275,6 +288,7 @@ ACTOR MetaZSec : MonsterCore
 	}
 }
 
+// Just to make sure when you have "Map Breakers" turned off...
 ACTOR MetaZSec_NoMapBreaker : MetaZSec
 {
 	+NODROPOFF
