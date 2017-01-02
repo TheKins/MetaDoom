@@ -18,10 +18,19 @@ class MetaDoomActor : Actor
 	// The specified actor is spawned as the blood
 	void A_MetaBleed(class<Actor> spawntype)
 	{
+		int user_bloodpart;
+		
 		if (CountInv("BleedingCounter") > 0)
 		{
+			user_bloodpart = 10;
 			A_DamageSelf ((5), "Bleeding");
 			A_SpawnProjectile (spawntype, (height / 2), 0, random (0, 360), 2, random (0, 160));
+			
+			for (user_bloodpart; user_bloodpart > 0; user_bloodpart --)
+			{
+				A_SpawnParticle(BloodColor,SPF_RELATIVE,random(16,32),random(3,8),0,0,0,(height / 2),frandom(4.5,-4.5),frandom(4.5,-4.5),frandom(1,8),0,0,-0.4);
+			}
+			
 			A_PlaySound("monsters/bleed", CHAN_5);
 			A_TakeInventory("BleedingCounter", 1);
 		}
