@@ -236,7 +236,7 @@ OB_WOLFAPPLE = "%o considered %p Muse.";
 OB_WOLFMAC = "%o ate a Burger.";
 OB_WOLFRTCW = "%o took one right in the ol' Gray Matter.";
 OB_WOLFRAVEN = "%o couldn't evade a Revenant... Nevermore!";
-OB_WOLFTNO = "%o fell to some kind of freaky ManMachine.";
+OB_WOLFTNO = "%o fell to some kind of freaky Machine...";
 
 OB_MARINE = "%o was killed by a Space Marine.";
 OB_MARINE_FIST = "%o was punched in the face by a Space Marine.";
