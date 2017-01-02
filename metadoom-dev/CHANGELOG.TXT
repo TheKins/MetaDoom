@@ -18,6 +18,9 @@ NEXT VERSION
 - Went mad with ZScript and macro-fied some things
 - Added an ENDOOM! This is important.
 
+Optional Content:
+- Scripted Marines now bleed when whacked with an Axe.
+
 v2.11 "Olivia" (02/01/17)
 =========================
 A quick bugfix for a startup issue with the very latest version of GZDoom. Sorry for the inconvenience.
