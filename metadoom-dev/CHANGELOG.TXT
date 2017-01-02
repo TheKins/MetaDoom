@@ -14,6 +14,7 @@ NEXT VERSION
 - Added a new sprite for the Radiation Suit
 - Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
+- Went mad with ZScript and macro-fied some things
 - Added an ENDOOM! This is important.
 
 v2.11 "Olivia" (02/01/17)
