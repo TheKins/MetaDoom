@@ -148,9 +148,9 @@ actor MonsterCore : MetaDoomActor
 		}
 			"####" # 0 A_Jump (256, "XDeath")
 			stop
-		XDeath: //catchall
-			"####" # 0 A_Jump (256, "Death")
-			stop
+	XDeath: //catchall
+		"####" # 0 A_Jump (256, "Death")
+		stop
 	}
 }
 
