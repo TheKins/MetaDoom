@@ -127,28 +127,15 @@ actor LightningTrailParticle
 	}
 }
 
-ACTOR MetaLightningPuff
+ACTOR MetaLightningPuff : MetaBulletPuff
 {
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	RenderStyle Translucent
-	Alpha 0.5
-	VSpeed 1
-	Mass 5
 	damagetype LightningGun
 	Decal BulletChip
 	States
 	{
 	Spawn:
-		PUFF A 0
-		PUFF A 4 BRIGHT A_SpawnDebris("PistolTracerSpark")
-		PUFF B 2 BRIGHT A_SetTranslucent(0.9,0)
-		PUFF CD 4 BRIGHT
-		Stop
-	Melee:
-		PUFF CD 4
+		TNT1 A 0
+		TNT1 A 4 BRIGHT A_SpawnDebris("PistolTracerSpark")
 		Stop
 	}
 }
