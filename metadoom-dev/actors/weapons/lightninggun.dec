@@ -67,7 +67,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		PLA0 B 0
 		PLA0 B 1 bright A_PlaySound("weapons/lightninggun/fire",5)
 	Hold:
-		PLA0 B 1 bright 
+		PLA0 B 2 bright 
 		{
 			A_PlaySound("weapons/lightninggun/loop",6,1,1);
 			A_GunFlash;
@@ -82,7 +82,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 			A_AlertMonsters;
 			A_WeaponOffset(random(-2,2),random(30,34));
 		}
-		PLA0 B 1 A_Refire
+		PLA0 B 0 A_Refire
 	FireEnd:
 		PLA0 B 1 bright Offset(0,35) A_PlaySound("weapons/lightninggun/stop",6)
 		PLA0 B 1 bright Offset(0,34)
