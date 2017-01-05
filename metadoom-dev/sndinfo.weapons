@@ -219,3 +219,8 @@ $random weapons/grenadelauncher/gasbomb		{ weapons/grenadelauncher/gasbomb1 weap
 weapons/grenadelauncher/gasbomb1		glaugas1
 weapons/grenadelauncher/gasbomb2		glaugas2
 weapons/grenadelauncher/gasbomb3		glaugas3
+
+// lightning gun
+weapons/lightninggun/fire				thunfire
+weapons/lightninggun/loop				thunloop
+weapons/lightninggun/stop				thunstop
