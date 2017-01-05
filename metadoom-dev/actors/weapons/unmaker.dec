@@ -150,7 +150,7 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 0
 		UNMA B 1 bright
 		{
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",0,0,4096,35,0.01,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",0,0,4096,35,4.0,0,"UnmakerRailCore");
 			A_PlaySound("weapons/unmaker/altfire1", CHAN_WEAPON);
 			A_GunFlash;
 			A_AlertMonsters;
@@ -165,8 +165,8 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 0
 		UNMA B 1 bright
 		{
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,0.01,0,"UnmakerRailCore");
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,0.01,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
 			A_PlaySound("weapons/unmaker/altfire2", CHAN_WEAPON);
 			A_GunFlash;
 			A_AlertMonsters;
@@ -181,9 +181,9 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		UNMA A 0
 		UNMA B 1 bright
 		{
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,0.01,0,"UnmakerRailCore");
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,0.01,0,"UnmakerRailCore");
-			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,0.01,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
+			A_RailAttack((200),0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
 			A_PlaySound("weapons/unmaker/altfire3", CHAN_WEAPON);
 			A_GunFlash;
 			A_AlertMonsters;
