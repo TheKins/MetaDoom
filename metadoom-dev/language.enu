@@ -128,6 +128,7 @@ GOTARTIFACT2 = "Whatever it is, it doesn't belong in this world...";
 GOTARTIFACT3 = "It must do something...";
 GOTSOULCUBE = "We are the Praeleanthor, you know us as the SoulCube.";
 GOTGRENLAUN = "You got the Grenade Launcher!";
+GOTLIGHTNING = "You got the Lightning Gun!";
 
 TAGPISTOL = "EKG Sidearm";
 TAGMACGUN = "Machine Gun";
@@ -139,6 +140,7 @@ TAGFIREX = "Fire Extinguisher";
 TAGUNMAKER = "Unmaker";
 TAGSOULCUBE = "SoulCube";
 TAGGRENLAUN = "Grenade Launcher";
+TAGLIGHTNING = "Lightning Gun";
 
 TAGHDOG = "Hellhound";
 
