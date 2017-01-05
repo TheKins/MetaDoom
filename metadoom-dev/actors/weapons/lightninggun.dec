@@ -1,3 +1,5 @@
+actor LightningFired : Counter { Inventory.MaxAmount 5 }
+
 ACTOR MetaLightningGunPickup : WeaponGiver
 {
 	DropItem "MetaLightningGun"
@@ -69,7 +71,14 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/lightninggun/loop",6,1,1);
 			A_GunFlash;
-			A_RailAttack(10,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
+			if (CountInv("LightningFired") >= 5)
+			{
+				A_RailAttack(6,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
+				A_TakeInventory("LightningFired",999);
+			} else {
+				A_RailAttack(6,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
+				A_GiveInventory("LightningFired",1);
+			}
 			A_AlertMonsters;
 			A_WeaponOffset(random(-2,2),random(30,34));
 		}
