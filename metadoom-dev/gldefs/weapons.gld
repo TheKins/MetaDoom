@@ -183,3 +183,16 @@ object SoulCubeTrail2
 {
     frame APBX { light SOULCUBETRAIL }
 }
+
+pulselight MetaLightningExplosion
+{
+    color 0.0 0.1 1.0
+    size 64
+    secondarySize 0
+    interval 0.25
+} 
+
+object LightningTrailParticle
+{
+    frame PLSE { light MetaLightningExplosion }
+}
