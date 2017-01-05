@@ -157,7 +157,12 @@ Script "FireSelfSpray_FX" ENTER
 // Soulcube Popup
 Script "SoulCubeMsg_Warn" ENTER
 {
-	if (CheckInventory("SoulAmmo") == 5 && !CheckInventory("SoulCubeMessagePopped"))
+	if (CheckInventory("MetaCheatDetector"))
+	{
+		GiveInventory("SoulCubeMessagePopped", 1);
+	}
+	
+	if (CheckInventory("SoulAmmo") == 5 && !CheckInventory("SoulCubeMessagePopped") && !CheckInventory("MetaCheatDetector"))
 	{
 		LocalAmbientSound("weapons/soulcube/ready", 127);
 		GiveInventory("SoulCubeMessagePopped", 1);
@@ -498,6 +503,7 @@ script "InventoryCheat" ENTER
 		GiveInventory("DemonKeyCheat", 3);
 		
 		SetActorProperty(0,APROP_Score,0);
+		delay(1);
 		TakeInventory("MetaCheatDetector", 1);
 	}
 	
