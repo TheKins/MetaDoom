@@ -1,13 +1,13 @@
 NEXT VERSION
 ============
 
-- Added X new weapons (Grenade Launcher)
+- Added X new weapons (Grenade Launcher, Lightning Gun)
 - Added X new enemies
-- Reamped X enemies
+- Revamped X enemies
 - Added X inventory items
 
 - Redid a whole heap of sounds!
-- Fixed scaling on Rocket Launcher spawns
+- Fixed sprite scaling on Rocket Launcher spawns
 - Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
 - Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
   you'd spend the bullets and play the sound but not actually fire the projectile.
