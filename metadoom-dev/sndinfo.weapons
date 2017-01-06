@@ -221,6 +221,8 @@ weapons/grenadelauncher/gasbomb2		glaugas2
 weapons/grenadelauncher/gasbomb3		glaugas3
 
 // lightning gun
+weapons/lightninggun/get				thunget
+weapons/lightninggun/use				thunuse
 weapons/lightninggun/fire				thunfire
 weapons/lightninggun/loop				thunloop
 weapons/lightninggun/stop				thunstop

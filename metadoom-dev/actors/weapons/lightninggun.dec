@@ -4,7 +4,7 @@ ACTOR MetaLightningGunPickup : WeaponGiver
 {
 	DropItem "MetaLightningGun"
 	Inventory.PickupMessage "$GOTLIGHTNING"
-	Inventory.PickupSound "weapons/plasmarifle/get"
+	Inventory.PickupSound "weapons/lightninggun/get"
 	scale 0.75
 	States
 	{
@@ -24,7 +24,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 	Weapon.AmmoType "Cell"
 	Inventory.PickupMessage "$GOTLIGHTNING"
 	Tag "$TAGLIGHTNING"
-	Inventory.PickupSound "weapons/plasmarifle/get"
+	Inventory.PickupSound "weapons/lightninggun/get"
 	+WEAPON.NOALERT
 	scale 0.75
 	States
@@ -53,7 +53,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		THUN A 0 A_Lower
 		Loop
 	Select:
-		THUN A 1 Offset(0,90) A_PlaySound("weapons/plasmarifle/use")
+		THUN A 1 Offset(0,90) A_PlaySound("weapons/lightninggun/use")
 		THUN A 1 Offset(0,80)
 		THUN A 1 Offset(0,70)
 		THUN A 1 Offset(0,60)
