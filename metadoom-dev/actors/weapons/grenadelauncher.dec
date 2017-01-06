@@ -190,24 +190,24 @@ ACTOR GrenadeLauncherExplosion
 	Decal Scorch
 	States
 	{
-		Spawn:
-		EXPL A 0
-		EXPL A 2 BRIGHT
+	Spawn:
+	EXPL A 0
+	EXPL A 2 BRIGHT
+	{
+		A_PlaySound("weapons/grenadelauncher/explode", CHAN_WEAPON);
+		A_Explode;
+		A_Quake (3,10,0,750,0);
+		A_SpawnItem("Shockwave",0,0);
+		
+		if (z <= (floorz + 64))
 		{
-			A_PlaySound("weapons/grenadelauncher/explode", CHAN_WEAPON);
-			A_Explode;
-			A_Quake (3,10,0,750,0);
-			A_SpawnItem("Shockwave",0,0);
-			
-			if (z <= (floorz + 64))
-			{
-				A_SpawnItem("ExplosionScorchMark",0,0);
-			}
+			A_SpawnItem("ExplosionScorchMark",0,0);
 		}
-		EXPL B 2 BRIGHT 
-		EXPL C 2 BRIGHT 
-		EXPL DEF 2
-		Stop
+	}
+	EXPL B 2 BRIGHT 
+	EXPL C 2 BRIGHT 
+	EXPL DEF 2
+	Stop
 	}
 }
 
@@ -269,7 +269,7 @@ ACTOR GasBombExplosion
 	Obituary "$OB_GRENLAUNCHER_GAS"
 	States
 	{
-		Spawn:
+	Spawn:
 		EXPL A 0
 		EXPL A 2 BRIGHT
 		{

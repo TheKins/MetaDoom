@@ -143,24 +143,24 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 
 ACTOR MicroRocket
 {
-  Radius 8
-  Height 8
-  Speed 40
-  Damage 5
-  Projectile
-  Obituary "$OB_METAMG_MISSILE" // "%o rode %k's rocket."
-  scale 0.5
-  Decal RevenantScorch
-  States
-  {
-  Spawn:
-    MISL A 1 Bright
-    Loop
-  Death:
-	MISL A 4 Bright
-    TNT1 A 0 A_SpawnItemEx("MicroRocketExplosion",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
-    Stop
-  }
+	Radius 8
+	Height 8
+	Speed 40
+	Damage 5
+	Projectile
+	Obituary "$OB_METAMG_MISSILE"
+	scale 0.5
+	Decal RevenantScorch
+	States
+	{
+	Spawn:
+		MISL A 1 Bright
+		Loop
+	Death:
+		MISL A 4 Bright
+		TNT1 A 0 A_SpawnItemEx("MicroRocketExplosion",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	}
 }
 
 ACTOR MicroRocketExplosion : Explosion
