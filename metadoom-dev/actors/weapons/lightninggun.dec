@@ -75,10 +75,10 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 			A_GunFlash;
 			if (CountInv("LightningFired") >= 5)
 			{
-				A_RailAttack(6,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
+				A_RailAttack(7,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
 				A_TakeInventory("LightningFired",999);
 			} else {
-				A_RailAttack(6,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
+				A_RailAttack(7,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,256,35,16.0,0,"LightningTrailSpawner");
 				A_GiveInventory("LightningFired",1);
 			}
 			A_AlertMonsters;
