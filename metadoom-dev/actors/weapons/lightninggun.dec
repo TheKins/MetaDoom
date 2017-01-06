@@ -5,12 +5,13 @@ ACTOR MetaLightningGunPickup : WeaponGiver
 	DropItem "MetaLightningGun"
 	Inventory.PickupMessage "$GOTLIGHTNING"
 	Inventory.PickupSound "weapons/plasmarifle/get"
+	scale 0.75
 	States
 	{
 	Spawn:
-		PLA0 Z 0
-		PLA0 Z 0 A_ChangeFlag ("DROPPED", 0)
-		PLA0 Z -1
+		THUN Z 0
+		THUN Z 0 A_ChangeFlag ("DROPPED", 0)
+		THUN Z -1
 		Stop
 	}
 }
@@ -25,6 +26,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 	Tag "$TAGLIGHTNING"
 	Inventory.PickupSound "weapons/plasmarifle/get"
 	+WEAPON.NOALERT
+	scale 0.75
 	States
 	{
 	Ready:
@@ -96,7 +98,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		TNT1 B 4 Bright A_Light1
 		Goto LightDone
 	Spawn:
-		PLA0 Z -1
+		THUN Z -1
 		Stop
 	}
 }
