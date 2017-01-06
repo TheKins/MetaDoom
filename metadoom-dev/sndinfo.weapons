@@ -226,3 +226,6 @@ weapons/lightninggun/use				thunuse
 weapons/lightninggun/fire				thunfire
 weapons/lightninggun/loop				thunloop
 weapons/lightninggun/stop				thunstop
+
+weapons/lightninggun/altfire			thunalt1
+weapons/lightninggun/altboom			thunalt2
