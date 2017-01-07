@@ -139,4 +139,14 @@ class MetaDoomActor : Actor
 		
 		return null;
 	}
+
+	// A_CheckNoSolidFooting("State", flags)
+	// An inverse version of A_CheckSolidFooting
+	// Flags (somewhat self explanatary):
+	// CSF_SOLIDACTORS, CSF_SOLIDGROUND, CSF_ALL (default)
+	// Authored by The Zombie Killer
+	action state A_CheckNoSolidFooting(statelabel label, int flags = CSF_ALL)
+	{
+		return A_CheckSolidFooting(label, flags) == null ? ResolveState(label) : null;
+	}
 }
