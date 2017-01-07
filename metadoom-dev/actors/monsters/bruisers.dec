@@ -50,7 +50,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 		Goto See
 	Missile:
 		BARO A 0
-		//BARO A 0 A_Jump(256, "JumpAttack") // for debug
+		BARO A 0 A_Jump(256, "JumpAttack") // for debug
 		BARO A 0 A_Jump(128, "MeleeMissile")
 		BARO A 0 A_CheckRange(255, "MeleeMissile", True )
 		BARO A 0 A_JumpIf(!GetCvar(meta_mapbreakers), "MeleeMissile")
@@ -59,8 +59,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 		BARO Z 0 A_PlaySound("monsters/hellknight/jump", CHAN_VOICE)
 		BARO Z 4 A_FaceTarget
 		BARO J 4 { ThrustThingZ(0,48,0,0); ThrustThing(angle*256/360, 8, 0, 0); }
-		BARO KKKKKKKKKKKKKKK 1 A_CheckFloor("JumpAttackLanding")				// This gross bit is figuring out if we've landed
-		BARO K 1 A_JumpIf(momz == 0, "JumpAttackLanding")						// so we can respond appropriately.
+		BARO K 1 A_CheckSolidFooting("JumpAttackLanding")
 		wait
 	JumpAttackLanding:
 		BARO L 0 A_Quake (3,10,0,2048,0)
@@ -145,8 +144,7 @@ ACTOR MetaHellKnight : MonsterCore
 		HNGT Z 0 A_PlaySound("monsters/hellknight/jump", CHAN_VOICE)
 		HNGT Z 4 A_FaceTarget
 		HNGT J 4 { ThrustThingZ(0,48,0,0); ThrustThing(angle*256/360, 8, 0, 0); }
-		HNGT KKKKKKKKKKKKKKK 1 A_CheckFloor("JumpAttackLanding")				// This gross bit is figuring out if we've landed
-		HNGT K 1 A_JumpIf(momz == 0, "JumpAttackLanding")						// so we can respond appropriately.
+		HNGT K 1 A_CheckSolidFooting("JumpAttackLanding")
 		wait
 	JumpAttackLanding:
 		HNGT L 0 A_Quake (3,10,0,750,0)
