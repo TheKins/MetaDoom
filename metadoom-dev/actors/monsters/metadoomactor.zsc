@@ -111,16 +111,19 @@ class MetaDoomActor : Actor
 				// restore original species
 				species = mySpecies;
 				
+				// we hit an actor
 				if (check.target)
 				{
 					let hit = check.target;
-					
+					 
 					// ensure we're standing on it
 					if (pos.z == hit.pos.z + hit.height && vel.z == hit.vel.z)
 					{
 						if (flags & CSF_SOLIDACTORS)
 							return ResolveState(label);
 					}
+					else
+						return null;
 				}
 				
 				if (flags & CSF_SOLIDGROUND)
