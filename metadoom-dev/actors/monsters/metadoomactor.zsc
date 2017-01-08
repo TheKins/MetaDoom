@@ -87,11 +87,9 @@ class MetaDoomActor : Actor
 	// Flags (somewhat self explanatary):
 	// CSF_SOLIDACTORS, CSF_SOLIDGROUND, CSF_ALL (default)
 	// Authored by The Zombie Killer
+	action state A_CheckSolidFooting(statelabel label, int flags = CSF_ALL)
 	{
 		// are we standing on solid ground?
-		if (oldVel != vel.z)
-			return null;
-
 		if (abs(pos.z - GetZAt()) <= 1)
 		{
 			if (flags & CSF_SOLIDGROUND)
@@ -106,7 +104,7 @@ class MetaDoomActor : Actor
 			if (flags & CSF_SOLIDACTORS)
 				return ResolveState(label);
 		}
-	   
+
 		return null;
 	}
 
