@@ -95,7 +95,7 @@ class MetaDoomActor : Actor
 			if (flags & CSF_SOLIDGROUND)
 				return ResolveState(label);
 		}
-	   
+
 		// are we standing on an actor?
 		bool ok; Actor below;
 		[ok, below] = TestMobjZ(true);
