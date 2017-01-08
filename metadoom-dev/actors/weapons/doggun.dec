@@ -139,6 +139,10 @@ ACTOR MetaDogGun_DemonDog : MetaDogGun_HellHound
 {
 	States
 	{
+	Deselect:
+		"####" A 1 
+		"####" A 0 A_JumpIf(health <= 0, "DeadDude")
+		goto AltFire
 	Ready:
 		DDGG AAAAAAAA 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
 		"####" BBBBBBBB 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
@@ -206,6 +210,10 @@ ACTOR MetaDogGun_Cerberus : MetaDogGun_HellHound
 {
 	States
 	{
+	Deselect:
+		"####" A 1 
+		"####" A 0 A_JumpIf(health <= 0, "DeadDude")
+		goto AltFire
 	Ready:
 		CDGG AAAAAAAA 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
 		"####" BBBBBBBB 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
