@@ -87,56 +87,26 @@ class MetaDoomActor : Actor
 	// Flags (somewhat self explanatary):
 	// CSF_SOLIDACTORS, CSF_SOLIDGROUND, CSF_ALL (default)
 	// Authored by The Zombie Killer
-	action state A_CheckSolidFooting(statelabel label, int flags = CSF_ALL)
 	{
-		// we need to set the species to "CheckSolidFooting" temporarily
-		// so that our collision test puff doesn't hit /us/
-		let mySpecies = species;
-		species = "CheckSolidFooting";
-		
-		// todo: lineattack from the actor's four corners for more accuracy
-		for (let px = -radius; px <= radius; px += radius)
-			for (let py = -radius; py <= radius; py += radius)
+		// are we standing on solid ground?
+		if (oldVel != vel.z)
+			return null;
+
+		if (abs(pos.z - GetZAt()) <= 1)
 		{
-			// perform lineattack
-			let point = Spawn("CheckSolidFooting", Vec3Offset(px, py, 0), ALLOW_REPLACE);
-			let check = point.LineAttack(0, 9, 90, 0, "", "CheckSolidFooting", LAF_NORANDOMPUFFZ);
-			
-			// we don't need you anymore
-			point.SetState(point.ResolveState("Null"));
-			
-			// was there a collision?
-			if (check)
-			{
-				// restore original species
-				species = mySpecies;
-				
-				// we hit an actor
-				if (check.target)
-				{
-					let hit = check.target;
-					 
-					// ensure we're standing on it
-					if (pos.z == hit.pos.z + hit.height && vel.z == hit.vel.z)
-					{
-						if (flags & CSF_SOLIDACTORS)
-							return ResolveState(label);
-					}
-					else
-						return null;
-				}
-				
-				if (flags & CSF_SOLIDGROUND)
-					return ResolveState(label);
-			}
+			if (flags & CSF_SOLIDGROUND)
+				return ResolveState(label);
 		}
-		
-		// restore original species
-		species = mySpecies;
-		
-		if (flags & CSF_SOLIDGROUND)
-			return A_CheckFloor(label);
-		
+	   
+		// are we standing on an actor?
+		bool ok; Actor below;
+		[ok, below] = TestMobjZ(true);
+		if (below)
+		{
+			if (flags & CSF_SOLIDACTORS)
+				return ResolveState(label);
+		}
+	   
 		return null;
 	}
 
