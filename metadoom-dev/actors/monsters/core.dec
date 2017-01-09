@@ -20,11 +20,13 @@ actor MonsterCore : MetaDoomActor
 	painchance Fist, 255
 	painchance Axe, 255
 	painchance Vampire, 255
+	painchance LightningStun, 255
 	painchance Bleeding, 0
 	painchance LightningGun, 0
 	painchance SoulCube, 255
 	damagefactor FireExtinguisher, 0
 	damagefactor DogCollar, 0
+	damagefactor LightningStun, 0.1
 	painchance DogCollar, 0
 	States
 	{
