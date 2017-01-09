@@ -11,11 +11,15 @@ NEXT VERSION
 - Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early
 - Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
   you'd spend the bullets and play the sound but not actually fire the projectile.
+- Fixed a bug where trying to deselect weaponized Demon Dogs or Cerberuses would
+  lock the player into an unarmed state.
+- Fixed Unmaker altfire particle density being lower than intended
 - Many bug-fixes and cosmetic improvements to the Axe's bleeding effect
 - Added a new sprite for the Radiation Suit
 - Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
-- Went mad with ZScript and macro-fied some things
+- Various under the hood improvements to the code, including the introduction
+  of ZScript, better commenting and general tabbing clean-ups.
 - Added an ENDOOM! This is important.
 
 Optional Content:
