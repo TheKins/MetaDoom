@@ -197,6 +197,7 @@ object LightningTrailParticle
     frame PLSE { light MetaLightningExplosion }
 }
 
+object MetaLightningStunProj
 {
     frame PLSE { light MetaLightningExplosion }
 }
