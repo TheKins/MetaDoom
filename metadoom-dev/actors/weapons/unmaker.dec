@@ -138,10 +138,10 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 	AltFire_Charge:
 		UNMA A 0
 		UNMA A 0 A_PlaySound("weapons/unmaker/altcharge", CHAN_WEAPON)
-		UNMA AAAAAAA 1 A_WeaponOffset(random(-1,1),random(31,33))
-		UNMA AAAAAAA 1 A_WeaponOffset(random(-2,2),random(30,34))
-		UNMA AAAAAAA 1 A_WeaponOffset(random(-4,4),random(27,37))
-		UNMA AAAAAAA 1 A_WeaponOffset(random(-4,4),random(20,40))
+		UNMA AAAAAAA 1 A_WeaponOffset(random(-1,1),random(31,33), WOF_INTERPOLATE)
+		UNMA AAAAAAA 1 A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE)
+		UNMA AAAAAAA 1 A_WeaponOffset(random(-4,4),random(27,37), WOF_INTERPOLATE)
+		UNMA AAAAAAA 1 A_WeaponOffset(random(-4,4),random(20,40), WOF_INTERPOLATE)
 		UNMA A 0 A_JumpIfInventory("DemonKey", 3, "AltFire_Keys3")
 		UNMA A 0 A_JumpIfInventory("DemonKey", 2, "AltFire_Keys2")
 		UNMA A 0 A_JumpIfInventory("DemonKey", 1, "AltFire_Keys1")

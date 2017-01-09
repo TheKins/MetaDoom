@@ -85,7 +85,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 				A_GiveInventory("LightningFired",1);
 			}
 			A_AlertMonsters;
-			A_WeaponOffset(random(-2,2),random(30,34));
+			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
 		}
 		THUN C 0 A_Refire
 	FireEnd:
