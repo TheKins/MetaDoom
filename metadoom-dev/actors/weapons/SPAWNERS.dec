@@ -151,13 +151,16 @@ actor PlasmaRifleSpawner replaces PlasmaRifle
 		TNT1 A 0 A_JumpIf(CallACS("Item_PlasmaRifle", 0, 0, 0) == 2, "VarietyPack")
 	VarietyPack:
 		TNT1 A 0 
-		TNT1 A 0 A_Jump(64,"Gauss")
+		TNT1 A 0 A_Jump(64,"Gauss", "Thunderbolt")
 		goto PlasmaRifle
 	Gauss:
 		TNT1 A 0 A_SpawnItemEx("MetaGaussCannonPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	PlasmaRifle:
 		TNT1 A 0 A_SpawnItemEx("MetaPlasmaRiflePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	Thunderbolt:
+		TNT1 A 0 A_SpawnItemEx("MetaLightningGunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	}
 }
