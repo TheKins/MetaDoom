@@ -196,3 +196,12 @@ object LightningTrailParticle
 {
     frame PLSE { light MetaLightningExplosion }
 }
+
+{
+    frame PLSE { light MetaLightningExplosion }
+}
+
+object MetaLightningStunFXZappy
+{
+    frame PLSE { light MetaLightningExplosion }
+}
