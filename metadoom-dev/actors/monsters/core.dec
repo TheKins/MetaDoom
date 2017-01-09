@@ -33,6 +33,7 @@ actor MonsterCore : MetaDoomActor
 	// Siphon Grenade
 	Pain.Vampire:
 		"####" # 0 A_GiveToTarget ("Health", 1)
+		"####" # 0 A_PlaySound("monsters/vamped")
 		"####" # 0 A_Jump(256,"Pain")
 		stop
 	// Fire Axe

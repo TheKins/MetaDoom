@@ -18,6 +18,7 @@ NEXT VERSION
 - Added a new sprite for the Radiation Suit
 - Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
+- Added a sound for when enemies are damaged by Siphon Grenades
 - Various under the hood improvements to the code, including the introduction
   of ZScript, better commenting and general tabbing clean-ups.
 - Added an ENDOOM! This is important.
