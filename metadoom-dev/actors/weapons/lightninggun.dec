@@ -19,11 +19,14 @@ ACTOR MetaLightningGunPickup : WeaponGiver
 ACTOR MetaLightningGun : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 100
-	Weapon.AmmoUse 1
+	Weapon.AmmoUse1 1
+	Weapon.AmmoUse2 15
 	Weapon.AmmoGive 40
-	Weapon.AmmoType "Cell"
+	Weapon.AmmoType1 "Cell"
+	Weapon.AmmoType2 "Cell"
 	Inventory.PickupMessage "$GOTLIGHTNING"
 	Tag "$TAGLIGHTNING"
+	Obituary "$OB_LIGHTNING"
 	Inventory.PickupSound "weapons/lightninggun/get"
 	+WEAPON.NOALERT
 	scale 0.75
@@ -92,6 +95,40 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		THUN B 1 bright Offset(0,32)
 		THUN A 0 A_ReFire
 		goto Ready
+		
+	AltFire:
+		THUN A 0 A_JumpIfInventory("Cell",15,"StunShot")
+		THUN A 1 Offset(0,34) A_PlaySound("weapons/grenadelauncher/altdeny", CHAN_BODY)
+		THUN A 1 Offset(0,33)
+		THUN A 1 Offset(0,32)
+		THUN A 10
+		goto Ready
+	StunShot:
+		THUN B 2 bright A_PlaySound("weapons/lightninggun/altfire")
+		THUN B 0 A_GunFlash
+		THUN C 0 
+		{
+		A_FireCustomMissile ("MetaLightningStunProj");
+		A_GunFlash;
+		A_AlertMonsters;
+		}
+		THUN C 1 bright Offset(0,45) A_SetPitch(pitch-2)
+		THUN C 1 bright Offset(0,48) A_SetPitch(pitch-2)
+		THUN C 1 bright Offset(0,47)
+		THUN C 1 bright Offset(0,46) A_SetPitch(pitch+1)
+		THUN C 1 bright Offset(0,44) A_SetPitch(pitch+1)
+		THUN C 1 bright Offset(0,42) A_SetPitch(pitch+1)
+		THUN B 1 bright Offset(0,38) A_SetPitch(pitch+1) 
+		THUN B 1 bright Offset(0,36) //A_PlaySound("weapons/lightninggun/stop")
+		THUN B 1 Offset(0,34) 
+		THUN B 1 Offset(0,33) 
+		THUN A 1 Offset(0,32) 
+		THUN A 1 
+		THUN A 8
+		THUN A 2
+		THUN A 0 A_Refire
+		Goto Ready	
+		
 	Flash:
 		TNT1 A 4 Bright A_Light1
 		Goto LightDone
@@ -148,5 +185,65 @@ ACTOR MetaLightningPuff : MetaBulletPuff
 		TNT1 A 0
 		TNT1 A 4 BRIGHT A_SpawnDebris("PistolTracerSpark")
 		Stop
+	}
+}
+
+actor MetaLightningStunProj
+{
+	+CANBOUNCEWATER
+	Radius 8
+	Height 8
+	Speed 30
+	Damage 0
+	PROJECTILE
+	+RANDOMIZE
+	-NOGRAVITY
+	+FORCERADIUSDMG
+	+CAUSEPAIN
+	+FORCEPAIN
+	damagetype LightningStun
+	Obituary "$OB_LIGHTNING"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ThrustThingZ(0,16,0,1)
+		goto Flying
+	Flying:
+		PLSE AB 1
+		loop
+	Death:
+		TNT1 A 0 A_PlaySound("weapons/lightninggun/altboom")
+		TNT1 A 0 A_SpawnItem("MetaLightningStunFX")
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_Explode((1), 256, !XF_HURTSOURCE)
+		Stop
+	}
+}
+
+ACTOR MetaLightningStunFX
+{
+	Radius 10
+	Height 10
+	+NOBLOCKMAP
+	-SOLID
+	//+NOGRAVITY
+	//+FORCEXYBILLBOARD
+	+ROLLSPRITE
+	+FLATSPRITE
+	scale 3.0
+	renderstyle Add
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			PLSE ABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 1 bright 
+			{
+				A_SetScale(frandom(2.9,3.1),frandom(2.9,3.1));
+				A_SetTranslucent(frandom(0.9,0.8), 1);
+				A_SetRoll(random(0,360));
+			}
+		Die:
+			PLSE AB 1 bright A_FadeOut(0.25)
+			loop
 	}
 }
