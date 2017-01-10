@@ -159,8 +159,8 @@ ACTOR MetaFiend : MonsterCore
 	DeathSound "monsters/fiend/die"
 	ActiveSound "monsters/fiend/idle"
 	MeleeSound "skeleton/melee"
-	HitObituary "$OB_UNDEADHIT"
-	Obituary "$OB_UNDEAD"
+	HitObituary "$OB_FIENDHIT"
+	Obituary "$OB_FIEND"
 	States
 	{
 	Spawn:
@@ -177,9 +177,39 @@ ACTOR MetaFiend : MonsterCore
 		FIEN I 6 A_CustomMeleeAttack(random(1, 10) * 6, "monsters/revenant/hit")
 		Goto See
 	Missile:
+		FIEN J 0 A_Jump(96,"MissileMacross")
+	MissileClassic:
 		FIEN J 0 Bright A_FaceTarget
 		FIEN J 10 Bright A_FaceTarget
 		FIEN K 10 A_SkelMissile
+		FIEN K 10 A_FaceTarget
+		Goto See
+	MissileMacross:
+		FIEN T 10 A_FaceTarget
+		FIEN R 4 bright
+		{
+			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
+			A_SpawnProjectile ("FiendMicroRocket", 50, 8);
+		}
+		FIEN T 4 A_FaceTarget
+		FIEN S 4 bright
+		{
+			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
+			A_SpawnProjectile ("FiendMicroRocket", 50, -8);
+		}
+		FIEN T 4 A_FaceTarget
+		FIEN R 4 bright
+		{
+			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
+			A_SpawnProjectile ("FiendMicroRocket", 50, 8);
+		}
+		FIEN T 4 A_FaceTarget
+		FIEN S 4 bright
+		{
+			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
+			A_SpawnProjectile ("FiendMicroRocket", 50, -8);
+		}
+		FIEN T 4 A_FaceTarget
 		FIEN K 10 A_FaceTarget
 		Goto See
 	Pain:
@@ -202,4 +232,10 @@ ACTOR MetaFiend : MonsterCore
 		FIEN PONML 5
 		Goto See
 	}
+}
+
+ACTOR FiendMicroRocket : MicroRocket
+{
+	Damage 2
+	Obituary "$OB_FIENDSWARM"
 }
