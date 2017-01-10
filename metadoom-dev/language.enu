@@ -269,6 +269,9 @@ OB_WRETCHED = "%o was licked by a Wretched.";
 OB_FORGOTTENONE = "%o was Forgotten.";
 OB_BEHOLDER = "%o was eyed by a Beholder.";
 OB_RAHOVART = "%o was devoured by a Rahovart.";
+OB_FIEND = "%o was tracked down by a Fiend.";
+OB_FIENDHIT = "%o was clocked out by a Fiend.";
+OB_FIENDSWARM = "%o was swarmed by a Fiend.";
 
 OB_METAFIST = "%o was Gloriously Killed by %k.";
 OB_BERSERK = "%o ate the Berserker Rage of %k.";
