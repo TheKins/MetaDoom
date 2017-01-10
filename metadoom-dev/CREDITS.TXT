@@ -54,7 +54,7 @@ Zaneion (Hell Knight sprites, Baron of Hell sprites)
 TorridGristle (Siphon Grenade sprite)
 Merser (Wretched sprite)
 Eriance (Beholder sprite, Grenade Launcher parts)
-Zrrion (Grenade Launcher sprites)
+Zrrion (Grenade Launcher sprites, Lightning Gun sprites)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 Captain Toenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
