@@ -7,7 +7,6 @@ Revenant
 */
 
 // Currently more or less identical to the original Doom monster, behavior-wise.
-// TODO: Twiddle with, add at least one variant!
 
 ACTOR MetaRevenant : MonsterCore
 {
@@ -169,7 +168,7 @@ ACTOR MetaFiend : MonsterCore
 		Loop
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood")
-		FIEN AABBCC 2 A_Chase
+		FIEN AABBCCDDEEFF 2 A_Chase
 		Loop
 	Melee:
 		FIEN G 0 A_FaceTarget
