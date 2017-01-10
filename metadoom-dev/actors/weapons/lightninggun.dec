@@ -33,6 +33,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 	States
 	{
 	Ready:
+		THUN A 0 A_PlaySound ("weapons/lightninggun/idle", CHAN_WEAPON, 0.5, 1)
 		THUN A 1 A_WeaponReady
 		THUN A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
 		THUN B 1 A_WeaponReady

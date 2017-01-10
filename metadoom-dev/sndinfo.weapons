@@ -229,3 +229,5 @@ weapons/lightninggun/stop				thunstop
 
 weapons/lightninggun/altfire			thunalt1
 weapons/lightninggun/altboom			thunalt2
+
+weapons/lightninggun/idle				thunidle
