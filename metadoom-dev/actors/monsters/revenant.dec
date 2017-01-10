@@ -144,7 +144,7 @@ ACTOR MetaRevenantTracerExplosion : Explosion
 
 ACTOR MetaFiend : MonsterCore
 {
-	Health 300
+	Health 250
 	Radius 20
 	Height 56
 	Mass 500
