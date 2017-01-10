@@ -22,12 +22,14 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 	bloodtype GreenBlood
 	bloodcolor "49 9a 3d"
 	damagefactor "HolyWater", 0
-	painchance 255
-	+FORCEPAIN
 	damagefactor Fist, 0
 	damagefactor HolyWater, 0
 	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
 	damagefactor Axe, 50
+	painchance LightningStun, 0
+	painchance 255
+	+FORCEPAIN
 	States
 	{
 	Spawn:
