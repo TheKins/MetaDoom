@@ -342,3 +342,11 @@ monsters/beholder/die		behodie
 $random monsters/forgottenone/attack { monsters/forgottenone/attack1 monsters/forgottenone/attack2 }
 monsters/forgottenone/attack1	frgtn1
 monsters/forgottenone/attack2	frgtn2
+
+// fiend
+monsters/fiend/see			fiensee
+monsters/fiend/idle			fienidle
+monsters/fiend/pain			fienpain
+monsters/fiend/die			fiendie
+monsters/fiend/jet			fienjet
+monsters/fiend/land			fienland
