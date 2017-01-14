@@ -251,10 +251,10 @@ ACTOR MetaAssassinGuy : MonsterCore
 	Monster
 	+FLOORCLIP
 	+DOHARMSPECIES
-	SeeSound "chainguy/sight"
-	PainSound "chainguy/pain"
-	DeathSound "chainguy/death"
-	ActiveSound "chainguy/active"
+	SeeSound "monsters/d3chaingunner/see"
+	PainSound "monsters/d3chaingunner/pain"
+	DeathSound "monsters/d3chaingunner/die"
+	ActiveSound "monsters/d3chaingunner/idle"
 	AttackSound "chainguy/attack"
 	Obituary "$OB_D3CGUNGUY"
 	Dropitem "MetaChainGun"
@@ -271,6 +271,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 		PSCM AABBCCDD 3 A_Chase
 		Loop
 	Missile:
+		PSCM E 0 A_Jump(64, "MissileTentacle")
 		PSCM E 0 A_PlaySound("weapons/chaingun/windup", CHAN_WEAPON)
 		PSCM EEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_FaceTarget
 	Brapp:
@@ -284,6 +285,12 @@ ACTOR MetaAssassinGuy : MonsterCore
 	Winddown:
 		PSCM E 15 A_PlaySound("weapons/chaingun/winddown", CHAN_WEAPON)
 		goto See
+	MissileTentacle:
+		PSCM A 5 A_FaceTarget
+		PSCM E 5 A_FaceTarget
+		PSCM G 20 BRIGHT A_CustomMissile ("AssassinTentacle", 32, 0, 0)
+		PSCM EA 5 A_FaceTarget
+		Goto See
 	Pain:
 		PSCM H 0
 		PSCM H 0 A_StopSound(CHAN_WEAPON)
@@ -358,4 +365,39 @@ ACTOR MetaAssassinGuy : MonsterCore
 		PSCM NMLKJI 5
 		Goto See
 	}
+}
+
+ACTOR AssassinTentacle : LoreShot
+{
+  Speed 15
+  Height 14
+  Radius 10
+  Projectile
+  //+STRIFEDAMAGE
+  Damage 2
+  MaxStepHeight 4
+  SeeSound "monsters/d3chaingunner/tentacle"
+  States
+  {
+  Spawn:
+    WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("AssassinTentacleTrail")
+    stop
+  Death:
+	WTNG A 0 A_PlaySound("monsters/wretched/pull")
+    Stop
+  }
+}
+
+ACTOR AssassinTentacleTrail
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  scale 0.8
+  states
+  {
+  Spawn:
+	WTNG A 0
+    WTNG A 32 
+	stop
+ }
 }
