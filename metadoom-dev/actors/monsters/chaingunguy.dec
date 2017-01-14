@@ -256,7 +256,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 	DeathSound "chainguy/death"
 	ActiveSound "chainguy/active"
 	AttackSound "chainguy/attack"
-	Obituary "$OB_CGUNGUY"
+	Obituary "$OB_D3CGUNGUY"
 	Dropitem "MetaChainGun"
 	damagefactor HolyWater, 0.25
 	painchance HolyWater, 255

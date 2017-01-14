@@ -260,6 +260,7 @@ OB_SPECTRENIGHTMARE = "%o was caught by a Nightmare Spectre.";
 OB_ZSEC = "%o was rolled over by Z-Sec.";
 OB_MGUNGUY = "%o was gunned down by a Former Lieutenant.";
 OB_CGUNGUY = "%o was torn to ribbons by a Former Commando.";
+OB_D3CGUNGUY = "%o was iced by a Former Assassin.";
 OB_NIGHTMAREIMPHIT = "%o was sliced by a Nightmare Imp.";
 OB_NIGHTMAREIMP = "%o was torched by a Nightmare Imp.";
 OB_HELLRAZER = "%o was blasted by a Hell Razer.";
