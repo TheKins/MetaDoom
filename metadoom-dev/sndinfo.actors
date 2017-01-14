@@ -351,3 +351,23 @@ monsters/fiend/die			fiendie
 monsters/fiend/jet			fienjet
 monsters/fiend/land			fienland
 monsters/fiend/arm			fienarm
+
+// former assassin
+$random monsters/d3chaingunner/see { monsters/d3chaingunner/see1 monsters/d3chaingunner/see2 monsters/d3chaingunner/see3 }
+monsters/d3chaingunner/see1		d3cgsee1
+monsters/d3chaingunner/see2		d3cgsee2
+monsters/d3chaingunner/see3		d3cgsee3
+
+$random monsters/d3chaingunner/idle { monsters/d3chaingunner/idle1 monsters/d3chaingunner/idle2 monsters/d3chaingunner/idle3 monsters/d3chaingunner/idle4 }
+monsters/d3chaingunner/idle1		d3cgidl1
+monsters/d3chaingunner/idle2		d3cgidl2
+monsters/d3chaingunner/idle3		d3cgidl3
+monsters/d3chaingunner/idle4		d3cgidl4
+
+$random monsters/d3chaingunner/die { monsters/d3chaingunner/die1 monsters/d3chaingunner/die2 monsters/d3chaingunner/die3 }
+monsters/d3chaingunner/die1		d3cgdie1
+monsters/d3chaingunner/die2		d3cgdie2
+monsters/d3chaingunner/die3		d3cgdie3
+
+monsters/d3chaingunner/tentacle		d3cgtent
+monsters/d3chaingunner/pain		d3cgpain

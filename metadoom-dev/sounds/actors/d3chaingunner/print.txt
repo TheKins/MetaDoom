@@ -1,0 +1,22 @@
+ Volume in drive D is Dense
+ Volume Serial Number is A61B-FC3F
+
+ Directory of D:\Games\Doom\Projects\MetaDoom\metadoom-dev\sounds\actors\d3chaingunner
+
+14/01/2017  11:38 PM    <DIR>          .
+14/01/2017  11:38 PM    <DIR>          ..
+14/01/2017  11:36 PM            15,972 d3cgdie1.ogg
+14/01/2017  11:36 PM            19,940 d3cgdie2.ogg
+14/01/2017  11:37 PM            18,717 d3cgdie3.ogg
+14/01/2017  11:32 PM            21,273 d3cgidl1.ogg
+14/01/2017  11:33 PM            28,555 d3cgidl2.ogg
+14/01/2017  11:35 PM            20,882 d3cgidl3.ogg
+14/01/2017  11:36 PM            20,611 d3cgidl4.ogg
+14/01/2017  11:37 PM            12,043 d3cgpain.ogg
+14/01/2017  11:31 PM            12,644 d3cgsee1.ogg
+14/01/2017  11:32 PM            11,030 d3cgsee2.ogg
+14/01/2017  11:32 PM            17,812 d3cgsee3.ogg
+14/01/2017  11:29 PM            15,620 d3cgtent.ogg
+14/01/2017  11:38 PM                 0 print.txt
+              13 File(s)        215,099 bytes
+               2 Dir(s)  150,914,301,952 bytes free
