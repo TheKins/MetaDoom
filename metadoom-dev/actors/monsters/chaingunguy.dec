@@ -273,17 +273,17 @@ ACTOR MetaAssassinGuy : MonsterCore
 	Missile:
 		PSCM E 0 A_Jump(64, "MissileTentacle")
 		PSCM E 0 A_PlaySound("weapons/chaingun/windup", CHAN_WEAPON)
-		PSCM EEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_FaceTarget
+		PSCM EEEEEEEEEEEEEE 1 A_FaceTarget
 	Brapp:
 		PSCM FE 1 BRIGHT 
 		{
 			A_PlaySound ("weapons/chaingun/fire", CHAN_WEAPON);
 			A_CustomMissile("MonsterCommandoTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 		}
-		PSCM F 1 A_MonsterRefire (10, "WindDown")
+		PSCM F 1 A_MonsterRefire (80, "WindDown")
 		loop
 	Winddown:
-		PSCM E 15 A_PlaySound("weapons/chaingun/winddown", CHAN_WEAPON)
+		PSCM E 10 A_PlaySound("weapons/chaingun/winddown", CHAN_WEAPON)
 		goto See
 	MissileTentacle:
 		PSCM A 5 A_FaceTarget
