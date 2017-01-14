@@ -81,14 +81,20 @@ actor ChaingunGuySpawner replaces ChaingunGuy
 		TNT1 A 0 A_RadiusGive ("PossessedRadar", 512, RGF_MONSTERS)
 		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "MachineGunGuy")
 		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "ContentLocustVarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 13, "Tier3")
 		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 4, "Tier2")
 		goto MachineGunGuy
 	ContentLocustVarietyPack:
 		TNT1 A 0
-		TNT1 A 0 A_Jump(128, "ChainGunGuy")
+		TNT1 A 0 A_Jump(128, "ChainGunGuy", "AssassinGuy")
 		goto MachineGunGuy
 	Tier2:
 		TNT1 A 0
+		TNT1 A 0 A_Jump(128, "ChainGunGuy")
+		goto MachineGunGuy
+	Tier3:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(64, "AssassinGuy")
 		TNT1 A 0 A_Jump(128, "ChainGunGuy")
 		goto MachineGunGuy
 	MachineGunGuy:
@@ -96,6 +102,9 @@ actor ChaingunGuySpawner replaces ChaingunGuy
 		stop
 	ChainGunGuy:
 		TNT1 A 0 A_SpawnItemEx("MetaChainGunGuy",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	AssassinGuy:
+		TNT1 A 0 A_SpawnItemEx("MetaAssassinGuy",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		stop
 	}
 }
