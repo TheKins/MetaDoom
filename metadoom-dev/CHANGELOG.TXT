@@ -2,7 +2,7 @@ NEXT VERSION
 ============
 
 - Added X new weapons (Grenade Launcher, Lightning Gun)
-- Added X new enemies (Fiend)
+- Added X new enemies (Fiend, Former Assassin)
 - Revamped X enemies
 - Added X inventory items
 
