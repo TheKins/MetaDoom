@@ -40,6 +40,9 @@ class CheckSolidFooting : Actor
 
 class MetaDoomActor : Actor
 {
+
+
+	
 	// This is just a container actor for various functions used by the
 	// "MonsterCore" DECORATE actor, and as a result, all of MetaDoom's
 	// many monsters.
@@ -89,6 +92,8 @@ class MetaDoomActor : Actor
 	// Authored by The Zombie Killer
 	action state A_CheckSolidFooting(statelabel label, int flags = CSF_ALL)
 	{
+		int user_FallingTimeOut;
+		
 		// are we standing on solid ground?
 		if (abs(pos.z - GetZAt()) <= 1)
 		{
@@ -103,6 +108,20 @@ class MetaDoomActor : Actor
 		{
 			if (flags & CSF_SOLIDACTORS)
 				return ResolveState(label);
+		}
+		
+		// the all important catchall! if the actor hasn't had any z movement for
+		// a few frames, assume landing or stuck somewhere
+		if (vel.z != 0)
+		{
+			user_FallingTimeOut == 0;
+		} else {
+			user_FallingTimeOut++;
+		}
+		
+		if (user_FallingTimeOut >= 3)
+		{
+			return ResolveState(label);
 		}
 
 		return null;
