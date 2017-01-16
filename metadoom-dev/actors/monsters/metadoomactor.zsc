@@ -40,7 +40,12 @@ class CheckSolidFooting : Actor
 
 class MetaDoomActor : Actor
 {
-
+	double oldVel;
+	override void Tick()
+	{
+		oldVel = vel.z;
+		Super.Tick();
+	}
 
 	
 	// This is just a container actor for various functions used by the
@@ -92,37 +97,21 @@ class MetaDoomActor : Actor
 	// Authored by The Zombie Killer
 	action state A_CheckSolidFooting(statelabel label, int flags = CSF_ALL)
 	{
-		int user_FallingTimeOut;
-		
-		// are we standing on solid ground?
-		if (abs(pos.z - GetZAt()) <= 1)
-		{
-			if (flags & CSF_SOLIDGROUND)
-				return ResolveState(label);
-		}
+		if (invoker.oldVel != vel.z)
+			return null;
 
+		// are we standing on solid ground?
+		if (abs(pos.z - GetZAt()) <= 1 && (flags & CSF_SOLIDGROUND))
+			return ResolveState(label);
+	   
 		// are we standing on an actor?
 		bool ok; Actor below;
 		[ok, below] = TestMobjZ(true);
-		if (below)
-		{
-			if (flags & CSF_SOLIDACTORS)
-				return ResolveState(label);
-		}
-		
-		// the all important catchall! if the actor hasn't had any z movement for
-		// a few frames, assume landing or stuck somewhere
-		if (vel.z != 0)
-		{
-			user_FallingTimeOut == 0;
-		} else {
-			user_FallingTimeOut++;
-		}
-		
-		if (user_FallingTimeOut >= 3)
-		{
+		if (below && (flags & CSF_SOLIDACTORS))
 			return ResolveState(label);
-		}
+	   
+		if (vel.z == invoker.oldVel && (flags & CSF_SOLIDGROUND))
+			return ResolveState(label);
 
 		return null;
 	}
