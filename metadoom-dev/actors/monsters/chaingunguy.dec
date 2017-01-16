@@ -380,10 +380,10 @@ ACTOR AssassinTentacle : LoreShot
   States
   {
   Spawn:
-    WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("AssassinTentacleTrail")
+    CTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("AssassinTentacleTrail")
     stop
   Death:
-	WTNG A 0 A_PlaySound("monsters/wretched/pull")
+	CTNG A 0 A_PlaySound("monsters/wretched/pull")
     Stop
   }
 }
@@ -396,8 +396,8 @@ ACTOR AssassinTentacleTrail
   states
   {
   Spawn:
-	WTNG A 0
-    WTNG A 32 
+	CTNG A 0
+    CTNG A 32 
 	stop
  }
 }
