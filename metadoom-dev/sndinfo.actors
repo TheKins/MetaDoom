@@ -371,3 +371,22 @@ monsters/d3chaingunner/die3		d3cgdie3
 
 monsters/d3chaingunner/tentacle		d3cgtent
 monsters/d3chaingunner/pain		d3cgpain
+
+// imp lord
+$random monsters/implord/see	{ monsters/implord/see1 monsters/implord/see2 monsters/implord/see3 }
+monsters/implord/see1			imldsee1
+monsters/implord/see2			imldsee2
+monsters/implord/see3			imldsee3
+
+$random monsters/implord/idle	{ monsters/implord/idle1 monsters/implord/idle2 }
+monsters/implord/idle1			imldidl1
+monsters/implord/idle2			imldidl2
+
+$random monsters/implord/die	{ monsters/implord/die1 monsters/implord/die2 monsters/implord/die3 }
+monsters/implord/die1			imlddie1
+monsters/implord/die2			imlddie2
+monsters/implord/die3			imlddie3
+
+monsters/implord/jump			imldjump
+monsters/implord/pain			imldpain
+monsters/implord/tele			imldtele
