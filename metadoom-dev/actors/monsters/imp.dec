@@ -451,7 +451,7 @@ ACTOR MetaImpLordTeleportFog
 	States
 	{
 	Spawn:
-		TFOG ABABCDE 3 Bright A_SpawnProjectile("MetaImpLordTeleportFogParticle", 8, 0, random(0,360), CMF_AIMDIRECTION, random(-128,128))
+		TFOG ABCDE 3 Bright A_SpawnProjectile("MetaImpLordTeleportFogParticle", 8, 0, random(0,360), CMF_AIMDIRECTION, random(-128,128))
 		TFOG FGHIJ 3 Bright
 		Stop
 	}
@@ -464,7 +464,8 @@ ACTOR MetaImpLordTeleportFogParticle
 	+NOGRAVITY
 	+MISSILE
 	RenderStyle Add
-	speed 2
+	speed 5
+	scale 0.5
 	States
 	{
 	Spawn:
