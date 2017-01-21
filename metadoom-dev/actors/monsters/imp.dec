@@ -369,7 +369,7 @@ ACTOR MetaDoomImpLord : MonsterCore
 		ROAC H 1 A_CheckSolidFooting("TeleLanding")
 		wait
 	TeleLanding:
-		ROAC A 0 A_Quake (2,8,0,2048,0)
+		ROAC A 0 //A_Quake (2,8,0,2048,0)
 		ROAC A 8
 		{
 			A_Stop;
