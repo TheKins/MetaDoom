@@ -3,6 +3,8 @@
 
 global int 1:mapsCleared;
 
+world int 6:item_KeyType;
+
 // Health Warning
 Script "HealthWarning_Warn" ENTER
 {
@@ -393,6 +395,20 @@ script "Monster_ReturnMaps" (void)
 			log(n:0, s:" is checking the mapclear count... (", i:mapsCleared, s:")");
 			
 	SetResultValue(mapsCleared);
+}
+
+// Key Variety System
+script "Key_Init" OPEN
+{
+	item_KeyType = random(1,2);
+	
+	if(GetCvar("meta_developer"))
+			log(s:"Current key skin: ", i:item_KeyType);
+}
+
+script "Key_ReturnType" (void)
+{
+	SetResultValue(item_KeyType);
 }
 
 // Fix Players Being Given Old Weapons By Scripts

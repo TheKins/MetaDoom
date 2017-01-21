@@ -13,8 +13,17 @@ actor RedCard2 : Key replaces RedCard
     States
     {
       Spawn:
+		TNT1 A 0
+		TNT1 A 1
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
+		goto Doom
+	  Doom:
         RKEY A 10
         RKEY B 10 bright
+        loop
+	  Doom3:
+        RKEY C 10
+        RKEY D 10 bright
         loop
     }
 }
@@ -31,8 +40,17 @@ actor YellowCard2 : Key replaces YellowCard
     States
     {
       Spawn:
+		TNT1 A 0
+		TNT1 A 1
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
+		goto Doom
+	  Doom:
         YKEY A 10
         YKEY B 10 bright
+        loop
+	  Doom3:
+        YKEY C 10
+        YKEY D 10 bright
         loop
     }
 }
@@ -49,8 +67,17 @@ actor BlueCard2 : Key replaces BlueCard
     States
     {
       Spawn:
+		TNT1 A 0
+		TNT1 A 1
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
+		goto Doom
+	  Doom:
         BKEY A 10
         BKEY B 10 bright
+        loop
+	  Doom3:
+        BKEY C 10
+        BKEY D 10 bright
         loop
     }
 }

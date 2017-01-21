@@ -56,6 +56,7 @@ Merser (Wretched and Fiend sprites)
 Eriance (Beholder sprite, Grenade Launcher parts)
 Zrrion (Grenade Launcher sprites, Lightning Gun sprites)
 Phobos867 (Imp Lord sprites)
+Blue Shadow (Doom 3 Keycard Sprites)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 Captain Toenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
