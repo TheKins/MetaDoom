@@ -369,35 +369,35 @@ ACTOR MetaAssassinGuy : MonsterCore
 
 ACTOR AssassinTentacle : LoreShot
 {
-  Speed 15
-  Height 14
-  Radius 10
-  Projectile
-  //+STRIFEDAMAGE
-  Damage 2
-  MaxStepHeight 4
-  SeeSound "monsters/d3chaingunner/tentacle"
-  States
-  {
-  Spawn:
-    CTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("AssassinTentacleTrail")
-    stop
-  Death:
-	CTNG A 0 A_PlaySound("monsters/wretched/pull")
-    Stop
-  }
+	Speed 15
+	Height 14
+	Radius 10
+	Projectile
+	//+STRIFEDAMAGE
+	Damage 2
+	MaxStepHeight 4
+	SeeSound "monsters/d3chaingunner/tentacle"
+	States
+	{
+	Spawn:
+		CTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("AssassinTentacleTrail")
+		stop
+	Death:
+		CTNG A 0 A_PlaySound("monsters/wretched/pull")
+		Stop
+	}
 }
 
 ACTOR AssassinTentacleTrail
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-  scale 0.8
-  states
-  {
-  Spawn:
-	CTNG A 0
-    CTNG A 32 
-	stop
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	scale 0.8
+	states
+	{
+	Spawn:
+		CTNG A 0
+		CTNG A 32 
+		stop
+	}
 }

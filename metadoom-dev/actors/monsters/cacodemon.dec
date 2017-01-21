@@ -530,35 +530,35 @@ ACTOR MetaWretched : MonsterCore
 
 ACTOR WretchedTongue : LoreShot
 {
-  Speed 15
-  Height 14
-  Radius 10
-  Projectile
-  //+STRIFEDAMAGE
-  Damage 2
-  MaxStepHeight 4
-  SeeSound "monsters/wretched/tongue"
-  States
-  {
-  Spawn:
-    WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("WretchedTongueTrail")
-    stop
-  Death:
-	WTNG A 0 A_PlaySound("monsters/wretched/pull")
-    Stop
-  }
+	Speed 15
+	Height 14
+	Radius 10
+	Projectile
+	//+STRIFEDAMAGE
+	Damage 2
+	MaxStepHeight 4
+	SeeSound "monsters/wretched/tongue"
+	States
+	{
+	Spawn:
+		WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("WretchedTongueTrail")
+		stop
+	Death:
+		WTNG A 0 A_PlaySound("monsters/wretched/pull")
+		Stop
+	}
 }
 
 ACTOR WretchedTongueTrail
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-  scale 0.8
-  states
-  {
-  Spawn:
-	WTNG A 0
-    WTNG A 32 
-	stop
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	scale 0.8
+	states
+	{
+	Spawn:
+		WTNG A 0
+		WTNG A 32 
+		stop
+	}
 }
