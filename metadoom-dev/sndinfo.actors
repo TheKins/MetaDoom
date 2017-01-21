@@ -85,6 +85,8 @@ bodyfalls/revenant1		bdrv1
 bodyfalls/revenant2		bdrv2
 bodyfalls/revenant3		bdrv3
 
+bodyfalls/cacodemon		bdca1
+
 monsters/bleed			actbleed
 monsters/crushed		actcrush
 monsters/vamped			actvamp
