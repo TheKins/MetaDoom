@@ -403,7 +403,7 @@ ACTOR MetaDoomImpLord : MonsterCore
 		ROAC A 0 A_ChangeFlag("DROPOFF", TRUE)
 		goto See
 	TeleLandingHalf:
-		ROAC A 8
+		ROAC A 16
 		{
 			A_Stop;
 		}
