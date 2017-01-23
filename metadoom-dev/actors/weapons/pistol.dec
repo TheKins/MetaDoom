@@ -89,12 +89,12 @@ ACTOR MetaPistol : MetaDoomWeapon
 		}
 		PIST B 1 bright Offset(0,38)
 		PIST C 1 bright Offset(0,42)
-		PIST C 1 bright Offset(0,43)
-		PIST D 1 bright Offset(0,38)
-		PIST D 1 Offset(0,35)
-		PIST E 1 Offset(0,33)
-		PIST E 1 Offset(0,32)
-		PIST F 2
+		PIST C 1 bright Offset(0,43) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		PIST D 1 bright Offset(0,38) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		PIST D 1 Offset(0,35) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		PIST E 1 Offset(0,33) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		PIST E 1 Offset(0,32) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
+		PIST FF 1  A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
 		Goto Ready
 	AltFire:
 		PIST A 0
