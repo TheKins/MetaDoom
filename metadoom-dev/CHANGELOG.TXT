@@ -19,6 +19,8 @@ NEXT VERSION
   lock the player into an unarmed state.
 - Fixed Unmaker altfire particle density being lower than intended
 - Many bug-fixes and cosmetic improvements to the Axe's bleeding effect
+- Chainsaw upthrust now does more damage and pushes enemies upwards
+- Chainsaw altfire now does less damage - no more one-shotting Arachnotrons!
 - Added a new sprite for the Radiation Suit
 - Added new sounds and FX for corpses crushed by movers
 - Added some of Capn J's sounds for Revenant
