@@ -392,3 +392,13 @@ monsters/implord/die3			imlddie3
 monsters/implord/jump			imldjump
 monsters/implord/pain			imldpain
 monsters/implord/tele			imldtele
+
+// arachnotron
+monsters/arachnotron/see			aracsee
+monsters/arachnotron/walk			aracwalk
+monsters/arachnotron/idle			aracidle
+monsters/arachnotron/fire			aracfire
+monsters/arachnotron/pain			aracpain
+monsters/arachnotron/die1			aracdie1
+monsters/arachnotron/die2			aracdie2
+monsters/arachnotron/body			aracbody

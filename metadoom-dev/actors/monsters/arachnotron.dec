@@ -20,10 +20,10 @@ ACTOR MetaArachnotron : MonsterCore
 	Monster
 	+FLOORCLIP
 	//+BOSSDEATH
-	SeeSound "baby/sight"
-	PainSound "baby/pain"
-	DeathSound "baby/death"
-	ActiveSound "baby/active"
+	SeeSound "monsters/arachnotron/see"
+	PainSound "monsters/arachnotron/pain"
+	DeathSound "monsters/arachnotron/die1"
+	ActiveSound "monsters/arachnotron/idle"
 	Obituary "$OB_BABY"
 	States
 	{
@@ -33,9 +33,9 @@ ACTOR MetaArachnotron : MonsterCore
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood")
 		BSPI A 20
-		BSPI A 3 A_BabyMetal
+		BSPI A 3 { A_Chase; A_PlaySound("monsters/arachnotron/walk"); }
 		BSPI ABBCC 3 A_Chase
-		BSPI D 3 A_BabyMetal
+		BSPI D 3 { A_Chase; A_PlaySound("monsters/arachnotron/walk"); }
 		BSPI DEEFF 3 A_Chase
 		Goto See+2
 	Missile:
@@ -49,14 +49,20 @@ ACTOR MetaArachnotron : MonsterCore
 		BSPI I 3 A_Pain
 		Goto See+2
 	Death:
+		BSPI J 0 A_Jump (128, 2)
+		BSPI J 0 A_SetScale(-1,1) // random chance of sprite flipping
 		BSPI J 0 A_GiveToTarget("ScoreItem", 600)
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		BSPI J 0 A_PlaySound("monsters/arachnotron/die2")
 		BSPI J 20 A_Scream
 		BSPI K 7 A_NoBlocking
-		BSPI LMNO 7
+		BSPI L 7
+		BSPI M 7 A_PlaySound("monsters/arachnotron/body")
+		BSPI NO 7
 		BSPI P -1 A_KillMaster //A_BossDeath
 		Stop
     Raise:
+		BSPI P 0 A_SetScale(1,1)
 		BSPI P 5
 		BSPI ONMLKJ 5
 		Goto See+2
@@ -74,8 +80,8 @@ ACTOR MetaArachnotronPlasma
 	RenderStyle Add 
 	Alpha 0.75
 	decal ArachnotronScorch
-	SeeSound "baby/attack"
-	DeathSound "baby/shotx"
+	SeeSound "monsters/arachnotron/fire"
+	DeathSound "weapons/plasmarifle/hit"
 	States
 	{
 	Spawn:
