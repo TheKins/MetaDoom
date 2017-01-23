@@ -20,6 +20,8 @@ ACTOR MetaBaronOfHell : MonsterCore
 	Monster
 	+FLOORCLIP
 	//+BOSSDEATH
+	+DONTHARMSPECIES
+	Species "Bruiser"
 	scale 0.75
 	SeeSound "monsters/baron/see"
 	PainSound "monsters/baron/pain"
@@ -111,6 +113,8 @@ ACTOR MetaHellKnight : MonsterCore
 	PainChance 50
 	Monster
 	+FLOORCLIP
+	+DONTHARMSPECIES
+	Species "Bruiser"
 	scale 0.6
 	SeeSound "monsters/hellknight/see"
 	ActiveSound "monsters/hellknight/idle"

@@ -13,6 +13,7 @@ NEXT VERSION
   and Wretcheds to probably not really show up at all. I'm good at this.
 - Improved Cacodemon, Malwrath and Wretched death sequences
 - Slightly increased points awarded for killing a Wretched
+- Fixed Barons and Hell Knights damaging each other and infighting
 - Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
   you'd spend the bullets and play the sound but not actually fire the projectile.
 - Fixed a bug where trying to deselect weaponized Demon Dogs or Cerberuses would
