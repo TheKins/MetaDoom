@@ -140,6 +140,29 @@ actor MonsterCore : MetaDoomActor
 		}
 		"####" # 0 A_Jump(256,"XDeath")
 		stop
+	// Chainsaw Melee
+	Pain.ChainsawMelee:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			//ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,0);
+			A_MetaPinata("MetaHealthPinata", 1);
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" # 0 A_Jump(256,"Punched")
+		stop
+	Death.ChainsawMelee:
+		"####" # 0
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
 	// "kill monsters" cheat, to avoid the framerate exploding
 	Death.Massacre:
 		"####" # 0 A_Jump(256,"Death")
