@@ -91,7 +91,7 @@ ACTOR MetaChainsaw : MetaDoomWeapon
 		CSAW M 1 A_FireCustomMissile("ChainsawSlash", 16, 0, 0, 0, FPF_NOAUTOAIM)
 		CSAW N 1 A_FireCustomMissile("ChainsawSlash", 32, 0, 0, 0, FPF_NOAUTOAIM)
 		TNT1 A 1 Offset(-1,90)
-		TNT1 A 20 Offset(0,90)
+		TNT1 A 32 Offset(0,90)
 		CSAW A 1 Offset(0,90) A_PlaySound("weapons/chainsaw/get", CHAN_WEAPON)
 		CSAW B 1 Offset(0,80)
 		CSAW A 1 Offset(0,70)
@@ -117,23 +117,15 @@ ACTOR MetaChainsaw : MetaDoomWeapon
 		CSAW F 1 Offset(0,28) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
 		CSAW E 1 Offset(1,26) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
 		CSAW F 1 Offset(0,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
-		CSAW E 1 Offset(-1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(-1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(-1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(-1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(1,25)
-		CSAW F 1 Offset(0,25)
-		CSAW E 1 Offset(-1,25)
+		CSAW E 1 Offset(-1,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW F 1 Offset(0,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW E 1 Offset(1,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW F 1 Offset(0,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW E 1 Offset(-1,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW F 1 Offset(0,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW E 1 Offset(1,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW F 1 Offset(0,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
+		CSAW E 1 Offset(-1,25) A_CustomPunch(5 * random(1, 5), TRUE, CPF_NOTURN,"MetaChainsawMeleePuff",80,0,0,"BasicArmorBonus","weapons/chainsaw/slashhit")
 		CSAW F 1 Offset(0,26)
 		CSAW A 1 Offset(0,28)
 		CSAW A 1 Offset(0,32)
@@ -142,7 +134,7 @@ ACTOR MetaChainsaw : MetaDoomWeapon
 		CSAW A 1 Offset(0,49)
 		CSAW A 1 Offset(0,60)
 		CSAW A 1 Offset(0,80)
-		TNT1 A 15
+		TNT1 A 5
 		CSAW A 1 Offset(0,90) A_PlaySound("weapons/chainsaw/get", CHAN_WEAPON)
 		CSAW B 1 Offset(0,80)
 		CSAW A 1 Offset(0,70)
@@ -166,7 +158,7 @@ ACTOR ChainsawSlash
 	Radius 13
 	Height 8
 	Speed 10
-	Damage (5 * random(1, 5))
+	Damage (3 * random(1, 4))
 	Projectile
 	+RIPPER
 	Obituary "$OB_METACHAINSAW_SLASH"
