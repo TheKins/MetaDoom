@@ -157,6 +157,8 @@ GOTSIPHON = "Picked up some Siphon Grenades!";
 TAGSIPHON = "Siphon Grenade";
 GOTCOLLAR = "Picked up some Dog Collars!";
 TACOLLAR = "Dog Collar";
+GOTHOLOGRAM = "Picked up some Holograms!";
+TAGHOLOGRAM = "Hologram";
 
 // Powerups
 GOTHASTE = "HasteSphere!";
