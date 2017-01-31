@@ -106,6 +106,16 @@ ACTOR MetaHasteSphere : PowerupGiver replaces BlurSphere
 	States
 	{
 	Spawn:
+		HAST A 0 
+		HAST A 0 A_Jump(64, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		HAST A 0 A_Jump(256, "Hologram")
+		goto Chill
+	Hologram:
+		HAST A 0 A_SpawnItemEx("HologramPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		goto Chill
+	Chill:
 		HAST ABCD 2 Bright
 		Loop
 	}
