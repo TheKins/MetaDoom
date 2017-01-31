@@ -27,3 +27,8 @@ inventory/dogcollar/get			collget
 inventory/dogcollar/toss			colltoss
 inventory/dogcollar/activate			collact
 inventory/dogcollar/miss			collmiss
+
+inventory/hologram/get 			getholo
+inventory/hologram/toss			holotoss
+inventory/hologram/on 			holoon
+inventory/hologram/off 			holooff
