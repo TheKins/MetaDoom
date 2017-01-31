@@ -516,6 +516,7 @@ script "InventoryCheat" ENTER
 		GiveInventory("Shieldwall", 1);
 		GiveInventory("SiphonGrenade", 1);
 		GiveInventory("DogCollar", 1);
+		GiveInventory("Hologram", 1);
 		GiveInventory("DemonKeyCheat", 3);
 		
 		SetActorProperty(0,APROP_Score,0);
