@@ -5,14 +5,15 @@ NEXT VERSION
 - Added X new enemies (Fiend, Former Assassin, Imp Lord)
 - Revamped X enemies
 - Added X inventory items (Hologram)
-- Keycards now have randomized, matching skins
 
 - Redid a whole heap of sounds!
+- Added new sounds and FX for corpses crushed by movers
+- Added some of Capn J's sounds for Revenant
+- Added a sound for when enemies are damaged by Siphon Grenades
+
 - Fixed sprite scaling on Rocket Launcher spawns
 - Fixed a bug with Cacodemon spawning logic causing Malwraths to appear early,
   and Wretcheds to probably not really show up at all. I'm good at this.
-- Improved Cacodemon, Malwrath and Wretched death sequences
-- Slightly increased points awarded for killing a Wretched
 - Fixed Barons and Hell Knights damaging each other and infighting
 - Fixed a bug where, when firing a Machinegun mini-rocket with exactly five bullets left,
   you'd spend the bullets and play the sound but not actually fire the projectile.
@@ -20,13 +21,15 @@ NEXT VERSION
   lock the player into an unarmed state.
 - Fixed Unmaker altfire particle density being lower than intended
 - Many bug-fixes and cosmetic improvements to the Axe's bleeding effect
+
+- Keycards now have randomized, matching skins
 - Chainsaw upthrust now does more damage and pushes enemies upwards
 - Chainsaw altfire now does less damage - no more one-shotting Arachnotrons!
 - Pistol firing animation can now be interrupted by meleeing
+- Improved Cacodemon, Malwrath and Wretched death sequences
+- Slightly increased points awarded for killing a Wretched
 - Added a new sprite for the Radiation Suit
-- Added new sounds and FX for corpses crushed by movers
-- Added some of Capn J's sounds for Revenant
-- Added a sound for when enemies are damaged by Siphon Grenades
+
 - Various under the hood improvements to the code, including the introduction
   of ZScript, better commenting and general tabbing clean-ups.
 - Added an ENDOOM! This is important.
