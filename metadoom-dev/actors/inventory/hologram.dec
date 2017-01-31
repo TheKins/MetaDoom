@@ -10,7 +10,7 @@ actor HologramPickup : CustomInventory
 	states
 	{
 	Spawn:
-		HGRE Z -1
+		HOLO Z -1
 		stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Hologram", 1)
@@ -32,7 +32,7 @@ actor Hologram : CustomInventory
 	states
 	{
 	Spawn:
-		HGRE Z -1
+		HOLO Z -1
 		stop
 	Use:
 		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
