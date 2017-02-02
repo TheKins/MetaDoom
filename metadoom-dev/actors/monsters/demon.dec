@@ -106,3 +106,109 @@ ACTOR MetaDemon : MonsterCore
 		Goto See
 	}
 }
+
+// Doom 3's take on the monster. Has a charge attack and doesn't flinch as easily.
+
+ACTOR MetaBullDemon : MonsterCore
+{
+	Health 200
+	PainChance 180
+	Speed 14
+	Radius 30
+	Height 56
+	Mass 400
+	Monster
+	+FLOORCLIP
+	SeeSound "monsters/bulldemon/see"
+	AttackSound "monsters/bulldemon/bite"
+	PainSound "monsters/bulldemon/pain"
+	DeathSound "monsters/bulldemon/die"
+	ActiveSound "demon/active"
+	Obituary "$OB_BULLDEMONHIT"
+	painchance 64
+	painchance HolyWater, 255
+	States
+	{
+	Spawn:
+		BULD Z 10 A_Look
+		Loop
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood")
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD AABB 2 A_Chase
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD CCDD 2 A_Chase
+		Loop
+	Melee:
+		BULD EF 8 Fast A_FaceTarget
+		BULD G 8 Fast A_SargAttack
+		Goto See
+	Pain:
+		BULD J 0
+		BULD J 2 Fast
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		BULD J 2 Fast A_Pain
+		Goto See
+	Pain.HolyWater:
+		BULD J 3
+		BULD J 3 A_Pain
+		Goto Scurred
+	Punched:
+		BULD J 3 
+		BULD J 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		BULD J 12 A_Pain
+		Goto See
+	Scurred:
+		BULD J 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		BULD A 0 A_GiveInventory("ScurredCounter", 1)
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD A 2 A_Chase("", "")
+		BULD A 2 A_Chase("", "")
+		BULD A 0 A_SpawnItem("HolySweat",0,54)
+		BULD B 2 A_Chase("", "")
+		BULD B 2 A_Chase("", "")
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD C 2 A_Chase("", "")
+		BULD C 2 A_Chase("", "")
+		BULD C 0 A_SpawnItem("HolySweat",0,54)
+		BULD D 2 A_Chase("", "")
+		BULD D 2 A_Chase("", "")
+		BULD D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		BULD D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Death:
+		BULD J 0 A_Jump (128, 2)
+		BULD J 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		BULD J 8 A_GiveToTarget("ScoreItem", 200)
+		BULD K 8 A_Scream
+		BULD L 4 A_NoBlocking
+		BULD M 4 A_PlaySound("monsters/bulldemon/body")
+		BULD N 4 
+		BULD O -1
+		Stop
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		BULD J 5 A_GiveToTarget("ScoreItem", 200)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		BULD O 5 A_SetScale(1,1)
+		BULD NMLKJ 5
+		Goto See
+	}
+}
