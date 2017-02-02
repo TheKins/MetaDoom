@@ -402,3 +402,19 @@ monsters/arachnotron/pain			aracpain
 monsters/arachnotron/die1			aracdie1
 monsters/arachnotron/die2			aracdie2
 monsters/arachnotron/body			aracbody
+
+// bull demon
+monsters/bulldemon/see			buldsee
+monsters/bulldemon/bite			buldbite
+monsters/bulldemon/pain			buldpain
+monsters/bulldemon/die			bulddie
+
+$random monsters/bulldemon/step 	{ monsters/bulldemon/step1 monsters/bulldemon/step2 monsters/bulldemon/step3 monsters/bulldemon/step4 }
+monsters/bulldemon/step1			buldstp1
+monsters/bulldemon/step2			buldstp2
+monsters/bulldemon/step3			buldstp3
+monsters/bulldemon/step4			buldstp4
+
+$random monsters/bulldemon/body 	{ monsters/bulldemon/body1 monsters/bulldemon/body2 }
+monsters/bulldemon/body1			buldbod1
+monsters/bulldemon/body2			buldbod2
