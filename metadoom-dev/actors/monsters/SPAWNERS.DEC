@@ -179,14 +179,17 @@ actor PinkySpawner replaces Demon
 	DogsUnweighted:
 		TNT1 A 0 //A_Log("Demon Bias!")
 		TNT1 A 0 A_Jump(64, "LotsofDogs")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 8, "Tier2")
 		goto Pinky
 	DogsWeighted:
 		TNT1 A 0 //A_Log("Dog Bias!")
 		TNT1 A 0 A_Jump(192, "LotsofDogs")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 8, "Tier2")
 		goto Pinky
 	ContentLocustVarietyPack:
 		TNT1 A 0
-		TNT1 A 0 A_JumpIfInventory("PossessedRadar", 1, "DogsWeighted")
+		TNT1 A 0 A_Jump(64, "IntroduceTheDogs")
+		TNT1 A 0 A_Jump(64, "BullDemon")
 		goto Pinky
 	LotsOfDogs:
 		TNT1 A 0 //A_Log("Dog Spawned")
@@ -210,6 +213,10 @@ actor PinkySpawner replaces Demon
 		TNT1 A 0 
 		TNT1 A 0 A_Jump(128, "DemonDog", "Cerberus")
 		goto Hellhound
+	Tier2:
+		TNT1 A 0 
+		TNT1 A 0 A_Jump(64, "BullDemon")
+		goto Pinky
 	ContentLocustDogs:
 		TNT1 A 0 
 		TNT1 A 0 
@@ -233,6 +240,9 @@ actor PinkySpawner replaces Demon
 		stop
 	Pinky:
 		TNT1 A 0 A_SpawnItemEx("MetaDemon",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	BullDemon:
+		TNT1 A 0 A_SpawnItemEx("MetaBullDemon",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		stop
 	}
 }
