@@ -140,8 +140,9 @@ ACTOR MetaBullDemon : MonsterCore
 		BULD CCDD 2 A_Chase
 		Loop
 	Melee:
-		BULD EF 8 Fast A_FaceTarget
-		BULD G 8 Fast A_SargAttack
+		BULD E 4 Fast A_FaceTarget
+		BULD F 4 Fast A_SargAttack
+		BULD GE 4 Fast A_FaceTarget
 		Goto See
 	Pain:
 		BULD J 0
