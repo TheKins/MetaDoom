@@ -137,6 +137,7 @@ ACTOR Dogsplosion : Explosion
 
 ACTOR MetaDogGun_DemonDog : MetaDogGun_HellHound
 {
+	Tag "$TAGDDOG"
 	States
 	{
 	Deselect:
@@ -208,6 +209,7 @@ ACTOR MetaDogBomb_DemonDog : MetaDogBomb_HellHound
 
 ACTOR MetaDogGun_Cerberus : MetaDogGun_HellHound
 {
+	Tag "$TAGCDOG"
 	States
 	{
 	Deselect:
