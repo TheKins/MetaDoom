@@ -108,6 +108,7 @@ ACTOR MetaDemon : MonsterCore
 }
 
 // Doom 3's take on the monster. Has a charge attack and doesn't flinch as easily.
+// Some code for charging from D4T project. Thanks DBT and crew!
 
 ACTOR MetaBullDemon : MonsterCore
 {
@@ -127,6 +128,8 @@ ACTOR MetaBullDemon : MonsterCore
 	Obituary "$OB_BULLDEMONHIT"
 	painchance 64
 	painchance HolyWater, 255
+	var int user_accelerator;
+	var int user_chargecooldown;
 	States
 	{
 	Spawn:
@@ -134,16 +137,97 @@ ACTOR MetaBullDemon : MonsterCore
 		Loop
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood")
+		BULD A 0 A_JumpIf(user_chargecooldown<1,"RegularChase")
+	ChaseNoCharge:
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD AABB 2 A_Chase("Melee","")
+		BULD A 0 A_PlaySound("monsters/bulldemon/step")
+		BULD CCDD 2 A_Chase("Melee","")
+		D4DW A 0 A_SetUserVar(user_chargecooldown,user_chargecooldown-1)
+		Loop
+	RegularChase:
 		BULD A 0 A_PlaySound("monsters/bulldemon/step")
 		BULD AABB 2 A_Chase
 		BULD A 0 A_PlaySound("monsters/bulldemon/step")
 		BULD CCDD 2 A_Chase
+		D4DW A 0 A_SetUserVar(user_chargecooldown,user_chargecooldown-1)
 		Loop
 	Melee:
 		BULD E 4 Fast A_FaceTarget
 		BULD F 4 Fast A_SargAttack
 		BULD GE 4 Fast A_FaceTarget
 		Goto See
+		
+	Missile:
+		BULD A 0 A_SetUserVar(user_accelerator,3)
+		BULD A 0 A_SetUserVar(user_chargecooldown,5)
+		BULD A 0 A_PlaySound("monsters/bulldemon/charge")
+		BULD AB 4 A_FaceTarget
+		BULD A 0 A_Recoil(-user_accelerator-2)
+		// full acceleration round 1
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 A 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_SetUserVar(user_accelerator,user_accelerator+2)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 B 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 B 0 A_SetUserVar(user_accelerator,user_accelerator+2)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 C 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 C 0 A_SetUserVar(user_accelerator,user_accelerator+2)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 D 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 D 0 A_SetUserVar(user_accelerator,user_accelerator+2)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		// full acceleration round 2
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 A 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 B 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 C 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_Recoil(-user_accelerator)
+		TNT1 D 0 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		//slowing down
+		BULD H 4 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 A 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz*0.8,CVF_REPLACE)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 B 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz*0.8,CVF_REPLACE)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 C 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz*0.8,CVF_REPLACE)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 4 A_JumpIf(velx==0 && vely==0,"CrashedSomewhere")
+		TNT1 D 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz*0.8,CVF_REPLACE)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
+		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		Goto See
+		
+	CrashedSomewhere:
+		BULD I 0 A_PlaySound("monsters/bulldemon/body",7,0.8,0/*,4.2*/)
+		BULD I 0 //A_SpawnItemEx("PinkyDustCloud",20,0,32,0,0,0,0,SXF_NOCHECKPOSITION)
+		BULD I 0 A_Explode(30,50,XF_NOTMISSILE,0,50)
+		BULD I 20 A_Quake(sqrt(user_accelerator),user_accelerator/2,0,256)
+		Goto See	
+		
 	Pain:
 		BULD J 0
 		BULD J 2 Fast
@@ -211,5 +295,20 @@ ACTOR MetaBullDemon : MonsterCore
 		BULD O 5 A_SetScale(1,1)
 		BULD NMLKJ 5
 		Goto See
+	}
+}
+
+ACTOR BullDemonChargeFire
+{
+	+NOBLOCKMAP +NOGRAVITY
+	RenderStyle Add
+	Alpha 1
+	scale 0.25
+	States
+	{
+	Spawn:
+		FIRE A 0
+		FIRE ABCDEH 2 BRIGHT
+		Stop
 	}
 }
