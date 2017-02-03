@@ -143,6 +143,8 @@ TAGGRENLAUN = "Grenade Launcher";
 TAGLIGHTNING = "Lightning Gun";
 
 TAGHDOG = "Hellhound";
+TAGDDOG = "Demon Wolf";
+TAGCDOG = "Cerberus";
 
 // Inventory
 GOTGRENADES = "Picked up some Hand Grenades!";
@@ -256,7 +258,7 @@ OB_MARINE_GAUSS = "%o was railed by a Space Marine's Gauss Cannon";
 OB_MARINE_BFG = "%o was splintered by a Space Marine's BFG.";
 
 OB_DOG1 = "%o was savaged by a Hellhound.";
-OB_DOG2 = "%o was mauled by a Demon Dog.";
+OB_DOG2 = "%o was mauled by a Demon Wolf.";
 OB_DOG3 = "%o was torn apart by a Cerberus.";
 OB_SPECTRENIGHTMARE = "%o was caught by a Nightmare Spectre.";
 OB_ZSEC = "%o was rolled over by Z-Sec.";
@@ -313,7 +315,7 @@ OB_SIPHON = "%o was sucked dry by %k's Siphon Grenade.";
 
 OB_METADOG_BITE = "%o was mauled by %k's Collared Dog.";
 OB_METADOG_HELLHOUND = "%o was nailed by %k's well-thrown Hellhound.";
-OB_METADOG_DEMONDOG = "%o was nailed by %k's carefully-pitched Demon Dog.";
+OB_METADOG_DEMONDOG = "%o was nailed by %k's carefully-pitched Demon Wolf.";
 OB_METADOG_CERBERUS = "%o was nailed by %k's perfectly-hurdled Cerberus.";
 
 OB_MONTELEFRAG = "%o was telefragged.";
