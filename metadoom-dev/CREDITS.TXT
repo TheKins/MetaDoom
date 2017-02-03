@@ -17,6 +17,7 @@ Epic Games (Some metal gibbing sounds)
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 Pillowblaster ("ARGENT" resources)
 Doom4Doom Team (Lots of resources and inspiration)
+Death4Told Team (Bull Demon charge attack code)
 Doom 2.5 Team (Resources and inspiration)
 
 Upset (Doom 3 model ports to Source Engine)
