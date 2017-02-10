@@ -1,10 +1,12 @@
-NEXT VERSION
-============
+v3.0 "Samuel" (14/02/17)
+========================
+Time for another big helping of new content, vital bug fixes and unnecessary
+polish. There's even some ZScript, to bring this mod kicking and screaming
+into the 21st Century. I'm pretty proud of this one, all things considered.
 
-- Added X new weapons (Grenade Launcher, Lightning Gun)
-- Added X new enemies (Fiend, Former Assassin, Imp Lord, Bull Demon)
-- Revamped X enemies
-- Added X inventory items (Hologram)
+- Added 2 new weapons (Grenade Launcher, Lightning Gun)
+- Added 4 new enemies (Fiend, Former Assassin, Imp Lord, Bull Demon)
+- Added 1 inventory item (Hologram)
 
 - Redid a whole heap of sounds!
 - Added new sounds and FX for corpses crushed by movers
