@@ -77,12 +77,13 @@ ACTOR MetaSuperShotgun : MetaDoomWeapon
 			A_PlaySound ("weapons/ssg/fire", CHAN_WEAPON);
 			A_GunFlash;
 			A_Quake (3,5,0,750,0);
+			A_ZoomFactor(0.9,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
 		}
 		SSG2 B 1 bright Offset(0,45) A_SetPitch(pitch-4)
-		SSG2 B 1 bright Offset(0,48) A_SetPitch(pitch-4)
-		SSG2 C 1 bright Offset(0,48)
-		SSG2 C 1 bright Offset(0,46) A_SetPitch(pitch+1)
-		SSG2 C 1 bright Offset(0,44) A_SetPitch(pitch+1)
+		SSG2 B 1 bright Offset(0,58) { A_SetPitch(pitch-4); A_ZoomFactor(0.95,ZOOM_NOSCALETURNING); }
+		SSG2 C 1 bright Offset(0,54) A_ZoomFactor(1.0,ZOOM_NOSCALETURNING)
+		SSG2 C 1 bright Offset(0,48) A_SetPitch(pitch+1)
+		SSG2 C 1 bright Offset(0,45) A_SetPitch(pitch+1)
 		SSG2 D 1 Offset(0,42) A_SetPitch(pitch+1)
 		SSG2 D 1 Offset(0,38) A_SetPitch(pitch+1) 
 		SSG2 D 1 Offset(0,36) A_SetPitch(pitch+2)
