@@ -29,6 +29,7 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 	damagefactor Axe, 50
 	painchance LightningStun, 0
 	painchance 255
+	damagetype ExplodingBarrel
 	+FORCEPAIN
 	States
 	{
@@ -43,9 +44,16 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 		BEXP A 2 BRIGHT
 		BEXP B 2 BRIGHT
 		BEXP C 2 BRIGHT
+		goto Kaboom
+	Death.ExplodingBarrel:
+		BEXP A 5 BRIGHT
+		BEXP B 5 BRIGHT
+		BEXP C 5 BRIGHT
+		goto Kaboom
+	Kaboom:
 		BEXP D 2 BRIGHT //A_Explode
 		{
-			A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("ExplosiveBarrelExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 			A_SpawnItem("GreenBlood",0,random(16,42));
 			A_SpawnItem("GreenBlood",0,random(16,42));
 			A_SpawnItem("GreenBlood",0,random(16,42));
@@ -83,6 +91,11 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 		BEXP U 5 A_Respawn
 		Wait
 	}
+}
+
+ACTOR ExplosiveBarrelExplosion : Explosion
+{
+	damagetype ExplodingBarrel
 }
 
 actor MetaGibBarrel
