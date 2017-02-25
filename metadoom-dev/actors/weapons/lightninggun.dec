@@ -206,6 +206,7 @@ actor MetaLightningStunProj
 	+FORCERADIUSDMG
 	+CAUSEPAIN
 	+FORCEPAIN
+	+BLOODLESSIMPACT
 	//+RIPPER
 	damagetype LightningStun
 	Obituary "$OB_LIGHTNING"
