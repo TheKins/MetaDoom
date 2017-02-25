@@ -92,6 +92,12 @@ object MetaPlasmaBall
     frame PLSE { light MetaPlasmaBallExplosion }
 }
 
+object MetaPlasmaPop
+{
+    frame PLSS { light MetaPlasmaBall }
+    frame PLSE { light MetaPlasmaBallExplosion }
+}
+
 flickerlight MetaBFGBall
 {
     color 0.2 1.0 0.2
