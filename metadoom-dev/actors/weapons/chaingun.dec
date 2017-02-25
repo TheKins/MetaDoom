@@ -117,7 +117,7 @@ ACTOR MetaChaingun : MetaDoomWeapon
 		CHGN G 1 BRIGHT 
 		{
 			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
-			A_FireBullets(5.6,5.6,1,5,"MetaBulletPuff");
+			A_FireBullets(5.6,5.6,0,5,"MetaBulletPuff");
 			A_FireCustomMissile("BulletCasingSpawn",5,0,8,-9);
 			A_GunFlash;
 			A_Quake (3,5,0,750,0);
@@ -199,8 +199,8 @@ ACTOR MetaChaingun : MetaDoomWeapon
 		CHTR BC 1 bright 
 		{
 			A_FireBullets(3,3,1,5,"MetaTurretPuff");
-			A_FireBullets(3,3,1,5,"MetaTurretPuff");
-			A_FireBullets(3,3,1,5,"MetaTurretPuff");
+			A_FireBullets(3,3,0,5,"MetaTurretPuff");
+			A_FireBullets(3,3,0,5,"MetaTurretPuff");
 			//A_FireCustomMissile("BulletCasingSpawn",5,0,8,-9);
 			//A_FireCustomMissile("BulletCasingSpawn",10,0,16,-9);
 			//A_FireCustomMissile("BulletCasingSpawn",5,0,-16,4);
