@@ -125,28 +125,28 @@ ACTOR MetaPlasmaRifle : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/plasmarifle/pop", CHAN_WEAPON);
 			A_GunFlash;
-			A_FireCustomMissile("MetaPlasmaBall", 0, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 16, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 32, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 64, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 80, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 96, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 112, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 128, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 144, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 160, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 176, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 192, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 208, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 224, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 240, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 256, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 272, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 288, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 304, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 320, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 336, 0, 0, 0, FPF_NOAUTOAIM);
-			A_FireCustomMissile("MetaPlasmaBall", 352, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 0, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 16, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 32, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 64, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 80, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 96, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 112, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 128, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 144, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 160, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 176, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 192, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 208, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 224, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 240, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 256, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 272, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 288, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 304, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 320, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 336, 0, 0, 0, FPF_NOAUTOAIM);
+			A_FireCustomMissile("MetaPlasmaPop", 352, 0, 0, 0, FPF_NOAUTOAIM);
 			A_TakeInventory("PlasmaFired", 999);
 			A_TakeInventory("PlasmaHeat", 999);
 			A_AlertMonsters;
@@ -170,6 +170,29 @@ ACTOR MetaPlasmaBall
 	Height 8
 	Speed 25
 	Damage 5
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 0.75
+	Obituary "$OB_MPPLASMARIFLE"
+	Decal PlasmaScorch
+	States
+	{
+	Spawn:
+		PLSS A 0 A_PlaySound ("weapons/plasmarifle/loop", CHAN_BODY, 1.0, 1)
+		PLSS AB 6 Bright 
+		Loop
+	Death:
+		PLSE A 0 A_PlaySound("weapons/plasmarifle/hit")
+		PLSE ABCDE 4 Bright
+		Stop
+	}
+}
+
+ACTOR MetaPlasmaPop
+{
+	Radius 13
+	Height 8
 	Projectile
 	+RANDOMIZE
 	RenderStyle Add
