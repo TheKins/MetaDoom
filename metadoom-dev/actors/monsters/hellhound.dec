@@ -28,6 +28,7 @@ ACTOR MetaHellhound : MonsterCore
 	painchance HolyWater, 255
 	damagefactor DogCollar, 9999
 	painchance DogCollar, 255
+	damagefactor Axe, 50
 	scale 1.25
 	States
 	{
