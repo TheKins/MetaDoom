@@ -1,3 +1,22 @@
+v3.1 "Samuel" (XX/XX/17)
+========================
+Various tweaks and improvements based on player feedback. Thanks to everyone for
+their feedback! I greatly appreciate it!
+
+- Explosive Barrels now use the old explosion animation speed when killed by
+  another explosive barrel. This should make, say, DOOM2 MAP23 more forgiving.
+  
+Monster Tweaks:
+- Hellhounds: Will now get instagibbed by the Axe, like Zombies.
+
+Weapon Tweaks:
+- Super Shotgun: Added FOV punch and tweaked animation on firing.
+- Chaingun: Ammo consumption reduced in both firing modes.
+- Lightning Gun: Primary fire damage and range increased.
+- Lightning Gun: Altfire no longer causes bleeding.
+- Plasma Rifle: Altfire projectile speed and damage increased
+- Plasma Rifle: Altfire projectile causes splash damage on impact.
+
 v3.0 "Samuel" (14/02/17)
 ========================
 Time for another big helping of new content, vital bug fixes and unnecessary
