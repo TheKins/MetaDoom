@@ -56,7 +56,7 @@ Zaneion (Hell Knight, Baron of Hell, Bull Demon sprites)
 TorridGristle (Siphon Grenade sprite)
 Merser (Wretched and Fiend sprites)
 Eriance (Beholder sprite, Grenade Launcher parts)
-Zrrion (Grenade Launcher sprites, Lightning Gun sprites)
+Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
 Phobos867 (Imp Lord sprites)
 Blue Shadow (Doom 3 Keycard Sprites)
 

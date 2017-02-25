@@ -6,6 +6,7 @@ their feedback! I greatly appreciate it!
 - Explosive Barrels now use the old explosion animation speed when killed by
   another explosive barrel. This should make, say, DOOM2 MAP23 more forgiving.
 - The "6" key now defaults to the Plasma Rifle at first if you have it.
+- Added Zrrion's modified radsuit sprite!
   
 Monster Tweaks:
 - Hellhounds: Will now get instagibbed by the Axe, like Zombies.
