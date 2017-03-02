@@ -1,4 +1,4 @@
-v3.1 "Samuel" (XX/XX/17)
+v3.1 "Samuel" (02/03/17)
 ========================
 Various tweaks and improvements based on player feedback. Thanks to everyone for
 their feedback! I greatly appreciate it!
