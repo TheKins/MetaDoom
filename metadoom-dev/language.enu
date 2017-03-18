@@ -257,6 +257,8 @@ OB_MARINE_PLASMA = "%o was melted by a Space Marine's Plasma Rifle.";
 OB_MARINE_GAUSS = "%o was railed by a Space Marine's Gauss Cannon";
 OB_MARINE_BFG = "%o was splintered by a Space Marine's BFG.";
 
+OB_DOG = "%o was chewed up by a Dog.";
+
 OB_DOG1 = "%o was savaged by a Hellhound.";
 OB_DOG2 = "%o was mauled by a Demon Wolf.";
 OB_DOG3 = "%o was torn apart by a Cerberus.";
