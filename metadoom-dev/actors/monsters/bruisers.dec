@@ -94,7 +94,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 		BARO S -1 A_KillMaster //A_BossDeath
 		Stop
 	Raise:
-		BARO R 8
+		BARO R 8 A_SetScale(0.6,0.6)
 		BARO QRON  8
 		Goto See
 	}
@@ -177,7 +177,7 @@ ACTOR MetaHellKnight : MonsterCore
 		HNGT S -1
 		Stop
 	Raise:
-		HNGT R 8
+		HNGT R 8 A_SetScale(0.6,0.6)
 		HNGT QRON  8
 		Goto See
 	}
