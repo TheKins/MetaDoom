@@ -38,9 +38,7 @@ class CheckSolidFooting : Actor
 	}
 }
 
-// This is just a container actor for various functions used by the
-// "MonsterCore" DECORATE actor, and as a result, all of MetaDoom's
-// many monsters.
+// The base monster actor, from which all monsters are inherited.
 	
 class MonsterCore : Actor
 {
