@@ -9,7 +9,7 @@ Lost Soul
 // The original enemy, more or less, with a new weakness - water and fire
 // extinguishers. It only makes sense!
 
-class MetaLostSoulZSC : Actor //MonsterCore
+class MetaLostSoul : MonsterCore
 {
 	Default
 	{
@@ -83,7 +83,194 @@ class MetaLostSoulZSC : Actor //MonsterCore
 			A_SpawnItem("MetaLostSoulFire", -8, 8);
 			firetimer = 0;
 		}
-		firetimer = firetimer + 1;
+		firetimer++;
 		Super.Tick();
+	}
+}
+
+class MetaLostSoulFire : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		RenderStyle "add";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		height 1;
+		radius 1;
+	}
+	
+	States
+	{
+	Spawn:
+		LFIR A 0;
+		LFIR A 0 A_SetScale(frandom(1.0,1.7),frandom(0.7,1.0)); 
+		LFIR ABCD 2 Bright A_SetScale(scalex-0.1,scaley+0.1);
+	StartFading:
+		LFIR ABCD 2 Bright
+		{
+			A_SetScale(scalex-0.1,scaley+0.1);
+			A_FadeOut(0.2);
+		}
+		loop;
+	}
+}
+
+class MetaLostSoulExplosion : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		RenderStyle "add";
+		Alpha 0.5;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		scale 2;
+	}
+	
+	States
+	{
+	Spawn:
+		BAL1 A 0;
+		BAL1 CDE 6 BRIGHT;
+		Stop;
+	}
+}
+
+class LostSoulGib1 : Actor
+{
+	Default
+	{
+		+DOOMBOUNCE;
+		PROJECTILE;
+		-NOGRAVITY;
+		//-NOBLOCKMAP;
+		-ACTIVATEIMPACT;
+		+NOTELEPORT;
+		-TELESTOMP;
+		-SOLID;
+		+ROLLSPRITE;
+		+ROLLCENTER;
+		Radius 2;
+		Damage 0;
+		bouncefactor 0.5;
+		SeeSound "barrel/gib";
+		gravity 0.5;
+		Speed 5;
+		scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		LGI1 A 0;
+		LGI1 A 0 A_Jump(128, "Setup");
+		LGI3 A 0 A_Jump(128, "Setup");
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Bounce.Floor:
+		//"####" # 0 A_SpawnItem("BloodSplat");
+		goto ChangeDir;
+	Bounce.Wall:
+		goto ChangeDir;
+	Death:
+		"####" # 0 A_ChangeLinkFlags(false, false); //A_ChangeFlag(NOBLOCKMAP, 0);
+		"####" # -1;
+		Stop;
+    }
+}
+
+class LostSoulGib2 : LostSoulGib1
+{
+	Default
+	{
+		scale 1;
+	}
+	
+	States
+	{
+	Spawn:
+		LGI2 A 0;
+		LGI2 A 0;
+		goto Setup;
+	}
+}
+
+class MetaLostSoulExtinguished : Actor
+{
+	Default
+	{
+		+NOGRAVITY;
+		-SOLID;
+	}
+	
+	States
+	{
+	Spawn:
+		LSOL F 0;
+		LSOL F 0 A_PlaySound("monsters/lostsoul/extinguish");
+		LSOL FFFFF 5 A_SpawnItem("MetaLostSoulSteam", -8, 8);
+		LSOL F 17;
+		LSOL F 0 A_PlaySound("monsters/lostsoul/die1");
+		LSOL F 0 A_ChangeFlag("NOGRAVITY", 0);
+		LSOL F 0 A_ChangeFlag("CORPSE", 1);
+	Falling:
+		LSOL F 1;
+		loop;
+	Crash:
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			A_CustomMissile ("LostSoulGib2", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("bodyfalls/revenant");
+		}
+		stop;
+	}
+}
+
+class MetaLostSoulSteam : Actor
+{
+	Default
+	{
+		vspeed 2;
+		scale 2;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+	}
+	
+	states
+	{
+	Spawn:
+		PUF2 ABC 2 A_FadeOut;
+	Finalize:
+		PUF2 D 2 A_FadeOut;
+		loop;
 	}
 }
