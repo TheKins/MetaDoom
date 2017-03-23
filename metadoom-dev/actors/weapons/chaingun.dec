@@ -198,9 +198,10 @@ ACTOR MetaChaingun : MetaDoomWeapon
 		CHTR A 0 A_PlaySound("weapons/chaingun/turretfire",6,1,1)
 		CHTR BC 1 bright 
 		{
-			A_FireBullets(3,3,1,5,"MetaTurretPuff");
-			A_FireBullets(3,3,0,5,"MetaTurretPuff");
-			A_FireBullets(3,3,0,5,"MetaTurretPuff");
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",!FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",!FBF_USEAMMO);
 			//A_FireCustomMissile("BulletCasingSpawn",5,0,8,-9);
 			//A_FireCustomMissile("BulletCasingSpawn",10,0,16,-9);
 			//A_FireCustomMissile("BulletCasingSpawn",5,0,-16,4);
