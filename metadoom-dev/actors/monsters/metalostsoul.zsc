@@ -44,8 +44,8 @@ class MetaLostSoul : MonsterCore
 		LSOL AAAAA 1 A_Chase(null,null);
 		Loop;
 	Missile:
-		LSOL B 10 BRIGHT A_FaceTarget;
-		LSOL B 4 BRIGHT A_SkullAttack;
+		LSOL B 10 BRIGHT A_FaceTarget();
+		LSOL B 4 BRIGHT { A_SkullAttack(); A_SpawnItem ("DoomImpBallEffect", -8, 16); }
 		LSOL BB 4 BRIGHT;
 		Goto Missile+2;
 	Pain:
@@ -240,16 +240,16 @@ class MetaLostSoulExtinguished : Actor
 		TNT1 A 0;
 		TNT1 A 0
 		{
-			A_CustomMissile ("LostSoulGib2", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib2", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_PlaySound("bodyfalls/revenant");
 		}
 		stop;
@@ -272,6 +272,309 @@ class MetaLostSoulSteam : Actor
 		PUF2 ABC 2 A_FadeOut;
 	Finalize:
 		PUF2 D 2 A_FadeOut;
+		loop;
+	}
+}
+
+// The Phantom, based off the Doom Alpha sprites. Does a little shooty-dodgy
+// dance before charging you, changing things up and usually triggering copious
+// infighting because it's dumb.
+
+class MetaPhantom : MonsterCore
+{
+	Default
+	{
+		Health 110;
+		Radius 16;
+		Height 56;
+		Mass 50;
+		Speed 3;
+		Damage 3;
+		PainChance 256;
+		Monster;
+		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB;
+		AttackSound "monsters/lostsoul/attack";
+		PainSound "monsters/lostsoul/pain";
+		DeathSound "monsters/lostsoul/die1";
+		ActiveSound "monsters/lostsoul/idle";
+		Obituary "$OB_SKULL2";
+		bloodtype "LostSoulGib1";
+		damagefactor "HolyWater", 500;
+		damagefactor "FireExtinguisher", 500;
+	}
+	
+	int firetimer;
+		
+	States
+	{
+	Spawn:
+		PHAN A 6 A_Look;
+		Loop;
+	See:
+		PHAN A 1 A_Chase;
+		PHAN AAAAA 1 A_Chase(null,null);
+		Loop;
+	Missile:
+		PHAN A 0 ThrustThing(angle*256/360+64, 5, 0, 0);
+		PHAN AAAAAAAAAAAA 1 A_FaceTarget();
+		PHAN A 0 { A_Stop(); A_SpawnProjectile("MetaPhantomBall"); }
+		PHAN BBCCDDEEAAAA 1 A_FaceTarget();
+		PHAN A 0 ThrustThing(angle*256/360+192, 10, 0, 0);
+		PHAN AAAAAAAAAAAA 1 A_FaceTarget();
+		PHAN A 0 { A_Stop(); A_SpawnProjectile("MetaPhantomBall"); }
+		PHAN BBCCDDEEAAAA 1 A_FaceTarget();
+		PHAN A 0 ThrustThing(angle*256/360+64, 5, 0, 0);
+		PHAN AAAAAAAAAAAA 1 A_FaceTarget();
+		PHAN A 0 { A_Stop(); }
+	SkullAttack:
+		PHAN C 2 BRIGHT A_FaceTarget();
+		PHAN B 4 BRIGHT { A_SkullAttack(); A_SpawnItem ("DoomImpBallEffect", -8, 16); }
+		PHAN BB 4 BRIGHT;
+		Goto SkullAttack+2;
+	Pain:
+		PHAN F 3;
+		PHAN F 3 A_Pain;
+		Goto See;
+	XDeath:
+	Death:
+		PHAN F 0;
+		PHAN F 0 A_GiveToTarget("ScoreItem", 50);
+		PHAN G 0 A_Scream;
+		PHAN GHIJ 3;
+		PHAN J 0 A_SpawnItem("MetaPhantomExplosion", -8, 8);
+		PHAN KL 3;
+		PHAN F 0
+		{
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("monsters/lostsoul/die2");
+		}
+		Stop;
+	Death.FireExtinguisher:
+	Death.HolyWater:
+		PHAN Z 0 A_SpawnItem("MetaPhantomExtinguished");
+		PHAN Z 0 A_GiveToTarget("ScoreItem", 50);
+		stop;
+	}
+	
+	override void Tick()
+	{
+		if (firetimer >= 4)
+		{
+			A_SpawnItem("MetaPhantomFire", -8, 8);
+			firetimer = 0;
+		}
+		firetimer++;
+		//Console.Printf("firetimer = %i", firetimer);
+		Super.Tick();
+	}
+}
+
+class MetaPhantomFire : MetaLostSoulFire
+{
+	Default
+	{
+		translation "176:191=113:127";
+	}
+}
+
+class MetaPhantomExtinguished : Actor
+{
+	Default
+	{
+		+NOGRAVITY;
+		-SOLID;
+	}
+	
+	States
+	{
+	Spawn:
+		PHAN Z 0;
+		PHAN Z 0 A_PlaySound("monsters/lostsoul/extinguish");
+		PHAN ZZZZZ 5 A_SpawnItem("MetaLostSoulSteam", -8, 8);
+		PHAN Z 17;
+		PHAN Z 0 A_PlaySound("monsters/lostsoul/die1");
+		PHAN Z 0 A_ChangeFlag("NOGRAVITY", 0);
+		PHAN Z 0 A_ChangeFlag("CORPSE", 1);
+	Falling:
+		PHAN Z 1;
+		loop;
+	Crash:
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			A_SpawnProjectile ("LostSoulGib2", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("bodyfalls/revenant");
+		}
+		stop;
+	}
+}
+
+class MetaPhantomBall : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		Speed 10;
+		FastSpeed 20;
+		Damage 1;
+		Projectile;
+		SeeSound "monsters/phantom/fireballshoot";
+		DeathSound "monsters/phantom/fireballhit";
+		+SPAWNSOUNDSOURCE;
+		-ACTIVATEPCROSS;
+		-ACTIVATEIMPACT;
+		RenderStyle "Add";
+	}
+	
+	States
+	{
+	Spawn:
+		PHBA ABC 6 Bright;
+		Loop;
+	Death:
+		PHBA DEFG 5 Bright;
+		Stop;
+	}
+}
+
+class MetaPhantomExplosion : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		RenderStyle "add";
+		Alpha 0.5;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		scale 2;
+	}
+	
+	States
+	{
+	Spawn:
+		PHAN M 0;
+		PHAN MNOP 4 BRIGHT;
+		Stop;
+	}
+}
+
+// D3-style Lost Soul for the Beholder (see painelemental.dec). Boring and not
+// really worth discussing, more or a nuisance than anything.
+
+class MetaForgottenOne : MonsterCore
+{
+	Default
+	{
+		Health 20;
+		Radius 8;
+		Height 8;
+		Mass 50;
+		Speed 3;
+		Damage 1;
+		PainChance 256;
+		Monster;
+		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB +NOINFIGHTING;
+		AttackSound "monsters/forgottenone/attack";
+		PainSound "monsters/lostsoul/pain";
+		Obituary "$OB_FORGOTTENONE";
+		bloodtype "LostSoulGib1";
+		damagefactor "HolyWater", 500;
+		damagefactor "FireExtinguisher", 500;
+	}
+	
+	int firetimer;
+	
+	States
+	{
+	Spawn:
+		FGTN A 6 A_Look;
+		Loop;
+	See:
+		FGTN A 1 A_Chase;
+		FGTN AAAAA 1 A_Chase(null,null);
+		Loop;
+	Missile:
+		FGTN A 10 BRIGHT A_FaceTarget();
+		FGTN A 4 BRIGHT { A_SkullAttack(); A_SpawnItem ("DoomImpBallEffect", -8, 16); }
+		FGTN AA 4 BRIGHT;
+		Goto Missile+2;
+	Pain:
+		FGTN A 3;
+		FGTN A 3 A_Pain;
+		Goto See;
+	XDeath:
+	Death:
+		FGTN A 0 A_GiveToTarget("ScoreItem", 20);
+		FGTN A 0
+		{
+			A_SpawnProjectile ("LostSoulGib1", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("monsters/lostsoul/die2");
+		}
+		Stop;
+	}
+	
+	override void Tick()
+	{
+		if (firetimer >= 4)
+		{
+			A_SpawnItem("MetaForgottenOneFire", -1, 2);
+			firetimer = 0;
+		}
+		firetimer++;
+		//Console.Printf("firetimer = %i", firetimer);
+		Super.Tick();
+	}
+}
+
+class MetaForgottenOneFire : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		RenderStyle "add";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		height 1;
+		radius 1;
+	}
+	
+	States
+	{
+	Spawn:
+		LFIR A 0;
+		LFIR A 0
+		{
+			A_SetScale(frandom(0.2,0.3),frandom(0.2,0.3));
+		}
+		LFIR ABCD 2 Bright
+		{
+			A_SetScale(scalex+0.025,scaley+0.025);
+		}
+	StartFading:
+		LFIR ABCD 2 Bright
+		{
+			A_SetScale(scalex+0.025,scaley+0.025);
+			A_FadeOut(0.2);
+		}
 		loop;
 	}
 }
