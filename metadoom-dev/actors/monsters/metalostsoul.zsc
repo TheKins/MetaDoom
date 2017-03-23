@@ -78,12 +78,13 @@ class MetaLostSoul : MonsterCore
 	
 	override void Tick()
 	{
-		if (firetimer >= 6 & health <= 0)
+		if (firetimer >= 4)
 		{
 			A_SpawnItem("MetaLostSoulFire", -8, 8);
 			firetimer = 0;
 		}
 		firetimer++;
+		//Console.Printf("firetimer = %i", firetimer);
 		Super.Tick();
 	}
 }
