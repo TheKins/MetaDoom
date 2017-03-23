@@ -8,3 +8,4 @@ ZScript
 
 // Monsters
 #include "actors/monsters/metadoomactor.zsc"
+#include "actors/monsters/metalostsoul.zsc"

@@ -1,0 +1,89 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Lost Soul
+----------------------------
+*/
+
+// The original enemy, more or less, with a new weakness - water and fire
+// extinguishers. It only makes sense!
+
+class MetaLostSoulZSC : Actor //MonsterCore
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		Mass 50;
+		Speed 3;
+		Damage 3;
+		PainChance 256;
+		Monster;
+		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB;
+		AttackSound "monsters/lostsoul/attack";
+		PainSound "monsters/lostsoul/pain";
+		DeathSound "monsters/lostsoul/die1";
+		ActiveSound "monsters/lostsoul/idle";
+		Obituary "$OB_SKULL";
+		bloodtype "LostSoulGib1";
+		damagefactor "HolyWater", 500;
+		damagefactor "FireExtinguisher", 500;
+	}
+	
+	int firetimer;
+	
+	States
+	{
+	Spawn:
+		LSOL A 6 A_Look;
+		Loop;
+	See:
+		LSOL A 1 A_Chase;
+		LSOL AAAAA 1 A_Chase(null,null);
+		Loop;
+	Missile:
+		LSOL B 10 BRIGHT A_FaceTarget;
+		LSOL B 4 BRIGHT A_SkullAttack;
+		LSOL BB 4 BRIGHT;
+		Goto Missile+2;
+	Pain:
+		LSOL C 3 BRIGHT;
+		LSOL C 3 BRIGHT A_Pain;
+		Goto See;
+	XDeath:
+	Death:
+		LSOL F 0 A_SpawnItem("MetaLostSoulExplosion", -8, 8);
+		LSOL F 6 A_GiveToTarget("ScoreItem", 50);
+		LSOL F 0 A_SpawnItem("MetaLostSoulExplosion", -8, 8);
+		LSOL F 0
+		{
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("monsters/lostsoul/die2");
+		}
+		LSOL G 6 A_Scream;
+		LSOL F 0 A_SpawnItem("MetaLostSoulExplosion", -8, 8);
+		LSOL H 6;
+		LSOL I 6 A_NoBlocking;
+		Stop;
+	Death.FireExtinguisher:
+	Death.HolyWater:
+		LSOL F 0 A_SpawnItem("MetaLostSoulExtinguished");
+		LSOL F 0 A_GiveToTarget("ScoreItem", 50);
+		stop;
+	}
+	
+	override void Tick()
+	{
+		if (firetimer >= 6 & health <= 0)
+		{
+			A_SpawnItem("MetaLostSoulFire", -8, 8);
+			firetimer = 0;
+		}
+		firetimer = firetimer + 1;
+		Super.Tick();
+	}
+}
