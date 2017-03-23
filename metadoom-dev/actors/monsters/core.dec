@@ -7,7 +7,6 @@ Shared States
 */
 
 // The base monster actor, from which all monsters are inherited.
-// See metadoomactor.zsc for the ZScript component of this actor.
 
 // Inventory counters for certain behaviors. One day, I will refactor these
 // into user variables. Today is not that day. Tomorrow? Not looking too crash
@@ -15,6 +14,12 @@ Shared States
 actor ScurredCounter : Counter { Inventory.MaxAmount 20 }
 actor BleedingCounter : Counter { Inventory.MaxAmount 20 }
 
+
+// THIS CLASS HAS BEEN MIGRATED TO METADOOMACTOR.ZSC DUE TO THE SLOW, FUCKED UP
+// MARCH OF PROGRESS. THE ORIGINAL DECORATE VERSION IS KEPT HERE IN CYROGENIC
+// STORAGE AS A POINT OF REFERENCE FOR FUTURE CLEANSINGS
+
+/*
 actor MonsterCore : MetaDoomActor
 {
 	painchance Fist, 255
@@ -199,6 +204,7 @@ actor MonsterCore : MetaDoomActor
 		stop
 	}
 }
+*/
 
 // SQUISH!
 ACTOR MetaCrush replaces RealGibs
