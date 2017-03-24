@@ -135,6 +135,13 @@ DefaultOptionMenu
 	Position -15
 }
 
+AddOptionMenu "OptionsMenu"
+{
+	StaticText " "
+	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
+}
+
+/*
 OptionMenu "OptionsMenu"
 {
 	Title "$OPTMNU_TITLE"
@@ -159,6 +166,7 @@ OptionMenu "OptionsMenu"
 	SafeCommand	"$OPTMNU_RESETTOSAVED",	"reset2saved"
 	Command "$OPTMNU_CONSOLE",			"menuconsole"
 }
+*/
 
 OptionMenu "MetaMenu"
 {
