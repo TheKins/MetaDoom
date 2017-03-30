@@ -113,7 +113,10 @@ class MonsterCore : Actor
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 8, 1, 0);
-			ThrustThingZ(0,32,0,1);
+			if (self.bNOGRAVITY == false)
+			{
+				ThrustThingZ(0,32,0,1);
+			}
 			A_MetaPinata("MetaHealthPinata", 2);
 			bFrightened = False;
 			A_TakeInventory("ScurredCounter",999);
@@ -149,7 +152,10 @@ class MonsterCore : Actor
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
-			ThrustThingZ(0,32,0,1);
+			if (self.bNOGRAVITY == false)
+			{
+				ThrustThingZ(0,32,0,1);
+			}
 			A_MetaPinata("MetaHealthPinata", 1);
 			bFrightened = False;
 			A_TakeInventory("ScurredCounter",999);
@@ -182,7 +188,10 @@ class MonsterCore : Actor
 		{
 			A_FaceTarget();
 			//ThrustThing(angle*256/360+128, 8, 1, 0);
-			ThrustThingZ(0,32,0,0);
+			if (self.bNOGRAVITY == false)
+			{
+				ThrustThingZ(0,32,0,1);
+			}
 			A_MetaPinata("MetaHealthPinata", 1);
 			bFrightened = False;
 			A_TakeInventory("ScurredCounter",999);

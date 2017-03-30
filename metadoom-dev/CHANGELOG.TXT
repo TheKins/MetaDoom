@@ -22,12 +22,16 @@ Monster Changes:
   - Changed how Lost Souls and co. spawn their fire to be less messily coded.
   - Lost Souls and their ilk no longer trail fire if nobody's looking at them,
     potentially reducing lag in maps with scores of Lost Souls present.
+- Flying monsters (Cacodemons, Lost Souls etc.) are no longer thrust upwards
+  (and out of the player's reach) when punched. This should make it less frustrating
+  for players with Berserk to fistfight Cacodemons etc.
 
 Miscellaneous:
 - Options menu now has the "MetaDoom Options" button appended to the bottom of
   it by the engine, as opposed to overwriting the entire Options Menu to add it
   to the list.
-- Deathmatch now replaces the score counter with a frag counter
+- Deathmatch now replaces the score counter on the HUD with a frag counter
+- Moved the Map Stats portion of the HUD a whopping TWO pixels to the left, WOW
 - Minor LANGUAGE tweaks
 
 v3.1 "Samuel" (02/03/17)
