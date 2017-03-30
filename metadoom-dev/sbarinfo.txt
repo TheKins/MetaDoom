@@ -6,7 +6,16 @@ statusbar fullscreen
 {
 	InInventory not DisableHUD
 	{
-		drawnumber 10, SMALLFONT2, white, score, fillzeros, 89, 172;
+		gamemode deathmatch, teamgame
+		{
+			drawimage "FGICON", 27, 171;
+			drawnumber 3, SMALLFONT2, red, frags, 24, 172;
+		}
+		else
+		{
+			drawnumber 10, SMALLFONT2, white, score, fillzeros, interpolate(32), 89, 172;
+		}
+		
 		drawnumber 3, SMALLFONT2, white, armor, drawshadow, 24, 180;
 		drawimage "APICON", 27, 180;
 		drawimage "HUDBAR", 36, 180;
@@ -119,7 +128,17 @@ statusbar normal // Standard Doom Status bar
 	
 	InInventory not DisableHUD
 	{
-		drawnumber 10, SMALLFONT2, white, score, fillzeros, interpolate(32), 89, 172;
+		
+		gamemode deathmatch, teamgame
+		{
+			drawimage "FGICON", 27, 171;
+			drawnumber 3, SMALLFONT2, red, frags, 24, 172;
+		}
+		else
+		{
+			drawnumber 10, SMALLFONT2, white, score, fillzeros, interpolate(32), 89, 172;
+		}
+		
 		drawnumber 3, SMALLFONT2, white, armor, drawshadow, 24, 180;
 		drawimage "APICON", 27, 180;
 		drawimage "HUDBAR", 36, 180;
