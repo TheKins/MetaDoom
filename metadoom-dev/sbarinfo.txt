@@ -9,7 +9,7 @@ statusbar fullscreen
 		gamemode deathmatch, teamgame
 		{
 			drawimage "FGICON", 27, 171;
-			drawnumber 3, SMALLFONT2, red, frags, 24, 172;
+			drawnumber 3, SMALLFONT2, red, frags, drawshadow, 24, 171;
 		}
 		else
 		{
@@ -132,7 +132,7 @@ statusbar normal // Standard Doom Status bar
 		gamemode deathmatch, teamgame
 		{
 			drawimage "FGICON", 27, 171;
-			drawnumber 3, SMALLFONT2, red, frags, 24, 172;
+			drawnumber 3, SMALLFONT2, red, frags, drawshadow, 24, 171;
 		}
 		else
 		{
