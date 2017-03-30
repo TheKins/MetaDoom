@@ -2,7 +2,7 @@ v3.2 "Samuel" (??/??/17)
 ========================
 This version primarily makes under-the-hood changes to the mod's programming
 that will reduce instances of doing things "bad ways" and as a result hopefully
-cause the mod to run better in certain instances.
+result in better performance in certain situations.
 
 Special thanks to Doomed_SpaceMarine on Twitch for finding some of these issues!
 Live on stream, just to multiply the embarassment of screwing up. :V
@@ -27,6 +27,8 @@ Miscellaneous:
 - Options menu now has the "MetaDoom Options" button appended to the bottom of
   it by the engine, as opposed to overwriting the entire Options Menu to add it
   to the list.
+- Deathmatch now replaces the score counter with a frag counter
+- Minor LANGUAGE tweaks
 
 v3.1 "Samuel" (02/03/17)
 ========================
