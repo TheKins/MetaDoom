@@ -80,7 +80,10 @@ class MetaLostSoul : MonsterCore
 	{
 		if (firetimer >= 4)
 		{
-			A_SpawnItem("MetaLostSoulFire", -8, 8);
+			if (!CheckIfSeen())
+			{
+				A_SpawnItem("MetaLostSoulFire", -8, 8);
+			}
 			firetimer = 0;
 		}
 		firetimer++;
@@ -362,7 +365,10 @@ class MetaPhantom : MonsterCore
 	{
 		if (firetimer >= 4)
 		{
-			A_SpawnItem("MetaPhantomFire", -8, 8);
+			if (!CheckIfSeen())
+			{
+				A_SpawnItem("MetaPhantomFire", -8, 8);
+			}
 			firetimer = 0;
 		}
 		firetimer++;
@@ -532,7 +538,10 @@ class MetaForgottenOne : MonsterCore
 	{
 		if (firetimer >= 4)
 		{
-			A_SpawnItem("MetaForgottenOneFire", -1, 2);
+			if (!CheckIfSeen())
+			{
+				A_SpawnItem("MetaForgottenOneFire", -1, 2);
+			}
 			firetimer = 0;
 		}
 		firetimer++;
