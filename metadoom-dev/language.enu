@@ -181,7 +181,7 @@ QUITMSG11 = "...in due time their foot will slip;\ntheir day of disaster is near
 QUITMSG12 = "He cannot be allowed\nto leave this place.\n\nHe would ruin everything.";										// Doom 4, Dr. Pierce
 QUITMSG13 = "Don't quit now! We're still\nspending your money!";															// Doom Source Code Release
 QUITMSG14 = "We will be back\nto square one...\n\nWell... that's it then.";													// Doom 4, Samuel Hayden
-QUITMSG15 = "Hey, man - If this gets out, you can\nall kiss your autographed Doom\nhintbooks goodbye!";						// v0.4 Alpha
+QUITMSG15 = "Hey, man - If this gets out, you can\nall kiss your autographed Doom\nhintbooks goodbye!";						// v0.4 Alpha, Title
 QUITMSG16 = "Your duty has always\nbeen to die, soldier!";																	// Doom 3, Sabaoth
 QUITMSG17 = "No, John.\nYou are the demons.";																				// Repercussions of Evil, kek
 QUITMSG18 = "This mod proudly sponsored by\nMartianBuddy, the greatest\ncompany ever conceived!";							// Doom 3 promotional thingy
@@ -194,8 +194,8 @@ QUITMSG24 = "Marine...?\nMarine...\n\nWelcome home.";																		// Doom 3
 QUITMSG25 = "When it finally went into\nthe box, we were like\n''Don't breath on it, it works!\nDon't even LOOK at it!''";	// Noclip Documentary, Hugo Martin
 QUITMSG26 = "''My favorite thing is to kill demons.\nDoes this start that? Great!''";										// Noclip Documentary, Hugo Martin
 QUITMSG27 = "You found the gear, break the\nshifter off, we're staying here!";												// Noclip Documentary, Hugo Martin
-QUITMSG28 = "Don't abandon the\nIntergalactic Federation of Cereals!";
-QUITMSG29 = "The real Chex(R) Warrior\nwouldn't give up so fast!";
+QUITMSG28 = "Don't abandon the\nIntergalactic Federation of Cereals!\n\n...Wait, what?";									// Chex Quest
+QUITMSG29 = "Devoid of real quit-message-ness.\nForget all you have seen!";													// v0.4 Alpha, Readme
 
 // Obituary strings
 // First the self-kills, then the other-kills
@@ -242,7 +242,7 @@ OB_WOLFAPPLE = "%o considered %p Muse.";
 OB_WOLFMAC = "%o ate a Burger.";
 OB_WOLFRTCW = "%o took one right in the ol' Gray Matter.";
 OB_WOLFRAVEN = "%o couldn't evade a Revenant... Nevermore!";
-OB_WOLFTNO = "%o fell to some kind of freaky Machine...";
+OB_WOLFTNO = "%o succumbed to The New Order.";
 
 OB_MARINE = "%o was killed by a Space Marine.";
 OB_MARINE_FIST = "%o was punched in the face by a Space Marine.";
@@ -368,7 +368,7 @@ TITLEMAP19 = "Get ready to toast some Demon Flesh!";
 TITLEMAP20 = "Let the obsession begin! Again!";
 TITLEMAP21 = "Because True Evil Never Dies.";
 TITLEMAP22 = "''They might be Vampires...''";
-TITLEMAP23 = "We're handing you a ticket...";
+TITLEMAP23 = "Scary. Dark. Fast.";
 
 // Ironman Death Subtitles
 IRONMANDEAD1 = "Hahaha!";
