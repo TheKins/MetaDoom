@@ -1,3 +1,33 @@
+v3.2 "Samuel" (??/??/17)
+========================
+This version primarily makes under-the-hood changes to the mod's programming
+that will reduce instances of doing things "bad ways" and as a result hopefully
+cause the mod to run better in certain instances.
+
+Special thanks to Doomed_SpaceMarine on Twitch for finding some of these issues!
+Live on stream, just to multiply the embarassment of screwing up. :V
+
+Weapon Changes:
+- Reduced Chaingun turret ammo consumption... for real this time!
+- Made the Lightning Gun stream look a little better from the first person
+- Minor tweak to the Lightning Gun stun bomb effect
+
+Minor Bugfixes (or as Chronoteeth would call it, Fun-Ruining):
+- Fixed Nightmare Imps getting huge 'n' swole when resurrected
+- Fixed Bruisers sometimes moonwalking when resurrected
+
+Monster Changes:
+- Converted MonsterCore (the code all monsters inherit from & share) to ZScript
+- Converted Lost Souls, Phantoms and Forgotten Ones to ZScript
+  - Changed how Lost Souls and co. spawn their fire to be less messily coded.
+  - Lost Souls and their ilk no longer trail fire if nobody's looking at them,
+    potentially reducing lag in maps with scores of Lost Souls present.
+
+Miscellaneous:
+- Options menu now has the "MetaDoom Options" button appended to the bottom of
+  it by the engine, as opposed to overwriting the entire Options Menu to add it
+  to the list.
+
 v3.1 "Samuel" (02/03/17)
 ========================
 Various tweaks and improvements based on player feedback. Thanks to everyone for
