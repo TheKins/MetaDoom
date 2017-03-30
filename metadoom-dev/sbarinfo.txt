@@ -42,16 +42,16 @@ statusbar fullscreen
 		drawimage "HUDBAR", 225, 180;
 		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
 		
-		drawimage "HUDSTAT2", 96, 169;
+		drawimage "HUDSTAT2", 94, 169;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 119, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 137, 171;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 121, 181;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 119, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 137, 181;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 119, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 137, 191;
 
 		//keys
 		
@@ -165,16 +165,16 @@ statusbar normal // Standard Doom Status bar
 		drawimage "HUDBAR", 225, 180;
 		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
 		
-		drawimage "HUDSTAT", 96, 169;
+		drawimage "HUDSTAT", 94, 169;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 121, 171;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 139, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Kills, 119, 171;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Monsters, 137, 171;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 121, 181;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 139, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Items, 119, 181;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalItems, 137, 181;
 		
-		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 121, 191;
-		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 139, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, Secrets, 119, 191;
+		drawnumber 4, INDEXFONT_DOOM, untranslated, TotalSecrets, 137, 191;
 
 		//keys
 		drawimage "HUDKEYS", 281, 170;
