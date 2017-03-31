@@ -1,4 +1,4 @@
-v3.2 "Samuel" (??/??/17)
+v3.2 "Samuel" (01/04/17)
 ========================
 This version primarily makes under-the-hood changes to the mod's programming
 that will reduce instances of doing things "bad ways" and as a result hopefully
@@ -15,6 +15,9 @@ Weapon Changes:
 Minor Bugfixes (or as Chronoteeth would call it, Fun-Ruining):
 - Fixed Nightmare Imps getting huge 'n' swole when resurrected
 - Fixed Bruisers sometimes moonwalking when resurrected
+- Fixed some potential issues with certain monster spawners (Mancubus, Arachnotron,
+  Boss Monsters) that could cause certain scripts (for example, Doom64 MAP28) to
+  not function correctly.
 
 Monster Changes:
 - Converted MonsterCore (the code all monsters inherit from & share) to ZScript
