@@ -175,6 +175,26 @@ floor CSLIME02 Slime
 floor CSLIME03 Slime
 floor CSLIME04 Slime
 
+// Nintendo 64 Shit
+floor D64B1_01 Blood
+floor D64B2_01 Blood
+floor D64BLOD1 Blood
+floor D64N1_01 Nuke
+floor D64N2_01 Nuke
+floor D64NUKG1 Nuke
+floor D64NUKG2 Nuke
+floor D64S1_01 Slime
+floor D64S2_01 Slime
+floor D64SLDG1 Slime
+floor D64SLDG2 Slime
+floor D64W1_01 Water
+floor D64W2_01 Water
+floor D64WATR1 Water
+floor D64WATR2 Water
+floor D64L1_01 Lava
+floor D64LAVA1 Lava
+floor D64LAVA2 Lava
+
 // BTSX Shit
 floor FWATER02 Water
 endif
