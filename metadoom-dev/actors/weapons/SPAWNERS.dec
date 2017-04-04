@@ -195,3 +195,49 @@ actor BFGSpawner replaces BFG9000
 		stop
 	}
 }
+
+// Doom 64 Shit
+
+actor UnmakerSpawner replaces Unmaker
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MetaUnmakerPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor UnmakerKey1Spawner replaces UnmakerUpgrade1
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor UnmakerKey2Spawner replaces UnmakerUpgrade2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup2",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
+actor UnmakerKey3Spawner replaces UnmakerUpgrade3
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup3",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}

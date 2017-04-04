@@ -312,6 +312,15 @@ script "Item_BFG9000" (void)
 {
 	for(int i = 1337; i < 1400; i++)
 	{
+		if(CheckActorInventory(i,"PlayingDoom64"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Playing Doom 64. Alternate BFG Item Drops Disabled.");
+			
+			SetResultValue(1);
+			break;
+		}
+		
 		if(CheckActorInventory(i,"MetaBFG9000"))
 		{
 			if(GetCvar("meta_developer"))
