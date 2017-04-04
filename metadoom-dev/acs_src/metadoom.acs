@@ -105,6 +105,22 @@ Script "TakeWater" ENTER
 		if (CheckActorFloorTexture(0, "WATER01")) ACS_NamedExecute("GimmeWater",0);
 		if (CheckActorFloorTexture(0, "BSLIME01")) ACS_NamedExecute("GimmeWater",0);
 		if (CheckActorFloorTexture(0, "CSLIME01")) ACS_NamedExecute("GimmeWater",0);
+		// Doom 64
+		if (CheckActorFloorTexture(0, "D64B1_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64B2_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64BLOD1")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64N1_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64N2_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64NUKG1")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64NUKG2")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64S1_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64S2_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64SLDG1")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64SLDG2")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64W1_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64W2_01")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64WATR1")) ACS_NamedExecute("GimmeWater",0);
+		if (CheckActorFloorTexture(0, "D64WATR2")) ACS_NamedExecute("GimmeWater",0);
 		// BTSX
 		if (CheckActorFloorTexture(0, "FWATER02")) ACS_NamedExecute("GimmeWater",0);
 	}
@@ -221,6 +237,25 @@ Script "BloodFX_Water" ENTER
 		else if (CheckActorFloorTexture(0, "WATER01")) SetResultValue(2);
 		else if (CheckActorFloorTexture(0, "BSLIME01")) SetResultValue(2);
 		else if (CheckActorFloorTexture(0, "CSLIME01")) SetResultValue(2);
+		// Doom 64
+		else if (CheckActorFloorTexture(0, "D64B1_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64B2_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64BLOD1")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64N1_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64N2_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64NUKG1")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64NUKG2")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64S1_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64S2_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64SLDG1")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64SLDG2")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64W1_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64W2_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64WATR1")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64WATR2")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64L1_01")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64LAVA1")) SetResultValue(3);
+		else if (CheckActorFloorTexture(0, "D64LAVA2")) SetResultValue(3);
 		// BTSX
 		else if (CheckActorFloorTexture(0, "FWATER02")) SetResultValue(2);
 		else SetResultValue(1);
