@@ -487,6 +487,35 @@ script "PlayerInventoryFixer" ENTER
 		GiveInventory("MetaBFG9000",1);
 		SetWeapon("MetaBFG9000");
 	}
+	
+	// Give Doom 64 Demon Key IDs in Doom 64
+	if (CheckInventory("PlayingDoom64") == 1)
+	{
+		if (CheckInventory("DemonKey") == 1 && CheckInventory("UnmakerUpgrade1Icon") == 0)
+		{		
+			if(GetCvar("meta_developer"))
+				log(s:"Giving D64 Demon Key Token 1!");
+				
+			GiveInventory("UnmakerUpgrade1Icon",1);
+		}
+		
+		if (CheckInventory("DemonKey") == 2 && CheckInventory("UnmakerUpgrade2Icon") == 0)
+		{		
+			if(GetCvar("meta_developer"))
+				log(s:"Giving D64 Demon Key Token 2!");
+				
+			GiveInventory("UnmakerUpgrade2Icon",1);
+		}
+		
+		if (CheckInventory("DemonKey") == 3 && CheckInventory("UnmakerUpgrade3Icon") == 0)
+		{		
+			if(GetCvar("meta_developer"))
+				log(s:"Giving D64 Demon Key Token 3!");
+				
+			GiveInventory("UnmakerUpgrade3Icon",1);
+		}
+	}
+	
 
 	delay(1);
 	restart;

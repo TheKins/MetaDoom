@@ -176,3 +176,35 @@ Lock 101 Doom
 	RemoteMessage "$PD_ALL6O"
 	lockedsound "locks/null"
 }
+
+// N64 Locks
+
+Lock 201 Doom
+{
+	//$Title "Orange Demon Key"
+	UnmakerUpgrade1Icon
+	Message "$PD_ARTIFACT"
+	RemoteMessage "$PD_ARTIFACT"
+	LockedSound "Null"
+	Mapcolor 205 153 26
+}
+
+Lock 202 Doom
+{
+	//$Title "Purple Demon Key"
+	UnmakerUpgrade2Icon
+	Message "$PD_ARTIFACT"
+	RemoteMessage "$PD_ARTIFACT"
+	LockedSound "Null"
+	Mapcolor 128 26 205
+}
+
+Lock 203 Doom
+{
+	//$Title "Cyan Demon Key"
+	UnmakerUpgrade3Icon
+	Message "$PD_ARTIFACT"
+	RemoteMessage "$PD_ARTIFACT"
+	LockedSound "Null"
+	Mapcolor 0 153 153
+}
