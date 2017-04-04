@@ -583,3 +583,16 @@ actor SpiderMastermindSpawner replaces SpiderMastermind
 		Stop
 	}
 }
+
+// Doom 64 Shit
+
+actor NightmareImpSpawner replaces 64NightmareImp
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MetaNightmareImp",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		stop
+	}
+}
