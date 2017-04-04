@@ -1,3 +1,17 @@
+v3.64 "Samuel" (05/04/17)
+=========================
+This update adds special compatibility for my "Consolation Prize" version of
+Nevander's awesome Doom 64 Retribution TC. You can now rip and tear through
+Midway's corridors with 20 years of additional progress in your pocket. All
+that's missing is the Mother Demon... but maybe in the future...
+
+- The Unmaker and Demon Keys now all spawn where they did in Doom 64.
+- Nightmare Imps now spawn where they did in Doom 64.
+- Unmakers no longer spawn from BFG spawn points in Doom 64.
+- Demon Keys now lock the portals in MAP28 of Doom 64 as intended.
+- Doom 64 liquid flats now have proper terrain fx and wash out blood splats
+- Doom 64 liquid flats now refill the Holy Water Pistol as intended.
+
 v3.2 "Samuel" (01/04/17)
 ========================
 This version primarily makes under-the-hood changes to the mod's programming
