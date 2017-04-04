@@ -185,7 +185,7 @@ Lock 201 Doom
 	UnmakerUpgrade1Icon
 	Message "$PD_ARTIFACT"
 	RemoteMessage "$PD_ARTIFACT"
-	LockedSound "Null"
+	lockedsound "locks/skull"
 	Mapcolor 205 153 26
 }
 
@@ -195,7 +195,7 @@ Lock 202 Doom
 	UnmakerUpgrade2Icon
 	Message "$PD_ARTIFACT"
 	RemoteMessage "$PD_ARTIFACT"
-	LockedSound "Null"
+	lockedsound "locks/skull"
 	Mapcolor 128 26 205
 }
 
@@ -205,6 +205,6 @@ Lock 203 Doom
 	UnmakerUpgrade3Icon
 	Message "$PD_ARTIFACT"
 	RemoteMessage "$PD_ARTIFACT"
-	LockedSound "Null"
+	lockedsound "locks/skull"
 	Mapcolor 0 153 153
 }
