@@ -200,7 +200,7 @@ Script "SoulCubeMsg_Warn" ENTER
 
 Script "SoulCubeMsg_Clear" ENTER
 {
-	if (CheckInventory("SoulAmmo") != 5 && CheckInventory("SoulCubeMessagePopped"))
+	if (CheckInventory("SoulAmmo") != 10 && CheckInventory("SoulCubeMessagePopped"))
 	{
 		TakeInventory("SoulCubeMessagePopped", 999);
 	}
