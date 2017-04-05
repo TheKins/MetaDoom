@@ -67,6 +67,7 @@ METAMENU_MAPBREAKERS = "Potential Map-Breakers";
 
 METAMENU_ITEMHEADER = "Item Behavior";
 METAMENU_RETROBERSERK = "Traditional Berserk";
+METAMENU_PISTOLAMMO = "Pistol Uses Ammo";
 
 METAMENU_PERFHEADER = "Performance Controls";
 METAMENU_PERFCULLER = "Blood Cull Radius";

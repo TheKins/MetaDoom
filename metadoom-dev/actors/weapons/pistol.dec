@@ -7,6 +7,7 @@ Pistol
 */
 
 actor PistolFlashlight: Boolean {}
+actor PistolAmmoCoupon: Boolean {}
 
 ACTOR MetaPistolPickup : WeaponGiver
 {
@@ -79,13 +80,29 @@ ACTOR MetaPistol : MetaDoomWeapon
 		PIST A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE)
 		goto Ready
 	Fire:
+		PIST A 0		
+		{
+			if (GetCVar ("meta_pistolammo") == 1 && CountInv("Clip") == 0)
+			{
+				return state("NoAmmo");
+			}
+			
+			return state(""); // this is dumb. why do i need this?
+		}
 		PIST A 4
 		PIST B 1 bright
 		{
-			A_FireCustomMissile("PistolTracer");
-			A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
-			A_GunFlash;
-			A_AlertMonsters;
+			if (GetCVar ("meta_pistolammo") == 0 || GetCVar ("meta_pistolammo") == 1 && CountInv("Clip") > 0)
+			{
+				A_FireCustomMissile("PistolTracer");
+				if (GetCVar ("meta_pistolammo") == 1)
+				{
+					A_TakeInventory("Clip", 1);
+				}
+				A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
+				A_GunFlash;
+				A_AlertMonsters;
+			}
 		}
 		PIST B 1 bright Offset(0,38)
 		PIST C 1 bright Offset(0,42)
@@ -96,6 +113,13 @@ ACTOR MetaPistol : MetaDoomWeapon
 		PIST E 1 Offset(0,32) A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
 		PIST FF 1  A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
 		Goto Ready
+	NoAmmo:
+		PIST A 0
+		PIST A 1 Offset(0,34) A_PlaySound("weapons/flashlight/on", CHAN_BODY)
+		PIST A 1 Offset(0,33)
+		PIST A 1 Offset(0,32)
+		PIST A 10
+		goto Ready
 	AltFire:
 		PIST A 0
 		PIST A 1 Offset(0,34)

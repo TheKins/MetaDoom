@@ -14,3 +14,6 @@ server int meta_retroberserk = 0;
 server int meta_perf_fadeblood = 0;
 server int meta_perf_bloodcullradius = 4;
 server int meta_perf_bloodtime = 6666;
+
+// pistol ammo
+server int meta_pistolammo = 0;

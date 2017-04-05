@@ -36,7 +36,15 @@ statusbar fullscreen
 		{
 		drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
 		} else {
-		DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+			IfCVarInt meta_pistolammo, 1
+			{
+				IsSelected "MetaPistol"
+				{
+					drawnumber 3, SMALLFONT2, white, ammo(Clip), drawshadow, 315, 180;
+				}
+			} else {
+			DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+			}
 		}
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;
@@ -159,7 +167,15 @@ statusbar normal // Standard Doom Status bar
 		{
 		drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
 		} else {
-		DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+		IfCVarInt meta_pistolammo, 1
+			{
+				IsSelected "MetaPistol"
+				{
+					drawnumber 3, SMALLFONT2, white, ammo(Clip), drawshadow, 315, 180;
+				}
+			} else {
+			DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+			}
 		}
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;

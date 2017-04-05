@@ -61,6 +61,17 @@ Script "MeleeStripBerserkOnStart" ENTER
 	TakeInventory("PowerStrength", 999);
 }
 
+// Pistol Start Stuff
+script "PistolAmmoStart" ENTER
+{
+	if(GetCvar("meta_pistolammo") && !CheckInventory("PistolAmmoCoupon"))
+	{
+		GiveInventory("Clip", 50);
+		GiveInventory("PistolAmmoCoupon", 1);
+	}
+}
+		
+
 // TZK's Flashlight
 Script "PointerPitch" (void)
 {
