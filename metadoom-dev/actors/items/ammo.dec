@@ -256,9 +256,9 @@ ACTOR SoulAmmo : Ammo
 {
 	Inventory.PickupMessage "$GOTSOUL"
 	Inventory.Amount 1
-	Inventory.MaxAmount 5
+	Inventory.MaxAmount 10
 	Ammo.BackpackAmount 0
-	Ammo.BackpackMaxAmount 5
+	Ammo.BackpackMaxAmount 10
 	Inventory.Icon "SOLAA0"
 	inventory.pickupsound "weapons/soulcube/ammo"
 	TeleFogSourceType MetaItemFog

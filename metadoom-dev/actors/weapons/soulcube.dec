@@ -22,9 +22,9 @@ ACTOR MetaSoulcube : MetaDoomWeapon
 {
 	Weapon.SelectionOrder 2900
 	Obituary "$OB_METASOULCUBE"
-	Weapon.AmmoUse1 5
+	Weapon.AmmoUse1 10
 	Weapon.AmmoType1 "SoulAmmo"
-	Weapon.AmmoUse2 5
+	Weapon.AmmoUse2 10
 	Weapon.AmmoType2 "SoulAmmo"
 	Inventory.Pickupmessage "$GOTSOULCUBE"
 	Inventory.PickupSound "weapons/soulcube/get"

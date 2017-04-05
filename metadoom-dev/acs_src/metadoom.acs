@@ -180,7 +180,7 @@ Script "SoulCubeMsg_Warn" ENTER
 		GiveInventory("SoulCubeMessagePopped", 1);
 	}
 	
-	if (CheckInventory("SoulAmmo") == 5 && !CheckInventory("SoulCubeMessagePopped") && !CheckInventory("MetaCheatDetector"))
+	if (CheckInventory("SoulAmmo") == 10 && !CheckInventory("SoulCubeMessagePopped") && !CheckInventory("MetaCheatDetector"))
 	{
 		LocalAmbientSound("weapons/soulcube/ready", 127);
 		GiveInventory("SoulCubeMessagePopped", 1);
