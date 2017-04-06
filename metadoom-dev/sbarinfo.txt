@@ -32,20 +32,31 @@ statusbar fullscreen
 			DrawBar "POWRBAR", "MTBAR3", poweruptime MetaInvulnerabilitySphere, horizontal, interpolate(8), 37, 190;
 		}
 		
-		usesammo
+		IfCVarInt meta_pistolammo, 0, equal
 		{
-		drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
-		} else {
-			IfCVarInt meta_pistolammo, 1
+			usesammo
 			{
+				drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
+			} else {
+				DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+			}
+		}
+		
+		IfCVarInt meta_pistolammo, 1, equal
+		{
+			usesammo
+			{
+			drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
+			} else {
 				IsSelected "MetaPistol"
 				{
 					drawnumber 3, SMALLFONT2, white, ammo(Clip), drawshadow, 315, 180;
+				} else {
+				DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
 				}
-			} else {
-			DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
 			}
 		}
+		
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;
 		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
@@ -162,21 +173,32 @@ statusbar normal // Standard Doom Status bar
 		{
 			DrawBar "POWRBAR", "MTBAR3", poweruptime MetaInvulnerabilitySphere, horizontal, interpolate(8), 37, 190;
 		}
-		
-		usesammo
+
+		IfCVarInt meta_pistolammo, 0, equal
 		{
-		drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
-		} else {
-		IfCVarInt meta_pistolammo, 1
+			usesammo
 			{
+				drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
+			} else {
+				DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
+			}
+		}
+		
+		IfCVarInt meta_pistolammo, 1, equal
+		{
+			usesammo
+			{
+			drawnumber 3, SMALLFONT2, white, ammo1, drawshadow, 315, 180;
+			} else {
 				IsSelected "MetaPistol"
 				{
 					drawnumber 3, SMALLFONT2, white, ammo(Clip), drawshadow, 315, 180;
+				} else {
+				DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
 				}
-			} else {
-			DrawString SMALLFONT2, white, "---", 315, 180, 0, drawshadow;
 			}
 		}
+		
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;
 		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
