@@ -1,6 +1,6 @@
-addkeysection "MetaDoomery" MetaDoomActions
+addkeysection "$MNU_MDHEADER" MetaDoomActions
 
-addmenukey "Melee Attack" metadoom_melee
+addmenukey "$MNU_MDMELEE" metadoom_melee
 alias metadoom_melee "pukename MeleePunch"
 defaultbind F metadoom_melee
 
