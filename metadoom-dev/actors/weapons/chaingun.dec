@@ -200,7 +200,7 @@ ACTOR MetaChaingun : MetaDoomWeapon
 		{
 			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
 			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
-			A_FireBullets(3,3,1,5,"MetaTurretPuff",!FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
 			A_FireBullets(3,3,1,5,"MetaTurretPuff",!FBF_USEAMMO);
 			//A_FireCustomMissile("BulletCasingSpawn",5,0,8,-9);
 			//A_FireCustomMissile("BulletCasingSpawn",10,0,16,-9);
