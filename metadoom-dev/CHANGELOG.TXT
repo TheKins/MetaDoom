@@ -1,3 +1,19 @@
+NEXT HOTFIX
+===========
+Some final changes and additions before I set off to work on v4...
+
+New Features:
+- Added a "Pistol Uses Ammo" CVAR! (meta_pistolammo)
+  This makes the Pistol use Clip bullets like in vanilla Doom, and will give
+  you 50 bullets at the start of the first map.
+
+Weapon Changes:
+- Soulcube now requires 10 souls instead of 5
+- Adjusted Chaingun turret ammo usage
+
+Miscellaneous:
+- Menu sub-headers in MetaDoom Options menu are now gold instead of red
+
 v3.64 "Samuel" (05/04/17)
 =========================
 This update adds special compatibility for my "Consolation Prize" version of
