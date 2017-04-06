@@ -153,7 +153,7 @@ ACTOR MetaBFG9000 : MetaDoomWeapon
 			A_Quake (8,10,0,750,0);
 			A_TakeInventory("BFGAmmo",1);
 		}
-		MBFG CDCDCDCDCDCDCDCDCD 1 bright
+		MBFG CDCDCDCDCDCDCDCDCDCDCDCDCD 1 bright
 		{
 			A_FireCustomMissile("MetaBFGAltfire",random(-8,8),0,0,0,FPF_NOAUTOAIM,random(-8,8));
 			A_ZoomFactor(frandom(0.8,0.85), ZOOM_NOSCALETURNING);
@@ -323,7 +323,7 @@ ACTOR MetaBFGAltfire
 	Radius 13
 	Height 8
 	Speed 25
-	Damage 4
+	Damage 20
 	BounceType "Classic"
 	BounceFactor 1.0
 	Projectile
