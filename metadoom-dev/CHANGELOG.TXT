@@ -10,6 +10,7 @@ New Features:
 Weapon Changes:
 - Soulcube now requires 10 souls instead of 5
 - Adjusted Chaingun turret ammo usage
+- Buffed the BFG's altfire by an impressive amount
 
 Miscellaneous:
 - Menu sub-headers in MetaDoom Options menu are now gold instead of red
