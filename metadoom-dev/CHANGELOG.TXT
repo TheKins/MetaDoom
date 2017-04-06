@@ -14,6 +14,7 @@ Weapon Changes:
 
 Miscellaneous:
 - Menu sub-headers in MetaDoom Options menu are now gold instead of red
+- Moved new keybinding strings to LANGUAGE to sate my lust for localization
 
 v3.64 "Samuel" (05/04/17)
 =========================
