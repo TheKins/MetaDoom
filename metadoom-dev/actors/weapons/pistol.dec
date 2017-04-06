@@ -115,7 +115,7 @@ ACTOR MetaPistol : MetaDoomWeapon
 		Goto Ready
 	NoAmmo:
 		PIST A 0
-		PIST A 1 Offset(0,34) A_PlaySound("weapons/flashlight/on", CHAN_BODY)
+		PIST A 1 Offset(0,34) A_PlaySound("weapons/pistol/dry", CHAN_BODY)
 		PIST A 1 Offset(0,33)
 		PIST A 1 Offset(0,32)
 		PIST A 10

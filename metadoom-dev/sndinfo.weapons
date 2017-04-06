@@ -45,6 +45,8 @@ weapons/pistol/hit3			pisthit3
 weapons/flashlight/on		fliton
 weapons/flashlight/off		flitoff
 
+weapons/pistol/dry			pistdryf
+
 // shotgun
 weapons/shotgun/get			shtget
 weapons/shotgun/fire		shtfire
