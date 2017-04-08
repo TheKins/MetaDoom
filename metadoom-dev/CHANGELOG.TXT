@@ -1,5 +1,5 @@
-NEXT HOTFIX
-===========
+v3.666 "Samuel" (08/04/17)
+==========================
 Some final changes and additions before I set off to work on v4...
 
 New Features:
@@ -15,6 +15,7 @@ Weapon Changes:
 Miscellaneous:
 - Menu sub-headers in MetaDoom Options menu are now gold instead of red
 - Moved new keybinding strings to LANGUAGE to sate my lust for localization
+- Lost Soul-family monsters no longer spawn fire when time is frozen
 
 v3.64 "Samuel" (05/04/17)
 =========================
