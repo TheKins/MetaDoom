@@ -78,16 +78,19 @@ class MetaLostSoul : MonsterCore
 	
 	override void Tick()
 	{
-		if (firetimer >= 4)
+		if(!level.frozen)
 		{
-			if (!CheckIfSeen())
+			if (firetimer >= 4)
 			{
-				A_SpawnItem("MetaLostSoulFire", -8, 8);
+				if (!CheckIfSeen())
+				{
+					A_SpawnItem("MetaLostSoulFire", -8, 8);
+				}
+				firetimer = 0;
 			}
-			firetimer = 0;
+			firetimer++;
+			//Console.Printf("firetimer = %i", firetimer);
 		}
-		firetimer++;
-		//Console.Printf("firetimer = %i", firetimer);
 		Super.Tick();
 	}
 }
@@ -363,16 +366,19 @@ class MetaPhantom : MonsterCore
 	
 	override void Tick()
 	{
-		if (firetimer >= 4)
+		if(!level.frozen)
 		{
-			if (!CheckIfSeen())
+			if (firetimer >= 4)
 			{
-				A_SpawnItem("MetaPhantomFire", -8, 8);
+				if (!CheckIfSeen())
+				{
+					A_SpawnItem("MetaPhantomFire", -8, 8);
+				}
+				firetimer = 0;
 			}
-			firetimer = 0;
+			firetimer++;
+			//Console.Printf("firetimer = %i", firetimer);
 		}
-		firetimer++;
-		//Console.Printf("firetimer = %i", firetimer);
 		Super.Tick();
 	}
 }
@@ -536,16 +542,19 @@ class MetaForgottenOne : MonsterCore
 	
 	override void Tick()
 	{
-		if (firetimer >= 4)
+		if(!level.frozen)
 		{
-			if (!CheckIfSeen())
+			if (firetimer >= 4)
 			{
-				A_SpawnItem("MetaForgottenOneFire", -1, 2);
+				if (!CheckIfSeen())
+				{
+					A_SpawnItem("MetaForgottenOneFire", -1, 2);
+				}
+				firetimer = 0;
 			}
-			firetimer = 0;
+			firetimer++;
+			//Console.Printf("firetimer = %i", firetimer);
 		}
-		firetimer++;
-		//Console.Printf("firetimer = %i", firetimer);
 		Super.Tick();
 	}
 }
