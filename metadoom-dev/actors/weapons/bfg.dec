@@ -323,7 +323,7 @@ ACTOR MetaBFGAltfire
 	Radius 13
 	Height 8
 	Speed 25
-	Damage 20
+	Damage 15
 	BounceType "Classic"
 	BounceFactor 1.0
 	Projectile
