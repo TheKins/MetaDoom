@@ -24,6 +24,7 @@ ACTOR MetaMancubus : MonsterCore
 	DeathSound "monsters/mancubus/die"
 	ActiveSound "monsters/mancubus/idle"
 	Obituary "$OB_FATSO"
+	Species "Fatso"
 	States
 	{
 	Spawn:
@@ -117,6 +118,7 @@ ACTOR MetaBehemoth : MonsterCore
 	DeathSound "monsters/behemoth/die"
 	ActiveSound "monsters/mancubus/idle"
 	Obituary "$OB_FATSO2"
+	Species "Fatso"
 	scale 0.75
 	States
 	{
