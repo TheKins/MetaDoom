@@ -518,7 +518,21 @@ actor MancubusSpawner replaces Fatso
 	{
 	Spawn:
 		FATT A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "Manc")
+		TNT1 A 0 A_JumpIf(GetCvar(meta_contentlocust) == 1, "ContentLocustVarietyPack")
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 8, "Tier2")
+		goto Manc
+	ContentLocustVarietyPack:
+		TNT1 A 0 A_Jump(90,"Behemoth")
+		goto Manc
+	ContentLocustVarietyPack:
+		TNT1 A 0 A_Jump(128,"Behemoth")
+		goto Manc
+	Manc:
 		TNT1 A 0 A_SpawnItemEx("MetaMancubus",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
+		goto CreepyStalker
+	Behemoth:
+		TNT1 A 0 A_SpawnItemEx("MetaBehemoth",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		goto CreepyStalker
 	CreepyStalker:
 		TNT1 A 1 // SFX: HEAVY BREATHING
