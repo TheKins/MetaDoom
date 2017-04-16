@@ -205,7 +205,7 @@ Actor MetaBehemothFireFrontman : MetaBehemothFire
 	{
 	Spawn:
 		BAL1 A 0
-		BAL1 A 0 A_PlaySoundEx("monsters/imp/fireball/loop", "Body", 1)
+		BAL1 A 0 A_PlaySoundEx("monsters/behemoth/missileloop", "Body", 1)
 		goto Super::Spawn
 	}
 }
