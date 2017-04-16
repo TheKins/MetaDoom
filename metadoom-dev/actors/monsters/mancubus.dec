@@ -101,4 +101,91 @@ ACTOR MetaFatShot
 	}
 }
 
+// The Behemoth. Uses the Doom 64 sprites, and a Doom 4-esque flamethrower attack!
+ACTOR MetaBehemoth : MonsterCore
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	Speed 8
+	PainChance 80
+	Monster
+	+FLOORCLIP
+	//+BOSSDEATH
+	SeeSound "monsters/behemoth/see"
+	PainSound "monsters/mancubus/pain"
+	DeathSound "monsters/behemoth/die"
+	ActiveSound "monsters/mancubus/idle"
+	Obituary "$OB_FATSO2"
+	scale 0.75
+	States
+	{
+	Spawn:
+		2FAT AB 15 A_Look
+		Loop
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood")
+		2FAT AABBCCDDEEFF 4 A_Chase
+		Loop
+	Missile:
+		2FAT H 20 { A_FaceTarget; A_PlaySound("monsters/behemoth/attack"); }
+		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
+		2FAT GGGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32); A_CustomMissile("MetaBehemothFire",48,32); }
+		2FAT H 20 A_FaceTarget
+		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
+		2FAT GGGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,8); A_CustomMissile("MetaBehemothFire",48,32,-8); }
+		2FAT H 20 A_FaceTarget
+		Goto See
+	Pain:
+		2FAT I 3
+		2FAT I 3 A_Pain
+		Goto See
+    Death:
+		2FAT J 0 A_SpawnItem("SoulSpawner")
+		2FAT J 6 A_GiveToTarget("ScoreItem", 500)
+		2FAT K 6 A_Scream
+		2FAT L 6 { A_NoBlocking; A_PlaySound("monsters/mancubus/body"); }
+		2FAT M 6 A_PlaySound("monsters/mancubus/melt")
+		2FAT N 6 
+		2FAT O 6 
+		2FAT O -1 A_KillMaster //A_BossDeath
+	    Stop
+	 Raise:
+		2FAT ONMLKJ 5
+		Goto See
+	}
+}
 
+ACTOR MetaBehemothFire
+{
+	Radius 6
+	Height 8
+	Speed 20
+	FastSpeed 20
+	Damage (random(1,2))
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	//eeSound "monsters/imp/shoot"
+	//DeathSound "monsters/imp/fireball/hit"
+	decal DoomImpScorch
+	States
+	{
+	Spawn:
+		BAL1 A 0
+		BAL1 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL1 A 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, 0, 0, 0)
+		BAL1 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
+		BAL1 B 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, 0, 0, 0)
+		Loop
+	Death:
+		BAL1 CDE 6 BRIGHT
+		Stop
+	Extinguished:
+		BAL1 A 0 A_PlaySound("monsters/lostsoul/extinguish")
+		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
+		stop
+	}
+}
