@@ -113,7 +113,7 @@ ACTOR MetaBehemoth : MonsterCore
 	+FLOORCLIP
 	//+BOSSDEATH
 	SeeSound "monsters/behemoth/see"
-	PainSound "monsters/mancubus/pain"
+	PainSound "monsters/behemoth/pain"
 	DeathSound "monsters/behemoth/die"
 	ActiveSound "monsters/mancubus/idle"
 	Obituary "$OB_FATSO2"
@@ -130,10 +130,21 @@ ACTOR MetaBehemoth : MonsterCore
 	Missile:
 		2FAT H 20 { A_FaceTarget; A_PlaySound("monsters/behemoth/attack"); }
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
-		2FAT GGGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32); A_CustomMissile("MetaBehemothFire",48,32); }
+		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32); A_CustomMissile("MetaBehemothFireFrontman",48,32); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32); A_CustomMissile("MetaBehemothFire",48,32); }
 		2FAT H 20 A_FaceTarget
+		2FAT H 0 A_Jump(128,"Missile3")
+		goto Missile2
+	Missile2:
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
-		2FAT GGGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,8); A_CustomMissile("MetaBehemothFire",48,32,-8); }
+		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,10); A_CustomMissile("MetaBehemothFireFrontman",48,32,-10); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,10); A_CustomMissile("MetaBehemothFire",48,32,-10); }
+		2FAT H 20 A_FaceTarget
+		Goto See
+	Missile3:
+		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
+		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,-10); A_CustomMissile("MetaBehemothFireFrontman",48,32,10); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,-10); A_CustomMissile("MetaBehemothFire",48,32,10); }
 		2FAT H 20 A_FaceTarget
 		Goto See
 	Pain:
@@ -167,16 +178,16 @@ ACTOR MetaBehemothFire
 	+RANDOMIZE
 	RenderStyle Add
 	Alpha 1
-	//DeathSound "monsters/imp/fireball/hit"
+	DeathSound "monsters/behemoth/missilehit"
 	decal DoomImpScorch
 	States
 	{
 	Spawn:
 		BAL1 A 0
 		BAL1 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
-		BAL1 A 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, 0, 0, 0)
+		BAL1 A 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, -8, 0, 0)
 		BAL1 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
-		BAL1 B 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, 0, 0, 0)
+		BAL1 B 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, -8, 0, 0)
 		Loop
 	Death:
 		BAL1 CDE 6 BRIGHT
@@ -185,5 +196,16 @@ ACTOR MetaBehemothFire
 		BAL1 A 0 A_PlaySound("monsters/lostsoul/extinguish")
 		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0)
 		stop
+	}
+}
+
+Actor MetaBehemothFireFrontman : MetaBehemothFire
+{
+	States
+	{
+	Spawn:
+		BAL1 A 0
+		BAL1 A 0 A_PlaySoundEx("monsters/imp/fireball/loop", "Body", 1)
+		goto Super::Spawn
 	}
 }
