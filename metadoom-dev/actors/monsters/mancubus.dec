@@ -7,7 +7,6 @@ Mancubus
 */
 
 // Currently more or less identical to the original Doom monster, behavior-wise.
-// TODO: Twiddle with, add at least one variant!
 
 ACTOR MetaMancubus : MonsterCore
 {
@@ -168,7 +167,6 @@ ACTOR MetaBehemothFire
 	+RANDOMIZE
 	RenderStyle Add
 	Alpha 1
-	//eeSound "monsters/imp/shoot"
 	//DeathSound "monsters/imp/fireball/hit"
 	decal DoomImpScorch
 	States
