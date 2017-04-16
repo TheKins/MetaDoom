@@ -419,3 +419,11 @@ monsters/bulldemon/step4			buldstp4
 $random monsters/bulldemon/body 	{ monsters/bulldemon/body1 monsters/bulldemon/body2 }
 monsters/bulldemon/body1			buldbod1
 monsters/bulldemon/body2			buldbod2
+
+// behemoth
+monsters/behemoth/see		behesee
+monsters/behemoth/attack	beheatk1
+monsters/behemoth/die		behedie
+$random monsters/behemoth/fire		{ monsters/behemoth/fire1 monsters/behemoth/fire2 }
+monsters/behemoth/fire1		behefir1
+monsters/behemoth/fire2		behefir2
