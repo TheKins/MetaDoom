@@ -425,6 +425,7 @@ monsters/behemoth/see		behesee
 monsters/behemoth/attack	beheatk1
 monsters/behemoth/pain		behepain
 monsters/behemoth/die		behedie
+monsters/behemoth/melt		behemelt
 
 $random monsters/behemoth/fire		{ monsters/behemoth/fire1 monsters/behemoth/fire2 }
 monsters/behemoth/fire1		behefir1
