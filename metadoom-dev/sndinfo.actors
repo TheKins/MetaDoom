@@ -423,7 +423,15 @@ monsters/bulldemon/body2			buldbod2
 // behemoth
 monsters/behemoth/see		behesee
 monsters/behemoth/attack	beheatk1
+monsters/behemoth/pain		behepain
 monsters/behemoth/die		behedie
+
 $random monsters/behemoth/fire		{ monsters/behemoth/fire1 monsters/behemoth/fire2 }
 monsters/behemoth/fire1		behefir1
 monsters/behemoth/fire2		behefir2
+
+$random monsters/behemoth/missilehit 	{ monsters/behemoth/missilehit1 monsters/behemoth/missilehit2 monsters/behemoth/missilehit3 monsters/behemoth/missilehit4 }
+monsters/behemoth/missilehit1	behemis1
+monsters/behemoth/missilehit2	behemis2
+monsters/behemoth/missilehit3	behemis3
+monsters/behemoth/missilehit4	behemis4
