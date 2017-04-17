@@ -168,6 +168,7 @@ TAGHOLOGRAM = "Hologram";
 
 // Powerups
 GOTHASTE = "HasteSphere!";
+GOTQUAD = "Quad Damage!";
 
 // Quit Messages
 QUITMSG = "Are you sure you want to\nquit this great game?";

@@ -60,3 +60,14 @@ ACTOR MetaMedikit : Health replaces Medikit
 		Stop
 	}
 }
+
+ACTOR MetaMedikitNoItemSpawn : MetaMedikit
+{
+	States
+	{
+	Spawn:
+		MEDI A 0
+		MEDI A 0 
+		goto Chill
+	}
+}

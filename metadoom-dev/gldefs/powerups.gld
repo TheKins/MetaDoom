@@ -26,3 +26,17 @@ object MetaMegaSphere
 {
     frame MEGA { light MEGASPHERE }
 }
+
+pulselight QUADSPHERE
+{
+    color 0.8 0.2 0.7
+    size 40
+    secondarySize 42
+    interval 2.0
+    offset 0 16 0
+}
+
+object MetaQuadDamage
+{
+    frame QUAD { light QUADSPHERE }
+}

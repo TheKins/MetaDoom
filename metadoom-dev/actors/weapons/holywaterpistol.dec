@@ -83,7 +83,15 @@ ACTOR HolyWaterPistol : MetaDoomWeapon
 	Fire:
 		HWPH A 4
 		HWPH A 0 A_JumpIfNoAmmo("NoAmmo")
-		HWPH A 0 A_PlaySound("weapons/waterpistol/fire", CHAN_WEAPON)
+		HWPH A 0 
+		{
+			A_PlaySound("weapons/waterpistol/fire", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
 		HWPH A 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 1, 0, 5, FPF_NOAUTOAIM, random(-4,4))
 		HWPH AAAAAAAAAA 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 0, 0, 5, FPF_NOAUTOAIM, random(-4,4))
 		HWPH BBBBBBBBBB 1 A_FireCustomMissile ("HolyWaterShot", random(-4,4), 0, 0, 5, FPF_NOAUTOAIM, random(-4,4))

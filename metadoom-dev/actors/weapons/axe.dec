@@ -64,7 +64,15 @@ ACTOR MetaAxe : MetaDoomWeapon
 		TNT1 A 0 A_PlaySound("weapons/swap", CHAN_AUTO, 0.5)
 		AXEG BCDEFG 1 
 		TNT1 A 2
-		AXEG I 1 A_PlaySound("weapons/axe/fire")
+		AXEG I 1 
+		{
+			A_PlaySound("weapons/axe/fire");
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
 		AXEG JK 1
 		AXEG L 1 A_CustomPunch(7 * random(1, 5), TRUE, CPF_NOTURN,"MetaAxePuff",80,0,0,"BasicArmorBonus","weapons/axe/hit")
 		AXEG MNO 1

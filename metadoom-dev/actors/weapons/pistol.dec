@@ -100,6 +100,12 @@ ACTOR MetaPistol : MetaDoomWeapon
 					A_TakeInventory("Clip", 1);
 				}
 				A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
+				
+				if (CountInv("PowerDamage") > 0)
+				{
+					A_PlaySound("powerups/quad/use", CHAN_5);
+				}
+				
 				A_GunFlash;
 				A_AlertMonsters;
 			}

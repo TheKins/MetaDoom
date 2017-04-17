@@ -78,7 +78,15 @@ ACTOR MetaFireExtinguisher : MetaDoomWeapon
 		FIEX A 1 Offset(0,32) 
 		goto Ready
 	Fire:
-		FIEX A 0 A_PlaySound("weapons/fireextinguisher/fire", CHAN_WEAPON, 1.0, 1)
+		FIEX A 0 
+		{
+			A_PlaySound("weapons/fireextinguisher/fire", CHAN_WEAPON, 1.0, 1);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
 		FIEX B 1 Offset(1,32) A_FireCustomMissile ("MetaFireExtinguisherSpray", random(-16,16), 1, 4, 0, FPF_NOAUTOAIM, random(-4,4))
 		FIEX B 1 Offset(-1,32) A_FireCustomMissile ("MetaFireExtinguisherSpray", random(-16,16), 0, 4, 0, FPF_NOAUTOAIM, random(-4,4))
 		FIEX B 1 Offset(1,32) A_FireCustomMissile ("MetaFireExtinguisherSpray", random(-16,16), 0, 4, 0, FPF_NOAUTOAIM, random(-4,4))

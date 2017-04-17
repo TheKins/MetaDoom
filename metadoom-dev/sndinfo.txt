@@ -35,6 +35,8 @@ powerups/berserk	getbzrk
 powerups/radsuit	getsuit
 powerups/haste		gethast
 powerups/invuln		getinvl
+powerups/quad		getquad
+powerups/quad/use	quadshot
 
 items/loot			getloot
 

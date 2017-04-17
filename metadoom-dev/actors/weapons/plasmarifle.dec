@@ -68,6 +68,12 @@ ACTOR MetaPlasmaRifle : MetaDoomWeapon
 		"####" B 1 bright Offset(0,37)
 		{
 			A_PlaySound("weapons/plasmarifle/fire", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
 			A_GunFlash;
 			A_FireCustomMissile("MetaPlasmaBall");
 			A_GiveInventory("PlasmaFired");
@@ -124,6 +130,12 @@ ACTOR MetaPlasmaRifle : MetaDoomWeapon
 		"####" B 1 bright Offset(0,37)
 		{
 			A_PlaySound("weapons/plasmarifle/pop", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
 			A_GunFlash;
 			A_FireCustomMissile("MetaPlasmaPop", 0, 0, 0, 0, FPF_NOAUTOAIM);
 			A_FireCustomMissile("MetaPlasmaPop", 16, 0, 0, 0, FPF_NOAUTOAIM);

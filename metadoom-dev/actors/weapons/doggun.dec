@@ -32,7 +32,15 @@ ACTOR MetaDogGun_HellHound : MetaDoomWeapon
 		"####" A 1 Offset(0,32) 
 		goto Ready
 	Fire:
-		"####" A 0 A_PlaySound("monsters/hellhound/bite")
+		"####" A 0 
+		{
+			A_PlaySound("monsters/hellhound/bite");
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
 		"####" CD 2
 		"####" E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"MetaDogPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
 		"####" F 2 
@@ -47,8 +55,13 @@ ACTOR MetaDogGun_HellHound : MetaDoomWeapon
 		TNT1 A 1 Offset(0,32)
 		TNT1 A 0 
 		{
-		A_FireCustomMissile("MetaDogBomb_HellHound",0,0,0,0,FPF_NOAUTOAIM);
-		A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
+			A_FireCustomMissile("MetaDogBomb_HellHound",0,0,0,0,FPF_NOAUTOAIM);
+			A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}			
 		}
 		TNT1 A 10
 		TNT1 A 0 A_TakeInventory("MetaDogGun_HellHound", 999)

@@ -75,6 +75,12 @@ ACTOR MetaSuperShotgun : MetaDoomWeapon
 		{
 			A_FireBullets (11.2, 7.1, 20, 5, "MetaBulletPuff");
 			A_PlaySound ("weapons/ssg/fire", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
 			A_GunFlash;
 			A_Quake (3,5,0,750,0);
 			A_ZoomFactor(0.9,ZOOM_INSTANT|ZOOM_NOSCALETURNING);

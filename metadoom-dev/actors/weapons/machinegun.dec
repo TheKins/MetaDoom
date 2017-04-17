@@ -76,6 +76,12 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 		MACG B 2 bright
 		{
 			A_PlaySound("weapons/machinegun/fire", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
 			A_GunFlash;
 			A_FireBullets(5.6, 0, 1, 5, "MetaBulletPuff");
 			A_AlertMonsters;
@@ -89,6 +95,12 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 		MACG K 1 bright Offset(0,37)
 		{
 			A_PlaySound("weapons/machinegun/missile", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
 			A_GunFlash;
 			A_AlertMonsters;
 			if (CountInv("MachinegunCheat") > 0)

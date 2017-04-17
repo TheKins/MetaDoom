@@ -119,6 +119,14 @@ statusbar fullscreen
 			//drawnumber 3, SMALLFONT2, green,  poweruptime MetaBerserkTimer, 219, 160;
 		}
 		
+		InInventory PowerDamage // Quad
+		{
+			drawimage "POWRBZRK", 90, 158;
+			drawimage "HUDBAR", 101, 160;
+			DrawBar "POWRBAR", "MTBAR", poweruptime MetaQuadDamage, horizontal, interpolate(8), 102, 161;
+			//drawnumber 3, SMALLFONT2, green,  poweruptime MetaBerserkTimer, 219, 160;
+		}
+		
 		InInventory PowerLightAmp // LightAmp
 		{
 			drawimage "POWRLAMP", 160, 158;
@@ -261,6 +269,14 @@ statusbar normal // Standard Doom Status bar
 			drawimage "POWRBZRK", 90, 158;
 			drawimage "HUDBAR", 101, 160;
 			DrawBar "POWRBAR", "MTBAR", poweruptime MetaBerserkTimer, horizontal, interpolate(8), 102, 161;
+			//drawnumber 3, SMALLFONT2, green,  poweruptime MetaBerserkTimer, 219, 160;
+		}
+		
+		InInventory PowerDamage // Quad
+		{
+			drawimage "POWRBZRK", 90, 158;
+			drawimage "HUDBAR", 101, 160;
+			DrawBar "POWRBAR", "MTBAR", poweruptime MetaQuadDamage, horizontal, interpolate(8), 102, 161;
 			//drawnumber 3, SMALLFONT2, green,  poweruptime MetaBerserkTimer, 219, 160;
 		}
 		
