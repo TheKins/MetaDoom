@@ -59,7 +59,21 @@ statusbar fullscreen
 		
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;
-		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+		
+		IfCVarInt meta_pistolammo, 0, equal
+		{
+			DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+		}
+		
+		IfCVarInt meta_pistolammo, 1, equal
+		{
+			IsSelected "MetaPistol"
+			{
+				DrawBar "AMMOBAR", "MTBAR", ammo(Clip), horizontal, interpolate(8)|reverse, 226, 181;
+			} else {
+				DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+			}
+		}
 		
 		drawimage "HUDSTAT2", 94, 169;
 		
@@ -209,7 +223,21 @@ statusbar normal // Standard Doom Status bar
 		
 		drawimage "AMICON", 283, 180;
 		drawimage "HUDBAR", 225, 180;
-		DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+		
+		IfCVarInt meta_pistolammo, 0, equal
+		{
+			DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+		}
+		
+		IfCVarInt meta_pistolammo, 1, equal
+		{
+			IsSelected "MetaPistol"
+			{
+				DrawBar "AMMOBAR", "MTBAR", ammo(Clip), horizontal, interpolate(8)|reverse, 226, 181;
+			} else {
+				DrawBar "AMMOBAR", "MTBAR", ammo1, horizontal, interpolate(8)|reverse, 226, 181;
+			}
+		}
 		
 		drawimage "HUDSTAT", 94, 169;
 		
