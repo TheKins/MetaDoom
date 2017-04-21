@@ -161,7 +161,7 @@ ACTOR MetaUnmaker : MetaDoomWeapon
 		goto Ready
 	AltFire_Charge:
 		UNMA A 0
-		UNMA A 0 A_PlaySound("weapons/unmaker/altcharge", CHAN_WEAPON)
+		UNMA A 0 A_PlaySound("weapons/unmaker/altcharge", CHAN_6)
 		UNMA AAAAAAA 1 A_WeaponOffset(random(-1,1),random(31,33), WOF_INTERPOLATE)
 		UNMA AAAAAAA 1 A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE)
 		UNMA AAAAAAA 1 A_WeaponOffset(random(-4,4),random(27,37), WOF_INTERPOLATE)
