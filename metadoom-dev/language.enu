@@ -286,6 +286,7 @@ OB_IMPLORD = "%o was blinked out by an Imp Lord.";
 OB_IMPLORDHIT = "%o was jumped by an Imp Lord.";
 OB_BULLDEMONHIT = "%o was gored by a Bull Demon.";
 OB_FATSO2 = "%o was crispified by a Behemoth.";
+OB_SPIBORG = "%o was railed by a Spiborg.";
 
 OB_METAFIST = "%o was Gloriously Killed by %k.";
 OB_BERSERK = "%o ate the Berserker Rage of %k.";

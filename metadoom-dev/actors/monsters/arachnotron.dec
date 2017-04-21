@@ -112,7 +112,7 @@ ACTOR MetaSpiborg : MonsterCore
 	PainSound "monsters/arachnotron/pain"
 	DeathSound "monsters/spiborg/die"
 	ActiveSound "monsters/arachnotron/idle"
-	Obituary "$OB_BABY"
+	Obituary "$OB_SPIBORG"
 	scale 0.75
 	States
 	{
@@ -174,7 +174,7 @@ Actor SpiborgRailCore
 ACTOR SpiborgRailExplosion : Explosion
 {
 	scale 2
-	Obituary "$OB_GAUSS"
+	//Obituary "$OB_GAUSS"
 	+ALWAYSPUFF
 	Decal PlasmaScorch
 	damagetype Gauss
