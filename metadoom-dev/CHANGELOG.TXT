@@ -12,6 +12,7 @@ Miscellaneous:
 - Fixed Unmaker firing sound cutting off the altfire sound. (Thanks TerminusEst13!)
 - Fixed an obscure bug with Imp Lords that occured when they teleported away
   just after killing the player, where they would forget that gravity exists.
+- Revenants and Fiends no longer infight. They are now Skelefriends. Pallingtons?
 
 v3.666 "Samuel" (08/04/17)
 ==========================
