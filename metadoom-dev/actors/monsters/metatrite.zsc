@@ -18,10 +18,7 @@ class MetaTrite : MonsterCore
 		Radius 31;
 		Height 25;
 		Monster;
-		//+NOGRAVITY
 		+DROPOFF
-		//+SPAWNCEILING
-		+INCOMBAT
 		+NOVERTICALMELEERANGE
 		+ROLLSPRITE
 		+ROLLCENTER
@@ -76,6 +73,7 @@ class MetaTrite : MonsterCore
 		TRIT D 3 A_Chase("Melee","JumpUp");
 		Loop;
 	JumpUp:
+		TRIT A 0 A_JumpIf((ceilingz - floorz) > 128, "SeeFloor");
 		TRIT A 0 A_PlaySound("monsters/trite/squeak");
 		TRIT AAAAAAAAA 1
 		{
