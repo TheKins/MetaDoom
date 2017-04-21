@@ -13,6 +13,8 @@ Miscellaneous:
 - Fixed an obscure bug with Imp Lords that occured when they teleported away
   just after killing the player, where they would forget that gravity exists.
 - Revenants and Fiends no longer infight. They are now Skelefriends. Pallingtons?
+- Added a new "Spooky Spoders" CVAR! (meta_nospoders) This controls whether or
+  not Trites spawn, for the violently arachnophobic among you.
 
 v3.666 "Samuel" (08/04/17)
 ==========================
