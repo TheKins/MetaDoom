@@ -1,3 +1,15 @@
+v4 "Fred" (??/??/17)
+====================
+Spiel goes here. Everything is subject to change! Forget all you have seen!
+
+- Added # new weapons ()
+- Added # new enemies (Behemoth, Spiborg)
+- Added # inventory items ()
+- Added # powerups (Quad Damage!)
+
+Miscellaneous:
+- Ammo bar now effected by meta_pistolammo, as it should be.
+
 v3.666 "Samuel" (08/04/17)
 ==========================
 Some final changes and additions before I set off to work on v4...
