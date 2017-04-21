@@ -448,3 +448,11 @@ monsters/spiborg/brainpop	sprgboom
 monsters/spiborg/die		sprgdie
 
 $attenuation monsters/spiborg/brainpop 0.5
+
+// trite
+$random monsters/trite/squeak	{ monsters/trite/squeak1 monsters/trite/squeak2 }
+monsters/trite/squeak1		tritact1
+monsters/trite/squeak2		tritact2
+
+monsters/trite/bite			tritbite
+monsters/trite/die			tritdie
