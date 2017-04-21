@@ -7,7 +7,6 @@ Arachnotron
 */
 
 // Currently more or less identical to the original Doom monster, behavior-wise.
-// TODO: Twiddle with, add at least one variant!
 
 ACTOR MetaArachnotron : MonsterCore
 {
@@ -95,3 +94,133 @@ ACTOR MetaArachnotronPlasma
 }
 
 
+// The Spiborg, a Doom 64 Arach that uses a charge beam attack. Kind of had to go
+// off the reservation a bit here...
+
+ACTOR MetaSpiborg : MonsterCore
+{
+	Health 500
+	Radius 64
+	Height 64
+	Mass 600
+	Speed 12
+	PainChance 128
+	Monster
+	+FLOORCLIP
+	//+BOSSDEATH
+	SeeSound "monsters/spiborg/see"
+	PainSound "monsters/arachnotron/pain"
+	DeathSound "monsters/spiborg/die"
+	ActiveSound "monsters/arachnotron/idle"
+	Obituary "$OB_BABY"
+	scale 0.75
+	States
+	{
+	Spawn:
+		2SPI AB 10 A_Look
+		Loop
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood")
+		2SPI A 10
+		2SPI A 3 { A_Chase; A_PlaySound("monsters/spiborg/walk"); }
+		2SPI ABB 3 A_Chase
+		2SPI C 3 { A_Chase; A_PlaySound("monsters/spiborg/walk"); }
+		2SPI CDD 3 A_Chase
+		Goto See+2
+	Missile:
+		2SPI A 0 A_PlaySound("monsters/spiborg/charge", CHAN_WEAPON)
+		2SPI A 24 BRIGHT A_FaceTarget
+		2SPI E 4 BRIGHT { A_PlaySound("monsters/spiborg/fire", CHAN_WEAPON); A_CustomRailgun (10, 0, Red, none, RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 0, SpiborgRailExplosion, 0, 0, 0, 8, 3, 1, SpiborgRailCore, -8); }
+		2SPI E 4 BRIGHT
+		2SPI E 1 A_SpidRefire
+		goto See
+	Pain:
+		2SPI F 3
+		2SPI F 3 A_Pain
+		Goto See+2
+	Death:
+		2SPI G 0 A_Jump (128, 2)
+		2SPI G 0 A_GiveToTarget("ScoreItem", 600)
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		2SPI G 0 A_PlaySound("monsters/arachnotron/die2")
+		2SPI G 20 A_Scream
+		2SPI G 0 { A_PlaySound("monsters/spiborg/brainpop", CHAN_BODY); A_SpawnItem("SpiborgBrainPop",0,56); }
+		2SPI H 5 A_NoBlocking
+		2SPI I 5
+		2SPI J 5 
+		2SPI K 5 A_PlaySound("monsters/arachnotron/body")
+		2SPI L -1 A_KillMaster //A_BossDeath
+		Stop
+    Raise:
+		2SPI P 5
+		2SPI LKJIHG 5
+		Goto See+2
+	}
+}
+
+Actor SpiborgRailCore
+{
+	+NOINTERACTION
+	renderstyle Add
+	States
+	{
+	Spawn:
+		SBSH A 0
+		SBSH A 1 A_FadeOut(0.1)
+		wait
+	}
+}
+
+ACTOR SpiborgRailExplosion : Explosion
+{
+	scale 2
+	Obituary "$OB_GAUSS"
+	+ALWAYSPUFF
+	Decal PlasmaScorch
+	damagetype Gauss
+	States
+	{
+		Spawn:
+		PLSE B 0 bright
+		PLSE B 4 BRIGHT
+		{
+			A_PlaySound("inventory/teslarocket/explode", CHAN_WEAPON);
+			A_Explode(8,128);
+			A_Quake (3,5,0,750,0);
+			A_SpawnItem("ShockwaveSmall");
+		}
+		PLSE C 3 BRIGHT 
+		PLSE D 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR SpiborgBrainPop
+{
+	scale 0.25
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		MISL A 0
+		MISL B 0 
+		{
+			//A_Quake (3,5,0,750,0);
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+		}
+		MISL B 4 BRIGHT
+		MISL C 3 BRIGHT
+		MISL D 2 BRIGHT
+		Stop
+	}
+}
