@@ -497,10 +497,10 @@ actor ArachnotronSpawner replaces Arachnotron
 		goto Arach
 	ContentLocustVarietyPack:
 		TNT1 A 0 A_Jump(90,"Borg")
-		goto Manc
+		goto Arach
 	Tier2:
 		TNT1 A 0 A_Jump(128,"Borg")
-		goto Manc
+		goto Arach
 	Arach:
 		TNT1 A 0 A_SpawnItemEx("MetaArachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid)
 		goto CreepyStalker
