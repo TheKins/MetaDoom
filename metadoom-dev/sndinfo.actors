@@ -456,3 +456,6 @@ monsters/trite/squeak2		tritact2
 
 monsters/trite/bite			tritbite
 monsters/trite/die			tritdie
+monsters/trite/walk			tritwalk
+monsters/trite/jump			tritjump
+monsters/trite/land			tritland

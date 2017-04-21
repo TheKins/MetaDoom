@@ -27,6 +27,7 @@ class MetaTrite : MonsterCore
 		AttackSound "monsters/trite/bite";
 		PainSound "monsters/trite/squeak";
 		DeathSound "monsters/trite/die";
+		ActiveSound "monsters/trite/squeak";
 		HitObituary "$OB_TRITE";
 		xscale 0.5;
 		yscale 0.5;
@@ -58,10 +59,10 @@ class MetaTrite : MonsterCore
 		TRIT A 10 A_Look;
 		Loop;
 	See:
-		TRIT A 3 Slow A_TriteChaseDecide;
-		TRIT B 3 Slow A_Chase("Melee",null);
-		TRIT C 3 Slow A_TriteWalk;
-		TRIT D 3 Slow A_Chase("Melee",null);
+		TRIT A 3 A_TriteChaseDecide;
+		TRIT B 3 A_Chase("Melee",null);
+		TRIT C 3 A_TriteWalk;
+		TRIT D 3 A_Chase("Melee",null);
 		Loop;
 	Melee:
 		TRIT A 3 Slow A_FaceTarget;
@@ -75,7 +76,7 @@ class MetaTrite : MonsterCore
 		Loop;
 	JumpUp:
 		TRIT A 0 A_JumpIf((ceilingz - floorz) > 100, "SeeFloor");
-		TRIT A 0 A_PlaySound("monsters/trite/squeak");
+		TRIT A 0 A_PlaySound("monsters/trite/jump");
 		TRIT AAAAAAAAA 1
 		{
 			ThrustThingZ(0,32,0,0);
@@ -90,8 +91,15 @@ class MetaTrite : MonsterCore
 		TRIT AAAAAA 3;
 		Goto SeeFloor;
 	Death:
-		TRIT G 4;
-		TRIT H 4 A_Scream;
+		TRIT G 4 A_Scream;
+		TRIT H 4
+		{
+			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+		}
 		TRIT IJK 4;
 		Stop;
 	}
@@ -113,6 +121,8 @@ class MetaTrite : MonsterCore
 		
 	void A_TriteChaseDecide ()
 	{
+		A_PlaySound ("monsters/trite/walk", CHAN_BODY);
+		
 		if (!bNoGravity)
 		{
 			SetStateLabel("SeeFloor");
@@ -168,7 +178,7 @@ class MetaTrite : MonsterCore
 	// will do a thing with this later
 	void A_TriteWalk ()
 	{
-		//A_PlaySound ("stalker/walk", CHAN_BODY);
+		A_PlaySound ("monsters/trite/walk", CHAN_BODY);
 		A_Chase ();
 	}
 
