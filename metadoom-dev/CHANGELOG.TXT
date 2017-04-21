@@ -9,6 +9,7 @@ Spiel goes here. Everything is subject to change! Forget all you have seen!
 
 Miscellaneous:
 - Ammo bar now effected by meta_pistolammo, as it should be.
+- Fixed Unmaker firing sound cutting off the altfire sound. (Thanks TerminusEst13!)
 
 v3.666 "Samuel" (08/04/17)
 ==========================
