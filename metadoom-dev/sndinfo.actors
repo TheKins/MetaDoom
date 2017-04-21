@@ -446,3 +446,5 @@ monsters/spiborg/charge		sprgchrg
 monsters/spiborg/fire		sprgfire
 monsters/spiborg/brainpop	sprgboom
 monsters/spiborg/die		sprgdie
+
+$attenuation monsters/spiborg/brainpop 0.5

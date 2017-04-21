@@ -148,7 +148,7 @@ ACTOR MetaSpiborg : MonsterCore
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		2SPI G 0 A_PlaySound("monsters/arachnotron/die2")
 		2SPI G 20 A_Scream
-		2SPI G 0 { A_PlaySound("monsters/spiborg/brainpop", CHAN_BODY); A_SpawnItem("SpiborgBrainPop",0,56); }
+		2SPI G 0 { A_PlaySound("monsters/spiborg/brainpop", CHAN_7); A_SpawnItem("SpiborgBrainPop",0,56); }
 		2SPI H 5 A_NoBlocking
 		2SPI I 5
 		2SPI J 5 
