@@ -250,3 +250,9 @@ Object CyberdemonRocket
 {
 	frame CISL { light MetaRocketGlow }
 }
+
+object SpiborgPlasma
+{
+    frame PLSS { light MetaPlasmaBall }
+    frame PLSE { light MetaPlasmaBallExplosion }
+}
