@@ -3,7 +3,7 @@ v4 "Fred" (??/??/17)
 Spiel goes here. Everything is subject to change! Forget all you have seen!
 
 - Added # new weapons ()
-- Added # new enemies (Behemoth, Spiborg)
+- Added # new enemies (Behemoth, Spiborg, Trite)
 - Added # inventory items ()
 - Added # powerups (Quad Damage!)
 
