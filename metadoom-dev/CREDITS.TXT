@@ -61,11 +61,11 @@ Phobos867 (Imp Lord sprites)
 Blue Shadow (Doom 3 Keycard Sprites)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
-Captain Toenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
+CaptainToenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
 Xenaero (Chainsaw ScriptedMarine sprites)
 Grimm (Pistol ScriptedMarine sprites)
 Xim (Rocket Launcher and Machinegun ScriptedMarine sprites)
-CaptainToenail (Plasma Rifle ScriptedMarine sprites)
+CaptainToenail (Plasma Rifle ScriptedMarine sprites, Trite sprites)
 Toke (BFG9000 ScriptedMarine sprites)
 
 TerminusEst13 (moral support)
