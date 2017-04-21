@@ -24,6 +24,7 @@ ACTOR MetaArachnotron : MonsterCore
 	DeathSound "monsters/arachnotron/die1"
 	ActiveSound "monsters/arachnotron/idle"
 	Obituary "$OB_BABY"
+	Species "BabySpider"
 	States
 	{
 	Spawn:
@@ -114,6 +115,7 @@ ACTOR MetaSpiborg : MonsterCore
 	ActiveSound "monsters/arachnotron/idle"
 	Obituary "$OB_SPIBORG"
 	scale 0.75
+	Species "BabySpider"
 	States
 	{
 	Spawn:
