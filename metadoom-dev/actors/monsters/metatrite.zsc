@@ -1,0 +1,162 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Trite
+----------------------------
+*/
+
+// Using the Trite actor from Strife as a base. Pardon my dust.
+
+class MetaTrite : MonsterCore
+{
+	Default
+	{
+		Health 80;
+		Painchance 40;
+		Speed 16;
+		Radius 31;
+		Height 25;
+		Monster;
+		//+NOGRAVITY
+		+DROPOFF
+		//+SPAWNCEILING
+		+INCOMBAT
+		+NOVERTICALMELEERANGE
+		MaxDropOffHeight 32;
+		MinMissileChance 150;
+		SeeSound "stalker/sight";
+		AttackSound "stalker/attack";
+		PainSound "stalker/pain";
+		DeathSound "stalker/death";
+		ActiveSound "stalker/active";
+		HitObituary "$OB_STALKER";
+		xscale 0.5;
+		yscale 0.5;
+	}
+
+	States
+	{
+	Spawn:
+		TRIT A 0;
+		TRIT A 0 A_Jump(128, "SpawnPart2a");
+		goto SpawnPart2b;
+	SpawnPart2a:
+		TRIT AAAAAAAAA 1
+		{
+			ThrustThingZ(0,32,0,0);
+			self.bNoGravity = true;
+		}
+		//TRIT A 0 A_JumpIf( pos.z + 25 = CeilingZ, "SpawnPart2b");
+		loop;
+	SpawnPart2b:
+		TRIT A 1 A_TriteLookInit;
+		Loop;
+	LookCeiling:
+		TRIT A 10 A_Look;
+		Loop;
+	LookFloor:
+		TRIT A 10 A_Look;
+		Loop;
+	See:
+		TRIT A 3 Slow A_TriteChaseDecide;
+		TRIT B 3 Slow A_Chase;
+		TRIT C 3 Slow A_TriteWalk;
+		TRIT D 3 Slow A_Chase;
+		Loop;
+	Melee:
+		TRIT A 3 Slow A_FaceTarget;
+		TRIT B 3 Slow A_TriteAttack;
+	SeeFloor:
+		TRIT A 3 A_TriteWalk;
+		TRIT B 3 A_Chase;
+		TRIT C 3 A_TriteWalk;
+		TRIT D 3 A_Chase;
+		Loop;
+	Pain:
+		TRIT A 1 A_Pain;
+		Goto See;
+	Drop:
+		TRIT A 2 A_TriteDrop;
+		TRIT AAAAAA 3;
+		Goto SeeFloor;
+	Death:
+		TRIT G 4;
+		TRIT H 4 A_Scream;
+		TRIT IJK 4;
+		Stop;
+	}
+	
+	override void Tick()
+	{
+		if (!bNoGravity)
+		{
+			scale.y = 0.5;
+		} else {
+			scale.y = -0.5;
+		}
+		Super.Tick();
+	}
+		
+	void A_TriteChaseDecide ()
+	{
+		if (!bNoGravity)
+		{
+			SetStateLabel("SeeFloor");
+		}
+		else if (ceilingz > pos.z + height)
+		{
+			SetStateLabel("Drop");
+		}
+	}
+
+	void A_TriteLookInit ()
+	{
+		State st;
+		if (bNoGravity)
+		{
+			st = FindState("LookCeiling");
+		}
+		else
+		{
+			st = FindState("LookFloor");
+		}
+		if (st != CurState.NextState)
+		{
+			SetState (st);
+		}
+	}
+
+	void A_TriteDrop ()
+	{
+		bNoVerticalMeleeRange = false;
+		bNoGravity = false;
+	}
+
+	void A_TriteAttack ()
+	{
+		if (bNoGravity)
+		{
+			SetStateLabel("Drop");
+		}
+		else if (target != null)
+		{
+			A_FaceTarget ();
+			if (CheckMeleeRange ())
+			{
+				int damage = (random[Trite]() & 7) * 2 + 2;
+
+				int newdam = target.DamageMobj (self, self, damage, 'Melee');
+				target.TraceBleed (newdam > 0 ? newdam : damage, self);
+			}
+		}
+	}
+
+	void A_TriteWalk ()
+	{
+		A_PlaySound ("stalker/walk", CHAN_BODY);
+		A_Chase ();
+	}
+
+	
+}
