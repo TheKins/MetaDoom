@@ -438,3 +438,11 @@ monsters/behemoth/missilehit3	behemis3
 monsters/behemoth/missilehit4	behemis4
 
 monsters/behemoth/missileloop	beheloop
+
+// spiborg
+monsters/spiborg/see		sprgsee
+monsters/spiborg/walk		sprgwalk
+monsters/spiborg/charge		sprgchrg
+monsters/spiborg/fire		sprgfire
+monsters/spiborg/brainpop	sprgboom
+monsters/spiborg/die		sprgdie
