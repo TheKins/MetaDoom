@@ -441,6 +441,7 @@ monsters/behemoth/missileloop	beheloop
 
 // spiborg
 monsters/spiborg/see		sprgsee
+monsters/spiborg/idle		sprgact
 monsters/spiborg/walk		sprgwalk
 monsters/spiborg/charge		sprgchrg
 monsters/spiborg/fire		sprgfire

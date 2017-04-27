@@ -112,7 +112,7 @@ ACTOR MetaSpiborg : MonsterCore
 	SeeSound "monsters/spiborg/see"
 	PainSound "monsters/arachnotron/pain"
 	DeathSound "monsters/spiborg/die"
-	ActiveSound "monsters/arachnotron/idle"
+	ActiveSound "monsters/spiborg/idle"
 	Obituary "$OB_SPIBORG"
 	scale 0.75
 	Species "BabySpider"
