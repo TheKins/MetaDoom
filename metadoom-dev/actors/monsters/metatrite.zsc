@@ -88,8 +88,11 @@ class MetaTrite : MonsterCore
 		Goto See;
 	Drop:
 		TRIT A 2 A_TriteDrop;
-		TRIT AAAAAA 3;
-		Goto SeeFloor;
+		TRIT A 1 A_CheckSolidFooting("Landing");
+		wait;
+	Landing:
+		TRIT A 4 A_PlaySound("bodyfalls/medium", CHAN_6);
+		goto SeeFloor;
 	Death:
 		TRIT G 4 A_Scream;
 		TRIT H 4
