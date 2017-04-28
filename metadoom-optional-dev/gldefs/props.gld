@@ -17,3 +17,33 @@ object MetaBurningBarrel
 {
     frame FCAN { light FIREBARREL }
 }
+
+object MetaRedTorch
+{
+    frame TRED { light BIGREDTORCH }
+}
+
+object MetaGreenTorch
+{
+    frame TGRN { light BIGGREENTORCH }
+}
+
+object MetaBlueTorch
+{
+    frame TBLU { light BIGBLUETORCH }
+}
+
+object MetaShortRedTorch
+{
+    frame SMRT { light SMALLREDTORCH }
+}
+
+object MetaShortGreenTorch
+{
+    frame SMGT { light SMALLGREENTORCH }
+}
+
+object MetaShortBlueTorch
+{
+    frame SMBT { light SMALLBLUETORCH }
+}
