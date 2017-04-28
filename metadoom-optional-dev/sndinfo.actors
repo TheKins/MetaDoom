@@ -51,3 +51,6 @@ props/glass/shard2						shard2
 props/glass/shard3						shard3
 props/glass/shard4						shard4
 $volume props/glass/shard 0.5
+
+props/burningbarrel/loop				burnbarl
+$volume props/burningbarrel/loop 0.05

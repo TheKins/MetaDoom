@@ -236,3 +236,20 @@ Actor MetaColumn_Glow : MetaTechLamp_Glow
 		loop
 	}
 }
+
+// burning barrel
+ACTOR MetaBurningBarrel replaces BurningBarrel
+{
+	Radius 16
+	Height 32
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		FCAN A 0
+		FCAN A 0 A_PlaySoundEx("props/burningbarrel/loop", "Body", 1)
+		FCAN ABC 4 Bright
+		Loop
+	}
+}
