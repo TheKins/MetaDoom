@@ -162,7 +162,7 @@ ACTOR MetaTechLamp2 replaces TechLamp2
 	Death:
 		TLP2 E 0 A_RemoveChildren(true,RMVF_MISC)
 		TLP2 E 0 A_PlaySound("props/techlamp/break")
-		TLMP E 1 
+		TLP2 E 1 
 		{
 			A_CustomMissile ("MetaGibGlass", 40, 2, random(0,360), 2, 6);
 			A_CustomMissile ("MetaGibGlass", 40, 2, random(0,360), 2, 6);
