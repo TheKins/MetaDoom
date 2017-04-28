@@ -176,3 +176,61 @@ Actor MetaTechLamp2_Glow : MetaTechLamp_Glow
 		loop
 	}
 }
+
+// Column
+Actor MetaColumn replaces Column
+{
+	health 5
+	Radius 16
+	Height 48
+	DeathHeight 48
+	ProjectilePassHeight -16
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	States
+	{
+	Spawn:
+		COLU A 0
+		COLU A 0 A_SpawnItemEx("MetaColumn_Glow",45,0,0,0,0,0,0,SXF_SETMASTER)
+		goto Idle
+	Idle:
+		COLU A 1 Bright
+		Loop
+	Death:
+		COLU B 0 A_RemoveChildren(true,RMVF_MISC)
+		COLU B 0 A_PlaySound("props/techlamp/break")
+		COLU B 1 
+		{
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 45, 2, random(0,360), 2, 6);
+		}
+		COLU B -1
+		stop
+	}
+}
+
+Actor MetaColumn_Glow : MetaTechLamp_Glow
+{
+	yscale 0.5
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0
+		goto Idle
+	Idle:
+		TLGL A 1 bright A_Warp(AAPTR_MASTER,0,0,40,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE)
+		loop
+	}
+}
