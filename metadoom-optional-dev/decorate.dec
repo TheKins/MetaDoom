@@ -8,7 +8,13 @@ Index
 
 // LOAD ME WITH ANCIENT ALIENS AT YOUR PERIL AND SHIT
 
+// Other Stuff
+#include "actors/blood_perm.dec"
+
+// Props
+#include "actors/props/corpses.dec"
+
+// Actors
 #include "actors/monsters/wolfss.dec"
 #include "actors/monsters/keen.dec"
-
 #include "actors/monsters/scriptedmarine.dec"
