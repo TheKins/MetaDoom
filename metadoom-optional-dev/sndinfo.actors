@@ -71,3 +71,8 @@ $volume props/floatingskull	 0.05
 
 props/beatingheart					dspunch
 $volume props/beatingheart 0.025
+
+props/torch/large					trchbig
+$volume props/torch/large 0.02
+props/torch/small					trchsmol
+$volume props/torch/small 0.02
