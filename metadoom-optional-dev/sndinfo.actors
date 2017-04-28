@@ -63,3 +63,5 @@ $volume props/lighthum2 0.01
 
 props/lighthum3		lite3
 $volume props/lighthum3 0.025
+
+props/techpillar/break				pilrbrek

@@ -260,16 +260,45 @@ ACTOR MetaBurningBarrel replaces BurningBarrel
 // tech pillar
 ACTOR MetaTechPillar replaces TechPillar
 {
-  Radius 16
-  Height 128
-  ProjectilePassHeight -16
-  +SOLID
-  States
-  {
-  Spawn:
-	ELEC A 0
-	ELEC A 0 A_PlaySoundEx("props/lighthum2", "Body", 1)
-    ELEC A -1
-    Stop
-  }
+	health 5
+	Radius 16
+	Height 128
+	DeathHeight 128
+	ProjectilePassHeight -16
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	States
+	{
+	Spawn:
+		ELEC A 0
+		ELEC A 0 A_PlaySoundEx("props/lighthum2", "Body", 1)
+		ELEC A -1
+		Stop
+	Death:
+		ELEC B 0 A_RemoveChildren(true,RMVF_MISC)
+		ELEC B 0 A_PlaySound("props/techpillar/break")
+		ELEC B 1 
+		{
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", random(40,119), 2, random(0,360), 2, 6);
+		}
+		ELEC B -1
+		stop
+	}
 }
