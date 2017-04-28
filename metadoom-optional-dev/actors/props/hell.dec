@@ -1,0 +1,39 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Hell Props
+----------------------------
+*/
+
+ACTOR MetaFloatingSkull replaces FloatingSkull
+{
+	Radius 16
+	Height 26
+	ProjectilePassHeight -16
+	+SOLID
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		FSKU A 0
+		FSKU A 0 A_PlaySoundEx("props/floatingskull", "Body", 1)
+		FSKU ABCB 6 Bright
+		Loop
+	}
+}
+
+ACTOR MetaHeartColumn replaces HeartColumn
+{
+	Radius 16
+	Height 40
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		COL5 A 24 A_PlaySound("props/beatingheart")
+		COL5 B 24 A_PlaySound("props/beatingheart")
+		Loop
+	}
+}

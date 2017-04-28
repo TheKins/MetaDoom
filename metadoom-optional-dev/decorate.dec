@@ -13,6 +13,7 @@ Index
 
 // Props
 #include "actors/props/tech.dec"
+#include "actors/props/hell.dec"
 #include "actors/props/gore.dec"
 #include "actors/props/corpses.dec"
 
