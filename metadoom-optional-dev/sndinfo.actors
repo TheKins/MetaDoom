@@ -39,3 +39,15 @@ keens/budo/die		keenbudo
 
 keens/dave/hit		keenpcs1
 keens/dave/die		keendave
+
+// props
+
+$random props/techlamp/break			{ props/techlamp/break1 props/techlamp/break2}
+props/techlamp/break1					glass1
+props/techlamp/break2					glass2
+$random props/glass/shard				{ props/glass/shard1 props/glass/shard2 props/glass/shard3 props/glass/shard4 }
+props/glass/shard1						shard1
+props/glass/shard2						shard2
+props/glass/shard3						shard3
+props/glass/shard4						shard4
+$volume props/glass/shard 0.5

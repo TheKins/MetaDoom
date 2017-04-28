@@ -1,0 +1,120 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Tech Props
+----------------------------
+*/
+
+ACTOR MetaTechLamp replaces TechLamp
+{
+	health 5
+	Radius 16
+	Height 80
+	DeathHeight 80
+	ProjectilePassHeight -16
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	States
+	{
+	Spawn:
+		TLMP A 0
+		TLMP A 0 A_SpawnItemEx("MetaTechLamp_Glow",68,0,0,0,0,0,0,SXF_SETMASTER)
+		goto Idle
+	Idle:
+		TLMP ABCD 4 Bright
+		Loop
+	Death:
+		TLMP E 0 A_RemoveChildren(true,RMVF_MISC)
+		TLMP E 0 A_PlaySound("props/techlamp/break")
+		TLMP E 1 
+		{
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibGlass", 78, 2, random(0,360), 2, 6);
+		}
+		TLMP E -1
+		stop
+	}
+}
+
+Actor MetaTechLamp_Glow
+{
+	Renderstyle Add
+	+NOGRAVITY
+	-SOLID
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0
+		goto Idle
+	Idle:
+		TLGL A 1 bright A_Warp(AAPTR_MASTER,0,0,68,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE)
+		loop
+	Death:
+		TNT1 A 0
+		stop
+	}
+}
+
+actor MetaGibGlass
+{
+	+DOOMBOUNCE
+	PROJECTILE
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 2
+	Damage 0
+	bouncefactor 0.5
+	SeeSound "props/glass/shard"
+	gravity 0.5
+	Speed 5
+	States
+	{
+	Spawn:
+		GLAS A 0
+		GLAS AB 0 A_Jump(128, "Setup")
+		goto Setup
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1)
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0)
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") 
+		goto See
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll - 5))
+		loop
+	Bounce.Floor:
+		//"####" # 0 A_SpawnItem("BloodSplat")
+		goto ChangeDir
+	Bounce.Wall:
+		goto ChangeDir
+	Death:
+		"####" # 0 A_ChangeFlag(NOBLOCKMAP, 0)
+		"####" # 0 A_ChangeFlag(FLATSPRITE, 1)
+		"####" # -1
+		Stop
+    }
+}

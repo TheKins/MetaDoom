@@ -12,6 +12,7 @@ Index
 #include "actors/blood_perm.dec"
 
 // Props
+#include "actors/props/tech.dec"
 #include "actors/props/corpses.dec"
 
 // Actors
