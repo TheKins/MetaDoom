@@ -460,3 +460,14 @@ monsters/trite/die			tritdie
 monsters/trite/walk			tritwalk
 monsters/trite/jump			tritjump
 monsters/trite/land			tritland
+
+// summoner
+monsters/summoner/see		summsee
+monsters/summoner/pain		summpain
+monsters/summoner/popcorn	summpopc
+monsters/summoner/die		summdie
+
+$random monsters/summoner/warp		{ monsters/summoner/warp1 monsters/summoner/warp2 monsters/summoner/warp3 }
+monsters/summoner/warp1		summwrp1
+monsters/summoner/warp2		summwrp2
+monsters/summoner/warp3		summwrp3
