@@ -262,6 +262,21 @@ ACTOR MetaBurningBarrel replaces BurningBarrel
 	Height 32
 	ProjectilePassHeight -16
 	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	+NODAMAGE
+	damagefactor Fist, 0
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
+	painchance LightningStun, 0
+	painchance 255
 	States
 	{
 	Spawn:
@@ -269,6 +284,10 @@ ACTOR MetaBurningBarrel replaces BurningBarrel
 		FCAN A 0 A_PlaySoundEx("props/burningbarrel/loop", "Body", 1)
 		FCAN ABC 4 Bright
 		Loop
+	Pain:
+		FCAN A 0
+		FCAN A 0 A_PlaySoundEx("barrel/hit","Voice")
+		goto Spawn
 	}
 }
 
