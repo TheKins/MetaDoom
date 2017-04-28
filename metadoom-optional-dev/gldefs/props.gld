@@ -1,0 +1,19 @@
+object MetaTechLamp
+{
+    frame TLMP { light BIGLAMP }
+}
+
+object MetaTechLamp2
+{
+    frame TLP2 { light SMALLLAMP }
+}
+
+object MetaColumn
+{
+    frame COLU { light LAMP }
+}
+
+object MetaBurningBarrel
+{
+    frame FCAN { light FIREBARREL }
+}
