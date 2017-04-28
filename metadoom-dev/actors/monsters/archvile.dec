@@ -166,11 +166,11 @@ ACTOR MetaArchvileFire
 
 ACTOR MetaSummoner : MonsterCore
 {
-	Health 700
+	Health 600
 	Radius 20
 	Height 56
 	Mass 500
-	Speed 15
+	Speed 16
 	PainChance 10
 	Monster
 	MaxTargetRange 896
