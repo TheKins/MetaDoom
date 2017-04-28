@@ -22,6 +22,11 @@ ACTOR MetaTechLamp replaces TechLamp
 	+DONTGIB
 	+RANDOMIZE
 	+NOICEDEATH
+	damagefactor Fist, 0
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
 	States
 	{
 	Spawn:
@@ -139,6 +144,11 @@ ACTOR MetaTechLamp2 replaces TechLamp2
 	+DONTGIB
 	+RANDOMIZE
 	+NOICEDEATH
+	damagefactor Fist, 0
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
 	States
 	{
 	Spawn:
@@ -197,6 +207,11 @@ Actor MetaColumn replaces Column
 	+DONTGIB
 	+RANDOMIZE
 	+NOICEDEATH
+	damagefactor Fist, 0
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
 	States
 	{
 	Spawn:
@@ -273,6 +288,11 @@ ACTOR MetaTechPillar replaces TechPillar
 	+DONTGIB
 	+RANDOMIZE
 	+NOICEDEATH
+	damagefactor Fist, 0
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
 	States
 	{
 	Spawn:
