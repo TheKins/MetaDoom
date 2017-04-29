@@ -58,6 +58,11 @@ object MetaCandlestick
     frame CAND { light CANDLE }
 }
 
+object MetaGibCandle
+{
+    frame CAND { light CANDLE }
+}
+
 object MetaHeadCandles
 {
     frame POL3 { light SKULLCANDLES }
