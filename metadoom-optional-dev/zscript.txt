@@ -102,6 +102,7 @@ class MetaEnvActorSeed : Actor
 			{
 				A_SpawnItem("MetaSectorWaterCore");
 			}
+			
 			// Slime
 			if (floorpic == TexMan.CheckForTexture("SLIME01", TexMan.Type_Any))
 			{
@@ -138,6 +139,46 @@ class MetaEnvActorSeed : Actor
 			}
 			
 			if (floorpic == TexMan.CheckForTexture("SLIME08", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			// Lava
+			if (floorpic == TexMan.CheckForTexture("LAVA1", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorLavaCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("LAVA2", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorLavaCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("LAVA3", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorLavaCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("LAVA4", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorLavaCore");
+			}
+			// Blood
+			if (floorpic == TexMan.CheckForTexture("BLOOD1", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("BLOOD2", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("BLOOD3", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("BLOOD4", TexMan.Type_Any))
 			{
 				A_SpawnItem("MetaSectorSlimeCore");
 			}

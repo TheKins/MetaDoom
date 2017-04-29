@@ -20,3 +20,10 @@ world/gooflow2		goo2
 world/gooflow3		goo3
 world/gooflow4		goo4
 $volume world/gooflow 0.01
+
+$random world/lavaflow { world/lavaflow1 world/lavaflow2 world/lavaflow3 world/lavaflow4 }
+world/lavaflow1		lvaflow1
+world/lavaflow2		lvaflow2
+world/lavaflow3		lvaflow3
+world/lavaflow4		lvaflow4
+$volume world/lavaflow 0.1
