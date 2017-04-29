@@ -1,0 +1,8 @@
+$random world/acid 		{ world/acid1 world/acid2 world/acid3 world/acid4 world/acid5 world/acid6 }
+world/acid1				acid1
+world/acid2				acid2
+world/acid3				acid3
+world/acid4				acid4
+world/acid5				acid5
+world/acid6				acid6
+$volume world/acid 0.5

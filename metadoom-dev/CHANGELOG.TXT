@@ -19,6 +19,8 @@ Miscellaneous:
 Optional Content:
 - Props have now been meta-fied! The random set-dressing throughout the Doom
   world now cheerfully explodes, splatters and makes noises like you'd expect.
+- The world itself has been meta-fied! Nukage, for example, will bubble like
+  you'd expect it to.
 
 v3.666 "Samuel" (08/04/17)
 ==========================

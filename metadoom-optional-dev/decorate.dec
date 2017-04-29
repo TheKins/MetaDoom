@@ -11,6 +11,9 @@ Index
 // Other Stuff
 #include "actors/blood_perm.dec"
 
+// FANCY WORLD
+#include "actors/world/flats.dec"
+
 // Props
 #include "actors/props/tech.dec"
 #include "actors/props/hell.dec"
