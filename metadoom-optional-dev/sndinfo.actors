@@ -76,3 +76,13 @@ props/torch/large					trchbig
 $volume props/torch/large 0.02
 props/torch/small					trchsmol
 $volume props/torch/small 0.02
+
+props/wood/pain			woodpain
+props/wood/die1			wooddie1
+
+$random props/wood/gib 	{ props/wood/gib1 props/wood/gib2 props/wood/gib3 props/wood/gib4 }
+props/wood/gib1			wood1
+props/wood/gib2			wood2
+props/wood/gib3			wood3
+props/wood/gib4			wood4
+$volume props/wood/gib 0.5
