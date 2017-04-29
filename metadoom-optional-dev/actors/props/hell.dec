@@ -64,6 +64,7 @@ Actor MetaRedTorch_Glow
 	Renderstyle Add
 	+NOGRAVITY
 	-SOLID
+	xscale 0.5
 	states
 	{
 	Spawn:
@@ -102,6 +103,7 @@ ACTOR MetaBlueTorch replaces BlueTorch
 Actor MetaBlueTorch_Glow
 {
 	Renderstyle Add
+	xscale 0.5
 	+NOGRAVITY
 	-SOLID
 	states
@@ -142,6 +144,7 @@ ACTOR MetaGreenTorch replaces GreenTorch
 Actor MetaGreenTorch_Glow
 {
 	Renderstyle Add
+	xscale 0.5
 	+NOGRAVITY
 	-SOLID
 	states
@@ -183,6 +186,8 @@ ACTOR MetaShortRedTorch replaces ShortRedTorch
 Actor MetaShortRedTorch_Glow
 {
 	Renderstyle Add
+	xscale 0.4
+	yscale 0.8
 	+NOGRAVITY
 	-SOLID
 	states
@@ -223,6 +228,8 @@ ACTOR MetaShortBlueTorch replaces ShortBlueTorch
 Actor MetaShortBlueTorch_Glow
 {
 	Renderstyle Add
+	xscale 0.4
+	yscale 0.8
 	+NOGRAVITY
 	-SOLID
 	states
@@ -263,6 +270,8 @@ ACTOR MetaShortGreenTorch replaces ShortGreenTorch
 Actor MetaShortGreenTorch_Glow
 {
 	Renderstyle Add
+	xscale 0.4
+	yscale 0.8
 	+NOGRAVITY
 	-SOLID
 	states
