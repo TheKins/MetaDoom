@@ -582,7 +582,7 @@ ACTOR MetaHeadCandles replaces HeadCandles
 	{
 	Spawn:
 		POL3 A 0
-		POL3 A 0 A_PlaySoundEx("props/candles/candlestick", "Body", 1)
+		POL3 A 0 A_PlaySoundEx("props/candles/candelabra", "Body", 1)
 	Idle:
 		POL3 AB 6 Bright
 		Loop
