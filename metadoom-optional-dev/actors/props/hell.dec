@@ -457,3 +457,52 @@ ACTOR MetaTorchTree replaces TorchTree
 		stop
 	}
 }
+
+// candles
+ACTOR MetaCandelabra replaces Candelabra
+{
+	Radius 16
+	Height 60
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		CBRA A 0
+		CBRA A 0 A_PlaySoundEx("props/candles/candelabra", "Body", 1)
+		CBRA A -1 Bright
+		Stop
+	}
+}
+
+ACTOR MetaCandlestick replaces Candlestick
+{
+	Radius 20
+	Height 14
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		CAND A 0
+		CAND A 0 A_PlaySoundEx("props/candles/candlestick", "Body", 1)
+		CAND A -1 Bright
+		Stop
+	}
+}
+
+ACTOR MetaHeadCandles replaces HeadCandles
+{
+	Radius 16
+	Height 42
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		POL3 A 0
+		POL3 A 0 A_PlaySoundEx("props/candles/candlestick", "Body", 1)
+	Idle:
+		POL3 AB 6 Bright
+		Loop
+	}
+}

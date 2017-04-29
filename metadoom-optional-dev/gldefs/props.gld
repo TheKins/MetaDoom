@@ -47,3 +47,18 @@ object MetaShortBlueTorch
 {
     frame SMBT { light SMALLBLUETORCH }
 }
+
+object MetaCandelabra
+{
+    frame CBRA { light CANDELABRA }
+}
+
+object MetaCandlestick
+{
+    frame CAND { light CANDLE }
+}
+
+object MetaHeadCandles
+{
+    frame POL3 { light SKULLCANDLES }
+}
