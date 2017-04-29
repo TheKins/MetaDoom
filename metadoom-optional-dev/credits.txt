@@ -1,3 +1,5 @@
+Id Software (...for everything.)
+
 DoomJedi, ItsNatureToDie, PSTrooper (Additional rotations for WolfSS)
 Eurocom Software (Torch flare sprite)
 Nintendo (Slime bubble sprites)
@@ -6,8 +8,9 @@ Old Classic Retro Gaming (Apple II sounds - https://www.youtube.com/user/oldclas
 3D Realms (Glass gib sounds)
 Ritual Entertainment (Wood gib sounds)
 Rockstar Games (Wood gib sounds)
-Epic Games (slime sounds)
+Epic Games (Slime sounds)
+Valve (Some water sounds)
 
-Gutawer (core of fancy world system)
+Gutawer (ZScript core of Fancy World system)
 
 Captain J (WolfSS firing sound)
