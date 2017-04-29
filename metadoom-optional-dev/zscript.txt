@@ -63,125 +63,61 @@ class MetaEnvActorSeed : Actor
 			// yes, this is dumb. i know.
 			// nukage
 			if (floorpic == TexMan.CheckForTexture("NUKAGE1", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorNukageCore");
-			}
-			
+				A_SpawnItem("MetaSectorNukageCore");			
 			if (floorpic == TexMan.CheckForTexture("NUKAGE2", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorNukageCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("NUKAGE3", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorNukageCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("NUKAGE4", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorNukageCore");
-			}
 			
 			// water
 			if (floorpic == TexMan.CheckForTexture("FWATER1", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorWaterCore");
-			}
-			
+				A_SpawnItem("MetaSectorWaterCore");			
 			if (floorpic == TexMan.CheckForTexture("FWATER2", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorWaterCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("FWATER3", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorWaterCore");
-			}
-			
+				A_SpawnItem("MetaSectorWaterCore");			
 			if (floorpic == TexMan.CheckForTexture("FWATER4", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorWaterCore");
-			}
 			
 			// Slime
 			if (floorpic == TexMan.CheckForTexture("SLIME01", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("SLIME02", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("SLIME03", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("SLIME04", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
 			if (floorpic == TexMan.CheckForTexture("SLIME05", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("SLIME06", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("SLIME07", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("SLIME08", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
+				
 			// Lava
 			if (floorpic == TexMan.CheckForTexture("LAVA1", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorLavaCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("LAVA2", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorLavaCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("LAVA3", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorLavaCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("LAVA4", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorLavaCore");
-			}
+				
 			// Blood
 			if (floorpic == TexMan.CheckForTexture("BLOOD1", TexMan.Type_Any))
-			{
-				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
+				A_SpawnItem("MetaSectorSlimeCore");			
 			if (floorpic == TexMan.CheckForTexture("BLOOD2", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("BLOOD3", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
-			
 			if (floorpic == TexMan.CheckForTexture("BLOOD4", TexMan.Type_Any))
-			{
 				A_SpawnItem("MetaSectorSlimeCore");
-			}
 		}
 		Stop;
 	}
