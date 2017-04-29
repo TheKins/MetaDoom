@@ -46,7 +46,7 @@ actor MetaSectorNukage
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0
+			TNT1 A 0 
 		Idle:
 			TNT1 A 8 A_Wander
 			TNT1 A 0 A_Jump(128,"Croak")
@@ -54,5 +54,45 @@ actor MetaSectorNukage
 		Croak:
 			NUBL ABCDE 4
 			goto Idle
+	}
+}
+
+// Water
+
+actor MetaSectorWaterCore
+{
+	-SOLID
+	-NOCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	radius 1
+	height 1
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySoundEx("world/waterflow", "Body", 1)
+			TNT1 A -1
+			loop
+	}
+}
+
+// Water
+
+actor MetaSectorSlimeCore
+{
+	-SOLID
+	-NOCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	radius 1
+	height 1
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySoundEx("world/gooflow", "Body", 1)
+			TNT1 A -1
+			loop
 	}
 }

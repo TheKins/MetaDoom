@@ -60,6 +60,8 @@ class MetaEnvActorSeed : Actor
 	Crash:
 		TNT1 A 0
 		{
+			// yes, this is dumb. i know.
+			// nukage
 			if (floorpic == TexMan.CheckForTexture("NUKAGE1", TexMan.Type_Any))
 			{
 				A_SpawnItem("MetaSectorNukageCore");
@@ -78,6 +80,66 @@ class MetaEnvActorSeed : Actor
 			if (floorpic == TexMan.CheckForTexture("NUKAGE4", TexMan.Type_Any))
 			{
 				A_SpawnItem("MetaSectorNukageCore");
+			}
+			
+			// water
+			if (floorpic == TexMan.CheckForTexture("FWATER1", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorWaterCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("FWATER2", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorWaterCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("FWATER3", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorWaterCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("FWATER4", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorWaterCore");
+			}
+			// Slime
+			if (floorpic == TexMan.CheckForTexture("SLIME01", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME02", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME03", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME04", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			if (floorpic == TexMan.CheckForTexture("SLIME05", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME06", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME07", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
+			}
+			
+			if (floorpic == TexMan.CheckForTexture("SLIME08", TexMan.Type_Any))
+			{
+				A_SpawnItem("MetaSectorSlimeCore");
 			}
 		}
 		Stop;
