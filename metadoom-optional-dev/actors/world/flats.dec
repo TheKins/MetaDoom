@@ -26,8 +26,8 @@ actor MetaSectorNukageCore
 		Croak:
 			TNT1 A 0 A_PlaySound("world/acid")
 		Idle:
-			TNT1 A 8
-			TNT1 A 0 A_Jump(128,"Croak")
+			TNT1 A 16
+			TNT1 A 0 A_Jump(72,"Croak")
 			loop
 	}
 }
