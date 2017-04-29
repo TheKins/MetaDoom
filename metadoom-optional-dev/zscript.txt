@@ -118,6 +118,16 @@ class MetaEnvActorSeed : Actor
 				A_SpawnItem("MetaSectorSlimeCore");
 			if (floorpic == TexMan.CheckForTexture("BLOOD4", TexMan.Type_Any))
 				A_SpawnItem("MetaSectorSlimeCore");
+				
+			// Hot
+			if (floorpic == TexMan.CheckForTexture("SLIME09", TexMan.Type_Any))
+				A_SpawnItem("MetaSectorHotCore");
+			if (floorpic == TexMan.CheckForTexture("SLIME10", TexMan.Type_Any))
+				A_SpawnItem("MetaSectorHotCore");	
+			if (floorpic == TexMan.CheckForTexture("SLIME11", TexMan.Type_Any))
+				A_SpawnItem("MetaSectorHotCore");	
+			if (floorpic == TexMan.CheckForTexture("SLIME12", TexMan.Type_Any))
+				A_SpawnItem("MetaSectorHotCore");	
 		}
 		Stop;
 	}

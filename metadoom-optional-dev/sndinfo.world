@@ -27,3 +27,9 @@ world/lavaflow2		lvaflow2
 world/lavaflow3		lvaflow3
 world/lavaflow4		lvaflow4
 $volume world/lavaflow 0.1
+
+$random world/hotsurface 	{ world/hotsurface1 world/hotsurface2 world/hotsurface3 }
+world/hotsurface1			hotsurf1
+world/hotsurface2			hotsurf2
+world/hotsurface3			hotsurf3
+$volume world/hotsurface 0.5
