@@ -20,6 +20,8 @@ class MetaEnvActor : Actor
 		-SOLID
 		+DONTSPLASH
 		+NOTELEPORT
+		+NOINTERACTION
+		RenderStyle "None";
 	}
 	
 	States
@@ -47,6 +49,8 @@ class MetaEnvActorSeed : Actor
 		+DONTSPLASH
 		+NOTELEPORT
 		+NOCLIP
+		//+NOINTERACTION
+		RenderStyle "None";
 		radius 1;
 		height 1;
 	}
@@ -55,7 +59,7 @@ class MetaEnvActorSeed : Actor
 	{
 	Spawn:
 		TNT1 A 0;
-		TNT1 A 1;
+		TNT1 A 4;
 		loop;
 	Crash:
 		TNT1 A 0
@@ -130,5 +134,8 @@ class MetaEnvActorSeed : Actor
 				A_SpawnItem("MetaSectorHotCore");	
 		}
 		Stop;
+	Remove:
+		TNT1 A 0;
+		stop;
 	}
 }
