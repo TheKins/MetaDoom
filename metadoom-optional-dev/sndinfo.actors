@@ -91,3 +91,5 @@ props/candles/candlestick	candles
 $volume props/candles/candlestick 0.01
 props/candles/candelabra	candles
 $volume props/candles/candelabra 0.03
+
+props/evileye/die		eeyedie

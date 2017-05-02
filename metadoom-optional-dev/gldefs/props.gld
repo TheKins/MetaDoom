@@ -67,3 +67,24 @@ object MetaHeadCandles
 {
     frame POL3 { light SKULLCANDLES }
 }
+
+pulselight EVILEYE
+{
+    color 0.0 0.8 0.0
+    size 48
+    secondarySize 60
+    interval 1.0
+    offset 0 36 0
+	dontlightself 1
+	attenuate 1
+}
+
+object MetaEvilEye
+{
+    frame CEYEA { light EVILEYE }
+	frame CEYEB { light EVILEYE }
+	frame CEYEC { light EVILEYE }
+	frame CEYEE { light CANDLE }
+	frame CEYEF { light CANDLE }
+	frame CEYEG { light CANDLE }
+}

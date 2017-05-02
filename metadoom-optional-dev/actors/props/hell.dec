@@ -642,3 +642,74 @@ ACTOR MetaHeadCandles replaces HeadCandles
 		Loop
 	}
 }
+
+ACTOR MetaEvilEye replaces EvilEye
+{
+	Radius 16
+	Height 54
+	ProjectilePassHeight -16
+  	health 5
+	DeathHeight 54
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor HolyWater, 0
+	damagefactor FireExtinguisher, 0
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
+	States
+	{
+	Spawn:
+		CEYE A 0
+		CEYE A 0 A_PlaySoundEx("props/floatingskull", "Body", 1)
+		CEYE A 0 A_PlaySoundEx("props/candles/candlestick", "Voice", 1)
+		goto Idle
+	Idle:
+		CEYE A 0 A_SpawnItem("MetaEvilEyeRadiate",0,36)
+		CEYE ABCB 6 Bright
+		Loop
+	Death:
+		CEYE E 0
+		CEYE E 0 A_PlaySound("props/evileye/die")
+		CEYE E 0
+		{
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+		}
+	DeathLooper:
+		CEYE EFGF 6 Bright
+		loop
+	}
+}
+
+ACTOR MetaEvilEyeRadiate
+{
+	radius 10
+	height 10
+	+NOCLIP
+	+NOGRAVITY
+	+NOBLOCKMAP
+	Renderstyle add
+	states
+	{
+		Spawn:
+		CEYE D 0
+		CEYE D 0
+	DoTheThing:
+		CEYE D 1 BRIGHT
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scaleX + 0.01);
+		}
+		loop
+	}
+}
