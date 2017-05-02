@@ -97,10 +97,10 @@ class MetaTrite : MonsterCore
 		TRIT G 4 A_Scream;
 		TRIT H 4
 		{
-			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_CustomMissile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnItem("BloodSplat");
 		}
 		TRIT IJK 4;
