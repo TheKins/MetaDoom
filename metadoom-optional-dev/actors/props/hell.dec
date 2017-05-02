@@ -333,11 +333,11 @@ ACTOR MetaBigTree replaces BigTree
 		TRE2 B 0 A_PlaySound("props/wood/die1")
 		TRE2 B 1 
 		{
-			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
-			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
-			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
-			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
-			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_CustomMissile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
 			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
 			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
 			A_CustomMissile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
@@ -374,7 +374,7 @@ actor MetaGibWood
 	{
 	Spawn:
 		WOOD A 0
-		WOOD A 0 A_SetScale(frandom(0.5, 1.0))
+		WOOD A 0 A_SetScale(frandom(0.5, 2.0))
 		WOOD ABCD 0 A_Jump(128, "Setup")
 		goto Setup
 	Setup:
@@ -399,6 +399,60 @@ actor MetaGibWood
 	Death:
 		"####" # 0 A_ChangeFlag(NOBLOCKMAP, 0)
 		"####" # 0 A_ChangeFlag(FLATSPRITE, 1)
+		"####" # 0 A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR)
+		"####" # -1
+		Stop
+    }
+}
+
+actor MetaGibBigWood // and veiny
+{
+	+DOOMBOUNCE
+	PROJECTILE
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 16
+	height 16
+	Damage 0
+	bouncefactor 0.5
+	SeeSound "props/wood/gib"
+	gravity 0.5
+	Speed 5
+	States
+	{
+	Spawn:
+		WOOD A 0
+		WOOD A 0 A_SetScale(frandom(0.75, 2.0))
+		WOOD EFG 0 A_Jump(128, "Setup")
+		goto Setup
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1)
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0)
+		"####" # 0 A_SetRoll(random(0,360))
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") 
+		goto See
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll - 5))
+		loop
+	Bounce.Floor:
+		//"####" # 0 A_SpawnItem("BloodSplat")
+		goto ChangeDir
+	Bounce.Wall:
+		goto ChangeDir
+	Death:
+		"####" # 0 A_ChangeFlag(NOBLOCKMAP, 0)
 		"####" # -1
 		Stop
     }
