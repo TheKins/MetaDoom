@@ -10,6 +10,7 @@ Ritual Entertainment (Wood gib sounds)
 Rockstar Games (Wood gib sounds)
 Epic Games (Slime sounds)
 Valve (Some water sounds)
+Slax (evileye improvement)
 
 Gutawer (ZScript core of Fancy World system)
 
