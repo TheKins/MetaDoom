@@ -20,10 +20,6 @@ Optional Content:
 - Props have now been meta-fied! The random set-dressing throughout the Doom
   world has been given a lick of paint, and now blend in better with the
   enhancements the mod makes to the monsters. Some of them are even destructible!
-- The world itself has been meta-fied, through the awesome new FANCY WORLD
-  system! (Seperate mod/resource version coming soon!) Liquids make noise,
-  bubble dangerously and so on to make IWAD and vanilla maps have more
-  atmosphere than ever before!
 
 v3.666 "Samuel" (08/04/17)
 ==========================
