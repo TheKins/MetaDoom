@@ -283,12 +283,36 @@ ACTOR MetaBurningBarrel replaces BurningBarrel
 	Spawn:
 		FCAN A 0
 		FCAN A 0 A_PlaySoundEx("props/burningbarrel/loop", "Body", 1)
+	Idle:
+		FCAN A 0 A_SpawnItem("MetaBurningBarrelSmoke",0,32)
 		FCAN ABC 4 Bright
 		Loop
 	Pain:
 		FCAN A 0
 		FCAN A 0 A_PlaySoundEx("barrel/hit","Voice")
 		goto Spawn
+	}
+}
+
+ACTOR MetaBurningBarrelSmoke
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ROLLSPRITE
+	+ROLLCENTER
+	+NOINTERACTION
+	VSpeed 2
+	Renderstyle Add
+	scale 0.4
+	states
+	{
+	Spawn:
+		FCAN Z 0 A_SetScale(frandom(0.4,0.6))
+		FCAN Z 0 A_SetRoll(random(0,365))
+	Idle:
+		FCAN Z 0 A_SetScale(scalex + 0.1)
+		FCAN Z 2 A_FadeOut
+		loop
 	}
 }
 
