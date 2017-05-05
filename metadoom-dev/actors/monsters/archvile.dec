@@ -178,6 +178,7 @@ ACTOR MetaSummoner : MonsterCore
 	+QUICKTORETALIATE 
 	+FLOORCLIP 
 	+NOTARGET
+	+FLOATBOB
 	SeeSound "monsters/summoner/see"
 	PainSound "monsters/summoner/pain"
 	DeathSound "monsters/summoner/die"
