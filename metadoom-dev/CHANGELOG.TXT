@@ -7,8 +7,12 @@ Spiel goes here. Everything is subject to change! Forget all you have seen!
 - Added # inventory items ()
 - Added # powerups (Quad Damage!)
 
+Inventory Changes:
+- All inventory items now have a brief (less than a second) cooldown on usage,
+  preventing "inventory spamming" strategies that blew out balance.
+- Dramatically reduced AOE radius of Siphon Grenades
+
 Miscellaneous:
-- Inventory items now have a brief (less than a second) cooldown on usage.
 - Ammo bar now effected by meta_pistolammo, as it should be.
 - Fixed Unmaker firing sound cutting off the altfire sound. (Thanks TerminusEst13!)
 - Fixed an obscure bug with Imp Lords that occured when they teleported away
