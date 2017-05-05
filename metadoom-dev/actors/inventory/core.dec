@@ -21,3 +21,7 @@ ACTOR MetaCheatDetector : MetaPistol
 {
 	Weapon.SelectionOrder 0
 }
+
+
+
+actor InventoryCooldownToken : Boolean {}

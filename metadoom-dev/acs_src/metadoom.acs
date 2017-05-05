@@ -61,6 +61,14 @@ Script "MeleeStripBerserkOnStart" ENTER
 	TakeInventory("PowerStrength", 999);
 }
 
+// Inventory Cooldown
+Script "InventoryCooldown" (void)
+{
+	GiveInventory("InventoryCooldownToken", 1);
+	delay(25);
+	TakeInventory("InventoryCooldownToken", 999);
+}
+
 // Pistol Start Stuff
 script "PistolAmmoStart" ENTER
 {

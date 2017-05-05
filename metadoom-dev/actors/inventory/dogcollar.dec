@@ -36,6 +36,8 @@ actor DogCollar : CustomInventory
 		stop
 	Use:
 		TNT1 A 0 A_JumpIfInventory("MetaDogGun_HellHound", 0, "Failure2")
+		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown")
+		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown")
 		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
 		goto Failure
 	Fire:
@@ -50,6 +52,10 @@ actor DogCollar : CustomInventory
 	Failure2:
 		TNT1 A 0 A_PlaySound("menu/invalid")
 		TNT1 A 0 A_Log("You already have a Dog!")
+		fail
+	FailureCooldown:
+		TNT1 A 0 
+		TNT1 A 0 
 		fail
 	}
 }
