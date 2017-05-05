@@ -90,7 +90,7 @@ Script "FlashlightHandling" ENTER
 {
 	While(1)
 	{
-		if (CheckInventory("PistolFlashlight"))
+		if (CheckInventory("PistolFlashlight") & !CheckInventory("PowerTimeFreezer") )
 			GiveInventory("FlashlightSpawner", 1);
 		Delay(1);
 	}
