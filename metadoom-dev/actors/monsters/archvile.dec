@@ -204,36 +204,36 @@ ACTOR MetaSummoner : MonsterCore
 		"####" A 0 A_MetaBleed("FlyingBlood")
 		SUMN EEFFGG 2 A_VileChase
 		SUMN GGFF 2 A_VileChase
-		VILE A 0 A_Jump(90, "Popcorn")
+		SUMN A 0 A_Jump(90, "Popcorn")
 		goto See
 	Missile:
-		VILE A 0 A_Jump(90, "Popcorn")
-		VILE G 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE)
-		VILE G 10 BRIGHT A_FaceTarget 
-		VILE H 8 BRIGHT A_VileTarget("MetaArchvileFire")
-		VILE IJKLMN 8 BRIGHT A_FaceTarget
-		VILE O 0 BRIGHT A_JumpIfInTargetInventory("FireExtinguished",1,"MissileFailed")
-		VILE O 8 BRIGHT A_VileAttack("monsters/archvile/boom", 20, 70, 70, 1, "Fire")
-		VILE P 20 BRIGHT
+		SUMN A 0 A_Jump(90, "Popcorn")
+		SUMN I 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE)
+		SUMN I 10 BRIGHT A_FaceTarget 
+		SUMN J 8 BRIGHT A_VileTarget("MetaArchvileFire")
+		SUMN KLMN 8 BRIGHT A_FaceTarget
+		SUMN O 0 BRIGHT A_JumpIfInTargetInventory("FireExtinguished",1,"MissileFailed")
+		SUMN O 8 BRIGHT A_VileAttack("monsters/archvile/boom", 20, 70, 70, 1, "Fire")
+		SUMN PQ 10 BRIGHT
 		Goto See
 	MissileFailed:
-		VILE O 8 BRIGHT A_PlaySound("monsters/archvile/dud")
-		VILE P 20 BRIGHT
-		VILE A 10
-		VILE Q 10
-		VILE A 5
+		SUMN O 8 BRIGHT A_PlaySound("monsters/archvile/dud")
+		SUMN P 20 BRIGHT
+		SUMN A 10
+		SUMN S 10
+		SUMN A 5
 		Goto See
 	Heal:
-		VILE A 0
-		VILE A 0 A_PlaySound("monsters/archvile/resurrect", CHAN_VOICE)
-		VILE "[\]" 10 BRIGHT
+		SUMN A 0
+		SUMN A 0 A_PlaySound("monsters/archvile/resurrect", CHAN_VOICE)
+		SUMN R 10 BRIGHT
 		Goto See
 	Popcorn:
-		VILE A 0
-		VILE NMLKJ 4
-		VILE I 0 A_JumpIf((ceilingz - floorz) < 72, "PopcornLow")
+		SUMN A 0
+		SUMN NLKJ 4
+		SUMN I 0 A_JumpIf((ceilingz - floorz) < 72, "PopcornLow")
 	PopcornHigh:
-		VILE I 20 
+		SUMN N 20 
 		{
 			A_PlaySound("monsters/summoner/popcorn", CHAN_VOICE);
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,54,random(8,16),0,random(0,8),random(0,360));
@@ -241,10 +241,10 @@ ACTOR MetaSummoner : MonsterCore
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,54,random(8,16),0,random(0,8),random(0,360));
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,54,random(8,16),0,random(0,8),random(0,360));
 		}
-		VILE HG 4
+		SUMN RA 4
 		goto See
 	PopcornLow:
-		VILE I 20 
+		SUMN N 20 
 		{
 			A_PlaySound("monsters/summoner/popcorn", CHAN_VOICE);
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,32,random(8,16),0,random(0,8),random(0,360));
@@ -252,7 +252,7 @@ ACTOR MetaSummoner : MonsterCore
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,32,random(8,16),0,random(0,8),random(0,360));
 			A_SpawnItemEx("MetaSummonerPopcorn",0,0,32,random(8,16),0,random(0,8),random(0,360));
 		}
-		VILE HG 4
+		SUMN RA 4
 		goto See
 	Teleport:
 		SUMN A 0
@@ -278,49 +278,48 @@ ACTOR MetaSummoner : MonsterCore
 		SUMN ABC 4 BRIGHT
 		Goto SeeAlreadyTeleportedLately
 	Pain:
-		VILE Q 0
-		VILE Q 5 
+		SUMN R 0
+		SUMN R 5 
 		{
 			A_ChangeFlag("FRIGHTENED", FALSE);
 			A_TakeInventory("ScurredCounter",999);
 		}
-		VILE Q 5 A_Pain
-		VILE A 0 A_Jump(128, "Teleport")
+		SUMN R 5 A_Pain
+		SUMN A 0 A_Jump(128, "Teleport")
 		Goto See
 	Pain.HolyWater:
-		VILE Q 5 
-		VILE Q 5 A_Pain
+		SUMN R 5 
+		SUMN R 5 A_Pain
 		Goto Scurred
 	Scurred:
 		VILE A 0 A_ChangeFlag("FRIGHTENED", TRUE)
 	ScurredLoop:
-		VILE A 0 A_GiveInventory("ScurredCounter", 1)
-		VILE A 2 A_Chase("", "")
-		VILE A 2 A_Chase("", "")
-		VILE A 0 A_SpawnItem("HolySweat",0,54)
-		VILE B 2 A_Chase("", "")
-		VILE B 2 A_Chase("", "")
-		VILE C 2 A_Chase("", "")
-		VILE C 2 A_Chase("", "")
-		VILE C 0 A_SpawnItem("HolySweat",0,54)
-		VILE D 2 A_Chase("", "")
-		VILE D 2 A_Chase("", "")
-		VILE E 2 A_Chase("", "")
-		VILE E 2 A_Chase("", "")
-		VILE E 0 A_SpawnItem("HolySweat",0,54)
-		VILE F 2 A_Chase("", "")
-		VILE F 2 A_Chase("", "")
-		VILE F 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		SUMN E 0 A_GiveInventory("ScurredCounter", 1)
+		SUMN E 2 A_Chase("", "")
+		SUMN E 2 A_Chase("", "")
+		SUMN E 0 A_SpawnItem("HolySweat",0,54)
+		SUMN F 2 A_Chase("", "")
+		SUMN F 2 A_Chase("", "")
+		SUMN G 2 A_Chase("", "")
+		SUMN G 2 A_Chase("", "")
+		SUMN G 0 A_SpawnItem("HolySweat",0,54)
+		SUMN H 2 A_Chase("", "")
+		SUMN H 2 A_Chase("", "")
+		SUMN G 2 A_Chase("", "")
+		SUMN G 2 A_Chase("", "")
+		SUMN F 0 A_SpawnItem("HolySweat",0,54)
+		SUMN F 2 A_Chase("", "")
+		SUMN F 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
 		loop
 	ScurredEnd:
-		VILE F 0
+		SUMN F 0
 		{
 			A_ChangeFlag("FRIGHTENED", FALSE);
 			A_TakeInventory("ScurredCounter",999);
 		}
 		goto See
 	Death:
-		VILE Q 7 			// Make a filthy great mess once the Archvile dies,
+		SUMN T 7 			// Make a filthy great mess once the Archvile dies,
 		{					// to make a point of it not being rez-ible.
 			A_GiveToTarget("ScoreItem", 1000);
 			A_PlaySound("monsters/archvile/gib",CHAN_AUTO,0.8);
@@ -345,10 +344,10 @@ ACTOR MetaSummoner : MonsterCore
 			A_SpawnItem("BloodSplat");
 			A_SpawnItem("SoulSpawner");
 		}
-		VILE R 7 A_Scream
-		VILE S 7 A_NoBlocking
-		VILE TUVWXY 7
-		VILE Z -1
+		SUMN U 7 A_Scream
+		SUMN V 7 A_NoBlocking
+		SUMN WX 7
+		SUMN Y -1
 		Stop
 	}
 }
