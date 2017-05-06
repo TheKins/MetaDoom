@@ -10,7 +10,8 @@ Spiel goes here. Everything is subject to change! Forget all you have seen!
 Inventory Changes:
 - All inventory items now have a brief (less than a second) cooldown on usage,
   preventing "inventory spamming" strategies that blew out balance.
-- Dramatically reduced AOE radius of Siphon Grenades
+- Dramatically reduced AOE radius of Siphon Grenades so as to better match the
+  explosion graphic.
 
 Miscellaneous:
 - Ammo bar now effected by meta_pistolammo, as it should be.
