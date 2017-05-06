@@ -231,7 +231,7 @@ ACTOR MetaSummoner : MonsterCore
 	Popcorn:
 		SUMN A 0
 		SUMN NLKJ 4
-		SUMN I 0 A_JumpIf((ceilingz - floorz) < 72, "PopcornLow")
+		SUMN I 0 A_JumpIf((ceilingz - floorz) < 256, "PopcornLow")
 	PopcornHigh:
 		SUMN N 20 
 		{
