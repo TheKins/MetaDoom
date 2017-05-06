@@ -466,6 +466,7 @@ monsters/summoner/see		summsee
 monsters/summoner/pain		summpain
 monsters/summoner/popcorn	summpopc
 monsters/summoner/die		summdie
+monsters/summoner/idle		summidle
 
 $random monsters/summoner/warp		{ monsters/summoner/warp1 monsters/summoner/warp2 monsters/summoner/warp3 }
 monsters/summoner/warp1		summwrp1

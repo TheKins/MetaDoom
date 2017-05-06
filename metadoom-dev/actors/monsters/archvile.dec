@@ -161,8 +161,7 @@ ACTOR MetaArchvileFire
 	}
 }
 
-// Hurls popcorn enemies out in babby bosscubes
-// TODO: NEEDS ACTUAL SPRITES
+// Hurls popcorn enemies out in babby bosscubes and zooms around like a bastard
 
 ACTOR MetaSummoner : MonsterCore
 {
@@ -182,13 +181,12 @@ ACTOR MetaSummoner : MonsterCore
 	SeeSound "monsters/summoner/see"
 	PainSound "monsters/summoner/pain"
 	DeathSound "monsters/summoner/die"
-	ActiveSound "vile/active"
+	ActiveSound "monsters/summoner/idle"
 	MeleeSound "vile/stop"
 	Obituary "$OB_SUMMONER"
 	damagefactor HolyWater, 1.5
 	painchance HolyWater, 255
 	yscale 0.9
-	//translation "48:79=112:127", "128:143=112:127", "144:151=119:127", "236:239=124:127", "13:15=125:127", "225:231=112:116" // GROSS PLACEHOLDER
 	States
 	{
 	Spawn:
