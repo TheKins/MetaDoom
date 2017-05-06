@@ -87,14 +87,21 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 			}
 			
 			A_GunFlash;
-			if (CountInv("LightningFired") >= 5)
+			A_RailAttack(12,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
+			A_AlertMonsters;
+			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
+		}
+		THUN F 2 bright 
+		{
+			A_PlaySound("weapons/lightninggun/loop",6,1,1);
+			
+			if (CountInv("PowerDamage") > 0)
 			{
-				A_RailAttack(12,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
-				A_TakeInventory("LightningFired",999);
-			} else {
-				A_RailAttack(12,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
-				A_GiveInventory("LightningFired",1);
+				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
+			
+			A_GunFlash;
+			A_RailAttack(12,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
 			A_AlertMonsters;
 			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
 		}
