@@ -409,3 +409,12 @@ ACTOR MetaSummonerWarpTrail
 		loop
 	}
 }
+
+
+
+// Popcorn Monster
+ACTOR MetaSummonerPopcornFriend : MetaZombieman
+{
+	-COUNTKILL
+	Obituary "$OB_SUMMONER_POPCORN"
+}
