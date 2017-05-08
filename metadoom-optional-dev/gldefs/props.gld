@@ -1,16 +1,22 @@
 object MetaTechLamp
 {
-    frame TLMP { light BIGLAMP }
+    frame TLMPA { light BIGLAMP }
+	frame TLMPB { light BIGLAMP }
+	frame TLMPC { light BIGLAMP }
+	frame TLMPD { light BIGLAMP }
 }
 
 object MetaTechLamp2
 {
-    frame TLP2 { light SMALLLAMP }
+    frame TLP2A { light SMALLLAMP }
+	frame TLP2B { light SMALLLAMP }
+	frame TLP2C { light SMALLLAMP }
+	frame TLP2D { light SMALLLAMP }
 }
 
 object MetaColumn
 {
-    frame COLU { light LAMP }
+    frame COLUA { light LAMP }
 }
 
 object MetaBurningBarrel
@@ -50,7 +56,7 @@ object MetaShortBlueTorch
 
 object MetaCandelabra
 {
-    frame CBRA { light CANDELABRA }
+    frame CBRAA { light CANDELABRA }
 }
 
 object MetaCandlestick
