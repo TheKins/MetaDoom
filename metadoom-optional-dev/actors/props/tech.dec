@@ -251,7 +251,7 @@ Actor MetaColumn_Glow : MetaTechLamp_Glow
 		TNT1 A 0
 		goto Idle
 	Idle:
-		TLGL A 1 bright A_Warp(AAPTR_MASTER,0,0,40,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE)
+		TLGL B 1 bright A_Warp(AAPTR_MASTER,0,0,40,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE)
 		loop
 	}
 }
