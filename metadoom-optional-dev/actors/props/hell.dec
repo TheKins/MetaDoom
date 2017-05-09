@@ -788,6 +788,7 @@ ACTOR MetaEvilEye replaces EvilEye
 			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_CustomMissile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnItem("BloodSplat");
+			A_SpawnItem("MetaEvilEyeDed",0,32);
 			A_ChangeFlag("NOBLOOD",true);
 		}
 	DeathLooper:
@@ -815,6 +816,20 @@ ACTOR MetaEvilEyeRadiate
 			A_FadeOut(0.05);
 			A_SetScale(scaleX + 0.01);
 		}
+		loop
+	}
+}
+
+Actor MetaEvilEyeDed
+{
+	Renderstyle Add
+	+NOGRAVITY
+	-SOLID
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		CEYE Z -1 bright
 		loop
 	}
 }
