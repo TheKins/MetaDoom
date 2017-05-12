@@ -17,7 +17,8 @@ Weapon Changes:
 - Lightning Gun now consumes ammo at a much faster rate.
 
 Miscellaneous:
-- Ammo bar now effected by meta_pistolammo, as it should be.
+- Ammo bar on HUD is now effected by meta_pistolammo, as it should be.
+- Armor gem on HUD now indicates when you have Blue Armor.
 - Fixed Unmaker firing sound cutting off the altfire sound. (Thanks TerminusEst13!)
 - Fixed an obscure bug with Imp Lords that occured when they teleported away
   just after killing the player, where they would forget that gravity exists.

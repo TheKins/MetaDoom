@@ -17,7 +17,10 @@ statusbar fullscreen
 		}
 		
 		drawnumber 3, SMALLFONT2, white, armor, drawshadow, 24, 180;
-		drawimage "APICON", 27, 180;
+		
+		//drawimage "APICON", 27, 180;
+		DrawSwitchableImage armortype MetaBlueArmor, "APICON", "AP2ICON", 27, 180;
+		
 		drawimage "HUDBAR", 36, 180;
 		DrawBar "ARMRBAR", "MTBAR", armor(100), horizontal, interpolate(8), 37, 181;
 		DrawBar "ARMRBAR2", "MTBAR2", armor(200), horizontal, interpolate(8), -15, 181;
@@ -181,7 +184,10 @@ statusbar normal // Standard Doom Status bar
 		}
 		
 		drawnumber 3, SMALLFONT2, white, armor, drawshadow, 24, 180;
-		drawimage "APICON", 27, 180;
+		
+		//drawimage "APICON", 27, 180;
+		DrawSwitchableImage armortype MetaBlueArmor, "APICON", "AP2ICON", 27, 180;
+		
 		drawimage "HUDBAR", 36, 180;
 		DrawBar "ARMRBAR", "MTBAR", armor(100), horizontal, interpolate(8), 37, 181;
 		DrawBar "ARMRBAR2", "MTBAR2", armor(200), horizontal, interpolate(8), -15, 181;
