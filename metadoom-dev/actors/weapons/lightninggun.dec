@@ -87,7 +87,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 			}
 			
 			A_GunFlash;
-			A_RailAttack(12,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
+			A_RailAttack(14,0,1,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
 			A_AlertMonsters;
 			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
 		}
@@ -101,7 +101,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 			}
 			
 			A_GunFlash;
-			A_RailAttack(12,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
+			A_RailAttack(14,0,0,Blue,White,RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
 			A_AlertMonsters;
 			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
 		}
