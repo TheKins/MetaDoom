@@ -12,7 +12,7 @@ Bethesda Softworks (Elder Scrolls and Fallout sounds)
 3D Realms (Some Exploding Barrel sounds, Fire Extinguisher pickup sounds, Hologram sprite)
 Remedy Entertainment (Fire Extinguisher sounds)
 Rockstar Games (Fire Extinguisher sounds)
-Epic Games (Some metal gibbing sounds)
+Epic Games (Some metal gibbing sounds, Cyber-Manc attack sounds)
 
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 Pillowblaster ("ARGENT" resources)

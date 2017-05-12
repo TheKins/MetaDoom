@@ -472,3 +472,27 @@ $random monsters/summoner/warp		{ monsters/summoner/warp1 monsters/summoner/warp
 monsters/summoner/warp1		summwrp1
 monsters/summoner/warp2		summwrp2
 monsters/summoner/warp3		summwrp3
+
+// cyber-manc
+monsters/cybermanc/see				cfatsee
+monsters/cybermanc/idle				cfatidle
+monsters/cybermanc/pain				cfatpain
+monsters/cybermanc/die1				cfatdie1
+monsters/cybermanc/die2				cfatdie2
+monsters/cybermanc/die3				cfatdie3
+monsters/cybermanc/boop				cfatboop
+monsters/cybermanc/purge			cfatpurg
+monsters/cybermanc/stomp			cfatstmp
+
+$random monsters/cybermanc/fire 	{ monsters/cybermanc/fire1 monsters/cybermanc/fire2 monsters/cybermanc/fire3 }
+monsters/cybermanc/fire1			cfatfir1
+monsters/cybermanc/fire2			cfatfir2
+monsters/cybermanc/fire3			cfatfir3
+
+$random monsters/cybermanc/hit 		{ monsters/cybermanc/hit1 monsters/cybermanc/hit2 }
+monsters/cybermanc/hit1				cfathit1
+monsters/cybermanc/hit2				cfathit2
+
+$random monsters/cybermanc/bomb 	{ monsters/cybermanc/bomb1 monsters/cybermanc/bomb2 }
+monsters/cybermanc/bomb1			cfatbom1
+monsters/cybermanc/bomb2			cfatbom2
