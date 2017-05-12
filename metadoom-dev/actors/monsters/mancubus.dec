@@ -248,6 +248,7 @@ ACTOR MetaCyberManc : MonsterCore
 	Obituary "$OB_CFATSO"
 	Species "Fatso"
 	scale 0.75
+	yscale 0.65
 	States
 	{
 	Spawn:
@@ -391,11 +392,25 @@ ACTOR CyberMancShot
 		loop
 	XDeath:
 	Crash:
-		BAL7 B 0 A_Quake (3,5,0,750,0)
+		BAL7 B 0
+		{
+			A_Quake (3,5,0,750,0);
+		
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));			
+		}
 		BAL7 CDE 6 BRIGHT
 		stop
 	Death:
-		BAL7 B 0 A_Quake (3,5,0,750,0)
+		BAL7 B 0 
+		{
+			A_Quake (3,5,0,750,0);
+		
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));	
+		}
 		BAL7 B 0 A_SpawnItem("CyberMancBomb")
 		BAL7 CDE 6 BRIGHT
 		stop
@@ -414,7 +429,15 @@ ACTOR CyberMancBomb
 		CBOM ABCDABCDAB 4 BRIGHT
 		goto Death
 	Death:
-		CBOM B 0 A_Quake (3,5,0,750,0)
+		CBOM B 0 
+		{
+			A_Quake (3,5,0,750,0);
+		
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(0,8), 0, random (0, 360), 2, random (0, 160));			
+		}
 		CBOM B 0 A_Explode (8,64)
 		CBOM B 0 A_PlaySound("monsters/cybermanc/bomb",7)
 		CBOM EFG 6 BRIGHT
