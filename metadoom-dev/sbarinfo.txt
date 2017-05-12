@@ -33,6 +33,7 @@ statusbar fullscreen
 		InInventory PowerInvulnerable // If Immortal
 		{
 			DrawBar "POWRBAR", "MTBAR3", poweruptime MetaInvulnerabilitySphere, horizontal, interpolate(8), 37, 190;
+			drawimage "powrinv", 26, 188;
 		}
 		
 		IfCVarInt meta_pistolammo, 0, equal
@@ -200,6 +201,7 @@ statusbar normal // Standard Doom Status bar
 		InInventory PowerInvulnerable // If Immortal
 		{
 			DrawBar "POWRBAR", "MTBAR3", poweruptime MetaInvulnerabilitySphere, horizontal, interpolate(8), 37, 190;
+			drawimage "powrinv", 26, 188;
 		}
 
 		IfCVarInt meta_pistolammo, 0, equal
