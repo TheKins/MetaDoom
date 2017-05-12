@@ -85,6 +85,20 @@ ACTOR MetaSplooshBlue : MetaSploosh
 	}
 }
 
+ACTOR MetaSplooshGreen : MetaSploosh
+{
+	decal greenbloodsmear
+	translation "176:191=112:127", "32:47=112:127", "160:167=112:127"
+	States
+    {
+	Death:
+        TNT1 A 0 A_JumpIf(waterlevel == 2,"Disappear")
+		TNT1 A 0 A_PlaySound("effects/blood")
+		TNT1 A 0 A_SpawnItem("BloodSplatGreen")
+        Stop
+	}
+}
+
 actor MetaGib1
 {
 	+DOOMBOUNCE

@@ -345,7 +345,7 @@ ACTOR BlueFlyingBloodCheap : FlyingBlood
 ACTOR GreenFlyingBlood : FlyingBlood
 {
 decal greenbloodsplat
-translation "168:184=112:127","185:191=11:12","16:47=112:127"
+translation "174:191=112:127", "32:47=112:127"
 states
 	{
 	Death:

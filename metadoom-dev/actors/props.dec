@@ -58,6 +58,11 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 			A_SpawnItem("GreenBlood",0,random(16,42));
 			A_SpawnItem("GreenBlood",0,random(16,42));
 			A_SpawnItem("GreenBlood",0,random(16,42));
+			A_CustomMissile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_CustomMissile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnItem("MetaGibBarrel",0,random(16,42));
 			A_SpawnItem("MetaGibBarrel",0,random(16,42));
 			A_SpawnItem("MetaGibBarrel",0,random(16,42));
