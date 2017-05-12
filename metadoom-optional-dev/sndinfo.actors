@@ -40,6 +40,15 @@ keens/budo/die		keenbudo
 keens/dave/hit		keenpcs1
 keens/dave/die		keendave
 
+keens/hovertank/hit		keenhov1
+keens/hovertank/die		keenhov2
+
+keens/rover/hit		keenpcs1
+keens/rover/die		keendave
+
+keens/catacomb/hit		keenpcs1
+keens/catacomb/die		keendave
+
 // props
 
 $random props/techlamp/break			{ props/techlamp/break1 props/techlamp/break2}
