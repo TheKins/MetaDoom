@@ -259,6 +259,54 @@ Actor MetaColumn_Glow : MetaTechLamp_Glow
 // burning barrel
 ACTOR MetaBurningBarrel replaces BurningBarrel
 {
+	health 5
+	Radius 16
+	Height 32
+	ProjectilePassHeight -16
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	+ALLOWPAIN
+	damagefactor Normal, 0
+	damagefactor Fist, 0
+	damagefactor HolyWater, 255
+	damagefactor FireExtinguisher, 255
+	damagefactor LightningStun, 0
+	damagefactor Axe, 50
+	painchance LightningStun, 0
+	painchance 255
+	States
+	{
+	Spawn:
+		FCAN A 0
+		FCAN A 0 A_PlaySoundEx("props/burningbarrel/loop", "Body", 1)
+	Idle:
+		FCAN A 0 A_CheckSight("IdleNoSmoke")
+		FCAN ABC 4 Bright A_SpawnItem("MetaBurningBarrelSmoke",0,35)
+		Loop
+	IdleNoSmoke:
+		FCAN ABC 4 Bright
+		goto Idle
+	Pain:
+		FCAN A 0
+		FCAN A 0 A_PlaySoundEx("barrel/hit","Voice")
+		goto Spawn
+	Death:
+		FCAN D 0 
+		FCAN D 0 A_PlaySound("monsters/lostsoul/extinguish")
+		FCAN DDDDDDDDDDDDDDD 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35)
+		FCAN D 0 A_SpawnItem("MetaBurningBarrelExtinguished")
+		stop
+	}
+}
+
+ACTOR MetaBurningBarrelExtinguished
+{
 	Radius 16
 	Height 32
 	ProjectilePassHeight -16
@@ -277,19 +325,13 @@ ACTOR MetaBurningBarrel replaces BurningBarrel
 	damagefactor LightningStun, 0
 	damagefactor Axe, 50
 	painchance LightningStun, 0
+	painchance FireExtinguisher, 0
 	painchance 255
 	States
 	{
 	Spawn:
-		FCAN A 0
-		FCAN A 0 A_PlaySoundEx("props/burningbarrel/loop", "Body", 1)
-	Idle:
-		FCAN A 0 A_CheckSight("IdleNoSmoke")
-		FCAN ABC 4 Bright A_SpawnItem("MetaBurningBarrelSmoke",0,35)
-		Loop
-	IdleNoSmoke:
-		FCAN ABC 4 Bright
-		goto Idle
+		FCAN D 4
+		loop
 	Pain:
 		FCAN A 0
 		FCAN A 0 A_PlaySoundEx("barrel/hit","Voice")
