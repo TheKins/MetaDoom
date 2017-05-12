@@ -38,7 +38,13 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 		Loop
 	Pain:
 		BEXP A 0
-		BEXP A 0 A_PlaySound("barrel/hit")
+		BEXP A 0
+		{
+			A_PlaySound("barrel/hit");
+			A_SpawnItem("GreenBlood",0,random(32,42));
+			A_SpawnItem("GreenBlood",0,random(32,42));
+			A_SpawnItem("GreenBlood",0,random(32,42));
+		}
 		goto Spawn
 	Death:
 		BEXP A 2 BRIGHT
