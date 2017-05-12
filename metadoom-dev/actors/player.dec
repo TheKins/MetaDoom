@@ -47,6 +47,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	
 	damagefactor DogCollar, 0
 	damagefactor Dogsplosion, 0
+	damagefactor NoHarmPlayer, 0
 
 	States
 	{

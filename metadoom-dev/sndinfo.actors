@@ -483,6 +483,7 @@ monsters/cybermanc/die3				cfatdie3
 monsters/cybermanc/boop				cfatboop
 monsters/cybermanc/purge			cfatpurg
 monsters/cybermanc/stomp			cfatstmp
+monsters/cybermanc/attack			cfatattk
 
 $random monsters/cybermanc/fire 	{ monsters/cybermanc/fire1 monsters/cybermanc/fire2 monsters/cybermanc/fire3 }
 monsters/cybermanc/fire1			cfatfir1
