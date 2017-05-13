@@ -264,16 +264,15 @@ ACTOR MetaCyberManc : MonsterCore
 		CFAT IG 5 A_FaceTarget
 		CFAT H 10 BRIGHT { A_FaceTarget; A_CustomMissile("CyberMancShot",48,-32,10); A_CustomMissile("CyberMancShot",48,32,-10); }
 		CFAT IG 5 A_FaceTarget
-		CFAT H 10 BRIGHT { A_FaceTarget; A_CustomMissile("CyberMancShot",48,-32); A_CustomMissile("CyberMancShot",48,32); }
-		CFAT IG 5 A_FaceTarget
-		Goto See
+		CFAT G 0 A_MonsterRefire(60,"See")
+		Goto Missile+1
 	Pain:
 		CFAT P 3
 		CFAT P 3 A_Pain
 		Goto See
     Death:
 		CFAT Q 0 A_SpawnItem("SoulSpawner")
-		CFAT Q 6 A_GiveToTarget("ScoreItem", 500)
+		CFAT Q 6 A_GiveToTarget("ScoreItem", 700)
 		CFAT R 6 A_Scream
 		CFAT S 6 A_NoBlocking
 		CFAT T 6 A_PlaySound("monsters/cybermanc/die2")
