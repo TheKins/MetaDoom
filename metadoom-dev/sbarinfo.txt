@@ -117,8 +117,18 @@ statusbar fullscreen
 		drawmugshot "STF", 5, xdeathface|animatedgodmode, 143, 168;
 		
 		// INVENTORY
-		DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
-		drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;
+		InInventory InventoryCooldownToken
+		{
+			Alpha 0.5
+			{
+				DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
+				drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;	
+			}
+		} else {
+			DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
+			drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;	
+		}
+		
 		
 		// POWERUPS
 		InInventory PowerIronFeet // Radsuit
@@ -288,8 +298,18 @@ statusbar normal // Standard Doom Status bar
 		
 		// INVENTORY
 		drawimage "HUDBOX", 184, 168;
-		DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
-		drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;	
+		
+		InInventory InventoryCooldownToken
+		{
+			Alpha 0.5
+			{
+				DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
+				drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;	
+			}
+		} else {
+			DrawSelectedInventory SMALLFONT2, 185, 168, 0, 0, white;
+			drawnumber 3, SMALLFONT2, white, ammo(GrenadeAmmo), 219, 192;	
+		}
 		
 		// POWERUPS
 		InInventory PowerIronFeet // Radsuit
