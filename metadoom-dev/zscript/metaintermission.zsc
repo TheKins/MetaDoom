@@ -96,7 +96,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 
 		int countpos = gameinfo.gametype==GAME_Strife? 285:270;
 		
-		drawNum(IntermissionFont, countpos, SP_STATSY+3*lh, players[consoleplayer].mo.score, 0, false, Font.CR_RED);
+		drawNum(IntermissionFont, countpos, SP_STATSY+3*lh-1, players[consoleplayer].mo.score, 0, false, Font.CR_RED);
 
 		if (sp_state >= 2)
 		{
