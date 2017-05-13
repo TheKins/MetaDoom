@@ -247,8 +247,8 @@ ACTOR MetaCyberManc : MonsterCore
 	ActiveSound "monsters/cybermanc/idle"
 	Obituary "$OB_CFATSO"
 	Species "Fatso"
-	scale 0.75
-	yscale 0.65
+	scale 0.85
+	yscale 0.75
 	States
 	{
 	Spawn:
