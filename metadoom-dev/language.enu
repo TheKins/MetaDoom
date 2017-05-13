@@ -65,6 +65,7 @@ TXT_IMPAR = "Par";
 TXT_IMFINISH = "Finished";
 TXT_IMENTER = "Entering";
 TXT_IMTOTAL = "Total";
+TXT_IMSCORE = "Score";
 
 // MetaDoom Menu
 METAMENU_DEBUG = "Debug Messages";
