@@ -375,7 +375,7 @@ ACTOR CyberMancShot
 	+RANDOMIZE
 	SeeSound "monsters/cybermanc/fire"
 	DeathSound "monsters/cybermanc/hit"
-	decal Scorch
+	decal greenbloodsmear
 	scale 1.25
 	States
 	{
