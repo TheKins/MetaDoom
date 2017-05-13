@@ -89,14 +89,14 @@ class MetaDoomStatusScreen : DoomStatusScreen
 
 		drawLF();
 	
-		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY-4, Stringtable.Localize("$TXT_IMKILLS"), DTA_Clean, true, DTA_Shadow, true);
-		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+lh-4, Stringtable.Localize("$TXT_IMITEMS"), DTA_Clean, true, DTA_Shadow, true);
-		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+2*lh-4, Stringtable.Localize("$TXT_IMSECRETS"), DTA_Clean, true, DTA_Shadow, true);
-		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+3*lh-4, Stringtable.Localize("$TXT_IMSCORE"), DTA_Clean, true, DTA_Shadow, true);
+		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY-3, Stringtable.Localize("$TXT_IMKILLS"), DTA_Clean, true, DTA_Shadow, true);
+		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+lh-3, Stringtable.Localize("$TXT_IMITEMS"), DTA_Clean, true, DTA_Shadow, true);
+		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+2*lh-3, Stringtable.Localize("$TXT_IMSECRETS"), DTA_Clean, true, DTA_Shadow, true);
+		screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_STATSX, SP_STATSY+3*lh-3, Stringtable.Localize("$TXT_IMSCORE"), DTA_Clean, true, DTA_Shadow, true);
 
 		int countpos = gameinfo.gametype==GAME_Strife? 285:270;
 		
-		drawNum(IntermissionFont, countpos, SP_STATSY+3*lh-1, players[consoleplayer].mo.score, 0, false, Font.CR_RED);
+		drawNum(IntermissionFont, countpos, SP_STATSY+3*lh, players[consoleplayer].mo.score, 0, false, Font.CR_RED);
 
 		if (sp_state >= 2)
 		{
@@ -108,7 +108,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		}
 		if (sp_state >= 6)
 		{
-			drawPercent (IntermissionFont, countpos, SP_STATSY+2*lh-2, cnt_secret[0], wbs.maxsecret);
+			drawPercent (IntermissionFont, countpos, SP_STATSY+2*lh, cnt_secret[0], wbs.maxsecret);
 		}
 		if (sp_state >= 8)
 		{
@@ -117,13 +117,13 @@ class MetaDoomStatusScreen : DoomStatusScreen
 			
 			if (wbs.partime)
 			{
-				screen.DrawText (BigFont, Font.CR_UNTRANSLATED, 160 + SP_TIMEX, SP_TIMEY-4, Stringtable.Localize("$TXT_IMPAR"), DTA_Clean, true, DTA_Shadow, true);
+				screen.DrawText (BigFont, Font.CR_UNTRANSLATED, 160 + SP_TIMEX, SP_TIMEY-3, Stringtable.Localize("$TXT_IMPAR"), DTA_Clean, true, DTA_Shadow, true);
 				drawTime (320 - SP_TIMEX, SP_TIMEY, cnt_par);
 			}
 			
 			if (wi_showtotaltime)
 			{
-				screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_TIMEX, SP_TIMEY+lh-4, Stringtable.Localize("$TXT_IMTOTAL"), DTA_Clean, true, DTA_Shadow, true);
+				screen.DrawText (BigFont, Font.CR_UNTRANSLATED, SP_TIMEX, SP_TIMEY+lh-3, Stringtable.Localize("$TXT_IMTOTAL"), DTA_Clean, true, DTA_Shadow, true);
 				drawTime (160 - SP_TIMEX, SP_TIMEY + lh, cnt_total_time, true);	// no 'sucks' for total time ever!
 			}
 		}
