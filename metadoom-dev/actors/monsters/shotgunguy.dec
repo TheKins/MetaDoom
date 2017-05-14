@@ -22,9 +22,9 @@ ACTOR MetaShotgunGuy : MonsterCore
 	+DOHARMSPECIES
 	SeeSound "monsters/shotgunguy/see"
 	AttackSound "monsters/shotgunguy/fire"
-	PainSound "monsters/zombieman/pain"
-	DeathSound "monsters/zombieman/die"
-	ActiveSound "monsters/zombieman/idle"
+	PainSound "monsters/shotgunguy/pain"
+	DeathSound "monsters/shotgunguy/die"
+	ActiveSound "monsters/shotgunguy/idle"
 	Obituary "$OB_SHOTGUY"
 	DropItem "MetaShotgun"
 	damagefactor HolyWater, 0.25
