@@ -75,9 +75,9 @@ menu/prompt			menusel	// Activate a prompt "menu"
 menu/cursor			menucurs		// Move cursor up/down
 menu/change			menuslid	// Select new value for option
 menu/invalid			menuerr		// Menu not available
-menu/dismiss			dsswtchx	// Dismiss a prompt message
+menu/dismiss			menuclos	// Dismiss a prompt message
 menu/choose			menuentr	// Choose a menu item
-menu/clear			dsswtchx	// Close top menu
+menu/clear			menuclos	// Close top menu
 
 intermission/tick			endlcnt
 intermission/cooptotal		endlcopd
