@@ -19,7 +19,7 @@ class MetaTrite : MonsterCore
 		Height 25;
 		Monster;
 		+DROPOFF
-		+NOVERTICALMELEERANGE
+		//+NOVERTICALMELEERANGE
 		+ROLLSPRITE
 		+ROLLCENTER
 		MaxDropOffHeight 32;
@@ -31,6 +31,9 @@ class MetaTrite : MonsterCore
 		HitObituary "$OB_TRITE";
 		xscale 0.5;
 		yscale 0.5;
+		BloodType "GreenBlood";
+		BloodColor "0 78 0";
+		Decal "greenbloodsplat";
 		
 	}
 
@@ -97,11 +100,13 @@ class MetaTrite : MonsterCore
 		TRIT G 4 A_Scream;
 		TRIT H 4
 		{
-			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("FlyingBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnItem("BloodSplat");
+			A_SpawnProjectile ("GreenBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("GreenBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("GreenBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("GreenBlood", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(2,22), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplatGreen");
 		}
 		TRIT IJK 4;
 		Stop;
