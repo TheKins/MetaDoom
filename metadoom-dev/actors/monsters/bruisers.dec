@@ -68,7 +68,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 		BARO L 15
 		{
 			A_Stop;
-			A_PlaySound("monsters/hellknight/land");
+			A_PlaySound("monsters/hellknight/land",CHAN_7);
 			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
 			A_SpawnItem("BaronShockwave",1,1);
 			A_CustomMissile("BaronSpikeStrip",1,0,0,CMF_AIMDIRECTION, 0);
@@ -155,7 +155,7 @@ ACTOR MetaHellKnight : MonsterCore
 		HNGT L 15
 		{
 			A_Stop;
-			A_PlaySound("monsters/hellknight/land");
+			A_PlaySound("monsters/hellknight/land",CHAN_7);
 			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
 			A_SpawnItem("HellKnightShockwave",1,1);
 		}
