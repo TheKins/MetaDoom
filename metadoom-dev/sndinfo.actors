@@ -91,6 +91,50 @@ monsters/bleed			actbleed
 monsters/crushed		actcrush
 monsters/vamped			actvamp
 
+// zombieman
+$random monsters/zombieman/see 	{ monsters/zombieman/see1 monsters/zombieman/see2 monsters/zombieman/see3 }
+monsters/zombieman/see1			zombsee1
+monsters/zombieman/see2			zombsee2
+monsters/zombieman/see3			zombsee3
+
+$random monsters/zombieman/die 	{ monsters/zombieman/die1 monsters/zombieman/die2 monsters/zombieman/die3 }
+monsters/zombieman/die1			zombdie1
+monsters/zombieman/die2			zombdie2
+monsters/zombieman/die3			zombdie3
+
+monsters/zombieman/idle			zombidle
+monsters/zombieman/fire			zombfire
+monsters/zombieman/pain			zombpain
+
+// shotgun guy
+$random monsters/shotgunguy/see 	{ monsters/shotgunguy/see1 monsters/shotgunguy/see2 monsters/shotgunguy/see3 }
+monsters/shotgunguy/see1			zsggsee1
+monsters/shotgunguy/see2			zsggsee2
+monsters/shotgunguy/see3			zsggsee3
+
+$random monsters/shotgunguy/die 	{ monsters/shotgunguy/die1 monsters/shotgunguy/die2 monsters/shotgunguy/die3 }
+monsters/shotgunguy/die1			zsggdie1
+monsters/shotgunguy/die2			zsggdie2
+monsters/shotgunguy/die3			zsggdie3
+
+monsters/shotgunguy/idle			zsggidle
+monsters/shotgunguy/fire			zsggfire
+monsters/shotgunguy/pain			zsggpain
+
+// machinegunner
+$random monsters/machinegunner/see 	{ monsters/machinegunner/see1 monsters/machinegunner/see2 monsters/machinegunner/see3 }
+monsters/machinegunner/see1			zmggsee1
+monsters/machinegunner/see2			zmggsee2
+monsters/machinegunner/see3			zmggsee3
+
+$random monsters/machinegunner/die 	{ monsters/machinegunner/die1 monsters/machinegunner/die2 monsters/machinegunner/die3 }
+monsters/machinegunner/die1			zmggdie1
+monsters/machinegunner/die2			zmggdie2
+monsters/machinegunner/die3			zmggdie3
+
+monsters/machinegunner/idle			zmggidle
+monsters/machinegunner/pain			zmggpain
+
 // Imp
 $random monsters/imp/see 	{ monsters/imp/see1 monsters/imp/see2 }
 monsters/imp/see1			imp1see1

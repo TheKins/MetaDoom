@@ -25,6 +25,7 @@ Monster Changes:
   just after killing the player, where they would forget that gravity exists.
 - Revenants and Fiends no longer infight. They are now Skelefriends. Pallingtons?
 - The Bruiser Bros' jump attack's landing sound now plays properly.
+- The Former Human family now have new sound effects
 
 HUD Changes:
 - Health gem now indicates when you're invulnerable.

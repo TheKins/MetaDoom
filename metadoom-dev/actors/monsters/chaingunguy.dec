@@ -20,10 +20,10 @@ ACTOR MetaMachineGunGuy : MonsterCore
 	Monster
 	+FLOORCLIP
 	+DOHARMSPECIES
-	SeeSound "chainguy/sight"
-	PainSound "chainguy/pain"
-	DeathSound "chainguy/death"
-	ActiveSound "chainguy/active"
+	SeeSound "monsters/machinegunner/see"
+	PainSound "monsters/machinegunner/pain"
+	DeathSound "monsters/machinegunner/die"
+	ActiveSound "monsters/machinegunner/idle"
 	AttackSound "chainguy/attack"
 	Obituary "$OB_MGUNGUY"
 	Dropitem "MetaMachineGun"
@@ -130,10 +130,10 @@ ACTOR MetaChainGunGuy : MonsterCore
 	Monster
 	+FLOORCLIP
 	+DOHARMSPECIES
-	SeeSound "chainguy/sight"
-	PainSound "chainguy/pain"
-	DeathSound "chainguy/death"
-	ActiveSound "chainguy/active"
+	SeeSound "monsters/machinegunner/see"
+	PainSound "monsters/machinegunner/pain"
+	DeathSound "monsters/machinegunner/die"
+	ActiveSound "monsters/machinegunner/idle"
 	AttackSound "chainguy/attack"
 	Obituary "$OB_CGUNGUY"
 	Dropitem "MetaChainGun"

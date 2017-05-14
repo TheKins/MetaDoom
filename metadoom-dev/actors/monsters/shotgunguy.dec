@@ -20,11 +20,11 @@ ACTOR MetaShotgunGuy : MonsterCore
 	Monster
 	+FLOORCLIP
 	+DOHARMSPECIES
-	SeeSound "shotguy/sight"
-	AttackSound "shotguy/attack"
-	PainSound "shotguy/pain"
-	DeathSound "shotguy/death"
-	ActiveSound "shotguy/active"
+	SeeSound "monsters/shotgunguy/see"
+	AttackSound "monsters/shotgunguy/fire"
+	PainSound "monsters/zombieman/pain"
+	DeathSound "monsters/zombieman/die"
+	ActiveSound "monsters/zombieman/idle"
 	Obituary "$OB_SHOTGUY"
 	DropItem "MetaShotgun"
 	damagefactor HolyWater, 0.25
@@ -47,7 +47,7 @@ ACTOR MetaShotgunGuy : MonsterCore
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 			A_CustomMissile("MonsterShotgunGuyTracer");
-			A_PlaySound("shotguy/attack");
+			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		SPOS E 10
 		Goto See
