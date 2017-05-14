@@ -16,6 +16,8 @@ Inventory Changes:
 Weapon Changes:
 - Lightning Gun now consumes ammo at a much faster rate.
 - Lightning Gun now does sliiiiightly more damage
+- BFG explosion sound now plays properly.
+- BFG explosion now has an actual explosion involved... if that makes sense.
 
 HUD Changes:
 - Health gem now indicates when you're invulnerable.

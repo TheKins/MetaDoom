@@ -231,13 +231,16 @@ ACTOR MetaBFGBall
 		BFE1 AAAAAAAAAAAAAAAA 0 Bright A_SpawnItemEx("BFGTrail", 0, frandom(-10,10), frandom(-10,10), 0, frandom(-5,5), frandom(-5,5), 0, SXF_CLIENTSIDE, 0)
 		BFE1 A 0
 		{
-			A_PlaySound ("weapons/bfg/explode", CHAN_BODY);
-			A_Quake (8,10,0,750,0);
+			A_StopSound(CHAN_BODY);
+			A_PlaySound ("weapons/bfg/explode", CHAN_7, 1.0);
+			A_Quake (8,20,0,750,0);
 			//A_BFGSpray("BFGSpray", 20, 15, 360, 1024, 32, 0, BFGF_MISSILEORIGIN);
 			//A_BFGSpray("BFGSpray", 40, 15, 90, 1024, 32, 0);
 			A_BFGSpray("BFGSpray");
+			A_Explode(128,128,!XF_HURTSOURCE);
 		}
 		BFE1 ABCDEF 4 Bright
+		TNT1 A 35
 		Stop
 	}
 }
