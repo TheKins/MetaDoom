@@ -387,7 +387,7 @@ ACTOR CyberMancShot
 		BAL7 A 0 A_ChangeFlag("NOGRAVITY", 0)
 		goto SpawnFall
 	SpawnFall:
-		BAL7 AB 4 BRIGHT A_SpawnItem ("DoomBaronBallEffect", 0, 0, 0, 0)
+		BAL7 AB 4 BRIGHT A_SpawnItem ("MetaBaronBallEffect", 0, 0, 0, 0)
 		loop
 	XDeath:
 	Crash:
