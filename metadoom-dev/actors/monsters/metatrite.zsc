@@ -62,20 +62,20 @@ class MetaTrite : MonsterCore
 		TRIT A 10 A_Look;
 		Loop;
 	See:
-		TRIT A 3 A_TriteChaseDecide;
-		TRIT B 3 A_Chase("Melee",null);
-		TRIT C 3 A_TriteWalk;
-		TRIT D 3 A_Chase("Melee",null);
+		TRIT A 3 Fast A_TriteChaseDecide;
+		TRIT B 3 Fast A_Chase("Melee",null);
+		TRIT C 3 Fast A_TriteWalk;
+		TRIT D 3 Fast A_Chase("Melee",null);
 		Loop;
 	Melee:
 		TRIT A 3 Slow A_FaceTarget;
 		TRIT B 3 Slow A_TriteAttack;
 		goto SeeFloor;
 	SeeFloor:
-		TRIT A 3 A_TriteWalk;
-		TRIT B 3 A_Chase("Melee","JumpUp");
-		TRIT C 3 A_TriteWalk;
-		TRIT D 3 A_Chase("Melee","JumpUp");
+		TRIT A 3 Fast A_TriteWalk;
+		TRIT B 3 Fast A_Chase("Melee","JumpUp");
+		TRIT C 3 Fast A_TriteWalk;
+		TRIT D 3 Fast A_Chase("Melee","JumpUp");
 		Loop;
 	JumpUp:
 		TRIT A 0 A_JumpIf((ceilingz - floorz) > 100, "SeeFloor");
