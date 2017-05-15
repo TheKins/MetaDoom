@@ -86,6 +86,10 @@ intermission/paststats		endlnext
 intermission/pastcoopstats	endlnext
 intermission/pastdmstats	endlcopd
 
+intermission/maxkills		endlmaxk
+intermission/maxitems		endlmaxi
+intermission/maxsecret		endlmaxs
+
 menu/100percent				100it
 
 // wildweasel
