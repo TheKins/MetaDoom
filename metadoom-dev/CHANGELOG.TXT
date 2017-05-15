@@ -43,7 +43,8 @@ Miscellaneous:
 Optional Content:
 - Props have now been meta-fied! The random set-dressing throughout the Doom
   world has been given a lick of paint, and now blend in better with the
-  enhancements the mod makes to the monsters. Some of them are even destructible!
+  enhancements the mod makes to the monsters. Some of them are destructible!
+  Some of them are even extinguishable!
 - Commander Keens now have more variants, further covering Id's pre-Wolf history.
 
 v3.666 "Samuel" (08/04/17)
