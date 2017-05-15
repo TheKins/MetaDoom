@@ -14,6 +14,8 @@ Intermission Screen
 class MetaDoomStatusScreen : DoomStatusScreen
 {
 	// States for single-player
+	// This is primarily to fix a bug with advancing the intermission,
+	// due to adding an extra state between Secret and Time.
 	enum ESPState
 	{
 		SP_KILLS = 0,
@@ -60,6 +62,8 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		return y + pinfo.mFont.GetHeight() * CleanYfac;
 	}
 
+	// Attempted to replace the "FINISHED" and "ENTERING" graphic lumps with a text string.
+	// Only half got it right. Maybe I'll get it right next time.
 	int drawLF ()
 	{
 		int y = TITLEY * CleanYfac;
@@ -87,6 +91,9 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		DrawName(y, wbs.LName1, lnametexts[1]);
 	}
 	
+	// Draws images to the left and right of the traditional intermission graphic,
+	// as a sick hack to fill in space for widescreen players (aka. most players
+	// nowadays in this Brutal-tinged era.
 	void widescreenDatShit ()
 	{
 		TextureID interborder = TexMan.CheckForTexture("INTBACK", TexMan.Type_MiscPatch);
@@ -122,6 +129,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 			if (!intermissioncounter || cnt_kills[0] >= Plrs[me].skills)
 			{
 				cnt_kills[0] = Plrs[me].skills;
+				// Play a different sound if you 100%
 				if (Plrs[me].skills >= wbs.maxkills)
 				{
 					PlaySound("intermission/maxkills");
@@ -143,6 +151,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 			if (!intermissioncounter || cnt_items[0] >= Plrs[me].sitems)
 			{
 				cnt_items[0] = Plrs[me].sitems;
+				// Play a different sound if you 100%
 				if (Plrs[me].sitems >= wbs.maxitems)
 				{
 					PlaySound("intermission/maxitems");
@@ -164,6 +173,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 			if (!intermissioncounter || cnt_secret[0] >= Plrs[me].ssecret)
 			{
 				cnt_secret[0] = Plrs[me].ssecret;
+				// Play a different sound if you 100%
 				if (Plrs[me].ssecret >= wbs.maxsecret)
 				{
 					PlaySound("intermission/maxsecret");
@@ -175,9 +185,14 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		}
 		else if (sp_state == 8)
 		{
+				// Just play a sound! Let's not bother with counting up the score,
+				// it's probably really big, anyway.
 				PlaySound("intermission/nextstage");
 				sp_state++;
 		}
+		
+		// This bit is largely untouched logic-wise, except for advancing the
+		// state number.
 		else if (sp_state == 10)
 		{
 			if (intermissioncounter)
@@ -247,6 +262,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 
 		if (sp_state >= 2)
 		{
+			// Draw a golden percentage if you 100%
 			if (Plrs[me].skills == wbs.maxkills)
 			{
 				drawPercent (IntermissionFont, countpos, SP_STATSY, cnt_kills[0], wbs.maxkills, true, Font.CR_GOLD);
@@ -256,6 +272,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		}
 		if (sp_state >= 4)
 		{
+			// Draw a golden percentage if you 100%
 			if (Plrs[me].sitems == wbs.maxitems)
 			{
 				drawPercent (IntermissionFont, countpos, SP_STATSY+lh, cnt_items[0], wbs.maxitems, true, Font.CR_GOLD);
@@ -265,6 +282,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		}
 		if (sp_state >= 6)
 		{
+			// Draw a golden percentage if you 100%
 			if (Plrs[me].ssecret == wbs.maxsecret)
 			{
 				drawPercent (IntermissionFont, countpos, SP_STATSY+2*lh, cnt_secret[0], wbs.maxsecret, true, Font.CR_GOLD);
