@@ -223,6 +223,7 @@ ACTOR MetaQuadDamage : PowerupGiver
 	powerup.type Damage
 	Powerup.Duration -60
 	damagefactor "normal", 4
+	damagefactor "SoulCube", 1
 	Powerup.Color 175, 0, 255, 0.3
 	scale 0.75
 	RenderStyle Translucent
