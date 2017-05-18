@@ -10,7 +10,7 @@ end
 
 
 :Platform
-	playuntildone plats/start
+	playtime plats/start 32
 	playrepeat plats/mid
 	stopsound plats/stop
 end

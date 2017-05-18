@@ -39,6 +39,7 @@ Miscellaneous:
 - Exploding Barrel now has more more visible splash effects.
 - SP Intermission screen has been changed and now displays your current score,
   along with highlighting 100%-ed categories.
+- Fixed the brief "pause" between the start and loop sounds on platforms.
   
 Optional Content:
 - Props have now been meta-fied! The random set-dressing throughout the Doom
