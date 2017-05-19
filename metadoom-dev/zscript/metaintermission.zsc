@@ -106,7 +106,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		if (acceleratestage && sp_state != 12)
 		{
 			acceleratestage = 0;
-			sp_state = 10;
+			sp_state = 12;
 			PlaySound("intermission/nextstage");
 
 			cnt_kills[0] = Plrs[me].skills;
