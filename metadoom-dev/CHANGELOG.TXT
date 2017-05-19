@@ -38,6 +38,9 @@ Miscellaneous:
   not Trites spawn, for the violently arachnophobic among you.
 - IWAD map names have been given proper capitalization, because sure, okay.
 - Exploding Barrel now has more more visible splash effects.
+- Scoring 100% kills/items/secrets on a level will pop up a little message on
+  the screen and award you a bunch of points. (Note: This can only be triggered
+  once per category per level.)
 - SP Intermission screen has been changed and now displays your current score,
   along with highlighting 100%-ed categories.
 - Fixed the brief "pause" between the start and loop sounds on platforms.
