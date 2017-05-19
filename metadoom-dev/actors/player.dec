@@ -9,10 +9,15 @@ Player Class
 // counters for death states
 // these tell the metadoom weapon how you done fucked up
 actor DeathStateGibbed : Boolean {}
-actor DisableHUD : Boolean {}
 
+// counters for acs scripts
+actor DisableHUD : Boolean {}
 actor PlayerHealthWarning : Boolean {}
 actor FireExtinguished : Boolean {}
+
+actor 100Percent_Monsters : Boolean {}
+actor 100Percent_Items : Boolean {}
+actor 100Percent_Secrets : Boolean {}
 
 ACTOR MetaDoomPlayer : PlayerPawn
 {

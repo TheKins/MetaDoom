@@ -78,6 +78,62 @@ script "PistolAmmoStart" ENTER
 		GiveInventory("PistolAmmoCoupon", 1);
 	}
 }
+
+// 100% Stats Handling Stuff
+Script "100Percent" ENTER
+{
+	if (GameType () != GAME_NET_DEATHMATCH)
+	{
+		if (!CheckInventory("100Percent_Monsters") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
+		{
+			GiveInventory("100Percent_Monsters", 1);
+			delay(17);
+			LocalAmbientSound("menu/100percent", 127);
+			delay(4);
+			SetHudSize(320,200,1);
+			SetFont("DBIGFONT");
+			HudMessage(s:"All Monsters Destroyed!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			SetFont("SmallFont");
+			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
+			GiveInventory("ScoreItem", 10000);
+		} 
+		if (!CheckInventory("100Percent_Items") & (GetLevelInfo (LEVELINFO_FOUND_ITEMS) == GetLevelInfo (LEVELINFO_TOTAL_ITEMS)) & (GetLevelInfo (LEVELINFO_TOTAL_ITEMS) != 0))
+		{
+			GiveInventory("100Percent_Items", 1);
+			delay(17);
+			LocalAmbientSound("menu/100percent", 127);
+			delay(4);
+			SetHudSize(320,200,1);
+			SetFont("DBIGFONT");
+			HudMessage(s:"All Items Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			SetFont("SmallFont");
+			HudMessage(s:"5000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
+			GiveInventory("ScoreItem", 5000);
+		}
+		if (!CheckInventory("100Percent_Secrets") & (GetLevelInfo (LEVELINFO_FOUND_SECRETS) == GetLevelInfo (LEVELINFO_TOTAL_SECRETS)) & (GetLevelInfo (LEVELINFO_TOTAL_SECRETS) != 0))
+		{
+			GiveInventory("100Percent_Secrets", 1);
+			delay(17);
+			LocalAmbientSound("menu/100percent", 127);
+			delay(4);
+			SetHudSize(320,200,1);
+			SetFont("DBIGFONT");
+			HudMessage(s:"All Secrets Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			SetFont("SmallFont");
+			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
+			GiveInventory("ScoreItem", 10000);
+		}
+		Delay(1);
+		restart;
+	}
+}
+
+Script "Strip100PercentOnStart" ENTER
+{
+	TakeInventory("100Percent_Monsters", 999);
+	TakeInventory("100Percent_Items", 999);
+	TakeInventory("100Percent_Secrets", 999);
+}
 		
 
 // TZK's Flashlight
