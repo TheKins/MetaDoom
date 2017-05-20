@@ -94,7 +94,7 @@ Script "100Percent" ENTER
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
 			SetFont("DBIGFONT");
-			HudMessage(s:"All Monsters Destroyed!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			HudMessage(l:"100_MONSTERS"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
 			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 10000);
@@ -109,7 +109,7 @@ Script "100Percent" ENTER
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
 			SetFont("DBIGFONT");
-			HudMessage(s:"All Items Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			HudMessage(l:"100_ITEMS"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
 			HudMessage(s:"5000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 5000);
@@ -124,7 +124,7 @@ Script "100Percent" ENTER
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
 			SetFont("DBIGFONT");
-			HudMessage(s:"All Secrets Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
+			HudMessage(l:"100_SECRETS"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
 			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 10000);

@@ -182,6 +182,11 @@ TAGHOLOGRAM = "Hologram";
 GOTHASTE = "HasteSphere!";
 GOTQUAD = "Quad Damage!";
 
+// 100% Toasts
+100_MONSTERS = "All Monsters Destroyed!";
+100_ITEMS = "All Items Found!";
+100_SECRETS = "All Secrets Found!";
+
 // Quit Messages
 QUITMSG = "Are you sure you want to\nquit this great game?";
 QUITMSG1 = "Leave the number one global\ncause of decreased productivity?";													// Doom1 prerelease press
