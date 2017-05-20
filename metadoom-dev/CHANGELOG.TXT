@@ -31,6 +31,7 @@ Monster Changes:
 - The Bruiser Bros' jump attack's landing sound now plays properly.
 - The Former Human family now have new sound effects.
 - Adjusted Nightmare Imp sprite scaling to better match original game.
+- Nightmare Spectre now uses Doom 64 sprites.
 
 HUD Changes:
 - Health gem now indicates when you're invulnerable.
