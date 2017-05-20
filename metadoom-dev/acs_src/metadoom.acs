@@ -87,10 +87,12 @@ Script "100Percent" ENTER
 		if (!CheckInventory("100Percent_Monsters") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
 		{
 			GiveInventory("100Percent_Monsters", 1);
+			SetHudSize(320,200,1);
+			SetFont("100TOAST");
+			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, 160.0, 36.0, 2.0, 0.45, 1.0);
 			delay(17);
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
-			SetHudSize(320,200,1);
 			SetFont("DBIGFONT");
 			HudMessage(s:"All Monsters Destroyed!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
@@ -100,10 +102,12 @@ Script "100Percent" ENTER
 		if (!CheckInventory("100Percent_Items") & (GetLevelInfo (LEVELINFO_FOUND_ITEMS) == GetLevelInfo (LEVELINFO_TOTAL_ITEMS)) & (GetLevelInfo (LEVELINFO_TOTAL_ITEMS) != 0))
 		{
 			GiveInventory("100Percent_Items", 1);
+			SetHudSize(320,200,1);
+			SetFont("100TOAST");
+			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, 160.0, 36.0, 2.0, 0.45, 1.0);
 			delay(17);
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
-			SetHudSize(320,200,1);
 			SetFont("DBIGFONT");
 			HudMessage(s:"All Items Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
@@ -113,10 +117,12 @@ Script "100Percent" ENTER
 		if (!CheckInventory("100Percent_Secrets") & (GetLevelInfo (LEVELINFO_FOUND_SECRETS) == GetLevelInfo (LEVELINFO_TOTAL_SECRETS)) & (GetLevelInfo (LEVELINFO_TOTAL_SECRETS) != 0))
 		{
 			GiveInventory("100Percent_Secrets", 1);
+			SetHudSize(320,200,1);
+			SetFont("100TOAST");
+			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, 0, 160.0, 36.0, 2.0, 0.45, 1.0);
 			delay(17);
 			LocalAmbientSound("menu/100percent", 127);
 			delay(4);
-			SetHudSize(320,200,1);
 			SetFont("DBIGFONT");
 			HudMessage(s:"All Secrets Found!"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 2.0, 0.01, 1.0);
 			SetFont("SmallFont");
