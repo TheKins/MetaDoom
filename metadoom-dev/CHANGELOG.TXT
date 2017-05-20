@@ -17,10 +17,14 @@ Weapon Changes:
 - Fixed Unmaker firing sound cutting off the altfire sound. (Thanks TerminusEst13!)
 - Lightning Gun now consumes ammo at a much faster rate.
 - Lightning Gun now does sliiiiightly more damage
+- Fixed several minor bugs with Lightning Gun alt-fire mechanics
 - BFG explosion sound now plays properly.
 - BFG explosion now has an actual explosion involved... if that makes sense.
 
 Monster Changes:
+- Spawners now detect when you're playing Doom 1 episodes or No Rest For The Living,
+  and adjust the number of maps required for monsters to possibly spawn to suit the
+  lower level count.
 - Fixed an obscure bug with Imp Lords that occured when they teleported away
   just after killing the player, where they would forget that gravity exists.
 - Revenants and Fiends no longer infight. They are now Skelefriends. Pallingtons?
