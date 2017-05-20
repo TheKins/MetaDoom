@@ -29,6 +29,7 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 	Obituary "$OB_LIGHTNING"
 	Inventory.PickupSound "weapons/lightninggun/get"
 	+WEAPON.NOALERT
+	+WEAPON.ALT_AMMO_OPTIONAL
 	scale 0.75
 	States
 	{
@@ -117,9 +118,9 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 	AltFire:
 		THUN A 0 A_JumpIfInventory("Cell",15,"StunShot")
 		THUN A 1 Offset(0,34) A_PlaySound("weapons/grenadelauncher/altdeny", CHAN_BODY)
-		THUN A 1 Offset(0,33)
-		THUN A 1 Offset(0,32)
-		THUN A 10
+		THUN B 1 Offset(0,33)
+		THUN C 1 Offset(0,32)
+		THUN ABCABCABC 1
 		goto Ready
 	StunShot:
 		THUN DE 2 bright A_PlaySound("weapons/lightninggun/altfire")
@@ -141,9 +142,8 @@ ACTOR MetaLightningGun : MetaDoomWeapon
 		THUN D 1 Offset(0,34) 
 		THUN D 1 Offset(0,33) 
 		THUN A 1 Offset(0,32) 
-		THUN A 1 
-		THUN A 8
-		THUN A 2
+		THUN B 1 
+		THUN CABCABCABC 1
 		THUN A 0 A_Refire
 		Goto Ready	
 		
