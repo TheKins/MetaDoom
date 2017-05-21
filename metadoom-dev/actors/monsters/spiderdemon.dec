@@ -218,6 +218,7 @@ ACTOR MetaSpiderdemonBall
 	RenderStyle Add
 	Alpha 1
 	decal DoomImpScorch
+	damagetype SpiderdemonAttack
 	States
 	{
 	Spawn:
@@ -279,6 +280,7 @@ ACTOR MetaSpiderdemonTKBall
 	scale 2
 	Alpha 1
 	decal CacoScorch
+	damagetype SpiderdemonAttack
 	States
 	{
 	Spawn:
