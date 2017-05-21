@@ -541,3 +541,29 @@ monsters/cybermanc/hit2				cfathit2
 $random monsters/cybermanc/bomb 	{ monsters/cybermanc/bomb1 monsters/cybermanc/bomb2 }
 monsters/cybermanc/bomb1			cfatbom1
 monsters/cybermanc/bomb2			cfatbom2
+
+// spider mastermind
+monsters/spidermastermind/see		mspisee
+monsters/spidermastermind/pain		mspipain
+monsters/spidermastermind/die1		mspidie1
+monsters/spidermastermind/die2		mspidie2
+monsters/spidermastermind/ready1		mspirdy1
+monsters/spidermastermind/ready2		mspirdy2
+
+monsters/spidermastermind/tkwave		mspitkw
+
+$random monsters/spidermastermind/idle  { monsters/spidermastermind/idle1 monsters/spidermastermind/idle2 }
+monsters/spidermastermind/idle1		mspiidl1
+monsters/spidermastermind/idle2		mspiidl2
+
+$random monsters/spidermastermind/fire 	{ monsters/spidermastermind/fire1 monsters/spidermastermind/fire2 monsters/spidermastermind/fire3 monsters/spidermastermind/fire4 }
+monsters/spidermastermind/fire1		mspifir1
+monsters/spidermastermind/fire2		mspifir2
+monsters/spidermastermind/fire3		mspifir3
+monsters/spidermastermind/fire4		mspifir4
+monsters/spidermastermind/firehit		mspifirh
+
+$random monsters/spidermastermind/walk 		{ monsters/spidermastermind/walk1 monsters/spidermastermind/walk2 monsters/spidermastermind/walk3 }
+monsters/spidermastermind/walk1		mspiwlk1
+monsters/spidermastermind/walk2		mspiwlk2
+monsters/spidermastermind/walk3		mspiwlk3
