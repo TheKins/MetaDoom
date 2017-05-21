@@ -6,8 +6,7 @@ Spiderdemon
 ----------------------------
 */
 
-// Currently more or less identical to the original Doom monster, behavior-wise.
-// TODO: Twiddle with, add at least one variant!
+// Faster, Deadlier, Scarier
 
 ACTOR MetaSpiderMastermind : MonsterCore
 {
@@ -15,7 +14,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 	Radius 100
 	Height 100
 	Mass 1000
-	Speed 24 //12
+	Speed 24
 	PainChance 40
 	Monster
 	MinMissileChance 160
@@ -24,6 +23,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 	+FLOORCLIP
 	+NORADIUSDMG
 	+DONTMORPH
+	+DONTGIB
 	//+BOSSDEATH
 	SeeSound "monsters/spidermastermind/see"
 	PainSound "monsters/spidermastermind/pain"
@@ -73,7 +73,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 			A_CustomMissile("MetaSpiderdemonBall");
 			A_PlaySound("monsters/spidermastermind/fire");
 		}
-		SPID H 1 BRIGHT A_SpidRefire
+		SPID H 1 BRIGHT A_MonsterRefire(20, "Roam")
 		Goto RapidAttack+1
 	RollerTKAttack:
 		SPID A 0 A_Stop
@@ -212,6 +212,7 @@ ACTOR MetaSpiderdemonBall
 	Damage 4
 	Projectile
 	+RANDOMIZE
+	+EXTREMEDEATH
 	RenderStyle Add
 	Alpha 1
 	decal DoomImpScorch
@@ -223,6 +224,7 @@ ACTOR MetaSpiderdemonBall
 		Loop
 	Death:
 		APBX A 0 A_Quake (3,5,0,750,0)
+		APBX A 0 A_Explode(8,64,!XF_HURTSOURCE)
 		APBX A 0 A_PlaySound("monsters/spidermastermind/firehit")
 		APBX ABCDE 5 BRIGHT
 		Stop
@@ -268,6 +270,7 @@ ACTOR MetaSpiderdemonTKBall
 	+RANDOMIZE
 	-NOGRAVITY	
 	+NOEXPLODEFLOOR
+	+EXTREMEDEATH
 	gravity 0.25
 	RenderStyle Add
 	scale 2
@@ -281,6 +284,8 @@ ACTOR MetaSpiderdemonTKBall
 		BAL2 AB 4 BRIGHT
 		Loop
 	Death:
+		BAL2 A 0 A_Quake (3,5,0,750,0)
+		BAL2 A 0 A_Explode(8,64,!XF_HURTSOURCE)
 		BAL2 C 0 A_PlaySound("monsters/caco/lightningball/hit", CHAN_BODY)
 		BAL2 CDE 6 BRIGHT
 		Stop
