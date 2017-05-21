@@ -53,7 +53,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 		Loop
 	Missile:
 		SPID A 0
-		SPID A 0 A_Jump(64, "TKAttack")
+		SPID A 0 A_Jump(64, "RollerTKAttack")
 		goto RapidAttack
 	RapidAttack:
 		SPID A 20 BRIGHT { A_FaceTarget; A_PlaySound("monsters/spidermastermind/ready1"); }
@@ -75,7 +75,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 		}
 		SPID H 1 BRIGHT A_SpidRefire
 		Goto RapidAttack+1
-	TKAttack:
+	RollerTKAttack:
 		SPID A 0 A_Stop
 		SPID A 0 { A_FaceTarget; A_PlaySound("monsters/spidermastermind/ready2"); }
 		SPID AAAAAAA 0 BRIGHT { A_FaceTarget; A_CustomMissile("SpiderDemonChargeupParticle",64,0,random(0,360),CMF_OFFSETPITCH,random(0,48)); }
@@ -172,19 +172,19 @@ ACTOR MetaSpiderMastermind : MonsterCore
 		SPID L 10 A_PlaySound("monsters/spidermastermind/die2", CHAN_AUTO, 1.0, 0, ATTN_NONE)
 		SPID M 0
 		{
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
-			A_CustomMissile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_CustomMissile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
 			A_Quake (4,25,0,750,0);
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
@@ -194,7 +194,7 @@ ACTOR MetaSpiderMastermind : MonsterCore
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
 			A_CustomMissile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
 			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
-			A_SpawnItem("CyberdemonExplosionShockwave",0,55);
+			A_SpawnItem("CyberdemonExplosionShockwave",0,32);
 		}
 		SPID MNOPQR 10
 		SPID S 30
