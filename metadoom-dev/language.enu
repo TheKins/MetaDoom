@@ -307,6 +307,7 @@ OB_SPIBORG = "%o was railed by a Spiborg.";
 OB_TRITE = "%o was trifled with by a Trite.";
 OB_SUMMONER = "%o was ceased by a Summoner.";
 OB_SUMMONER_POPCORN = "%o was dealt with by a Summoner's servant.";
+OB_CFATSO = "%o was splashed by a Cyber-Mancubus.";
 
 OB_METAFIST = "%o was Gloriously Killed by %k.";
 OB_BERSERK = "%o ate the Berserker Rage of %k.";
