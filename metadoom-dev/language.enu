@@ -76,6 +76,7 @@ METAMENU_SPAWNINGDUDES = "More Actors";
 METAMENU_SPAWNINGLIMITS = "Content Locust Mode";
 METAMENU_MAPBREAKERS = "Potential Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
+METAMENU_EPISODICSPAWNS = "Seperate Episodic Spawn Rules";
 
 METAMENU_ITEMHEADER = "Item Behavior";
 METAMENU_RETROBERSERK = "Traditional Berserk";
