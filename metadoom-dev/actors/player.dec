@@ -147,6 +147,12 @@ ACTOR MetaDoomPlayer : PlayerPawn
 		PLAY G 4
 		PLAY G 4 A_PlaySound("player/hurtslime")
 		Goto Spawn
+	Pain.SpiderdemonTKAttack:
+		PLAY G 0 
+		{
+			ThrustThingZ(0,32,0,1);
+		}
+		goto Pain
 	Death:
 		PLAY H 0
 		PLAY H 0 A_StopSound(CHAN_BODY)

@@ -238,6 +238,14 @@ class MonsterCore : Actor
 		}
 		"####" # 0 A_Jump (256, "XDeath");
 		stop;
+	// Spiderdemon
+	Pain.SpiderdemonTKAttack:
+		"####" # 0
+		{
+			ThrustThingZ(0,32,0,1);
+		}
+		"####" # 0 A_Jump (256, "Pain");
+		stop;
 	// General purpose catchall to prevent errors when an actor that doesn't have an XDeath tries to jump to an XDeath
 	XDeath:
 		"####" # 0 A_Jump (256, "Death");

@@ -38,6 +38,7 @@ ACTOR MetaCyberdemon : MonsterCore
 	painchance ChaingunTurret, 0
 	damagefactor SpiderdemonAttack, 0.5
 	painchance SpiderdemonAttack, 0
+	damagefactor SpiderdemonTKAttack, 0.5
 	scale 0.75
 	States
 	{

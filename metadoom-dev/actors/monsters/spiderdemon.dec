@@ -286,7 +286,8 @@ ACTOR MetaSpiderdemonTKBall
 	scale 2
 	Alpha 1
 	decal CacoScorch
-	damagetype SpiderdemonAttack
+	damagetype SpiderdemonTKAttack
+	
 	States
 	{
 	Spawn:
