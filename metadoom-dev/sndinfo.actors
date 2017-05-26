@@ -567,3 +567,25 @@ $random monsters/spidermastermind/walk 		{ monsters/spidermastermind/walk1 monst
 monsters/spidermastermind/walk1		mspiwlk1
 monsters/spidermastermind/walk2		mspiwlk2
 monsters/spidermastermind/walk3		mspiwlk3
+
+// unwilling - the popcorn monster
+monsters/unwilling/see1			unwisee1
+monsters/unwilling/see2			unwisee2
+monsters/unwilling/see3			unwisee3
+
+monsters/unwilling/idle			unwiidle
+monsters/unwilling/pain			unwipain
+
+monsters/unwilling/attack1			unwiatk1
+monsters/unwilling/attack2			unwiatk2
+monsters/unwilling/attack3			unwiatk3
+
+monsters/unwilling/fire1			unwifir1
+monsters/unwilling/fire2			unwifir2
+
+monsters/unwilling/die1			unwidie1
+monsters/unwilling/die2			unwidie2
+monsters/unwilling/die3			unwidie3
+
+monsters/unwilling/gib1			unwigib1
+monsters/unwilling/gib2			unwigib2

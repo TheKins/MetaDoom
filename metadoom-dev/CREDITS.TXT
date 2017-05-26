@@ -58,6 +58,7 @@ Eriance (Beholder sprite, Grenade Launcher parts)
 Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
 Phobos867 (Imp Lord sprites)
 Blue Shadow (Doom 3 Keycard Sprites)
+Vader, Finalizer and Horror Movie Guy (base sprites for Unwilling)
 
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 CaptainToenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
