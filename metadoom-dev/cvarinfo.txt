@@ -19,3 +19,6 @@ server int meta_perf_bloodtime = 6666;
 
 // pistol ammo
 server int meta_pistolammo = 0;
+
+// ui crap
+server int meta_toastsize = 1;

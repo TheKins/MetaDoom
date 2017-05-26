@@ -77,6 +77,7 @@ METAMENU_SPAWNINGLIMITS = "Content Locust Mode";
 METAMENU_MAPBREAKERS = "Potential Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Separate Episodic Spawn Rules";
+METAMENU_TOASTSIZE = "''100%'' Message Size";
 
 METAMENU_ITEMHEADER = "Item Behavior";
 METAMENU_RETROBERSERK = "Traditional Berserk";
@@ -86,6 +87,8 @@ METAMENU_PERFHEADER = "Performance Controls";
 METAMENU_PERFCULLER = "Blood Cull Radius";
 METAMENU_PERFBLOOD = "Force Blood to Fade Out";
 METAMENU_PERFBLOODTIME = "Blood Lifetime (in gametics)";
+
+METAMENU_MISC = "Miscellany";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";

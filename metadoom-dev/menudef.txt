@@ -171,8 +171,7 @@ OptionMenu "OptionsMenu"
 OptionMenu "MetaMenu"
 {
 	Title "$OPTMNU_METADOOM"
-	Option "$METAMENU_DEBUG",              "meta_developer", "OnOff"
-	StaticText " "
+		StaticText " "
 	StaticText "$METAMENU_SPAWNINGHEADER", 1
 	Option "$METAMENU_SPAWNINGGUNS",              "meta_noalts_weapons", "OffOn"
 	Option "$METAMENU_SPAWNINGDUDES",              "meta_noalts_actors", "OffOn"
@@ -189,4 +188,8 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_PERFBLOOD",              "meta_perf_fadeblood", "OnOff"
 	Slider "$METAMENU_PERFBLOODTIME",			"meta_perf_bloodtime", "0", "10500", "175", "0"
 	Slider "$METAMENU_PERFCULLER",			"meta_perf_bloodcullradius", "0", "16", "1", "0"
+	StaticText " "
+	StaticText "$METAMENU_MISC", 1
+	Option "$METAMENU_DEBUG",              "meta_developer", "OnOff"
+	Slider "$METAMENU_TOASTSIZE",			"meta_toastsize", "1", "4", "1", "0"
 }
