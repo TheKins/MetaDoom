@@ -445,7 +445,7 @@ ACTOR MetaUnwilling : MonsterCore
 	Missile:
 		UNWI E 0 A_PlaySound("monsters/unwilling/attack", CHAN_VOICE)
 		UNWI EF 4 A_FaceTarget
-		UNWI G 6 A_CustomComboAttack("UnwillingGibBall", 32, 3 * random(1, 8), "monsters/imp/claw")
+		UNWI G 6 A_CustomComboAttack("UnwillingGibBall", 32, 3 * random(1, 8), "monsters/unwilling/punch")
 		Goto See
 	Pain:
 		UNWI H 0

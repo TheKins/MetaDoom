@@ -576,6 +576,7 @@ monsters/unwilling/see3			unwisee3
 
 monsters/unwilling/idle			unwiidle
 monsters/unwilling/pain			unwipain
+monsters/unwilling/punch		unwipnch
 
 $random monsters/unwilling/attack 	{ monsters/unwilling/attack1 monsters/unwilling/attack2 monsters/unwilling/attack3 }
 monsters/unwilling/attack1			unwiatk1
