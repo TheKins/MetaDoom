@@ -38,12 +38,17 @@ HUD Changes:
 - Armor gem now indicates when you have Blue Armor.
 - Ammo bar is now effected by meta_pistolammo, as it should be.
 
+New CVars (also in MetaDoom Options menu):
+- The "Spooky Spoders" CVar (meta_nospoders) controls whether or not Trites spawn,
+  for the violently arachnophobic among you.
+- The "Separate Episodic Spawn Rules" CVar (meta_episodicspawns) toggles whether
+  monster spawns will use episodic progression rules (as noted above) in episodic
+  maps. Turn off to force Doom 2 progression, like in previous versions of MetaDoom.
+- The "100% Message Size" CVar (meta_toastsize) scales the 100% message (as noted
+  below). This isn't perfect, and the message will still look best at 1x scale,
+  but some people just hate big pixelly text, you know?
+
 Miscellaneous:
-- Added a new "Spooky Spoders" CVAR! (meta_nospoders) This controls whether or
-  not Trites spawn, for the violently arachnophobic among you.
-- Added a new "Separate Episodic Spawn Rules" CVAR! (meta_episodicspawns). If
-  disabled, monster spawns will follow Doom 2 progression rules even within Doom 1
-  and NRFTL maps. If... that's a thing you want.
 - IWAD map names have been given proper capitalization, because sure, okay.
 - Exploding Barrel now has more more visible splash effects.
 - Scoring 100% kills/items/secrets on a level will pop up a little message on
