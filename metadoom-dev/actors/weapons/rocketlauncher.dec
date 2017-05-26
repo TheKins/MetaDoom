@@ -1,4 +1,4 @@
-actor RLDetonator : Boolean {}
+actor RLDetonator : _Boolean {}
 
 ACTOR MetaRocketLauncherPickup : WeaponGiver
 {

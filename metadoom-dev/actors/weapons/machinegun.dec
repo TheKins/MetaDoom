@@ -1,5 +1,5 @@
-actor MachinegunRockets: Boolean {}
-actor MachinegunCheat: Boolean {}
+actor MachinegunRockets: _Boolean {}
+actor MachinegunCheat: _Boolean {}
 
 ACTOR MetaMachineGunPickup : WeaponGiver
 {

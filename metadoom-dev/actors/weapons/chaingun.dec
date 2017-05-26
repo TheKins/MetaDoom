@@ -1,4 +1,4 @@
-actor ChaingunTurretMode : Boolean {}
+actor ChaingunTurretMode : _Boolean {}
 
 ACTOR MetaChaingunPickup : WeaponGiver
 {

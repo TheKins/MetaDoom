@@ -24,4 +24,4 @@ ACTOR MetaCheatDetector : MetaPistol
 
 
 
-actor InventoryCooldownToken : Boolean {}
+actor InventoryCooldownToken : _Boolean {}

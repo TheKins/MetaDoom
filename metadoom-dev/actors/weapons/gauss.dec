@@ -1,4 +1,4 @@
-actor GaussScope : Boolean {}
+actor GaussScope : _Boolean {}
 
 ACTOR MetaGaussCannonPickup : WeaponGiver
 {

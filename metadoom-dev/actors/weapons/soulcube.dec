@@ -1,5 +1,5 @@
-actor SoulCubeUsed : Boolean {}
-actor SoulCubeMessagePopped : Boolean {}
+actor SoulCubeUsed : _Boolean {}
+actor SoulCubeMessagePopped : _Boolean {}
 
 ACTOR MetaSoulcubePickup : WeaponGiver
 {

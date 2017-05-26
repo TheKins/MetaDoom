@@ -6,7 +6,7 @@ Core Actors
 ----------------------------
 */
 
-actor Boolean: Inventory
+actor _Boolean: Inventory
 {
     Inventory.MaxAmount 1
     +UNDROPPABLE

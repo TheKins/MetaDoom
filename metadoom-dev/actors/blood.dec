@@ -1,5 +1,5 @@
 // Taken from Smooth Doom, with alterations. Thanks, guys!
-actor BloodReducer : Boolean {}
+actor BloodReducer : _Boolean {}
 
 ACTOR Gibs1
 {

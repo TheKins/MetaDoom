@@ -1,6 +1,6 @@
 // These "radar" actors let spawners tell each other what's nearby, allowing me
 // to "weigh" spawns based on what's nearby
-actor PossessedRadar : Boolean {}
+actor PossessedRadar : _Boolean {}
 
 actor ZombiemanSpawner replaces ZombieMan
 {

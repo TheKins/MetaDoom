@@ -1,4 +1,4 @@
-actor HolyWaterPistolEquipped : Boolean {}
+actor HolyWaterPistolEquipped : _Boolean {}
 
 ACTOR HolyWater : Ammo
 {

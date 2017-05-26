@@ -6,8 +6,8 @@ Pistol
 ----------------------------
 */
 
-actor PistolFlashlight: Boolean {}
-actor PistolAmmoCoupon: Boolean {}
+actor PistolFlashlight: _Boolean {}
+actor PistolAmmoCoupon: _Boolean {}
 
 ACTOR MetaPistolPickup : WeaponGiver
 {

@@ -9,7 +9,7 @@ All weapons inherit from MetaDoomWeapon, and hand off to its states
 when the player expires. This is used for the first-person death sequences.
 */
 
-actor MeleePunch : Boolean {}
+actor MeleePunch : _Boolean {}
 
 ACTOR MetaDoomWeapon : Weapon
 {
