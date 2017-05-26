@@ -200,7 +200,16 @@ ACTOR MetaGibbedMarine replaces GibbedMarine
 		PLAY W 0 A_Jump(128,"End")
 		PLAY W 0 A_SetScale(-1,1)
 	End:
+		PLAY W 0 A_Jump(128,"Slop2", "Slop3")
+		goto Slop1
+	Slop1:
 		PLAY W -1
+		Stop
+	Slop2:
+		SLOP A -1
+		Stop
+	Slop3:
+		SLOP B -1
 		Stop
 	}
 }
