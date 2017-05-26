@@ -292,8 +292,9 @@ ACTOR MetaSpiderdemonTKBall
 	Spawn:
 		BAL2 A 0
 		BAL2 A 0 A_PlaySoundEx("monsters/caco/lightningball/loop", "Body", 1)
-		BAL2 ABAB 4 BRIGHT
+		BAL2 ABABAB 4 BRIGHT
 		BAL2 A 0 A_ChangeFlag(NOGRAVITY, 1)
+		BAL2 A 0 ThrustThingZ(0,0,0,0)
 	Idle:
 		BAL2 AB 4 BRIGHT
 		Loop
