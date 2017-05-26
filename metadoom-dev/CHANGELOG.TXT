@@ -41,7 +41,7 @@ HUD Changes:
 Miscellaneous:
 - Added a new "Spooky Spoders" CVAR! (meta_nospoders) This controls whether or
   not Trites spawn, for the violently arachnophobic among you.
-- Added a new "Seperate Episodic Spawn Rules" CVAR! (meta_episodicspawns). If
+- Added a new "Separate Episodic Spawn Rules" CVAR! (meta_episodicspawns). If
   disabled, monster spawns will follow Doom 2 progression rules even within Doom 1
   and NRFTL maps. If... that's a thing you want.
 - IWAD map names have been given proper capitalization, because sure, okay.
