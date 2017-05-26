@@ -3,6 +3,28 @@ object MetaDoomPlayer
     frame PLAYF { light ZOMBIEATK }
 }
 
+// Barrel
+pulselight BARREL
+{
+    color 0.0 0.5 0.0
+    size 20
+    secondarySize 21
+    interval 0.5
+    offset 0 32 0
+	dontlightself 1
+	attenuate 0
+}
+
+// Barrel
+object MetaExplosiveBarrel
+{
+    frame BAR1  { light BARREL    }
+
+    frame BEXPC { light ROCKET_X1 }
+    frame BEXPD { light ROCKET_X2 }
+    frame BEXPE { light ROCKET_X3 }
+}
+
 // Possessed
 object MetaZombieMan
 {

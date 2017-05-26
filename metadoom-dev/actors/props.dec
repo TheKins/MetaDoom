@@ -34,7 +34,7 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 	States
 	{
 	Spawn:
-		BAR1 AB 6
+		BAR1 ABCDEFGHIJKLM 3
 		Loop
 	Pain:
 		BEXP A 0
