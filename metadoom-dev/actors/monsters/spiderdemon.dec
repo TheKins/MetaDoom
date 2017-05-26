@@ -10,7 +10,7 @@ Spiderdemon
 
 ACTOR MetaSpiderMastermind : MonsterCore
 {
-	Health 3500
+	Health 3200
 	Radius 100
 	Height 100
 	Mass 1000
