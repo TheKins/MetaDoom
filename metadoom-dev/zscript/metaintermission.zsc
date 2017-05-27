@@ -98,8 +98,8 @@ class MetaDoomStatusScreen : DoomStatusScreen
 	void widescreenDatShit ()
 	{
 		TextureID interborder = TexMan.CheckForTexture("INTBACK", TexMan.Type_MiscPatch);
-		screen.DrawTexture (interborder, true, -2240, -64, DTA_CLEANNOMOVE, true);
-		screen.DrawTexture (interborder, true, 1120, -64, DTA_CLEANNOMOVE, true);
+		screen.DrawTexture (interborder, true, -800, -64, DTA_Clean, true);
+		screen.DrawTexture (interborder, true, 320, -64, DTA_Clean, true);
 	}
 	
 	override void updateStats ()
