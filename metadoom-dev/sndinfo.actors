@@ -595,3 +595,10 @@ monsters/unwilling/die3			unwidie3
 $random monsters/unwilling/gib 	{ monsters/unwilling/gib1 monsters/unwilling/gib2 }
 monsters/unwilling/gib1			unwigib1
 monsters/unwilling/gib2			unwigib2
+
+// sawcubus
+monsters/chainsawgoblin/see			goblsee
+monsters/chainsawgoblin/pain		goblpain
+monsters/chainsawgoblin/die			gobldie
+monsters/chainsawgoblin/attack		goblattk
+monsters/chainsawgoblin/loop		goblloop
