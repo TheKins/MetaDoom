@@ -78,6 +78,7 @@ Marrub (ACS and ZScript advice)
 comet1338 (Fixed a z-fighting bug with flat decals)
 Major Cooke (Blood Stain recoding, engine-side support)
 Enjay (Terrain definitions)
+Gutawer (Zscript sensei, rewrote statscreen borders)
 
 NoirSuccubus (Doom 4 Audio Tools)
 Adrian Dale (Pinball FX Tools)
