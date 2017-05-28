@@ -25,7 +25,47 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		SP_SCORE = 8,
 		SP_TIME = 10,
 	};
+	
+	// Let's do incredibly stupid and ill-advised things!
+	
+	override void Ticker(void)
+	{
+		// counter for general background animation
+		bcnt++;  
+		
+		if (bcnt == 1)
+		{
+			S_ChangeMusic("");
+			PlaySound("menu/endmap");
+		}
+	
+		if (bcnt == 35)
+		{
+			StartMusic();
+		}
+	
+		checkForAccelerate();
+		bg.updateAnimatedBack();
+	
+		switch (CurState)
+		{
+		case StatCount:
+			updateStats();
+			break;
+		
+		case ShowNextLoc:
+			updateShowNextLoc();
+			break;
+		
+		case NoState:
+			updateNoState();
+			break;
 
+		case LeavingIntermission:
+			// Hush, GCC.
+			break;
+		}
+	}
 
 	override void Drawer (void)
 	{

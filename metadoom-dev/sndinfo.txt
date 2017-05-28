@@ -79,6 +79,14 @@ menu/dismiss			menuclos	// Dismiss a prompt message
 menu/choose			menuentr	// Choose a menu item
 menu/clear			menuclos	// Close top menu
 
+$random menu/endmap { menu/endmap1 menu/endmap2 menu/endmap3 menu/endmap4 menu/endmap5 menu/endmap6 }
+menu/endmap1		mapend1
+menu/endmap2		mapend2
+menu/endmap3		mapend3
+menu/endmap4		mapend4
+menu/endmap5		mapend5
+menu/endmap6		mapend6
+
 intermission/tick			endlcnt
 intermission/cooptotal		endlcopd
 intermission/nextstage		endlcntd
