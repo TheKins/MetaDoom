@@ -26,20 +26,21 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		SP_TIME = 10,
 	};
 	
-	// Let's do incredibly stupid and ill-advised things!
-	
+	// "Let's do incredibly stupid and ill-advised things!"	
 	override void Ticker(void)
 	{
 		// counter for general background animation
 		bcnt++;  
 		
+		// shut off the music and play a sound effect instead of going straight
+		// into the intermission music, because we CAN
 		if (bcnt == 1)
 		{
 			S_ChangeMusic("");
 			PlaySound("menu/endmap");
 		}
-	
-		if (bcnt == 35)
+		// start the music a little under a second after entering intermission
+		if (bcnt == 24)
 		{
 			StartMusic();
 		}
