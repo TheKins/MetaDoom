@@ -121,3 +121,135 @@ ACTOR MetaNightmareSpectre : MetaDemon
 		Goto See
 	}
 }
+
+// Surprise! The Sawcubus from Doom 2 RPG is here at the last minute!
+// It imitates the classic player Chainsaw attack, naturally.
+
+ACTOR MetaSawcubus : MonsterCore
+{
+	Health 160
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 13
+	PainChance 200
+	Monster
+	+FLOORCLIP
+	SeeSound "monsters/chainsawgoblin/see"
+	PainSound "monsters/chainsawgoblin/pain"
+	DeathSound "monsters/chainsawgoblin/die"
+	//ActiveSound "monsters/imp/idle"
+	Obituary "$OB_SAWCUBUS"
+	painchance HolyWater, 255
+	States
+	{
+	Spawn:
+		CGOB AB 10 A_Look
+		Loop
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood")
+		CGOB A 0 A_PlaySound("monsters/chainsawgoblin/loop", CHAN_7, 1.0, 1)
+		CGOB ABCD 3
+		{
+			A_Chase;
+			
+			if (!CheckIfSeen()) // optimisation: don't spawn if not visible, duh
+			{
+				A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3));
+			}
+		}
+		Loop
+	Melee:
+		CGOB E 0 A_PlaySound("monsters/chainsawgoblin/attack")
+		CGOB E 4
+		{
+			A_FaceTarget;
+			A_M_Saw ("weapons/chainsaw/slash", "weapons/chainsaw/slashhit");
+			ThrustThing(angle*256/360,2,0,0);
+			A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3));
+		}
+		CGOB F 4
+		Goto See
+	Pain:
+		CGOB G 0
+		CGOB G 2
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		CGOB G 2 A_Pain
+		Goto See
+	Pain.HolyWater:
+		CGOB G 3
+		CGOB G 3 A_Pain
+		Goto Scurred
+	Punched:
+		CGOB G 3 
+		CGOB G 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		CGOB G 12 A_Pain
+		Goto See
+	Scurred:
+		CGOB A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		CGOB A 0 A_GiveInventory("ScurredCounter", 1)
+		CGOB A 2 { A_Chase("", ""); A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3)); }
+		CGOB A 0 A_SpawnItem("HolySweat",0,54)
+		CGOB B 2 { A_Chase("", ""); A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3)); }
+		CGOB C 2 { A_Chase("", ""); A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3)); }
+		CGOB C 0 A_SpawnItem("HolySweat",0,54)
+		CGOB D 2 { A_Chase("", ""); A_SpawnItemEx("SawcubusSmokeTrail",0,16,32,0,0,random(0,3)); }
+		CGOB D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		CGOB D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Death:
+		CGOB H 0 A_StopSound(CHAN_7)
+		CGOB H 0 A_Jump (128, 2)
+		CGOB H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		CGOB H 0 A_SpawnItem("SoulSpawner")
+		CGOB H 8 A_GiveToTarget("ScoreItem", 150)
+		CGOB I 8 A_Scream
+		CGOB J 6 A_PlaySound("bodyfalls/medium")
+		CGOB K 6 A_NoBlocking
+		CGOB L -1 
+		Stop
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		CGOB H 5 A_GiveToTarget("ScoreItem", 150)
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		CGOB L 0 A_SetScale(1,1)
+		CGOB LKJIH 8
+		Goto See
+	}
+}
+
+ACTOR SawcubusSmokeTrail
+{
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +ALLOWPARTICLES
+  +RANDOMIZE
+  RenderStyle Translucent
+  Alpha 0.5
+  VSpeed 1
+  Mass 5
+  States
+  {
+  Spawn:
+    PUFF A 4 
+    PUFF B 4
+    PUFF CD 4
+    Stop
+  }
+}

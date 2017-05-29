@@ -3,7 +3,7 @@ v4 "Fred" (??/??/17)
 Spiel goes here. Everything is subject to change! Forget all you have seen!
 
 - Revamped 1 enemy (Spider Mastermind!)
-- Added # new enemies (Behemoth, Cyber-Mancubus, Spiborg, Trite, Summoner, Unwilling)
+- Added # new enemies (Behemoth, Cyber-Mancubus, Spiborg, Trite, Summoner, Unwilling, Sawcubus!)
 - Added # inventory items ()
 - Added # powerups (Quad Damage!)
 
