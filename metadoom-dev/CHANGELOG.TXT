@@ -1,9 +1,13 @@
-v4 "Fred" (??/??/17)
+v4 "Fred" (30/05/17)
 ====================
-Spiel goes here. Everything is subject to change! Forget all you have seen!
+Violence has arrived! Lots of new monsters, a revamped boss, and more polish than
+you can handle, including a couple of things that haven't been in any mods before
+this one! I'm absurdly happy with this one, as it finally meets my original vision
+for this mod when I started it a little over a year ago.
 
 - Revamped 1 enemy (Spider Mastermind!)
-- Added 7 new enemies (Behemoth, Cyber-Mancubus, Spiborg, Trite, Summoner, Unwilling, Sawcubus!)
+- Added 7 new enemies (Behemoth, Cyber-Mancubus, Spiborg, Trite,
+                       Summoner, Unwilling and the Sawcubus!)
 - Added 1 powerup (Quad Damage!)
 
 Inventory Changes:
