@@ -86,6 +86,7 @@ menu/endmap3		mapend3
 menu/endmap4		mapend4
 menu/endmap5		mapend5
 menu/endmap6		mapend6
+$volume menu/endmap 0.25
 
 intermission/tick			endlcnt
 intermission/cooptotal		endlcopd
