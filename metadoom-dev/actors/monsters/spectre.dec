@@ -144,8 +144,8 @@ ACTOR MetaSawcubus : MonsterCore
 	States
 	{
 	Spawn:
-		CGOB H 0
-		CGOB H 0 A_StopSound(CHAN_7)
+		CGOB A 0
+		CGOB A 0 A_StopSound(CHAN_7)
 		CGOB AB 10 A_Look
 		Loop
 	See:
@@ -226,6 +226,7 @@ ACTOR MetaSawcubus : MonsterCore
 		Stop
 	XDeath:
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
+		TNT1 A 0 A_SpawnItemEx("MetaChainsaw",0,0,0,0,0,10,0,0,128)
 		CGOB H 5 A_GiveToTarget("ScoreItem", 150)
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop

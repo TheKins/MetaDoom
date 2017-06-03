@@ -1,3 +1,10 @@
+v4 "Fred" (##/06/17)
+====================
+A number of small fixes based on feedback from the previous release. Thanks, folks!
+
+- Fixed Zombieman spawners only spawning Hell Razers when "More Actors" is off.
+- Sawcubi now have a 50/50 chance of dropping a chainsaw when gibbed, by popular demand.
+
 v4 "Fred" (30/05/17)
 ====================
 Violence has arrived! Lots of new monsters, a revamped boss, and more polish than
