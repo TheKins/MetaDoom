@@ -46,7 +46,7 @@ ACTOR MetaShotgunGuy : MonsterCore
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		SPOS E 10
@@ -187,7 +187,7 @@ ACTOR MetaZSec : MonsterCore
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 			A_PlaySound("shotguy/attack");
 		}
 		ZSEC E 10
