@@ -4,6 +4,8 @@ A number of small fixes based on feedback from the previous release. Thanks, fol
 
 - Fixed Zombieman spawners only spawning Hell Razers when "More Actors" is off.
 - Sawcubi now have a 50/50 chance of dropping a chainsaw when gibbed, by popular demand.
+- Summoners now have a limit on the number of times they can, well, summon, without
+  any players looking, preventing cases of wayward Summoners flooding the map
 
 v4 "Fred" (30/05/17)
 ====================

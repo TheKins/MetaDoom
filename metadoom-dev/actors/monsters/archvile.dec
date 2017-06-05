@@ -163,6 +163,8 @@ ACTOR MetaArchvileFire
 
 // Hurls popcorn enemies out in babby bosscubes and zooms around like a bastard
 
+actor SummonerOuttaSight : Counter { Inventory.MaxAmount 2 }
+
 ACTOR MetaSummoner : MonsterCore
 {
 	Health 600
@@ -230,6 +232,18 @@ ACTOR MetaSummoner : MonsterCore
 		Goto See
 	Popcorn:
 		SUMN A 0
+		SUMN A 0
+		{
+			if (!CheckIfSeen())
+			{
+				if (CountInv("SummonerOuttaSight") < 2)
+				{
+					A_GiveInventory("SummonerOuttaSight", 1);
+				} else {
+					A_Jump(256, "See");
+				}
+			}
+		}
 		SUMN NLKJ 4
 		SUMN I 0 A_JumpIf((ceilingz - floorz) < 256, "PopcornLow")
 	PopcornHigh:
