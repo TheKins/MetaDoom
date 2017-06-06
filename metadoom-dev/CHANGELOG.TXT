@@ -1,4 +1,4 @@
-v4 "Fred" (##/06/17)
+v4.1 "Fred" (06/06/17)
 ====================
 A number of small fixes based on feedback from the previous release. Thanks, folks!
 
