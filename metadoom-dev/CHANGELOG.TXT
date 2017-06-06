@@ -7,6 +7,7 @@ A number of small fixes based on feedback from the previous release. Thanks, fol
 - Sawcubi now have a 50/50 chance of dropping a chainsaw when gibbed, by popular demand.
 - Summoners now have a limit on the number of times they can, well, summon, without
   any players looking, preventing cases of wayward Summoners flooding the map.
+- Summoners now appear after 20 maps instead of 10.
 
 v4 "Fred" (30/05/17)
 ====================
