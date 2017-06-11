@@ -248,10 +248,11 @@ ACTOR MetaSummoner : MonsterCore
 		SUMN NLKJ 4
 		SUMN I 0 
 			{
-				if (ceilingz - floorz < 256 || !A_SetSize(-1,-1,true))
+				if (ceilingz - floorz < 256 || !A_SetSize(-1,256,true))
 				{
 					return state("PopcornLow");
 				}
+				A_SetSize(-1, 56);
 				return state(0);
 			}
 	PopcornHigh:
