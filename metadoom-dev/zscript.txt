@@ -8,6 +8,10 @@ ZScript
 
 version 2.5
 
+// Weapons
+#include "actors/weapons/core.zsc"
+#include "actors/weapons/bfg.zsc"
+
 // Monsters
 #include "actors/monsters/metadoomactor.zsc"
 #include "actors/monsters/metalostsoul.zsc"
