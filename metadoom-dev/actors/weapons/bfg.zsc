@@ -309,7 +309,7 @@ Class BFGZapper : Actor
 		}
 		Goto Death;
 	Death:
-		TNT1 A 0
+		TNT1 A 0;
 		Stop;
 	}
 }
