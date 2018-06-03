@@ -13,6 +13,21 @@ $playersound	player	male	*crushed	pcrush
 $playersound	player	male	*ext1		playext1
 $playersound	player	male	*ext2		playext2
 
+$playersound	player	female	*death		fdie
+$playersound	player	female	*xdeath		fdiehi
+$playeralias	player	female	*pain100	fplayer/hurtsmall
+$playeralias	player	female	*pain75		fplayer/hurtmedium
+$playeralias	player	female	*pain50		fplayer/hurtmedium
+$playeralias	player	female	*pain25		fplayer/hurtlarge
+$playeralias	player	female	*grunt		fplayer/land
+$playeralias	player	female	*land		player/feet
+$playeralias	player	female	*jump		fplayer/jump
+$playersound	player	female	*usefail	fnoway
+$playersound	player	female	*hurtslime	fainslim
+$playersound	player	female	*crushed	fcrush
+$playersound	player	female	*ext1		flayext1
+$playersound	player	female	*ext2		flayext2
+
 $random player/hurtsmall	{ player/hurtsmall1 player/hurtsmall2 player/hurtsmall3 }
 player/hurtsmall1		painsml1
 player/hurtsmall2		painsml2
@@ -44,6 +59,33 @@ $random player/jump			{ player/jump1 player/jump2 player/jump3 }
 player/jump1			pjump1
 player/jump2			pjump2
 player/jump3			pjump3
+
+$random fplayer/hurtsmall	{ fplayer/hurtsmall1 fplayer/hurtsmall2 fplayer/hurtsmall3 }
+fplayer/hurtsmall1		fainsml1
+fplayer/hurtsmall2		fainsml2
+fplayer/hurtsmall3		fainsml3
+
+$random fplayer/hurtmedium	{ fplayer/hurtmedium1 fplayer/hurtmedium2 fplayer/hurtmedium3 fplayer/hurtmedium4 }
+fplayer/hurtmedium1		fainmed1
+fplayer/hurtmedium2		fainmed2
+fplayer/hurtmedium3		fainmed3
+fplayer/hurtmedium4		fainmed4
+
+$random fplayer/hurtlarge	{ fplayer/hurtlarge1 fplayer/hurtlarge2 fplayer/hurtlarge3 }
+fplayer/hurtlarge1		fainbig1
+fplayer/hurtlarge2		fainbig2
+fplayer/hurtlarge3		fainbig3
+
+$random fplayer/land			{ fplayer/land1 fplayer/land2 fplayer/land3 fplayer/land4 }
+fplayer/land1			fland1
+fplayer/land2			fland2
+fplayer/land3			fland3
+fplayer/land4			fland4
+
+$random fplayer/jump			{ fplayer/jump1 fplayer/jump2 fplayer/jump3 }
+fplayer/jump1			fjump1
+fplayer/jump2			fjump2
+fplayer/jump3			fjump3
 
 //player/hurtslime		painslim
 //player/deathcrush		pcrush
