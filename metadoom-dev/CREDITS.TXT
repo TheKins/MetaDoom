@@ -24,7 +24,7 @@ Upset & Half-Dead (Doom 3 model ports to Source Engine)
 Sgt. Shivers (Muzzle Flashes, animation improvements, Dog Gun sprites)
 Uboa (Muzzle Flashes)
 WildWeasel (Tracer fastprojectiles effect)
-DrPySpy (Spiderdemon Sprites)
+DrPySpy (Spiderdemon Sprites, BFG code fixes)
 
 Perkristian (High-Res Doom sounds)
 Jer Sypault (Some sounds from Quake Mindgrind mods)
