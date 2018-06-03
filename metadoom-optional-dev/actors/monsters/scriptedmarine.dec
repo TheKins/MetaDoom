@@ -141,12 +141,17 @@ ACTOR MetaMarinePistol : MetaScriptedMarine replaces MarinePistol
 		PLAP E 0 A_PlaySound ("grunt/attack")
 		PLAP F 8 
 		{
-			A_CustomMissile("PistolTracer");
+			A_CustomMissile("MetaMarinePistolTracer");
 			A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
 		}
 		PLAP E 8
 		Goto See
 	}
+}
+
+ACTOR MetaMarinePistolTracer : PistolTracer
+{
+	damage (random(5,15))
 }
 
 //---------------------------------------------------------------------------
