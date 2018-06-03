@@ -32,6 +32,8 @@ ACTOR MetaSpiderMastermind : MonsterCore
 	Obituary "$OB_SPIDER"
 	damagefactor ChaingunTurret, 0.2
 	painchance ChaingunTurret, 0
+	painchance Vampire, 128
+	damagefactor Vampire, 0.25
 	States
 	{
 	Spawn:
