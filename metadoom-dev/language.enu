@@ -56,6 +56,8 @@ GLTEXMNU_TITLE		= "Texture Options";
 GLLIGHTMNU_TITLE 	= "Dynamic Lights";
 GLPREFMNU_TITLE 	= "OpenGL Preferences";
 
+OPTVAL_OTHER		= "Cyborg";
+
 // Stats Screen
 TXT_IMKILLS = "Kills";
 TXT_IMITEMS = "Items";

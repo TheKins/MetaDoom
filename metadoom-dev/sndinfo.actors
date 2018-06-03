@@ -28,6 +28,21 @@ $playersound	player	female	*crushed	fcrush
 $playersound	player	female	*ext1		flayext1
 $playersound	player	female	*ext2		flayext2
 
+$playersound	player	other	*death		cdie
+$playersound	player	other	*xdeath		cdiehi
+$playersound	player	other	*pain100	cpain100
+$playersound	player	other	*pain75		cpain75
+$playersound	player	other	*pain50		cpain50
+$playersound	player	other	*pain25		cpain25
+$playersound	player	other	*grunt		cland
+$playeralias	player	other	*land		player/feet
+$playersound	player	other	*jump		cjump
+$playersound	player	other	*usefail	cnoway
+$playersound	player	other	*hurtslime	cainslim
+$playersound	player	other	*crushed	ccrush
+$playersound	player	other	*ext1		clayext1
+$playersound	player	other	*ext2		clayext2
+
 $random player/hurtsmall	{ player/hurtsmall1 player/hurtsmall2 player/hurtsmall3 }
 player/hurtsmall1		painsml1
 player/hurtsmall2		painsml2
