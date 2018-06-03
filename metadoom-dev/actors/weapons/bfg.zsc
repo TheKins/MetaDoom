@@ -10,7 +10,7 @@ Class MetaBFG9000Pickup : WeaponGiver
 	{
 	Spawn:
 		MBFG Z 0;
-		MBFG Z 0 A_ChangeFlag ("DROPPED", 0);
+		MBFG Z 0 { bDROPPED = false; }
 		MBFG Z -1;
 		Stop;
 	}
@@ -103,7 +103,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		MBFG A 1 Offset(0,32);
 		MBFG C 1 BRIGHT
 		{
-			A_FireCustomMissile("MetaBFGBall");
+			A_FireProjectile("MetaBFGBall");
 			A_PlaySound ("weapons/bfg/fire1", CHAN_WEAPON);
 			
 			if (CountInv("PowerDamage") > 0)
@@ -173,7 +173,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		}
 		MBFG CDCDCDCDCDCDCDCDCDCDCDCDCD 1 bright
 		{
-			A_FireCustomMissile("MetaBFGAltfire",random(-8,8),0,0,0,FPF_NOAUTOAIM,random(-8,8));
+			A_FireProjectile("MetaBFGAltfire",random(-8,8),0,0,0,FPF_NOAUTOAIM,random(-8,8));
 			A_ZoomFactor(frandom(0.8,0.85), ZOOM_NOSCALETURNING);
 		}
 		MBFG C 1 bright Offset(0,45) A_SetPitch(pitch-4);
@@ -233,7 +233,7 @@ Class MetaBFGBall : Actor
 		}
 		BFS1 A 0
 		{
-			A_CustomMissile("BFGZapper", 8, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+			A_SpawnProjectile("BFGZapper", 8, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
 		}
 		Loop;
 	Death:
