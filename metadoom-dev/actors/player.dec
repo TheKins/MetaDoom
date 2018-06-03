@@ -145,7 +145,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 		goto XDeath
 	Pain.Slime:
 		PLAY G 4
-		PLAY G 4 A_PlaySound("player/hurtslime")
+		PLAY G 4 A_PlaySound("*hurtslime")
 		Goto Spawn
 	Pain.SpiderdemonTKAttack:
 		PLAY G 0 
@@ -170,7 +170,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 		PLAY H 0 A_StopSound(CHAN_WEAPON)
 		TNT1 A 0 A_StopSound(CHAN_6)
 		PLAY H 10 A_GiveInventory("DeathStateGibbed")
-		PLAY I 10 A_PlaySound("player/deathcrush")
+		PLAY I 10 A_PlaySound("*crushed")
 		PLAY J 10 A_NoBlocking
 		PLAY KLM 10
 		PLAY N -1

@@ -8,6 +8,10 @@ $playeralias	player	male	*grunt		player/land
 $playeralias	player	male	*land		player/feet
 $playeralias	player	male	*jump		player/jump
 $playersound	player	male	*usefail	pnoway
+$playersound	player	male	*hurtslime	painslim
+$playersound	player	male	*crushed	pcrush
+$playersound	player	male	*ext1		playext1
+$playersound	player	male	*ext2		playext2
 
 $random player/hurtsmall	{ player/hurtsmall1 player/hurtsmall2 player/hurtsmall3 }
 player/hurtsmall1		painsml1
@@ -41,11 +45,11 @@ player/jump1			pjump1
 player/jump2			pjump2
 player/jump3			pjump3
 
-player/hurtslime		painslim
-player/deathcrush		pcrush
+//player/hurtslime		painslim
+//player/deathcrush		pcrush
 
-player/extinguishself/start		playext1
-player/extinguishself/end		playext2
+//player/extinguishself/start		playext1
+//player/extinguishself/end		playext2
 
 player/healthwarning			lifewarn
 $volume player/healthwarning 2.0
@@ -55,6 +59,7 @@ player/helmetgib1		pgib1
 player/helmetgib2		pgib2
 
 player/berserk			pbzrk
+
 // gibs
 
 $random gibbage/gib			{gibbage/gib1 gibbage/gib2 gibbage/gib3 gibbage/gib4 gibbage/gib5}
