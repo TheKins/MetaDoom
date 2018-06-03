@@ -13,6 +13,7 @@ Bethesda Softworks (Elder Scrolls and Fallout sounds)
 Remedy Entertainment (Fire Extinguisher sounds)
 Rockstar Games (Fire Extinguisher sounds)
 Epic Games (Some metal gibbing sounds, Cyber-Manc attack sounds)
+Saber Interactive (Quake Champions stuff)
 
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 Pillowblaster ("ARGENT" resources)
