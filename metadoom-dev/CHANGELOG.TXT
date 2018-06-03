@@ -10,6 +10,7 @@ It's been a while, hasn't it?
   the "Player Options" menu.
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
+- Un-fucked the Fiend's sprite offsets a bit.
 - Added Saber Interactive to the copyright fine-print and credits.
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
   (ie. there's no FMod references anymore!)
