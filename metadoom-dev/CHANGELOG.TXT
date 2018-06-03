@@ -1,3 +1,23 @@
+Next Release
+============
+It's been a while, hasn't it?
+
+- Fixes and improvements to the logic behind Summoners spawning Unwilling.
+  (Thanks Major Cooke!)
+- The BFG's tendrils now properly reward kills and points to the appropriate
+  player, rather than just Player 1. (Thanks, DrPySpy!)
+- Players now make appropriate sounds depending on the gender specified in
+  the "Player Options" menu.
+- Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
+  Spiderdemons, making it harder to "cheese out" those bosses.
+- Added Saber Interactive to the copyright fine-print and credits.
+- Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
+  (ie. there's no FMod references anymore!)
+  
+Optional Content:
+- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
+  instead of the increased damage of the player's EKG Sidearm.
+
 v4.1 "Fred" (06/06/17)
 ====================
 A number of small fixes based on feedback from the previous release. Thanks, folks!
