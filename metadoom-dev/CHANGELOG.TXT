@@ -5,11 +5,13 @@ It's been a while, hasn't it?
 - Fixes and improvements to the logic behind Summoners spawning Unwilling.
   (Thanks Major Cooke!)
 - The BFG's tendrils now properly reward kills and points to the appropriate
-  player, rather than just Player 1. (Thanks, DrPySpy!)
+  player, rather than just Player 1. (Thanks DrPySpy!)
 - Players now make appropriate sounds depending on the gender specified in
   the "Player Options" menu.
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
+- The Former Lieutenant now wears blue armor, to make him look less like his
+  chaingun wielding siblings (Thanks DrPySpy!)
 - Un-fucked the Fiend's sprite offsets a bit.
 - Added Saber Interactive to the copyright fine-print and credits.
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
