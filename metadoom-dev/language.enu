@@ -96,6 +96,7 @@ METAMENU_MISC = "Miscellany";
 // Keybinds
 MNU_MDHEADER = "MetaDoom";
 MNU_MDMELEE = "Melee Attack";
+MNU_MDCODEX = "Open Codex";
 
 // Skills
 SKILL_JKILL = "I Just Wanna Kill";
