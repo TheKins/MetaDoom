@@ -2,6 +2,7 @@ Next Release
 ============
 It's been a while, hasn't it?
 
+- Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
 - Fixes and improvements to the logic behind Summoners spawning Unwilling.
   (Thanks Major Cooke!)
 - The BFG's tendrils now properly reward kills and points to the appropriate
