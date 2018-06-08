@@ -32,6 +32,7 @@ Miscellaneous:
   the "Player Options" menu.
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
   (ie. there's no FMod references anymore!)
+- Updated ENDOOM to credit DrPySpy and mention Saber Interactive
   
 Optional Content:
 - Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
