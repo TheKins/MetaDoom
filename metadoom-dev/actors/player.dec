@@ -18,6 +18,8 @@ actor FireExtinguished : _Boolean {}
 actor 100Percent_Monsters : _Boolean {}
 actor 100Percent_Items : _Boolean {}
 actor 100Percent_Secrets : _Boolean {}
+// prevent multiple 100% scripts from running at once
+actor 100Percent_Running : _Boolean {}
 
 ACTOR MetaDoomPlayer : PlayerPawn
 {

@@ -10,6 +10,9 @@ Cosmetic Improvements:
 - The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
 - Fiend's sprite offsets are considerably less whacky.
 - Additional gibbing sound variety added.
+- The 100% kills/items/secrets messages will now try not to overlap each other
+  when triggered in rapid succession (ie. MAP07). They'll now try and wait
+  their turn and trigger one after the other.
 
 Code Improvements:
 - The BFG's tendrils now properly reward kills and points to the appropriate
