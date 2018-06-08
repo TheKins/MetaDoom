@@ -604,6 +604,21 @@ script "PlayerInventoryFixer" ENTER
 		SetWeapon("MetaBFG9000");
 	}
 	
+	// Precautions to prevent the player being unable to fight back
+	if (CheckInventory("MetaPistol") == 0 && CheckInventory("MetaLastResortFist") == 0)
+	{
+		if(GetCvar("meta_developer"))
+			log(s:"Player has no Pistol! Giving them some means of defending themselves...");
+		GiveInventory("MetaLastResortFist",1);
+	}
+	
+	if (CheckInventory("MetaPistol") == 1  && CheckInventory("MetaLastResortFist") == 1)
+	{
+		if(GetCvar("meta_developer"))
+			log(s:"Player has a Pistol! No need for the Last Resort anymore.");
+		TakeInventory("MetaLastResortFist",1);
+	}
+	
 	// Give Doom 64 Demon Key IDs in Doom 64
 	if (CheckInventory("PlayingDoom64") == 1)
 	{
@@ -631,7 +646,6 @@ script "PlayerInventoryFixer" ENTER
 			GiveInventory("UnmakerUpgrade3Icon",1);
 		}
 	}
-	
 
 	delay(1);
 	restart;

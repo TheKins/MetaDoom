@@ -30,7 +30,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Player.DisplayName "Slayer"
 	Player.CrouchSprite "PLYC"
 	Player.StartItem "MetaPistol"
-	Player.WeaponSlot 1, MetaPistol, MetaBerserkFist, MetaCheatDetector
+	Player.WeaponSlot 1, MetaPistol, MetaBerserkFist, MetaLastResortFist, MetaCheatDetector
 	Player.WeaponSlot 2, HolyWaterPistol, MetaShotgun
 	Player.WeaponSlot 3, MetaFireExtinguisher, MetaSuperShotgun
 	Player.WeaponSlot 4, MetaChaingun, MetaMachineGun

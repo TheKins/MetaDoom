@@ -18,6 +18,9 @@ Code Improvements:
   (Thanks Major Cooke!)
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
+- If a script takes away the player's Pistol, they'll be given a Fist weapon so
+  they can keep fighting until they get a Pistol again, instead of being
+  completely defenseless.
  
 Miscellaneous:
 - Players now make appropriate sounds depending on the gender specified in
