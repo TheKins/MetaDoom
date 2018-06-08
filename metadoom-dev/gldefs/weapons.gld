@@ -205,10 +205,10 @@ object LightningTrailParticle
 
 object MetaLightningStunProj
 {
-    frame PLSE { light MetaLightningExplosion }
+    frame SHOK { light MetaLightningExplosion }
 }
 
 object MetaLightningStunFXZappy
 {
-    frame PLSE { light MetaLightningExplosion }
+    frame ZAPP { light MetaLightningExplosion }
 }
