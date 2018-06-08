@@ -49,7 +49,7 @@ class MonsterCore : Actor
 		painchance "Vampire", 255;
 		painchance "LightningStun", 255;
 		painchance "Bleeding", 0;
-		painchance "LightningGun", 0;
+		painchance "LightningGun", 24;
 		painchance "SoulCube", 255;
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "DogCollar", 0;

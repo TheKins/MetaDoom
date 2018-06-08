@@ -14,9 +14,11 @@ Cosmetic Improvements:
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
   their turn and trigger one after the other.
 
-Code Improvements:
+Code Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
   player, rather than just Player 1. (Thanks DrPySpy!)
+- The Lightning Gun's standard attack now has a very slight chance of causing
+  enemies to flinch, as opposed to the previous zero chance.
 - Fixes and improvements to the logic behind Summoners spawning Unwilling.
   (Thanks Major Cooke!)
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
