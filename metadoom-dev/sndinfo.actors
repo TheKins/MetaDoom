@@ -119,12 +119,15 @@ player/berserk			pbzrk
 
 // gibs
 
-$random gibbage/gib			{gibbage/gib1 gibbage/gib2 gibbage/gib3 gibbage/gib4 gibbage/gib5}
+$random gibbage/gib			{gibbage/gib1 gibbage/gib2 gibbage/gib3 gibbage/gib4 gibbage/gib5 gibbage/gib6 gibbage/gib7 gibbage/gib8}
 gibbage/gib1				gib1
 gibbage/gib2				gib2
 gibbage/gib3				gib3
 gibbage/gib4				gib4
 gibbage/gib5				gib5
+gibbage/gib6				gib6
+gibbage/gib7				gib7
+gibbage/gib8				gib8
 
 $random gibbage/gibphys			{ gibbage/gibphys1 gibbage/gibphys2 gibbage/gibphys3 }
 gibbage/gibphys1				gibphys1
