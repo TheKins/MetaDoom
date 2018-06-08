@@ -152,6 +152,7 @@ bodyfalls/cacodemon		bdca1
 monsters/bleed			actbleed
 monsters/crushed		actcrush
 monsters/vamped			actvamp
+monsters/shocked		actshok
 
 // zombieman
 $random monsters/zombieman/see 	{ monsters/zombieman/see1 monsters/zombieman/see2 monsters/zombieman/see3 }

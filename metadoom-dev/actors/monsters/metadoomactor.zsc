@@ -72,6 +72,11 @@ class MonsterCore : Actor
 		"####" # 0 A_PlaySound("monsters/vamped");
 		"####" # 0 A_Jump(256,"Pain");
 		stop;
+	// Lightning Gun Stun
+	Pain.LightningStun:
+		"####" # 0 A_PlaySound("monsters/shocked");
+		"####" # 0 A_Jump(256,"Pain");
+		stop;
 	// Fire Axe
 	Pain.Axe:
 		"####" # 0
