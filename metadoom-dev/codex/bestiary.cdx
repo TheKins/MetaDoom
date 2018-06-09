@@ -58,7 +58,7 @@ page "Bestiary"
 	{ 
 		needs "Doom2";
 		name "Former Assassin";
-        origin "Doom II: Hell on Earth (1994)";
+        origin "Doom 3 (2004)";
         description "These strange creatures were once leaders of the RRTC, but demonic influences have corrupted them, turning them into something... more than human. They seem to relish combat, taking joy in stalking their prey before ventilating them from unexpected angles with their Chaingun.\n\nThese creatures can also use their tentacle arm to pull targets closer, disorienting them and mitigating the Chaingun's accuracy issues. Using distance and cover to your advantage is highly advisable."; 
 	}
 	
