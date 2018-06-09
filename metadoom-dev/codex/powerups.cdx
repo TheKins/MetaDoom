@@ -7,67 +7,67 @@ page "Pickups"
 		itemToCheck "HandGrenade";
         name "Hand Grenade";
         origin "Doom 3 (2004)";
-        description "A common sight on the battlefields of the past, the Hand Grenade hasn't changed a lot on the surface, beyond the old-fashioned safety pin being replaced with a convenient twist-and-pull design. Under the hood, however, there's been a surprising amount of work over the decades to reduce 'drop spots' and generally increase the range and damage as much as possible without increasing size or weight.";
+        description "A common sight on the battlefields of the past, the Hand Grenade hasn't changed a lot on the surface, beyond the old-fashioned safety pin being replaced with a convenient twist-and-pull design. Under the hood, however, there's been a surprising amount of work over the decades to reduce 'drop spots' and generally increase the range and damage as much as possible without increasing size or weight.\n\nYou throw it. It bounces around a bit. It explodes. There are no special capabilities. Were you expecting any...?";
     }
 	entry "TeslaRocket"
     {
 		itemToCheck "TeslaRocket";
         name "Tesla Rocket";
         origin "Doom (2016)";
-        description "A recent innovation in defensive equipment, the Tesla Rocket is hand-activated by the user, like a Grenade, as opposed to being launched from a weapon. Upon activation, the Tesla Rocket slowly flies forward, arcs of electricity bouncing off and damaging nearby enemies. Upon hitting a solid obstacle, the Tesla Rocket explodes with a concussive electrical blast. It's expected that these items will join grenades on a typical UAC trooper's belt in the near future, provided no demonic invasions interrupt testing. But what are the odds of that?";
+        description "A recent innovation in defensive equipment, the Tesla Rocket is hand-activated by the user, like a Grenade, as opposed to being launched from a weapon. Upon activation, the Tesla Rocket slowly flies forward, arcs of electricity bouncing off and damaging nearby enemies. Upon hitting a solid obstacle, the Tesla Rocket explodes with a concussive electrical blast.\n\nIt's expected that these will become standard-issue in the near future, provided no demonic invasions interrupt testing. But what are the odds of that?";
     }
 	entry "SiphonGrenade"
     {
 		itemToCheck "SiphonGrenade";
         name "Siphon Grenade";
         origin "Doom (2016)";
-        description "An experimental fusion of time-honored Grenades with state-of-the-art nanotechnology, the Siphon Grenade releases a particle field that violently attracts Argent plasma from any nearby sources (including Demons) and transfers it to the Argent Receptors in the thrower's armor, which then converts it into healing materials. This uniquely vampiric weapon provides a safe method of sucking the life from your opponents without exposing yourself to harm.";
+        description "An experimental fusion of time-honored Grenades with state-of-the-art nanotechnology, the Siphon Grenade releases a particle field that violently attracts Argent plasma from any nearby sources (including Demons) and transfers it to the Argent Receptors in the thrower's armor, which then converts it into healing materials. This uniquely vampiric weapon provides a safe method of sucking the life from your opponents without exposing yourself to harm.\n\nThe Siphon Grenade activates on impact. Don't worry about distance: you're immune to the ''blast''.";
     }
 	entry "ShieldWall"
     {
 		itemToCheck "ShieldWall";
         name "Shield Wall";
         origin "Doom (2016)";
-        description "The next evolution in barrier technology, the Shield Wall is a portable plasma projector that temporarily generates a solid light barrier that blocks anything and everything for a brief period of time. This is useful for providing a respite from enemy attacks, but be warned - it blocks your own weapons - including explosives, just as well as anyone else's.";
+        description "The next evolution in barrier technology, the Shield Wall is a portable plasma projector that temporarily generates a solid light barrier that blocks anything and everything for a brief period of time. This is useful for providing a respite from enemy attacks, but be warned - it blocks your own weapons - including explosives, just as well as anyone else's.\n\nThe Hologram activates on impact with the ground. The shield lasts a little over seven seconds before its batteries expire.";
     }
 	entry "DogCollar"
     {
 		itemToCheck "DogCollar";
         name "Dog Collar";
         origin "Doom RPG (2005)";
-        description "A means of leading your domesticated fur-babies around by the neck without being within biting distance. Who knew that it also worked on flesh eating canines from the firey pits?";
+        description "A small fabric collar with some strange runes stitched around it. These devices are used on Earth so that pet owners can lead their domesticated fur-babies around without being within biting distance. Who knew that it also worked on flesh eating canines from the firey pits?\n\nActivate to launch the collar out. It won't do any damage, but if it hits a Hellhound class enemy, you will claim that dog as a meatshield/melee weapon! Press Fire to bite the hell out of enemies. Press Alternate Fire or switch away to hurl it at enemies.";
     }
 	entry "Hologram"
     {
 		itemToCheck "Hologram";
         name "Hologram";
         origin "Doom (2016)";
-        description "Once predicted by sci-fi movies and lowbrow 3D action games of the 20th century, the Hologram provides a unique take on crowd control. Upon activation, it generates a refracted-light hologram of a photo-realistic 3D render of the operator, typically doing something insulting. This infuriates nearby demons, who will attempt to attack it and fail miserably, often hurting each other and triggering a hailstorm of infighting in the process.";
+        description "Once predicted by sci-fi movies and lowbrow 3D action games of the 20th century, the Hologram provides a unique take on crowd control. Upon activation, it generates a refracted-light hologram of a photo-realistic 3D render of the operator, typically doing something insulting. This infuriates nearby demons, who will attempt to attack it and fail miserably, often hurting each other and triggering a hailstorm of infighting in the process.\n\nThe Hologram activates on impact with the ground. You might want to run away shortly after it activates...";
     }
 	
     entry "MetaRadSuit"
     {
         name "Radiation Suit";
         origin "Doom (1993)";
-        description "The next step from the Hazmat Suits of the 20th Century, the Radiation Suit is equipped fully sealed with a self-contained breathing apparatus and a thick multi-layer material that protects the user from all manner of environmental hazards, be they radioactive waste, boiling fluids or unfathomable dark forces.\n\nThe limited oxygen supply, however, restricts its use to brief intervals.";
+        description "The next step from the Hazmat Suits of the 20th Century, the Radiation Suit is equipped fully sealed with a self-contained breathing apparatus and a thick multi-layer material that protects the user from all manner of environmental hazards, be they radioactive waste, boiling fluids or unfathomable dark forces.\n\nThe limited oxygen supply, however, restricts its use to brief, 60-second intervals. Additional R&D for larger, lighter oxygen tanks is sorely needed, but funding has been difficult to attain due to budget overruns in the teleporter research program...";
     }
     entry "MetaBerserk"
     {
         name "Berserk Pack";
         origin "Doom (1993)";
-        description "The 'Berserk' serum is the nickname given to an experimental drug developed by UAC scientists. It was initially developed to strengthen the user's immune system to fend off infections, but tests resulted in the drug heightening the patients' bloodthirst and capacity for violence.\n\nThe UAC steered the project in a new direction, resulting in a serum that would enhance the prowess of soldiers during battle.";
+        description "The 'Berserk' serum is the nickname given to an experimental drug developed by UAC scientists. It was initially developed to strengthen the user's immune system to fend off infections, but tests resulted in the drug heightening the patients' bloodthirst and capacity for violence.\n\nThe UAC steered the project in a new direction, resulting in a serum that would enhance the prowess of soldiers during battle.\n\nA single dosage lasts 60 seconds, and usually ends with the patient staring in horror at their blood soaked hands.";
     }
     entry "MetaLightAmp"
     {
         name "Light Amp Visor";
         origin "Doom (1993)";
-        description "The evolution of Optoelectronic devices has been subtle and understated since the early 21st Century, leading some sceptics to cast the technology as one of those stand-still dead-ends like radio.\n\nThat doesn't mean it's useless though - this headset might be garish, but it'll dramatically increase the visibility of living (or unliving) creatures in even the darkest depths.";
+        description "The evolution of optoelectronic devices has been subtle and understated since the early 21st Century, leading some sceptics to cast the technology as one of those stand-still dead-ends like radio.\n\nThat doesn't mean it's useless though - this headset might be bulky, and the viewport might be garish, but it'll dramatically increase the visibility of living (or unliving) creatures in even the darkest depths.";
     }
     entry "MetaHasteSphere"
     {
         name "Haste Sphere";
         origin "Quake 3 Arena (1999)";
-        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes). Never before have you been more scared of having ghosts in your pants.";
+        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes).\n\nNever before have you been more scared of having ghosts in your pants.";
     }
     entry "MetaInvulnerabilitySphere"
     {
