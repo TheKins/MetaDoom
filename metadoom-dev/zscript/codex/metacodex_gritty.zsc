@@ -1,0 +1,85 @@
+enum ERenderOp
+{
+    STYLEOP_None,         // Do not draw
+    STYLEOP_Add,          // Add source to destination
+    STYLEOP_Sub,          // Subtract source from destination
+    STYLEOP_RevSub,       // Subtract destination from source
+    STYLEOP_Fuzz,         // Draw fuzzy on top of destination - ignores alpha and color
+    STYLEOP_FuzzOrAdd,    // Draw fuzzy or add, based on user preference
+    STYLEOP_FuzzOrSub,    // Draw fuzzy or subtract, based on user preference
+    STYLEOP_FuzzOrRevSub, // Draw fuzzy or reverse subtract, based on user preference
+
+    // special styles
+    STYLEOP_Shadow,            
+};
+
+enum ERenderAlpha
+{
+    STYLEALPHA_Zero,   // Blend factor is 0.0
+    STYLEALPHA_One,    // Blend factor is 1.0
+    STYLEALPHA_Src,    // Blend factor is alpha
+    STYLEALPHA_InvSrc, // Blend factor is 1.0 - alpha
+};
+
+enum ERenderFlags
+{
+    // Use value of transsouls as alpha.
+    STYLEF_TransSoulsAlpha = 1,
+
+    // Force alpha to 1. Not the same as STYLEALPHA_One, since that also
+    // ignores alpha from the texture.
+    STYLEF_Alpha1 = 2,
+
+    // Use red component from grayscale/RGB texture as alpha. If the texture
+    // is paletted, the palette is ignored and it is treated as grayscale.
+    // This should generally be combined with STYLEF_ColorIsFixed, since that's
+    // all the software renderer supports, but hardware acceleration can do
+    // them separately should you want to do that for some reason.
+    STYLEF_RedIsAlpha = 4,
+
+    // Ignore texture for RGB output. Color comes from fillcolor for actors
+    // or DTA_FillColor for DrawTexture().
+    STYLEF_ColorIsFixed = 8,
+
+    // Invert source color, either the texture color or the fixed color.
+    STYLEF_InvertSource = 16,
+
+    // Invert overlay color. This is the fade for actors and DTA_ColorOverlay
+    // for DrawTexture().
+    STYLEF_InvertOverlay = 32,
+
+    // Actors only: Ignore sector fade and fade to black. To fade to white,
+    // combine this with STYLEF_InvertOverlay.
+    STYLEF_FadeToBlack = 64,
+};
+
+class MetaCodex_RenderStyle
+{
+    static const int legacyStyles[] = // const arrays can't be made private :(
+    {
+        STYLEOP_None      | (STYLEALPHA_Zero << 8) | (STYLEALPHA_Zero   << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (STYLEF_Alpha1                             << 24),
+        STYLEOP_Fuzz      | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (STYLEF_TransSoulsAlpha                    << 24),
+        STYLEOP_FuzzOrAdd | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | ((STYLEF_Alpha1     | STYLEF_ColorIsFixed) << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_One    << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | ((STYLEF_RedIsAlpha | STYLEF_ColorIsFixed) << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_InvSrc << 16) | (STYLEF_ColorIsFixed                       << 24),
+        STYLEOP_Shadow    | (0               << 8) | (0                 << 16) | (0                                         << 24),
+        STYLEOP_RevSub    | (STYLEALPHA_Src  << 8) | (STYLEALPHA_One    << 16) | (0                                         << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_One    << 16) | ((STYLEF_Alpha1     | STYLEF_ColorIsFixed) << 24),
+        STYLEOP_Add       | (STYLEALPHA_Src  << 8) | (STYLEALPHA_One    << 16) | ((STYLEF_RedIsAlpha | STYLEF_ColorIsFixed) << 24)
+    };
+
+    static int FromLegacy(ERenderStyle style)
+    {
+        return style < STYLE_None || style > STYLE_AddShaded ? 0 : MetaCodex_RenderStyle.legacyStyles[style];
+    }
+
+    static int Create(ERenderOp blendOp, ERenderAlpha srcAlpha, ERenderAlpha dstAlpha, ERenderFlags flags)
+    {
+        return blendOp | (srcAlpha << 8) | (dstAlpha << 16) | (flags << 24);
+    }
+}

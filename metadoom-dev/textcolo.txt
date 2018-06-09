@@ -1,0 +1,22 @@
+MetaDarkRed
+{
+	#430000  #430000
+	Flat:
+	#430000
+}
+
+MetaGolden
+{
+	#87611B  #FFFF73
+	Flat:
+	#FFFF73
+}
+
+MetaGreyTall
+{
+	//#404040  #D8D8D8 //nice light shade but doesn't look hidden
+	//#404040  #7A7A7A //lovely dark color but doesn't match the shadow
+	#404040  #C1C1C1
+	Flat:
+	#D8D8D8
+}

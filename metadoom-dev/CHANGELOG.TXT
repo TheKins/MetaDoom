@@ -2,6 +2,11 @@ Next Release
 ============
 It's been a while, hasn't it?
 
+New Features:
+- Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
+  a high-quality new menu providing all the details on everything you've
+  picked up or killed.
+
 Cosmetic Improvements:
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
 - The Former Lieutenant now wears blue armor, to make him look less like his

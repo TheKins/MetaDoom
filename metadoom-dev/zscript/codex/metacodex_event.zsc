@@ -1,0 +1,66 @@
+Class MetaCodex_Event : EventHandler
+{
+	bool Meta_ThingExists(name clsname)
+	{
+		class<Actor> pclass = clsname;
+
+		if(pclass == null)
+		{
+			return false;
+		}
+
+		return true;
+	}
+	override void WorldThingDied(WorldEvent e)
+	{
+		if(e.Thing.target==null||!(e.Thing.target is "PlayerPawn"))
+		{
+			return;
+		}
+		if(Meta_ThingExists(e.Thing.GetClassName())&&Meta_ThingExists("MetaCodex_"..e.Thing.GetClassName()))
+		{
+			if(e.Thing.target.player!=null&&e.Thing.target.player==players[consoleplayer]&&!e.Thing.target.FindInventory("MetaCodex_"..e.Thing.GetClassName()))
+			{
+				//I can't figure out a way to make this work for weapons...
+				/*Console.Printf("\cgNew Codex Entry!");
+				e.Thing.target.A_PlaySound("misc/getcodex",CHAN_ITEM|CHAN_UI);*/
+				e.Thing.target.SetInventory("MetaCodex_"..e.Thing.GetClassName(),1);
+			}
+		}
+	}
+	
+	override void WorldTick()
+	{
+		/*if(multiplayer==true)
+		{
+			return;
+		}*/
+		if(level.maptime%35==0)
+		{
+			if(players[consoleplayer].mo.FindInventory("MetaBerserkFist"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaBerserk",1);
+			}
+			if(players[consoleplayer].mo.FindInventory("PowerIronFeet"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaRadSuit",1);
+			}
+			if(players[consoleplayer].mo.FindInventory("PowerLightAmp"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaLightAmp",1);
+			}
+			if(players[consoleplayer].mo.FindInventory("PowerSpeed"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaHasteSphere",1);
+			}
+			if(players[consoleplayer].mo.FindInventory("PowerDamage"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaQuadDamage",1);
+			}
+			if(players[consoleplayer].mo.FindInventory("PowerInvulnerable"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaInvulnerabilitySphere",1);
+			}
+		}
+	}
+}

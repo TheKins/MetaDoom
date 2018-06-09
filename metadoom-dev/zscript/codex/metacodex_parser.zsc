@@ -1,0 +1,247 @@
+// this isn't where the parsing code is...sorry dude...
+
+const MAXITERATIONS = 32676;
+
+Extend Class MetaCodex_Menu
+{
+	enum E_CurrentMode
+	{
+		CM_P,
+	}
+	
+	bool isDoom2;
+	bool devMode;
+	
+	void parseCodexLump ()
+	{	
+		devMode = CVar.GetCVar("meta_developer").GetBool();
+		isDoom2 = (TexMan.GetName(TexMan.CheckForTexture("PAINA1",TexMan.Type_Sprite))!=""&&TexMan.CheckForTexture("BOSFB0",TexMan.Type_Sprite));
+		if(devMode) Console.Printf("isDoom2 = "..isDoom2);
+		for(int file = -1; (file = Wads.FindLump("METACODX", file + 1)) != -1;)
+		{
+			parseThisLump(file);
+		}
+	}
+	void parseThisLump(int file)
+	{
+		if(devMode) Console.Printf("Beginning parsing of codex lumps...");
+			let lumpy = Wads.ReadLump(file);
+		//Console.Printf(""..lumpy);
+			MetaCodex_Tokenizer tokenitup = MetaCodex_Tokenizer.Create(lumpy);
+			MetaCodex_Token tokenboy = tokenitup.GoThru();
+			int safetyNet = 0;
+			int currentMode = 0;
+			string stringHold1 = "";
+			string stringHold2 = "";
+			double doubleHold = 0; //watch your motherfuckin tone boy
+			Vector2 vec2hold = (0,0);
+			int howManyDeep;
+			
+			bool nextNumberNegative = false;
+			
+			bool addingEntry;
+			
+			MetaCodex_Page currentPage;
+			MetaCodex_Entry currentEntry;
+			while(tokenboy.type!=MCK_EOF&&safetyNet<MAXITERATIONS)
+			{
+				if(tokenboy.type == MCK_BraceO)
+				{
+					howManyDeep++;
+				}
+				else if(tokenboy.type == MCK_BraceC)
+				{
+					howManyDeep--;
+					if(howManyDeep<0)
+					{
+						ThrowAbortException("Too many semicolons!");
+					}
+					else if(addingEntry)
+					{
+						addingEntry = false;
+						if(currentEntry!=null)
+						{
+							currentPage.entryList.Push(currentEntry);
+						}
+						if(devMode) Console.Printf("Pushing entry \cx"..currentEntry.actorName.."\c- to \ct"..currentPage.pageName);
+						currentEntry = null;
+					}
+					else if(howManyDeep<1&&currentPage!=null)
+					{
+						if(devMode) Console.Printf("Pushing page \ct"..currentPage.pageName.."\c- with:");
+						for(int i = 0;i<currentPage.entryList.Size();i++)
+						{
+							if(devMode) Console.Printf("  * \cx"..currentPage.entryList[i].actorName);
+						}
+						codexPages.Push(currentPage);
+						currentPage = null;
+					}
+				}
+				
+				else if(tokenboy.type == MCK_Identifier)
+				{
+					if(tokenboy.value ~== "Import")
+					{
+						tokenboy = tokenitup.GoThru();
+						if(devMode) Console.Printf("importing "..tokenboy.value);
+						int lumpToParse = Wads.CheckNumForFullName(tokenboy.value);
+						/*if(lumpToParse==file)
+						{
+							ThrowAbortException("YOU FUCKER");
+							return;
+						}*/
+						parseThisLump(lumpToParse);
+					}
+					else if(tokenboy.value ~== "Page")
+					{
+						currentPage = new("MetaCodex_Page");
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.type!=MCK_String)
+						{
+							ThrowAbortException("Codex Error: Expected string, got "..tokenboy.value);
+						}
+						currentPage.pageName = tokenboy.value;
+					}
+					else if(tokenboy.value ~== "Layout")
+					{
+						tokenboy = tokenitup.GoThru();
+						currentPage.entryLayout = tokenboy.value.ToInt();
+					}
+					
+					else if(tokenboy.value ~== "Entry"&&currentPage!=null)
+					{
+						addingEntry = true;
+						currentEntry = new("MetaCodex_Entry");
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.type!=MCK_String)
+						{
+							ThrowAbortException("Codex Error: Expected string, got "..tokenboy.value);
+						}
+						currentEntry.actorName = tokenboy.value;
+						Class<Actor> quickcheck = currentEntry.actorName;
+						if(quickcheck is "Weapon")
+						{
+							currentEntry.itemToCheck = tokenboy.value;
+						}
+						else
+						{
+							currentEntry.itemToCheck = "MetaCodex_"..tokenboy.value;
+						}
+						currentEntry.bioName = "$MC_"..tokenboy.value.."_Name";
+						currentEntry.bioOrigin = "$MC_"..tokenboy.value.."_Origin";
+						currentEntry.bioDesc = "$MC_"..tokenboy.value.."_Desc";
+						
+						if(devMode) Console.Printf("Creating entry \cx"..currentEntry.actorName);
+					}
+					else if(tokenboy.value ~== "Needs"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.value~=="Doom2"&&isDoom2==false)
+						{
+							addingEntry = false;
+							currentEntry = null;
+						}
+					}
+					else if(tokenboy.value ~== "ForceSpawn"&&currentEntry!=null)
+					{
+						currentEntry.forceSpawn = true;
+					}
+					else if(tokenboy.value ~== "Particle"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.particleActor = tokenboy.value;
+						tokenboy = tokenitup.GoThru();
+						tokenboy = tokenitup.GoThru();
+						currentEntry.particleScale = (tokenboy.value.ToDouble(),tokenboy.value.ToDouble());
+					}
+					else if(tokenboy.value ~== "ItemToCheck"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.itemToCheck = tokenboy.value;
+					}
+					else if(tokenboy.value ~== "Name"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.bioName = tokenboy.value;
+					}
+					else if(tokenboy.value ~== "Origin"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.bioOrigin = tokenboy.value;
+					}
+					else if(tokenboy.value ~== "Description"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.bioDesc = tokenboy.value;
+					}
+					else if(tokenboy.value ~== "Offset"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.type!=MCK_Number)
+						{
+							if(tokenboy.type==MCK_Minus)
+							{
+								nextNumberNegative = true;
+								tokenboy = tokenitup.GoThru();
+							}
+							else
+							{
+								ThrowAbortException("Codex error in parsing: Number expected, got "..tokenboy.value);
+							}
+						}
+						currentEntry.picOffset.x = tokenboy.value.ToInt();
+						if(nextNumberNegative)
+						{
+							currentEntry.picOffset.x *= -1;
+							nextNumberNegative = false;
+						}
+						
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.type!=MCK_Comma)
+						{
+							GetCurrentMenu().Close();
+							ThrowAbortException("Codex error in parsing: Comma expected, got "..tokenboy.value);
+						}
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.type!=MCK_Number)
+						{
+							if(tokenboy.type==MCK_Minus)
+							{
+								nextNumberNegative = true;
+								tokenboy = tokenitup.GoThru();
+							}
+							else
+							{
+								ThrowAbortException("Codex error in parsing: Number expected, got "..tokenboy.value);
+							}
+						}
+						currentEntry.picOffset.y = tokenboy.value.ToInt();
+						if(nextNumberNegative)
+						{
+							currentEntry.picOffset.y *= -1;
+							nextNumberNegative = false;
+						}
+					}
+					else if(tokenboy.value ~== "FrameSkip"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						currentEntry.frameSkip = tokenboy.value.ToInt();
+					}
+				}
+				tokenboy = tokenitup.GoThru();
+				safetyNet++;
+			}
+		}
+		
+		void youFoundASecret() //nobody will ever find me here...
+		{
+			MetaCodex_Entry currentEntry = new("MetaCodex_Entry");
+			currentEntry.fallbackSprite = "graphics/codex/codex_gnomed.png";
+			currentEntry.itemToCheck = "MetaPistol";
+			currentEntry.bioName = "Defective gnome?";
+			currentEntry.bioOrigin = "My yard (today)";
+			currentEntry.bioDesc = "Is it some sort of factory error? I don't know what this is, but I've already called the cops. They told me not to mess with it, as it could be some sort of unexploded ordnance.";
+			codexPages[0].entryList.Push(currentEntry);
+			currentEntry = null;
+		}
+}

@@ -1,0 +1,188 @@
+enum E_MetaCodexTokens
+{
+	MCK_Identifier,
+	MCK_Number,
+	MCK_String,
+	MCK_EOF,
+	MCK_Comma,
+    MCK_Minus,
+    MCK_ParenO,
+    MCK_ParenC,
+    MCK_BraceO,
+    MCK_BraceC,
+	MCK_Slash,
+	MCK_Semicolon,
+    MCK_Unknown,
+}
+
+Class MetaCodex_Token
+{
+    E_MetaCodexTokens type;
+    string value;
+}
+
+Class MetaCodex_Tokenizer
+{
+	string lumpString;
+	int currentPos;
+	
+	static MetaCodex_Tokenizer Create(string input)
+    {
+        let tok = new("MetaCodex_Tokenizer");
+        tok.lumpString = input;
+        return tok;
+    }
+	
+	static bool isWhitespace (int p)
+	{
+        switch(p)
+        {
+			case 9:
+			case 10:
+			case 13:
+			case 11:
+			case 12:
+			case 32:
+				 return true;
+			break;
+			default:
+				 return false;
+			break;
+        }
+		return false;
+	}
+	
+	static bool isNewline (int p)
+	{
+        switch(p)
+        {
+			case 10:
+				 return true;
+			break;
+			default:
+				 return false;
+			break;
+        }
+		return false;
+	}
+	
+	static bool IsDigit(string c)
+    {
+        int cc = c.CharCodeAt(0);
+        return cc <= 57 && cc >= 48;
+    }
+
+    static bool IsLetter(string c)
+    {
+        return IsLower(c) || IsUpper(c);
+    }
+
+    static bool IsLetterOrDigit(string c)
+    {
+        return IsLetter(c) || IsDigit(c);
+    }
+
+    static bool IsLower(string c)
+    {
+        int cc = c.CharCodeAt(0);
+        return cc <= 122 && cc >= 97;
+    }
+
+    static bool IsUpper(string c)
+    {
+        int cc = c.CharCodeAt(0);
+        return cc <= 90 && cc >= 65;
+    }
+	
+	virtual MetaCodex_Token GoThru()
+	{
+		while(isWhitespace(lumpString.CharCodeAt(currentPos))&&currentPos<=lumpString.Length())
+		{
+			currentPos++;
+		}
+		let tk = new("MetaCodex_Token");
+		tk.type = MCK_Unknown;
+		
+		if(currentPos>lumpString.Length())
+		{
+			tk.type = MCK_EOF;
+			//Console.Printf("~ END OF FILE ~");
+			return tk;
+		}
+		//Console.Printf("\ctRead "..lumpString.CharCodeAt(currentPos));
+		switch(lumpString.CharCodeAt(currentPos))
+		{
+			case 123:
+				tk.type = MCK_BraceO;
+				tk.value = "{";
+				break;
+			case 125:
+				tk.type = MCK_BraceC;
+				tk.value = "}";
+				break;
+			case 44:
+				tk.type = MCK_Comma;
+				tk.value = ",";
+				break;
+			case 40: // '('
+				tk.type = MCK_ParenO;
+				tk.value = "(";
+				break;
+			case 41: // ')'
+				tk.type = MCK_ParenC;
+				tk.value = ")";
+				break;
+			case 47: // '/'
+				tk.type = MCK_Slash;
+				while(!isNewline(lumpString.CharCodeAt(currentPos))&&currentPos<=lumpString.Length())
+				{
+					tk.value.AppendFormat("%s", lumpString.CharAt(currentPos));
+					currentPos++;
+				}
+				break;
+			case 45: // '-'
+				tk.type = MCK_Minus;
+				tk.value = "-";
+				break;
+			case 59: // '-'
+				tk.type = MCK_Semicolon;
+				tk.value = ";";
+				break;
+			case 34: // '"'
+			case 39: // '''
+				tk.type = MCK_String;
+				currentPos++;
+				while(/* !isWhitespace(lumpString.CharCodeAt(currentPos))&&*/lumpString.CharCodeAt(currentPos)!=34&&currentPos<=lumpString.Length())
+				{
+					tk.value.AppendFormat("%s", lumpString.CharAt(currentPos));
+					currentPos++;
+				}
+				break;
+			default:
+				if(IsLetter(lumpString.CharAt(currentPos)))
+				{
+					tk.type = MCK_Identifier;
+					while(!isWhitespace(lumpString.CharCodeAt(currentPos))&&lumpString.CharCodeAt(currentPos)!=59/*&&IsLetterOrDigit(lumpString.CharAt(currentPos))*/&&currentPos<=lumpString.Length())
+					{
+						tk.value.AppendFormat("%s", lumpString.CharAt(currentPos));
+						currentPos++;
+					}
+					currentPos--;
+				}
+				else if(IsDigit(lumpString.CharAt(currentPos)))
+				{
+					tk.type = MCK_Number;
+					while(!isWhitespace(lumpString.CharCodeAt(currentPos))&&lumpString.CharCodeAt(currentPos)!=59&&lumpString.CharCodeAt(currentPos)!=44/*&&IsDigit(lumpString.CharAt(currentPos))*/&&currentPos<=lumpString.Length())
+					{
+						tk.value.AppendFormat("%s", lumpString.CharAt(currentPos));
+						currentPos++;
+					}
+					currentPos--;
+				}
+				break;
+		}
+		//Console.Printf(currentPos..". "..tk.value.." ("..tk.type..")");
+		currentPos++;
+		return tk;
+	}
+}

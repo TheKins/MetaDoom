@@ -1,0 +1,527 @@
+//==============================================================
+
+//==============================================================
+
+//fix array within array!!!!!!!!!!!!
+
+//==============================================================
+
+//==============================================================
+
+Class MetaCodex_Page
+{
+	string pageName;
+	int entryLayout;
+	array<MetaCodex_Entry > entryList;
+}
+
+Class MetaCodex_Entry
+{
+	string actorName;
+	string fallbackSprite;
+	string bioName;
+	string bioOrigin;
+	string bioDesc;
+	string itemToCheck;
+	string particleActor;
+	bool actuallyHas;
+	Vector2 particleScale;
+	bool forceSpawn;
+	Vector2 picOffset;
+	int frameSkip;
+}
+
+Class MetaCodex_Particle
+{
+	Vector2 pos;
+	State stateUse;
+	double alpha;
+	Vector2 scale;
+	int tics;
+}
+
+Class MetaCodex_Menu : GenericMenu
+{
+	enum EMetaPages
+	{
+		PAGE_MONSTERS = 0,
+		PAGE_WEAPONS = 1,
+	};
+	
+	array<MetaCodex_Page > codexPages;
+	array<MetaCodex_Entry > loadedEntries;
+	
+	Font tinyBabyFont;
+	int curPageNum;
+	int pageMax;
+	bool hasFound[50];
+	int itemSelected;
+	BrokenLines itemDesc;
+	string pageTitle;
+	bool isDebug;
+	int listScroll;
+	int itemMax;
+	int mouseHover;
+	array<MetaCodex_Particle > fireParticles;
+	
+	double fancyFadeInAlpha;
+	
+	double mouserx;
+	double mousery;
+	
+	Vector2 start, size;
+	Vector2 adjustedMPos;
+	Vector2 virtualMPos;
+	
+	State bio_monsterState;
+	State bio_monsterSeeState;
+	State bio_monsterSpawnState;
+	int bio_monsterTics;
+	int thing;
+	
+	static const string meta_monsterlist[] =
+	{
+		"MetaZombieMan",
+		"MetaHellRazer",
+		"MetaShotgunGuy",
+		"MetaZSec",
+		"MetaMachineGunGuy",
+		"MetaChainGunGuy",
+		"MetaAssassinGuy",
+		"MetaDoomImp",
+		"MetaNightmareImp",
+		"MetaDoomImpLord",
+		"MetaHellhound",
+		"MetaDemonDog",
+		"MetaCerberus",
+		"MetaDemon",
+		"MetaBullDemon",
+		"MetaSpectre",
+		"MetaNightmareSpectre",
+		"MetaTrite",
+		"MetaSawcubus",
+		"MetaLostSoul",
+		"MetaPhantom",
+		"MetaForgottenOne",
+		"MetaCacodemon",
+		"MetaMalwraith",
+		"MetaWretched",
+		"MetaHellKnight",
+		"MetaBaronOfHell",
+		"MetaArachnotron",
+		"MetaSpiborg",
+		"MetaPainElemental",
+		"MetaBeholder",
+		"MetaRahovart",
+		"MetaRevenant",
+		"MetaFiend",
+		"MetaMancubus",
+		"MetaBehemoth",
+		"MetaCyberManc",
+		"MetaArchvile",
+		"MetaSummoner",
+		"MetaUnwilling",
+		"MetaCyberdemon",
+		"MetaSpiderMastermind"
+	};
+	static const string meta_weaponlist[] =
+	{
+		"MetaPistol",
+		"MetaShotgun",
+		"HolyWaterPistol",
+		"MetaSuperShotgun",
+		"MetaFireExtinguisher",
+		"MetaMachineGun",
+		"MetaChaingun",
+		"MetaRocketLauncher",
+		"MetaGrenadeLauncher",
+		"MetaPlasmaRifle",
+		"MetaLightningGun",
+		"MetaGaussCannon",
+		"MetaBFG9000",
+		"MetaUnmaker",
+		"MetaSoulCube",
+		"MetaChainsaw",
+		"MetaAxe"
+	};
+	
+	MetaCodex_Entry createEntry(string name = "Fucker")
+	{
+		MetaCodex_Entry codexEntry = new("MetaCodex_Entry");
+		codexEntry.actorName = name;
+		return codexEntry;
+	}
+	
+	override void Init(Menu parent = null)
+	{
+		//MetaCodex_Page codexPagy = new("MetaCodex_Page");
+		parseCodexLump();
+		/*codexPagy.pageName = "Bestiary";
+		codexPagy.entryLayout = 0;
+		for(int i = 0;i<meta_monsterlist.Size();i++)
+		{
+			codexPagy.entryList.Push(createEntry(meta_monsterlist[i]));
+		}
+		codexPages.Push(codexPagy);*/
+		
+		/*codexPagy = new("MetaCodex_Page");
+		codexPagy.pageName = "Arsenal";
+		codexPagy.entryLayout = 1;
+		for(int i = 0;i<meta_weaponlist.Size();i++)
+		{
+			codexPagy.entryList.Push(createEntry(meta_weaponlist[i]));
+		}
+		codexPages.Push(codexPagy);
+		
+		codexPagy = new("MetaCodex_Page");
+		codexPagy.pageName = "Powerups";
+		codexPagy.entryLayout = 0;
+		codexPages.Push(codexPagy);*/
+		
+		tinyBabyFont = "TINYBABY";
+		Super.Init(parent);
+		switchPageHandler(PAGE_MONSTERS);
+		isDebug = (players[0].mo.FindInventory("MetaCodex_DebugTheCodex"));
+		updateFire();
+		updateItemListing();
+	}
+	
+	bool itemIsThis(string itemToCheck)
+	{
+		switch(curPageNum)
+		{
+			case PAGE_MONSTERS:
+			return meta_monsterlist[itemSelected]==itemToCheck;
+			break;
+			case PAGE_WEAPONS:
+			return meta_weaponlist[itemSelected]==itemToCheck;
+			break;
+		}
+		return "";
+	}
+	
+	void switchPageHandler(int pageNum)
+	{
+		//Console.Printf(curPageNum..""..codexPages.Size());
+		if(pageNum<0||pageNum>=codexPages.Size())
+		{
+			return;
+		}
+		loadedEntries.Clear();
+		itemSelected = 0;
+		listScroll = 0;
+		string thingtocheck;
+		curPageNum = pageNum;
+		mouseHover = 0;
+		itemMax = codexPages[curPageNum].entryList.Size();
+		//Console.Printf("fuk "..itemMax);
+		
+		MetaCodex_Page thing1 = codexPages[curPageNum];
+		
+		for(int i = 0;i<itemMax;i++)
+		{
+			MetaCodex_Entry thing2 = (thing1).entryList[i];
+			thing2.actuallyHas = players[consoleplayer].mo.FindInventory(thing2.itemToCheck);
+			loadedEntries.Push(thing2);
+		}
+		
+		pageMax = loadedEntries.Size()-1;
+		updateItemListing();
+	}
+	
+	void updateItemListing()
+	{
+		string itemUpdate;
+		int itemLength;
+		if(codexPages[curPageNum]==null)
+		{
+			return;
+		}
+		fancyFadeInAlpha = 0;
+		fireParticles.Clear();
+		/*for(int i = 0;i<18;i++)
+		{
+			MetaCodex_Particle kachiga = new("MetaCodex_Particle");
+			kachiga.stateUse = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).SpawnState;
+			kachiga.alpha = 1.0*(i/18);
+			kachiga.pos.y = -4*i;
+			fireParticles.Push(kachiga);
+		}*/
+		Class<Actor > classCheck = loadedEntries[itemSelected].actorName;
+		if(classCheck==null)
+		{
+			return;
+		}
+		switch(codexPages[curPageNum].entryLayout)
+		{
+			default:
+			itemUpdate = "$MC_"..loadedEntries[itemSelected].actorName.."_Desc";
+			itemLength = 144;
+			if(!players[0].mo.FindInventory("MetaCodex_"..loadedEntries[itemSelected].actorName)&&!isDebug)
+			{
+				itemUpdate = "$MC_NODESC";
+			}
+			bio_monsterSeeState = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].actorName)).SeeState;
+			bio_monsterSpawnState = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].actorName)).SpawnState;
+			bio_monsterState = bio_monsterSeeState;
+			if(loadedEntries[itemSelected].forceSpawn==true)
+			{
+				//Console.Printf("\ctyes!!!!!!!!!!!!!!!!!");
+				bio_monsterState = bio_monsterSpawnState;
+			}
+			//Console.Printf(loadedEntries[itemSelected].actorName.." ~ "..bio_monsterSeeState);
+			if(bio_monsterSeeState==null)
+			{
+				bio_monsterState = bio_monsterSpawnState;
+			}
+			
+			for(int i = 0;i<loadedEntries[itemSelected].frameSkip;i++)
+			{
+				bio_monsterState = bio_monsterState.NextState;
+			}
+			
+			if(bio_monsterState.Tics==0)
+			{
+				bio_monsterState = bio_monsterState.NextState;
+			}
+			if(bio_monsterState.sprite==2)
+			{
+				bio_monsterState = bio_monsterSpawnState;
+			}
+			
+			//Console.Printf("updated monster to "..loadedEntries[itemSelected]);
+			break;
+		}
+	}
+	
+	override bool MouseEvent(int type, int x, int y)
+	{
+		int sel = -1;
+		
+		mouserx = x;
+		mousery = y;
+		[start, size] = Screen.VirtualToRealCoords((0, 0), (320, 240), (320, 240));
+		adjustedMPos = (x,y) - start;
+		virtualMPos = (adjustedMPos.x * 320 / size.x, adjustedMPos.y * 240 / size.y);
+		for(int i = 0;i<21;i++)
+		{
+			if(virtualMPos.x>1&&virtualMPos.x<68&&virtualMPos.y>52+(8*i)&&virtualMPos.y<52+(8*i)+8)
+			{
+				if(i+ListScroll<itemMax)
+				{
+				mouseHover = i+ListScroll;
+				}
+			}
+		}
+		return Super.MouseEvent(type, x, y);
+	}
+	
+	void updateFire ()
+	{
+		/*for(int i = 0;i<fireParticles.Size();i++)
+		{
+			if(fireParticles[i]!=null)
+			{
+				fireParticles[i].alpha=0+i*0.2;
+			}
+		}*/
+	}
+	
+	override bool OnUIEvent(UIEvent ev)
+	{
+		Super.OnUIEvent(ev);
+		if(ev.type==UIEvent.Type_KeyDown&&thing<3)
+		{
+			switch(thing)
+			{
+				case 0:
+				if(ev.KeyString~=="T")
+				{
+					S_Sound("intermission/tick",CHAN_UI);
+					thing++;
+				}
+				break;
+				case 1:
+				if(ev.KeyString~=="H")
+				{
+					S_Sound("intermission/tick",CHAN_UI);
+					thing++;
+				}
+				break;
+				case 2:
+				if(ev.KeyString~=="I")
+				{
+					thing++;
+					youFoundASecret();
+					switchPageHandler(0);
+					itemSelected = codexPages[curPageNum].entryList.Size()-1;
+					listScroll = codexPages[curPageNum].entryList.Size()-21;
+					S_Sound("misc/secret",CHAN_UI);
+					updateItemListing();
+				}
+				break;
+				default:
+					thing=0;
+				break;
+			}
+		}
+		//Console.Printf(""..thing);
+		if (mMouseCapture || m_use_mouse == 1)
+		{
+			if (ev.type == UIEvent.Type_LButtonDown)
+			{
+				if(virtualMPos.y>38&&virtualMPos.y<50)
+				{
+					int initX = 36;
+					for(int i = 0;i<codexPages.Size();i++)
+					{
+						if(virtualMPos.x>initX-(34)+68*i&&virtualMPos.x<initX+(34)+68*i)
+						{
+							switchPageHandler(i);
+							S_Sound("menu/cursor",CHAN_UI);
+							return Super.OnUIEvent(ev);
+						}
+					}
+				}
+				if(virtualMPos.y>50&&virtualMPos.x>1&&virtualMPos.x<68)
+				{
+					if(itemSelected==mouseHover)
+					{
+						return Super.OnUIEvent(ev);
+					}
+					itemSelected=mouseHover;
+					updateItemListing();
+					S_Sound("menu/change",CHAN_UI);
+					return true;
+				}
+			}
+			if (ev.type == UIEvent.Type_WheelUp)
+			{
+				if(ListScroll>0)
+				{
+					ListScroll--;
+				}
+			}
+			if (ev.type == UIEvent.Type_WheelDown)
+			{
+				if(ListScroll+20<pageMax)
+				{
+					ListScroll++;
+				}
+			}
+		}
+		return Super.OnUIEvent(ev); 
+	}
+	
+	override bool MenuEvent (int mkey, bool fromcontroller)
+	{
+		switch (mkey)
+		{
+		case MKEY_Left:
+			switchPageHandler(curPageNum-1);
+			S_Sound("menu/cursor",CHAN_UI);
+			return true;
+
+		case MKEY_Right:
+			switchPageHandler(curPageNum+1);
+			S_Sound("menu/cursor",CHAN_UI);
+			return true;
+		case MKEY_Up:
+			if(itemSelected>0)
+			{
+				itemSelected--;
+				updateItemListing();
+				S_Sound("menu/change",CHAN_UI);
+			}
+			while(itemSelected<listScroll)
+			{
+				listScroll--;
+			}
+			return true;
+
+		case MKEY_Down:
+			if(itemSelected<pageMax)
+			{
+				itemSelected++;
+				updateItemListing();
+				S_Sound("menu/change",CHAN_UI);
+			}
+			while(itemSelected>listScroll+20)
+			{
+				listScroll++;
+			}
+			return true;
+
+		default:
+			return Super.MenuEvent(mkey, fromcontroller);
+		}
+	}
+	
+	override void Ticker()
+	{
+		if(fancyFadeInAlpha<1.0)
+		{
+			fancyFadeInAlpha+=0.2;
+		}
+		if(MenuTime()%4==0)
+		{
+			if(loadedEntries[itemSelected].particleActor!="")
+			{
+				MetaCodex_Particle kachiga = new("MetaCodex_Particle");
+				kachiga.alpha = 1.0;
+				Vector2 funScale = loadedEntries[itemSelected].particleScale;
+				kachiga.scale = (funScale.x*frandom(1.0,1.7),funScale.y*frandom(0.7,1.0));
+				//Console.Printf(""..loadedEntries[itemSelected].particleActor);
+				kachiga.stateUse = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).SpawnState;
+				fireParticles.Push(kachiga);
+			}
+		}
+		for(int i = 0;i<fireParticles.Size();i++)
+		{
+			if(fireParticles[i]!=null)
+			{
+				fireParticles[i].pos.y -= GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).velz;
+				if(MenuTime()%2==0&&fireParticles[i].alpha>0)
+				{
+					Vector2 funScale = loadedEntries[itemSelected].particleScale;
+					fireParticles[i].scale.x-=0.1*funScale.x;
+					fireParticles[i].scale.y+=0.1*funScale.x;
+					fireParticles[i].alpha-=0.2;
+				}
+				if(fireParticles[i].alpha<0.05)
+				{
+					fireParticles.Delete(i);
+				}
+				if (--fireParticles[i].tics <= 0)
+				{
+					int itProtect;
+					fireParticles[i].stateUse = fireParticles[i].stateUse.NextState;
+					while(fireParticles[i].tics<1&&itProtect<200)
+					{
+						fireParticles[i].stateUse = fireParticles[i].stateUse.NextState;
+						itProtect++;
+					}
+					fireParticles[i].tics = fireParticles[i].stateUse.Tics;
+				}
+			}
+		}
+		
+		if (bio_monsterState != NULL && bio_monsterState.Tics != -1 && bio_monsterState.NextState != NULL)
+		{
+			if (--bio_monsterTics <= 0)
+			{
+				int itProtect;
+				bio_monsterState = bio_monsterState.NextState;
+				while(bio_monsterState.Tics<1&&itProtect<200)
+				{
+					bio_monsterState = bio_monsterState.NextState;
+					itProtect++;
+				}
+				bio_monsterTics = bio_monsterState.Tics;
+			}
+		}
+		
+		Super.Ticker();
+	}
+	
+}

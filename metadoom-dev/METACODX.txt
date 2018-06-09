@@ -1,0 +1,47 @@
+//===============================================
+//     ~MetaDoom Codex Lump (METACODX.txt)~
+//     patent pending DrPyspy Inc. Ltd. Corp.
+//   "the MC in MC Ride stands for Meta Codex"
+//===============================================
+// Only '//' comments are supported for now.
+
+// Creation identifiers:
+// * Page <name> {} - Creates a new page.
+// * Entry <actor name> {} - Creates a new entry for an actor.
+
+// Page identifiers:
+// * Layout <int> - Sets the layout of a page. 1 is for weapon-style, 0 is default.
+
+// Entry identifiers:
+// * Needs <iwad>; - Set the minimum required IWAD for this monster. Currently only supports "Doom2".
+// * Offset <xoffset>, <yoffset>; - Sets the x/y offset of the actor in the codex.
+// * Name <name>; - Sets the lore name of an entry.
+// * Origin <name>; - Sets the origin of an entry.
+// * Description <name>; - Sets the lore description of an entry.
+
+import "codex/bestiary.cdx";
+
+page "Arsenal"
+{
+	layout 1;
+	
+	entry "MetaChainsaw" {}
+	entry "MetaAxe" {}
+	entry "MetaPistol" {}
+	entry "MetaShotgun" {}
+	entry "HolyWaterPistol" {}
+	entry "MetaSuperShotgun" {}
+	entry "MetaFireExtinguisher" {}
+	entry "MetaMachineGun" {}
+	entry "MetaChaingun" {}
+	entry "MetaRocketLauncher" {}
+	entry "MetaGrenadeLauncher" {}
+	entry "MetaPlasmaRifle" {}
+	entry "MetaLightningGun" {}
+	entry "MetaGaussCannon" {}
+	entry "MetaBFG9000" {}
+	entry "MetaUnmaker" {}
+	entry "MetaSoulCube" {}
+}
+
+import "codex/powerups.cdx";

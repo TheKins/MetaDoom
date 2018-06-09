@@ -17,5 +17,15 @@ version 2.5
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
 
+// Codex Stuff
+#include "zscript/codex/pyparse.zsc" // Sets up the classes for parsing
+
+#include "zscript/codex/metacodex_inventory.zsc" // The inventory items (important!)
+#include "zscript/codex/metacodex_event.zsc" // Controls the inventory handouts for the codex (also important!)
+#include "zscript/codex/metacodex_menu.zsc" // The menu itself (sans drawing)
+#include "zscript/codex/metacodex_parser.zsc" // Parses shit
+#include "zscript/codex/metacodex_drawer.zsc" // Draws shit
+#include "zscript/codex/metacodex_gritty.zsc" // RenderStyle stuff written by Zombie
+
 // Other Bullshit Scripting
 #include "zscript/metaintermission.zsc"

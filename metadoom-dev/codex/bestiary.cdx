@@ -1,0 +1,385 @@
+page "Bestiary"
+{
+	//===========================================
+	// Zombies
+	//===========================================
+	
+	entry "MetaZombieMan"
+	{
+		name "Former Human";
+		origin "Doom (1993)";
+		description "Former Humans are UAC guards that were possessed by the forces of Hell. You may have been swapping war stories with these guys just a few days ago, but their soul is no more. Those who are of weak conviction or are in REM sleep are vulnerable to the possession process. The victim is medically dead, but remains animated through demonic influence, retaining the memory of their military training.\n\nThe Former Human carries a standard issue rifle, unsuitable for warfare, but perfect for containing on-base disturbances.";
+	}
+	entry "MetaHellRazer"
+	{
+		name "Hell-Razer";
+		origin "Doom (2016)";
+		description "A relatively recent observation, these creatures seem to be a Hellish attempt at bio-engineering their own ground forces inspired by the lessons learned from the Former Humans. These creatures are equipped with an arm cannon, seemingly partially organic in origin, that after a brief charging period unleashes a searing blast of deadly energy.\n\nHowever, they seem to still be inexperienced, and take an unexpectedly long time to charge their weapon, making it easier for an experienced fighter to take cover or get the drop on them.";
+	}
+	
+	//===========================================
+	// Shotgunners
+	//===========================================
+	
+	entry "MetaShotgunGuy"
+	{
+		name "Former Sergeant";
+		origin "Doom (1993)";
+		description "Former Sergeants were members of the UAC's Rapid Response Tactical Squad. The RRTS was instated when the teleportation experiments resulted in demonic threats turning up very frequently, requiring a group of soldiers that would be able to contain a threat within minutes without question. RRTS soldiers weren't intended to be indisposable, but they weren't allowed to know that.\n\nThe Former Sergeant carries a combat shotgun missing the expensive underslung grenade launcher due to their disposable status.";
+	}
+	entry "MetaZSec"
+	{
+		name "Z-Sec Marine";
+		origin "Doom 3 (2004)";
+		description "The Zeta Security Force (nicknamed Z-Sec) was the UAC's elite guard. In the event that the RRTS are unable to handle a situation, the Z-Sec were called in. With their enhanced military training and cybernetic enhancements, the Z-Sec were quick to silence any demonic disturbance with military precision.\n\nAlthough death has complicated things, the Z-Sec are still able to put their military tactics to use. They will roll from side to side in an attempt to throw off their opponent's aim, and quickly follow up with a shotgun blast.";
+	}
+	
+	//===========================================
+	// Gunners
+	//===========================================
+	
+	entry "MetaMachineGunGuy"
+	{ 
+		needs "Doom2";
+		offset 1, 2; 
+		name "Former Lieutenant";
+        origin "Doom RPG (2005)";
+        description "Once a team leader of the UAC's Rapid Response Tactical Squad, the Former Lieutenant is combat-hardened, heavily armored and ready to put down any experiments that may get out of hand. At least, that was the plan...\n\nFormer Lieutenants pack an Assault Rifle, giving them the ability to lay down suppressing fire while Former Sergeants close in for the kill. This strategy probably would have worked out better against conventional military targets, as opposed to giant murder skeletons."; 
+	}
+	entry "MetaChainGunGuy"
+	{ 
+		needs "Doom2";
+		offset -1, 5; 
+		name "Former Commando";
+        origin "Doom II: Hell on Earth (1994)";
+        description "One of the senior-most members of the RRTC, the Former Commando brings additional firepower to the field, allowing them to command forces on the front-lines. They have bought their experience and expertise to the afterlife with them.\n\nFormer Commandos are equipped with an experimental man-portable Chaingun, effectively allowing them to hose down anything they see with a horizontal rainstorm of lead. Use extreme caution when engaging them in open areas!"; 
+	}
+	entry "MetaAssassinGuy"
+	{ 
+		needs "Doom2";
+		name "Former Assassin";
+        origin "Doom II: Hell on Earth (1994)";
+        description "These strange creatures were once leaders of the RRTC, but demonic influences have corrupted them, turning them into something... more than human. They seem to relish combat, taking joy in stalking their prey before ventilating them from unexpected angles with their Chaingun.\n\nThese creatures can also use their tentacle arm to pull targets closer, disorienting them and mitigating the Chaingun's accuracy issues. Using distance and cover to your advantage is highly advisable."; 
+	}
+	
+	//===========================================
+	// Imps
+	//===========================================
+	
+	entry "MetaDoomImp"
+	{
+		offset -2, 0;
+		name "Imp";
+		origin "Doom (1993)";
+		description "The rank-and-file of Hell's invasion forces, the Demonic Troopers (nicknamed ''Imps'' by researchers) make up for lacking intelligence with razor-sharp claws, the ability to conjure searing balls of flame at will, and a vast numeric advantage.\n\nObservation indicates that these creatures are fairly low down the food chain, and may be fighting at the behest of other, more powerful monsters. Sadly, the most detailed study of these creatures, ''Operation: Imp Encounter'', remains strictly classified for mysterious reasons never adequately explained...";
+	}
+	
+	entry "MetaNightmareImp"
+	{
+		offset 0, 4;
+		name "Nightmare Imp";
+		origin "Doom 64 (1997)";
+		description "In a freak accident, a breakout of imps near the Nuclear Plant resulted in a catastrophic meltdown, requiring the area to be evacuated and quarantined. When cleanup began a year later, cleanup crews came face to face with a mutated breed of Imps.\n\nThe Nightmare Imp's skin has lost its pigment as a result of the radiation, the translucency granting it solace in the shadows. The demon is able to channel radiation into its fireballs, allowing it to conjure more volatile orbs of energy. It's incredible how you can see right through him.";
+	}
+	
+	entry "MetaDoomImpLord"
+	{
+		name "Imp Lord";
+		origin "Doom (2016)";
+		description "A sub-species of Imp that appears to have attained some degree of dominance over its more common cousins, the Imp Lord bears flamboyant markings and a wider range of abilities, ranging from pouncing across rooms to actively teleporting around, disorienting and confusing prey.\n\nThere have been rumors of one of these creatures commanding a small horde of disturbing, conjoined zombies around a small city in the Middle East days before the invasion commenced, but these have never been fully substantiated.";
+	}
+	
+	//===========================================
+	// Doggies
+	//===========================================
+	
+	entry "MetaHellhound"
+	{
+		name "Hellhound";
+		origin "Doom RPG (2005)";
+		description "Hellhounds are former UAC guarddogs that were used heavily in both guard duty and heavy defense operations. While not as susceptible to demonic possession as humans, they were able to be reanimated and turned against the living. Despite this, they are often seen with their former owners, suggesting that even in death, they are loyal to their masters. Good boy!\n\nThe hellhound will make a beeline towards their target at incredible speeds to sink their teeth into their victim. However, their fragile frame easily succumbs to most injuries.";
+	}
+	entry "MetaDemonDog"
+	{
+		name "Demon Dog";
+		origin "Doom RPG (2005)";
+		description "Demon Dogs appear to have been military dogs before their possession, charged with dragging injured soldiers out of the line of fire while ducking and dodging and avoiding getting hit. These traits they have kept from life to unlife, dancing through enemy attacks and drawing fire away from more crucial targets.\n\nResearchers in the field have filed claims that they know how to roll over and shake hands, but not enough evidence has been provided of this to truly consider scientific fact.";
+	}
+	entry "MetaCerberus"
+	{
+		name "Cerberus";
+		origin "Doom RPG (2005)";
+		description "A former UAC guard dog that has been filled with a berserker rage by demon magicks, the Cerberus can leap through the air with a supernatural force, slamming into opponents and knocking them over, leaving them stunned and ripe for the jugular-tearing.\n\nWhile they're intelligent and deadly opponents, they're still possessed dogs, and still vulnerable to tummy-rubs and/or heavy ordinance. Rumor has it they have another weakness, but discussion of it is forbidden throughout both human and demon societies...";
+	}
+	
+	//===========================================
+	// Demons
+	//===========================================
+	entry "MetaDemon"
+	{
+		name "Pinky Demon";
+        origin "Doom (1993)";
+        description "The Demonic Sergeant (humiliatingly nicknamed ''Pinky'' by forces in the field) loosely resembles a shaved gorilla with a giant, toothy mouth which it typically uses in lieu of its stumpy limbs to tear opponents apart.\n\nThese creatures appear to have low intelligence and seem to be considered by other denizens of the depths to be something between a hunting dog and a pack animal. It's not uncommon to find Pinky bones scattered around where another creature has devoured them.\n\nIt's also not uncommon for that other creature to be another Pinky...";
+	}
+	entry "MetaBullDemon"
+	{
+		name "Bull Demon";
+		origin "Doom 3 (2004)";
+		description "When born, the Bull Demon's mouth is buried under thick folds of flesh, requiring it to bite through it in order to eat and breathe. The creature is born without any other limbs besides its two forelegs, often being sought after as prey. UAC experiments gave them cybernetic leg implants, granting them the mobility of a ferocious bull.\n\nIf it has the energy, the Bull Demon will charge towards its victim, causing massive internal damage to the victim on impact. Fortunately, it cannot change course during its charge, so it can be led into other obstacles.";
+	}
+	entry "MetaSpectre"
+	{
+		name "Spectre";
+        origin "Doom (1993)";
+        description "The result of a genetic engineering experiment to try and improve the Pinky's lacking sense of sight and famously low intelligence, the research team accidentally gave the creature a form of organic optic camoflague...\n\n...which it then quickly took advantage of, eating the entire lab crew and escaping back into Hell, where its modified genes rapidly spread.\n\nThese creatures tend to prefer dimly-lit environments, where it can best take advantage of its unique capabilities.";
+	}
+	entry "MetaNightmareSpectre"
+	{
+		name "Nightmare Spectre";
+        origin "Doom: Custom Playstation Edition (1995)";
+        description "These creatures were first (partially) sighted by clean-up crews in the ruins of a ruined Nuclear Plant. Bearing the same genetic modifications as the Spectre, it has also acquired even more muscle mass, turning it into a hulking monstrosity that can absorb even more punishment before going down.\n\nEven with their intense strength, these creatures still seem to be low on the food chain, and some larger monsters seem to consider them a rare delicacy...";
+	}
+	
+	//===========================================
+	// Fuckers
+	//===========================================
+	
+	entry "MetaTrite"
+	{
+		name "Trite";
+        origin "Doom 3 (2004)";
+        description "These horrifying little beasts lurk in the darkest corners, almost always in packs. They possess a unique ability to clamber about on the ceiling, dropping down to attack prey. They don't actually seem to be enormously dangerous by themselves, but they strike fear into the hearts of unsuspecting marines.\n\nTranslations of recently-uncovered rune carvings point to these creatures being created by something called the Vagary, but researchers have yet to witness any such creature in the wild.";
+	}
+	entry "MetaSawcubus"
+	{
+		name "Sawcubus";
+		origin "Doom II RPG (2009)";
+		description "Some time after the demon experiments began, there were reports of chainsaws turning up missing. These were shortly followed by reports of demons being seen equipped with the stolen chainsaws, followed again by UAC personnel being killed in chainsaw related accidents. Eventually, a Sawcubus was captured and studied.\n\nThe Sawcubus is limited by his speed, range, and noisiness. It usually prefers smaller, cramped spaces, where its weaknesses become its strengths. Please return all stolen chainsaws to the UAC bookkeeper.";
+	}
+	
+	//===========================================
+	// Lost Souls
+	//===========================================
+	
+	entry "MetaLostSoul"
+    {
+        particle "MetaLostSoulFire", 1.0;
+        offset 0, -3;
+        name "Lost Soul";
+        origin "Doom (1993)";
+        description "The Lost Souls is a creature that defies science, and as such there isn't really a way to describe it that isn't blunt: It's a giant monster skull that flies and is on fire. Enough said.\n\nIt's origins remain a mystery, but observers report that these creatures seem to be at the bottom of the demonic pecking order, shunned by pretty much every other form of Hellish life... except, that is, the Pain Elementals, which seem to have a strange, almost-psychic connection with them.";
+    }
+	entry "MetaPhantom"
+	{
+		particle "MetaPhantomFire", 1.0;
+		offset 0, -6;
+		name "Phantom";
+		origin "Doom 0.3 (1993)";
+		description "The Phantom is a mechanical mimic of the Lost Soul composed of a steel alloy. The UAC originally designed these as a survey drone with minimal self-defense capabilites to blend into the environment of Hell. However, due to an error in the AI's code, the drone would identify all living beings as a threat and instantly shift into combat mode. The UAC decided to cut their losses and jettison the drones into Hell.\n\nThe Phantom will dance around and fire balls of fire before charging into their target, frequently triggering infighting with other demons.";
+	}
+	entry "MetaForgottenOne"
+    {
+        particle "MetaForgottenOneFire", 0.25;
+        offset 0, -16;
+        name "Forgotten One";
+        origin "Doom 3 (2004)";
+        description "Whereas the Lost Souls resemble the unnaturally large skulls of monsters past, the Forgotten One appears to be a human skull, having cast aside its body to follow in its horned cousin's footsteps. Even worse, many of them seem to have been recently-sourced, lurking near headless corpses and still bearing the viscera of a traumatic removal.\n\nFurther investigation has been difficult: Forgotten Ones are extremely fragile, and seem to fall apart into goo and bone marrow at the slightest touch. Research continues, but hopes of progress are low.";
+    }
+	
+	//===========================================
+	// Cacodemons
+	//===========================================
+	
+	entry "MetaCacodemon"
+	{
+		name "Cacodemon";
+		offset 0, 3;
+		origin "Doom (1993)";
+		description "The Cacodemon is a spherical demon that floats above ground and hunts from the air, giving it an advantage over its landlocked prey. While the exact explanation for the creature's ability to maintain flight is unknown, scientists have considered the two holes present on the back of the demon.\n\nThe Cacodemon will spit out balls of plasma from its mouth, closing in until its within range to devour its prey. If it is hit with enough power, however, the demon will be thrust backwards, rendering it helpless in the air.";
+	}
+	
+	entry "MetaMalwraith"
+	{
+		name "Malwrath";
+		offset 0, 3;
+		origin "Doom 64 (1997)";
+		description "The Malwrath is an offshoot of the Cacodemon genus that has developed a pair of arms on its sides. These limbs allow it to channel its energy to form plasma into different shapes.\n\nThe Malwrath fires not one, not two, but three orbs of plasma at once. Not only are they tougher to dodge, but their combined heat is greater than the Cacodemon's single orb, burning through armor (and skin) with ease.";
+	}
+	
+	entry "MetaWretched"
+	{
+		name "Wretched";
+		offset 0, 3;
+		origin "Doom (2016)";
+		description "The Wretched is a voracious breed of Cacodemon that has evolved to consume more energy than normal. To compensate, the Wretched possesses an extremely long tongue that can be extended across large distances, allowing the demon to hunt more prey efficiently.\n\nIf the prey is caught in the demon's tongue, they will be thrust towards the Wretched with incredible speed. However, sometimes it will miscalculate and launch their victim behind them, disorienting both the prey and the demon.";
+	}
+	
+	//===========================================
+	// Brusiers
+	//===========================================
+	
+	entry "MetaHellKnight"
+	{
+		needs "Doom2"; 
+		name "Hell Knight";
+        origin "Doom II: Hell on Earth (1994)";
+        description "These titanic creatures are pure muscle. They seem to be used primarily to guard areas from unwanted intruders, defending rather than attacking. When push comes to shove, though, they are more than equipped to fight back, using a mixture of brute force and demonic magics to fend off foes.\n\nArcheological digs seem to tell a story of the Hell Knight as a kind of gladiator-class, fighting in grand arenas for audiences of other demons. They also seem to have a genetic link to the Baron of Hell that has yet to be fully researched."; 
+	}
+	
+	entry "MetaBaronOfHell"
+	{ 
+		offset 0, 10;
+		name "Baron of Hell";
+		origin "Doom (1993)";
+		description "A horned colossus, the Baron of Hell is the baddest thing on two legs since the Tyrannosaurus Rex. It stands guard over artifacts and relics considered especially valuable by the demonic forces, and uses similar combat tactics to the Hell Knight whilst channeling even greater power into them, rending the Earth itself asunder to drive intruders away.\n\nObservation indicates that these creatures are high up the rungs of the demonic social order, and that Hell Knights seem to serve under them in some way or another.";		
+	}
+	
+	//===========================================
+	// Arachnotrons
+	//===========================================
+	
+	entry "MetaArachnotron"
+	{
+		needs "Doom2"; 
+		name "Arachnotron";
+        origin "Doom II: Hell on Earth (1994)";
+        description "Plucked straight from humankind's collective nightmares, the Arachnotron is a large, brain-like mass that navigates the world on a quadrupedal mechanical walker equipped with some unknown variant of the UAC Plasma Rifle. Quite how the demons managed to discover the secrets of the UAC's cybernetics technologies is unknown, but the results are a force to behold.\n\nCuriously, these creatures seem to be the only demons witnessed so far that can tolerate being near Mancubi, and the two are often witnessed co-operating in the field."; 
+	}
+	entry "MetaSpiborg"
+	{
+		needs "Doom2"; 
+		offset 0, 10;
+		name "Spiborg";
+        origin "Doom 64 (1997)";
+        description "This sub-species of the Arachnotron seems to have undergone impressive enhancements, with the walker having been completely rebuilt and the brain-like creature itself having developed a hardened chitinous coating to protect itself from harm. The underslung weapon has also been replaced with a previously undocumented plasma weapon, firing a single charged burst of white-hot energy.\n\nThese creatures, oddly, don't seem to have any social characteristics, standing silently to attention when not in combat. They may well be artificial creations built solely for war."; 
+	}
+	
+	//===========================================
+	// Pain
+	//===========================================
+	
+	entry "MetaPainElemental"
+    {
+        needs "Doom2";
+		offset 0, 3;
+        name "Pain Elemental";
+        origin "Doom II: Hell on Earth (1994)";
+        description "A most mysterious abomination, the Pain Elemental lazily floats through the skies looking for prey. Upon finding a target, the creature opens its maw and emits Lost Souls, which quickly overcome and devour their target.\n\nThe relationship between the Skulls and their host is a topic of hot debate among Demonologists, with experts in the relatively new subject divided between a paternal or parasitical link between the two."; 
+    }
+    entry "MetaBeholder"
+    {
+        needs "Doom2"; 
+		offset 0, 3;
+        name "Beholder";
+        origin "Doom RPG (2005)";
+        description "A strange relative of the Pain Elemental, the Beholder seemingly evolved under the assumption that quantity is better than quality, eschewing the well-documented Lost Souls for a shotgun-esque spray of smaller, less stable creatures that have yet to be properly examined.\n\nStrangely, this creature doesn't seem as interested in actively hunting prey as its cousins, instead preferring to observe quietly from a distance."; 
+    }
+    entry "MetaRahovart"
+    {
+        needs "Doom2"; 
+		offset 0, 28;
+        name "Rahovart";
+        origin "Doom 64 (1997)";
+        description "First witnessed in the irradiated ruins of a supposedly-sterilised facility, this sub-species of Pain Elemental has been horrifically warped by record-breaking levels of radiation reacting to the science-defying energies within it.\n\nBe warned, it retains the ability to engorge Lost Souls upon a target, but now has double the mouths with which to do so. Attempts at captivity for further research should not be attempted until we have better trained a specialized team for the task."; 
+    }
+	
+	//===========================================
+	// Revenants
+	//===========================================
+	
+	entry "MetaRevenant"
+	{
+		needs "Doom2"; 
+		offset 0, 24;
+		name "Revenant";
+        origin "Doom II: Hell on Earth (1994)";
+        description "The Revenant seems to be an artificial construct of sorts, pieced together from the debris of past battles, strapped up with armor and shoulder-mounted homing missile launchers, and sent marching back into the fray.\n\nBattle reports show that the Revenant has a dramatic psychological effect on its opponents - after all, who WANTS to fight a ten-foot-tall rocket skeleton that screams constantly and punches people? Exactly."; 
+	}
+	entry "MetaFiend"
+	{
+		needs "Doom2"; 
+		offset 0, 24;
+		name "Fiend";
+        origin "Doom (2016)";
+        description "If the Revenant was built out of bones, the Fiend follows the same blueprint but comes from, shall we say, fresher stock. Equipped with a jetpack and a micro-missile launcher seemingly salvaged from the Assault Rifle, the demons seem to save Fiends for ''special occasions'' where a Revenant is needed but may not quite be enough.\n\nObservers and researchers are still as-yet unsure as to where the Jetpacks are procured from."; 
+	}
+	
+	//===========================================
+	// Mancubi
+	//===========================================
+	
+	entry "MetaMancubus"
+	{
+		needs "Doom2"; 
+		offset 0, 8; 
+		name "Mancubus";
+		origin "Doom II: Hell on Earth (1994)";
+        description "A hulking tribute to the concept of sloth and a middle finger to subtlety, the Mancubus is a morbidly obese humanoid mass with fireball launchers for arms and a gag-inducing rotting-flesh stench that can be noticed from a mile away.\n\nThese creatures seem to earn a strange, begrudging respect from fellow demons (particularly Arachnotrons), leading researchers to assume that they may have some prominent role in the endlessly-complex bureaucracies of demonic royalty. Or they might just be real good at killing stuff. Either/or."; 
+	}
+	entry "MetaBehemoth"
+	{
+		needs "Doom2"; 
+		offset 0, 16; 
+		name "Behemoth";
+		origin "Doom 64 (1997)";
+        description "A sub-species of Mancubus, adapted for a life of combat instead of excess. Much of the fat has been shaved away into a layer of muscle, and the smell is almost, but not quite tolerable. The gun-arms, however, have received a sizable upgrade, becoming full-force napalm-fuelled flamethrowers.\n\nThese creatures seem oddly stoic, mostly ignoring socialization and silently meditating in its downtime. Are these creatures some kind of demonic warrior-monk caste? They certainly haven't followed the path of their bulky kin..."; 
+	}
+	entry "MetaCyberManc"
+	{
+		needs "Doom2"; 
+		offset 0, 16; 
+		name "Cyber-Mancubus";
+		origin "Doom (2016)";
+		description "A sub-species of Mancubus, kitted out for war instead of hedonism. The cybernetic implants appear to siphon noxious stomach acids out of its engorged belly and into the chambers of its rifled gun-arms, from where it can spray opponents with poisonous blobs of terror.\n\nStrangely, the creature's implants and equipment appear to be custom UAC creations, built specifically for the creature. There are no records on file of any such experiments taking place, so clearly somebody's got some questions to answer once all this is over and done with...";
+	}
+	
+	//===========================================
+	// Arch-Viles (and guest)
+	//===========================================
+	
+	entry "MetaArchvile"
+	{
+		needs "Doom2"; 
+		offset 0, 12; 
+		name "Arch-Vile";
+        origin "Doom II: Hell on Earth (1994)";
+        description "An unholy practitioner of some dark art, the Arch-Vile is a tall, lanky creature glowing with terrifying powers beyond human understanding. It strides the battlefield with an almost child-like glee, casting explosive hexes at opponents while knitting dead tissue back together with the power of its mind.\n\nThese powers make it one of the most formidable foes documented to date, rendering capture and research extremely difficult. Do not be fooled by its frail, weathered appearance! It's the worst of a bad lot by far."; 
+	}
+	entry "MetaSummoner"
+	{
+		needs "Doom2"; 
+		forcespawn;
+		offset 0, 18; 
+		name "Summoner";
+		origin "Doom (2016)";
+		description "The Summoners are an advanced breed of Arch-Viles. The crown-like formation on its head and cape-like wings give off a royal aura, suggesting a high position among the demonic ranks.\n\nIn addition to resurrecting fallen demons, Summoners will open rifts and summon forces of Unwilling as cannon fodder while he readies his fire blast. To avoid damage, the demon will quickly travel through small rifts, emerging at a different location, similarly to the Imp Lord. As such, scientists have hypothesized a connection between these demons' genuses.";
+	}
+	entry "MetaUnwilling"
+	{
+		needs "Doom2";
+		name "Unwilling";
+		origin "Doom (2016)";
+		description "The Unwilling are possessed humans that have survived past their expected lifespan. The muscles have rotted away from their emaciated bodies, appearing as if they were mummified. Their primary purpose is slave labor, shrine worship, and cannon fodder, usually under the supervision of the Summoners.\n\nDue to their debilitated state, they fight by ripping off and slinging chunks of their body at their target. Though they are weak by themselves, a group of Unwilling can be intimidating.";
+	}
+	
+	//===========================================
+	// Bosses
+	//===========================================
+	
+	entry "MetaCyberdemon"
+	{
+		offset 0, 64;
+		name "Cyberdemon";
+		origin "Doom (1993)";
+		description "An unholy union of flesh and machine, the Cyberdemon was a long-extinct Balgaar resurrected through demonic ritual and stolen UAC technology. Fuelled by a fury against all things living, the Cyberdemon personally leads the assault against mankind with its powerful rocket launcher arm and a host of other tricks.\n\nThe Cyberdemon sits proudly at the top of the demonic food chain, ruling through fear from the Tower of Babel. Only one other demon seems willing and capable of standing off against it, but we have yet to witness it...";
+	}
+	
+	entry "MetaSpiderMastermind"
+	{
+		offset 0, 48;
+		frameskip 3;
+		name "Spider Mastermind";
+		origin "Doom (1993)";
+		description "Referred to in archeological digs and ancient tablets as ''The Aranea Imperatrix'', the Spider Mastermind appears to be an ancient ruler of some plane of Hell who has descended upon our realm to supervise and command the assault against humanity.\n\nOften described in mythical and deity-like tones, the Spider Mastermind commands unimaginable psychic power, as well as a custom-built cybernetic power-walker loaded with powerful plasma weapons. None of our researchers have witnessed it and lived. We STRONGLY advise against being the first.";
+	}
+}

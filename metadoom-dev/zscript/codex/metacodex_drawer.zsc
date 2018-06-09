@@ -1,0 +1,322 @@
+Extend Class MetaCodex_Menu
+{
+	static int ConstructRenderStyle(ERenderStyle blendOp, int srcAlpha, int dstAlpha, int flags)
+	{
+		return (blendOp | (srcAlpha << 8) | (dstAlpha << 16) | (flags << 24));
+	}
+	
+	void DrawShader(int which, Vector2 pos, Vector2 size, int flags = 0, double alpha = 1.)
+	{
+		static const String texnames[] = {"BarShaderHF", "BarShaderHR", "BarShaderVF", "BarShaderVR" };
+		let codexbg = TexMan.CheckForTexture(texnames[which], TexMan.Type_MiscPatch);
+		screen.DrawTexture(codexbg, true, 0,0, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240, DTA_DestWidthF, size.x, DTA_DestHeightF, size.y, DTA_RenderStyle, MetaCodex_RenderStyle.FromLegacy(STYLE_Subtract), DTA_Alpha, 0.25);
+	}
+	
+	void drawMetaText(string stuffToPrint, int textX, int textY, string prefixer = "", Font fnttouse = "TINYBABY", bool selected = false)
+	{
+		Color maincolor;
+		if(fnttouse==BigFont)
+		{
+			maincolor = Font.CR_GREY;
+		}
+		else if (stuffToPrint=="???")
+		{
+			maincolor = Font.FindFontColor("MetaGreyTall");
+			screen.DrawText(fnttouse, Font.CR_BLACK , textX+1, textY+1, prefixer..StringTable.Localize(stuffToPrint), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		}
+		else if (selected==true)
+		{
+			maincolor = Font.CR_WHITE;
+			screen.DrawText(fnttouse, Font.CR_BLACK , textX+1, textY+1, prefixer..StringTable.Localize(stuffToPrint), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		}
+		else
+		{
+			screen.DrawText(fnttouse, Font.FindFontColor("MetaDarkRed") , textX+1, textY+1, prefixer..StringTable.Localize(stuffToPrint), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+			maincolor = Font.FindFontColor("MetaGolden");
+		}
+		screen.DrawText(fnttouse, maincolor, textX, textY, "\cj"..prefixer.."\c-"..StringTable.Localize(stuffToPrint), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+	}
+	
+	Vector2, TextureID, bool GetSpriteStuff(State actyBoy)
+	{
+		Vector2 Scale;
+		TextureID sprite;
+		bool flip;
+				
+		State monstState = actyBoy;
+		
+		[sprite, flip, Scale] = monstState.GetSpriteTexture(0, 0, (1,1));
+		scale = TexMan.GetScaledSize(sprite);
+		return scale, sprite, flip;
+		
+	}
+	
+	override void Drawer () 
+	{
+		int initialX = 36;
+		for(int i = 0;i<codexPages.Size();i++)
+		{
+			Color cole = Font.CR_WHITE;
+			if(i==curPageNum)
+			{
+				cole = Font.CR_GOLD;
+			}
+			Vector2 pos = (initialX+68*i,38);
+			let buttonbg = TexMan.CheckForTexture("graphics/codex/codex_buttonup.png", TexMan.Type_MiscPatch);
+			if(i==curPageNum)
+			{
+				buttonbg = TexMan.CheckForTexture("graphics/codex/codex_buttondown.png", TexMan.Type_MiscPatch);
+			}
+			screen.DrawTexture(buttonbg, true, pos.x,pos.y-2, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+			screen.DrawText(SmallFont, cole, /*2*/pos.x-(SmallFont.StringWidth(codexPages[i].pageName)/2), pos.y, codexPages[i].pageName, DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		}
+		
+		int selX = initialX-(SmallFont.StringWidth(codexPages[curPageNum].pageName)/2)+68*curPageNum;
+		//screen.DrawText(SmallFont, Font.CR_WHITE, /*2*/36-(SmallFont.StringWidth(pageTitle)/2), 39, pageTitle, DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		int selLength = SmallFont.StringWidth(codexPages[curPageNum].pageName);
+		/*screen.DrawText(SmallFont, Font.CR_WHITE, selX-5-1, 39, "<", DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		screen.DrawText(SmallFont, Font.CR_WHITE, selX+selLength+1, 39, ">", DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);*/
+		//screen.DrawText(SmallFont, Font.CR_WHITE, 73-5, 39, ">", DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		
+		screen.DrawText(BigFont, Font.CR_WHITE, 0, 20, "Codex", DTA_VirtualWidth, 320,DTA_VirtualHeight, 240);
+		
+		Vector2 cx1, cx2;
+		//Console.Printf(cx1.x.." "..cx1.y);
+		//Console.Printf("\ck"..cx2.x.." "..cx2.y);
+		//screen.SetClipRect(cx1.x, cx1.y, 340, 340);
+		TextureID bg;
+		let codexbg = TexMan.CheckForTexture("graphics/codex/codex_bg.png", TexMan.Type_MiscPatch);
+		screen.DrawTexture(codexbg, true, 0,0, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+		[cx1, cx2] = screen.VirtualToRealCoords((0,51),(70,168),(320,240));
+		screen.SetClipRect(cx1.x, cx1.y, cx2.x, cx2.y);
+		let codexhl = TexMan.CheckForTexture("graphics/codex/codex_highlight.png", TexMan.Type_MiscPatch);
+		screen.DrawTexture(codexhl, true, 3,51+(8*(itemSelected-listScroll)), DTA_VirtualWidth, 320, DTA_VirtualHeight, 240, DTA_Alpha, 0.5+(sin(gametic*8)/8));
+		screen.DrawTexture(codexhl, true, 3,51+(8*(mouseHover-listScroll)), DTA_VirtualWidth, 320, DTA_VirtualHeight, 240, DTA_Alpha, 0.1+(sin(gametic*4)/32));
+		screen.ClearClipRect();
+		
+		double xoffset = 0;
+		double yoffset = 0;
+		double yoffsetfire = 0;
+		double sizerx = 1;
+		double sizery = 1;
+		double salpha = 1;
+		int specialrender = 0;
+		
+		//=====================================
+		//           DRAW THE ITEM
+		//=====================================
+		
+		[cx1, cx2] = screen.VirtualToRealCoords((74,50),(244,172),(320,240));
+		string firetex;
+		
+		screen.SetClipRect(cx1.x, cx1.y, cx2.x, cx2.y);
+		
+		Vector2 bioPicPos = (133,82);
+		switch(codexPages[curPageNum].entryLayout)
+		{
+			case 1:
+				bioPicPos = (100,48);
+			break;
+		}
+		
+		bioPicPos+=loadedEntries[itemSelected].picOffset;
+		
+		Vector2 Scale;
+		TextureID sprite;
+		bool flip;
+		Vector2 partScale;
+		TextureID particleSpriteTex;
+		bool partflip;
+				
+		if((class<Actor>)(loadedEntries[itemSelected].actorName)!=null)
+		{
+				
+		let monstClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].actorName));
+		
+		int renderStyle = monstClass.GetRenderStyle();
+		double alpha = monstClass.alpha;
+		
+		double floatbob = monstClass.bFloatBob ? sin(MenuTime()*3)*3 : 0;
+				
+		[sprite, flip, Scale] = bio_monsterState.GetSpriteTexture(0, 0, monstClass.Scale);
+				
+		Vector2 imageScale = TexMan.GetScaledSize(sprite);
+		Vector2 imageOffset = TexMan.GetScaledOffset(sprite);
+		imageScale.x *= Scale.x;
+		imageScale.y *= Scale.y;
+		//Console.Printf(imageOffset.."");
+		if(flip) imageOffset.x=imageScale.x-imageOffset.x;
+				
+		bg = sprite;
+		
+		bool actuallyHas = (loadedEntries[itemSelected].actuallyHas||isDebug);
+		
+		for(int i = 0;i<fireParticles.Size();i++)
+		{
+		
+			let partClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor));
+			[partScale, particleSpriteTex, partflip] = GetSpriteStuff(fireParticles[i].stateUse);
+			partScale.x *= partClass.scale.x;
+			partScale.y *= partClass.scale.y;
+			//Console.Printf(fireParticles[i].scale.."");
+			partScale.x *= fireParticles[i].scale.x;
+			partScale.y *= fireParticles[i].scale.y;
+			//Console.Printf(partScale.."");
+			double partAlpha = partClass.alpha*fireParticles[i].alpha;
+			
+			screen.DrawTexture(particleSpriteTex, true, bioPicPos.x+fireParticles[i].pos.x, bioPicPos.y+floatbob+fireParticles[i].pos.y, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, partscale.x, DTA_DestHeightF, partscale.y, DTA_FlipX, flip, DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? partClass.Translation : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*partAlpha*fancyFadeInAlpha : 0.75*partAlpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(Style_Add) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
+			
+		}
+		
+		screen.DrawTexture(bg, true, bioPicPos.x, bioPicPos.y+floatbob, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, imageScale.x, DTA_DestHeightF, imageScale.y, DTA_FlipX, flip, DTA_LeftOffset, int(imageOffset.x), DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? 0 : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*alpha*fancyFadeInAlpha : 0.75*alpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(renderstyle) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
+		
+		}
+		else
+		{
+			TextureID icon;
+			if(loadedEntries[itemSelected].fallbackSprite!="")
+			{
+				icon = TexMan.CheckForTexture(loadedEntries[itemSelected].fallbackSprite,TexMan.Type_MiscPatch);
+				screen.DrawTexture(icon, true, bioPicPos.x, bioPicPos.y, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100);
+			}
+			else
+			{
+				icon = TexMan.CheckForTexture("graphics/codex/codex_error.png",TexMan.Type_MiscPatch);
+				screen.DrawTexture(icon, true, 74, 50, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+			}
+		}
+		
+		let shader = TexMan.CheckForTexture("graphics/codex/codex_bg3.png",TexMan.Type_MiscPatch);
+		
+		if(codexPages[curPageNum].entryLayout==0)
+		{
+		screen.DrawTexture(shader, true, 74, 50, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+		}
+		
+		//DrawShader(cx1.x,cx1.x,(128,172)*2);
+		
+		//ConstructRenderStyle(0,1,1,0)
+		screen.ClearClipRect();
+		
+		switch(codexPages[curPageNum].entryLayout)
+		{
+			default:
+				[cx1, cx2] = screen.VirtualToRealCoords((1,52),(68,167),(320,240));
+				screen.SetClipRect(cx1.x, cx1.y, cx2.x, cx2.y);
+				for(int i = 0;i<itemMax;i++)
+				{
+					if(players[0].mo.FindInventory(loadedEntries[i].itemToCheck)||isDebug)
+					{
+						drawMetaText(loadedEntries[i].bioName,4,52+(8*(i-listScroll)),"","TINYBABY",(i==itemSelected));
+					}
+					else
+					{
+						drawMetaText("???",4,52+(8*(i-listScroll)),"","TINYBABY",(i==itemSelected));
+					}
+					//drawMetaText("$MC_"..meta_monsterlist[i].."_Name",4,52+(8*i),"","TINYBABY",(i==itemSelected));
+				}
+				screen.ClearClipRect();
+				let abg = TexMan.CheckForTexture("graphics/codex/codex_abg.png", TexMan.Type_MiscPatch);
+				let uparrow = TexMan.CheckForTexture("graphics/codex/codex_aup1.png", TexMan.Type_MiscPatch);
+				let downarrow = TexMan.CheckForTexture("graphics/codex/codex_abot1.png", TexMan.Type_MiscPatch);
+				if(listScroll>0)
+				{
+					screen.DrawTexture(abg, true, 2, 50, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+					screen.DrawTexture(uparrow, true, 2, 50, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+				}
+				if(listScroll+21<codexPages[curPageNum].entryList.size())
+				{
+					screen.DrawTexture(abg, true, 2, 215, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+					screen.DrawTexture(downarrow, true, 2, 215, DTA_VirtualWidth, 320, DTA_VirtualHeight, 240);
+				}
+				string namePrint;
+				string originPrint;
+				if(players[0].mo.FindInventory(loadedEntries[itemSelected].itemToCheck)||isDebug)
+				{
+					//drawMetaText(loadedEntries[itemSelected].bioName,72+4,52,"",BigFont);
+					//drawMetaText(loadedEntries[itemSelected].bioOrigin,72+4,72,"First Appearance: ");
+					namePrint = StringTable.Localize(loadedEntries[itemSelected].bioName);
+					originPrint = StringTable.Localize(loadedEntries[itemSelected].bioOrigin);
+				}
+				else
+				{
+					//drawMetaText("???",72+4,52,"",BigFont);
+					namePrint = "???";
+					originPrint = "N/A";
+				}
+				
+				originPrint = "First Appearance: \c-"..originPrint;
+				
+				screen.DrawText("TinyBaby", Font.FindFontColor("MetaDarkRed"), 72+4+1, 72+1, originPrint, DTA_VirtualWidth, 320,DTA_VirtualHeight, 240, DTA_Alpha, fancyFadeInAlpha);
+				screen.DrawText("TinyBaby", Font.FindFontColor("MetaGolden"), 72+4, 72, "\cj"..originPrint, DTA_VirtualWidth, 320,DTA_VirtualHeight, 240, DTA_Alpha, fancyFadeInAlpha);
+				
+				screen.DrawText("BigFont", Font.CR_GREY, 72+4, 52, namePrint, DTA_VirtualWidth, 320,DTA_VirtualHeight, 240, DTA_Alpha, fancyFadeInAlpha);
+				
+			break;
+			/*case PAGE_WEAPONS:
+				for(int i = 0;i<itemMax;i++)
+				{
+					if(players[0].mo.FindInventory(meta_weaponlist[i])||isDebug)
+					{
+						drawMetaText(loadedEntries[itemSelected].bioName,4,52+(8*i),"","TINYBABY",(i==itemSelected));
+					}
+					else
+					{
+						drawMetaText("???",4,52+(8*i),"","TINYBABY",(i==itemSelected));
+					}
+				}
+				if(players[0].mo.FindInventory(meta_weaponlist[itemSelected])||isDebug)
+				{
+					drawMetaText(loadedEntries[itemSelected].bioName,72+4,52,"",BigFont);
+					drawMetaText(loadedEntries[itemSelected].bioOrigin,72+4,156-12,"First Appearance: ");
+				}
+				else
+				{
+					drawMetaText("???",72+4,52,"",BigFont);
+				}
+			break;*/
+		}
+		
+		int itemWidth = 144;
+		switch(codexPages[curPageNum].entryLayout)
+		{
+			case 1:
+				itemWidth = 238;
+			break;
+		}
+		string descToGet = Stringtable.Localize(loadedEntries[itemSelected].bioDesc);
+		descToGet = descToGet.Filter();
+		
+		if(players[0].mo.FindInventory(loadedEntries[itemSelected].itemToCheck)||isDebug)
+		{
+			itemDesc = tinyBabyFont.BreakLines(descToGet, itemWidth);
+		}
+		else
+		{
+			itemDesc = tinyBabyFont.BreakLines(Stringtable.Localize("$MC_NoDesc"), itemWidth);
+		}
+		if(itemDesc!=NULL)
+		{
+			int c = itemDesc.Count();
+			int y;
+			switch(codexPages[curPageNum].entryLayout)
+			{
+				case PAGE_MONSTERS:
+					y = 72+12;
+				break;
+				case PAGE_WEAPONS:
+					y = 156;
+				break;
+			}
+			for (int i = 0; i < c; i++)
+			{
+				screen.DrawText("TINYBABY", Font.FindFontColor("MetaDarkRed"), 72+4+1, y+1, itemDesc.StringAt(i), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240, DTA_Alpha, fancyFadeInAlpha);
+				screen.DrawText("TINYBABY", Font.FindFontColor("MetaGolden"), 72+4, y, itemDesc.StringAt(i), DTA_VirtualWidth, 320,DTA_VirtualHeight, 240, DTA_Alpha, fancyFadeInAlpha);
+				//drawMetaText(itemDesc.StringAt(i),72+4,y);
+				y+=8;
+			}
+		}
+		
+		Super.Drawer();
+	}
+}

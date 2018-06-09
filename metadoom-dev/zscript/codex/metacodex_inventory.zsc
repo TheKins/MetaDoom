@@ -1,0 +1,71 @@
+Class MetaCodex_InvBase : Inventory { Default { Inventory.MaxAmount 2; } }
+
+Class MetaCodex_DebugTheCodex : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaZombieMan : MetaCodex_InvBase {}
+Class MetaCodex_MetaHellRazer : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaShotgunGuy : MetaCodex_InvBase {}
+Class MetaCodex_MetaZSec : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaMachineGunGuy : MetaCodex_InvBase {}
+Class MetaCodex_MetaChainGunGuy : MetaCodex_InvBase {}
+Class MetaCodex_MetaAssassinGuy : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaDoomImp : MetaCodex_InvBase {}
+Class MetaCodex_MetaNightmareImp : MetaCodex_InvBase {}
+Class MetaCodex_MetaDoomImpLord : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaHellHound : MetaCodex_InvBase {}
+Class MetaCodex_MetaDemonDog : MetaCodex_InvBase {}
+Class MetaCodex_MetaCerberus : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaDemon : MetaCodex_InvBase {}
+Class MetaCodex_MetaBullDemon : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaSpectre : MetaCodex_InvBase {}
+Class MetaCodex_MetaNightmareSpectre : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaSawcubus : MetaCodex_InvBase {}
+Class MetaCodex_MetaTrite : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaLostSoul : MetaCodex_InvBase {}
+Class MetaCodex_MetaPhantom : MetaCodex_InvBase {}
+Class MetaCodex_MetaForgottenOne : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaCacodemon : MetaCodex_InvBase {}
+Class MetaCodex_MetaMalwraith : MetaCodex_InvBase {}
+Class MetaCodex_MetaWretched : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaHellKnight : MetaCodex_InvBase {}
+Class MetaCodex_MetaBaronOfHell : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaMancubus : MetaCodex_InvBase {}
+Class MetaCodex_MetaBehemoth : MetaCodex_InvBase {}
+Class MetaCodex_MetaCyberManc : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaRevenant : MetaCodex_InvBase {}
+Class MetaCodex_MetaFiend : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaArachnotron : MetaCodex_InvBase {}
+Class MetaCodex_MetaSpiborg: MetaCodex_InvBase {}
+
+Class MetaCodex_MetaPainElemental : MetaCodex_InvBase {}
+Class MetaCodex_MetaBeholder : MetaCodex_InvBase {}
+Class MetaCodex_MetaRahovart : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaArchvile : MetaCodex_InvBase {}
+Class MetaCodex_MetaSummoner : MetaCodex_InvBase {}
+Class MetaCodex_MetaUnwilling : MetaCodex_InvBase {}
+
+Class MetaCodex_MetaCyberdemon: MetaCodex_InvBase {}
+Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}
+
+//
+
+Class MetaCodex_MetaRadSuit : MetaCodex_InvBase {}
+Class MetaCodex_MetaBerserk : MetaCodex_InvBase {}
+Class MetaCodex_MetaLightAmp : MetaCodex_InvBase {}
+Class MetaCodex_MetaHasteSphere : MetaCodex_InvBase {}
+Class MetaCodex_MetaInvulnerabilitySphere : MetaCodex_InvBase {}
+Class MetaCodex_MetaQuadDamage : MetaCodex_InvBase {}
