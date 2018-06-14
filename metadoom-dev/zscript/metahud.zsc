@@ -92,6 +92,7 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawImage("FGICON", (27, 171), DI_ITEM_OFFSETS);
 			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 		} else {
+			
 			DrawString(mSmallFont2, FormatNumber(players[consoleplayer].mo.score, 10), (89, 172),
 			DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
 		}
@@ -117,6 +118,9 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawBar("ARMRBAR2", "MTBAR3", (mArmorInterpolator.GetValue() - 100), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
 		}
 
+		// Keys, I guess
+		DrawImage("HUDKEYS", (281, 170), DI_ITEM_OFFSETS);
+		
 		bool locks[6];
 		String image;
 		for(int i = 0; i < 6; i++) locks[i] = CPlayer.mo.CheckKeys(i + 1, false, true);
@@ -124,20 +128,21 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (locks[1] && locks[4]) image = "STKEYS6";
 		else if (locks[1]) image = "STKEYS0";
 		else if (locks[4]) image = "STKEYS3";
-		DrawImage(image, (239, 171), DI_ITEM_OFFSETS);
+		DrawImage(image, (283, 171), DI_ITEM_OFFSETS);
 		// key 2
 		if (locks[2] && locks[5]) image = "STKEYS7";
 		else if (locks[2]) image = "STKEYS1";
 		else if (locks[5]) image = "STKEYS4";
 		else image = "";
-		DrawImage(image, (239, 181), DI_ITEM_OFFSETS);
+		DrawImage(image, (295, 171), DI_ITEM_OFFSETS);
 		// key 3
 		if (locks[0] && locks[3]) image = "STKEYS8";
 		else if (locks[0]) image = "STKEYS2";
 		else if (locks[3]) image = "STKEYS5";
 		else image = "";
-		DrawImage(image, (239, 191), DI_ITEM_OFFSETS);
+		DrawImage(image, (307, 171), DI_ITEM_OFFSETS);
 		
+		// Ammo
 		int amt1, maxamt;
 		[amt1, maxamt] = GetAmount("Clip");
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 173), DI_TEXT_ALIGN_RIGHT);
@@ -155,25 +160,17 @@ class MetaDoomStatusBar : BaseStatusBar
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 191), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 191), DI_TEXT_ALIGN_RIGHT);
 		
-		if (deathmatch || teamplay)
-		{
-			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (138, 171), DI_TEXT_ALIGN_RIGHT);
-		}
-		else
-		{
-			DrawImage("STARMS", (104, 168), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(2)? "STYSNUM2" : "STGNUM2", (111, 172), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(3)? "STYSNUM3" : "STGNUM3", (123, 172), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(4)? "STYSNUM4" : "STGNUM4", (135, 172), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(5)? "STYSNUM5" : "STGNUM5", (111, 182), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(6)? "STYSNUM6" : "STGNUM6", (123, 182), DI_ITEM_OFFSETS);
-			DrawImage(CPlayer.HasWeaponsInSlot(7)? "STYSNUM7" : "STGNUM7", (135, 182), DI_ITEM_OFFSETS);
-		}
+		// Stats Counters
+		DrawImage("HUDSTAT", (94, 169), DI_ITEM_OFFSETS);
+		DrawString(mIndexFont, FormatNumber(level.killed_monsters, 3), (119, 171), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(level.total_monsters, 3), (138, 171), DI_TEXT_ALIGN_RIGHT);
 		
-		if (multiplayer)
-		{
-			DrawImage("STFBANY", (143, 168), DI_ITEM_OFFSETS|DI_TRANSLATABLE);
-		}
+		DrawString(mIndexFont, FormatNumber(level.found_items, 3), (119, 181), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(level.total_items, 3), (138, 181), DI_TEXT_ALIGN_RIGHT);
+		
+		DrawString(mIndexFont, FormatNumber(level.found_secrets, 3), (119, 191), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(level.total_secrets, 3), (138, 191), DI_TEXT_ALIGN_RIGHT);
+		
 		
 		if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
 		{
