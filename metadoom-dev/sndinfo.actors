@@ -345,6 +345,12 @@ monsters/lostsoul/extinguish	soulxtng
 // Phantom
 monsters/phantom/fireballshoot	phanfire
 monsters/phantom/fireballhit	phanball
+monsters/phantom/idle			phanidle
+monsters/phantom/attack			phanattk
+monsters/phantom/pain			phanpain
+monsters/phantom/die1			phandie1
+monsters/phantom/die2			phandie2
+monsters/phantom/extinguish		phanxtng
 
 // Bruisers
 monsters/bruisers/fireball		brusball

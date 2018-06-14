@@ -299,10 +299,10 @@ class MetaPhantom : MonsterCore
 		PainChance 256;
 		Monster;
 		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB;
-		AttackSound "monsters/lostsoul/attack";
-		PainSound "monsters/lostsoul/pain";
-		DeathSound "monsters/lostsoul/die1";
-		ActiveSound "monsters/lostsoul/idle";
+		AttackSound "monsters/phantom/attack";
+		PainSound "monsters/phantom/pain";
+		DeathSound "monsters/phantom/die1";
+		ActiveSound "monsters/phantom/idle";
 		Obituary "$OB_SKULL2";
 		bloodtype "LostSoulGib1";
 		damagefactor "HolyWater", 500;
@@ -354,7 +354,7 @@ class MetaPhantom : MonsterCore
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_PlaySound("monsters/lostsoul/die2");
+			A_PlaySound("monsters/phantom/die2");
 		}
 		Stop;
 	Death.FireExtinguisher:
@@ -403,10 +403,10 @@ class MetaPhantomExtinguished : Actor
 	{
 	Spawn:
 		PHAN Z 0;
-		PHAN Z 0 A_PlaySound("monsters/lostsoul/extinguish");
+		PHAN Z 0 A_PlaySound("monsters/phantom/extinguish");
 		PHAN ZZZZZ 5 A_SpawnItem("MetaLostSoulSteam", -8, 8);
 		PHAN Z 17;
-		PHAN Z 0 A_PlaySound("monsters/lostsoul/die1");
+		PHAN Z 0 A_PlaySound("monsters/phantom/die1");
 		PHAN Z 0 { bNoGravity = false; }
 		PHAN Z 0 { bCorpse = true; }
 	Falling:
@@ -426,7 +426,7 @@ class MetaPhantomExtinguished : Actor
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_PlaySound("bodyfalls/revenant");
+			A_PlaySound("monsters/phantom/die2");
 		}
 		stop;
 	}

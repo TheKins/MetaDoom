@@ -18,6 +18,7 @@ Cosmetic Improvements:
 - The 100% kills/items/secrets messages will now try not to overlap each other
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
   their turn and trigger one after the other.
+- Phantoms now have unique sounds.
 
 Code Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
