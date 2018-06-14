@@ -1,0 +1,263 @@
+class MetaDoomStatusBar : BaseStatusBar
+{
+	HUDFont mHUDFont;
+	HUDFont mIndexFont;
+	HUDFont mAmountFont;
+	InventoryBarState diparms;
+	HUDFont mSmallFont;
+	HUDFont mSmallFont2;
+	
+	// You need a DynamicValueInterpolator for any value that you want to have interpolated
+	DynamicValueInterpolator mHealthInterpolator;
+	DynamicValueInterpolator mArmorInterpolator;
+	
+
+	override void Init()
+	{
+		Super.Init();
+		SetSize(32, 320, 200);
+
+		// Create the font used for the fullscreen HUD
+		Font fnt = "HUDFONT_DOOM";
+		mHUDFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), true, 1, 1);
+		fnt = "INDEXFONT_DOOM";
+		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), true);
+		mAmountFont = HUDFont.Create("INDEXFONT");
+		diparms = InventoryBarState.Create();
+		
+		mSmallFont = HUDFont.Create("SMALLFONT");
+		mSmallFont2 = HUDFont.Create("SMALLFONT2");
+		
+		// Initialize the interpolation variables
+		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 8);
+		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 8);
+	}
+
+	// What happens when a new game begins
+	override void NewGame ()
+	{
+		// Run the parent status bar's NewGame() function
+		Super.NewGame();
+
+		// Reset any interpolators that you declared
+		mHealthInterpolator.Reset(0);
+		mArmorInterpolator.Reset(0);
+	}
+	
+	// What needs to run every tick
+	override void Tick()
+	{
+		// Run the parent status bar's Tick() function
+		Super.Tick();
+
+		// Update the value of the interpolators
+		mHealthInterpolator.Update(CPlayer.health); // Set the interpolator's value to this player's health
+		mArmorInterpolator.Update(GetArmorAmount());
+	}
+
+	override void Draw (int state, double TicFrac)
+	{
+		Super.Draw (state, TicFrac);
+		
+		if (state == HUD_StatusBar)
+		{
+			BeginStatusBar();
+			DrawMainBar (TicFrac);
+		}
+		else if (state == HUD_Fullscreen)
+		{
+			BeginHUD();
+			DrawFullScreenStuff ();
+		}
+	}
+
+	protected void DrawMainBar (double TicFrac)
+	{
+		DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
+		// lazy duplicate defs, resulting in perfect widescreen. 2ez
+		DrawImage("HUDBACK", (-320, 168), DI_ITEM_OFFSETS);
+		DrawImage("HUDBACK", (320, 168), DI_ITEM_OFFSETS);
+		
+		if (!CheckInventory("DisableHUD", 1))
+		{
+		
+		//ammo
+		Inventory a1 = GetCurrentAmmo();
+		if (a1 != null) DrawString(mSmallFont2, FormatNumber(a1.Amount, 3), (44, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+		
+		// score
+		// Draw frags in Deathmatch, score if not.
+		if (deathmatch || teamplay)
+		{
+			DrawImage("FGICON", (27, 171), DI_ITEM_OFFSETS);
+			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+		} else {
+			DrawString(mSmallFont2, FormatNumber(players[consoleplayer].mo.score, 10), (89, 172),
+			DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
+		}
+		
+		// health
+		DrawImage("HPICON", (27, 189), DI_ITEM_OFFSETS);
+		DrawString(mSmallFont2, FormatNumber(CPlayer.health, 3), (24, 189), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		DrawImage("HUDBAR", (36, 189), DI_ITEM_OFFSETS);
+		DrawBar("LIFEBAR", "MTBAR", mHealthInterpolator.GetValue(), CPlayer.mo.GetMaxHealth(false), (37, 190), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
+		if (mHealthInterpolator.GetValue() > 100)
+		{
+			DrawBar("LIFEBAR2", "MTBAR3", mHealthInterpolator.GetValue() - 100, CPlayer.mo.GetMaxHealth(true), (37, 190), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
+		}
+		
+		// armor
+		DrawImage("APICON", (27, 180), DI_ITEM_OFFSETS);
+		DrawString(mSmallFont2, FormatNumber(GetArmorAmount(), 3), (24, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		
+		DrawImage("HUDBAR", (36, 180), DI_ITEM_OFFSETS);
+		DrawBar("ARMRBAR", "MTBAR", mArmorInterpolator.GetValue(), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
+		if (mHealthInterpolator.GetValue() > 100)
+		{
+			DrawBar("ARMRBAR2", "MTBAR3", (mArmorInterpolator.GetValue() - 100), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
+		}
+
+		bool locks[6];
+		String image;
+		for(int i = 0; i < 6; i++) locks[i] = CPlayer.mo.CheckKeys(i + 1, false, true);
+		// key 1
+		if (locks[1] && locks[4]) image = "STKEYS6";
+		else if (locks[1]) image = "STKEYS0";
+		else if (locks[4]) image = "STKEYS3";
+		DrawImage(image, (239, 171), DI_ITEM_OFFSETS);
+		// key 2
+		if (locks[2] && locks[5]) image = "STKEYS7";
+		else if (locks[2]) image = "STKEYS1";
+		else if (locks[5]) image = "STKEYS4";
+		else image = "";
+		DrawImage(image, (239, 181), DI_ITEM_OFFSETS);
+		// key 3
+		if (locks[0] && locks[3]) image = "STKEYS8";
+		else if (locks[0]) image = "STKEYS2";
+		else if (locks[3]) image = "STKEYS5";
+		else image = "";
+		DrawImage(image, (239, 191), DI_ITEM_OFFSETS);
+		
+		int amt1, maxamt;
+		[amt1, maxamt] = GetAmount("Clip");
+		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 173), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 173), DI_TEXT_ALIGN_RIGHT);
+
+		[amt1, maxamt] = GetAmount("Shell");
+		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 179), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 179), DI_TEXT_ALIGN_RIGHT);
+
+		[amt1, maxamt] = GetAmount("RocketAmmo");
+		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 185), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 185), DI_TEXT_ALIGN_RIGHT);
+
+		[amt1, maxamt] = GetAmount("Cell");
+		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 191), DI_TEXT_ALIGN_RIGHT);
+		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 191), DI_TEXT_ALIGN_RIGHT);
+		
+		if (deathmatch || teamplay)
+		{
+			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (138, 171), DI_TEXT_ALIGN_RIGHT);
+		}
+		else
+		{
+			DrawImage("STARMS", (104, 168), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(2)? "STYSNUM2" : "STGNUM2", (111, 172), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(3)? "STYSNUM3" : "STGNUM3", (123, 172), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(4)? "STYSNUM4" : "STGNUM4", (135, 172), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(5)? "STYSNUM5" : "STGNUM5", (111, 182), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(6)? "STYSNUM6" : "STGNUM6", (123, 182), DI_ITEM_OFFSETS);
+			DrawImage(CPlayer.HasWeaponsInSlot(7)? "STYSNUM7" : "STGNUM7", (135, 182), DI_ITEM_OFFSETS);
+		}
+		
+		if (multiplayer)
+		{
+			DrawImage("STFBANY", (143, 168), DI_ITEM_OFFSETS|DI_TRANSLATABLE);
+		}
+		
+		if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
+		{
+			DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198));
+			if (CPlayer.mo.InvSel.Amount > 1)
+			{
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+			}
+		}
+		else
+		{
+			DrawTexture(GetMugShot(5), (143, 168), DI_ITEM_OFFSETS);
+		}
+		if (isInventoryBarVisible())
+		{
+			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
+		}
+		}
+	}
+
+	protected void DrawFullScreenStuff ()
+	{
+		Vector2 iconbox = (40, 20);
+		// Draw health
+		let berserk = CPlayer.mo.FindInventory("PowerStrength");
+		DrawImage(berserk? "PSTRA0" : "MEDIA0", (20, -2));
+		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20));
+		
+		let armor = CPlayer.mo.FindInventory("BasicArmor");
+		if (armor != null && armor.Amount > 0)
+		{
+			DrawInventoryIcon(armor, (20, -22));
+			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40));
+		}
+		Inventory ammotype1, ammotype2;
+		[ammotype1, ammotype2] = GetCurrentAmmo();
+		int invY = -20;
+		if (ammotype1 != null)
+		{
+			DrawInventoryIcon(ammotype1, (-14, -4));
+			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
+			invY -= 20;
+		}
+		if (ammotype2 != null && ammotype2 != ammotype1)
+		{
+			DrawInventoryIcon(ammotype2, (-14, invY + 17));
+			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
+			invY -= 20;
+		}
+		if (!isInventoryBarVisible() && !level.NoInventoryBar && CPlayer.mo.InvSel != null)
+		{
+			DrawInventoryIcon(CPlayer.mo.InvSel, (-14, invY + 17));
+			DrawString(mHUDFont, FormatNumber(CPlayer.mo.InvSel.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
+		}
+		if (deathmatch)
+		{
+			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (-3, 1), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+		}
+		
+		// Draw the keys. This does not use a special draw function like SBARINFO because the specifics will be different for each mod 
+		// so it's easier to copy or reimplement the following piece of code instead of trying to write a complicated all-encompassing solution.
+		Vector2 keypos = (-10, 2);
+		int rowc = 0;
+		double roww = 0;
+		for(let i = CPlayer.mo.Inv; i != null; i = i.Inv)
+		{
+			if (i is "Key" && i.Icon.IsValid())
+			{
+				DrawTexture(i.Icon, keypos, DI_SCREEN_RIGHT_TOP|DI_ITEM_LEFT_TOP);
+				Vector2 size = TexMan.GetScaledSize(i.Icon);
+				keypos.Y += size.Y + 2;
+				roww = max(roww, size.X);
+				if (++rowc == 3)
+				{
+					keypos.Y = 2;
+					keypos.X -= roww + 2;
+					roww = 0;
+					rowc = 0;
+				}
+			}
+		}
+		if (isInventoryBarVisible())
+		{
+			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
+		}
+	}
+}
