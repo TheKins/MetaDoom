@@ -81,10 +81,6 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (!CheckInventory("DisableHUD", 1))
 		{
 		
-		//ammo
-		Inventory a1 = GetCurrentAmmo();
-		if (a1 != null) DrawString(mSmallFont2, FormatNumber(a1.Amount, 3), (44, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-		
 		// score
 		// Draw frags in Deathmatch, score if not.
 		if (deathmatch || teamplay)
@@ -144,8 +140,31 @@ class MetaDoomStatusBar : BaseStatusBar
 		
 		// Ammo
 		DrawImage("AMICON", (283, 180), DI_ITEM_OFFSETS);
-		DrawString(mSmallFont2, FormatNumber(CPlayer.health, 3), (24, 189), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 		DrawImage("HUDBAR", (225, 180), DI_ITEM_OFFSETS);
+		
+		// Draw current ammo amounts
+		Ammo ammo1, ammo2;
+		int ammomax;
+		int ammocount1, ammocount2;
+		[ammo1, ammo2, ammocount1, ammocount2] = GetCurrentAmmo();
+		
+		// Get the maximum ammo of the current weapon, but WITHOUT crashing
+		if (ammo1 != NULL)
+		{ ammomax = CPlayer.ReadyWeapon.Ammo1.MaxAmount; }
+		
+		if (ammo1 != null) 
+		{
+			DrawString(mSmallFont2, FormatNumber(ammocount1, 3), (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+			DrawBar("AMMOBAR", "MTBAR", ammocount1, ammomax, (226, 181), 0, SHADER_REVERSE, DI_ITEM_OFFSETS);
+			
+		} else {
+			if (meta_pistolammo == 1 && CheckWeaponSelected("MetaPistol"))
+			{
+				DrawString(mSmallFont2, FormatNumber(GetAmount("Clip"), 3), (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+			} else {
+				DrawString(mSmallFont2, "---", (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+			}
+		}
 		
 		// Reserve Ammo
 		DrawImage("HUDAMMO", (225, 170), DI_ITEM_OFFSETS);
