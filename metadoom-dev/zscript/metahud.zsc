@@ -220,6 +220,7 @@ class MetaDoomStatusBar : BaseStatusBar
 				{
 					DrawImage("HUDBOX", (184, 168), DI_ITEM_OFFSETS);
 				}
+				DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 				if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
 				{
 					if (CheckInventory("InventoryCooldownToken", 1))
@@ -228,12 +229,6 @@ class MetaDoomStatusBar : BaseStatusBar
 					} else {
 						DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
 					}
-					if (CPlayer.mo.InvSel.Amount > 1)
-					{
-						//DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()),
-						//DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-					}
-					DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 				}
 				if (isInventoryBarVisible())
 				{
