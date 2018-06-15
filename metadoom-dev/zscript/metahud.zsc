@@ -10,6 +10,8 @@ class MetaDoomStatusBar : BaseStatusBar
 	// You need a DynamicValueInterpolator for any value that you want to have interpolated
 	DynamicValueInterpolator mHealthInterpolator;
 	DynamicValueInterpolator mArmorInterpolator;
+	DynamicValueInterpolator mScoreInterpolator;
+	DynamicValueInterpolator mAmmoInterpolator;
 	
 
 	override void Init()
@@ -29,8 +31,10 @@ class MetaDoomStatusBar : BaseStatusBar
 		mSmallFont2 = HUDFont.Create("SMALLFONT2");
 		
 		// Initialize the interpolation variables
-		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 8);
-		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 8);
+		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
+		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
+		mScoreInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 64);
+		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 	}
 
 	// What happens when a new game begins
@@ -42,6 +46,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		// Reset any interpolators that you declared
 		mHealthInterpolator.Reset(0);
 		mArmorInterpolator.Reset(0);
+		mScoreInterpolator.Reset(0);
+		mAmmoInterpolator.Reset(0);
 	}
 	
 	// What needs to run every tick
@@ -53,6 +59,12 @@ class MetaDoomStatusBar : BaseStatusBar
 		// Update the value of the interpolators
 		mHealthInterpolator.Update(CPlayer.health); // Set the interpolator's value to this player's health
 		mArmorInterpolator.Update(GetArmorAmount());
+		mScoreInterpolator.Update(players[consoleplayer].mo.score);
+		Ammo ammo1, ammo2;
+		int ammomax;
+		int ammocount1, ammocount2;
+		[ammo1, ammo2, ammocount1, ammocount2] = GetCurrentAmmo();
+		mAmmoInterpolator.Update(ammocount1);
 	}
 
 	override void Draw (int state, double TicFrac)
@@ -89,7 +101,7 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 		} else {
 			
-			DrawString(mSmallFont2, FormatNumber(players[consoleplayer].mo.score, 10), (89, 172),
+			DrawString(mSmallFont2, FormatNumber(mScoreInterpolator.GetValue(), 10), (89, 172),
 			DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
 		}
 		
@@ -155,7 +167,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (ammo1 != null) 
 		{
 			DrawString(mSmallFont2, FormatNumber(ammocount1, 3), (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
-			DrawBar("AMMOBAR", "MTBAR", ammocount1, ammomax, (226, 181), 0, SHADER_REVERSE, DI_ITEM_OFFSETS);
+			DrawBar("AMMOBAR", "MTBAR", mAmmoInterpolator.GetValue(), ammomax, (226, 181), 0, SHADER_REVERSE, DI_ITEM_OFFSETS);
 			
 		} else {
 			if (meta_pistolammo == 1 && CheckWeaponSelected("MetaPistol"))
