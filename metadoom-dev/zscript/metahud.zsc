@@ -111,12 +111,17 @@ class MetaDoomStatusBar : BaseStatusBar
 				}
 				
 				// armor
-				DrawImage("APICON", (27, 180), DI_ITEM_OFFSETS);
+				if (GetArmorSavePercent() == 50)
+				{
+					DrawImage("AP2ICON", (27, 180), DI_ITEM_OFFSETS);
+				} else {
+					DrawImage("APICON", (27, 180), DI_ITEM_OFFSETS);
+				}
 				DrawString(mSmallFont2, FormatNumber(GetArmorAmount(), 3), (24, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 				
 				DrawImage("HUDBAR", (36, 180), DI_ITEM_OFFSETS);
 				DrawBar("ARMRBAR", "MTBAR", mArmorInterpolator.GetValue(), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
-				if (mHealthInterpolator.GetValue() > 100)
+				if (mArmorInterpolator.GetValue() > 100)
 				{
 					DrawBar("ARMRBAR2", "MTBAR3", (mArmorInterpolator.GetValue() - 100), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
 				}
