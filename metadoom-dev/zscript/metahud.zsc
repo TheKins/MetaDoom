@@ -218,7 +218,14 @@ class MetaDoomStatusBar : BaseStatusBar
 				{
 					DrawImage("HUDBOX", (142, 168), DI_ITEM_OFFSETS);
 				}
-				DrawTexture(GetMugShot(5), (143, 168), DI_ITEM_OFFSETS);
+				
+				// Render the Mugshot
+				if (cplayer.getgender()==1) // female mugshot
+				{
+					DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "SFF"), (143, 168), DI_ITEM_OFFSETS);
+				} else { // fallback - default doomguy
+					DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE), (143, 168), DI_ITEM_OFFSETS);
+				}
 				
 				// Inventory
 				if (screenblocks < 11)
