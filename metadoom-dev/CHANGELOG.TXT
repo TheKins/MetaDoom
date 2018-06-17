@@ -6,6 +6,8 @@ New Features:
 - Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
   a high-quality new menu providing all the details on everything you've
   picked up or killed.
+- Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
+  on the development side.
 
 Cosmetic Improvements:
 - Player sounds and mugshot now take the player's specified gender
