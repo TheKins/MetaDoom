@@ -79,8 +79,6 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (screenblocks < 11)
 		{
 			DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
-			// lazy duplicate defs, resulting in perfect widescreen. 2ez
-			DrawImage("HUDBACK", (-320, 168), DI_ITEM_OFFSETS);
 			
 			// widescreen scaling stuff - now mostly automated!
 			int x1 = 0;
@@ -93,8 +91,8 @@ class MetaDoomStatusBar : BaseStatusBar
 				DrawImage("HUDBACK", (x1, 168), DI_ITEM_OFFSETS);
 				DrawImage("HUDBACK", (x2, 168), DI_ITEM_OFFSETS);
 			}
-			
 		}
+		
 		if (screenblocks < 12)
 		{
 			if (!CheckInventory("DisableHUD", 1))
