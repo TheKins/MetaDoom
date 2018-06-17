@@ -261,6 +261,9 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (cplayer.getgender()==1) // female mugshot
 		{
 			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "SFF"), (143, 168), DI_ITEM_OFFSETS);
+		} else if (cplayer.getgender()==2) // cyborg mugshot
+		{
+			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "STC"), (143, 168), DI_ITEM_OFFSETS);
 		} else { // fallback - default doomguy
 			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE), (143, 168), DI_ITEM_OFFSETS);
 		}
