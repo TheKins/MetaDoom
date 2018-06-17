@@ -81,7 +81,19 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
 			// lazy duplicate defs, resulting in perfect widescreen. 2ez
 			DrawImage("HUDBACK", (-320, 168), DI_ITEM_OFFSETS);
-			DrawImage("HUDBACK", (320, 168), DI_ITEM_OFFSETS);
+			
+			// widescreen scaling stuff - now mostly automated!
+			int x1 = 0;
+			int x2 = 0;
+			for ( int i = 1; i < 6; i++ )
+			{
+				x1 = x1 - 320;
+				x2 = x2 + 320;
+				
+				DrawImage("HUDBACK", (x1, 168), DI_ITEM_OFFSETS);
+				DrawImage("HUDBACK", (x2, 168), DI_ITEM_OFFSETS);
+			}
+			
 		}
 		if (screenblocks < 12)
 		{
