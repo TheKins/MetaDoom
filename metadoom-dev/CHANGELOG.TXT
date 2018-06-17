@@ -8,9 +8,11 @@ New Features:
   picked up or killed.
 
 Cosmetic Improvements:
+- Player sounds and mugshot now take the player's specified gender
+  into account! (Thanks DrPySpy!)
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
 - The Former Lieutenant now wears blue armor, to make him look less like his
-  chaingun wielding siblings (Thanks DrPySpy!)
+  chaingun wielding siblings (DrPySpy did a lot on this update just FYI)
 - The Shield Wall's sprites have been redrawn to be less screenshot-rippy.
 - The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
 - Fiend's sprite offsets are considerably less whacky.
