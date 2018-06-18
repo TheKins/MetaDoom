@@ -61,6 +61,10 @@ Class MetaCodex_Event : EventHandler
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaInvulnerabilitySphere",1);
 			}
+			if(level.allmap == true)
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaAllmap",1);
+			}
 		}
 	}
 }

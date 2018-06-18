@@ -81,4 +81,10 @@ page "Pickups"
         origin "Quake (1996)";
         description "This strange orb seems to be full of human nanomachine technology from some unidentified source. Is this some kind of military skunkworks project to recreate the demon power spheres?\n\nThe only thing that isn't a mystery is its effect - the nanomachines rapidly cling onto the user's weapons and greatly increases their effectiveness for a brief period of time.";
     }
+	entry "MetaAllmap"
+    {
+        name "Computer Map";
+        origin "Doom 3 (2004)";
+        description "Versatile and lightweight, the PDA has quickly become standard-issue among all UAC personnel, providing them with a wealth of information no matter where they might be. Wireless internet and GPS connectivity provides automatic mapping of the nearby environment, which can be saved for future reference on the device's whopping 100mb of storage.\n\nThe device's popularity has led to a surge of third party app development, including games. One recent release, ''Evil Unleashed'' has faced some criticism over its low-res, blocky depictions of violence.";
+    }
 }
