@@ -190,6 +190,37 @@ TAGHOLOGRAM = "Hologram";
 GOTHASTE = "HasteSphere!";
 GOTQUAD = "Quad Damage!";
 
+// Redefined Old Messages
+GOTARMOR = "Picked up the Security Armor.";
+GOTMEGA = "Picked up the Combat Armor!";
+GOTHTHBONUS = "Picked up a Health Bonus.";
+GOTARMBONUS = "Picked up a Armor Bonus.";
+GOTSTIM = "Picked up a Stimpack.";
+GOTMEDINEED = "Picked up a Medikit that you REALLY needed!";
+GOTMEDIKIT = "Picked up a Medikit.";
+GOTSUPER = "SoulSphere!";
+GOTBLUECARD = "Picked up a Blue Keycard.";
+GOTYELWCARD = "Picked up a Yellow Keycard.";
+GOTREDCARD = "Picked up a Red Keycard.";
+GOTBLUESKUL = "Picked up a Blue Skull Key.";
+GOTYELWSKUL = "Picked up a Yellow Skull Key.";
+GOTREDSKUL = "Picked up a Red Skull Key.";
+GOTINVUL = "Invulnerability Orb!";
+GOTBERSERK = "Berserk Pack!";
+GOTSUIT = "Radiation Suit!";
+GOTMAP = "PDA Area Map!";
+GOTVISOR = "Light Amp Visor!";
+GOTMSPHERE = "MegaSphere!";
+GOTCLIP = "Picked up a Clip.";
+GOTCLIPBOX = "Picked up a Box of Bullets.";
+GOTROCKET = "Picked up a Rocket.";
+GOTROCKBOX = "Picked up a Box of Rockets.";
+GOTCELL = "Picked up a Plasma Cell.";
+GOTCELLBOX = "Picked up a Plasma Cell Battery.";
+GOTSHELLS = "Picked up 4 Shotgun Shells.";
+GOTSHELLBOX = "Picked up a Box of Shotgun Shells.";
+GOTBACKPACK = "Picked up a Backpack full of Ammo!";
+
 // 100% Toasts
 100_MONSTERS = "All Monsters Destroyed!";
 100_ITEMS = "All Items Found!";
