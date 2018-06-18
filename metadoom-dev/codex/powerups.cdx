@@ -67,24 +67,24 @@ page "Pickups"
     {
         name "Light Amp Visor";
         origin "Doom (1993)";
-        description "The evolution of optoelectronic devices has been subtle and understated since the early 21st Century, leading some sceptics to cast the technology as one of those stand-still dead-ends like radio.\n\nThat doesn't mean it's useless though - this headset might be bulky, and the viewport might be garish, but it'll dramatically increase the visibility of living (or unliving) creatures in even the darkest depths.";
+        description "The evolution of optoelectronic devices has been subtle and understated since the early 21st Century, leading some sceptics to cast the technology as one of those stand-still dead-ends like radio.\n\nThat doesn't mean it's useless though - this headset might be bulky, and the viewport might be garish, but it'll dramatically increase the visibility of living (or unliving) creatures in even the darkest depths.\n\nCurrent models have a two minute battery before you're left in the dark.";
     }
     entry "MetaHasteSphere"
     {
         name "Haste Sphere";
         origin "Quake 3 Arena (1999)";
-        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes).\n\nNever before have you been more scared of having ghosts in your pants.";
+        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes).\n\nNever before have you been more scared of having ghosts in your pants.\n\nThe spirits will typically dissipate into the ether after 45 seconds of aid and/or harassment.";
     }
     entry "MetaInvulnerabilitySphere"
     {
         name "Invulnerability Orb";
         origin "Doom (1993)";
-        description "This sinister green orb contains an as-yet-unidentified fluid-like substance that, upon shattering, immediately and completely coats the nearest individual with a thin, glowing golden shell.\n\nWhile this shell quickly dissipates, it appears to be completely impregnable by any force man or beast has devised. Somewhat concerning, however, is that test subjects have no memory of their actions while under its influence...";
+        description "This sinister green orb contains an as-yet-unidentified fluid-like substance that, upon shattering, immediately and completely coats the nearest individual with a thin, glowing golden shell.\n\nWhile this shell quickly dissipates, it appears to be completely impregnable by any force man or beast has devised. Somewhat concerning, however, is that test subjects have no memory of their actions while under its influence...\n\nThe shell disintegrates into a fetid mist after 30 seconds of golden amnesic immortality, leaving nothing but awkward questions in its wake.";
     }
     entry "MetaQuadDamage"
     {
         name "Quad Damage";
         origin "Quake (1996)";
-        description "This strange orb seems to be full of human nanomachine technology from some unidentified source. Is this some kind of military skunkworks project to recreate the demon power spheres?\n\nThe only thing that isn't a mystery is its effect - the nanomachines rapidly cling onto the user's weapons and greatly increases their effectiveness for a brief period of time.";
+        description "This strange orb seems to be full of human nanomachine technology from some unidentified source. Is this some kind of military skunkworks project to recreate the demon power spheres?\n\nThe only thing that isn't a mystery is its effect - the nanomachines rapidly cling onto the user's weapons and greatly increases their effectiveness for a brief period of time.\n\nThe nanomachines only last 60 seconds before they burn out, potentially doing permanent damage to the weapons' inner workings. This is NOT covered under warranty, before you ask.";
     }
 }
