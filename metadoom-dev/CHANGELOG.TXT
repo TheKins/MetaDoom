@@ -47,6 +47,7 @@ Miscellaneous:
   the "Player Options" menu.
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
   (ie. there's no FMod references anymore!)
+- Reduced harmless-but-agitating warnings in the console during startup.
 - Updated ENDOOM to credit DrPySpy and mention Saber Interactive
   
 Optional Content:
