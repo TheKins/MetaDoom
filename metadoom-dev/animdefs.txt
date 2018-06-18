@@ -58,14 +58,14 @@ flat SLIME05
 	
 // PSX Doom TC
 
-flat WATER01
+flat optional WATER01
     pic 1 tics 1
     pic 1 tics 1
 	
-flat BSLIME01
+flat optional BSLIME01
     pic 1 tics 1
     pic 1 tics 1  
 
-flat CSLIME01
+flat optional CSLIME01
     pic 1 tics 1
     pic 1 tics 1  
