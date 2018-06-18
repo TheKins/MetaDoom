@@ -1,7 +1,7 @@
 page "Pickups"
 {
     layout 0;
-	
+
 	entry "HandGrenade"
     {
 		itemToCheck "HandGrenade";
@@ -44,7 +44,13 @@ page "Pickups"
         origin "Doom (2016)";
         description "Once predicted by sci-fi movies and lowbrow 3D action games of the 20th century, the Hologram provides a unique take on crowd control. Upon activation, it generates a refracted-light hologram of a photo-realistic 3D render of the operator, typically doing something insulting. This infuriates nearby demons, who will attempt to attack it and fail miserably, often hurting each other and triggering a hailstorm of infighting in the process.\n\nThe Hologram activates on impact with the ground. You might want to run away shortly after it activates...";
     }
-	
+
+	entry "MetaAllmap"
+    {
+        name "PDA Area Map";
+        origin "Doom 3 (2004)";
+        description "Versatile and lightweight, the PDA has quickly become standard-issue among all UAC personnel, providing them with a wealth of information no matter where they might be. Wireless internet and GPS connectivity provides automatic mapping of the nearby environment, which can be saved for future reference on the device's whopping 100mb of storage.\n\nThe device's popularity has led to a surge of third party app development, including games. One recent release, ''Evil Unleashed'' has faced some criticism over its low-res, blocky depictions of violence.";
+    }		
     entry "MetaRadSuit"
     {
         name "Radiation Suit";
@@ -80,11 +86,5 @@ page "Pickups"
         name "Quad Damage";
         origin "Quake (1996)";
         description "This strange orb seems to be full of human nanomachine technology from some unidentified source. Is this some kind of military skunkworks project to recreate the demon power spheres?\n\nThe only thing that isn't a mystery is its effect - the nanomachines rapidly cling onto the user's weapons and greatly increases their effectiveness for a brief period of time.";
-    }
-	entry "MetaAllmap"
-    {
-        name "Computer Map";
-        origin "Doom 3 (2004)";
-        description "Versatile and lightweight, the PDA has quickly become standard-issue among all UAC personnel, providing them with a wealth of information no matter where they might be. Wireless internet and GPS connectivity provides automatic mapping of the nearby environment, which can be saved for future reference on the device's whopping 100mb of storage.\n\nThe device's popularity has led to a surge of third party app development, including games. One recent release, ''Evil Unleashed'' has faced some criticism over its low-res, blocky depictions of violence.";
     }
 }
