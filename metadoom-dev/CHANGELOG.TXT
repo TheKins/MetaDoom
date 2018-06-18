@@ -30,6 +30,8 @@ Code Changes:
   player, rather than just Player 1. (Thanks DrPySpy!)
 - The Lightning Gun's standard attack now has a very slight chance of causing
   enemies to flinch, as opposed to the previous zero chance.
+- Spiborgs are now harder to make flinch when charging their shot, making them
+  harder to cheese-out.
 - Fixes and improvements to the logic behind Summoners spawning Unwilling.
   (Thanks Major Cooke!)
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
