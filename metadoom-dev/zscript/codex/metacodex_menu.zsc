@@ -480,7 +480,7 @@ Class MetaCodex_Menu : GenericMenu
 		{
 			if(fireParticles[i]!=null)
 			{
-				fireParticles[i].pos.y -= GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).velz;
+				fireParticles[i].pos.y -= GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).vel.z;
 				if(MenuTime()%2==0&&fireParticles[i].alpha>0)
 				{
 					Vector2 funScale = loadedEntries[itemSelected].particleScale;

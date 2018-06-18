@@ -162,39 +162,39 @@ floor SLIME11 Hot
 floor SLIME12 Hot
 
 // PSX Doom Shit
-floor WATER01 Water
-floor WATER02 Water
-floor WATER03 Water
-floor WATER04 Water
-floor BSLIME01 Slime
-floor BSLIME02 Slime
-floor BSLIME03 Slime
-floor BSLIME04 Slime
-floor CSLIME01 Slime
-floor CSLIME02 Slime
-floor CSLIME03 Slime
-floor CSLIME04 Slime
+floor optional WATER01 Water
+floor optional WATER02 Water
+floor optional WATER03 Water
+floor optional WATER04 Water
+floor optional BSLIME01 Slime
+floor optional BSLIME02 Slime
+floor optional BSLIME03 Slime
+floor optional BSLIME04 Slime
+floor optional CSLIME01 Slime
+floor optional CSLIME02 Slime
+floor optional CSLIME03 Slime
+floor optional CSLIME04 Slime
 
 // Nintendo 64 Shit
-floor D64B1_01 Blood
-floor D64B2_01 Blood
-floor D64BLOD1 Blood
-floor D64N1_01 Nuke
-floor D64N2_01 Nuke
-floor D64NUKG1 Nuke
-floor D64NUKG2 Nuke
-floor D64S1_01 Slime
-floor D64S2_01 Slime
-floor D64SLDG1 Slime
-floor D64SLDG2 Slime
-floor D64W1_01 Water
-floor D64W2_01 Water
-floor D64WATR1 Water
-floor D64WATR2 Water
-floor D64L1_01 Lava
-floor D64LAVA1 Lava
-floor D64LAVA2 Lava
+floor optional D64B1_01 Blood
+floor optional D64B2_01 Blood
+floor optional D64BLOD1 Blood
+floor optional D64N1_01 Nuke
+floor optional D64N2_01 Nuke
+floor optional D64NUKG1 Nuke
+floor optional D64NUKG2 Nuke
+floor optional D64S1_01 Slime
+floor optional D64S2_01 Slime
+floor optional D64SLDG1 Slime
+floor optional D64SLDG2 Slime
+floor optional D64W1_01 Water
+floor optional D64W2_01 Water
+floor optional D64WATR1 Water
+floor optional D64WATR2 Water
+floor optional D64L1_01 Lava
+floor optional D64LAVA1 Lava
+floor optional D64LAVA2 Lava
 
 // BTSX Shit
-floor FWATER02 Water
+floor optional FWATER02 Water
 endif
