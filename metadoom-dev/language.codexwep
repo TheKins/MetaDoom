@@ -84,4 +84,4 @@ MC_MetaChainsaw_Desc = "After an unfortunate shipping mix-up led to a shipping c
 MC_MetaAxe_Name = "Fire Axe";
 MC_MetaAxe_Origin = "Doom RPG (2005)";
 MC_MetaAxe_Icon = "MCDX_WFA";
-MC_MetaAxe_Desc = "A standard-issue fireman's axe, with a flat steel head and a wooden handle. Not exactly the highest tech, but the odds of it outliving you were already pretty high before the whole demonic invasion thing. Press Fire, Alternate Fire or Melee to swing it. The axe instantly kills Zombified enemies, inflicts bleeding damage on others and can break barrels without exploding them. This may come in useful!";
+MC_MetaAxe_Desc = "A standard-issue fireman's axe, with a flat steel head and a wooden handle. Not exactly the highest tech, but the odds of it outliving you were already pretty high before the whole demonic invasion thing. Press either fire key to swing it. The axe instantly kills Zombified enemies, inflicts bleeding damage on others and can break barrels without exploding them. This may come in useful!";
