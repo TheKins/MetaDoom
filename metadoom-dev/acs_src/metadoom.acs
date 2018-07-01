@@ -698,6 +698,7 @@ script "InventoryCheat" ENTER
 		GiveInventory("DogCollar", 1);
 		GiveInventory("Hologram", 1);
 		GiveInventory("DemonKeyCheat", 3);
+		GiveInventory("MetaCodex_DebugTheCodex", 1);
 		
 		SetActorProperty(0,APROP_Score,0);
 		delay(1);
