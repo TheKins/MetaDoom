@@ -1,66 +1,97 @@
-Id Software (...for everything.)
+================================================================================
+====================================METADOOM====================================
+===============================A MOD BY 300 POUNDS==============================
+================================================================================
 
+THE TEAM:
+The Kins (Lead Developer)
+Techokami (Bughunter General)
+DrPySpy (Spiderdemon sprites, Codex system, HUD faces, heavy code lifting)
+
+STUFF FROM COMMERCIAL GAMES:
+Id Software (Oh, a few things here and there...)
 Raven Software (Quake 4, Heretic and Wolfenstein sounds)
-The Bloated Corpse Of Midway (PSX/N64 assets)
+The Bloated Corpse Of Midway Games (PSX/N64 assets)
 Irrational Games (SWAT 4 flashlight sounds)
 Rogue Entertainment (Strife item sounds)
-EuroCom (Duke64 sprites)
+EuroCom Entertainment Software (Duke 64 smoke and blood sprites)
 Netherrealm Entertainment (MK9 and MKX melee sounds)
-Valve (Footstep sounds, Lost Soul extinguish sounds, Unmaker Altfire Sounds)
+Valve Software (Footsteps, Lost Soul extinguishing and Unmaker Altfire sounds)
 Infinity Ward (COD2 footstep sounds)
 Bethesda Softworks (Elder Scrolls and Fallout sounds)
-3D Realms (Some Exploding Barrel sounds, Fire Extinguisher pickup sounds, Hologram sprite)
+3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite)
 Remedy Entertainment (Fire Extinguisher sounds)
 Rockstar Games (Fire Extinguisher sounds)
-Epic Games (Some metal gibbing sounds, Cyber-Manc attack sounds)
+Epic Games (Some metal gibbing sounds, Cyber-Mancubus attack sounds)
 Saber Interactive (Quake Champions stuff)
 
+STUFF FROM OTHER MODS:
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 Pillowblaster ("ARGENT" resources)
 D4D Team (Lots of resources and inspiration)
 D4T Team (Bull Demon charge attack code)
 Doom 2.5 Team (Resources and inspiration)
 Upset & Half-Dead (Doom 3 model ports to Source Engine)
-
-Sgt. Shivers (Muzzle Flashes, animation improvements, Dog Gun sprites)
-Uboa (Muzzle Flashes)
-WildWeasel (Tracer fastprojectiles effect)
-DrPySpy (Spiderdemon Sprites, BFG code fixes, Female HUD face, THE CODEX)
-
 Perkristian (High-Res Doom sounds)
 Jer Sypault (Some sounds from Quake Mindgrind mods)
 
+TOOLS USED:
+NoirSuccubus (Doom 4 Audio Tools)
+Adrian Dale (Pinball FX Tools)
+DTZxPorter & id-daemon (Doom 4 model tools)
+
+CODE RESOURCES:
+WildWeasel (Tracer fastprojectiles effect)
 The Zombie Killer (Flashlight system, footsteps system, landing zscript)
-Smooth Doom Team (Explosion sprites, blood effects and decals, Chaingun sprites)
+DavidPH (ACS advice)
+Marrub (ACS and ZScript advice)
+comet1338 (Fixed a z-fighting bug with flat decals)
+Major Cooke (Blood Stain recoding, engine-side support)
+Enjay (Terrain definitions)
+Gutawer (Zscript sensei, rewrote statscreen borders)
+
+ART RESOURCES (WEAPONS AND ITEMS):
+Captain J (Fire Extinguisher, all sorts of other nice sprites)
+Sgt. Shivers (Muzzle Flashes, animation improvements, Dog Gun sprites)
+Uboa (Muzzle Flashes)
+Smooth Doom Team (Chaingun sprites)
 Cage (Doom 64 Shotgun sprites)
-OSJClatchford (Doom 64 Shotgun sprites, Player head gib sprite help)
+OSJClatchford (Doom 64 Shotgun sprites)
 Ravage and Abbuw (Beta SSG sprites)
 Fulsam (Gauss Cannon sprite)
-Jimmy (Upper-case version of SMALLFONT)
 Skulltag Team (Shotgun Grenade sprites)
 Minigunner (Doom 3 weapon sprites)
 Marty Kirra (Uppercut sprite edit)
-DHTP Team (High-res STARTAN used in TITLEMAP)
 VriskaSerket (BFG sprites)
-Mark Quinn, Vegeta, Ghastly_Dragon, MagicWazard (Z-Sec sprites)
 Mike12, Blox (Axe sprites)
 IMX (Fire Extinguisher sprites)
-Captain J (Dog-class, Fire Extinguisher, Former Assassin AND Sawcubus sprites, all sorts of other nice sprites, additional sounds)
 Neccronixis (Doom 4 turret sprites)
+TorridGristle (Siphon Grenade sprite)
+Eriance (Grenade Launcher parts)
+Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
+Blue Shadow (Doom 3 Keycard Sprites)
+
+ART RESOURCES (ACTORS):
+Captain J (Dog-class Former Assassin AND Sawcubus sprites)
+Smooth Doom Team (Explosion sprites, blood effects and decals)
+OSJClatchford (Player head gib sprite help)
+Mark Quinn, Vegeta, Ghastly_Dragon, MagicWazard (Z-Sec sprites)
 David G./ItsNatureToDie (Cacodemon Gib Sprites, Former Lieutenant sprites)
 Xim (Former Lieutenant sprites)
 Das M (Former Commando sprites)
-Unnamed Artists Not Listed In Brutal Doom's "Detailed" Credits List (Lost Soul sprites)
+Unnamed Artists Not Listed In Brutal Doom's "Detailed" Credits (Lost Soul sprites)
 Megaherz (Hell Razor sprites)
 Zaneion (Hell Knight, Baron of Hell, Bull Demon sprites)
-TorridGristle (Siphon Grenade sprite)
 Merser (Wretched and Fiend sprites)
-Eriance (Beholder sprite, Grenade Launcher parts)
-Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
+Eriance (Beholder sprite)
 Phobos867 (Imp Lord sprites)
-Blue Shadow (Doom 3 Keycard Sprites)
 Vader, Finalizer and Horror Movie Guy (base sprites for Unwilling)
 
+ART RESOURCES (INTERFACE)
+Jimmy (Upper-case version of SMALLFONT)
+DHTP Team (High-res STARTAN used in TITLEMAP)
+
+ART RESOURCES (OPTIONAL CONTENT):
 Mark Quinn (Fist, Chainsaw, Pistol and Shotgun ScriptedMarine sprites)
 CaptainToenail and Ghastly_dragon (Gauss Cannon ScriptedMarine sprites)
 Xenaero (Chainsaw ScriptedMarine sprites)
@@ -69,22 +100,13 @@ Xim (Rocket Launcher and Machinegun ScriptedMarine sprites)
 CaptainToenail (Plasma Rifle ScriptedMarine sprites, Trite sprites)
 Toke (BFG9000 ScriptedMarine sprites)
 
-TerminusEst13 (moral support)
-Combine_Kegan (immoral support)
-Sgt. Shivers  (mortal support)
-Techokami (QA pitlord!)
-
-DavidPH (ACS advice)
-Marrub (ACS and ZScript advice)
-comet1338 (Fixed a z-fighting bug with flat decals)
-Major Cooke (Blood Stain recoding, engine-side support)
-Enjay (Terrain definitions)
-Gutawer (Zscript sensei, rewrote statscreen borders)
-
-NoirSuccubus (Doom 4 Audio Tools)
-Adrian Dale (Pinball FX Tools)
-DTZxPorter & id-daemon (Doom 4 model tools)
-
+MUSIC USED:
 Leslie Wai (TITLEMAP music remix - https://youtu.be/tS0OwOaK28U )
 Andrew Hulshult (Intermission music cover - https://youtu.be/eDdKv097yaU )
 DiosPercha (Ironman Game Over music - https://youtu.be/cWcGxCS9Xmg )
+
+SPECIAL THANKS TO:
+Id Software (...for everything.)
+TerminusEst13 (Moral support)
+Combine_Kegan (Immoral support)
+Sgt. Shivers  (Mortal support)
