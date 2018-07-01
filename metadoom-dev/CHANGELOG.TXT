@@ -28,6 +28,8 @@ Cosmetic Improvements:
 Code Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
   player, rather than just Player 1. (Thanks DrPySpy!)
+- The Tesla Rocket will no longer fry the player who fired it if they're in the
+  way. It also rewards kills and points properly, ala the BFG fix above.
 - The Lightning Gun's standard attack now has a very slight chance of causing
   enemies to flinch, as opposed to the previous zero chance.
 - Spiborgs are now harder to make flinch when charging their shot, making them
