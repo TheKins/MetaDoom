@@ -12,6 +12,9 @@ version 2.5
 #include "actors/weapons/core.zsc"
 #include "actors/weapons/bfg.zsc"
 
+// Inventory
+#include "actors/inventory/teslarocket.zsc"
+
 // Monsters
 #include "actors/monsters/metadoomactor.zsc"
 #include "actors/monsters/metalostsoul.zsc"

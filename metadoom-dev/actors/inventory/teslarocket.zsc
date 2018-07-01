@@ -1,0 +1,46 @@
+class TeslaZapper : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 2;
+		Speed 0;
+		MinMissileChance 0;
+		Projectile;
+		+LOOKALLAROUND
+		+NOINTERACTION
+		//+ISMONSTER
+		+SEEKERMISSILE
+		//+FRIENDLY
+		RenderStyle "Add";
+		RenderStyle "Add";
+		Obituary "$OB_TESLA";
+		AttackSound "weapons/bfg/spray";
+		MissileHeight 0;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 1 NoDelay A_SeekerMissile(0,0,SMF_CURSPEED|SMF_LOOK,256);
+		Goto See;
+	See:
+		TNT1 A 1
+		{
+			if (GetDistance(1,AAPTR_TRACER) <= 256)
+			{
+				if(tracer!=null)
+				{
+					A_PlaySound("weapons/bfg/spray");
+					tracer.DamageMobj(target,target,5,'Normal',0,AngleTo(tracer)); //directly damages the tracer, attributing the damage to the projectile's owner
+				}
+				target = tracer; //we don't need the owner anymore, but we do need the target to shoot this laser effect at
+				A_CustomRailgun(0, 0, "", "", RGF_SILENT | RGF_NOPIERCING, 1, 0, "MetaBulletPuff", 0, 0, 256, 0, 4, 0, "TeslaZapperTrail");
+			}
+		}
+		Goto Death;
+	Death:
+		TNT1 A 0;
+		Stop;
+	}
+}

@@ -84,6 +84,7 @@ ACTOR TeslaRocketProj
 	}
 }
 
+/*
 ACTOR TeslaZapper
 {
 	Radius 2
@@ -125,6 +126,7 @@ ACTOR TeslaZapper
 		Stop
 	}
 }
+*/
 
 ACTOR TeslaZapperTrail
 {
