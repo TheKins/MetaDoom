@@ -30,11 +30,11 @@ $playersound	player	female	*ext2		flayext2
 
 $playersound	player	other	*death		cdie
 $playersound	player	other	*xdeath		cdiehi
-$playersound	player	other	*pain100	cpain100
-$playersound	player	other	*pain75		cpain75
-$playersound	player	other	*pain50		cpain50
-$playersound	player	other	*pain25		cpain25
-$playersound	player	other	*grunt		cland
+$playeralias	player	other	*pain100	cplayer/hurtsmall
+$playeralias	player	other	*pain75		cplayer/hurtmedium
+$playeralias	player	other	*pain50		cplayer/hurtmedium
+$playeralias	player	other	*pain25		cplayer/hurtlarge
+$playeralias	player	other	*grunt		cplayer/land
 $playeralias	player	other	*land		player/feet
 $playersound	player	other	*jump		cjump
 $playersound	player	other	*usefail	cnoway
@@ -101,6 +101,26 @@ $random fplayer/jump			{ fplayer/jump1 fplayer/jump2 fplayer/jump3 }
 fplayer/jump1			fjump1
 fplayer/jump2			fjump2
 fplayer/jump3			fjump3
+
+$random cplayer/hurtsmall	{ cplayer/hurtsmall1 cplayer/hurtsmall2 cplayer/hurtsmall3 }
+cplayer/hurtsmall1		cainsml1
+cplayer/hurtsmall2		cainsml2
+cplayer/hurtsmall3		cainsml3
+
+$random cplayer/hurtmedium	{ cplayer/hurtmedium1 cplayer/hurtmedium2 cplayer/hurtmedium3 }
+cplayer/hurtmedium1		cainmed1
+cplayer/hurtmedium2		cainmed2
+cplayer/hurtmedium3		cainmed3
+
+$random cplayer/hurtlarge	{ cplayer/hurtlarge1 cplayer/hurtlarge2 cplayer/hurtlarge3 }
+cplayer/hurtlarge1		cainbig1
+cplayer/hurtlarge2		cainbig2
+cplayer/hurtlarge3		cainbig3
+
+$random cplayer/land			{ cplayer/land1 cplayer/land2 cplayer/land3 }
+cplayer/land1			cland1
+cplayer/land2			cland2
+cplayer/land3			cland3
 
 //player/hurtslime		painslim
 //player/deathcrush		pcrush
