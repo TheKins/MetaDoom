@@ -333,8 +333,6 @@ Script "BloodFX_Water" ENTER
 				break;
 			}
 		}
-		
-
 }
 
 // Item Variety System
