@@ -196,18 +196,19 @@ Script "TakeWater" ENTER
 	{
 		for (int i = 0; i < 37; i++)
 		{
-			if (CheckActorFloorTexture(0, fluidtex_take[i])) ACS_NamedExecute("GimmeWater",0);
+			if (CheckActorFloorTexture(0, fluidtex_take[i])) GiveInventory("GimmeWater", 1); //ACS_NamedExecute("GimmeWater",0);
 		}
 	}
 	
 	if (CheckInventory("HolyWaterPistol") && GetActorProperty (0, APROP_Waterlevel) >= 2 && CheckInventory("HolyWater") < 15)
 	{
-		ACS_NamedExecute("GimmeWater",0);
+		GiveInventory("GimmeWater", 1); //ACS_NamedExecute("GimmeWater",0);
 	}
 	delay(35);
 	restart;
 }
 
+/*
 Script "GimmeWater" (void)
 {
 	int msgColors[22] = 
@@ -224,6 +225,7 @@ Script "GimmeWater" (void)
 	FadeTo (69, 203, 215, 0.0, 0.1);
 	Log(s:msgcolors[color], l:"GOTHOLYWATER");
 }
+*/
 
 // Fire Self-Extinguish
 Script "FireSelfSpray_Control" (void)

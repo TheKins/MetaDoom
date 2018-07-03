@@ -83,3 +83,32 @@ Class MetaDoomWeapon : Weapon
 		stop;
 	}
 }
+
+// For Holy Water Pistol
+class GimmeWater : CustomInventory
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.ISHEALTH
+		+INVENTORY.ISARMOR
+		Inventory.PickupMessage "$GOTMSPHERE";
+		Inventory.PickupSound "weapons/waterpistol/ammo";
+	}
+	States
+	{
+	Spawn:
+		MEGA A 6 BRIGHT;
+		Stop;
+	Pickup:
+		TNT1 A 0 
+		{
+			player.bonuscount = BONUSADD;
+			A_PlaySound("weapons/waterpistol/ammo", CHAN_PICKUP|CHAN_NOPAUSE, 1, false, ATTN_NONE);
+			A_Log("$GOTHOLYWATER",1);
+			A_GiveInventory("HolyWater", 1);
+		}
+		Stop;
+	}
+}	
