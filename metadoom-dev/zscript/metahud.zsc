@@ -116,18 +116,18 @@ class MetaDoomStatusBar : BaseStatusBar
 		if (deathmatch || teamplay)
 		{
 			DrawImage("FGICON", (27, 171), DI_ITEM_OFFSETS);
-			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 		} else {
 			
 			DrawString(mSmallFont2, FormatNumber(mScoreInterpolator.GetValue(), 10), (89, 172),
-			DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
+			DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
 		}
 	}
 	
 	void DrawHealth()
 	{
 		DrawImage("HPICON", (27, 189), DI_ITEM_OFFSETS);
-		DrawString(mSmallFont2, FormatNumber(CPlayer.health, 3), (24, 189), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		DrawString(mSmallFont2, FormatNumber(CPlayer.health, 3), (24, 189), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 		DrawImage("HUDBAR", (36, 189), DI_ITEM_OFFSETS);
 		DrawBar("LIFEBAR", "MTBAR", mHealthInterpolator.GetValue(), CPlayer.mo.GetMaxHealth(false), (37, 190), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
 		if (mHealthInterpolator.GetValue() > 100)
@@ -145,7 +145,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		} else {
 			DrawImage("APICON", (27, 180), DI_ITEM_OFFSETS);
 		}
-		DrawString(mSmallFont2, FormatNumber(GetArmorAmount(), 3), (24, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		DrawString(mSmallFont2, FormatNumber(GetArmorAmount(), 3), (24, 180), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 		
 		DrawImage("HUDBAR", (36, 180), DI_ITEM_OFFSETS);
 		DrawBar("ARMRBAR", "MTBAR", mArmorInterpolator.GetValue(), 100, (37, 181), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
@@ -201,15 +201,15 @@ class MetaDoomStatusBar : BaseStatusBar
 		
 		if (ammo1 != null) 
 		{
-			DrawString(mSmallFont2, FormatNumber(ammocount1, 3), (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+			DrawString(mSmallFont2, FormatNumber(ammocount1, 3), (295, 180), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
 			DrawBar("AMMOBAR", "MTBAR", mAmmoInterpolator.GetValue(), ammomax, (226, 181), 0, SHADER_REVERSE, DI_ITEM_OFFSETS);
 			
 		} else {
 			if (meta_pistolammo == 1 && CheckWeaponSelected("MetaPistol"))
 			{
-				DrawString(mSmallFont2, FormatNumber(GetAmount("Clip"), 3), (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+				DrawString(mSmallFont2, FormatNumber(GetAmount("Clip"), 3), (295, 180), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
 			} else {
-				DrawString(mSmallFont2, "---", (295, 180), DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
+				DrawString(mSmallFont2, "---", (295, 180), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_LEFT, Font.CR_WHITE);
 			}
 		}
 	}
