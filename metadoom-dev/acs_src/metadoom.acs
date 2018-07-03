@@ -173,49 +173,31 @@ Script "FlashlightHandling" ENTER
 // Holy Water
 Script "TakeWater" ENTER
 {
+	str fluidtex_take[37] =
+	{ 
+		"FWATER1","FWATER2","FWATER3","FWATER4",
+		"SLIME01","SLIME02","SLIME03","SLIME04",
+		"SLIME05","SLIME06","SLIME07","SLIME08",
+		"NUKAGE1","NUKAGE2","NUKAGE3","BLOOD1",
+		"BLOOD2","BLOOD3",
+		// PSX Doom
+		"WATER01","BSLIME01","CSLIME01",
+		// Doom 64
+		"D64B1_01","D64B2_01","D64BLOD1","D64N1_01",
+		"D64N2_01","D64NUKG1","D64NUKG2","D64S1_01",
+		"D64S2_01","D64SLDG1","D64SLDG2","D64W1_01",
+		"D64W2_01","D64WATR1","D64WATR2",
+		// BTSX
+		"FWATER02"
+	};
+	
 	if (CheckInventory("HolyWaterPistol") && GetActorZ (0) == GetActorFloorZ (0)
 	    && GetActorProperty (0, APROP_Health) > 0 && CheckInventory("HolyWater") < 15)
 	{
-		if (CheckActorFloorTexture(0, "FWATER1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "FWATER2")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "FWATER3")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "FWATER4")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME02")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME03")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME04")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME05")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME06")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME07")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "SLIME08")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "NUKAGE1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "NUKAGE2")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "NUKAGE3")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "BLOOD1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "BLOOD2")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "BLOOD3")) ACS_NamedExecute("GimmeWater",0);
-		// PSX Doom
-		if (CheckActorFloorTexture(0, "WATER01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "BSLIME01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "CSLIME01")) ACS_NamedExecute("GimmeWater",0);
-		// Doom 64
-		if (CheckActorFloorTexture(0, "D64B1_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64B2_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64BLOD1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64N1_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64N2_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64NUKG1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64NUKG2")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64S1_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64S2_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64SLDG1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64SLDG2")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64W1_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64W2_01")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64WATR1")) ACS_NamedExecute("GimmeWater",0);
-		if (CheckActorFloorTexture(0, "D64WATR2")) ACS_NamedExecute("GimmeWater",0);
-		// BTSX
-		if (CheckActorFloorTexture(0, "FWATER02")) ACS_NamedExecute("GimmeWater",0);
+		for (int i = 0; i < 37; i++)
+		{
+			if (CheckActorFloorTexture(0, fluidtex_take[i])) ACS_NamedExecute("GimmeWater",0);
+		}
 	}
 	
 	if (CheckInventory("HolyWaterPistol") && GetActorProperty (0, APROP_Waterlevel) >= 2 && CheckInventory("HolyWater") < 15)
