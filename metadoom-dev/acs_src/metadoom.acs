@@ -286,54 +286,55 @@ Script "SoulCubeMsg_Clear" ENTER
 // Blood is thicker...
 Script "BloodFX_Water" ENTER
 {
-		if (CheckActorFloorTexture(0, "FWATER1")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "FWATER2")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "FWATER3")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "FWATER4")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME01")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME02")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME03")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME04")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME05")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME06")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME07")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "SLIME08")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "NUKAGE1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "NUKAGE2")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "NUKAGE3")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "BLOOD1")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "BLOOD2")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "BLOOD3")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "LAVA1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "LAVA2")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "LAVA3")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "LAVA4")) SetResultValue(3);
+		str fluidtex_resa[19] =
+		{ 
+		"FWATER1","FWATER2","FWATER3","FWATER4",
+		"SLIME01","SLIME02","SLIME03","SLIME04",
+		"SLIME05","SLIME06","SLIME07","SLIME08",
+		"BLOOD1","BLOOD2","BLOOD3",
 		// PSX Doom
-		else if (CheckActorFloorTexture(0, "WATER01")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "BSLIME01")) SetResultValue(2);
-		else if (CheckActorFloorTexture(0, "CSLIME01")) SetResultValue(2);
-		// Doom 64
-		else if (CheckActorFloorTexture(0, "D64B1_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64B2_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64BLOD1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64N1_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64N2_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64NUKG1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64NUKG2")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64S1_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64S2_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64SLDG1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64SLDG2")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64W1_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64W2_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64WATR1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64WATR2")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64L1_01")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64LAVA1")) SetResultValue(3);
-		else if (CheckActorFloorTexture(0, "D64LAVA2")) SetResultValue(3);
+		"WATER01","BSLIME01","CSLIME01",
 		// BTSX
-		else if (CheckActorFloorTexture(0, "FWATER02")) SetResultValue(2);
-		else SetResultValue(1);
+		"FWATER02"
+		};
+
+		str fluidtex_resb[25] =
+		{ 
+		"NUKAGE1","NUKAGE2","NUKAGE3","LAVA1",
+		"LAVA2","LAVA3","LAVA4",
+		// Doom 64
+		"D64B1_01","D64B2_01","D64BLOD1","D64N1_01",
+		"D64N2_01","D64NUKG1","D64NUKG2","D64S1_01",
+		"D64S2_01","D64SLDG1","D64SLDG2","D64W1_01",
+		"D64W2_01","D64WATR1","D64WATR2","D64L1_01",
+		"D64LAVA1","D64LAVA2"
+		};
+		
+		SetResultValue(1);
+		
+		for (int j = 0; j < 25; j++)
+		{
+			if (CheckActorFloorTexture(0, fluidtex_resb[j]))
+			{
+				SetResultValue(3);
+				if(GetCvar("meta_developer"))
+				Log(s:"Blood FX Result 3");
+				break;
+			}
+		}
+		
+		for (int i = 0; i < 19; i++)
+		{
+			if (CheckActorFloorTexture(0, fluidtex_resa[i]))
+			{
+				SetResultValue(2);
+				if(GetCvar("meta_developer"))
+				Log(s:"Blood FX Result 2");
+				break;
+			}
+		}
+		
+
 }
 
 // Item Variety System
