@@ -153,6 +153,16 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawBar("LIFEBAR2", "MTBAR3", mHealthInterpolator.GetValue() - 100, CPlayer.mo.GetMaxHealth(true),
 			(37, 190), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
 		}
+		
+		// special powerup timer for invuln sphere
+		if (CheckInventory("PowerInvulnerable", 1))
+		{
+			int itemTimeLeft, itemDuration;
+			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("MetaInvulnerabilitySphere");
+			
+			DrawImage("POWRINV", (26, 188), DI_ITEM_OFFSETS);			
+			DrawBar("POWRBAR", "MTBAR3", itemTimeLeft, itemDuration, (37, 190), 0, SHADER_HORZ, DI_ITEM_OFFSETS);
+		}
 	}
 	
 	void DrawArmor()
