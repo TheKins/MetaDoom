@@ -325,13 +325,15 @@ class MetaDoomStatusBar : BaseStatusBar
 			[texwidth,texheight] = TexMan.GetSize(TexMan.CheckForTexture("POWRBAR", TexMan.Type_MiscPatch));
 			int cellWidth = texwidth+16; //height of bars
 			
+			int placement = 160;
+			
 			if(itemDuration>-1)
 			{
 				bool oldoffset = fullscreenOffsets;
 				fullscreenOffsets = false;
-				DrawImage(powerupStuff[1+barArrayColumns*i], ((126)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
-				DrawImage("HUDBAR", ((160)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
-				DrawBar("POWRBAR", "MTBAR", itemTimeLeft, itemDuration, ((160)+cellWidth*iterator, 164), 0, SHADER_HORZ, DI_SCREEN_CENTER);
+				DrawImage(powerupStuff[1+barArrayColumns*i], ((placement - 33)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
+				DrawImage("HUDBAR", ((placement)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
+				DrawBar("POWRBAR", "MTBAR", itemTimeLeft, itemDuration, ((placement)+cellWidth*iterator, 164), 0, SHADER_HORZ, DI_SCREEN_CENTER);
 				iterator++;
 				fullscreenOffsets = oldoffset;
 			}
