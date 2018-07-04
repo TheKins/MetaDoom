@@ -326,6 +326,7 @@ class MetaDoomStatusBar : BaseStatusBar
 			return; //if player no exist then cancel...
 		}
 		int iterator;
+		int placement;
 		
 		for (int i  = 0;i<barArraySize;i++) //go through the array of powerups
 		{
@@ -335,7 +336,9 @@ class MetaDoomStatusBar : BaseStatusBar
 			[texwidth,texheight] = TexMan.GetSize(TexMan.CheckForTexture("POWRBAR", TexMan.Type_MiscPatch));
 			int cellWidth = texwidth+16; //height of bars
 			
-			int placement = 160;
+			// See now, the IDEA was that I'd change this number to push previous bars backwards.
+			// Didn't work. Now I'm stuck.
+			placement = 160;
 			
 			if(itemDuration>-1)
 			{
@@ -344,7 +347,7 @@ class MetaDoomStatusBar : BaseStatusBar
 				DrawImage(powerupStuff[1+barArrayColumns*i], ((placement - 33)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
 				DrawImage("HUDBAR", ((placement)+cellWidth*iterator, 165), DI_SCREEN_CENTER);
 				DrawBar("POWRBAR", "MTBAR", itemTimeLeft, itemDuration, ((placement)+cellWidth*iterator, 164), 0, SHADER_HORZ, DI_SCREEN_CENTER);
-				iterator++;
+				iterator++;				
 				fullscreenOffsets = oldoffset;
 			}
 		}
