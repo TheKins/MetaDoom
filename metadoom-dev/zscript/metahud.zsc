@@ -89,7 +89,6 @@ class MetaDoomStatusBar : BaseStatusBar
 		Super.Draw (state, TicFrac);
 		BeginStatusBar();
 		DrawMainBar (TicFrac);
-		DrawPowerupBars();
 	}
 
 	protected void DrawMainBar (double TicFrac)
@@ -124,6 +123,7 @@ class MetaDoomStatusBar : BaseStatusBar
 				DrawStats();
 				DrawFaceBox();
 				DrawItemBox();
+				DrawPowerupBars();
 			}
 		}
 	}
