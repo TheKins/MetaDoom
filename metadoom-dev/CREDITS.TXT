@@ -42,7 +42,7 @@ DTZxPorter & id-daemon (Doom 4 model tools)
 
 CODE RESOURCES:
 WildWeasel (Tracer fastprojectiles effect)
-The Zombie Killer (Flashlight system, footsteps system, landing zscript)
+The Zombie Killer (Flashlight, footsteps system, landing zscript, powerup bars)
 DavidPH (ACS advice)
 Marrub (ACS and ZScript advice)
 comet1338 (Fixed a z-fighting bug with flat decals)
