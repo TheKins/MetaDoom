@@ -14,6 +14,7 @@ Cosmetic Improvements:
   into account! (Thanks DrPySpy!)
 - Powerup timers on the HUD are now properly centered, adjusting as powerups are
   gained and run out. (Thanks DrPySpy and TheZombieKiller!)
+- Difficulty select screen now has skill descriptions and mugshot. (Thanks BoA Team!)
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
 - The Former Lieutenant now wears blue armor, to make him look less like his
   chaingun wielding siblings (DrPySpy did a lot on this update just FYI)

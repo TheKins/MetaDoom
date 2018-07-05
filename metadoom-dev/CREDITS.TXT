@@ -35,6 +35,7 @@ Upset & Half-Dead (Doom 3 model ports to Source Engine)
 Perkristian (High-Res Doom sounds)
 Jer Sypault (Some sounds from Quake Mindgrind mods)
 Marphy Black & HavoX (Doom 2 Minor Sprite Fixing Project sprites)
+Blade of Agony Team (Difficulty Select Screen ZScript)
 
 TOOLS USED:
 NoirSuccubus (Doom 4 Audio Tools)
