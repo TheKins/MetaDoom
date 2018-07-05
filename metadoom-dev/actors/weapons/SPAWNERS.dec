@@ -15,6 +15,15 @@ actor ChainsawSpawner replaces Chainsaw
 		TNT1 A 0 A_JumpIf(CallACS("Item_SoulCube", 0, 0, 0) == 1, "SoulCube")
 		goto VarietyPack
 	Axe:
+		TNT1 A 0
+		{
+			if (deathmatch) // Disable axe in Deathmatch
+			{
+				return state("Chainsaw"); 
+			} else {
+				return state("");
+			}
+		}
 		TNT1 A 0 A_SpawnItemEx("MetaAxePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	Chainsaw:
