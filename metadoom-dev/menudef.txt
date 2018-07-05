@@ -66,6 +66,8 @@ ListMenu "SkillMenu"
 		StaticText 96, 14, "$MNU_NEWGAME"
 		StaticText 54, 38, "$MNU_CHOOSESKILL"
 		Position 48, 63
+		
+		Class "StaticIconListMenu"
 }
 
 //-------------------------------------------------------------------------------------------
