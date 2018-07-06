@@ -394,7 +394,7 @@ class StaticIconListMenu : ExtendedListMenu
 
 	override void Drawer()
 	{
-		TextureID bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+		TextureID bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
 		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
 		
 		// Draw the icon for the currently selected item

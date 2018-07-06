@@ -36,6 +36,7 @@ ListMenu "EpisodeMenu"
 
 ListMenu "SkillMenu"
 {
+	StaticPatch 0, 10, "M_BAR"
 	StaticTextCentered 160, 14, "$MNU_CHOOSESKILL"
 	Position 48, 43
 	
