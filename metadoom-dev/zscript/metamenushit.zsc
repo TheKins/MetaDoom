@@ -17,3 +17,13 @@ class MetaFatOptionMenu : OptionMenu
 		Super.Drawer();
 	}
 }
+
+class MetaMessageBoxMenu : MessageBoxMenu
+{
+	override void Drawer ()
+	{
+		TextureID bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
+		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
+		Super.Drawer();
+	}
+}
