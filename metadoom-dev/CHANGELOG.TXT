@@ -50,6 +50,7 @@ Code Changes:
   items during a map transition.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
+- Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
  
 Miscellaneous:
 - Players now make appropriate sounds depending on the gender specified in
