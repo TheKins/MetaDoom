@@ -11,44 +11,60 @@ class MetaOptional : EventHandler
 		thinkeriterator actorreplacer;
 		
 		// The last entry is ignored for some stupid reason.
-		int replaceables = 43;
+		int replaceables = 59;
 		
 		static const string oldActor[] =
 		{
+			// Actors
 			"WolfensteinSS", "CommanderKeen",
-			
-			"ScriptedMarine", "MarineFist", "MarineBerserk", "MarineChainsaw",
+			// Scripted Marines - Order is important!
+			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
 			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
-			"MarineRocket", "MarinePlasma", "MarineRailgun", "MarineBFG",
-			
+			"MarinePlasma", "MarineRailgun", "MarineBFG", "ScriptedMarine", 
+			// Gore
 			"Gibs", "BrainStem", "ColonGibs", "SmallBloodPool", 
 			"BloodyTwitch", "NonsolidTwitch", "DeadStick", "LiveStick", 
 			"Meat2", "Meat3", "Meat4", "Meat5", 
 			"NonsolidMeat2", "NonsolidMeat3", "NonsolidMeat4", "NonsolidMeat5", 
 			"HangBNoBrain", "HangNoGuts", "HangTLookingDown", "HangTLookingUp", 
 			"HangTNoBrain", "HangTSkull", 
-			
+			// Hell
+			"FloatingSkull","HeartColumn","RedTorch","BlueTorch",
+			"GreenTorch","ShortRedTorch","ShortBlueTorch","ShortGreenTorch",
+			"BigTree","TorchTree","Candelabra","Candlestick",
+			"HeadCandles","EvilEye","HeadOnAStick","HeadsOnAStick",
+			// Corpses
 			"DeadCacodemon", "DeadDemon", "DeadDoomImp", "DeadMarine",
-			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine", "IGNOREME"
+			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine",
+			// Thing What Makes The Array Work
+			"IGNOREME"
 		};
 		
 		static const string newActor[] =
 		{
+			// Actors
 			"WolfSSSpawner", "KeenSpawner",
-			
-			"MetaScriptedMarine", "MetaMarineFist", "MetaMarineBerserk", "MetaMarineChainsaw",
+			// Scripted Marines - Order is important!
+			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
 			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
-			"MetaMarineRocket", "MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG",
-			
+			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine", 
+			// Gore
 			"MetaCrushedProp", "MetaBrainStem", "MetaColonGibs", "MetaSmallBloodPool", 
 			"MetaBloodyTwitch", "MetaNonsolidTwitch", "MetaDeadStick", "MetaLiveStick", 
 			"MetaMeat2", "MetaMeat3", "MetaMeat4", "MetaMeat5", 
 			"MetaNonsolidMeat2", "MetaNonsolidMeat3", "MetaNonsolidMeat4", "MetaNonsolidMeat5", 
 			"MetaHangBNoBrain", "MetaHangNoGuts", "MetaHangTLookingDown", "MetaHangTLookingUp", 
 			"MetaHangTNoBrain", "MetaHangTSkull", 
-			
+			// Hell
+			"MetaFloatingSkull","MetaHeartColumn","MetaRedTorch","MetaBlueTorch",
+			"MetaGreenTorch","MetaShortRedTorch","MetaShortBlueTorch","MetaShortGreenTorch",
+			"MetaBigTree","MetaTorchTree","MetaCandelabra","MetaCandlestick",
+			"MetaHeadCandles","MetaEvilEye","MetaHeadOnAStick","MetaHeadsOnAStick",
+			// Corpses
 			"DeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
-			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine", "IGNORETHISMAN"
+			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine", 
+			// Thing What Makes The Array Work
+			"IGNORETHISMAN"
 			
 		};
 		
@@ -87,11 +103,11 @@ class MetaOptional : EventHandler
 					newguy.special2 = actormans.special2;
 					newguy.vel = actormans.vel;
 					
+					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
+					
 					//time to handle removals
 					actormans.A_Remove(AAPTR_DEFAULT);
 					actormans.destroy();
-					
-					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
 				}
 			}
 			

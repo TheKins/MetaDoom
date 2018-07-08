@@ -6,7 +6,7 @@ Hell Props
 ----------------------------
 */
 
-ACTOR MetaFloatingSkull replaces FloatingSkull
+ACTOR MetaFloatingSkull // replaces FloatingSkull
 {
 	Radius 16
 	Height 26
@@ -23,7 +23,7 @@ ACTOR MetaFloatingSkull replaces FloatingSkull
 	}
 }
 
-ACTOR MetaHeartColumn replaces HeartColumn
+ACTOR MetaHeartColumn // replaces HeartColumn
 {
 	Radius 16
 	Height 40
@@ -39,7 +39,7 @@ ACTOR MetaHeartColumn replaces HeartColumn
 }
 
 // tall torches
-ACTOR MetaRedTorch replaces RedTorch
+ACTOR MetaRedTorch // replaces RedTorch
 {
 	health 5
 	Radius 16
@@ -98,7 +98,7 @@ Actor MetaRedTorch_Glow
 	}
 }
 
-ACTOR MetaBlueTorch replaces BlueTorch
+ACTOR MetaBlueTorch // replaces BlueTorch
 {
 	health 5
 	Radius 16
@@ -156,7 +156,7 @@ Actor MetaBlueTorch_Glow
 	}
 }
 
-ACTOR MetaGreenTorch replaces GreenTorch
+ACTOR MetaGreenTorch // replaces GreenTorch
 {
 	health 5
 	Radius 16
@@ -215,7 +215,7 @@ Actor MetaGreenTorch_Glow
 }
 
 // babby torches
-ACTOR MetaShortRedTorch replaces ShortRedTorch
+ACTOR MetaShortRedTorch // replaces ShortRedTorch
 {
 	health 5
 	Radius 16
@@ -274,7 +274,7 @@ Actor MetaShortRedTorch_Glow
 	}
 }
 
-ACTOR MetaShortBlueTorch replaces ShortBlueTorch
+ACTOR MetaShortBlueTorch // replaces ShortBlueTorch
 {
 	health 5
 	Radius 16
@@ -333,7 +333,7 @@ Actor MetaShortBlueTorch_Glow
 	}
 }
 
-ACTOR MetaShortGreenTorch replaces ShortGreenTorch
+ACTOR MetaShortGreenTorch // replaces ShortGreenTorch
 {
 	health 5
 	Radius 16
@@ -394,7 +394,7 @@ Actor MetaShortGreenTorch_Glow
 
 // treeses
 
-ACTOR MetaBigTree replaces BigTree
+ACTOR MetaBigTree // replaces BigTree
 {
 	Radius 32
 	Height 108
@@ -561,7 +561,7 @@ actor MetaGibBigWood // and veiny
     }
 }
 
-ACTOR MetaTorchTree replaces TorchTree
+ACTOR MetaTorchTree // replaces TorchTree
 {
 	Radius 16
 	Height 56
@@ -616,7 +616,7 @@ ACTOR MetaTorchTree replaces TorchTree
 }
 
 // candles
-ACTOR MetaCandelabra replaces Candelabra
+ACTOR MetaCandelabra // replaces Candelabra
 {
 	health 5
 	Radius 16
@@ -715,7 +715,7 @@ actor MetaGibCandle
     }
 }
 
-ACTOR MetaCandlestick replaces Candlestick
+ACTOR MetaCandlestick // replaces Candlestick
 {
 	Radius 20
 	Height 14
@@ -730,7 +730,7 @@ ACTOR MetaCandlestick replaces Candlestick
 	}
 }
 
-ACTOR MetaHeadCandles replaces HeadCandles
+ACTOR MetaHeadCandles // replaces HeadCandles
 {
 	Radius 16
 	Height 42
@@ -747,7 +747,7 @@ ACTOR MetaHeadCandles replaces HeadCandles
 	}
 }
 
-ACTOR MetaEvilEye replaces EvilEye
+ACTOR MetaEvilEye // replaces EvilEye
 {
 	Radius 16
 	Height 54
@@ -834,7 +834,7 @@ Actor MetaEvilEyeDed
 	}
 }
 
-ACTOR MetaHeadOnAStick replaces HeadOnAStick
+ACTOR MetaHeadOnAStick // replaces HeadOnAStick
 {
 	Radius 16
 	Height 56
@@ -874,7 +874,7 @@ ACTOR MetaHeadOnAStick replaces HeadOnAStick
 	}
 }
 
-ACTOR MetaHeadsOnAStick replaces HeadsOnAStick
+ACTOR MetaHeadsOnAStick // replaces HeadsOnAStick
 {
 	Radius 16
 	Height 64
