@@ -60,16 +60,37 @@ class MetaOptional : EventHandler
 				
 				while(actormans=actor(actorreplacer.next()))
 				{
-					if (!actormans.bDormant)
-					{
-						class<actor> newactor=newActor[i];
-						actormans.spawn(newactor,actormans.pos);
-						//actormansdelend.push(actormans);
-						actormans.destroy();
-						
-						//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
-					}
+					class<actor> newactor=newActor[i];
+					Actor newguy = actormans.spawn(newactor,actormans.pos);
 					
+					// Copying over the pertinent details.
+					// This could probably be done way better, but this works and doesn't,
+					// like, crash the engine, so fuck it. In it goes!
+					newguy.spawnangle = actormans.spawnangle;
+					newguy.angle = actormans.angle;
+					newguy.pitch = actormans.pitch;
+					newguy.roll = actormans.roll;
+					newguy.copyfriendliness(actormans, false);
+					newguy.spawnflags = actormans.spawnflags & ~MTF_SECRET;
+					newguy.handlespawnflags();
+					newguy.changetid(actormans.tid);
+					newguy.master = actormans.master;
+					newguy.target = actormans.target;
+					newguy.tracer = actormans.tracer;
+					newguy.args[0] = actormans.args[0];
+					newguy.args[1] = actormans.args[1];
+					newguy.args[2] = actormans.args[2];
+					newguy.args[3] = actormans.args[3];
+					newguy.args[4] = actormans.args[4];
+					newguy.special = actormans.special;
+					newguy.special1 = actormans.special1;
+					newguy.special2 = actormans.special2;
+					newguy.vel = actormans.vel;
+					
+					//time to handle removals
+					actormans.destroy();
+					
+					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
 				}
 			}
 			
