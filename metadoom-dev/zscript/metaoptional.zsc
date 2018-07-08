@@ -11,14 +11,12 @@ class MetaOptional : EventHandler
 		thinkeriterator actorreplacer;
 		
 		// The last entry is ignored for some stupid reason.
-		int replaceables = 69;
+		int replaceables = 64;
 		
 		static const string oldActor[] =
 		{
 			// Actors
 			"WolfensteinSS", "CommanderKeen",
-			// Doom 64 Shit
-			"64NightmareImp","Unmaker","UnmakerUpgrade1","UnmakerUpgrade2","UnmakerUpgrade3",
 			// Scripted Marines - Order is important!
 			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
 			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
@@ -48,8 +46,6 @@ class MetaOptional : EventHandler
 		{
 			// Actors
 			"WolfSSSpawner", "KeenSpawner",
-			// Doom 64 Shit
-			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner",
 			// Scripted Marines - Order is important!
 			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
 			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
