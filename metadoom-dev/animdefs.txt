@@ -31,6 +31,8 @@ warp flat BSPLY0
 warp2 flat BSPLZ0
 warp flat GBOCX0
 warp2 flat FWATER02
+warp2 flat FCANZ0
+warp2 flat CEYEZ0
 
 flat FWATER1
     pic 1 tics 1

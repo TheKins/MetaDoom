@@ -101,6 +101,12 @@ Grimm (Pistol ScriptedMarine sprites)
 Xim (Rocket Launcher and Machinegun ScriptedMarine sprites)
 CaptainToenail (Plasma Rifle ScriptedMarine sprites, Trite sprites)
 Toke (BFG9000 ScriptedMarine sprites)
+DoomJedi, ItsNatureToDie, PSTrooper (Additional rotations for WolfSS)
+Slax (evileye improvement)
+
+OTHER ASSISTANCE (OPTIONAL CONTENT):
+Captain J (WolfSS firing sound)
+Old Classic Retro Gaming (Apple II sounds - https://www.youtube.com/user/oldclassicgame )
 
 MUSIC USED:
 Leslie Wai (TITLEMAP music remix - https://youtu.be/tS0OwOaK28U )

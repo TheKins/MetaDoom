@@ -86,3 +86,18 @@ Index
 
 #include "actors/monsters/cyberdemon.dec"
 #include "actors/monsters/spiderdemon.dec"
+
+// ---Optional Shit---
+// Other Stuff
+#include "actors/blood_perm.dec"
+
+// Props
+#include "actors/props/tech.dec"
+#include "actors/props/hell.dec"
+#include "actors/props/gore.dec"
+#include "actors/props/corpses.dec"
+
+// Actors
+#include "actors/monsters/wolfss.dec"
+#include "actors/monsters/keen.dec"
+#include "actors/monsters/scriptedmarine.dec"

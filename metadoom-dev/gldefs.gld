@@ -4,3 +4,4 @@
 #include "gldefs/monsters.gld"
 #include "gldefs/powerups.gld"
 #include "gldefs/inventory.gld"
+#include "gldefs/props.gld"
