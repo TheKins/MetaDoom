@@ -10,7 +10,8 @@ class MetaOptional : EventHandler
 		array<actor>actormansdelend;
 		thinkeriterator actorreplacer;
 		
-		int replaceables = 42;
+		// The last entry is ignored for some stupid reason.
+		int replaceables = 43;
 		
 		static const string oldActor[] =
 		{
@@ -28,7 +29,7 @@ class MetaOptional : EventHandler
 			"HangTNoBrain", "HangTSkull", 
 			
 			"DeadCacodemon", "DeadDemon", "DeadDoomImp", "DeadMarine",
-			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine"
+			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine", "IGNOREME"
 		};
 		
 		static const string newActor[] =
@@ -47,7 +48,7 @@ class MetaOptional : EventHandler
 			"MetaHangTNoBrain", "MetaHangTSkull", 
 			
 			"DeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
-			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine"
+			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine", "IGNORETHISMAN"
 			
 		};
 		
@@ -59,11 +60,15 @@ class MetaOptional : EventHandler
 				
 				while(actormans=actor(actorreplacer.next()))
 				{
-					class<actor> newactor=newActor[i];
-					actormans.spawn(newactor,actormans.pos);
-					actormans.destroy(); //actormansdelend.push(actormans);
-					
-					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
+					if (!actormans.bDormant)
+					{
+						class<actor> newactor=newActor[i];
+						actormans.spawn(newactor,actormans.pos);
+						//actormansdelend.push(actormans);
+						actormans.destroy();
+						
+						//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
+					}
 					
 				}
 			}
