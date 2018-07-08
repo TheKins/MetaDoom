@@ -1,6 +1,12 @@
-Next Release
-============
+v5 "Klave" (NEXT)
+=================
 It's been a while, hasn't it?
+
+Optional Content:
+- Optional Content is now built into the main mod and togglable via CVar, as
+  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
+- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
+  instead of the increased damage of the player's EKG Sidearm.
 
 New Features:
 - Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
@@ -8,12 +14,10 @@ New Features:
   picked up or killed.
 - Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
   on the development side.
-- Optional Content is now built into the main mod and togglable via CVar, as
-  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
 
-Cosmetic Improvements:
-- Player sounds and HUD mugshot now take the player's specified gender
-  into account! (Thanks DrPySpy!)
+Cosmetic Changes:
+- Player sounds and HUD mugshot now take the player's gender, as specified in
+  the "Player Options" menu, into account! (Thanks DrPySpy!)
 - Powerup timers on the HUD are now properly centered, adjusting as powerups are
   gained and run out. (Thanks DrPySpy and TheZombieKiller!)
 - Difficulty select screen now has skill descriptions and mugshot. (Thanks BoA Team!)
@@ -55,16 +59,10 @@ Code Changes:
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
  
 Miscellaneous:
-- Players now make appropriate sounds depending on the gender specified in
-  the "Player Options" menu.
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
   (ie. there's no FMod references anymore!)
 - Reduced harmless-but-agitating warnings in the console during startup.
 - Updated ENDOOM to credit DrPySpy and mention Saber Interactive
-  
-Optional Content:
-- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
-  instead of the increased damage of the player's EKG Sidearm.
 
 v4.1 "Fred" (06/06/17)
 ====================
