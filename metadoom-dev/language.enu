@@ -81,6 +81,10 @@ METAMENU_MAPBREAKERS = "Potential Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Separate Episodic Spawn Rules";
 METAMENU_TOASTSIZE = "''100%'' Message Size";
+METAMENU_OPTIONAL = "Optional Content";
+METAMENU_OPTIONALDISC1 = "(Disable Optional Content when playing";
+METAMENU_OPTIONALDISC2 = "mapsets that replace the WolfSS or ";
+METAMENU_OPTIONALDISC3 = "props with DEHACKED shit.)";
 
 METAMENU_ITEMHEADER = "Item Behavior";
 METAMENU_RETROBERSERK = "Traditional Berserk";
