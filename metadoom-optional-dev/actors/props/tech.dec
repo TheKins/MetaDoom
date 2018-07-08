@@ -7,7 +7,7 @@ Tech Props
 */
 
 // Big Tech Lamp
-ACTOR MetaTechLamp replaces TechLamp
+ACTOR MetaTechLamp // replaces TechLamp
 {
 	health 5
 	Radius 16
@@ -130,7 +130,7 @@ actor MetaGibGlass
 }
 
 // Small Tech Lamp
-ACTOR MetaTechLamp2 replaces TechLamp2
+ACTOR MetaTechLamp2 // replaces TechLamp2
 {
 	health 5
 	Radius 16
@@ -193,7 +193,7 @@ Actor MetaTechLamp2_Glow : MetaTechLamp_Glow
 }
 
 // Column
-Actor MetaColumn replaces Column
+Actor MetaColumn // replaces Column
 {
 	health 5
 	Radius 16
@@ -257,7 +257,7 @@ Actor MetaColumn_Glow : MetaTechLamp_Glow
 }
 
 // burning barrel
-ACTOR MetaBurningBarrel replaces BurningBarrel
+ACTOR MetaBurningBarrel // replaces BurningBarrel
 {
 	health 5
 	Radius 16
@@ -363,7 +363,7 @@ ACTOR MetaBurningBarrelSmoke
 }
 
 // tech pillar
-ACTOR MetaTechPillar replaces TechPillar
+ACTOR MetaTechPillar // replaces TechPillar
 {
 	health 5
 	Radius 16
