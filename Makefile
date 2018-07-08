@@ -6,15 +6,13 @@ NAME=metadoom-dev
 NAMEOPT=metadoom-optional-dev
 SRC=pk3/acs
 OBJ=pk3/acs
-.PHONY: help pk3 pk7 pk3-opt pk7-opt clean
+.PHONY: help pk3 pk7 clean
 
 help:
 	@echo "Available options:"
 	@echo "  help    - Prints this dialog and exits."
 	@echo "  pk3     - Builds a pk3 archive of the target sources."
 	@echo "  pk7     - Builds a pk7 archive of the target sources."
-	@echo "  pk3-opt     - Builds a pk3 archive of the target sources (optional content)."
-	@echo "  pk7-opt     - Builds a pk7 archive of the target sources (optional content)."
 	@echo "  clean   - Removes all archives."
 	@echo "How to use:"
 	@echo "  Make sure that 7z is installed."
@@ -29,16 +27,6 @@ pk3:
 pk7:
 	@echo -n "Building ${NAME}.pk7 ......"
 	@cd metadoom-dev && 7z a ../${NAME}.pk7 *
-	@echo "done"
-
-pk3-opt:
-	@echo -n "Building ${NAMEOPT}.pk3 ......"
-	@cd metadoom-optional-dev && 7z a -tzip ../${NAMEOPT}.pk3 *
-	@echo "done"
-
-pk7-opt:
-	@echo -n "Building ${NAMEOPT}.pk7 ......"
-	@cd metadoom-optional-dev && 7z a ../${NAMEOPT}.pk7 *
 	@echo "done"
 
 clean:

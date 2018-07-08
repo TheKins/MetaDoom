@@ -51,6 +51,7 @@ comet1338 (Fixed a z-fighting bug with flat decals)
 Major Cooke (Blood Stain recoding, engine-side support)
 Enjay (Terrain definitions)
 Gutawer (Zscript sensei, rewrote statscreen borders)
+Matt (base for actor replacement system)
 
 ART RESOURCES (WEAPONS AND ITEMS):
 Captain J (Fire Extinguisher, all sorts of other nice sprites)

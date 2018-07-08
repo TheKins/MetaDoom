@@ -8,6 +8,8 @@ New Features:
   picked up or killed.
 - Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
   on the development side.
+- Optional Content is now built into the main mod and togglable via CVar, as
+  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
 
 Cosmetic Improvements:
 - Player sounds and HUD mugshot now take the player's specified gender
