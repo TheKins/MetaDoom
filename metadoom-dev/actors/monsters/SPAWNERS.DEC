@@ -726,7 +726,7 @@ actor SpiderMastermindSpawner replaces SpiderMastermind
 
 // Doom 64 Shit
 
-actor NightmareImpSpawner replaces 64NightmareImp
+actor NightmareImpSpawner// replaces 64NightmareImp
 {
 	States
 	{

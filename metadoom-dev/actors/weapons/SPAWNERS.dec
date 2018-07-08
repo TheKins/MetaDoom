@@ -207,7 +207,7 @@ actor BFGSpawner replaces BFG9000
 
 // Doom 64 Shit
 
-actor UnmakerSpawner replaces Unmaker
+actor UnmakerSpawner //replaces Unmaker
 {
 	States
 	{
@@ -218,7 +218,7 @@ actor UnmakerSpawner replaces Unmaker
 	}
 }
 
-actor UnmakerKey1Spawner replaces UnmakerUpgrade1
+actor UnmakerKey1Spawner //replaces UnmakerUpgrade1
 {
 	States
 	{
@@ -229,7 +229,7 @@ actor UnmakerKey1Spawner replaces UnmakerUpgrade1
 	}
 }
 
-actor UnmakerKey2Spawner replaces UnmakerUpgrade2
+actor UnmakerKey2Spawner //replaces UnmakerUpgrade2
 {
 	States
 	{
@@ -240,7 +240,7 @@ actor UnmakerKey2Spawner replaces UnmakerUpgrade2
 	}
 }
 
-actor UnmakerKey3Spawner replaces UnmakerUpgrade3
+actor UnmakerKey3Spawner //replaces UnmakerUpgrade3
 {
 	States
 	{
