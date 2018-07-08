@@ -88,6 +88,7 @@ class MetaOptional : EventHandler
 					newguy.vel = actormans.vel;
 					
 					//time to handle removals
+					actormans.A_Remove(AAPTR_DEFAULT);
 					actormans.destroy();
 					
 					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
