@@ -1,7 +1,7 @@
 
 // Scriptable marine -------------------------------------------------------
 
-ACTOR MetaScriptedMarine : MonsterCore replaces ScriptedMarine
+ACTOR MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 {
 	Health 100
 	Radius 16
@@ -59,7 +59,7 @@ ACTOR MetaScriptedMarine : MonsterCore replaces ScriptedMarine
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineFist : MetaScriptedMarine replaces MarineFist
+ACTOR MetaMarineFist : MetaScriptedMarine // replaces MarineFist
 {
 	Obituary "$OB_MARINE_FIST"
 	DropItem "ArmorBonus"
@@ -81,7 +81,7 @@ ACTOR MetaMarineFist : MetaScriptedMarine replaces MarineFist
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineBerserk : MetaMarineFist replaces MarineBerserk
+ACTOR MetaMarineBerserk : MetaMarineFist // replaces MarineBerserk
 {
 	Obituary "$OB_MARINE_BERSERK"
 	DropItem "ArmorBonus"
@@ -101,7 +101,7 @@ ACTOR MetaMarineBerserk : MetaMarineFist replaces MarineBerserk
 }
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineChainsaw : MetaScriptedMarine replaces MarineChainsaw
+ACTOR MetaMarineChainsaw : MetaScriptedMarine // replaces MarineChainsaw
 {
 	Obituary "$OB_MARINE_SAW"
 	DropItem "ArmorBonus", 255
@@ -127,7 +127,7 @@ ACTOR MetaMarineChainsaw : MetaScriptedMarine replaces MarineChainsaw
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarinePistol : MetaScriptedMarine replaces MarinePistol
+ACTOR MetaMarinePistol : MetaScriptedMarine // replaces MarinePistol
 {
 	Obituary "$OB_MARINE_PISTOL"
 	DropItem "Clip"
@@ -156,7 +156,7 @@ ACTOR MetaMarinePistolTracer : PistolTracer
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineShotgun : MetaScriptedMarine replaces MarineShotgun
+ACTOR MetaMarineShotgun : MetaScriptedMarine // replaces MarineShotgun
 {
 	Obituary "$OB_MARINE_SHOTGUN"
 	DropItem "Shell", 255
@@ -187,7 +187,7 @@ ACTOR MetaMarineShotgun : MetaScriptedMarine replaces MarineShotgun
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineSSG : MetaScriptedMarine replaces MarineSSG
+ACTOR MetaMarineSSG : MetaScriptedMarine // replaces MarineSSG
 {
 	Obituary "$OB_MARINE_SSG"
 	DropItem "Shell", 255
@@ -223,7 +223,7 @@ ACTOR MetaMarineSSG : MetaScriptedMarine replaces MarineSSG
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineChaingun : MetaScriptedMarine replaces MarineChaingun
+ACTOR MetaMarineChaingun : MetaScriptedMarine // replaces MarineChaingun
 {
 	Obituary "$OB_MARINE_MACHINEGUN"
 	DropItem "Clip", 255
@@ -248,7 +248,7 @@ ACTOR MetaMarineChaingun : MetaScriptedMarine replaces MarineChaingun
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineRocket : MetaScriptedMarine replaces MarineRocket
+ACTOR MetaMarineRocket : MetaScriptedMarine // replaces MarineRocket
 {
 	Obituary "$OB_MARINE_ROCKET"
 	DropItem "RocketAmmo", 255
@@ -273,7 +273,7 @@ ACTOR MetaMarineRocket : MetaScriptedMarine replaces MarineRocket
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarinePlasma : MetaScriptedMarine replaces MarinePlasma
+ACTOR MetaMarinePlasma : MetaScriptedMarine // replaces MarinePlasma
 {
 	Obituary "$OB_MARINE_PLASMA"
 	DropItem "Cell", 255
@@ -298,7 +298,7 @@ ACTOR MetaMarinePlasma : MetaScriptedMarine replaces MarinePlasma
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineRailgun : MetaScriptedMarine replaces MarineRailgun
+ACTOR MetaMarineRailgun : MetaScriptedMarine // replaces MarineRailgun
 {
 	Obituary "$OB_MARINE_GAUSS"
 	DropItem "Cell", 255
@@ -324,7 +324,7 @@ ACTOR MetaMarineRailgun : MetaScriptedMarine replaces MarineRailgun
 
 //---------------------------------------------------------------------------
 
-ACTOR MetaMarineBFG : MetaScriptedMarine replaces MarineBFG
+ACTOR MetaMarineBFG : MetaScriptedMarine // replaces MarineBFG
 {
 	Obituary "$OB_MARINE_BFG"
 	DropItem "BFGAmmo", 255

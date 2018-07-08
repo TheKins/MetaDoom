@@ -1,6 +1,9 @@
 // developer barf
 server int meta_developer = 0;
 
+// optional content
+server int meta_optional = 0;
+
 // spawn control
 server int meta_noalts_weapons = 0;
 server int meta_noalts_actors = 0;

@@ -1,4 +1,4 @@
-actor KeenSpawner replaces CommanderKeen
+actor KeenSpawner // replaces CommanderKeen
 {
 	Health 0x7fffffff
 	Height 0

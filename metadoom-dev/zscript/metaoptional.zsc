@@ -1,0 +1,78 @@
+// Implement Optional Content as a CVar instead of a side-mod
+// Based on some really confusingly-formatted code by Matt
+// https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774
+
+class MetaOptional : EventHandler
+{
+    override void WorldTick() //WorldLoaded(WorldEvent e)
+	{
+		actor actormans=null;
+		array<actor>actormansdelend;
+		thinkeriterator actorreplacer;
+		
+		int replaceables = 42;
+		
+		static const string oldActor[] =
+		{
+			"WolfensteinSS", "CommanderKeen",
+			
+			"ScriptedMarine", "MarineFist", "MarineBerserk", "MarineChainsaw",
+			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
+			"MarineRocket", "MarinePlasma", "MarineRailgun", "MarineBFG",
+			
+			"Gibs", "BrainStem", "ColonGibs", "SmallBloodPool", 
+			"BloodyTwitch", "NonsolidTwitch", "DeadStick", "LiveStick", 
+			"Meat2", "Meat3", "Meat4", "Meat5", 
+			"NonsolidMeat2", "NonsolidMeat3", "NonsolidMeat4", "NonsolidMeat5", 
+			"HangBNoBrain", "HangNoGuts", "HangTLookingDown", "HangTLookingUp", 
+			"HangTNoBrain", "HangTSkull", 
+			
+			"DeadCacodemon", "DeadDemon", "DeadDoomImp", "DeadMarine",
+			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine"
+		};
+		
+		static const string newActor[] =
+		{
+			"WolfSSSpawner", "KeenSpawner",
+			
+			"MetaScriptedMarine", "MetaMarineFist", "MetaMarineBerserk", "MetaMarineChainsaw",
+			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
+			"MetaMarineRocket", "MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG",
+			
+			"MetaCrushedProp", "MetaBrainStem", "MetaColonGibs", "MetaSmallBloodPool", 
+			"MetaBloodyTwitch", "MetaNonsolidTwitch", "MetaDeadStick", "MetaLiveStick", 
+			"MetaMeat2", "MetaMeat3", "MetaMeat4", "MetaMeat5", 
+			"MetaNonsolidMeat2", "MetaNonsolidMeat3", "MetaNonsolidMeat4", "MetaNonsolidMeat5", 
+			"MetaHangBNoBrain", "MetaHangNoGuts", "MetaHangTLookingDown", "MetaHangTLookingUp", 
+			"MetaHangTNoBrain", "MetaHangTSkull", 
+			
+			"DeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
+			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine"
+			
+		};
+		
+		if (meta_optional)
+		{
+			for(int i = 0; i < (replaceables); i++)
+			{
+				actorreplacer = thinkeriterator.create(oldActor[i]);
+				
+				while(actormans=actor(actorreplacer.next()))
+				{
+					class<actor> newactor=newActor[i];
+					actormans.spawn(newactor,actormans.pos);
+					actormans.destroy(); //actormansdelend.push(actormans);
+					
+					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
+					
+				}
+			}
+			
+			while(actormansdelend.size()>0)
+			{
+				actormansdelend[0].destroy();
+				actormansdelend.delete(0);
+			}
+		}
+    }
+}

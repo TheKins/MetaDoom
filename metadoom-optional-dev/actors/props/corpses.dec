@@ -9,7 +9,7 @@ Corpse Props
 // Currently identical to the base game, but with some blood decals sprayed around them
 // and a random chance of sprite flipping. May expand upon in future (tiny chance of flies, etc.)
 
-ACTOR MetaDeadCacodemon replaces DeadCacodemon
+ACTOR MetaDeadCacodemon //replaces DeadCacodemon
 {
 	States
 	{
@@ -37,7 +37,7 @@ ACTOR MetaDeadCacodemon replaces DeadCacodemon
 	}
 }
 
-ACTOR MetaDeadPinky replaces DeadDemon
+ACTOR MetaDeadPinky //replaces DeadDemon
 {
 	States
 	{
@@ -65,7 +65,7 @@ ACTOR MetaDeadPinky replaces DeadDemon
 	}
 }
 
-ACTOR MetaDeadDoomImp replaces DeadDoomImp
+ACTOR MetaDeadDoomImp //replaces DeadDoomImp
 {
 	States
 	{
@@ -93,7 +93,7 @@ ACTOR MetaDeadDoomImp replaces DeadDoomImp
 	}
 }
 
-ACTOR MetaDeadMarine replaces DeadMarine
+ACTOR MetaDeadMarine //replaces DeadMarine
 {
 	States
 	{
@@ -136,7 +136,7 @@ ACTOR MetaDeadMarine replaces DeadMarine
 	}
 }
 
-ACTOR MetaDeadShotgunGuy replaces DeadShotgunGuy
+ACTOR MetaDeadShotgunGuy //replaces DeadShotgunGuy
 {
 	States
 	{
@@ -164,7 +164,7 @@ ACTOR MetaDeadShotgunGuy replaces DeadShotgunGuy
 	}
 }
 
-ACTOR MetaDeadZombieMan replaces DeadZombieMan
+ACTOR MetaDeadZombieMan //replaces DeadZombieMan
 {
 	States
 	{
@@ -192,7 +192,7 @@ ACTOR MetaDeadZombieMan replaces DeadZombieMan
 	}
 }
 
-ACTOR MetaGibbedMarine replaces GibbedMarine
+ACTOR MetaGibbedMarine // replaces GibbedMarine
 {
 	States
 	{
@@ -229,4 +229,4 @@ ACTOR MetaGibbedMarine replaces GibbedMarine
 	}
 }
 
-ACTOR MetaGibbedMarineExtra : MetaGibbedMarine replaces GibbedMarineExtra {}
+//ACTOR MetaGibbedMarineExtra : MetaGibbedMarine replaces GibbedMarineExtra {}

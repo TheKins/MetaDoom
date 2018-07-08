@@ -1,4 +1,4 @@
-actor WolfSSSpawner replaces WolfensteinSS
+actor WolfSSSpawner// replaces WolfensteinSS
 {
 	+ISMONSTER
 	-COUNTKILL
