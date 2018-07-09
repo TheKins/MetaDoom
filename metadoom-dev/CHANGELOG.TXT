@@ -58,6 +58,8 @@ Code Changes:
   its proper effect on other players yet.
 - Wolfenstein monsters now respect the "More Actors" CVar.
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
+- A_SetScale hack used for random sprite mirroring on death replaced with the
+  recently-added SPRITEFLIP flag, since it's a better way of doing it.
  
 Miscellaneous:
 - Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
