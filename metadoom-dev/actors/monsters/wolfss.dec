@@ -474,28 +474,46 @@ ACTOR MetaWolfensteinJava : MonsterCore
 		}
 		goto See
 	Missile:
-		WJAV E 4 A_FaceTarget
-		WJAV F 4 BRIGHT 
+		WJAV E 10 A_FaceTarget
+		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
-		WJAV E 4 A_FaceTarget
-		WJAV F 4 BRIGHT 
+		WJAV E 2 A_FaceTarget
+		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
-		WJAV F 4 BRIGHT 
+		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
-		WJAV E 1 A_CPosRefire
-		Goto Missile+1
+		WJAV E 2 A_FaceTarget
+		WJAV F 2 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+		}
+		WJAV E 2 A_FaceTarget
+		WJAV F 2 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+		}
+		WJAV E 2 A_FaceTarget
+		WJAV F 2 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+		}
+		WJAV E 10 A_FaceTarget
+		Goto See
 	Melee:
 		WJAV A 4
-		WJAV G 8 A_CustomMeleeAttack(15, "monsters/wolfjava/kick", "monsters/wolfjava/kick", "Fist")
+		WJAV G 8 A_CustomMeleeAttack(15, "monsters/wolfjava/kick", "monsters/revenant/wiff", "Fist")
 		WJAV A 4
 		goto See
 	Pain:
