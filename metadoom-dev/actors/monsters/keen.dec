@@ -94,8 +94,8 @@ ACTOR MetaBudo : MetaKeen
 		KBUD A -1
 		Loop
 	Pain:
-		KBUD A	4
-		KBUD A	8 A_Pain
+		KBUD B	4
+		KBUD B	8 A_Pain
 		Goto Spawn
 	}
 }
@@ -110,8 +110,8 @@ ACTOR MetaDave : MetaKeen
 		KDAV A -1
 		Loop
 	Pain:
-		KDAV A	4
-		KDAV A	8 A_Pain
+		KDAV B	4
+		KDAV B	8 A_Pain
 		Goto Spawn
 	}
 }
@@ -142,8 +142,8 @@ ACTOR MetaRover : MetaKeen
 		KROV A -1
 		Loop
 	Pain:
-		KROV A	4
-		KROV A	8 A_Pain
+		KROV B	4
+		KROV B	8 A_Pain
 		Goto Spawn
 	}
 }
