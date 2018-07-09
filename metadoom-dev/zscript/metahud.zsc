@@ -1,3 +1,7 @@
+// The HUD! ZScript edition. ZScript HUDs are also nasty, but they're mostly a
+// kind of nasty I can deal with. This port wasn't TOO troublesome, probably
+// because I got most of the profanity out of the way during JPF.
+
 class MetaDoomStatusBar : BaseStatusBar
 {
 	HUDFont mHUDFont;
@@ -13,15 +17,16 @@ class MetaDoomStatusBar : BaseStatusBar
 	DynamicValueInterpolator mScoreInterpolator;
 	DynamicValueInterpolator mAmmoInterpolator;
 	
+	// Things for the Powerup bar system.
 	static const string powerupStuff[] =
 	{
-		//Name of Powerup Giver - Powerup Name - Bar Foreground - Bar Background
+		//Name of Powerup Giver - Powerup Icon
 		"MetaHasteSphere","POWRPINS",
 		"MetaRadSuit","POWRSUIT",
 		"MetaLightAmp","POWRLAMP",
 		"MetaBerserkTimer","POWRBZRK",
 		"MetaQuadDamage","POWRQUAD",
-		"BufferLineDONOTEDIT","POWRFART" //if u are aware of the purpose of this then you can do what u want with this line
+		"BufferLineDONOTEDIT","POWRFART" //This line has to be here for things to work
 	};
 	int barArraySize; //amount of 'columns' that the array has
 	int barArrayColumns; //size of the array divided by the columns
@@ -32,7 +37,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		Super.Init();
 		SetSize(32, 320, 200);
 
-		// Create the font used for the fullscreen HUD
+		// Create the fonts used for the HUD
 		Font fnt = "HUDFONT_DOOM";
 		mHUDFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), true, 1, 1);
 		fnt = "INDEXFONT_DOOM";
@@ -43,7 +48,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		mSmallFont = HUDFont.Create("SMALLFONT");
 		mSmallFont2 = HUDFont.Create("SMALLFONT2");
 		
-		// Powerup Bar Shit
+		// More Powerup Bar Shit
 		barArrayColumns = 2;
 		barArraySize = powerupStuff.Size()/barArrayColumns;
 		
@@ -89,6 +94,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		Super.Draw (state, TicFrac);
 		BeginStatusBar();
 		DrawMainBar (TicFrac);
+		// We're only using the one set of code for this HUD, so we don't need
+		// a seperate method for fullscreen mode.
 	}
 
 	protected void DrawMainBar (double TicFrac)
@@ -97,7 +104,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		{
 			DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
 			
-			// widescreen scaling stuff - now mostly automated!
+			// Stretching/tiling the backdrop for widescreen users.
 			int x1 = 0;
 			int x2 = 0;
 			for ( int i = 1; i < 6; i++ )
@@ -114,6 +121,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		{
 			if (!CheckInventory("DisableHUD", 1))
 			{
+				// Everything's a seperate method for sanity's sake.
+				// This made sense at the time, I assure you.
 				DrawScore();
 				DrawHealth();
 				DrawArmor();
@@ -136,7 +145,6 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawImage("FGICON", (27, 171), DI_ITEM_OFFSETS);
 			DrawString(mSmallFont2, FormatNumber(CPlayer.FragCount, 3), (89, 172), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 		} else {
-			
 			DrawString(mSmallFont2, FormatNumber(mScoreInterpolator.GetValue(), 10), (89, 172),
 			DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT|FNF_FILLZEROS, Font.CR_WHITE);
 		}
@@ -189,7 +197,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		{
 			DrawImage("HUDKEYS", (281, 170), DI_ITEM_OFFSETS);
 		}
-		
+		// This looks messy, but TBH this is basically the same code as the
+		// default Doom HUD with the positions changed. Funny how that works.
 		bool locks[6];
 		String image;
 		for(int i = 0; i < 6; i++) locks[i] = CPlayer.mo.CheckKeys(i + 1, false, true);
@@ -285,7 +294,9 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawImage("HUDBOX", (142, 168), DI_ITEM_OFFSETS);
 		}
 		
-		// Render the Mugshot
+		// Render the Mugshot - some of the data relating to the mugshot
+		// (god mode and gib animation defs) are still in SBARINFO because
+		// (COMICAL SHRUG GESTURE). So this handles the rest.
 		if (cplayer.getgender()==1) // female mugshot
 		{
 			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "SFF"), (143, 168), DI_ITEM_OFFSETS);
@@ -305,6 +316,9 @@ class MetaDoomStatusBar : BaseStatusBar
 		}
 		if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
 		{
+			// Render the icon half-transparent (greyed out) if we're still
+			// under cooldown and unable to spawn Cyberdemons to death with
+			// Siphon Grenades. Yeah, I know you.
 			if (CheckInventory("InventoryCooldownToken", 1))
 			{
 				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
@@ -319,6 +333,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		}
 	}
 	
+	// THIS IS ALL A NIGHTMARE. I HAVE NO IDEA WHAT ANY OF THIS DOES. IF YOU
+	// WANT TO KNOW WHAT ANY OF THIS IS, ASK THEZOMBIEKILLER AND/OR DRPYSPY.
 	void DrawPowerupBars()
 	{
 		if(!CPlayer.mo) return;

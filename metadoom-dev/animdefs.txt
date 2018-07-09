@@ -1,3 +1,4 @@
+// Warp effects for liquids
 warp2 flat BLOOD1
 warp2 flat BLOOD2
 warp2 flat BLOOD3
@@ -25,6 +26,7 @@ warp2 flat BSLIME01
 warp2 flat CSLIME01
 warp2 flat WATER01
 
+// Warp effects for certain effects sprites
 warp flat BSPLW0
 warp2 flat BSPLX0
 warp flat BSPLY0

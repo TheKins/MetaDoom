@@ -1,3 +1,7 @@
+// Sounds for actors and such
+
+// Player Noises
+// Male
 $playersound	player	male	*death		pdie
 $playersound	player	male	*xdeath		pdiehi
 $playeralias	player	male	*pain100	player/hurtsmall
@@ -13,6 +17,7 @@ $playersound	player	male	*crushed	pcrush
 $playersound	player	male	*ext1		playext1
 $playersound	player	male	*ext2		playext2
 
+// Female
 $playersound	player	female	*death		fdie
 $playersound	player	female	*xdeath		fdiehi
 $playeralias	player	female	*pain100	fplayer/hurtsmall
@@ -28,6 +33,7 @@ $playersound	player	female	*crushed	fcrush
 $playersound	player	female	*ext1		flayext1
 $playersound	player	female	*ext2		flayext2
 
+// Cyborg
 $playersound	player	other	*death		cdie
 $playersound	player	other	*xdeath		cdiehi
 $playeralias	player	other	*pain100	cplayer/hurtsmall
@@ -137,8 +143,7 @@ player/helmetgib2		pgib2
 
 player/berserk			pbzrk
 
-// gibs
-
+// Gibs
 $random gibbage/gib			{gibbage/gib1 gibbage/gib2 gibbage/gib3 gibbage/gib4 gibbage/gib5 gibbage/gib6 gibbage/gib7 gibbage/gib8}
 gibbage/gib1				gib1
 gibbage/gib2				gib2
@@ -172,6 +177,7 @@ bodyfalls/revenant3		bdrv3
 
 bodyfalls/cacodemon		bdca1
 
+// Status Effects, for lack of a better name
 monsters/bleed			actbleed
 monsters/crushed		actcrush
 monsters/vamped			actvamp

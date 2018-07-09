@@ -1,5 +1,5 @@
-
-// items
+// Unrelated sounds
+// Item pickup noises
 items/armor/shard			armrshrd
 items/armor/green			armrgrn
 items/armor/blue			armrblue
@@ -40,7 +40,7 @@ powerups/quad/use	quadshot
 
 items/loot			getloot
 
-// props
+// Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }
 barrel/explode1				barrel1
 barrel/explode2				barrel2
@@ -58,13 +58,14 @@ barrel/gib3		brlgib3
 
 barrel/break	brlbrk
 
+// Blood effects
 $random effects/blood		{ effects/blood1 effects/blood2 effects/blood3 effects/blood4 }
 effects/blood1				blood1
 effects/blood2				blood2
 effects/blood3				blood3
 effects/blood4				blood4
 
-// menu
+// Menu noises
 titlemap/rpgbad				rpgbad
 titlemap/rpggib				rpggib
 umpulse/default				dstaunt
@@ -79,6 +80,7 @@ menu/dismiss			menuclos	// Dismiss a prompt message
 menu/choose			menuentr	// Choose a menu item
 menu/clear			menuclos	// Close top menu
 
+// The big bassy VWOOPH when you beat a map, because sure
 $random menu/endmap { menu/endmap1 menu/endmap2 menu/endmap3 menu/endmap4 menu/endmap5 menu/endmap6 }
 menu/endmap1		mapend1
 menu/endmap2		mapend2
@@ -88,6 +90,7 @@ menu/endmap5		mapend5
 menu/endmap6		mapend6
 $volume menu/endmap 0.25
 
+// Intermission sounds
 intermission/tick			endlcnt
 intermission/cooptotal		endlcopd
 intermission/nextstage		endlcntd
@@ -99,9 +102,10 @@ intermission/maxkills		endlmaxk
 intermission/maxitems		endlmaxi
 intermission/maxsecret		endlmaxs
 
+// 100% toast
 menu/100percent				100it
 
-// wildweasel
+// Ricochet noises - these defs are from Wildweasel's "Nazis!" mod
 $random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }
 $random whiz { whiz1 whiz2 whiz3 }
 $random hitflesh { hitflesh1 hitflesh2 hitflesh3 hitflesh4 hitflesh5 hitflesh6 hitflesh7 hitflesh8 hitflesh9 }
@@ -127,14 +131,14 @@ hitflesh7 trcehit7
 hitflesh8 trcehit8
 hitflesh9 trcehit9
 
-// terrain
+// Terrain splashes
 world/watersplash		dssplash
 world/sludgegloop		dsploosh
 world/lavasizzle		dslvsiz
 world/drip				dsdrip
 world/hotsiz			dshtsiz
 
-// world
+// World noises
 plats/start				plstart
 plats/mid				plmid
 plats/stop				plstop
@@ -145,7 +149,6 @@ doors/slow/openstop		DSDOROPX
 doors/slow/close		DSDORCLS
 doors/slow/closestop	DSDORCLX
 
-// ignore this if you want to find cheats by yourself!
-
+// Ignore this if you want to find cheats by yourself!
 cheats/doom3			cheatd3
 cheats/snes				cheat16b

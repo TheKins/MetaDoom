@@ -1,4 +1,6 @@
-// Implement Optional Content as a CVar instead of a side-mod
+// Support for Consolation Prize: Doom 64
+// This is mostly copy-pasted from metaoptional.zsc
+
 // Based on some really confusingly-formatted code by Matt
 // https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774
 

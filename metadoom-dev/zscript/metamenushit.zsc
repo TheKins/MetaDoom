@@ -1,3 +1,5 @@
+// Draw background graphics behind the menus. This is from JPF, so odds are
+// Gutawer walked me through this like the mental infant I am.
 class MetaFat2BG : ListMenu
 {
 	override void Drawer ()

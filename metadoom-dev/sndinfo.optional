@@ -1,5 +1,9 @@
+// Sounds for actors (Optional Content edition)
+
+// Wolfenstein PC
 monsters/wolfss/fire		wssfire
 
+// Wolfenstein SNES and I guess a bit of Jaguar too?
 $random monsters/wolfsnes/see { monsters/wolfsnes/see1 monsters/wolfsnes/see2 }
 monsters/wolfsnes/see1		snessee1
 monsters/wolfsnes/see2		snessee2
@@ -7,6 +11,7 @@ monsters/wolfsnes/fire		snesfire
 monsters/wolfsnes/die		snesdie
 monsters/wolfsnes/pain		snespain
 
+// Wolfenstein Apple II. No, not Eric Shepherd's Wolf3D port. Silas Warner's baby.
 $random monsters/wolfapple/see { monsters/wolfapple/see1 monsters/wolfapple/see2 monsters/wolfapple/see3 monsters/wolfapple/see4 }
 monsters/wolfapple/see1		applsee1
 monsters/wolfapple/see2		applsee2
@@ -20,6 +25,7 @@ monsters/wolfapple/die3		appldie3
 monsters/wolfapple/pain		applpain
 monsters/wolfapple/fire		applfire
 
+// WolfenMac.
 $random monsters/wolfmac/see { monsters/wolfmac/see1 monsters/wolfmac/see2 }
 monsters/wolfmac/see1		wmacsee1
 monsters/wolfmac/see2		wmacsee2
@@ -31,6 +37,8 @@ monsters/wolfmac/pain		wmacpain
 monsters/wolfmac/fire		wmacfire
 monsters/wolfmac/body		wmacbody
 
+// Wolfenstein RPG on mobile, Java version
+// Uses RTCW noises because WolfRPG was, uh, economical on original audio.
 $random monsters/wolfjava/see { monsters/wolfjava/see1 monsters/wolfjava/see2 }
 monsters/wolfjava/see1		wjavsee1
 monsters/wolfjava/see2		wjavsee2
@@ -49,26 +57,32 @@ monsters/wolfjava/die2		wjavdie2
 
 monsters/wolfjava/thud		wjavthud
 
+// Commander Keens here
+// Original Recipe Keen
 keens/keen/hit		keenhit
 keens/keen/die		keendie
 
+// Shadow Knights/Budo
 keens/budo/hit		keenpcs1
 keens/budo/die		keenbudo
 
+// Dangerous Dave: Shotgun Edition
 keens/dave/hit		keenpcs1
 keens/dave/die		keendave
 
+// Hovertank 3D
 keens/hovertank/hit		keenhov1
 keens/hovertank/die		keenhov2
 
+// Rescue Rover! Yes, we're going into the deep cuts.
 keens/rover/hit		keenpcs1
 keens/rover/die		keendave
 
+// Catacombs 3D.
 keens/catacomb/hit		keenpcs1
 keens/catacomb/die		keendave
 
-// props
-
+// Various random props and debris.
 $random props/techlamp/break			{ props/techlamp/break1 props/techlamp/break2}
 props/techlamp/break1					glass1
 props/techlamp/break2					glass2
