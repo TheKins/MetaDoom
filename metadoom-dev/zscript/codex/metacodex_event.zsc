@@ -65,6 +65,10 @@ Class MetaCodex_Event : EventHandler
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaAllmap",1);
 			}
+			if(players[consoleplayer].mo.FindInventory("Backpack2"))
+			{
+				players[consoleplayer].mo.GiveInventory("MetaCodex_Backpack2",1);
+			}
 		}
 	}
 }

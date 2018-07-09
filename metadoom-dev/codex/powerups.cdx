@@ -44,7 +44,12 @@ page "Pickups"
         origin "Doom (2016)";
         description "Once predicted by sci-fi movies and lowbrow 3D action games of the 20th century, the Hologram provides a unique take on crowd control. Upon activation, it generates a refracted-light hologram of a photo-realistic 3D render of the operator, typically doing something insulting. This infuriates nearby demons, who will attempt to attack it and fail miserably, often hurting each other and triggering a hailstorm of infighting in the process.\n\nThe Hologram activates on impact with the ground. You might want to run away shortly after it activates...";
     }
-
+	entry "Backpack2"
+    {
+		name "Ammo Backpack";
+        origin "Doom (1993)";
+        description "This hardened military backpack is designed to allow members of the UAC's Rapid Response Tactical Squad to comfortably carry large amounts of equipment necessary for their role through the extreme conditions often present on the Martian surface.\n\nAs an emergency-preparedness measure, the RRTS have hidden several backpacks within secure locations around UAC facilities, packed with ammunition and a bottle of distilled water. Extra room is left for more ammo, should it be necessary. (It will be.)";
+    }
 	entry "MetaAllmap"
     {
         name "PDA Area Map";

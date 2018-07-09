@@ -70,3 +70,4 @@ Class MetaCodex_MetaHasteSphere : MetaCodex_InvBase {}
 Class MetaCodex_MetaInvulnerabilitySphere : MetaCodex_InvBase {}
 Class MetaCodex_MetaQuadDamage : MetaCodex_InvBase {}
 Class MetaCodex_MetaAllmap : MetaCodex_InvBase {}
+Class MetaCodex_Backpack2 : MetaCodex_InvBase {}
