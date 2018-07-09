@@ -13,6 +13,7 @@ actor KeenSpawner // replaces CommanderKeen
 	{
 	Spawn:
 		KEEN A 0
+		KEEN A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "Keen")
 		KEEN A 0 A_Jump(256,"Keen","Budo","Dave","Hovertank","Rover","Catacomb")
 	Keen:
 		TNT1 A 0 A_SpawnItemEx("MetaKeen",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG)
