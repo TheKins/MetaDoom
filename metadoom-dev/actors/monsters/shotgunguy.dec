@@ -98,7 +98,7 @@ ACTOR MetaShotgunGuy : MonsterCore
 		goto See
 	Death:
 		SPOS H 0 A_Jump (128, 2)
-		SPOS H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		SPOS H 0 A_ChangeFlag("SPRITEFLIP", TRUE)  // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		SPOS H 5 A_GiveToTarget("ScoreItem", 150)
 		SPOS I 5 A_Scream
@@ -113,7 +113,7 @@ ACTOR MetaShotgunGuy : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		SPOS L 5 A_SetScale(1,1)
+		SPOS L 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		SPOS KJIH 5
 		Goto See
 	}
@@ -267,7 +267,7 @@ ACTOR MetaZSec : MonsterCore
 	Death:
 		ZSEC H 0 A_SetRoll(0)
 		ZSEC H 0 A_Jump (128, 2)
-		ZSEC H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		ZSEC H 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		ZSEC H 5 A_GiveToTarget("ScoreItem", 150)
 		ZSEC I 5 A_Scream
@@ -282,7 +282,7 @@ ACTOR MetaZSec : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		ZSEC L 5 A_SetScale(1,1)
+		ZSEC L 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		ZSEC KJIH 5
 		Goto See
 	}

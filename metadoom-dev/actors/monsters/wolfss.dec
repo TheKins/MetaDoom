@@ -109,7 +109,7 @@ ACTOR MetaWolfensteinSS : MonsterCore
 		Goto Scurred
 	Death:
 		SSWV I 0 A_Jump (128, 2)
-		SSWV I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		SSWV I 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		SSWV I 5 A_GiveToTarget("ScoreItem", 666)
 		SSWV J 5 A_Scream
 		SSWV K 5 A_NoBlocking
@@ -122,7 +122,7 @@ ACTOR MetaWolfensteinSS : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		SSWV M 5 A_SetScale(1,1)
+		SSWV M 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		SSWV LKJI 5
 		Goto See 
 	}
@@ -407,7 +407,7 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 		Goto Scurred
 	Death:
 		WMAC H 0 A_Jump (128, 2)
-		SSWV H 0 A_SetScale(-0.6,0.6) // random chance of sprite flipping
+		SSWV H 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		WMAC H 5 A_GiveToTarget("ScoreItem", 666)
 		WMAC I 5 A_Scream
 		WMAC J 5 A_NoBlocking
@@ -419,7 +419,7 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		WMAC K 5 A_SetScale(0.6,0.6)
+		WMAC K 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		WMAC JIH 5
 		Goto See 
 	}

@@ -95,7 +95,7 @@ ACTOR MetaMachineGunGuy : MonsterCore
 		goto See
 	Death:
 		MPOS H 0 A_Jump (128, 2)
-		MPOS H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		MPOS H 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		MPOS H 5 A_GiveToTarget("ScoreItem", 300)
 		MPOS I 5 A_Scream
@@ -110,7 +110,7 @@ ACTOR MetaMachineGunGuy : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		MPOS M 5 A_SetScale(1,1)
+		MPOS M 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		MPOS LKJIH 5
 		Goto See
 	}
@@ -214,7 +214,7 @@ ACTOR MetaChainGunGuy : MonsterCore
 		goto See
 	Death:
 		CPOS H 0 A_Jump (128, 2)
-		CPOS H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		CPOS H 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		CPOS G 0 A_StopSound(CHAN_WEAPON)
 		CPOS H 5 A_GiveToTarget("ScoreItem", 300)
@@ -232,7 +232,7 @@ ACTOR MetaChainGunGuy : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		CPOS N 5 A_SetScale(1,1)
+		CPOS N 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		CPOS MLKJIH 5
 		Goto See
 	}
@@ -341,7 +341,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 		goto See
 	Death:
 		PSCM H 0 A_Jump (128, 2)
-		PSCM H 0 A_SetScale(-1,1) // random chance of sprite flipping
+		PSCM H 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		PSCM G 0 A_StopSound(CHAN_WEAPON)
 		PSCM I 5 A_GiveToTarget("ScoreItem", 300)
@@ -361,7 +361,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		PSCM O 5 A_SetScale(1,1)
+		PSCM O 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		PSCM NMLKJI 5
 		Goto See
 	}

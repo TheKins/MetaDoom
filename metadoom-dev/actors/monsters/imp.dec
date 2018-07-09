@@ -87,7 +87,7 @@ ACTOR MetaDoomImp : MonsterCore
 		goto See
 	Death:
 		TROO I 0 A_Jump (128, 2)
-		TROO I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		TROO I 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		TROO I 8 A_GiveToTarget("ScoreItem", 150)
 		TROO J 8 A_Scream
@@ -101,7 +101,7 @@ ACTOR MetaDoomImp : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		TROO M 0 A_SetScale(1,1)
+		TROO M 0 A_ChangeFlag("SPRITEFLIP", FALSE)
 		TROO MLKJI 8
 		Goto See
 	}
@@ -244,7 +244,7 @@ ACTOR MetaNightmareImp : MonsterCore
 		goto See
 	Death:
 		2ROO L 0 A_Jump (128, 2)
-		2ROO L 0 A_SetScale(-0.75,0.65) // random chance of sprite flipping
+		2ROO L 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		2ROO L 8 A_GiveToTarget("ScoreItem", 250)
 		2ROO M 8 A_Scream
 		2ROO N 6
@@ -257,7 +257,7 @@ ACTOR MetaNightmareImp : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		2ROO P 0 A_SetScale(0.75,0.65)
+		2ROO P 0 A_ChangeFlag("SPRITEFLIP", FALSE)
 		2ROO PONML 8
 		Goto See
 	}
@@ -459,7 +459,7 @@ ACTOR MetaDoomImpLord : MonsterCore
 		goto See
 	Death:
 		ROAC I 0 A_Jump (128, 2)
-		ROAC I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		ROAC I 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		ROAC I 8 A_GiveToTarget("ScoreItem", 150)
 		ROAC J 8 A_Scream
@@ -473,7 +473,7 @@ ACTOR MetaDoomImpLord : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		ROAC M 0 A_SetScale(1,1)
+		ROAC M 0 A_ChangeFlag("SPRITEFLIP", FALSE)
 		ROAC MLKJI 8
 		Goto See
 	}

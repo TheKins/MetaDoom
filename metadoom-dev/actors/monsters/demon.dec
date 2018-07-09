@@ -86,7 +86,7 @@ ACTOR MetaDemon : MonsterCore
 		goto See
 	Death:
 		SARG I 0 A_Jump (128, 2)
-		SARG I 0 A_SetScale(-1,1) // random chance of sprite flipping
+		SARG I 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		SARG I 8 A_GiveToTarget("ScoreItem", 200)
 		SARG J 8 A_Scream
@@ -101,7 +101,7 @@ ACTOR MetaDemon : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		SARG N 5 A_SetScale(1,1)
+		SARG N 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		SARG MLKJI 5
 		Goto See
 	}
@@ -278,7 +278,7 @@ ACTOR MetaBullDemon : MonsterCore
 		goto See
 	Death:
 		BULD J 0 A_Jump (128, 2)
-		BULD J 0 A_SetScale(-1,1) // random chance of sprite flipping
+		BULD J 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner")
 		BULD J 8 A_GiveToTarget("ScoreItem", 200)
 		BULD K 8 A_Scream
@@ -293,7 +293,7 @@ ACTOR MetaBullDemon : MonsterCore
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	Raise:
-		BULD O 5 A_SetScale(1,1)
+		BULD O 5 A_ChangeFlag("SPRITEFLIP", FALSE)
 		BULD NMLKJ 5
 		Goto See
 	}
