@@ -2,18 +2,20 @@ v5 "Klave" (NEXT)
 =================
 It's been a while, hasn't it?
 
-Optional Content:
-- Optional Content is now built into the main mod and togglable via CVar, as
-  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
-- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
-  instead of the increased damage of the player's EKG Sidearm.
-
 New Features:
 - Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
   a high-quality new menu providing all the details on everything you've
   picked up or killed.
 - Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
   on the development side.
+  
+Optional Content:
+- Optional Content is now built into the main mod and togglable via CVar, as
+  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
+- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
+  instead of the increased damage of the player's EKG Sidearm.
+- WolfSS and Commander Keen now respect the "More Actors" CVar.
+- Additional polish and variety in WolfSS and Commander Keen replacmements.
 
 Cosmetic Changes:
 - Player sounds and HUD mugshot now take the player's gender, as specified in
@@ -56,7 +58,6 @@ Code Changes:
   items during a map transition.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
-- WolfSS and Commander Keen now respect the "More Actors" CVar.
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
 - A_SetScale hack used for random sprite mirroring on death replaced with the
   recently-added SPRITEFLIP flag, since it's a better way of doing it.
