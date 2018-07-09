@@ -3,6 +3,8 @@ addkeysection "$MNU_MDHEADER" MetaDoomActions
 addmenukey "$MNU_MDMELEE" metadoom_melee
 alias metadoom_melee "pukename MeleePunch"
 defaultbind F metadoom_melee
-addmenukey "$MNU_MDCODEX" "openmenu metacodex_menu"
+addmenukey "$MNU_MDCODEX" metadoom_codex
+alias metadoom_codex "openmenu metacodex_menu"
+defaultbind N metadoom_codex
 
 alias impulse "pukename impulse %1"
