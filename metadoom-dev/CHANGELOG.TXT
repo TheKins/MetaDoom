@@ -56,6 +56,7 @@ Code Changes:
   items during a map transition.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
+- Wolfenstein monsters now respect the "More Actors" CVar.
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
  
 Miscellaneous:
