@@ -313,6 +313,7 @@ OB_WOLFSS = "%o fell to the SS.";
 OB_WOLFSNES = "%o succumbed to the NOA Licensed Software Approval Process.";
 OB_WOLFAPPLE = "%o considered %p Muse.";
 OB_WOLFMAC = "%o ate a Burger.";
+OB_WOLFJAVA = "%o fell to the Mobile Division.";
 OB_WOLFRTCW = "%o took one right in the ol' Gray Matter.";
 OB_WOLFRAVEN = "%o couldn't evade a Revenant... Nevermore!";
 OB_WOLFTNO = "%o succumbed to The New Order.";

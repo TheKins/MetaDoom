@@ -31,6 +31,24 @@ monsters/wolfmac/pain		wmacpain
 monsters/wolfmac/fire		wmacfire
 monsters/wolfmac/body		wmacbody
 
+$random monsters/wolfjava/see { monsters/wolfjava/see1 monsters/wolfjava/see2 }
+monsters/wolfjava/see1		wjavsee1
+monsters/wolfjava/see2		wjavsee2
+
+$random monsters/wolfjava/act { monsters/wolfjava/act1 monsters/wolfjava/act2 }
+monsters/wolfjava/act1		wjavact1
+monsters/wolfjava/act2		wjavact2
+
+monsters/wolfjava/fire		wjavfire
+monsters/wolfjava/kick		wjavkick
+monsters/wolfjava/pain		wjavpain
+
+$random monsters/wolfjava/die { monsters/wolfjava/die1 monsters/wolfjava/die2 }
+monsters/wolfjava/die1		wjavdie1
+monsters/wolfjava/die2		wjavdie2
+
+monsters/wolfjava/thud		wjavthud
+
 keens/keen/hit		keenhit
 keens/keen/die		keendie
 

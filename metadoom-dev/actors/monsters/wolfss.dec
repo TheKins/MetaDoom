@@ -6,7 +6,7 @@ actor WolfSSSpawner// replaces WolfensteinSS
 	{
 	Spawn:
 		SSWV A 0
-		TNT1 A 0 A_Jump (256, "WolfSS", "WolfSNES", "WolfApple", "WolfMac")
+		TNT1 A 0 A_Jump (256, "WolfSS", "WolfSNES", "WolfApple", "WolfMac", "WolfJava")
 	WolfSS:
 		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinSS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
@@ -18,6 +18,9 @@ actor WolfSSSpawner// replaces WolfensteinSS
 		stop
 	WolfMac:
 		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinMacOS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	WolfJava:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinJava",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
 	}
 }
@@ -417,6 +420,118 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 	Raise:
 		WMAC K 5 A_SetScale(0.6,0.6)
 		WMAC JIH 5
+		Goto See 
+	}
+}
+
+ACTOR MetaWolfensteinJava : MonsterCore
+{
+	Health 50
+	Radius 20
+	Height 56
+	Speed 8
+	PainChance 170
+	Monster
+	+FLOORCLIP
+	SeeSound "monsters/wolfjava/see"
+	PainSound "monsters/wolfjava/pain"
+	DeathSound "monsters/wolfjava/die"
+	ActiveSound "monsters/wolfjava/act"
+	Obituary "$OB_WOLFJAVA"
+	Dropitem "Clip"
+	scale 0.75
+	States
+	{
+	Spawn:
+		WJAV A 10 A_Look
+		Loop
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood")
+		WJAV AABBCCDD 3 A_Chase
+		Loop
+	Scurred:
+		WJAV A 0 A_ChangeFlag("FRIGHTENED", TRUE)
+	ScurredLoop:
+		WJAV A 0 A_GiveInventory("ScurredCounter", 1)
+		WJAV A 2 A_Chase("", "")
+		WJAV A 2 A_Chase("", "")
+		WJAV A 0 A_SpawnItem("HolySweat",0,54)
+		WJAV B 2 A_Chase("", "")
+		WJAV B 2 A_Chase("", "")
+		WJAV C 2 A_Chase("", "")
+		WJAV C 2 A_Chase("", "")
+		WJAV C 0 A_SpawnItem("HolySweat",0,54)
+		WJAV D 2 A_Chase("", "")
+		WJAV D 2 A_Chase("", "")
+		WJAV D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd")
+		loop
+	ScurredEnd:
+		WJAV D 0
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See
+	Missile:
+		WJAV E 4 A_FaceTarget
+		WJAV F 4 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+		}
+		WJAV E 4 A_FaceTarget
+		WJAV F 4 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+		}
+		WJAV F 4 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+		}
+		WJAV E 1 A_CPosRefire
+		Goto Missile+1
+	Melee:
+		WJAV A 4
+		WJAV G 8 A_CustomMeleeAttack(15, "monsters/wolfjava/kick", "monsters/wolfjava/kick", "Fist")
+		WJAV A 4
+		goto See
+	Pain:
+		WJAV H 3
+		WJAV H 3 A_Pain
+		Goto See
+	Punched:
+		WJAV H 3 
+		WJAV H 3
+		{
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		WJAV H 12 A_Pain
+		Goto See
+	Pain.HolyWater:
+		WJAV H 3
+		WJAV H 3 A_Pain
+		Goto Scurred
+	Death:
+		WJAV I 0 A_Jump (128, 2)
+		WJAV I 0 A_ChangeFlag("SPRITEFLIP", TRUE) // random chance of sprite flipping
+		WJAV I 0 A_GiveToTarget("ScoreItem", 666)
+		WJAV J 0 A_Scream
+		WJAV J 0 A_NoBlocking
+		WJAV IJKIJKIJKIJKIJKIJK 1
+		WJAV J 10
+		WJAV L -1 A_PlaySound("monsters/wolfjava/thud")
+		Stop
+	XDeath:
+		WJAV J 5 
+		"####" # 0 A_Fall
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Raise:
+		WJAV J 1 A_ChangeFlag("SPRITEFLIP", FALSE)
+		WJAV IJKIJKIJK 1
 		Goto See 
 	}
 }
