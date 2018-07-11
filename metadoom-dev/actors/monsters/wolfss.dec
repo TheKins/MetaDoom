@@ -253,7 +253,7 @@ ACTOR MetaWolfensteinApple : MonsterCore
 	PainSound "monsters/wolfapple/pain"
 	DeathSound "monsters/wolfapple/die"
 	ActiveSound "monsters/wolfapple/see"
-	Obituary "$OB_WOLFSNES"
+	Obituary "$OB_WOLFAPPLE"
 	DropItem "Clip"
 	scale 2.0
 	States
