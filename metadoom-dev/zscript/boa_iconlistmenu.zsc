@@ -391,10 +391,33 @@ class StaticIconListMenu : ExtendedListMenu
 		Super.Init(parent, desc);
 	}
 
+	int bgpicked;
+	int bgnum;
+	TextureID bg;
 
 	override void Drawer()
 	{
-		TextureID bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
+		if (bgpicked == 0)
+		{
+			bgnum = random(1,4);
+			
+			if (bgnum == 1)
+			{
+				bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+			} else if (bgnum == 2)
+			{
+				bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
+			} else if (bgnum == 3)
+			{
+				bg = TexMan.CheckForTexture("M_BGFAT3", TexMan.Type_MiscPatch);
+			} else if (bgnum == 4)
+			{
+				bg = TexMan.CheckForTexture("M_BGFAT4", TexMan.Type_MiscPatch);
+			} 
+			
+			bgpicked = 1;
+		}
+		
 		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
 		
 		// Draw the icon for the currently selected item

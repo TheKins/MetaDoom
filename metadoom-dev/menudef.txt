@@ -31,7 +31,7 @@ ListMenu "EpisodeMenu"
 	StaticText 54, 18, "$MNU_EPISODE"
 	// items will be filled in by MAPINFO
 	
-	Class "MetaFat2BG"
+	Class "MetaListMenu"
 }
 
 ListMenu "SkillMenu"
