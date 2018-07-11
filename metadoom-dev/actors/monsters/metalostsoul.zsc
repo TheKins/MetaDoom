@@ -304,7 +304,7 @@ class MetaPhantom : MonsterCore
 		DeathSound "monsters/phantom/die1";
 		ActiveSound "monsters/phantom/idle";
 		Obituary "$OB_SKULL2";
-		bloodtype "LostSoulGib1";
+		bloodtype "MetaGibBarrel";
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
 	}
@@ -345,15 +345,15 @@ class MetaPhantom : MonsterCore
 	Death:
 		PHAN F 0;
 		PHAN F 0 A_GiveToTarget("ScoreItem", 50);
-		PHAN G 0 A_Scream;
+		PHAN G 0 { A_Scream(); A_PlaySound("monsters/phantom/die2", CHAN_7); }
 		PHAN GHIJ 3;
 		PHAN J 0 A_SpawnItem("MetaPhantomExplosion", -8, 8);
 		PHAN KL 3;
 		PHAN F 0
 		{
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
 			A_PlaySound("monsters/phantom/die2");
 		}
 		Stop;
@@ -416,17 +416,17 @@ class MetaPhantomExtinguished : Actor
 		TNT1 A 0;
 		TNT1 A 0
 		{
-			A_SpawnProjectile ("LostSoulGib2", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("LostSoulGib1", random(8,32), 0, random (0, 360), 2, random (0, 160));
-			A_PlaySound("monsters/phantom/die2");
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaGibBarrel", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_PlaySound("monsters/phantom/break");
 		}
 		stop;
 	}
