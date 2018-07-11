@@ -2,74 +2,75 @@ v5 "Klave" (NEXT)
 =================
 It's been a while, hasn't it?
 
-New Features:
+Optional Content:
+- Optional Content is now built into the main mod and togglable via CVar, as
+  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
+- WolfSS and Commander Keen now respect the "More Actors" CVar.
+
+UI Changes:
 - Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
   a high-quality new menu providing all the details on everything you've
   picked up or killed.
 - Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
   on the development side.
-  
-Optional Content:
-- Optional Content is now built into the main mod and togglable via CVar, as
-  opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
-- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
-  instead of the increased damage of the player's EKG Sidearm.
-- WolfSS and Commander Keen now respect the "More Actors" CVar.
-- Additional polish and variety in WolfSS and Commander Keen replacmements.
-
-Cosmetic Changes:
 - Player sounds and HUD mugshot now take the player's gender, as specified in
   the "Player Options" menu, into account! (Thanks DrPySpy!)
 - Powerup timers on the HUD are now properly centered, adjusting as powerups are
   gained and run out. (Thanks DrPySpy and TheZombieKiller!)
 - Difficulty select screen now has skill descriptions and mugshot. (Thanks BoA Team!)
-- Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
-- The Former Lieutenant now wears blue armor, to make him look less like his
-  chaingun wielding siblings (DrPySpy did a lot on this update just FYI)
-- The Shield Wall's sprites have been redrawn to be less screenshot-rippy.
-- The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
-- Fiend's sprite offsets are considerably less whacky.
-- Additional gibbing sound variety added.
 - The 100% kills/items/secrets messages will now try not to overlap each other
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
   their turn and trigger one after the other.
-- Imported Doom 2 Minor Sprite Fixing Project assets for the following monsters:
-  Arachnotron, Arch-Vile, Mancubus, Pain Elemental and Revenant
-- Added one new keycard skin.
-- Light-Amp Visors now have new sprites.
-- Phantoms now have unique sounds.
+- Updated ENDOOM to credit DrPySpy and mention Saber Interactive
 
-Code Changes:
+Bug Fixes:
+- Fixed inventory cooldown potentially getting stuck forever when using inventory
+  items during a map transition.
+- Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
+- Fixed all the harmless-but-agitating warnings in the console during startup.
+- Various under-the-hood cleanups and tweaks that no sane human will notice.
+
+Weapon Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
   player, rather than just Player 1. (Thanks DrPySpy!)
-- The Tesla Rocket will no longer fry the player who fired it if they're in the
-  way. It also rewards kills and points properly, ala the BFG fix above.
 - The Lightning Gun's standard attack now has a very slight chance of causing
   enemies to flinch, as opposed to the previous zero chance.
-- Spiborgs are now harder to make flinch when charging their shot, making them
-  harder to cheese-out.
-- The Shield Wall no longer blocks its user's own shots, elevating it to the
-  dizzying new status of "actually useful"!
-- Fixes and improvements to the logic behind Summoners spawning Unwilling.
-  (Thanks Major Cooke!)
-- Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
-  Spiderdemons, making it harder to "cheese out" those bosses.
 - If a script takes away the player's Pistol, they'll be given a Fist weapon so
   they can keep fighting until they get a Pistol again, instead of being
   completely defenseless.
-- Fixed inventory cooldown potentially getting stuck forever when using inventory
-  items during a map transition.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
-- Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
+- The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
+
+Item Changes:
+- The Tesla Rocket will no longer fry the player who fired it if they're in the
+  way. It also rewards kills and points properly, ala the BFG fix above.
+- The Shield Wall's sprites have been redrawn to be less screenshot-rippy.
+- The Shield Wall no longer blocks its user's own shots, elevating it to the
+  dizzying new status of "actually useful"!
+- Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
+  Spiderdemons, making it harder to "cheese out" those bosses.
+- Added one new keycard skin.
+- Light-Amp Visors now have new sprites.
+
+Monster Changes:
+- Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
+- The Former Lieutenant now wears blue armor, to make him look less like his
+  chaingun wielding siblings (DrPySpy did a lot on this update just FYI)
+- Spiborgs are now harder to make flinch when charging their shot, making them
+  harder to cheese-out.
+- Fixes and improvements to the logic behind Summoners spawning Unwilling.
+  (Thanks Major Cooke!)
+- Fiend's sprite offsets are considerably less whacky.
+- Additional gibbing sound variety added.
 - A_SetScale hack used for random sprite mirroring on death replaced with the
   recently-added SPRITEFLIP flag, since it's a better way of doing it.
- 
-Miscellaneous:
-- Cleaned up and updated de-allcapsing of menu titles to latest GZDoom standards
-  (ie. there's no FMod references anymore!)
-- Reduced harmless-but-agitating warnings in the console during startup.
-- Updated ENDOOM to credit DrPySpy and mention Saber Interactive
+- Imported Doom 2 Minor Sprite Fixing Project assets for the following monsters:
+  Arachnotron, Arch-Vile, Mancubus, Pain Elemental and Revenant
+- Phantoms now have unique sounds.
+- Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
+  instead of the increased damage of the player's EKG Sidearm.
+- Additional polish and variety in WolfSS and Commander Keen replacmements.
 
 v4.1 "Fred" (06/06/17)
 ====================
