@@ -1,8 +1,9 @@
+// General Purpose Game Definition
 gameinfo
 {
 	titlemusic = "M_LWAI"
 	intermissionmusic = "M_INTER"
-	quitsound = "titlemap/rpggib" //"menu/quit2"
+	quitsound = "titlemap/rpggib"
 	playerclasses = "MetaDoomPlayer"
 	CursorPic = "CURSOR"
 	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
@@ -22,6 +23,7 @@ gameinfo
 	weaponslot = 8, "MetaChainsaw", "MetaAxe"
 }
 
+// Skill Setting Definitions
 clearskills
 
 skill baby
@@ -79,6 +81,7 @@ skill ironman
 	Key = "x"
 }
 
+// Map Definitions
 map TITLEMAP "Welcome to MetaDoom"
 {
     ResetHealth

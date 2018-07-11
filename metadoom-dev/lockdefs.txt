@@ -1,6 +1,10 @@
-//
-// Doom Locks - they include Heretic's keys because somebody mentioned that he already used them
-//
+/*
+----------------------------
+MetaDoom
+Lock Definitions
+----------------------------
+*/
+
 ClearLocks
 
 Lock 1 Doom
@@ -177,8 +181,8 @@ Lock 101 Doom
 	lockedsound "locks/null"
 }
 
-// N64 Locks
-
+// Lock definitions specific to Consolation Prize: Doom 64
+// These are primarily used for the Demon Key doors in MAP28.
 Lock 201 Doom
 {
 	//$Title "Orange Demon Key"
