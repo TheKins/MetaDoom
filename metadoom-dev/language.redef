@@ -1,0 +1,266 @@
+// ----------------------------
+// MetaDoom
+// Language Definitions
+// ----------------------------
+
+[enu default]
+
+// Menu Headers
+OPTMNU_TITLE		= "Options";
+CNTRLMNU_TITLE		= "Customize Controls";
+MOUSEMNU_TITLE		= "Mouse Options";
+JOYMNU_TITLE		= "Configure Controller";
+JOYMNU_OPTIONS		= "Controller Options";
+MNU_PLAYERSETUP		= "Player Setup";
+DSPLYMNU_TITLE		= "Display Options";
+AUTOMAPMNU_TITLE	= "Automap Options";
+MAPCNTRLMNU_TITLE 	= "Customize Map Controls";
+MAPCOLORMNU_TITLE 	= "Customize Map Colors";
+MSGMNU_TITLE		= "Messages";
+SCRBRDMNU_TITLE		= "Scoreboard Options";
+GMPLYMNU_TITLE		= "Gameplay Options";
+CMPTMNU_TITLE		= "Grognard Options";
+SNDMNU_TITLE		= "Sound Options";
+OPENALMNU_TITLE		= "OpenAL Options";
+ADVSNDMNU_TITLE		= "Advanced Sound Options";
+MODMNU_TITLE		= "Module Replayer Options";
+RNDMNU_TITLE		= "Change Renderer";
+VIDMNU_TITLE		= "Video Mode";
+NETMNU_TITLE		= "Network Options";
+MNU_COLORPICKER		= "Select Color";
+GLMNU_TITLE			= "OpenGL Options";
+GLTEXMNU_TITLE		= "Texture Options";
+GLLIGHTMNU_TITLE	= "Dynamic Lights";
+GLPREFMNU_TITLE 	= "OpenGL Preferences";
+TCMNU_TITLE			= "Truecolor Options";
+
+// Scoreboard text
+SCORE_ITEMS = "Items";
+SCORE_BONUS = "Bonus";
+SCORE_COLOR = "Color";
+SCORE_SECRET = "Secret";
+SCORE_NAME = "Name";
+SCORE_DELAY = "Ping";
+SCORE_KILLS = "Kills";
+SCORE_FRAGS = "Frags";
+SCORE_DEATHS = "Deaths";
+SCORE_MISSED = "Missed";
+SCORE_TOTAL = "Total";
+SCORE_LVLTIME = "Map Time";
+
+// End Messages that were previous allcaps/nocaps and fucked up
+E4TEXT =
+	"The Spider Mastermind must have sent forth\n"
+	"its legions of hellspawn before your\n"
+	"final confrontation with that terrible\n"
+	"beast from Hell.  But you stepped forward\n"
+	"and brought forth eternal damnation and\n"
+	"suffering upon the horde as a true hero\n"
+	"would in the face of something so evil.\n"
+	"\n"
+	"Besides, someone was gonna pay for what\n"
+	"happened to Daisy, your pet rabbit.\n"
+	"\n"
+	"But now, you see spread before you more\n"
+	"potential pain and gibbitude as a nation\n"
+	"of demons run amok among our cities.\n"
+	"\n"
+	"Next stop, Hell on Earth!";
+C1TEXT =
+	"You have entered deeply into the infested\n"
+	"starport. But something is wrong. The\n"
+	"monsters have brought their own reality\n"
+	"with them, and the starport's technology\n"
+	"is being subverted by their presence.\n"
+	"\n"
+	"Ahead, you see an outpost of Hell, a\n"
+	"fortified zone. If you can get past it,\n"
+	"you can penetrate into the haunted heart\n"
+	"of the starbase and find the controlling\n"
+	"switch which holds Earth's population\n"
+	"hostage.";
+C2TEXT =
+	"You have won! Your victory has enabled\n"
+	"humankind to evacuate Earth and escape\n"
+	"the nightmare.  Now you are the only\n"
+	"human left on the face of the planet.\n"
+	"Cannibal mutations, carnivorous aliens,\n"
+	"and evil spirits are your only neighbors.\n"
+	"You sit back and wait for death, content\n"
+	"that you have saved your species.\n"
+	"\n"
+	"But then, Earth Control beams down a\n"
+	"message from space: \"Sensors have located\n"
+	"the source of the alien invasion. If you\n"
+	"go there, you may be able to block their\n"
+	"entry.  The alien base is in the heart of\n"
+	"your own home city, not far from the\n"
+	"starport.\" Slowly and painfully you get\n"
+	"up and return to the fray.";
+C3TEXT =
+	"You are at the corrupt heart of the city,\n"
+	"surrounded by the corpses of your enemies.\n"
+	"You see no way to destroy the creatures'\n"
+	"entryway on this side, so you clench your\n"
+	"teeth and plunge through it.\n"
+	"\n"
+	"There must be a way to close it on the\n"
+	"other side. What do you care if you've\n"
+	"got to go through Hell to get to it?";
+C4TEXT =
+	"The horrendous visage of the biggest\n"
+	"demon you've ever seen crumbles before\n"
+	"you, after you pump your rockets into\n"
+	"his exposed brain. The monster shrivels\n"
+	"up and dies, its thrashing limbs\n"
+	"devastating untold miles of Hell's\n"
+	"surface.\n"
+	"\n"
+	"You've done it. The invasion is over.\n"
+	"Earth is saved. Hell is a wreck. You\n"
+	"wonder where bad folks will go when they\n"
+	"die, now. Wiping the sweat from your\n"
+	"forehead you begin the long trek back\n"
+	"home. Rebuilding Earth ought to be a\n"
+	"lot more fun than ruining it was.\n";
+C5TEXT =
+	"Congratulations, you've found the secret\n"
+	"level! Looks like it's been built by\n"
+	"humans, rather than demons. You wonder\n"
+	"who the inmates of this corner of Hell\n"
+	"will be.";
+C6TEXT =
+	"Congratulations, you've found the\n"
+	"super secret level!  You'd better\n"
+	"BLAZE through this one!\n";
+NERVETEXT =
+	"Trouble was brewing again in your favorite\n"
+	"vacation spot... Hell. Some Cyberdemon\n"
+	"punk thought he could turn Hell into a\n"
+	"personal amusement park, and make Earth\n"
+	"the ticket booth.\n"
+	"\n"
+	"Well that half-robot freak show didn't\n"
+	"know who was coming to the fair. There's\n"
+	"nothing like a shooting gallery full of\n"
+	"hellspawn to get the blood pumping...\n"
+	"\n"
+	"Now the walls of the demon's labyrinth\n"
+	"echo with the sound of his metallic limbs\n"
+	"hitting the floor. His death moan gurgles\n"
+	"out through the mess you left of his face.\n"
+	"\n"
+	"This ride is CLOSED.\n";
+	
+// Map Names with Capitalization
+HUSTR_1 = "Entryway";
+HUSTR_2 = "Underhalls";
+HUSTR_3 = "The Gantlet";
+HUSTR_4 = "The Focus";
+HUSTR_5 = "The Waste Tunnels";
+HUSTR_6 = "The Crusher";
+HUSTR_7 = "Dead Simple";
+HUSTR_8 = "Tricks and Traps";
+HUSTR_9 = "The Pit";
+HUSTR_10 = "Refueling Base";
+HUSTR_11 = "'O' of Destruction!";
+HUSTR_12 = "The Factory";
+HUSTR_13 = "Downtown";
+HUSTR_14 = "The Inmost Dens";
+HUSTR_15 = "Industrial Zone";
+HUSTR_16 = "Suburbs";
+HUSTR_17 = "Tenements";
+HUSTR_18 = "The Courtyard";
+HUSTR_19 = "The Citadel";
+HUSTR_20 = "Gotcha!";
+HUSTR_21 = "Nirvana";
+HUSTR_22 = "The Catacombs";
+HUSTR_23 = "Barrels o' Fun";
+HUSTR_24 = "The Chasm";
+HUSTR_25 = "Bloodfalls";
+HUSTR_26 = "The Abandoned Mines";
+HUSTR_27 = "Monster Condo";
+HUSTR_28 = "The Spirit World";
+HUSTR_29 = "The Living End";
+HUSTR_30 = "Icon of Sin";
+HUSTR_31 = "Wolfenstein";
+HUSTR_32 = "Grosse";
+HUSTR_31B = "FIX YOUR IWAD IT SUCKS";
+HUSTR_32B = "FIX YOUR IWAD IT SUCKS";
+HUSTR_33 = "Betray";
+
+NHUSTR_1 = "The Earth Base";
+NHUSTR_2 = "The Pain Labs";
+NHUSTR_3 = "Canyon of the Dead";
+NHUSTR_4 = "Hell Mountain";
+NHUSTR_5 = "Vivisection";
+NHUSTR_6 = "Inferno of Blood";
+NHUSTR_7 = "Baron's Banquet";
+NHUSTR_8 = "Tomb of Malevolence";
+NHUSTR_9 = "March of the Demons";
+
+PHUSTR_1 = "Congo";
+PHUSTR_2 = "Well of Souls";
+PHUSTR_3 = "Aztec";
+PHUSTR_4 = "Caged";
+PHUSTR_5 = "Ghost Town";
+PHUSTR_6 = "Baron's Lair";
+PHUSTR_7 = "Caughtyard";
+PHUSTR_8 = "Realm";
+PHUSTR_9 = "Abattoire";
+PHUSTR_10 = "Onslaught";
+PHUSTR_11 = "Hunted";
+PHUSTR_12 = "Speed";
+PHUSTR_13 = "The Crypt";
+PHUSTR_14 = "Genesis";
+PHUSTR_15 = "The Twilight";
+PHUSTR_16 = "The Omen";
+PHUSTR_17 = "Compound";
+PHUSTR_18 = "Neurosphere";
+PHUSTR_19 = "NME";
+PHUSTR_20 = "The Death Domain";
+PHUSTR_21 = "Slayer";
+PHUSTR_22 = "Impossible Mission";
+PHUSTR_23 = "Tombstone";
+PHUSTR_24 = "The Final Frontier";
+PHUSTR_25 = "The Temple of Darkness";
+PHUSTR_26 = "Bunker";
+PHUSTR_27 = "Anti-Christ";
+PHUSTR_28 = "The Sewers";
+PHUSTR_29 = "Odyssey of Noises";
+PHUSTR_30 = "The Gateway of Hell";
+PHUSTR_31 = "Cyberden";
+PHUSTR_32 = "Go 2 It";
+
+THUSTR_1 = "System Control";
+THUSTR_2 = "Human BBQ";
+THUSTR_3 = "Power Control";
+THUSTR_4 = "Wormhole";
+THUSTR_5 = "Hanger";
+THUSTR_6 = "Open Season";
+THUSTR_7 = "Prison";
+THUSTR_8 = "Metal";
+THUSTR_9 = "Stronghold";
+THUSTR_10 = "Redemption";
+THUSTR_11 = "Storage Facility";
+THUSTR_12 = "Crater";
+THUSTR_13 = "Nukage Processing";
+THUSTR_14 = "Steel Works";
+THUSTR_15 = "Dead Zone";
+THUSTR_16 = "Deepest Reaches";
+THUSTR_17 = "Processing Area";
+THUSTR_18 = "Mill";
+THUSTR_19 = "Shipping/Respawning";
+THUSTR_20 = "Central Processing";
+THUSTR_21 = "Administration Center";
+THUSTR_22 = "Habitat";
+THUSTR_23 = "Lunar Mining Project";
+THUSTR_24 = "Quarry";
+THUSTR_25 = "Baron's Den";
+THUSTR_26 = "Ballistyx";
+THUSTR_27 = "Mount Pain";
+THUSTR_28 = "Heck";
+THUSTR_29 = "River Styx";
+THUSTR_30 = "Last Call";
+THUSTR_31 = "Pharaoh";
+THUSTR_32 = "Caribbean";
