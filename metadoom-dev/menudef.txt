@@ -5,6 +5,8 @@ DEFAULTLISTMENU
 	Selector "M_SKULL1", -32, -5
 	Linespacing 16
 	Font "BigFont", "Red"
+	
+	Class "MetaListMenu"
 }
 
 LISTMENU "MainMenu"
@@ -21,8 +23,9 @@ LISTMENU "MainMenu"
 	TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
 	TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
 	TextItem "$MNU_INFO", "i", "ReadThisMenu"
-	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"	
 }
+
 // MAPINFO-populated menus.
 
 ListMenu "EpisodeMenu"
@@ -30,8 +33,6 @@ ListMenu "EpisodeMenu"
 	Position 24, 43
 	StaticText 54, 18, "$MNU_EPISODE"
 	// items will be filled in by MAPINFO
-	
-	Class "MetaListMenu"
 }
 
 ListMenu "SkillMenu"
@@ -50,14 +51,12 @@ ListMenu "LoadGameMenu"
 	NetgameMessage "$LOADNET"
 	StaticTextCentered 160, -20, "$MNU_LOADGAME"
 	Position 80,54
-	Class "LoadMenu"	// uses its own implementation
 }
 
 ListMenu "SaveGameMenu"
 {
 	StaticTextCentered 160, -20, "$MNU_SAVEGAME"
 	Position 80,54
-	Class "SaveMenu"	// uses its own implementation
 }
 
 // Options Menus
@@ -101,7 +100,6 @@ AddOptionMenu "OptionsMenu"
 {
 	StaticText " "
 	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
-	
 }
 
 OptionMenu "MetaMenu"
