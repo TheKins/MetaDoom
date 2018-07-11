@@ -82,13 +82,14 @@ actor ShieldWallProj
 	
 	Death:
 		TNT1 A 0 A_SetAngle(angle + 90)
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",0)
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",16)
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",-16)
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	}
 }
 
+/*
 ACTOR ShieldWallPiece
 {
 	Radius 16
@@ -118,3 +119,4 @@ ACTOR ShieldWallPiece
 		stop
 	}
 }
+*/

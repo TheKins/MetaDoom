@@ -14,6 +14,7 @@ version 2.5
 
 // Inventory
 #include "actors/inventory/teslarocket.zsc"
+#include "actors/inventory/shieldwall.zsc"
 
 // Monsters
 #include "actors/monsters/metadoomactor.zsc"

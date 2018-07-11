@@ -28,7 +28,7 @@ page "Pickups"
 		itemToCheck "ShieldWall";
         name "Shield Wall";
         origin "Doom (2016)";
-        description "The next evolution in barrier technology, the Shield Wall is a portable plasma projector that temporarily generates a solid light barrier that blocks anything and everything for a brief period of time. This is useful for providing a respite from enemy attacks, but be warned - it blocks your own weapons - including explosives, just as well as anyone else's.\n\nThe Hologram activates on impact with the ground. The shield lasts a little over seven seconds before its batteries expire.";
+        description "The next evolution in barrier technology, the Shield Wall is a portable plasma projector that temporarily generates a solid light barrier that blocks nearly anything (other than the operator's own attacks!) for a brief period of time. This is useful for providing a respite from enemy attacks, but be warned - it's not strong enough to block beams of energy like the Hell Razer's.\n\nThe Hologram activates on impact with the ground. The shield lasts a little over seven seconds before its batteries expire.";
     }
 	entry "DogCollar"
     {
