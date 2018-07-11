@@ -255,3 +255,42 @@ map DEAD20 "The Demons Gave You The Boot!"
 	music = "M_IRONMN"
 }
 
+map DEAD21 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD22 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD23 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD24 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
+
+map DEAD25 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	music = "M_IRONMN"
+}
