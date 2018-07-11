@@ -6,7 +6,7 @@ Trite
 ----------------------------
 */
 
-// Using the Trite actor from Strife as a base. Pardon my dust.
+// Using the Stalker actor from Strife as a base. Pardon my dust.
 
 class MetaTrite : MonsterCore
 {
@@ -112,6 +112,7 @@ class MetaTrite : MonsterCore
 		Stop;
 	}
 	
+	// Change actor's visual orientation based on whether they're on the floor or ceiling.
 	override void Tick()
 	{
 		if (!bNoGravity)
@@ -126,7 +127,9 @@ class MetaTrite : MonsterCore
 		}
 		Super.Tick();
 	}
-		
+	
+	// Governs Trite walking behavior. If they're on the celing and hit a change in ceiling
+	// height, drop back down to Earth. Or Mars. Or whatever.
 	void A_TriteChaseDecide ()
 	{
 		A_PlaySound ("monsters/trite/walk", CHAN_BODY);
@@ -141,6 +144,7 @@ class MetaTrite : MonsterCore
 		}
 	}
 
+	// Oh, what a feeling. Am I on the floor or ceiling?
 	void A_TriteLookInit ()
 	{
 		State st;
@@ -158,12 +162,14 @@ class MetaTrite : MonsterCore
 		}
 	}
 
+	// Going down!
 	void A_TriteDrop ()
 	{
 		bNoVerticalMeleeRange = false;
 		bNoGravity = false;
 	}
 
+	// Drop from the celing if on it, or nibble a dude if you're on the floor.
 	void A_TriteAttack ()
 	{
 		if (bNoGravity)
@@ -183,7 +189,8 @@ class MetaTrite : MonsterCore
 		}
 	}
 
-	// will do a thing with this later
+	// Play creepy little sounds as you walk. This could possibly be more ambitious,
+	// but that's for a future Kinsie.
 	void A_TriteWalk ()
 	{
 		A_PlaySound ("monsters/trite/walk", CHAN_BODY);

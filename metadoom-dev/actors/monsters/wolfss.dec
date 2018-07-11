@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Optional Content
+----------------------------
+*/
+
 actor WolfSSSpawner// replaces WolfensteinSS
 {
 	+ISMONSTER
@@ -26,6 +34,9 @@ actor WolfSSSpawner// replaces WolfensteinSS
 	}
 }
 
+// Wolfenstein 3D - MS-DOS version.
+// Basically the same as the Doom 2 monster, but with more aiming angles and
+// no hitscan. Maybe twiddle with him a bit in the future?
 ACTOR MetaWolfensteinSS : MonsterCore
 {
 	Health 50
@@ -128,6 +139,9 @@ ACTOR MetaWolfensteinSS : MonsterCore
 	}
 }
 
+// Wolfenstein 3D - SNES Version.
+// The sprites weren't ACTUALLY this low-res, but with the low render resolution
+// it's not like you could tell.
 ACTOR MetaWolfensteinSNES : MonsterCore
 {
 	Health 50
@@ -223,6 +237,8 @@ ACTOR MetaWolfensteinSNES : MonsterCore
 	}
 }
 
+// Escape from Castle Wolfenstein - Apple II version.
+// Getting these to look and sound semi-tolerable was a challenge!
 ACTOR MetaWolfensteinApple : MonsterCore
 {
 	Health 50
@@ -323,6 +339,8 @@ ACTOR MetaWolfensteinApple : MonsterCore
 	}
 }
 
+// Wolfenstein 3D - Mac OS Classic version.
+// All high-res and single-angle and ooh la la.
 ACTOR MetaWolfensteinMacOS : MonsterCore
 {
 	Health 50
@@ -425,6 +443,9 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 	}
 }
 
+// Wolfenstein RPG - Java Version
+// There were back animation frames, but adding those would have required a lot
+// of frame duplication, which seems like a good way to drive me mad later.
 ACTOR MetaWolfensteinJava : MonsterCore
 {
 	Health 50

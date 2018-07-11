@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Optional Content
+----------------------------
+*/
+
 actor KeenSpawner // replaces CommanderKeen
 {
 	Health 0x7fffffff
@@ -44,6 +52,8 @@ actor KeenSpawner // replaces CommanderKeen
 	}
 }
 
+// Commander Keen - Commander Keen Episode IV: Goodbye Galaxy!
+// Basically the same as in vanilla, but with Adlib Keen 4 sounds instead of Keen1 ones.
 ACTOR MetaKeen
 {
 	Health 100
@@ -84,6 +94,9 @@ ACTOR MetaKeen
 	}
 }
 
+// Player - Shadow Knights: The Shogun of Death
+// (or "Budo: The Art of Ninja Combat!" in the budget re-release.)
+// Id Software's first official game, a rough and unrefined Ninja-themed platformer.
 ACTOR MetaBudo : MetaKeen
 {
 	PainSound "keens/budo/hit"
@@ -100,6 +113,9 @@ ACTOR MetaBudo : MetaKeen
 	}
 }
 
+// Dave - Dangerous Dave in the Haunted Mansion
+// Another Softdisk platformer, with the best shotgun ever witnessed in a
+// 2D platformer (non-Metal Slug division).
 ACTOR MetaDave : MetaKeen
 {
 	PainSound "keens/dave/hit"
@@ -116,6 +132,9 @@ ACTOR MetaDave : MetaKeen
 	}
 }
 
+// Hostage - Hovertank 3-D
+// Id's first FPS! Now we're getting somewhere. This used a primitive ancestor
+// to the Wolf3D engine using flatshaded walls.
 ACTOR MetaHovertank : MetaKeen
 {
 	PainSound "keens/hovertank/hit"
@@ -132,6 +151,8 @@ ACTOR MetaHovertank : MetaKeen
 	}
 }
 
+// Rover - Rescue Rover!
+// A curious dog-rescuing puzzle game I've never really been able to get into.
 ACTOR MetaRover : MetaKeen
 {
 	PainSound "keens/rover/hit"
@@ -148,6 +169,9 @@ ACTOR MetaRover : MetaKeen
 	}
 }
 
+// Nemesis - Catacomb 3D
+// Another Wolf ancestor, this series has some interesting features like
+// destroyable walls and lore scrolls and really disappointing endings.
 ACTOR MetaCatacomb : MetaKeen
 {
 	PainSound "keens/catacomb/hit"

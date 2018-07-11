@@ -1,5 +1,8 @@
 
-// Scriptable marine -------------------------------------------------------
+// Scripted Marines, often seen in old ZDoom mapsets standing in for any given NPC.
+// These are set up to use a VWEP system to give them a little more variety.
+// To be honest, I'd love to give them helmets from Doom 2016 multiplayer,
+// but that's a lot of sprite to alter by this point...
 
 ACTOR MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 {
@@ -60,7 +63,7 @@ ACTOR MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 	}
 }
 
-//---------------------------------------------------------------------------
+// Fist Marine. Largely irrelevant and doomed.
 
 ACTOR MetaMarineFist : MetaScriptedMarine // replaces MarineFist
 {
@@ -82,7 +85,7 @@ ACTOR MetaMarineFist : MetaScriptedMarine // replaces MarineFist
 }
 
 
-//---------------------------------------------------------------------------
+// Berserk Marine, using the SCREAM LOOP from Doom 3 that I'd love to use elsewhere.
 
 ACTOR MetaMarineBerserk : MetaMarineFist // replaces MarineBerserk
 {
@@ -102,7 +105,7 @@ ACTOR MetaMarineBerserk : MetaMarineFist // replaces MarineBerserk
 		Goto See
 	}
 }
-//---------------------------------------------------------------------------
+// Chainsaw Marine. Psycho killer, qu'est-ce que c'est?
 
 ACTOR MetaMarineChainsaw : MetaScriptedMarine // replaces MarineChainsaw
 {
@@ -128,7 +131,8 @@ ACTOR MetaMarineChainsaw : MetaScriptedMarine // replaces MarineChainsaw
 
 
 
-//---------------------------------------------------------------------------
+// Pistol Marine. In the interests of fairness, its EMG sidearm is nerfed to the
+// damage values of the original Doom pistol.
 
 ACTOR MetaMarinePistol : MetaScriptedMarine // replaces MarinePistol
 {
@@ -157,7 +161,7 @@ ACTOR MetaMarinePistolTracer : PistolTracer
 	damage (random(5,15))
 }
 
-//---------------------------------------------------------------------------
+// Shotgun Marine. Basically a Shotgun Guy with more health and less flavor.
 
 ACTOR MetaMarineShotgun : MetaScriptedMarine // replaces MarineShotgun
 {
@@ -188,7 +192,7 @@ ACTOR MetaMarineShotgun : MetaScriptedMarine // replaces MarineShotgun
 
 
 
-//---------------------------------------------------------------------------
+// SSG Marine. Who likes insta-kills?
 
 ACTOR MetaMarineSSG : MetaScriptedMarine // replaces MarineSSG
 {
@@ -224,7 +228,7 @@ ACTOR MetaMarineSSG : MetaScriptedMarine // replaces MarineSSG
 	}
 }
 
-//---------------------------------------------------------------------------
+// Machine Gun marine. A proper chaingun marine wouldn't be fair.
 
 ACTOR MetaMarineChaingun : MetaScriptedMarine // replaces MarineChaingun
 {
@@ -249,7 +253,7 @@ ACTOR MetaMarineChaingun : MetaScriptedMarine // replaces MarineChaingun
 }
 
 
-//---------------------------------------------------------------------------
+// Rocket Launcher marine. Probably horrible to fight.
 
 ACTOR MetaMarineRocket : MetaScriptedMarine // replaces MarineRocket
 {
@@ -274,7 +278,7 @@ ACTOR MetaMarineRocket : MetaScriptedMarine // replaces MarineRocket
 
 }
 
-//---------------------------------------------------------------------------
+// Plasma Rifle marine. Bloop bloop bloop.
 
 ACTOR MetaMarinePlasma : MetaScriptedMarine // replaces MarinePlasma
 {
@@ -299,7 +303,8 @@ ACTOR MetaMarinePlasma : MetaScriptedMarine // replaces MarinePlasma
 
 }
 
-//---------------------------------------------------------------------------
+// Gauss Cannon marine. I still don't know why ZDoom pushed the Railgun so hard
+// back in the day, but sure, alright.
 
 ACTOR MetaMarineRailgun : MetaScriptedMarine // replaces MarineRailgun
 {
@@ -325,7 +330,7 @@ ACTOR MetaMarineRailgun : MetaScriptedMarine // replaces MarineRailgun
 
 }
 
-//---------------------------------------------------------------------------
+// BFG Marine. Anyone who forces you to fight this is a bum.
 
 ACTOR MetaMarineBFG : MetaScriptedMarine // replaces MarineBFG
 {

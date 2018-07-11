@@ -1,0 +1,190 @@
+// THIS CLASS HAS BEEN MIGRATED TO METADOOMACTOR.ZSC DUE TO THE SLOW, FUCKED UP
+// MARCH OF PROGRESS. THE ORIGINAL DECORATE VERSION IS KEPT HERE IN CRYOGENIC
+// STORAGE AS A POINT OF REFERENCE FOR FUTURE CLEANSINGS
+
+/*
+actor MonsterCore : MetaDoomActor
+{
+	painchance Fist, 255
+	painchance Axe, 255
+	painchance Vampire, 255
+	painchance LightningStun, 255
+	painchance Bleeding, 0
+	painchance LightningGun, 0
+	painchance SoulCube, 255
+	damagefactor FireExtinguisher, 0
+	damagefactor DogCollar, 0
+	damagefactor LightningStun, 0.1
+	painchance DogCollar, 0
+	States
+	{
+	// Siphon Grenade
+	Pain.Vampire:
+		"####" # 0 A_GiveToTarget ("Health", 1)
+		"####" # 0 A_PlaySound("monsters/vamped")
+		"####" # 0 A_Jump(256,"Pain")
+		stop
+	// Fire Axe
+	Pain.Axe:
+		"####" # 0
+		{
+			A_GiveInventory("BleedingCounter", 4);
+			A_MetaPinata("MetaHealthPinata", 3);
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+		}
+		"####" # 0 A_Jump(256,"Pain")
+		stop
+	Death.Axe:
+		"####" # 0
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	XDeath.Axe:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"XDeath")
+		stop
+	Death.Bleeding:
+		"####" # 0
+		{
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	// Fists - Standard
+	Pain.Fist:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 2);
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" # 0 A_Jump(256,"Punched")
+		stop
+	Punched: // default for if actor doesn't have punched state
+		"####" # 0 A_Jump(256,"Pain")
+		stop
+	Death.Fist:
+		"####" # 0
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	XDeath.Fist:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 10);
+		}
+		"####" # 0 A_Jump(256,"XDeath")
+		stop
+	// Fists - Berserker
+	Pain.BerserkFist:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 64, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 1);
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" # 0 A_Jump(256,"Pain")
+		stop
+	Death.BerserkFist:
+		"####" # 0
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 64, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 2);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	XDeath.BerserkFist:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 64, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 3);
+		}
+		"####" # 0 A_Jump(256,"XDeath")
+		stop
+	// Chainsaw Melee
+	Pain.ChainsawMelee:
+		"####" # 0 
+		{
+			A_FaceTarget;
+			//ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,0);
+			A_MetaPinata("MetaHealthPinata", 1);
+			A_ChangeFlag("FRIGHTENED", FALSE);
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" # 0 A_Jump(256,"Punched")
+		stop
+	Death.ChainsawMelee:
+		"####" # 0
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 8, 1, 0);
+			ThrustThingZ(0,32,0,1);
+			A_MetaPinata("MetaHealthPinata", 5);
+		}
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	// "kill monsters" cheat, to avoid the framerate exploding
+	Death.Massacre:
+		"####" # 0 A_Jump(256,"Death")
+		stop
+	// SoulCube
+	Pain.SoulCube:
+		"####" # 0
+		{
+			A_MetaPinata("MetaHealthPinataPerm", 12);
+			A_MetaPinata("MetaArmorPinata", 12);
+			A_MetaPinata("MetaPinataClip", 12);
+			A_MetaPinata("MetaPinataShell", 12);
+			A_MetaPinata("MetaPinataRocket", 12);
+			A_MetaPinata("MetaPinataCell", 12);
+		}
+		"####" # 0 A_Jump (256, "Pain")
+		stop
+	Death.SoulCube:
+	XDeath.SoulCube:
+		"####" # 0
+		{
+			A_MetaPinata("MetaHealthPinataPerm", 12);
+			A_MetaPinata("MetaArmorPinata", 12);
+			A_MetaPinata("MetaPinataClip", 12);
+			A_MetaPinata("MetaPinataShell", 12);
+			A_MetaPinata("MetaPinataRocket", 12);
+			A_MetaPinata("MetaPinataCell", 12);			
+		}
+		"####" # 0 A_Jump (256, "XDeath")
+		stop
+	// General purpose catchall to prevent errors when an actor that doesn't have an XDeath tries to jump to an XDeath
+	XDeath:
+		"####" # 0 A_Jump (256, "Death")
+		stop
+	}
+}
+*/
