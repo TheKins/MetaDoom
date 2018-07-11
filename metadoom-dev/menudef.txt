@@ -44,21 +44,6 @@ ListMenu "SkillMenu"
 	Class "StaticIconListMenu"
 }
 
-// Load/Save. I forget if I even did anything to this.
-
-ListMenu "LoadGameMenu"
-{
-	NetgameMessage "$LOADNET"
-	StaticTextCentered 160, -20, "$MNU_LOADGAME"
-	Position 80,54
-}
-
-ListMenu "SaveGameMenu"
-{
-	StaticTextCentered 160, -20, "$MNU_SAVEGAME"
-	Position 80,54
-}
-
 // Options Menus
 
 OptionValue "YesNo"
