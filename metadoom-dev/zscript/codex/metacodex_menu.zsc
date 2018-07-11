@@ -152,7 +152,7 @@ Class MetaCodex_Menu : GenericMenu
 		return codexEntry;
 	}
 	
-	override void Init(Menu parent = null)
+	override void Init(Menu parent)
 	{
 		//MetaCodex_Page codexPagy = new("MetaCodex_Page");
 		parseCodexLump();
