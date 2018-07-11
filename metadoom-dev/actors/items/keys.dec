@@ -1,153 +1,152 @@
-// "Borrowed" from Samsara.
+// The base for these keys was apparently "Borrowed" from Samsara, but I can't
+// for the life of me remember how.
 
 actor RedCard2 : Key replaces RedCard
 {
-    inventory.pickupmessage "$GOTREDCARD" // "Picked up a red keycard."
-    //inventory.icon "STKEYS2"
-    inventory.pickupsound "items/keycard"
+	inventory.pickupmessage "$GOTREDCARD"
+	inventory.pickupsound "items/keycard"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "RedCard"
-    +NOTDMATCH
-    +DONTGIB
-    States
-    {
-      Spawn:
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	Spawn:
 		TNT1 A 0
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
 		goto Doom
-	  Doom:
-        RKEY A 10
-        RKEY B 10 bright
-        loop
-	  Doom3:
-        RKEY C 10
-        RKEY D 10 bright
-        loop
-	  Doom4:
-        RKEY E 10
-        RKEY F 10 bright
-        loop
-    }
+	Doom:
+		RKEY A 10
+		RKEY B 10 bright
+		loop
+	Doom3:
+		RKEY C 10
+		RKEY D 10 bright
+		loop
+	Doom4:
+		RKEY E 10
+		RKEY F 10 bright
+		loop
+	}
 }
 
 actor YellowCard2 : Key replaces YellowCard
 {
-    inventory.pickupmessage "$GOTYELWCARD"
-    inventory.pickupsound "items/keycard"
+	inventory.pickupmessage "$GOTYELWCARD"
+	inventory.pickupsound "items/keycard"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "YellowCard"
-    +NOTDMATCH
-    +DONTGIB
-    States
-    {
-      Spawn:
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	  Spawn:
 		TNT1 A 0
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
 		goto Doom
-	  Doom:
-        YKEY A 10
-        YKEY B 10 bright
-        loop
-	  Doom3:
-        YKEY C 10
-        YKEY D 10 bright
-        loop
-	  Doom4:
-        YKEY E 10
-        YKEY F 10 bright
-        loop
-    }
+	Doom:
+		YKEY A 10
+		YKEY B 10 bright
+		loop
+	Doom3:
+		YKEY C 10
+		YKEY D 10 bright
+		loop
+	Doom4:
+		YKEY E 10
+		YKEY F 10 bright
+		loop
+	}
 }
 
 actor BlueCard2 : Key replaces BlueCard
 {
-    inventory.pickupmessage "$GOTBLUECARD"
-    inventory.pickupsound "items/keycard"
+	inventory.pickupmessage "$GOTBLUECARD"
+	inventory.pickupsound "items/keycard"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "BlueCard"
-    +NOTDMATCH
-    +DONTGIB
-    States
-    {
-      Spawn:
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	Spawn:
 		TNT1 A 0
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
 		goto Doom
-	  Doom:
-        BKEY A 10
-        BKEY B 10 bright
-        loop
-	  Doom3:
-        BKEY C 10
-        BKEY D 10 bright
-        loop
-	  Doom4:
-        BKEY E 10
-        BKEY F 10 bright
-        loop
-    }
+	Doom:
+		BKEY A 10
+		BKEY B 10 bright
+		loop
+	Doom3:
+		BKEY C 10
+		BKEY D 10 bright
+		loop
+	Doom4:
+		BKEY E 10
+		BKEY F 10 bright
+		loop
+	}
 }
 
 actor RedSkull2 : Key replaces RedSkull
 {
-    inventory.pickupmessage "$GOTREDSKUL"
-    inventory.pickupsound "items/keyskull"
+	inventory.pickupmessage "$GOTREDSKUL"
+	inventory.pickupsound "items/keyskull"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "RedSkull"
-    +NOTDMATCH
-    +DONTGIB
-
-    States
-    {
-      Spawn:
-        RSKU A 10
-        RSKU B 10 bright
-        loop
-    }
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	Spawn:
+		RSKU A 10
+		RSKU B 10 bright
+		loop
+	}
 }
 
 actor YellowSkull2 : Key replaces YellowSkull
 {
-    inventory.pickupmessage "$GOTYELWSKUL"
-    inventory.pickupsound "items/keyskull"
+	inventory.pickupmessage "$GOTYELWSKUL"
+	inventory.pickupsound "items/keyskull"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "YellowSkull"
-    +NOTDMATCH
-    +DONTGIB
-    States
-    {
-      Spawn:
-        YSKU A 10
-        YSKU B 10 bright
-        loop
-    }
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	Spawn:
+		YSKU A 10
+		YSKU B 10 bright
+		loop
+	}
 }
 
 actor BlueSkull2 : Key replaces BlueSkull
 {
-    inventory.pickupmessage "$GOTBLUESKUL"
-    inventory.pickupsound "items/keyskull"
+	inventory.pickupmessage "$GOTBLUESKUL"
+	inventory.pickupsound "items/keyskull"
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	species "BlueSkull"
-    +NOTDMATCH
-    +DONTGIB
-    States
-    {
-      Spawn:
-        BSKU A 10
-        BSKU B 10 bright
-        loop
-    }
+	+NOTDMATCH
+	+DONTGIB
+	States
+	{
+	Spawn:
+		BSKU A 10
+		BSKU B 10 bright
+		loop
+	}
 }
