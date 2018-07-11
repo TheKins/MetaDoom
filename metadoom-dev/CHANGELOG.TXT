@@ -35,6 +35,7 @@ Cosmetic Changes:
   their turn and trigger one after the other.
 - Imported Doom 2 Minor Sprite Fixing Project assets for the following monsters:
   Arachnotron, Arch-Vile, Mancubus, Pain Elemental and Revenant
+- Added one new keycard skin.
 - Light-Amp Visors now have new sprites.
 - Phantoms now have unique sounds.
 
