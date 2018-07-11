@@ -136,12 +136,7 @@ ACTOR MetaArchvile : MonsterCore
 	}
 }
 
-
-//===========================================================================
-//
 // Arch Vile Fire
-//
-//===========================================================================
 
 ACTOR MetaArchvileFire
 {
@@ -161,6 +156,7 @@ ACTOR MetaArchvileFire
 	}
 }
 
+// The Summoner, from Doom 2016.
 // Hurls popcorn enemies out in babby bosscubes and zooms around like a bastard
 
 actor SummonerOuttaSight : Counter { Inventory.MaxAmount 2 }
@@ -433,8 +429,8 @@ ACTOR MetaSummonerWarpTrail
 	}
 }
 
-
-
+// The Summoner's servants. Useless slow Quake-esque zombies, but they might
+// well overwhem the player on a bad day.
 ACTOR MetaUnwilling : MonsterCore
 {
 	Health 20

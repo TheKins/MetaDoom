@@ -6,6 +6,7 @@ Effects - Both Visual and Practical
 ----------------------------
 */
 
+// Explosions of various kinds
 ACTOR Explosion
 {
 	Radius 10
@@ -64,6 +65,7 @@ ACTOR Shockwave
 	}
 }
 
+// Explosion Floor Decal
 actor ExplosionScorchMark
 {
 	radius 1
@@ -85,45 +87,47 @@ actor ExplosionScorchMark
 	}
 }
 
+// Smoke Trails
 ACTOR RocketTrailSmoke
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-  states
-  {
-  Spawn:
-    PUF2 ABC 2 A_FadeOut
-  Finalize:
-    PUF2 D 2 A_FadeOut
-   loop
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	states
+	{
+	Spawn:
+		PUF2 ABC 2 A_FadeOut
+	Finalize:
+		PUF2 D 2 A_FadeOut
+		loop
+	}
 }
 
 ACTOR GrenadeTrailSmoke
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-  alpha 0.75
-  states
-  {
-  Spawn:
-    PUFF ABC 2 A_FadeOut
-  Finalize:
-    PUFF D 2 A_FadeOut
-   loop
- }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	alpha 0.75
+	states
+	{
+	Spawn:
+		PUFF ABC 2 A_FadeOut
+	Finalize:
+		PUFF D 2 A_FadeOut
+		loop
+	}
 }
 
+// Item Spawn FX
 ACTOR MetaItemFog replaces ItemFog
 {
-  +NOBLOCKMAP
-  +NOGRAVITY
-  States
-  {
-  Spawn:
-	IFOG A 0
-	IFOG A 0 A_PlaySound("misc/spawn")
-    IFOG ABABCDE 6 Bright
-    Stop
-  }
+	+NOBLOCKMAP
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		IFOG A 0
+		IFOG A 0 A_PlaySound("misc/spawn")
+		IFOG ABABCDE 6 Bright
+		Stop
+	}
 }

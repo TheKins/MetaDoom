@@ -6,6 +6,9 @@ Props
 ----------------------------
 */
 
+// These props aren't affected by Optional Content and are non-negotiable.
+
+// The Explosive Barrel, everyone's favorite prop.
 ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 {
 	Health 20
@@ -104,6 +107,8 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 	}
 }
 
+// This is so barrels explode at their old speed when killed by another barrel,
+// so as to avoid making Barrels 'O' Fun unwinnable.
 ACTOR ExplosiveBarrelExplosion : Explosion
 {
 	damagetype ExplodingBarrel

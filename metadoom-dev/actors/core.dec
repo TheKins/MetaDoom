@@ -6,6 +6,8 @@ Core Actors
 ----------------------------
 */
 
+// Horrible remains of the pre-ZScript era. Legacy codebases, eh?
+
 actor _Boolean: Inventory
 {
     Inventory.MaxAmount 1

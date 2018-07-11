@@ -74,16 +74,16 @@ Actor BloodSplat_Permanent
 // Nothing to adjust here! We already have the CheckClass above handling the
 // state jumps. 
 Actor BloodSplatSmall_Permanent : BloodSplat_Permanent
-{	}
+{ }
 
 Actor BloodSplatGreen_Permanent : BloodSplat_Permanent
-{	StencilColor "49 9a 3d"	}
+{ StencilColor "49 9a 3d"	}
 
 Actor BloodSplatSmallGreen_Permanent : BloodSplatSmall_Permanent
-{	StencilColor "49 9a 3d"	}
+{ StencilColor "49 9a 3d"	}
 
 Actor BloodSplatBlue_Permanent : BloodSplat_Permanent
-{	StencilColor "0 0 80"	}
+{ StencilColor "0 0 80"	}
 
 Actor BloodSplatSmallBlue_Permanent : BloodSplatSmall_Permanent
-{	StencilColor "0 0 80"	}
+{ StencilColor "0 0 80"	}

@@ -3,35 +3,35 @@ actor BloodReducer : _Boolean {}
 
 ACTOR Gibs1
 {
-    Radius 3
-    Height 3
-    Speed 7
-    Scale 1.0
+	Radius 3
+	Height 3
+	Speed 7
+	Scale 1.0
 	Mass 1
-    +NOBLOCKMAP
+	+NOBLOCKMAP
 	+MISSILE
-    +NOTELEPORT
-    +MOVEWITHSECTOR
-    +CLIENTSIDEONLY
-    +BLOODLESSIMPACT 
+	+NOTELEPORT
+	+MOVEWITHSECTOR
+	+CLIENTSIDEONLY
+	+BLOODLESSIMPACT 
 	+DONTSPLASH
 	+FLOORCLIP
 	Decal Bloodsmear
 	Gravity 0.7
-    States
-    {
-    Spawn:
+	States
+	{
+	Spawn:
 		GIBS C 3
-        Loop
-    Death:
-        TNT1 A 0 A_JumpIf(waterlevel == 2,"Disappear")
+		Loop
+	Death:
+		TNT1 A 0 A_JumpIf(waterlevel == 2,"Disappear")
 		GIBS B 3
 		GIBS B -1
-        Stop
+		Stop
 	Disappear:
 		TNT1 A 1
 		stop
-    }
+	}
 }
 
 ACTOR BlueGibs1: Gibs1
@@ -48,16 +48,16 @@ ACTOR GreenGibs1: Gibs1
 
 ACTOR Gibs2: Gibs1
 {
-    States
-    {
-    Spawn:
+	States
+	{
+	Spawn:
 		GIBS C 3
-        Loop
-    Death:
-        POL5 A 3
+		Loop
+	Death:
+		POL5 A 3
 		POL5 A -1
-        Stop
-    }
+		Stop
+	}
 }
 
 ACTOR BlueGibs2: Gibs2
@@ -74,190 +74,190 @@ ACTOR GreenGibs2: Gibs2
 
 actor XBlood Replaces Blood
 {
-+FORCEXYBILLBOARD
-+GHOST
-+NOBLOCKMAP
-+NOGRAVITY
-+NOCLIP
--DONTSPLASH
-+ALLOWPARTICLES 
-decal bloodsplat
-Speed 0
- states
- {
-  Spawn:
+	+FORCEXYBILLBOARD
+	+GHOST
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOCLIP
+	-DONTSPLASH
+	+ALLOWPARTICLES 
+	decal bloodsplat
+	Speed 0
+	states
+	{
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AAAA 0 A_CustomMissile ("FlyingBloodFast", 0, 0, random (0, 360), 2, random (50, 120))
-        BLUD CBA 2
+		BLUD CBA 2
 		stop
 	Disappear:
 		TNT1 A 1
 		stop
- }
+	}
 }
 
 actor XBloodFix : XBlood replaces BloodSplatter {}
 
 actor BlueBlood : Xblood
-{
-decal bluebloodsplat
-translation "1:191=200:207","208:255=200:207"
-states
 	{
-  Spawn:
+	decal bluebloodsplat
+	translation "1:191=200:207","208:255=200:207"
+	states
+	{
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("BlueFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180))
 		BLUD ABC 2
-        stop
+		stop
 	}
 }
 
 actor GreenBlood : Xblood
 {
-translation "16:47=112:127","185:191=11:12"
-decal greenbloodsplat
-states
+	translation "16:47=112:127","185:191=11:12"
+	decal greenbloodsplat
+	states
 	{
-Spawn:
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("GreenFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180))
 		BLUD ABC 2
-        stop
+		stop
 	}
 }
 
 actor XBlood2
 {
-+FORCEXYBILLBOARD
-+GHOST
-+NOBLOCKMAP
-+NOGRAVITY
-+NOCLIP
--DONTSPLASH
-+ALLOWPARTICLES 
-decal bloodsplat
-Speed 0
- states
- {
-  Spawn:
+	+FORCEXYBILLBOARD
+	+GHOST
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOCLIP
+	-DONTSPLASH
+	+ALLOWPARTICLES 
+	decal bloodsplat
+	Speed 0
+	states
+	{
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("FlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180))
-        stop
+		stop
 	Disappear:
 		TNT1 A 1
 		stop
- }
+	}
 }
 
 actor Greenblood2 : XBlood2
 {
-translation "16:47=112:127","185:191=11:12"
-decal greenbloodsplat
-states
+	translation "16:47=112:127","185:191=11:12"
+	decal greenbloodsplat
+	states
 	{
-  Spawn:
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("GreenFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180))
-        stop
+		stop
 	}
 }
 
 actor BlueBlood2 : XBlood2
 {
-decal bluebloodsplat
-translation "1:191=200:207","208:255=200:207"
-states
+	decal bluebloodsplat
+	translation "1:191=200:207","208:255=200:207"
+	states
 	{
-  Spawn:
+	Spawn:
 		TNT1 AA 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
 		TNT1 AA 0 A_CustomMissile ("BlueFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180))
-        stop
+		stop
 	}
 }
 
 actor XBloodSpot
 {
- RenderStyle Translucent
- Alpha 1
- game Doom
- radius 12
- height 2
- mass 1
- scale 0.8
- +NOTELEPORT
- -NOBLOCKMAP
- +FORCEXYBILLBOARD
- +DOOMBOUNCE
- +DONTSPLASH
- +MISSILE
- Speed 0
- BounceFactor 0.01
- states
- {
- Spawn:
- BLUD F 1
- Loop
- Death:
-  TNT1 A 0
-  TNT1 A 0 A_Jump(64,4)
-  TNT1 A 0 A_Jump(128,4)
-  TNT1 A 0 A_Jump(192,4)
-  TNT1 A 0 A_Jump(255,4)
-  BLD1 A 750
-  goto Aloop
-  BLD1 B 750
-  goto Bloop
-  BLD1 C 750
-  goto Cloop
-  BLD1 D 750
-  goto Dloop
- Aloop:
-  BLD1 A 1 A_FadeOut(0.01)
-  loop
- Bloop:
-  BLD1 B 1 A_FadeOut(0.01)
-  loop
- Cloop:
-  BLD1 C 1 A_FadeOut(0.01)
-  loop
- Dloop:
-  BLD1 D 1 A_FadeOut(0.01)
-  loop
- }
+	RenderStyle Translucent
+	Alpha 1
+	game Doom
+	radius 12
+	height 2
+	mass 1
+	scale 0.8
+	+NOTELEPORT
+	-NOBLOCKMAP
+	+FORCEXYBILLBOARD
+	+DOOMBOUNCE
+	+DONTSPLASH
+	+MISSILE
+	Speed 0
+	BounceFactor 0.01
+	states
+	{
+	Spawn:
+		BLUD F 1
+		Loop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(64,4)
+		TNT1 A 0 A_Jump(128,4)
+		TNT1 A 0 A_Jump(192,4)
+		TNT1 A 0 A_Jump(255,4)
+		BLD1 A 750
+		goto Aloop
+		BLD1 B 750
+		goto Bloop
+		BLD1 C 750
+		goto Cloop
+		BLD1 D 750
+		goto Dloop
+	Aloop:
+		BLD1 A 1 A_FadeOut(0.01)
+		loop
+	Bloop:
+		BLD1 B 1 A_FadeOut(0.01)
+		loop
+	Cloop:
+		BLD1 C 1 A_FadeOut(0.01)
+		loop
+	Dloop:
+		BLD1 D 1 A_FadeOut(0.01)
+		loop
+	}
 }
 
 Actor Bluebloodspot : Xbloodspot
 {
-translation "27:47=200:207","175:191=202:207"
+	translation "27:47=200:207","175:191=202:207"
 }
 
 Actor Greenbloodspot : Xbloodspot
 {
-translation "32:47=112:127","175:191=121:126"
+	translation "32:47=112:127","175:191=121:126"
 }
 
 
 ACTOR FlyingBlood: Gibs1
 {
--DOOMBOUNCE
--SOLID
-+THRUACTORS
--DONTSPLASH
-decal bloodsplat
-Speed 4
-    Scale 1.0
-    States
-    {
-    Spawn:
-	    TNT1 A 0 
+	-DOOMBOUNCE
+	-SOLID
+	+THRUACTORS
+	-DONTSPLASH
+	decal bloodsplat
+	Speed 4
+	Scale 1.0
+	States
+	{
+	Spawn:
+		TNT1 A 0 
 		TNT1 A 0 a_jump(255, "spawn1", "spawn2")
-    Spawn1:
+	Spawn1:
 		BLUD F 5
 		Loop
 	Spawn2:
@@ -276,13 +276,13 @@ Speed 4
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 ACTOR FlyingBloodCheap : FlyingBlood
 {
-    States
-    {
+	States
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -296,14 +296,14 @@ ACTOR FlyingBloodCheap : FlyingBlood
 			A_PlaySound("effects/blood");
 		}
 		Stop
-    }
+	}
 }
 
 ACTOR BlueFlyingBlood : FlyingBlood
 {
-decal bluebloodsplat
-translation "1:191=200:207","208:255=200:207"
-states
+	decal bluebloodsplat
+	translation "1:191=200:207","208:255=200:207"
+	states
 	{
 	Death:
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -317,15 +317,15 @@ states
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 ACTOR BlueFlyingBloodCheap : FlyingBlood
 {
 	decal bluebloodsplat
 	translation "1:191=200:207","208:255=200:207"
-    States
-    {
+	States
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -339,14 +339,14 @@ ACTOR BlueFlyingBloodCheap : FlyingBlood
 			A_PlaySound("effects/blood");
 		}
 		Stop
-    }
+	}
 }
 
 ACTOR GreenFlyingBlood : FlyingBlood
 {
-decal greenbloodsplat
-translation "174:191=112:127", "32:47=112:127"
-states
+	decal greenbloodsplat
+	translation "174:191=112:127", "32:47=112:127"
+	states
 	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
@@ -368,19 +368,19 @@ states
 
 ACTOR FlyingBloodFast: FlyingBlood
 {
-Speed 6
--DOOMBOUNCE
-+FORCEXYBILLBOARD
--SOLID
-Scale 0.5
-Gravity 0.8
+	Speed 6
+	-DOOMBOUNCE
+	+FORCEXYBILLBOARD
+	-SOLID
+	Scale 0.5
+	Gravity 0.8
 }
 
 ACTOR BlueFlyingBloodFast: FlyingBloodFast
 {
-translation "1:191=200:207","208:255=200:207"
-states
-{
+	translation "1:191=200:207","208:255=200:207"
+	states
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -394,15 +394,15 @@ states
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 ACTOR GreenFlyingBloodFast: FlyingBloodFast
 {
-decal greenbloodsplat
-translation "168:184=112:127","185:191=11:12","16:47=112:127"
-states
-{
+	decal greenbloodsplat
+	translation "168:184=112:127","185:191=11:12","16:47=112:127"
+	states
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -416,24 +416,24 @@ states
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 ACTOR FlyingBloodFakeFast: FlyingBloodFast
 {
-Scale 0.3
-Speed 12
--DOOMBOUNCE
-+FORCEXYBILLBOARD
--SOLID
+	Scale 0.3
+	Speed 12
+	-DOOMBOUNCE
+	+FORCEXYBILLBOARD
+	-SOLID
 }
 
 ACTOR BlueFlyingBloodFakeFast: FlyingBloodFakeFast
 {
-decal bluebloodsplat
-translation "1:191=200:207","208:255=200:207"
-states
-{
+	decal bluebloodsplat
+	translation "1:191=200:207","208:255=200:207"
+	states
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -443,15 +443,15 @@ states
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 ACTOR GreenFlyingBloodFakeFast: FlyingBloodFakeFast
 {
-decal greenbloodsplat
-translation "168:184=112:127","185:191=11:12","16:47=112:127"
-states
-{
+	decal greenbloodsplat
+	translation "168:184=112:127","185:191=11:12","16:47=112:127"
+	states
+	{
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot")
 		TNT1 A 0 //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
@@ -465,7 +465,7 @@ states
 	OutDamnSpot:
 		BLUD F 1
 		stop
-    }
+	}
 }
 
 // "flat decal" blood splats
@@ -579,16 +579,16 @@ Actor BloodSplat
 // Nothing to adjust here! We already have the CheckClass above handling the
 // state jumps. 
 Actor BloodSplatSmall : BloodSplat
-{	}
+{ }
 
 Actor BloodSplatGreen : BloodSplat
-{	StencilColor "49 9a 3d"	}
+{ StencilColor "49 9a 3d" }
 
 Actor BloodSplatSmallGreen : BloodSplatSmall
-{	StencilColor "49 9a 3d"	}
+{ StencilColor "49 9a 3d" }
 
 Actor BloodSplatBlue : BloodSplat
-{	StencilColor "0 0 80"	}
+{ StencilColor "0 0 80" }
 
 Actor BloodSplatSmallBlue : BloodSplatSmall
-{	StencilColor "0 0 80"	}
+{ StencilColor "0 0 80"	}
