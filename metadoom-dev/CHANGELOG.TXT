@@ -6,17 +6,18 @@ Optional Content:
 - Optional Content is now built into the main mod and togglable via CVar, as
   opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
 - WolfSS and Commander Keen now respect the "More Actors" CVar.
+- Added additional visual variety to some props.
 
 UI Changes:
 - Added DrPySpy's Codex! Hit the new keybind in the controls menu to bring up
   a high-quality new menu providing all the details on everything you've
   picked up or killed.
 - Converted the HUD from SBARINFO to ZScript, allowing for greater flexibility
-  on the development side.
+  and some of the new featues listed below....
 - Player sounds and HUD mugshot now take the player's gender, as specified in
   the "Player Options" menu, into account! (Thanks DrPySpy!)
 - Powerup timers on the HUD are now properly centered, adjusting as powerups are
-  gained and run out. (Thanks DrPySpy and TheZombieKiller!)
+  gained and lost. (Thanks DrPySpy and TheZombieKiller!)
 - Difficulty select screen now has skill descriptions and mugshot. (Thanks BoA Team!)
 - The 100% kills/items/secrets messages will now try not to overlap each other
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
@@ -24,8 +25,7 @@ UI Changes:
 - Updated ENDOOM to credit DrPySpy and mention Saber Interactive
 
 Bug Fixes:
-- Fixed inventory cooldown potentially getting stuck forever when using inventory
-  items during a map transition.
+- Fixed inventory cooldown getting stuck forever when transitioning between maps
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
 - Fixed all the harmless-but-agitating warnings in the console during startup.
 - Various under-the-hood cleanups and tweaks that no sane human will notice.
@@ -35,12 +35,11 @@ Weapon Changes:
   player, rather than just Player 1. (Thanks DrPySpy!)
 - The Lightning Gun's standard attack now has a very slight chance of causing
   enemies to flinch, as opposed to the previous zero chance.
+- The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
 - If a script takes away the player's Pistol, they'll be given a Fist weapon so
-  they can keep fighting until they get a Pistol again, instead of being
-  completely defenseless.
+  they can keep fighting until they get a Pistol again.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
-- The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
 
 Item Changes:
 - The Tesla Rocket will no longer fry the player who fired it if they're in the
