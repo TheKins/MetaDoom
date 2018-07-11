@@ -20,3 +20,10 @@ MetaGreyTall
 	Flat:
 	#D8D8D8
 }
+
+MetaBlack
+{
+	#000000  #000000
+Flat:
+	#000000
+}
