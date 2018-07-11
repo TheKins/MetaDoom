@@ -520,7 +520,7 @@ script "Monster_ReturnMaps" (void)
 // Key Variety System
 script "Key_Init" OPEN
 {
-	item_KeyType = random(1,3);
+	item_KeyType = random(1,4);
 	
 	if(GetCvar("meta_developer"))
 			log(s:"Current key skin: ", i:item_KeyType);

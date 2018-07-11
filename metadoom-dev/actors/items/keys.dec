@@ -17,6 +17,7 @@ actor RedCard2 : Key replaces RedCard
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG")
 		goto Doom
 	Doom:
 		RKEY A 10
@@ -29,6 +30,10 @@ actor RedCard2 : Key replaces RedCard
 	Doom4:
 		RKEY E 10
 		RKEY F 10 bright
+		loop
+	DoomRPG:
+		RKEY G 10
+		RKEY H 10 bright
 		loop
 	}
 }
@@ -49,6 +54,7 @@ actor YellowCard2 : Key replaces YellowCard
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG")
 		goto Doom
 	Doom:
 		YKEY A 10
@@ -61,6 +67,10 @@ actor YellowCard2 : Key replaces YellowCard
 	Doom4:
 		YKEY E 10
 		YKEY F 10 bright
+		loop
+	DoomRPG:
+		YKEY G 10
+		YKEY H 10 bright
 		loop
 	}
 }
@@ -81,6 +91,7 @@ actor BlueCard2 : Key replaces BlueCard
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3")
 		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4")
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG")
 		goto Doom
 	Doom:
 		BKEY A 10
@@ -93,6 +104,10 @@ actor BlueCard2 : Key replaces BlueCard
 	Doom4:
 		BKEY E 10
 		BKEY F 10 bright
+		loop
+	DoomRPG:
+		BKEY G 10
+		BKEY H 10 bright
 		loop
 	}
 }
