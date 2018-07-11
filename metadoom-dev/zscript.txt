@@ -6,7 +6,7 @@ ZScript
 ----------------------------
 */
 
-version 2.5
+version "3.4"
 
 // Weapons
 #include "actors/weapons/core.zsc"
