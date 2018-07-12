@@ -49,7 +49,7 @@ Item Changes:
   dizzying new status of "actually useful"!
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
-- Added one new keycard skin.
+- Added additional skins for keycards and skull keys.
 - Light-Amp Visors now have new sprites.
 
 Monster Changes:
