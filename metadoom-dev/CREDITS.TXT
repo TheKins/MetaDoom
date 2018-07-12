@@ -29,7 +29,7 @@ STUFF FROM OTHER MODS:
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 Pillowblaster ("ARGENT" resources)
 D4D Team (Lots of resources and inspiration)
-D4T Team (Bull Demon charge attack code)
+D4T Team (Bull Demon charge attack code, Skull Key sprites)
 Doom 2.5 Team (Resources and inspiration)
 Upset & Half-Dead (Doom 3 model ports to Source Engine)
 Perkristian (High-Res Doom sounds)

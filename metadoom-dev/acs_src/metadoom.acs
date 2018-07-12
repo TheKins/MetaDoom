@@ -522,7 +522,7 @@ script "Monster_ReturnMaps" (void)
 script "Key_Init" OPEN
 {
 	item_KeyType = random(1,5);
-	item_SkullKeyType = random(1,2);
+	item_SkullKeyType = random(1,3);
 	
 	if(GetCvar("meta_developer"))
 			log(s:"Current keycard skin: ", i:item_KeyType);
