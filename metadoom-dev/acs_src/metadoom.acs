@@ -4,6 +4,7 @@
 global int 1:mapsCleared;
 
 world int 6:item_KeyType;
+world int 7:item_SkullKeyType;
 
 // Health Warning
 Script "HealthWarning_Warn" ENTER
@@ -520,15 +521,22 @@ script "Monster_ReturnMaps" (void)
 // Key Variety System
 script "Key_Init" OPEN
 {
-	item_KeyType = random(1,4);
+	item_KeyType = random(1,5);
+	item_SkullKeyType = random(1,2);
 	
 	if(GetCvar("meta_developer"))
-			log(s:"Current key skin: ", i:item_KeyType);
+			log(s:"Current keycard skin: ", i:item_KeyType);
+			log(s:"Current skullkey skin: ", i:item_SkullKeyType);
 }
 
 script "Key_ReturnType" (void)
 {
 	SetResultValue(item_KeyType);
+}
+
+script "SkullKey_ReturnType" (void)
+{
+	SetResultValue(item_SkullKeyType);
 }
 
 // Fix Players Being Given Old Weapons By Scripts
