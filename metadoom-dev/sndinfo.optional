@@ -1,6 +1,9 @@
 // Sounds for actors (Optional Content edition)
 
 // Wolfenstein PC
+monsters/wolfss/see			wsssee
+monsters/wolfss/pain		wsspain
+monsters/wolfss/die			wssdie
 monsters/wolfss/fire		wssfire
 
 // Wolfenstein SNES and I guess a bit of Jaguar too?

@@ -46,11 +46,9 @@ ACTOR MetaWolfensteinSS : MonsterCore
 	PainChance 170
 	Monster
 	+FLOORCLIP
-	SeeSound "wolfss/sight"
-	PainSound "wolfss/pain"
-	DeathSound "wolfss/death"
-	ActiveSound "wolfss/active"
-	AttackSound "wolfss/attack"
+	SeeSound "monsters/wolfss/see"
+	PainSound "monsters/wolfss/pain"
+	DeathSound "monsters/wolfss/die"
 	Obituary "$OB_WOLFSS"
 	Dropitem "Clip"
 	States
