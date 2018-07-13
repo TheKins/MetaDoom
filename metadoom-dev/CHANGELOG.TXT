@@ -24,7 +24,7 @@ UI Changes:
   their turn and trigger one after the other.
 - Updated ENDOOM to credit DrPySpy and mention Saber Interactive
 
-Bug Fixes:
+Generalized Bug Fixes:
 - Fixed inventory cooldown getting stuck forever when transitioning between maps
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
 - Fixed all the harmless-but-agitating warnings in the console during startup.
@@ -69,6 +69,7 @@ Monster Changes:
 - Phantoms now have unique sounds.
 - Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
   instead of the increased damage of the player's EKG Sidearm.
+- Z-Sec now use the proper firing sound instead of the vanilla shotgun.
 - Additional polish and variety in WolfSS and Commander Keen replacmements.
 
 v4.1 "Fred" (06/06/17)

@@ -188,7 +188,7 @@ ACTOR MetaZSec : MonsterCore
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
-			A_PlaySound("shotguy/attack");
+			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		ZSEC E 10
 		Goto See
@@ -214,7 +214,7 @@ ACTOR MetaZSec : MonsterCore
 			A_CustomMissile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
 			A_CustomMissile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 			A_CustomMissile("MonsterShotgunGuyTracer");
-			A_PlaySound("shotguy/attack");
+			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		ZPOC E 10
 		Goto See
