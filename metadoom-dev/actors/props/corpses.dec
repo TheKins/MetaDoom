@@ -219,7 +219,7 @@ ACTOR MetaGibbedMarine // replaces GibbedMarine
 		PLAY W 0 A_Jump(128,"End")
 		PLAY W 0 A_ChangeFlag("SPRITEFLIP", TRUE) 
 	End:
-		PLAY W 0 A_Jump(128,"Slop2", "Slop3", "Slop4")
+		PLAY W 0 A_Jump(128,"Slop2", "Slop3", "Slop4", "Slop5", "Slop6")
 		goto Slop1
 	Slop1:
 		PLAY W -1
@@ -232,6 +232,12 @@ ACTOR MetaGibbedMarine // replaces GibbedMarine
 		Stop
 	Slop4:
 		SLOP C -1
+		Stop
+	Slop5:
+		SLOP D -1
+		Stop
+	Slop6:
+		SLOP E -1
 		Stop
 	}
 }
