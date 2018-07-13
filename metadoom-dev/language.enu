@@ -115,6 +115,7 @@ GOTLOOT3 = "Picked up an Evil Sceptre.";
 GOTLOOT4 = "Picked up an Unholy Bible.";
 GOTLOOT5 = "Picked up an Demonic Crown.";
 GOTLOOT6 = "Picked up a Sacrificial Goblet.";
+GOTLOOT7 = "Picked up some UAC Credits.";
 
 // Weapons
 GOTPISTOL = "You got the EKG Sidearm!";

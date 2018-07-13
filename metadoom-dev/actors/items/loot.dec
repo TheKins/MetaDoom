@@ -9,7 +9,7 @@ actor LootSpawner
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(64, "Loot1", "Loot2", "Loot6")
-		TNT1 A 0 A_Jump(32, "Loot3", "Loot4", "Loot5")
+		TNT1 A 0 A_Jump(32, "Loot7", "Loot3", "Loot4", "Loot5")
 		stop
 	Loot1:
 		TNT1 A 0 A_SpawnItemEx("LootDagger",0,0,0,random(0,16),random(0,16),0,random(0,360))
@@ -28,6 +28,9 @@ actor LootSpawner
 		stop
 	Loot6:
 		TNT1 A 0 A_SpawnItemEx("LootGoblet",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	Loot7:
+		TNT1 A 0 A_SpawnItemEx("LootCredits",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		stop
 	}
 }
@@ -124,6 +127,23 @@ Actor LootCrown : ScoreItem
 	{
 	Spawn:
 		LOOT E 6
+		Loop
+	}
+}
+
+Actor LootCredits : ScoreItem
+{
+	Inventory.Amount 1000
+	Inventory.PickupMessage "$GOTLOOT7"
+	inventory.pickupsound "items/loot"
+	scale 0.8
+	+DOOMBOUNCE
+	-BOUNCEONFLOORS
+	-COUNTITEM
+	States
+	{
+	Spawn:
+		LOOT G 6
 		Loop
 	}
 }
