@@ -39,6 +39,7 @@ powerups/quad		getquad
 powerups/quad/use	quadshot
 
 items/loot			getloot
+items/lootfig		getfig
 
 // Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }

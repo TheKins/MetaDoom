@@ -117,6 +117,8 @@ GOTLOOT5 = "Picked up an Demonic Crown.";
 GOTLOOT6 = "Picked up a Sacrificial Goblet.";
 GOTLOOT7 = "Picked up some UAC Credits.";
 
+GOTLOOTFIG1 = "Picked up a familiar figurine!";
+
 // Weapons
 GOTPISTOL = "You got the EKG Sidearm!";
 GOTMACGUN = "You got the Machine Gun!";
