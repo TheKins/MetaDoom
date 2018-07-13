@@ -41,6 +41,7 @@ TOOLS USED:
 NoirSuccubus (Doom 4 Audio Tools)
 Adrian Dale (Pinball FX Tools)
 DTZxPorter & id-daemon (Doom 4 model tools)
+Erick194 & Gerardo194 (id Mobile game tools)
 
 CODE RESOURCES:
 WildWeasel (Tracer fastprojectiles effect)
@@ -119,3 +120,4 @@ Id Software (...for everything.)
 TerminusEst13 (Moral support)
 Combine_Kegan (Immoral support)
 Sgt. Shivers  (Mortal support)
+Various Secret Societies Across The Internet (You Know Who You Are!)
