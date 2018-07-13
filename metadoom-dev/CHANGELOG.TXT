@@ -40,6 +40,7 @@ Weapon Changes:
   they can keep fighting until they get a Pistol again.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
+- Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript
 
 Item Changes:
 - The Tesla Rocket will no longer fry the player who fired it if they're in the
