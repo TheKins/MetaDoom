@@ -162,6 +162,7 @@ Actor LootCredits : ScoreItem
 }
 
 // Figurines
+// Classic Doom
 Actor LootFigurine1 : ScoreItem
 {
 	Inventory.Amount 6666
@@ -179,6 +180,7 @@ Actor LootFigurine1 : ScoreItem
 	}
 }
 
+// Doom 3
 Actor LootFigurine2 : LootFigurine1
 {
 	Inventory.PickupMessage "$GOTLOOTFIG2"
@@ -190,6 +192,7 @@ Actor LootFigurine2 : LootFigurine1
 	}
 }
 
+// Doom 2016
 Actor LootFigurine3 : LootFigurine1
 {
 	Inventory.PickupMessage "$GOTLOOTFIG3"
