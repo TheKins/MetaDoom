@@ -120,6 +120,7 @@ GOTLOOT7 = "Picked up some UAC Credits.";
 GOTLOOTFIG1 = "Picked up an old, familiar figurine!";
 GOTLOOTFIG2 = "Picked up a dark and scary figurine!";
 GOTLOOTFIG3 = "Picked up a trend-setting figurine!";
+GOTLOOTFIG4 = "Picked up a blurry figurine!";
 
 // Weapons
 GOTPISTOL = "You got the EKG Sidearm!";

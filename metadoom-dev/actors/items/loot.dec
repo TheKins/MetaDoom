@@ -34,7 +34,7 @@ actor LootSpawner
 		TNT1 A 0 A_SpawnItemEx("LootCredits",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		stop
 	LootFig:
-		TNT1 A 0 A_Jump(256, "LootFig1", "LootFig2", "LootFig3")
+		TNT1 A 0 A_Jump(256, "LootFig1", "LootFig2", "LootFig3", "LootFig4")
 		stop
 	LootFig1:
 		TNT1 A 0 A_SpawnItemEx("LootFigurine1",0,0,0,random(0,16),random(0,16),0,random(0,360))
@@ -44,6 +44,9 @@ actor LootSpawner
 		stop
 	LootFig3:
 		TNT1 A 0 A_SpawnItemEx("LootFigurine3",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		stop
+	LootFig4:
+		TNT1 A 0 A_SpawnItemEx("LootFigurine4",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		stop
 	}
 }
@@ -200,6 +203,18 @@ Actor LootFigurine3 : LootFigurine1
 	{
 	Spawn:
 		LFIG C 6
+		Loop
+	}
+}
+
+// Doom 2016
+Actor LootFigurine4 : LootFigurine1
+{
+	Inventory.PickupMessage "$GOTLOOTFIG4"
+	States
+	{
+	Spawn:
+		LFIG D 6
 		Loop
 	}
 }
