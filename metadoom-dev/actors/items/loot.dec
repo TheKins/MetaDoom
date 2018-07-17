@@ -51,7 +51,7 @@ actor LootSpawner
 	}
 }
 
-Actor LootGoblet : ScoreItem
+Actor LootItem : ScoreItem
 {
 	Inventory.Amount 500
 	Inventory.PickupMessage "$GOTLOOT6"
@@ -67,14 +67,22 @@ Actor LootGoblet : ScoreItem
 	}
 }
 
-Actor LootDagger : ScoreItem
+Actor LootGoblet : LootItem
+{
+	Inventory.Amount 500
+	Inventory.PickupMessage "$GOTLOOT6"
+	States
+	{
+	Spawn:
+		LOOT F 6
+		Loop
+	}
+}
+
+Actor LootDagger : LootItem
 {
 	Inventory.Amount 500
 	Inventory.PickupMessage "$GOTLOOT1"
-	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -83,14 +91,10 @@ Actor LootDagger : ScoreItem
 	}
 }
 
-Actor LootChest : ScoreItem
+Actor LootChest : LootItem
 {
 	Inventory.Amount 1000
 	Inventory.PickupMessage "$GOTLOOT2"
-	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -99,14 +103,10 @@ Actor LootChest : ScoreItem
 	}
 }
 
-Actor LootSceptre : ScoreItem
+Actor LootSceptre : LootItem
 {
 	Inventory.Amount 1500
 	Inventory.PickupMessage "$GOTLOOT3"
-	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -115,14 +115,10 @@ Actor LootSceptre : ScoreItem
 	}
 }
 
-Actor LootBible : ScoreItem
+Actor LootBible : LootItem
 {
 	Inventory.Amount 2000
 	Inventory.PickupMessage "$GOTLOOT4"
-	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -131,14 +127,10 @@ Actor LootBible : ScoreItem
 	}
 }
 
-Actor LootCrown : ScoreItem
+Actor LootCrown : LootItem
 {
 	Inventory.Amount 2500
 	Inventory.PickupMessage "$GOTLOOT5"
-	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -147,15 +139,11 @@ Actor LootCrown : ScoreItem
 	}
 }
 
-Actor LootCredits : ScoreItem
+Actor LootCredits : LootItem
 {
 	Inventory.Amount 500
 	Inventory.PickupMessage "$GOTLOOT7"
-	inventory.pickupsound "items/loot"
 	scale 0.8
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
@@ -166,15 +154,12 @@ Actor LootCredits : ScoreItem
 
 // Figurines
 // Classic Doom
-Actor LootFigurine1 : ScoreItem
+Actor LootFigurine1 : LootItem
 {
 	Inventory.Amount 6666
 	Inventory.PickupMessage "$GOTLOOTFIG1"
 	inventory.pickupsound "items/lootfig"
 	scale 0.75
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
-	-COUNTITEM
 	States
 	{
 	Spawn:
