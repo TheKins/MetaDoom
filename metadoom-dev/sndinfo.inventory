@@ -39,3 +39,9 @@ inventory/hologram/get 			getholo
 inventory/hologram/toss			holotoss
 inventory/hologram/on 			holoon
 inventory/hologram/off 			holooff
+
+// Kinetic Mine
+inventory/kineticmine/get 			getkmin
+inventory/kineticmine/land 			kminland
+inventory/kineticmine/track 		kmintrak
+inventory/kineticmine/launch		kminlnch
