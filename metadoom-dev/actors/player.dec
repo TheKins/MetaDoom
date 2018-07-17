@@ -84,6 +84,15 @@ ACTOR MetaDoomPlayer : PlayerPawn
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
 		}
 		goto Pain
+	Pain.KrautBoot:
+		PLAY G 0 
+		{
+			A_FaceTarget;
+			ThrustThing(angle*256/360+128, 16, 1, 0);
+			ThrustThingZ(0,32,0,1);
+		}
+		goto Pain
+	Death.KrautBoot:
 	Death.Fist:
 		PLAY G 0
 		{
@@ -97,6 +106,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
 		}
 		goto Death
+	XDeath.KrautBoot:
 	XDeath.Fist:
 		PLAY G 0 
 		{

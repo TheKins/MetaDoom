@@ -532,7 +532,7 @@ ACTOR MetaWolfensteinJava : MonsterCore
 		Goto See
 	Melee:
 		WJAV A 4
-		WJAV G 8 A_CustomMeleeAttack(15, "monsters/wolfjava/kick", "monsters/revenant/wiff", "Fist")
+		WJAV G 8 A_CustomMeleeAttack(15, "monsters/wolfjava/kick", "monsters/revenant/wiff", "KrautBoot")
 		WJAV A 4
 		goto See
 	Pain:
