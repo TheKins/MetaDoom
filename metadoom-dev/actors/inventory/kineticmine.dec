@@ -131,7 +131,7 @@ ACTOR KineticMineLurkingFloor
 		{
 			A_FaceTarget;
 			A_PlaySound("inventory/kineticmine/launch");
-			A_CustomMissile("KineticMineLeapy",4);
+			A_SpawnProjectile("KineticMineLeapy",4);
 		}
 		Stop
 	}
@@ -141,7 +141,7 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 {
 	Radius 8
 	Height 8
-	scale 0.5
+	scale 0.6
 	+LOOKALLAROUND
 	+FRIENDLY
 	+WALLSPRITE
