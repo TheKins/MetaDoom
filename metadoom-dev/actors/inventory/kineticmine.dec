@@ -65,9 +65,10 @@ actor KineticMineProj
 	+RANDOMIZE
 	-NOGRAVITY
 	+USEBOUNCESTATE
-	-BOUNCEONFLOORS
+	+CORPSE
 	BounceType "Doom"
 	SeeSound "inventory/throw"
+	-BOUNCEONFLOORS
 	scale 0.5
 	States
 	{
