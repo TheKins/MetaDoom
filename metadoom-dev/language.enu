@@ -56,9 +56,9 @@ METAMENU_TOASTSIZE = "''100%'' Message Size";
 METAMENU_LOOTSPAWNS = "Treasure Pickups";
 
 METAMENU_OPTIONAL = "Optional Content";
-METAMENU_OPTIONALDISC1 = "(Disable these when playing map sets";
+METAMENU_OPTIONALDISC1 = "(Disable when playing map sets";
 METAMENU_OPTIONALDISC2 = "that replace these via DEHACKED)";
-METAMENU_OPTIONAL_MONSTERS = "Map32 Actors + Scripted Marines";
+METAMENU_OPTIONAL_MONSTERS = "WolfSS, Keen & Marines";
 METAMENU_OPTIONAL_PROPS = "Environmental Props";
 
 METAMENU_ITEMHEADER = "Item Behavior";
@@ -94,7 +94,7 @@ SKILLDESCRIPTION6 = "\c[White]One mistake can be the difference between\nliving 
 SKILLDESCRIPTION7 = "\c[White]This is Nightmare with one major adjustment:\n\c[White]If you die, your campaign is \c[Red]OVER.\c[White] No re-dos!\n\n\c[Red]Hard monster placement, fast monsters,\nno cheats, IRONMAN MODE.";
 
 NIGHTMARE = "Are you sure? This skill level\nisn't even REMOTELY fair.";
-IRONMANCONFIRM = "Warning: Ultra-Nightmare\nis an Ironman mode.\nYou only have one life.\n\nJust to be sure, are you willing\nto put yourself through this?";
+IRONMANCONFIRM = "Just to be sure, are you willing\nto put yourself through this?";
 
 // Items
 GOTPINATAHEALTH = "Picked up some Health.";
@@ -123,7 +123,7 @@ GOTLOOT7 = "Picked up some UAC Credits.";
 GOTLOOTFIG1 = "Picked up an old, familiar figurine!";
 GOTLOOTFIG2 = "Picked up a dark and scary figurine!";
 GOTLOOTFIG3 = "Picked up a trend-setting figurine!";
-GOTLOOTFIG4 = "Picked up a blurry figurine!";
+GOTLOOTFIG4 = "Picked up an oddly blurry figurine!";
 
 // Weapons
 GOTPISTOL = "You got the EKG Sidearm!";
@@ -257,9 +257,9 @@ OB_SUICIDE = "%o suicides.";
 OB_FALLING = "%o took a dive.";
 OB_CRUSH = "%o was squished.";
 OB_EXIT = "%o did a bad thing."; // also used for cheating
-OB_WATER = "%o drowned.";
+OB_WATER = "%o sank like a rock.";
 OB_SLIME = "%o melted.";
-OB_LAVA = "%o went up in flames.";
+OB_LAVA = "%o did a back flip into the lava.";
 OB_BARREL = "%o went boom.";
 OB_SPLASH = "%o stood in the wrong spot.";
 OB_R_SPLASH = "%o should have stood back.";
