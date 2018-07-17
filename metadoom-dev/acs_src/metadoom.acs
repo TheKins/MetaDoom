@@ -525,8 +525,10 @@ script "Key_Init" OPEN
 	item_SkullKeyType = random(1,3);
 	
 	if(GetCvar("meta_developer"))
-			log(s:"Current keycard skin: ", i:item_KeyType);
-			log(s:"Current skullkey skin: ", i:item_SkullKeyType);
+	{
+		log(s:"Current keycard skin: ", i:item_KeyType);
+		log(s:"Current skullkey skin: ", i:item_SkullKeyType);
+	}
 }
 
 script "Key_ReturnType" (void)
