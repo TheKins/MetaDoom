@@ -1,0 +1,49 @@
+class KineticMineProj : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 8;
+		Speed 10;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+CORPSE
+		+CANBOUNCEWATER
+		-BOUNCEONFLOORS
+		BounceType "Doom";
+		SeeSound "inventory/throw";
+		scale 0.5;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 A_PlaySound("weapons/grenadethrow");
+		goto Flying;
+	Flying:
+		HOLO Y 3 ;
+		loop;
+	Bounce.Floor:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingFloor",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION);
+		Stop;
+	Bounce.Wall:
+		TNT1 A 0 
+		{
+			// DrPySpy did this bit
+			if(BlockingLine!=null)
+			{
+				Vector2 fuck1 = BlockingLine.v1.p;
+				Vector2 fuck2 = BlockingLine.v2.p;
+				angle = atan2(fuck2.y-fuck1.y, fuck2.x-fuck1.x);
+				angle += 90;
+			}
+			A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION);
+		}
+		Stop;
+	}
+}

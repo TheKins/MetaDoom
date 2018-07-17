@@ -54,6 +54,7 @@ actor KineticMine : CustomInventory
 	}
 }
 
+/*
 actor KineticMineProj
 {
 	+CANBOUNCEWATER
@@ -89,6 +90,7 @@ actor KineticMineProj
 		Stop
 	}
 }
+*/
 
 ACTOR KineticMineLurkingFloor
 {
