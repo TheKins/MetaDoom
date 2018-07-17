@@ -12,7 +12,9 @@ ACTOR MetaHealthBonus : Health replaces HealthBonus
 	{
 	Spawn:
 		BON1 A 0
+		BON1 A 0 A_JumpIf(GetCvar(meta_lootspawns) == 0, 2)
 		BON1 A 0 A_SpawnItem("LootSpawner",random(32,64),0)
+		BON1 A 0
 	DoALoop:
 		BON1 ABCDCB 4
 		Loop

@@ -12,6 +12,7 @@ server int meta_mapbreakers = 1;
 server int meta_contentlocust = 0;
 server int meta_episodicspawns = 1;
 server int meta_nospoders = 0;
+server int meta_lootspawns = 1;
 
 // tyson support
 server int meta_retroberserk = 0;

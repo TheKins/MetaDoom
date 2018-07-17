@@ -102,6 +102,7 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_EPISODICSPAWNS",					"meta_episodicspawns", "OnOff"
 	Option "$METAMENU_NOSPODERS",					"meta_nospoders", "OffOn"
 	Option "$METAMENU_SPAWNINGLIMITS",				"meta_contentlocust", "OnOff"
+	Option "$METAMENU_LOOTSPAWNS",				"meta_lootspawns", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_OPTIONAL", 1
 	Option "$METAMENU_OPTIONAL_MONSTERS",				"meta_optional_monsters", "OnOff"

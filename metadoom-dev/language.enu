@@ -53,6 +53,7 @@ METAMENU_MAPBREAKERS = "Potential Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Separate Episodic Spawn Rules";
 METAMENU_TOASTSIZE = "''100%'' Message Size";
+METAMENU_LOOTSPAWNS = "Treasure Pickups";
 
 METAMENU_OPTIONAL = "Optional Content";
 METAMENU_OPTIONALDISC1 = "(Disable these when playing map sets";

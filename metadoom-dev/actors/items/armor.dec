@@ -25,7 +25,9 @@ Actor MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
 	{
 	Spawn:
 		SHRD A 0
+		SHRD A 0 A_JumpIf(GetCvar(meta_lootspawns) == 0, 2)
 		SHRD A 0 A_SpawnItem("LootSpawner")
+		SHRD A 0
 	DoALoop:
 		SHRD A 6 BRIGHT
 		SHRD BCB 4
