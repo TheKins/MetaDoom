@@ -13,40 +13,40 @@ actor LootSpawner
 		TNT1 A 0 A_Jump(8, "LootFig")
 		stop
 	Loot1:
-		TNT1 A 0 A_SpawnItemEx("LootDagger",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootDagger",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot2:
-		TNT1 A 0 A_SpawnItemEx("LootChest",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootChest",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot3:
-		TNT1 A 0 A_SpawnItemEx("LootSceptre",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootSceptre",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot4:
-		TNT1 A 0 A_SpawnItemEx("LootBible",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootBible",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot5:
-		TNT1 A 0 A_SpawnItemEx("LootCrown",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootCrown",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot6:
-		TNT1 A 0 A_SpawnItemEx("LootGoblet",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootGoblet",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	Loot7:
-		TNT1 A 0 A_SpawnItemEx("LootCredits",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootCredits",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	LootFig:
 		TNT1 A 0 A_Jump(256, "LootFig1", "LootFig2", "LootFig3", "LootFig4")
 		stop
 	LootFig1:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine1",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootFigurine1",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	LootFig2:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine2",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootFigurine2",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	LootFig3:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine3",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootFigurine3",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	LootFig4:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine4",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("LootFigurine4",0,0,0,random(8,16),random(8,16),0,random(0,360))
 		stop
 	}
 }
@@ -56,9 +56,11 @@ Actor LootItem : ScoreItem
 	Inventory.Amount 500
 	Inventory.PickupMessage "$GOTLOOT6"
 	inventory.pickupsound "items/loot"
-	+DOOMBOUNCE
-	-BOUNCEONFLOORS
+	BounceType "Grenade"
+	BounceFactor 0.0
+	WallBounceFactor 1.0
 	-COUNTITEM
+	-BOUNCEAUTOOFF
 	States
 	{
 	Spawn:
