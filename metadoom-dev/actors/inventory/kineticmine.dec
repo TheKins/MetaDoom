@@ -3,7 +3,7 @@ actor KineticMinePickup : CustomInventory
 {
 	inventory.pickupmessage "$GOTKINMINE"
 	Tag "$TAGKINMINE"
-	inventory.icon "INVHOLO"
+	inventory.icon "INVMINE"
 	inventory.pickupsound "inventory/hologram/get"
 	+INVENTORY.ALWAYSPICKUP
 	scale 0.5
@@ -23,7 +23,7 @@ actor KineticMine : CustomInventory
 {
 	inventory.pickupmessage "$GOTKINMINE"
 	Tag "$TAGKINMINE"
-	inventory.icon "INVHOLO"
+	inventory.icon "INVMINE"
 	inventory.pickupsound "inventory/hologram/get"
 	inventory.amount 1
 	inventory.maxamount 1
