@@ -53,6 +53,7 @@ Item Changes:
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
 - Added additional skins for keycards and skull keys.
+- Treasure items can now be disabled via CVar (meta_lootspawns).
 - Additional polish and variety for treasure items...
 - Light-Amp Visors now have new sprites.
 
