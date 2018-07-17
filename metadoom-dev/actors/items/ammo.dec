@@ -73,6 +73,15 @@ ACTOR RocketAmmo2 : RocketAmmo replaces RocketAmmo
 		ROCK A 0 A_Jump(256, "HandGrenade")
 		goto Chill
 	KineticMine:
+		ROCK A 0
+		{
+			if (deathmatch) // Disable in Deathmatch
+			{
+				return state("Chill"); 
+			} else {
+				return state("");
+			}
+		}
 		ROCK A 0 A_SpawnItemEx("KineticMinePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		goto Chill
 	HandGrenade:
@@ -107,6 +116,15 @@ ACTOR RocketBox2 : RocketAmmo replaces RocketBox
 		BROK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		goto Chill
 	KineticMine:
+		BROK A 0
+		{
+			if (deathmatch) // Disable in Deathmatch
+			{
+				return state("Chill"); 
+			} else {
+				return state("");
+			}
+		}
 		BROK A 0 A_SpawnItemEx("KineticMinePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
 		goto Chill
 	Chill:
