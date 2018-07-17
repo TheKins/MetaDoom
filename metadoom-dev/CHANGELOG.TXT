@@ -2,6 +2,9 @@ v5 "Klave" (NEXT)
 =================
 It's been a while, hasn't it?
 
+New Stuff:
+- Added 1 new inventory item! (Kinetic Mine)
+
 Optional Content:
 - Optional Content is now built into the main mod and togglable via CVar, as
   opposed to being a seperate PK3 to load! (Thanks Matt and DrPySpy!)
