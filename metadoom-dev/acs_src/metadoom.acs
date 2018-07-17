@@ -688,6 +688,7 @@ script "InventoryCheat" ENTER
 		GiveInventory("SiphonGrenade", 1);
 		GiveInventory("DogCollar", 1);
 		GiveInventory("Hologram", 1);
+		GiveInventory("KineticMine", 1);
 		GiveInventory("DemonKeyCheat", 3);
 		GiveInventory("MetaCodex_DebugTheCodex", 1);
 		

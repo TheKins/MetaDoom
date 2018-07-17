@@ -178,6 +178,8 @@ GOTCOLLAR = "Picked up some Dog Collars!";
 TACOLLAR = "Dog Collar";
 GOTHOLOGRAM = "Picked up some Holograms!";
 TAGHOLOGRAM = "Hologram";
+GOTKINMINEM = "Picked up some Kinetic Mines!";
+TAGKINMINE = "Kinetic Mine";
 
 // Powerups
 GOTHASTE = "HasteSphere!";
@@ -374,6 +376,7 @@ OB_LIGHTNING = "%o was shocked by %k's Lightning Gun.";
 OB_MPGRENADE = "%o was splashed by %k's Hand Grenade.";
 OB_TESLA = "%o was shocked by %k's Tesla Rocket.";
 OB_SIPHON = "%o was sucked dry by %k's Siphon Grenade.";
+OB_KINMINE = "%o got too close to %k's Kinetic Mine.";
 
 OB_METADOG_BITE = "%o was mauled by %k's Collared Dog.";
 OB_METADOG_HELLHOUND = "%o was nailed by %k's well-thrown Hellhound.";

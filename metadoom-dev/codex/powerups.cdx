@@ -44,6 +44,13 @@ page "Pickups"
         origin "Doom (2016)";
         description "Once predicted by sci-fi movies and lowbrow 3D action games of the 20th century, the Hologram provides a unique take on crowd control. Upon activation, it generates a refracted-light hologram of a photo-realistic 3D render of the operator, typically doing something insulting. This infuriates nearby demons, who will attempt to attack it and fail miserably, often hurting each other and triggering a hailstorm of infighting in the process.\n\nThe Hologram activates on impact with the ground. You might want to run away shortly after it activates...";
     }
+	entry "KineticMine"
+    {
+		itemToCheck "KineticMine";
+        name "Kinetic Mine";
+        origin "Doom (2016)";
+        description "Put lore here, dipshit";
+    }
 	entry "Backpack2"
     {
 		name "Ammo Backpack";

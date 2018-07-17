@@ -1,0 +1,153 @@
+// Kinetic Mine
+actor KineticMinePickup : CustomInventory
+{
+	inventory.pickupmessage "$GOTKINMINE"
+	Tag "$TAGKINMINE"
+	inventory.icon "INVHOLO"
+	inventory.pickupsound "inventory/hologram/get"
+	+INVENTORY.ALWAYSPICKUP
+	scale 0.5
+	states
+	{
+	Spawn:
+		KMIN Z -1
+		stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("KineticMine", 1)
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3)
+		stop
+	}
+}
+
+actor KineticMine : CustomInventory
+{
+	inventory.pickupmessage "$GOTKINMINE"
+	Tag "$TAGKINMINE"
+	inventory.icon "INVHOLO"
+	inventory.pickupsound "inventory/hologram/get"
+	inventory.amount 1
+	inventory.maxamount 1
+	+INVENTORY.INVBAR
+	scale 0.5
+	states
+	{
+	Spawn:
+		KMIN Z -1
+		stop
+	Use:
+		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown")
+		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown")
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
+		goto Failure
+	Fire:
+		TNT1 A 0 A_FireCustomMissile("KineticMineProj",0,0,0,0,FPF_TRANSFERTRANSLATION)
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)
+		fail
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid")
+		TNT1 A 0 A_Log("You don't have any grenades!")
+		fail
+	FailureCooldown:
+		TNT1 A 0 
+		TNT1 A 0 
+		fail
+	}
+}
+
+actor KineticMineProj
+{
+	+CANBOUNCEWATER
+	Radius 8
+	Height 8
+	Speed 10
+	Damage 0
+	PROJECTILE
+	+RANDOMIZE
+	-NOGRAVITY
+	+USEBOUNCESTATE
+	+ROLLSPRITE
+	BounceType "Doom"
+	SeeSound "inventory/hologram/toss"
+	BounceSound "inventory/grenade/bounce"
+	-BOUNCEONFLOORS
+	scale 0.5
+	ReactionTime 60	//Just over five seconds
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ThrustThingZ(0,32,0,1)
+		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
+		goto Flying
+	Flying:
+		HOLO Y 3 A_CountDown
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurking",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION)
+		Stop
+	}
+}
+
+ACTOR KineticMineLurking
+{
+	Radius 8
+	Height 8
+	scale 0.5
+	+LOOKALLAROUND
+	+FRIENDLY
+	States
+	{
+	Spawn:
+		HOLO Y 0
+		HOLO Y 0 A_PlaySound("items/armor/shard")
+		goto WaitMyLove
+	WaitMyLove:
+		HOLO Y 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		HOLO Y 10 Bright A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		Loop
+	See:
+		HOLO Y 0 A_PlaySound("menu/invalid")
+		HOLO Y 2 Bright
+		HOLO Y 2
+		HOLO Y 0 A_PlaySound("menu/invalid")
+		HOLO Y 2 Bright
+		HOLO Y 2
+		HOLO Y 0 A_PlaySound("menu/invalid")
+		HOLO Y 2 Bright
+		HOLO Y 2
+		HOLO Y 0 A_PlaySound("menu/invalid")
+		HOLO Y 2 Bright
+		HOLO Y 2
+		HOLO Y 0 A_PlaySound("menu/invalid")
+		HOLO Y 2 Bright
+		HOLO Y 2
+		HOLO Y 0
+		{
+			A_FaceTarget;
+			A_CustomMissile("KineticMineLeapy",4);
+		}
+		Stop
+	}
+}
+
+ACTOR KineticMineLeapy
+{
+	Radius 11
+	Height 8
+	Speed 20
+	Damage 20
+	Projectile
+	+RANDOMIZE
+	Obituary "$OB_KINMINE"
+	Decal Scorch
+	States
+	{
+	Spawn:
+		MISL A 0 A_SpawnItem ("RocketTrailSmoke", 0, 6, 0, 0)
+		MISL A 1 Bright
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	}
+}
