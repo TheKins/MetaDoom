@@ -66,12 +66,11 @@ actor KineticMineProj
 	-NOGRAVITY
 	+USEBOUNCESTATE
 	+ROLLSPRITE
+	+CORPSE
 	BounceType "Doom"
 	SeeSound "inventory/throw"
-	BounceSound "inventory/grenade/bounce"
 	-BOUNCEONFLOORS
 	scale 0.5
-	ReactionTime 60	//Just over five seconds
 	States
 	{
 	Spawn:
@@ -80,15 +79,19 @@ actor KineticMineProj
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
 		goto Flying
 	Flying:
-		HOLO Y 3 A_CountDown
+		HOLO Y 3 
 		loop
+	Bounce.Wall:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION)
+		Stop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("KineticMineLurking",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION)
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingFloor",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION)
 		Stop
 	}
 }
 
-ACTOR KineticMineLurking
+ACTOR KineticMineLurkingFloor
 {
 	Radius 8
 	Height 8
@@ -102,32 +105,56 @@ ACTOR KineticMineLurking
 		HOLO Y 0 A_PlaySound("inventory/kineticmine/land")
 		goto WaitMyLove
 	WaitMyLove:
-		HOLO Y 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
-		HOLO Y 10 Bright A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "#" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "#" 10 Bright A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
 		Loop
 	See:
-		HOLO Y 0 A_PlaySound("inventory/kineticmine/track")
-		HOLO Y 2 Bright
-		HOLO Y 2
-		HOLO Y 0 A_PlaySound("inventory/kineticmine/track")
-		HOLO Y 2 Bright
-		HOLO Y 2
-		HOLO Y 0 A_PlaySound("inventory/kineticmine/track")
-		HOLO Y 2 Bright
-		HOLO Y 2
-		HOLO Y 0 A_PlaySound("inventory/kineticmine/track")
-		HOLO Y 2 Bright
-		HOLO Y 2
-		HOLO Y 0 A_PlaySound("inventory/kineticmine/track")
-		HOLO Y 2 Bright
-		HOLO Y 2
-		HOLO Y 0
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
+		"####" "#" 2 Bright
+		"####" "#" 2
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
+		"####" "#" 2 Bright
+		"####" "#" 2
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
+		"####" "#" 2 Bright
+		"####" "#" 2
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
+		"####" "#" 2 Bright
+		"####" "#" 2
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
+		"####" "#" 2 Bright
+		"####" "#" 2
+		goto Kaboom
+	Kaboom:
+		"####" "#" 0
 		{
 			A_FaceTarget;
 			A_PlaySound("inventory/kineticmine/launch");
 			A_CustomMissile("KineticMineLeapy",4);
 		}
 		Stop
+	}
+}
+
+ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
+{
+	Radius 8
+	Height 8
+	scale 0.5
+	+LOOKALLAROUND
+	+FRIENDLY
+	+WALLSPRITE
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		HGRE C 0
+		HGRE C 0 A_PlaySound("inventory/kineticmine/land")
+		goto WaitMyLove
+	WaitMyLove:
+		"####" "#" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "#" 10 Bright A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		Loop
 	}
 }
 
