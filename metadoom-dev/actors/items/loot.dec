@@ -207,7 +207,7 @@ Actor LootFigurine3 : LootFigurine1
 	}
 }
 
-// Doom 2016
+// Doom 64
 Actor LootFigurine4 : LootFigurine1
 {
 	Inventory.PickupMessage "$GOTLOOTFIG4"
