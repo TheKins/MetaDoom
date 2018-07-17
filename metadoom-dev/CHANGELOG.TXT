@@ -29,6 +29,8 @@ Generalized Bug Fixes:
 - Fixed potential error when dying in Ultra-Nightmare in Doom Complete (WadSmoosh)
 - Fixed all the harmless-but-agitating warnings in the console during startup.
 - Various under-the-hood cleanups and tweaks that no sane human will notice.
+- Players should no longer have their view snapped to their attacker when punched
+  by other players in multiplayer.
 
 Weapon Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
