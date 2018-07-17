@@ -2,7 +2,8 @@
 server int meta_developer = 0;
 
 // optional content
-server int meta_optional = 1;
+server int meta_optional_props = 1;
+server int meta_optional_monsters = 1;
 
 // spawn control
 server int meta_noalts_weapons = 0;

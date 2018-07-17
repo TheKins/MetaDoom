@@ -103,10 +103,11 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_NOSPODERS",					"meta_nospoders", "OffOn"
 	Option "$METAMENU_SPAWNINGLIMITS",				"meta_contentlocust", "OnOff"
 	StaticText " "
-	Option "$METAMENU_OPTIONAL",				"meta_optional", "OnOff"
-	StaticText "$METAMENU_OPTIONALDISC1"
-	StaticText "$METAMENU_OPTIONALDISC2"
-	StaticText "$METAMENU_OPTIONALDISC3"
+	StaticText "$METAMENU_OPTIONAL", 1
+	Option "$METAMENU_OPTIONAL_MONSTERS",				"meta_optional_monsters", "OnOff"
+	Option "$METAMENU_OPTIONAL_PROPS",				"meta_optional_props", "OnOff"
+	StaticText "$METAMENU_OPTIONALDISC1", 1
+	StaticText "$METAMENU_OPTIONALDISC2", 1
 	StaticText " "
 	StaticText "$METAMENU_ITEMHEADER", 1
 	Option "$METAMENU_RETROBERSERK",              "meta_retroberserk", "OnOff"

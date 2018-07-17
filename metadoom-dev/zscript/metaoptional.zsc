@@ -2,7 +2,7 @@
 // Based on some really confusingly-formatted code by Matt
 // https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774
 
-class MetaOptional : EventHandler
+class MetaOptionalProps : EventHandler
 {
     override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
@@ -11,16 +11,10 @@ class MetaOptional : EventHandler
 		thinkeriterator actorreplacer;
 		
 		// The last entry is ignored for some stupid reason.
-		int replaceables = 64;
+		int replaceables = 50;
 		
 		static const string oldActor[] =
 		{
-			// Actors
-			"WolfensteinSS", "CommanderKeen",
-			// Scripted Marines - Order is important!
-			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
-			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
-			"MarinePlasma", "MarineRailgun", "MarineBFG", "ScriptedMarine", 
 			// Gore
 			"Gibs", "BrainStem", "ColonGibs", "SmallBloodPool", 
 			"BloodyTwitch", "NonsolidTwitch", "DeadStick", "LiveStick", 
@@ -44,12 +38,6 @@ class MetaOptional : EventHandler
 		
 		static const string newActor[] =
 		{
-			// Actors
-			"WolfSSSpawner", "KeenSpawner",
-			// Scripted Marines - Order is important!
-			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
-			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
-			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine", 
 			// Gore
 			"MetaCrushedProp", "MetaBrainStem", "MetaColonGibs", "MetaSmallBloodPool", 
 			"MetaBloodyTwitch", "MetaNonsolidTwitch", "MetaDeadStick", "MetaLiveStick", 
@@ -72,7 +60,95 @@ class MetaOptional : EventHandler
 			
 		};
 		
-		if (meta_optional)
+		if (meta_optional_props)
+		{
+			for(int i = 0; i < (replaceables); i++)
+			{
+				actorreplacer = thinkeriterator.create(oldActor[i]);
+				
+				while(actormans=actor(actorreplacer.next()))
+				{
+					class<actor> newactor=newActor[i];
+					Actor newguy = actormans.spawn(newactor,actormans.pos);
+					
+					// Copying over the pertinent details.
+					// This could probably be done way better, but this works and doesn't,
+					// like, crash the engine, so fuck it. In it goes!
+					newguy.spawnangle = actormans.spawnangle;
+					newguy.angle = actormans.angle;
+					newguy.pitch = actormans.pitch;
+					newguy.roll = actormans.roll;
+					newguy.copyfriendliness(actormans, false);
+					newguy.spawnflags = actormans.spawnflags & ~MTF_SECRET;
+					newguy.handlespawnflags();
+					newguy.changetid(actormans.tid);
+					newguy.master = actormans.master;
+					newguy.target = actormans.target;
+					newguy.tracer = actormans.tracer;
+					newguy.args[0] = actormans.args[0];
+					newguy.args[1] = actormans.args[1];
+					newguy.args[2] = actormans.args[2];
+					newguy.args[3] = actormans.args[3];
+					newguy.args[4] = actormans.args[4];
+					newguy.special = actormans.special;
+					newguy.special1 = actormans.special1;
+					newguy.special2 = actormans.special2;
+					newguy.vel = actormans.vel;
+					
+					//if (meta_developer) { console.printf("%s replaced with %s", oldActor[i], newActor[i]); }
+					
+					//time to handle removals
+					actormans.A_Remove(AAPTR_DEFAULT);
+					actormans.destroy();
+				}
+			}
+			
+			while(actormansdelend.size()>0)
+			{
+				actormansdelend[0].destroy();
+				actormansdelend.delete(0);
+			}
+		}
+    }
+}
+
+class MetaOptionalMonsters : EventHandler
+{
+    override void WorldTick() //WorldLoaded(WorldEvent e)
+	{
+		actor actormans=null;
+		array<actor>actormansdelend;
+		thinkeriterator actorreplacer;
+		
+		// The last entry is ignored for some stupid reason.
+		int replaceables = 15;
+		
+		static const string oldActor[] =
+		{
+			// Actors
+			"WolfensteinSS", "CommanderKeen",
+			// Scripted Marines - Order is important!
+			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
+			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
+			"MarinePlasma", "MarineRailgun", "MarineBFG", "ScriptedMarine", 
+			// Thing What Makes The Array Work
+			"IGNOREME"
+		};
+		
+		static const string newActor[] =
+		{
+			// Actors
+			"WolfSSSpawner", "KeenSpawner",
+			// Scripted Marines - Order is important!
+			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
+			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
+			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine", 
+			// Thing What Makes The Array Work
+			"IGNORETHISMAN"
+			
+		};
+		
+		if (meta_optional_monsters)
 		{
 			for(int i = 0; i < (replaceables); i++)
 			{
