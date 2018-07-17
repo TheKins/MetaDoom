@@ -55,6 +55,8 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	damagefactor DogCollar, 0
 	damagefactor Dogsplosion, 0
 	damagefactor NoHarmPlayer, 0
+	
+	var float user_oldangle;
 
 	States
 	{
@@ -77,19 +79,23 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Pain.Fist:
 		PLAY G 0 
 		{
+			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 16, 1, 0);
 			ThrustThingZ(0,32,0,1);
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			angle = user_oldangle;
 		}
 		goto Pain
 	Pain.KrautBoot:
 		PLAY G 0 
 		{
+			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 16, 1, 0);
 			ThrustThingZ(0,32,0,1);
+			angle = user_oldangle;
 		}
 		goto Pain
 	Death.KrautBoot:
@@ -128,10 +134,12 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Pain.BerserkFist:
 		PLAY G 0 
 		{
+			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			angle = user_oldangle;
 		}
 		goto Pain
 	Death.BerserkFist:
