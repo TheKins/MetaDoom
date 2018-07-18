@@ -49,7 +49,7 @@ page "Pickups"
 		itemToCheck "KineticMine";
         name "Kinetic Mine";
         origin "Doom (2016)";
-        description "An experiment in automated defense mechanisms, the Kinetic Mine drives itself into whatever solid surface it hits using powerful steel claws before activating a 360-degree array of cameras to observe its surroundings. Once a target is detected within range, the mine arms a powerful explosive warhead before physically launching itself at the target.\n\nExtremely illegal on Earth, but treaties have yet to catch up to the realities of modern space travel.";
+        description "An experiment in automated defense mechanisms, the Kinetic Mine attaches to whatever solid surface it hits using powerful steel claws before activating a 360-degree array of sensors to observe its surroundings. Once an enemy is detected within range, the mine arms a powerful explosive warhead before physically launching itself at the target, saving them the trouble of having to step on it.\n\nThe Kinetic Mine activates upon hitting a surface, and is extremely illegal on Earth, but as mankind has travelled into the stars, international treaties have yet to catch up...";
     }
 	entry "Backpack2"
     {
