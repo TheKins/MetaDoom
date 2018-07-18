@@ -25,7 +25,7 @@ class KineticMineProj : Actor
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow");
 		goto Flying;
 	Flying:
-		HOLO Y 3 ;
+		KMIN A 3 ;
 		loop;
 	Death:
 	Bounce.Floor:
