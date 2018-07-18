@@ -96,6 +96,8 @@ ACTOR KineticMineBeepyBoop
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
+	Radius 1
+	Height 1
 	scale 0.5
 	states
 	{
@@ -154,7 +156,7 @@ ACTOR KineticMineLurkingFloor
 ACTOR KineticMineLurkingCeiling : KineticMineLurkingFloor
 {
 	Radius 8
-	Height 8
+	Height 4
 	scale -0.5
 	+LOOKALLAROUND
 	+FRIENDLY
