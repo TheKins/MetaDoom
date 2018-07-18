@@ -40,7 +40,7 @@ actor KineticMine : CustomInventory
 		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire")
 		goto Failure
 	Fire:
-		TNT1 A 0 A_FireCustomMissile("KineticMineProj",0,0,0,0,FPF_TRANSFERTRANSLATION)
+		TNT1 A 0 A_FireCustomMissile("KineticMineProj",0,0,0,0)
 		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)
 		fail
 	Failure:
