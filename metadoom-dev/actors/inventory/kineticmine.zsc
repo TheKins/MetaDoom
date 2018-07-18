@@ -30,12 +30,12 @@ class KineticMineProj : Actor
 	Death:
 	Bounce.Floor:
 		TNT1 A 0;
-		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingFloor",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION);
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingFloor",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	Bounce.Ceiling:
 		TNT1 A 0;
 		TNT1 A 0 A_JumpIf(CallACS("KineticMine_AmISky", 0, 0, 0) == 1, "Flying");
-		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingCeiling",0,0,999,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION);
+		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingCeiling",0,0,999,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	Bounce.Wall:
 		TNT1 A 0 
@@ -48,7 +48,7 @@ class KineticMineProj : Actor
 				angle = atan2(fuck2.y-fuck1.y, fuck2.x-fuck1.x);
 				angle += 90;
 			}
-			A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERTRANSLATION);
+			A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
 		}
 		Stop;
 	}
