@@ -178,7 +178,7 @@ GOTCOLLAR = "Picked up some Dog Collars!";
 TACOLLAR = "Dog Collar";
 GOTHOLOGRAM = "Picked up some Holograms!";
 TAGHOLOGRAM = "Hologram";
-GOTKINMINEM = "Picked up some Kinetic Mines!";
+GOTKINMINE = "Picked up some Kinetic Mines!";
 TAGKINMINE = "Kinetic Mine";
 
 // Powerups
