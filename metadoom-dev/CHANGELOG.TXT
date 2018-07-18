@@ -22,10 +22,10 @@ UI Changes:
 - Powerup timers on the HUD are now properly centered, adjusting as powerups are
   gained and lost. (Thanks DrPySpy and TheZombieKiller!)
 - Difficulty select screen now has skill descriptions and mugshot. (Thanks BoA Team!)
-- The 100% kills/items/secrets messages will now try not to overlap each other
+- The 100% kills/items/secrets messages will now try not to overlap each other.
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
   their turn and trigger one after the other.
-- Updated ENDOOM to credit DrPySpy and mention Saber Interactive
+- Updated ENDOOM to credit DrPySpy and mention Saber Interactive.
 
 Generalized Bug Fixes:
 - Fixed inventory cooldown getting stuck forever when transitioning between maps
@@ -45,7 +45,8 @@ Weapon Changes:
   they can keep fighting until they get a Pistol again.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
-- Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript
+- Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript.
+- Weapons now have brightmaps.
 
 Item Changes:
 - The Tesla Rocket will no longer fry the player who fired it if they're in the
@@ -73,7 +74,7 @@ Monster Changes:
 - A_SetScale hack used for random sprite mirroring on death replaced with the
   recently-added SPRITEFLIP flag, since it's a better way of doing it.
 - Imported Doom 2 Minor Sprite Fixing Project assets for the following monsters:
-  Arachnotron, Arch-Vile, Mancubus, Pain Elemental and Revenant
+  Arachnotron, Arch-Vile, Mancubus, Pain Elemental and Revenant.
 - Phantoms now have unique sounds.
 - Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
   instead of the increased damage of the player's EKG Sidearm.
