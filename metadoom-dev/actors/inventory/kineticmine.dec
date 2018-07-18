@@ -6,7 +6,7 @@ actor KineticMinePickup : CustomInventory
 	inventory.icon "INVMINE"
 	inventory.pickupsound "inventory/kineticmine/get"
 	+INVENTORY.ALWAYSPICKUP
-	scale 0.5
+	scale 0.75
 	states
 	{
 	Spawn:
