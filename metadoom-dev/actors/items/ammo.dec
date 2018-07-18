@@ -41,7 +41,7 @@ ACTOR ClipBox2 : Clip replaces ClipBox
 		AMMO A 0 A_Jump(256, "DogCollar")
 		goto Chill
 	DogCollar:
-		AMMO A 0 A_SpawnItemEx("DogCollarPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		AMMO A 0 A_SpawnItemEx("DogCollarPickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill
 	Chill:
 		AMMO A -1
@@ -72,7 +72,7 @@ ACTOR RocketAmmo2 : RocketAmmo replaces RocketAmmo
 		ROCK A 0 A_Jump(256, "HandGrenade")
 		goto Chill
 	HandGrenade:
-		ROCK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		ROCK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill
 	Chill:
 		ROCK A -1
@@ -99,7 +99,7 @@ ACTOR RocketBox2 : RocketAmmo replaces RocketBox
 		BROK A 0 A_Jump(256, "HandGrenade")
 		goto Chill
 	HandGrenade:
-		BROK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_SpawnItemEx("HandGrenadePickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill
 	Chill:
 		BROK A -1
@@ -131,10 +131,10 @@ ACTOR Cell2 : Cell replaces Cell
 		BROK A 0 A_Jump(256, "Tesla")
 		goto Chill
 	Tesla:
-		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill	
 	Siphon:
-		BROK A 0 A_SpawnItemEx("SiphonGrenadePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_SpawnItemEx("SiphonGrenadePickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill	
 	Chill:
 		CELL A -1
@@ -161,11 +161,11 @@ ACTOR CellPack2 : Cell replaces CellPack
 		BROK A 0 A_Jump(256, "BFGAmmo")
 		goto Chill
 	BFGAmmo:
-		BROK A 0 A_SpawnItemEx("BFGAmmo",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_SpawnItemEx("BFGAmmo",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		BROK A 0 A_Jump(128, "Tesla")
 		goto Chill	
 	Tesla:
-		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BROK A 0 A_SpawnItemEx("TeslaRocketPickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill	
 	Chill:
 		CELP A -1
@@ -225,6 +225,7 @@ ACTOR Backpack2 : BackpackItem replaces Backpack
 	States
 	{
 	Spawn:
+		BPAK A 0
 		BPAK A 0 A_Jump(64, "SpawnInv")
 		goto Chill
 	SpawnInv:
@@ -240,7 +241,7 @@ ACTOR Backpack2 : BackpackItem replaces Backpack
 				return state("");
 			}
 		}
-		BPAK A 0 A_SpawnItemEx("KineticMinePickup",0,0,0,random(0,16),random(0,16),0,random(0,360))
+		BPAK A 0 A_SpawnItemEx("KineticMinePickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
 		goto Chill
 	Chill:
 		BPAK A -1
