@@ -53,7 +53,7 @@ class MetaOptionalProps : EventHandler
 			// Tech
 			"MetaTechLamp","MetaTechLamp2","MetaColumn","MetaBurningBarrel","MetaTechPillar",
 			// Corpses
-			"DeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
+			"MetaDeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
 			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine", 
 			// Thing What Makes The Array Work
 			"IGNORETHISMAN"
