@@ -206,6 +206,16 @@ ACTOR ShellBox2 : Shell replaces ShellBox
 	States
 	{
 	Spawn:
+		SBOX A 0
+		SBOX A 0 A_Jump(32, "SpawnInv")
+		goto Chill
+	SpawnInv:
+		SBOX A 0 A_Jump(256, "Mines")
+		goto Chill
+	Mines:
+		SBOX A 0 A_SpawnItemEx("KineticMinePickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
+		goto Chill	
+	Chill:
 		SBOX A -1
 		Stop
 	}
@@ -225,7 +235,6 @@ ACTOR Backpack2 : BackpackItem replaces Backpack
 	States
 	{
 	Spawn:
-		BPAK A 0
 		BPAK A -1
 		Stop
 	}
