@@ -60,6 +60,7 @@ Item Changes:
 - Treasure items can now be disabled via CVar (meta_lootspawns).
 - Additional polish and variety for treasure items...
 - Light-Amp Visors now have new sprites.
+- Cell and Argent Core ammo pickups now have brightmaps.
 
 Monster Changes:
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
