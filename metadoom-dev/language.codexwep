@@ -19,7 +19,7 @@ MC_MetaSuperShotgun_Desc = "Among the state-of-the-art, high-tech implements of 
 MC_MetaMachineGun_Name = "Assault Rifle";
 MC_MetaMachineGun_Origin = "Doom 3 (2004)";
 MC_MetaMachineGun_Icon = "MCDX_WAW";
-MC_MetaMachineGun_Desc = "The long-time standard issue weapon of the UAC's security forces, the Assault Rifle is at its core a traditional portable Machine Gun, peppering opponents with low-calibur bullets. It's effective, but it's believed that the next generation of the Plasma Rifle is planned to replace it. Alternate fire lets the user toggle a side-mounted rack of micro-missiles. While these are much more effective, they consume your ammunition much faster, and as such should be used sparingly.";
+MC_MetaMachineGun_Desc = "The long-time standard issue weapon of the UAC's security forces, the Assault Rifle is at its core a traditional portable Machine Gun, peppering opponents with low-calibre bullets. It's effective, but it's believed that the next generation of the Plasma Rifle is planned to replace it. Alternate fire lets the user toggle a side-mounted rack of micro-missiles. While these are much more effective, they consume your ammunition much faster, and as such should be used sparingly.";
 
 MC_MetaChaingun_Name = "Chaingun";
 MC_MetaChaingun_Origin = "Doom (1993)";
@@ -39,7 +39,7 @@ MC_MetaGrenadeLauncher_Desc = "A relatively new variant of the Rocket Launcher p
 MC_MetaPlasmaRifle_Name = "Plasma Rifle";
 MC_MetaPlasmaRifle_Origin = "Doom (1993)";
 MC_MetaPlasmaRifle_Icon = "MCDX_WPR";
-MC_MetaPlasmaRifle_Desc = "The next generation of the UAC's standard-issue weaponry, the Plasma Rifle fires large blue blobs of energy at opponents at a frankly frightning rate. The only thing stopping it from replacing the Assault Rifle are weight, the costs of Argent Energy batteries, and some dangerous heat-output issues that are still being addressed: As you fire the Plasma Rifle, a ''heat bar'' will build up. When the bar is full, hit Alternate Fire to expel this energy as a room-clearing 360-degree attack!";
+MC_MetaPlasmaRifle_Desc = "The next generation of the UAC's standard-issue weaponry, the Plasma Rifle fires large blue blobs of energy at opponents at a frankly frightening rate. The only things stopping it from replacing the Assault Rifle are weight, the costs of Argent Energy batteries, and some dangerous heat-output issues that are still being addressed: As you fire the Plasma Rifle, a ''heat bar'' will build up. When the bar is full, hit Alternate Fire to expel this energy as a room-clearing 360-degree attack!";
 
 MC_MetaGaussCannon_Name = "Gauss Cannon";
 MC_MetaGaussCannon_Origin = "Doom (2016)";

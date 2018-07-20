@@ -35,7 +35,7 @@ page "Pickups"
 		itemToCheck "DogCollar";
         name "Dog Collar";
         origin "Doom RPG (2005)";
-        description "A small fabric collar with some strange runes stitched around it. These devices are used on Earth so that pet owners can lead their domesticated fur-babies around without being within biting distance. Who knew that it also worked on flesh eating canines from the firey pits?\n\nActivate to launch the collar out. It won't do any damage, but if it hits a Hellhound class enemy, you will claim that dog as a meatshield/melee weapon! Press Fire to bite the hell out of enemies. Press Alternate Fire or switch away to hurl it at enemies.";
+        description "A small fabric collar with some strange runes stitched around it. These devices are used on Earth so that pet owners can lead their domesticated fur-babies around without being within biting distance. Who knew that it also worked on flesh eating canines from the fiery pits?\n\nActivate to launch the collar out. It won't do any damage, but if it hits a Hellhound class enemy, you will claim that dog as a meatshield/melee weapon! Press Fire to bite the hell out of enemies. Press Alternate Fire or switch away to hurl it at enemies.";
     }
 	entry "Hologram"
     {
@@ -85,7 +85,7 @@ page "Pickups"
     {
         name "Haste Sphere";
         origin "Quake 3 Arena (1999)";
-        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes).\n\nNever before have you been more scared of having ghosts in your pants.\n\nThe spirits will typically dissipate into the ether after 45 seconds of aid and/or harassment.";
+        description "An ominous red orb full of malicious spirits - upon being freed by a wayward traveller, they will possess the user's limbs, forcing them to sprint wildly into danger, whether they want to be there or not.\n\nSuch furious cardiovascular activity typically results in myocardial rupture (or, in English: your heart explodes).\n\nNever before have you been more scared of having ghosts in your pants.\n\nThe spirits will typically dissipate into the ether after 45 seconds of aid and/or harassment.";
     }
     entry "MetaInvulnerabilitySphere"
     {

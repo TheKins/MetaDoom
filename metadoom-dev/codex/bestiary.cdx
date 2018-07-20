@@ -131,7 +131,7 @@ page "Bestiary"
 	{
 		name "Spectre";
         origin "Doom (1993)";
-        description "The result of a genetic engineering experiment to try and improve the Pinky's lacking sense of sight and famously low intelligence, the research team accidentally gave the creature a form of organic optic camoflague...\n\n...which it then quickly took advantage of, eating the entire lab crew and escaping back into Hell, where its modified genes rapidly spread.\n\nThese creatures tend to prefer dimly-lit environments, where it can best take advantage of its unique capabilities.";
+        description "The result of a genetic engineering experiment to try and improve the Pinky's lacking sense of sight and famously low intelligence, the research team accidentally gave the creature a form of organic optic camouflage...\n\n...which it then quickly took advantage of, eating the entire lab crew and escaping back into Hell, where its modified genes rapidly spread.\n\nThese creatures tend to prefer dimly-lit environments, where it can best take advantage of its unique capabilities.";
 	}
 	entry "MetaNightmareSpectre"
 	{
@@ -167,7 +167,7 @@ page "Bestiary"
         offset 0, -3;
         name "Lost Soul";
         origin "Doom (1993)";
-        description "The Lost Souls is a creature that defies science, and as such there isn't really a way to describe it that isn't blunt: It's a giant monster skull that flies and is on fire. Enough said.\n\nIt's origins remain a mystery, but observers report that these creatures seem to be at the bottom of the demonic pecking order, shunned by pretty much every other form of Hellish life... except, that is, the Pain Elementals, which seem to have a strange, almost-psychic connection with them.";
+        description "The Lost Soul is a creature that defies science, and as such there isn't really a way to describe it that isn't blunt: It's a giant monster skull that flies and is on fire. Enough said.\n\nIt's origins remain a mystery, but observers report that these creatures seem to be at the bottom of the demonic pecking order, shunned by pretty much every other form of Hellish life... except, that is, the Pain Elementals, which seem to have a strange, almost-psychic connection with them.";
     }
 	entry "MetaPhantom"
 	{

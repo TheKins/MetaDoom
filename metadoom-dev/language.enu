@@ -126,7 +126,7 @@ GOTLOOTFIG3 = "Picked up a trend-setting figurine!";
 GOTLOOTFIG4 = "Picked up an oddly blurry figurine!";
 
 // Weapons
-GOTPISTOL = "You got the EKG Sidearm!";
+GOTPISTOL = "You got the EMG Sidearm!";
 GOTMACGUN = "You got the Machine Gun!";
 GOTHWP = "You got the Holy Water Pistol!";
 GOTCHAINSAW = "You got the Chainsaw!  Find some meat!";
@@ -147,7 +147,7 @@ GOTSOULCUBE = "We are the Praeleanthor, you know us as the SoulCube.";
 GOTGRENLAUN = "You got the Grenade Launcher!";
 GOTLIGHTNING = "You got the Lightning Gun!";
 
-TAGPISTOL = "EKG Sidearm";
+TAGPISTOL = "EMG Sidearm";
 TAGMACGUN = "Machine Gun";
 TAGHWP = "Holy Water Pistol";
 TAGAXE = "Fire Axe";
