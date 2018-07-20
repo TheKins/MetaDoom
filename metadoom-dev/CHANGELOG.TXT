@@ -63,6 +63,7 @@ Item Changes:
 
 Monster Changes:
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
+- Wretched now have new sprites (Thanks Zaneion!)
 - The Former Lieutenant now wears blue armor, to make him look less like his
   chaingun wielding siblings (DrPySpy did a lot on this update just FYI)
 - Spiborgs are now harder to make flinch when charging their shot, making them
