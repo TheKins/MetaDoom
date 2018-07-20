@@ -415,7 +415,7 @@ ACTOR MetaWretched : MonsterCore
 	Bloodtype Blueblood
 	BloodColor "0 0 80"
 	Decal "bluebloodsplat"
-	scale 0.5
+	scale 0.65
 	States
 	{
 	Spawn:
@@ -451,14 +451,14 @@ ACTOR MetaWretched : MonsterCore
 	Missile:
 		WRET A 0 A_Jump(64, "MissileTongue")
 		WRET E 5 
-		WRET F 5 BRIGHT A_CustomComboAttack("MetaCacodemonBall", 16, 10 * random(1, 6))
+		WRET F 5 BRIGHT A_CustomComboAttack("MetaCacodemonBall", 24, 10 * random(1, 6))
 		WRET G 5 A_FaceTarget
 		Goto See
 	MissileTongue:
 		WRET A 5 A_FaceTarget
 		WRET H 5 A_FaceTarget
 		WRET I 0 A_Stop
-		WRET I 20 BRIGHT A_CustomMissile ("WretchedTongue", 16, 0, 0)
+		WRET I 20 BRIGHT A_CustomMissile ("WretchedTongue", 24, 0, 0)
 		WRET JA 5 A_FaceTarget
 		Goto See
 	Pain:
