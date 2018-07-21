@@ -25,6 +25,8 @@ UI Changes:
 - The 100% kills/items/secrets messages will now try not to overlap each other.
   when triggered in rapid succession (ie. MAP07). They'll now try and wait
   their turn and trigger one after the other.
+- Updated HELP page to explain the Shared Grenade Ammo Pool and note the default
+  keybind for the Codex.
 - Updated ENDOOM to credit DrPySpy and mention Saber Interactive.
 
 Generalized Bug Fixes:
@@ -43,6 +45,7 @@ Weapon Changes:
 - The Lightning Gun's stun bomb has been been given an aesthetic overhaul.
 - If a script takes away the player's Pistol, they'll be given a Fist weapon so
   they can keep fighting until they get a Pistol again.
+- Added a CVar to toggle spent brass and casings, for the truly performance-starved.
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
 - Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript.
