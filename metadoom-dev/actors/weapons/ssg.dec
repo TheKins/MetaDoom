@@ -100,8 +100,11 @@ ACTOR MetaSuperShotgun : MetaDoomWeapon
 		SSG2 N 2
 		{
 			A_PlaySound ("weapons/ssg/open", CHAN_BODY);
-			A_FireCustomMissile("SSGCaseSpawner",5,0,6,4);
-			A_FireCustomMissile("SSGCaseSpawner",5,0,6,4);
+			if (GetCvar(meta_perf_spentbrass) == 1)
+			{
+				A_FireCustomMissile("SSGCaseSpawner",5,0,6,4);
+				A_FireCustomMissile("SSGCaseSpawner",5,0,6,4);
+			}
 		}
 		SSG2 OPQ 3
 		SSG2 R 3 A_PlaySound ("weapons/ssg/load", CHAN_BODY)

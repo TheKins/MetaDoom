@@ -115,6 +115,7 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_PISTOLAMMO",              "meta_pistolammo", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_PERFHEADER", 1
+	Option "$METAMENU_PERFBRASS",              "meta_perf_spentbrass", "OnOff"
 	Option "$METAMENU_PERFBLOOD",              "meta_perf_fadeblood", "OnOff"
 	Slider "$METAMENU_PERFBLOODTIME",			"meta_perf_bloodtime", "0", "10500", "175", "0"
 	Slider "$METAMENU_PERFCULLER",			"meta_perf_bloodcullradius", "0", "16", "1", "0"
@@ -122,4 +123,5 @@ OptionMenu "MetaMenu"
 	StaticText "$METAMENU_MISC", 1
 	Option "$METAMENU_DEBUG",              "meta_developer", "OnOff"
 	Slider "$METAMENU_TOASTSIZE",			"meta_toastsize", "1", "4", "1", "0"
+	StaticText " "
 }

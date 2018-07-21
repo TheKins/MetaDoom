@@ -95,7 +95,10 @@ ACTOR MetaShotgun : MetaDoomWeapon
 		SSH1 K 4
 		{
 			A_PlaySound ("weapons/shotgun/cock1", CHAN_BODY);
-			A_FireCustomMissile("ShotCaseSpawn",5,0,6,4);
+			if (GetCvar(meta_perf_spentbrass) == 1)
+			{
+				A_FireCustomMissile("ShotCaseSpawn",5,0,6,4);
+			}
 			A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		}
 		SSH1 LMNOP 2 A_JumpIfInventory("MeleePunch", 1, "MeleePunch")

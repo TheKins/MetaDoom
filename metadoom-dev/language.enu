@@ -66,6 +66,7 @@ METAMENU_RETROBERSERK = "Traditional Berserk";
 METAMENU_PISTOLAMMO = "Pistol Uses Ammo";
 
 METAMENU_PERFHEADER = "Performance Controls";
+METAMENU_PERFBRASS = "Spent Brass";
 METAMENU_PERFCULLER = "Blood Cull Radius";
 METAMENU_PERFBLOOD = "Force Blood to Fade Out";
 METAMENU_PERFBLOODTIME = "Blood Lifetime (in gametics)";
