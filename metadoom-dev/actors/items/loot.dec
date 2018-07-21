@@ -63,8 +63,16 @@ Actor LootItem : ScoreItem
 	States
 	{
 	Spawn:
-		LOOT F 6
-		Loop
+		LOOT F 0
+		"####" "#" 0
+		goto MoveAround
+	MoveAround:
+		"####" "#" 35
+		"####" "#" 0 A_Stop
+		goto Sit
+	Sit:
+		"####" "#" -1
+		loop
 	}
 }
 
@@ -75,8 +83,9 @@ Actor LootGoblet : LootItem
 	States
 	{
 	Spawn:
-		LOOT F 6
-		Loop
+		LOOT F 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -87,8 +96,9 @@ Actor LootDagger : LootItem
 	States
 	{
 	Spawn:
-		LOOT A 6
-		Loop
+		LOOT A 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -99,8 +109,9 @@ Actor LootChest : LootItem
 	States
 	{
 	Spawn:
-		LOOT B 6
-		Loop
+		LOOT B 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -111,8 +122,9 @@ Actor LootSceptre : LootItem
 	States
 	{
 	Spawn:
-		LOOT C 6
-		Loop
+		LOOT C 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -123,8 +135,9 @@ Actor LootBible : LootItem
 	States
 	{
 	Spawn:
-		LOOT D 6
-		Loop
+		LOOT D 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -135,8 +148,9 @@ Actor LootCrown : LootItem
 	States
 	{
 	Spawn:
-		LOOT E 6
-		Loop
+		LOOT E 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -148,8 +162,9 @@ Actor LootCredits : LootItem
 	States
 	{
 	Spawn:
-		LOOT G 6
-		Loop
+		LOOT G 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -164,8 +179,9 @@ Actor LootFigurine1 : LootItem
 	States
 	{
 	Spawn:
-		LFIG A 6
-		Loop
+		LFIG A 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -176,8 +192,9 @@ Actor LootFigurine2 : LootFigurine1
 	States
 	{
 	Spawn:
-		LFIG B 6
-		Loop
+		LFIG B 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -188,8 +205,9 @@ Actor LootFigurine3 : LootFigurine1
 	States
 	{
 	Spawn:
-		LFIG C 6
-		Loop
+		LFIG C 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
 
@@ -200,7 +218,8 @@ Actor LootFigurine4 : LootFigurine1
 	States
 	{
 	Spawn:
-		LFIG D 6
-		Loop
+		LFIG D 0
+		"####" "#" 0
+		goto MoveAround
 	}
 }
