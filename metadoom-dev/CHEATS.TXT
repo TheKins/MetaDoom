@@ -1,0 +1,24 @@
+Oh, come on. Like you need to cheat.
+
+Yes, there are new cheats in MetaDoom, by way of the console. Nobody ever seemed
+to notice the hints I gave about them (too subtle?) So I figure I'll just drop
+them off here. Type these into the console to activate. Be warned: If you enter
+an invalid number, you'll be killed instantly.
+
+impulse 35 - Toggle Micro-Rocket Placeholder Mode
+-------------------------------------------------
+While active, this makes the Machinegun's alt-fire shoot Shotgun grenades instead
+of micro-rockets. I used those as placeholders before I added the micro-rockets
+themselves, and it seemed fun enough to not remove completely.
+
+impulse 2004 - Enable Doom 3 Mode
+---------------------------------
+This drops all the sector lighting in the map to 0. Naturally. Useful for testing
+GLDEFS and brightmaps and stuff, actually.
+
+impulse 16 - Enable SNES Mode
+-----------------------------
+This stretches out all the floor and ceiling textures to look flat-shaded.
+
+I'll add more if I get some feedback or suggestions. Drop 'em off at the usual
+addresses and I'll see what I can do!
