@@ -56,6 +56,9 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	damagefactor Dogsplosion, 0
 	damagefactor NoHarmPlayer, 0
 	
+	// This is a part of a gross hack to ensure that the player's angle isn't
+	// snapped around in a disorienting fashion if they get punched by another
+	// player in deathmatch.
 	var float user_oldangle;
 
 	States
@@ -79,6 +82,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Pain.Fist:
 		PLAY G 0 
 		{
+			// See above comment about gross hack.
 			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 16, 1, 0);
@@ -91,6 +95,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Pain.KrautBoot:
 		PLAY G 0 
 		{
+			// Ditto.
 			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 16, 1, 0);
@@ -134,6 +139,7 @@ ACTOR MetaDoomPlayer : PlayerPawn
 	Pain.BerserkFist:
 		PLAY G 0 
 		{
+			// You know the drill by now.
 			user_oldangle = angle;
 			A_FaceTarget;
 			ThrustThing(angle*256/360+128, 64, 1, 0);

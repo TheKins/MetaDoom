@@ -1,4 +1,4 @@
-// Grenades
+// Siphon Grenades, the bane of balance
 actor SiphonGrenadePickup : CustomInventory
 {
 	inventory.pickupmessage "$GOTSIPHON"

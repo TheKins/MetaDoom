@@ -1,3 +1,4 @@
+// Shield Wall - Useful Edition!
 class ShieldWallPiece : Actor
 {
 	Default

@@ -19,6 +19,24 @@ ACTOR MetaRadSuit : PowerupGiver replaces RadSuit
 }
 
 // Berserk
+actor BerserkSpawner replaces Berserk
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(GetCvar(meta_retroberserk) == 1, "Berserk")
+		TNT1 A 0 A_Jump(64, "Quad")
+		goto Berserk
+	Berserk:
+		TNT1 A 0 A_SpawnItemEx("MetaBerserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	Quad:
+		TNT1 A 0 A_SpawnItemEx("MetaQuadDamage",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
+		stop
+	}
+}
+
 ACTOR MetaBerserk : CustomInventory //replaces Berserk
 {
 	+COUNTITEM
@@ -49,6 +67,9 @@ ACTOR MetaBerserk : CustomInventory //replaces Berserk
 	}
 }
 
+// PowerStrength timers are fucked in ways I can't recall (I think they went in
+// reverse?) so I use an unused, otherwise effectless powerup type as a patsy.
+// Look, this was before ZScript and defining your own power types, okay?!?
 ACTOR MetaBerserkTimer : PowerupGiver
 {
 	+INVENTORY.AUTOACTIVATE
@@ -147,7 +168,6 @@ ACTOR MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
 }
 
 // Soulsphere
-
 ACTOR MetaSoulsphere : Health replaces Soulsphere
 {
 	+COUNTITEM
@@ -170,6 +190,7 @@ ACTOR MetaSoulsphere : Health replaces Soulsphere
 	}
 }
 
+// Megasphere
 ACTOR MetaMegasphere : CustomInventory replaces Megasphere
 {
 	+COUNTITEM
@@ -246,23 +267,5 @@ ACTOR MetaQuadDamage : PowerupGiver
 	Chill:
 		QUAD ABCDCB 6 Bright
 		Loop
-	}
-}
-
-actor BerserkSpawner replaces Berserk
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_JumpIf(GetCvar(meta_retroberserk) == 1, "Berserk")
-		TNT1 A 0 A_Jump(64, "Quad")
-		goto Berserk
-	Berserk:
-		TNT1 A 0 A_SpawnItemEx("MetaBerserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	Quad:
-		TNT1 A 0 A_SpawnItemEx("MetaQuadDamage",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
 	}
 }

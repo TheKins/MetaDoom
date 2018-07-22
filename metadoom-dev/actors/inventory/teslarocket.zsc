@@ -1,3 +1,4 @@
+// More Tesla Rockets, with grody workarounds
 class TeslaZapper : Actor
 {
 	Default

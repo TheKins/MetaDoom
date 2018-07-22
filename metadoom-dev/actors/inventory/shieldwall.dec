@@ -1,3 +1,4 @@
+// Shield Wall
 actor ShieldWallPickup : CustomInventory
 {
 	inventory.pickupmessage "$GOTSHIELDWALL"

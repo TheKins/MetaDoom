@@ -206,7 +206,8 @@ actor BFGSpawner replaces BFG9000
 }
 
 // Doom 64 Shit
-
+// These have been transitioned to the Zscripts to reduce harmless-but-frustrating
+// error messages in the startup console when Doom 64 isn't present.
 actor UnmakerSpawner //replaces Unmaker
 {
 	States

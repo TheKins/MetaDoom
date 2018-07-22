@@ -1,3 +1,4 @@
+// Kinetic Mine
 class KineticMineProj : Actor
 {
 	Default

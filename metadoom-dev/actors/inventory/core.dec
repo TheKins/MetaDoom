@@ -1,3 +1,5 @@
+// This is shared by all the inventory items, because being lumped with 25 pre-buff
+// Shield Walls and 0 grenades seemed like a pretty shitty fate to lump a player with.
 ACTOR GrenadeAmmo : Ammo
 {
 	Inventory.PickupMessage "$GOTROCKET"
@@ -16,12 +18,11 @@ ACTOR GrenadeAmmo : Ammo
 
 // This is used to detect usage of the IDKFA cheat
 // and dole out inventory items as appopriate
-
 ACTOR MetaCheatDetector : MetaPistol
 {
 	Weapon.SelectionOrder 0
 }
 
-
-
+// Used for inventory cool-down. When this is in the player's inventory, their
+// inventory icon is greyed out and they can't use any items.
 actor InventoryCooldownToken : _Boolean {}

@@ -1,3 +1,6 @@
+// Doom 2016-style "pinata" pickups - contextual icons that give you stuff.
+
+// This one fades away!
 ACTOR MetaHealthPinata : Health
 {
 	-COUNTITEM
@@ -45,6 +48,7 @@ ACTOR MetaHealthPinata : Health
 	}
 }
 
+// This one, not so much.
 ACTOR MetaHealthPinataPerm : MetaHealthPinata
 {
 	Inventory.Amount 4

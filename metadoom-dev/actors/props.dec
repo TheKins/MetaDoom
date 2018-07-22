@@ -54,6 +54,8 @@ ACTOR MetaExplosiveBarrel replaces ExplosiveBarrel
 		BEXP B 2 BRIGHT
 		BEXP C 2 BRIGHT
 		goto Kaboom
+	// Delay demise a little bit if the exploding barrel was killed by another
+	// exploding barrel, to preserve the original timing and keep MAP23 playable.
 	Death.ExplodingBarrel:
 		BEXP A 5 BRIGHT
 		BEXP B 5 BRIGHT
