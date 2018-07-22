@@ -451,7 +451,7 @@ ACTOR MetaWretched : MonsterCore
 	Missile:
 		WRET A 0 A_Jump(64, "MissileTongue")
 		WRET E 5 
-		WRET F 5 BRIGHT A_CustomComboAttack("MetaCacodemonBall", 24, 10 * random(1, 6))
+		WRET F 5 BRIGHT A_CustomMissile ("MetaCacodemonBall", 24, 0, 0)
 		WRET G 5 A_FaceTarget
 		Goto See
 	MissileTongue:
@@ -460,6 +460,14 @@ ACTOR MetaWretched : MonsterCore
 		WRET I 0 A_Stop
 		WRET I 20 BRIGHT A_CustomMissile ("WretchedTongue", 24, 0, 0)
 		WRET JA 5 A_FaceTarget
+		Goto See
+	Melee:
+		WRET A 4 A_FaceTarget
+		WRET E 4 A_FaceTarget
+		WRET I 4 BRIGHT A_FaceTarget
+		WRET A 0 BRIGHT A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", PainElementalBite, 1)
+		WRET A 4 A_FaceTarget
+		WRET J 4 A_FaceTarget
 		Goto See
 	Pain:
 		WRET K 3
