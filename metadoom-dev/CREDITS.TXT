@@ -106,14 +106,12 @@ Toke (BFG9000 ScriptedMarine sprites)
 DoomJedi, ItsNatureToDie, PSTrooper (Additional rotations for WolfSS)
 Slax (evileye improvement)
 
-OTHER ASSISTANCE (OPTIONAL CONTENT):
-Captain J (WolfSS firing sound)
-Old Classic Retro Gaming (Apple II sounds - https://www.youtube.com/user/oldclassicgame )
-
-MUSIC USED:
+NOISE RESOURCES:
 Leslie Wai (TITLEMAP music remix - https://youtu.be/tS0OwOaK28U )
 Andrew Hulshult (Intermission music cover - https://youtu.be/eDdKv097yaU )
 DiosPercha (Ironman Game Over music - https://youtu.be/cWcGxCS9Xmg )
+Captain J (WolfSS firing sound)
+Old Classic Retro Gaming (Apple II sounds - https://www.youtube.com/user/oldclassicgame )
 
 SPECIAL THANKS TO:
 Id Software (...for everything.)
