@@ -84,6 +84,7 @@ Monster Changes:
 - Pistol Scripted Marines now only do the original Doom Pistol's amount of damage,
   instead of the increased damage of the player's EKG Sidearm.
 - Z-Sec now use the proper firing sound instead of the vanilla shotgun.
+- Nightmare Imps now have red blood on their death animations
 - Additional polish and variety in WolfSS and Commander Keen replacmements...
 
 v4.1 "Fred" (06/06/17)
