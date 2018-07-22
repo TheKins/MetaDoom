@@ -34,7 +34,10 @@ class MetaTrite : MonsterCore
 		BloodType "GreenBlood";
 		BloodColor "0 78 0";
 		Decal "greenbloodsplat";
-		
+		damagefactor "Fist", 500;
+		damagefactor "BerserkFist", 500;
+		damagefactor "KrautBoot", 500;
+		damagefactor "Axe", 500;
 	}
 
 	States
