@@ -2,6 +2,8 @@ height 32;
 Resolution 320, 200;
 monospacefonts true, "0";
 
+// I don't think any of this stuff is actually used anymore, since the HUD is now
+// ZScript-powered, but it can't hurt to keep around, right?
 statusbar fullscreen
 {
 	InInventory not DisableHUD
@@ -364,6 +366,7 @@ statusbar inventoryfullscreen, fullscreenoffsets // ZDoom HUD overlay.
 	drawinventorybar Strife, translucent, 7, INDEXFONT, -106+center, -34;
 }
 
+// This is definitely still used, though. XDeath gib frames!
 mugshot "xdeath"
 {
 	XDTH0 3;

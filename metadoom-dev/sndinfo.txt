@@ -1,5 +1,6 @@
 // Unrelated sounds
-// Item pickup noises
+
+// Item Crumbs
 items/armor/shard			armrshrd
 items/armor/green			armrgrn
 items/armor/blue			armrblue
@@ -8,6 +9,7 @@ items/health/shard			healshrd
 items/health/stim			healstim
 items/health/medi			healmedi
 
+// Ammo Pickups
 items/clip		clipget
 items/clipx		clipxget
 items/shell		shelget
@@ -19,18 +21,18 @@ items/cellx		cellxget
 items/pack		packget
 items/bfg		argeget
 
+// Keys
 items/keycard	keycard
 items/keyskull	keyskull
-
 locks/keycard	keylock
 locks/skull		skullock
 locks/null		nullock
 
+// Powerups
 items/soulsphere	getsoul
 items/megasphere	getmega
 items/automap		getmap
 items/lightamp		getlamp
-
 powerups/berserk	getbzrk
 powerups/radsuit	getsuit
 powerups/haste		gethast
@@ -38,6 +40,7 @@ powerups/invuln		getinvl
 powerups/quad		getquad
 powerups/quad/use	quadshot
 
+// Phat Lewts
 items/loot			getloot
 items/lootfig		getfig
 
