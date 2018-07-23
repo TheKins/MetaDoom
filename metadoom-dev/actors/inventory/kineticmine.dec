@@ -277,6 +277,13 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
 			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
 			
+			if (z == floorz)
+			{
+				return state("Detatch");
+			} else {
+				return state("");
+			}
+			
 			if (CountInv("MineDetatcherToken") > 0)
 			{
 				return state("Detatch");
