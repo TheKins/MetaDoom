@@ -49,7 +49,15 @@ class KineticMineProj : Actor
 				angle = atan2(fuck2.y-fuck1.y, fuck2.x-fuck1.x);
 				angle += 90;
 			}
-			A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			
+			// Stop the mine from attaching if the wall has a special attached
+			if(BlockingLine.special==0)
+			{
+				A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+				return ResolveState(Null); 
+			} else {
+				return ResolveState("Flying"); 
+			}
 		}
 		Stop;
 	}
