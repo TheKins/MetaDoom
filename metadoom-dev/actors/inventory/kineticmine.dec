@@ -128,7 +128,9 @@ ACTOR KineticMineLurkingFloor
 	scale 0.5
 	+LOOKALLAROUND
 	+FRIENDLY
-	// gross attempt to try and get A_RadiusGive to notice it
+	
+	// This combination of flags here should (SHOULD) ultimately accomplish nothing
+	// except allowing the mines to be detected by A_RadiusGive. I'm not proud...
 	+SHOOTABLE
 	+INVULNERABLE
 	-SOLID
