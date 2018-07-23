@@ -32,7 +32,7 @@ MC_MetaRocketLauncher_Icon = "MCDX_WRL";
 MC_MetaRocketLauncher_Desc = "Originally popularized in the 20th century as an anti-armor weapon, the Rocket Launcher received a new breath of life in the 21st as a tool for demolition and excavation in harsh non-Earth environments. Its origins weren't long-forgotten, though, and the tool was quickly re-repurposed. By hitting the alternate fire key, any rockets you have launched will be detonated in mid-air via radio signal, allowing for greater damage and crowd control. Be warned: safety mechanisms are minimal...";
 
 MC_MetaGrenadeLauncher_Name = "Grenade Launcher";
-MC_MetaGrenadeLauncher_Origin = "Doom (2016)";
+MC_MetaGrenadeLauncher_Origin = "Doom DLC 3: Bloodfall (2016)";
 MC_MetaGrenadeLauncher_Icon = "MCDX_WGL";
 MC_MetaGrenadeLauncher_Desc = "A relatively new variant of the Rocket Launcher produced at the request of several senior Heavy Weapons personnel, the Grenade Launcher is comparatively lightweight. While its projectiles are subject to gravity, they are fired out with far greater force, allowing canny Marines to safely destroy unsuspecting crowds from around corners. Alternate Fire launches an experimental ''gas bomb'', which clever Marines may find useful for generating literal chokepoints while they make good their escape.";
 
