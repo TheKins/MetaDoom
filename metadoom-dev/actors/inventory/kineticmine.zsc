@@ -50,7 +50,9 @@ class KineticMineProj : Actor
 				angle += 90;
 			}
 			
-			// Stop the mine from attaching if the wall has a special attached
+			// Stop the mine from attaching if the wall has a special attached.
+			// This is to avoid the inevitable issues that come with being
+			// attached to doors, etc.
 			if(BlockingLine.special==0)
 			{
 				A_SpawnItemEx("KineticMineLurkingWall",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);

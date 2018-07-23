@@ -277,6 +277,9 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
 			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
 			
+			// If we get attached to the inner wall of a lift or a wall that's
+			// moved by a button elsewhere, things can get fucky. If this happens,
+			// panic and detach to ensure sanity ensures.
 			if (z == floorz)
 			{
 				return state("Detatch");
