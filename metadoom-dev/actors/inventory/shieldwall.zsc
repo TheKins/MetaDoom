@@ -7,6 +7,7 @@ class ShieldWallPiece : Actor
 	Height 56;
 	+SOLID
 	+WALLSPRITE
+	+NOGRAVITY
 	renderstyle "add";
 	}
 	
