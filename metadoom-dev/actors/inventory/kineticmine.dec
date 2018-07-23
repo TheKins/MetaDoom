@@ -1,4 +1,6 @@
 // Kinetic Mine
+actor MineDetatcherToken : _Boolean {}
+
 actor KineticMinePickup : CustomInventory
 {
 	inventory.pickupmessage "$GOTKINMINE"
@@ -126,6 +128,12 @@ ACTOR KineticMineLurkingFloor
 	scale 0.5
 	+LOOKALLAROUND
 	+FRIENDLY
+	// gross attempt to try and get A_RadiusGive to notice it
+	+SHOOTABLE
+	+INVULNERABLE
+	-SOLID
+	+NOBLOOD
+	+NOTAUTOAIMED
 	
 	var int user_fuse;
 	
@@ -133,13 +141,30 @@ ACTOR KineticMineLurkingFloor
 	{
 	Spawn:
 		KMIN B 0
+		KMIN B 0
+		{
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
 		KMIN B 0 A_PlaySound("inventory/kineticmine/land")
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
 		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,8)
-		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return state("Detatch");
+			} else {
+				return state("");
+			}
+		}
 		Loop
 	See:
 		"####" "#" 0 A_PlaySound("inventory/kineticmine/track")
@@ -168,6 +193,7 @@ ACTOR KineticMineLurkingFloor
 		}
 		Stop
 	Detatch:
+		TNT1 A 0 A_PlaySound("inventory/kineticmine/detatch")
 		TNT1 A 0 A_SpawnItem("KineticMinePickupRetrieve")
 		Stop
 	}
@@ -185,13 +211,30 @@ ACTOR KineticMineLurkingCeiling : KineticMineLurkingFloor
 	{
 	Spawn:
 		KMIN B 0
+		KMIN B 0
+		{
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
 		KMIN B 0 A_PlaySound("inventory/kineticmine/land")
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
 		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,-8)
-		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return state("Detatch");
+			} else {
+				return state("");
+			}
+		}
 		Loop
 	Kaboom:
 		"####" "#" 0
@@ -217,13 +260,30 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 	{
 	Spawn:
 		KMIN C 0
+		KMIN B 0
+		{
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
 		KMIN C 0 A_PlaySound("inventory/kineticmine/land")
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
 		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",-4,0,0)
-		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return state("Detatch");
+			} else {
+				return state("");
+			}
+		}
 		Loop
 	Kaboom:
 		"####" "#" 0
@@ -232,7 +292,8 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 		}
 		Stop
 	Detatch:
-		"####" "#" 0 A_SpawnItemEx("KineticMinePickupRetrieve",-32,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
+		TNT1 A 0 A_PlaySound("inventory/kineticmine/detatch")
+		TNT1 A 0 A_SpawnItemEx("KineticMinePickupRetrieve",-32,0,0,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	}
 }

@@ -45,3 +45,4 @@ inventory/kineticmine/get 			getkmin
 inventory/kineticmine/land 			kminland
 inventory/kineticmine/track 		kmintrak
 inventory/kineticmine/launch		kminlnch
+inventory/kineticmine/detatch		kmindeta
