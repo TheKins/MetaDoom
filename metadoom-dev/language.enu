@@ -180,6 +180,7 @@ TACOLLAR = "Dog Collar";
 GOTHOLOGRAM = "Picked up some Holograms!";
 TAGHOLOGRAM = "Hologram";
 GOTKINMINE = "Picked up some Kinetic Mines!";
+GOTKINMINERET = "Retrieved a Kinetic Mine!";
 TAGKINMINE = "Kinetic Mine";
 
 // Powerups
