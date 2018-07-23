@@ -137,7 +137,7 @@ ACTOR KineticMineLurkingFloor
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
-		"####" "#" 0 A_JumpIf(user_fuse == 10, "Detatch")
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,8)
 		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
 		Loop
@@ -189,7 +189,7 @@ ACTOR KineticMineLurkingCeiling : KineticMineLurkingFloor
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
-		"####" "#" 0 A_JumpIf(user_fuse == 10, "Detatch")
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,-8)
 		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
 		Loop
@@ -221,7 +221,7 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
-		"####" "#" 0 A_JumpIf(user_fuse == 10, "Detatch")
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
 		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",-4,0,0)
 		"####" "##" 10 A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360)
 		Loop
