@@ -43,7 +43,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		fnt = "INDEXFONT_DOOM";
 		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), true);
 		mAmountFont = HUDFont.Create("INDEXFONT");
-		diparms = InventoryBarState.Create();
+		//diparms = InventoryBarState.Create();
+		diparms = InventoryBarState.Create(mIndexfont, Font.CR_UNTRANSLATED, 1.0, "ARTIBOX", "INVCURS");
 		
 		mSmallFont = HUDFont.Create("SMALLFONT");
 		mSmallFont2 = HUDFont.Create("SMALLFONT2");
@@ -327,9 +328,10 @@ class MetaDoomStatusBar : BaseStatusBar
 			}
 		}
 		DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		
 		if (isInventoryBarVisible())
 		{
-			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
+			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP|DI_DRAWCURSORFIRST);
 		}
 	}
 	
