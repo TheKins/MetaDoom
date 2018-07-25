@@ -54,26 +54,30 @@ actor HandGrenade : CustomInventory
 	}
 }
 
+// EdTheBat helped get this lookin' good - https://forum.zdoom.org/viewtopic.php?p=941872#p941872
 actor HandGrenadeProj
 {
-	+CANBOUNCEWATER
 	Radius 8
 	Height 8
-	Speed 25
+	Speed 30
 	Damage 0
 	PROJECTILE
 	+RANDOMIZE
 	-NOGRAVITY
 	+USEBOUNCESTATE
 	+ROLLSPRITE
+	+CANBOUNCEWATER
+	+BOUNCEAUTOOFF
 	BounceType "Doom"
 	SeeSound "inventory/throw"
 	BounceSound "inventory/grenade/bounce"
 	Obituary "$OB_MPGRENADE"
 	scale 0.5
-	ReactionTime 60	//Just over five seconds
-	BounceFactor 0.45
-	WallBounceFactor 0.45
+	BounceFactor 0.3
+	WallBounceFactor 0.2
+	
+	var int user_timer;
+	
 	States
 	{
 	Spawn:
@@ -82,24 +86,64 @@ actor HandGrenadeProj
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
 		goto Flying
 	Flying:
-		HGRE ABCDEF 3 A_CountDown
+		HGRE ABCDEF 3 
+		{
+			if (user_timer>=44)
+			{
+				return State("XDeath");
+			} else {
+				user_timer++;
+				return State("");
+			}
+		}
 		loop
 	Bounce:
 		"####" # 0 A_Jump(128, "Bounce2", "Flying")
 		goto Bounce1
 	Bounce1:
-		"####" # 0 A_CountDown
+		"####" # 0 
+		{
+			if (user_timer>=44)
+			{
+				return State("XDeath");
+			} else {
+				user_timer++;
+				return State("");
+			}
+		}
 		"####" # 1 A_SetRoll((roll + 5))
 		"####" # 1 A_SetRoll((roll + 5))
 		"####" # 1 A_SetRoll((roll + 5))
 		loop
 	Bounce2:
-		"####" # 0 A_CountDown
+		"####" # 0 
+		{
+			if (user_timer>=44)
+			{
+				return State("XDeath");
+			} else {
+				user_timer++;
+				return State("");
+			}
+		}
 		"####" # 1 A_SetRoll((roll - 5))
 		"####" # 1 A_SetRoll((roll - 5))
 		"####" # 1 A_SetRoll((roll - 5))
 		loop
 	Death:
+		"####" # 0 { A_Stop; A_PlaySound("inventory/grenade/bounce", CHAN_BODY, 0.5); }
+		"####" # 1 
+		{
+			if (user_timer>=44)
+			{
+				return State("XDeath");
+			} else {
+				user_timer++;
+				return State("");
+			}
+		}
+		Goto Death+1
+	XDeath:
 		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS)
 		Stop
 	}
