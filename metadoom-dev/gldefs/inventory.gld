@@ -22,3 +22,16 @@ object SiphonExplosionFX
 {
 	frame SIBM { light SiphonGrenade }
 }
+
+pulselight MetaKineticLightBeepyBoop
+{
+    color 0.4 0.5 1.0
+    size 16
+    secondarySize 0
+    interval 1
+} 
+
+object KineticMineBeepyBoop
+{
+    frame KMIN { light MetaKineticLightBeepyBoop }
+}
