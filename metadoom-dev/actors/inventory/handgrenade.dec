@@ -59,7 +59,7 @@ actor HandGrenadeProj
 	+CANBOUNCEWATER
 	Radius 8
 	Height 8
-	Speed 15
+	Speed 25
 	Damage 0
 	PROJECTILE
 	+RANDOMIZE
@@ -72,11 +72,13 @@ actor HandGrenadeProj
 	Obituary "$OB_MPGRENADE"
 	scale 0.5
 	ReactionTime 60	//Just over five seconds
+	BounceFactor 0.45
+	WallBounceFactor 0.45
 	States
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 ThrustThingZ(0,32,0,1)
+		TNT1 A 0 ThrustThingZ(0,35,0,1)
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow")
 		goto Flying
 	Flying:
