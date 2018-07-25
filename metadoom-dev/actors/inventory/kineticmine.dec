@@ -153,6 +153,8 @@ ACTOR KineticMineLurkingFloor
 		goto ArmUp
 	ArmUp:
 		"####" "#" 40
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/arm")
+		"####" "#" 0 A_Jump(256, "WaitMyLove") // constant inheritance has its downsides
 		goto WaitMyLove
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
@@ -224,6 +226,7 @@ ACTOR KineticMineLurkingCeiling : KineticMineLurkingFloor
 		}
 		KMIN B 0 A_PlaySound("inventory/kineticmine/land")
 		goto ArmUp
+		
 	WaitMyLove:
 		"####" "#" 0 { user_fuse++; }
 		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch")
