@@ -335,6 +335,8 @@ class MetaDoomStatusBar : BaseStatusBar
 		}
 	}
 	
+	// This is redefined with some minor tweaks to a single line I'll mark down below
+	// so as to better position the inventory cursor. Wasteful, huh.
 	void DrawInventoryBar(InventoryBarState parms, Vector2 position, int numfields, int flags = 0, double bgalpha = 1.)
 	{
 		double width = parms.boxsize.X * numfields;
@@ -367,6 +369,7 @@ class MetaDoomStatusBar : BaseStatusBar
 					{
 						double flashAlpha = bgalpha;
 						if (flags & DI_ARTIFLASH) flashAlpha *= itemflashFade;
+						// This is the one line I changed. Cool.
 						DrawTexture(parms.selector, position + parms.selectofs + (boxsize.X * i, 2), flags | DI_ITEM_LEFT_TOP, flashAlpha);
 					}
 				}
