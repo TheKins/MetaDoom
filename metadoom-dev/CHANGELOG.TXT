@@ -36,6 +36,7 @@ Generalized Bug Fixes:
 - Various under-the-hood cleanups and tweaks that no sane human will notice.
 - Players should no longer have their view snapped to their attacker when punched
   by other players in multiplayer.
+- "You don't have any grenades!" text should no longer log globally.
 
 Weapon Changes:
 - The BFG's tendrils now properly reward kills and points to the appropriate
