@@ -60,6 +60,7 @@ Item Changes:
   dizzying new status of "actually useful"!
 - Dramatically reduced effectiveness of Siphon Grenades on Cyberdemons and
   Spiderdemons, making it harder to "cheese out" those bosses.
+- Hand Grenades are more enjoyable to actually use!
 - Added additional skins for keycards and skull keys.
 - Treasure items can now be disabled via CVar (meta_lootspawns).
 - Additional polish and variety for treasure items...
