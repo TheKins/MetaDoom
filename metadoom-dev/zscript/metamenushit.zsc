@@ -1,3 +1,5 @@
+// Menu class definitions
+
 // Draw background graphics behind the menus. This is from JPF, so odds are
 // Gutawer walked me through this like the mental infant I am.
 class MetaListMenu : ListMenu
@@ -70,6 +72,7 @@ class MetaFatOptionMenu : OptionMenu
 	}
 }
 
+// Message box menu stuff. Maybe give this a unique, smaller background or something?
 class MetaMessageBoxMenu : MessageBoxMenu
 {
 	int bgpicked;
