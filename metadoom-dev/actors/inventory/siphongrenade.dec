@@ -45,7 +45,7 @@ actor SiphonGrenade : CustomInventory
 		fail
 	Failure:
 		TNT1 A 0 A_PlaySound("menu/invalid")
-		TNT1 A 0 A_Log("You don't have any grenades!")
+		TNT1 A 0 A_Log("You don't have any grenades!", 1)
 		fail
 	FailureCooldown:
 		TNT1 A 0 

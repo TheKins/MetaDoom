@@ -47,11 +47,11 @@ actor DogCollar : CustomInventory
 		fail
 	Failure:
 		TNT1 A 0 A_PlaySound("menu/invalid")
-		TNT1 A 0 A_Log("You don't have any grenades!")
+		TNT1 A 0 A_Log("You don't have any grenades!", 1)
 		fail
 	Failure2:
 		TNT1 A 0 A_PlaySound("menu/invalid")
-		TNT1 A 0 A_Log("You already have a Dog!")
+		TNT1 A 0 A_Log("You already have a Dog!", 1)
 		fail
 	FailureCooldown:
 		TNT1 A 0 
