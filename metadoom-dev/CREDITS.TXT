@@ -36,6 +36,7 @@ Perkristian (High-Res Doom sounds)
 Jer Sypault (Some sounds from Quake Mindgrind mods)
 Marphy Black & HavoX (Doom 2 Minor Sprite Fixing Project sprites)
 Blade of Agony Team (Difficulty Select Screen ZScript)
+TerminusEst13 (Slow-motion implementation from High Noon Drifter)
 
 TOOLS USED:
 NoirSuccubus (Doom 4 Audio Tools)
@@ -53,6 +54,7 @@ Major Cooke (Blood Stain recoding, engine-side support)
 Enjay (Terrain definitions)
 Gutawer (Zscript sensei, rewrote statscreen borders)
 Matt (base for actor replacement system)
+Blue Shadow (time freeze with sound)
 
 ART RESOURCES (WEAPONS AND ITEMS):
 Captain J (Fire Extinguisher, all sorts of other nice sprites)
