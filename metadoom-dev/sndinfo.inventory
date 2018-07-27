@@ -49,6 +49,6 @@ inventory/kineticmine/detatch		kmindeta
 inventory/kineticmine/arm			kminarm
 
 // Artifact
-inventory/artifact/use				artiuse
+inventory/artifact/get				artiget
 inventory/artifact/on				artion
 inventory/artifact/off				artioff

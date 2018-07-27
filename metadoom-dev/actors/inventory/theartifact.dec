@@ -6,7 +6,7 @@ actor ArtifactPickup : CustomInventory
 	inventory.pickupmessage "$GOTARTIFACT"
 	Tag "$TAGARTIFACT"
 	inventory.icon "INVARTI"
-	inventory.pickupsound "inventory/grenade/get"
+	inventory.pickupsound "inventory/artifact/get"
 	+INVENTORY.ALWAYSPICKUP
 	scale 0.5
 	states
@@ -26,7 +26,7 @@ actor Artifact : CustomInventory
 	inventory.pickupmessage "$GOTARTIFACT"
 	Tag "$TAGARTIFACT"
 	inventory.icon "INVARTI"
-	inventory.pickupsound "inventory/grenade/get"
+	inventory.pickupsound "inventory/artifact/get"
 	inventory.amount 1
 	inventory.maxamount 1
 	+INVENTORY.INVBAR
