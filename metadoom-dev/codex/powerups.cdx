@@ -51,6 +51,13 @@ page "Pickups"
         origin "Doom DLC 1: Unto the Evil (2016)";
         description "An experiment in automated defense mechanisms, the Kinetic Mine attaches to whatever solid surface it hits using powerful steel claws before activating a 360-degree array of sensors to observe its surroundings. Once an enemy enters range, the mine arms a powerful explosive before physically launching itself at the target, saving them the trouble of stepping on it.\n\nThe Kinetic Mine activates upon hitting a surface, detaches once its batteries expire, and is extremely illegal on Earth... but as mankind travels through the stars, international treaties have yet to catch up.";
     }
+	entry "Artifact"
+    {
+		itemToCheck "Artifact";
+        name "The Artifact";
+        origin "Doom 3: Resurrection of Evil (2005)";
+        description "Verbs.";
+    }
 	entry "Backpack2"
     {
 		name "Ammo Backpack";
