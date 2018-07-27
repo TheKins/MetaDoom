@@ -9,12 +9,12 @@ actor ArtifactPickup : CustomInventory
 	inventory.pickupsound "inventory/artifact/get"
 	+INVENTORY.ALWAYSPICKUP
 	+FLOATBOB
-	scale 1
+	scale 0.75
 	states
 	{
 	Spawn:
-		ARTI Z -1
-		stop
+		ARTI ZYXY 10
+		loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Artifact", 1)
 		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3)
@@ -31,12 +31,12 @@ actor Artifact : CustomInventory
 	inventory.amount 1
 	inventory.maxamount 1
 	+INVENTORY.INVBAR
-	scale 1
+	scale 0.75
 	states
 	{
 	Spawn:
-		ARTI Z -1
-		stop
+		ARTI ZYXY 10
+		loop
 	Use:
 		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown")
 		TNT1 A 0 A_JumpIfInventory("ArtifactTimer", 1, "FailureCooldown")
