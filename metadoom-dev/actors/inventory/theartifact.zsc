@@ -1,0 +1,111 @@
+class ArtifactEffect : PowerupGiver
+{
+	Default
+	{
+	Powerup.Type "PowerTimeFreezerSound";
+	Powerup.Duration -4;
+	Inventory.MaxAmount 0;
+	Translation "128:143=48:63";
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.FANCYPICKUPSOUND;
+	}
+	
+	States
+	{
+	Spawn:
+	MEGA ABCD 4 bright;
+	Loop;
+	}
+}
+
+class ArtifactTimer : Inventory
+{
+	Default
+	{
+		Inventory.MaxAmount 175;
+		+INVENTORY.UNDROPPABLE
+		-INVENTORY.INVBAR
+	}
+}	
+
+// A version of PowerTimeFreezer which does not mute sound while in effect.
+// By Blue Shadow
+class PowerTimeFreezerSound : PowerTimeFreezer
+{
+	override void InitEffect()
+	{
+		int freezemask;
+
+		Powerup.InitEffect();
+		
+		if (Owner == null || Owner.player == null)
+			return;
+
+		// When this powerup is in effect, pause the music.
+		S_PauseSound(false, true);
+
+		// Give the player and his teammates the power to move when time is frozen.
+		freezemask = 1 << Owner.PlayerNumber();
+		Owner.player.timefreezer |= freezemask;
+		for (int i = 0; i < MAXPLAYERS; i++)
+		{
+			if (playeringame[i] &&
+				players[i].mo != null &&
+				players[i].mo.IsTeammate(Owner)
+			   )
+			{
+				players[i].timefreezer |= freezemask;
+			}
+		}
+
+		// [RH] The effect ends one tic after the counter hits zero, so make
+		// sure we start at an odd count.
+		EffectTics += !(EffectTics & 1);
+		if ((EffectTics & 1) == 0)
+		{
+			EffectTics++;
+		}
+		// Make sure the effect starts and ends on an even tic.
+		if ((level.time & 1) == 0)
+		{
+			level.frozen = true;;
+		}
+		else
+		{
+			// Compensate for skipped tic, but beware of overflow.
+			if(EffectTics < 0x7fffffff)
+				EffectTics++;
+		}
+	}
+
+	override void EndEffect()
+	{
+		Powerup.EndEffect();
+
+		// If there is an owner, remove the timefreeze flag corresponding to
+		// her from all players.
+		if (Owner != null && Owner.player != null)
+		{
+			int freezemask = ~(1 << Owner.PlayerNumber());
+			for (int i = 0; i < MAXPLAYERS; ++i)
+			{
+				players[i].timefreezer &= freezemask;
+			}
+		}
+
+		// Are there any players who still have timefreezer bits set?
+		for (int i = 0; i < MAXPLAYERS; ++i)
+		{
+			if (playeringame[i] && players[i].timefreezer != 0)
+			{
+				return;
+			}
+		}
+
+		// No, so allow other actors to move about freely once again.
+		level.frozen = false;
+
+		// Also, turn the music back on.
+		S_ResumeSound(true);
+	}
+}

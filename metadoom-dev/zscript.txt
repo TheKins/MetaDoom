@@ -16,6 +16,7 @@ version "3.4"
 #include "actors/inventory/teslarocket.zsc"
 #include "actors/inventory/shieldwall.zsc"
 #include "actors/inventory/kineticmine.zsc"
+#include "actors/inventory/theartifact.zsc"
 
 // Monsters
 #include "actors/monsters/metadoomactor.zsc"

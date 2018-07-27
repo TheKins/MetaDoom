@@ -70,6 +70,26 @@ Script "InventoryCooldown" (void)
 	TakeInventory("InventoryCooldownToken", 999);
 }
 
+// The Artifact
+script "MetaBulletTime" ENTER
+{
+	// blatantly ripped from high noon drifter
+	int drawtimer;
+
+	while(true)
+    {
+		if (CheckInventory("ArtifactTimer") > 0)
+		{
+			drawtimer++;
+			if (drawtimer < 8) { GiveInventory("PowerTimeFreezerSound",1); }
+			else { TakeInventory("PowerTimeFreezerSound",1); drawtimer = 0; }
+			TakeInventory("ArtifactTimer",1);
+		}
+		else { drawtimer = 0; TakeInventory("PowerTimeFreezerSound",999); }	
+		delay(1);
+	}
+}
+
 // Pistol Start Stuff
 script "PistolAmmoStart" ENTER
 {

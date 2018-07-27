@@ -47,3 +47,8 @@ inventory/kineticmine/track 		kmintrak
 inventory/kineticmine/launch		kminlnch
 inventory/kineticmine/detatch		kmindeta
 inventory/kineticmine/arm			kminarm
+
+// Artifact
+inventory/artifact/use				artiuse
+inventory/artifact/on				artion
+inventory/artifact/off				artioff
