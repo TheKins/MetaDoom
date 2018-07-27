@@ -8,11 +8,12 @@ actor ArtifactPickup : CustomInventory
 	inventory.icon "INVARTI"
 	inventory.pickupsound "inventory/artifact/get"
 	+INVENTORY.ALWAYSPICKUP
-	scale 0.5
+	+FLOATBOB
+	scale 1
 	states
 	{
 	Spawn:
-		HGRE Z -1
+		ARTI Z -1
 		stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Artifact", 1)
@@ -30,11 +31,11 @@ actor Artifact : CustomInventory
 	inventory.amount 1
 	inventory.maxamount 1
 	+INVENTORY.INVBAR
-	scale 0.5
+	scale 1
 	states
 	{
 	Spawn:
-		HGRE Z -1
+		ARTI Z -1
 		stop
 	Use:
 		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown")
