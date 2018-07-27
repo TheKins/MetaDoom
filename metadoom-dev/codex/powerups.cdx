@@ -56,7 +56,7 @@ page "Pickups"
 		itemToCheck "Artifact";
         name "The Artifact";
         origin "Doom 3: Resurrection of Evil (2005)";
-        description "Verbs.";
+        description "A curious device seemingly created by the demonic invaders, the Artifact resembles a large organic heart withered and corrupted by the powers within. Upon activation, the Artifact unleashes a burst of demonic energy that gives the bearer supernatural reflexes, making it feel a lot like time has slowed down around them and giving them a brief period of free reign with which to wreak havoc.\n\nEach burst of the Artifact lasts roughly five seconds, and leaves the user feeling a little... hollower. Almost as if it's taking something from them in return for its ''services''...";
     }
 	entry "Backpack2"
     {
