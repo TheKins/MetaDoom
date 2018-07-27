@@ -81,11 +81,23 @@ script "MetaBulletTime" ENTER
 		if (CheckInventory("ArtifactTimer") > 0)
 		{
 			drawtimer++;
+
 			if (drawtimer < 8) { GiveInventory("PowerTimeFreezerSound",1); }
 			else { TakeInventory("PowerTimeFreezerSound",1); drawtimer = 0; }
 			TakeInventory("ArtifactTimer",1);
+			
+			if (CheckInventory("ArtifactTimer") < 35 && !CheckInventory("ArtifactSoundToken"))
+			{ 
+				AmbientSound("inventory/artifact/off", 127);
+				GiveInventory("ArtifactSoundToken", 1);
+			}
 		}
-		else { drawtimer = 0; TakeInventory("PowerTimeFreezerSound",999); }	
+		else
+		{
+			drawtimer = 0;
+			TakeInventory("ArtifactSoundToken",999);
+			TakeInventory("PowerTimeFreezerSound",999);
+		}	
 		delay(1);
 	}
 }
@@ -722,6 +734,7 @@ script "InventoryCheat" ENTER
 		GiveInventory("DogCollar", 1);
 		GiveInventory("Hologram", 1);
 		GiveInventory("KineticMine", 1);
+		GiveInventory("Artifact", 1);
 		GiveInventory("DemonKeyCheat", 3);
 		GiveInventory("MetaCodex_DebugTheCodex", 1);
 		
