@@ -9,8 +9,7 @@ class MetaDoom64Replacements : EventHandler
     override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
 		actor actormans=null;
-		array<actor>actormansdelend;
-		thinkeriterator actorreplacer;
+		array<actor>actormansdelend;		
 		
 		// The last entry is ignored for some stupid reason.
 		int replaceables = 6;
@@ -35,6 +34,7 @@ class MetaDoom64Replacements : EventHandler
 
 		for(int i = 0; i < (replaceables); i++)
 		{
+			thinkeriterator actorreplacer;
 			actorreplacer = thinkeriterator.create(oldActor[i]);
 			
 			while(actormans=actor(actorreplacer.next()))

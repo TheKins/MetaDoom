@@ -8,8 +8,7 @@ class MetaOptionalProps : EventHandler
 	{
 		actor actormans=null;
 		array<actor>actormansdelend;
-		thinkeriterator actorreplacer;
-		
+				
 		// The last entry is ignored for some stupid reason.
 		int replaceables = 50;
 		
@@ -64,6 +63,7 @@ class MetaOptionalProps : EventHandler
 		{
 			for(int i = 0; i < (replaceables); i++)
 			{
+				thinkeriterator actorreplacer;
 				actorreplacer = thinkeriterator.create(oldActor[i]);
 				
 				while(actormans=actor(actorreplacer.next()))
@@ -118,7 +118,6 @@ class MetaOptionalMonsters : EventHandler
 	{
 		actor actormans=null;
 		array<actor>actormansdelend;
-		thinkeriterator actorreplacer;
 		
 		// The last entry is ignored for some stupid reason.
 		int replaceables = 15;
@@ -152,6 +151,7 @@ class MetaOptionalMonsters : EventHandler
 		{
 			for(int i = 0; i < (replaceables); i++)
 			{
+				thinkeriterator actorreplacer;
 				actorreplacer = thinkeriterator.create(oldActor[i]);
 				
 				while(actormans=actor(actorreplacer.next()))
