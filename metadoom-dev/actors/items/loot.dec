@@ -1,5 +1,8 @@
-// pointless but fun - score items
+// Pointless but fun, these items do nothing but look nice and increase your score.
 
+// 25% chance of spawning a low-scoring item
+// 12.5% chance of spawning a high-scoring item
+// 3.125% chance of spawning a figurine
 actor LootSpawner
 {
 	radius 64
@@ -68,7 +71,7 @@ Actor LootItem : ScoreItem
 		goto MoveAround
 	MoveAround:
 		"####" "#" 35
-		"####" "#" 0 A_Stop
+		"####" "#" 0 A_Stop // Prevents bouncing around wallsliding all day
 		goto Sit
 	Sit:
 		"####" "#" -1

@@ -22,6 +22,7 @@ ACTOR Clip2 : Clip replaces Clip
 	}
 }
 
+// Clip Boxes have a 25% chance of spawning a Dog Collar on spawn.
 ACTOR ClipBox2 : Clip replaces ClipBox
 {
 	Game Doom
@@ -49,6 +50,7 @@ ACTOR ClipBox2 : Clip replaces ClipBox
 	}
 }
 
+// Rockets have a 33% chance of spawning a Hand Grenade on spawn.
 ACTOR RocketAmmo2 : RocketAmmo replaces RocketAmmo
 {
 	Game Doom
@@ -80,6 +82,7 @@ ACTOR RocketAmmo2 : RocketAmmo replaces RocketAmmo
 	}
 }
 
+// Rocket Boxes have a 37% chance of spawning a Hand Grenade on spawn.
 ACTOR RocketBox2 : RocketAmmo replaces RocketBox
 {
 	Game Doom
@@ -107,6 +110,7 @@ ACTOR RocketBox2 : RocketAmmo replaces RocketBox
 	}
 }
 
+// Cells have a 25% chance of spawning either a Siphon Grenade or a Tesla Rocket.
 ACTOR Cell2 : Cell replaces Cell
 {
 	Game Doom
@@ -142,6 +146,8 @@ ACTOR Cell2 : Cell replaces Cell
 	}
 }
 
+// Cell Packs have a 25% chance of spawning BFG ammo alongside it. If this happens,
+// there is an additional 50% chance of a Tesla Rocket also spawning.
 ACTOR CellPack2 : Cell replaces CellPack
 {
 	Game Doom
@@ -211,11 +217,15 @@ ACTOR ShellBox2 : Shell replaces ShellBox
 	}
 }
 
-// And a backpack too.
+// Backpacks have a 25% chance of spawning a Kinetic Mine.
+// We use a seperate actor to spawn the backpack, ala the weapons, because otherwise
+// the Kinetic Mine-spawning logic would trigger a crash in the Codex screen.
 actor BackpackSpawner replaces Backpack
 {
 	Game Doom
 	SpawnID 144
+	TeleFogSourceType MetaItemFog
+	TeleFogDestType MetaItemFog
 	States
 	{
 	Spawn:
@@ -247,7 +257,6 @@ ACTOR Backpack2 : BackpackItem //replaces Backpack
 }
 
 // New Ammos
-
 ACTOR BFGAmmo : Ammo
 {
 	Inventory.PickupMessage "$GOTARGENT"
@@ -290,6 +299,7 @@ ACTOR SoulAmmo : Ammo
 	}
 }
 
+// Lazy(?) way of ensuring that souls only spawn 50% of the time when killing enemies.
 actor SoulSpawner
 {
 	radius 16

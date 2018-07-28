@@ -108,6 +108,7 @@ ACTOR MetaLightAmp : PowerupGiver replaces Infrared
 }
 
 // Haste
+// Has a 25% chance of spawning a Hologram alongside it
 ACTOR MetaHasteSphere : PowerupGiver replaces BlurSphere
 {
 	+COUNTITEM

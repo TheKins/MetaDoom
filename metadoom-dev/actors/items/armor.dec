@@ -6,6 +6,7 @@ Armor Pickups
 ----------------------------
 */
 
+// Armor bonuses occasionally spawn loot. See loot.dec
 Actor MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
 {
 	Radius 20
