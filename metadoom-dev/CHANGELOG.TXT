@@ -72,8 +72,8 @@ Monster Changes:
 - Wretched now have new sprites rendered from the Doom 2016 model (Thanks Zaneion!)
 - The Former Lieutenant now wears blue armor, to make him look less like his
   chaingun wielding siblings (DrPySpy did a lot on this update just FYI)
-- Spiborgs are now harder to make flinch when charging their shot, making them
-  harder to cheese-out.
+- Spiborgs and Bull Demons are now harder to make flinch when they're charging
+  (in multiple meanings of the word), making them harder to cheese-out.
 - Fixes and improvements to the logic behind Summoners spawning Unwilling.
   (Thanks Major Cooke!)
 - Fiend's sprite offsets are considerably less whacky.

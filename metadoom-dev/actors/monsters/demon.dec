@@ -159,6 +159,7 @@ ACTOR MetaBullDemon : MonsterCore
 		Goto See
 		
 	Missile:
+		BULD A 0 A_SetPainThreshold(32)
 		BULD A 0 A_SetUserVar(user_accelerator,3)
 		BULD A 0 A_SetUserVar(user_chargecooldown,5)
 		BULD A 0 A_PlaySound("monsters/bulldemon/charge")
@@ -219,9 +220,11 @@ ACTOR MetaBullDemon : MonsterCore
 		TNT1 D 0 A_ChangeVelocity(velx*0.8,vely*0.8,velz*0.8,CVF_REPLACE)
 		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0)
 		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0)
+		BULD H 0 A_SetPainThreshold(0)
 		Goto See
 		
 	CrashedSomewhere:
+		BULD A 0 A_SetPainThreshold(0)
 		BULD I 0 A_PlaySound("monsters/bulldemon/body",7,0.8,0/*,4.2*/)
 		BULD I 0 A_SpawnItemEx("BullDemonDustCloud",20,0,32,0,0,0,0,SXF_NOCHECKPOSITION)
 		BULD I 0 A_SpawnItemEx("BullDemonShockwave",20,0,32,0,0,0,0,SXF_NOCHECKPOSITION)
@@ -231,6 +234,7 @@ ACTOR MetaBullDemon : MonsterCore
 		
 	Pain:
 		BULD J 0
+		BULD J 0 A_SetPainThreshold(0)
 		BULD J 2 Fast
 		{
 			A_ChangeFlag("FRIGHTENED", FALSE);
@@ -240,6 +244,7 @@ ACTOR MetaBullDemon : MonsterCore
 		Goto See
 	Pain.HolyWater:
 		BULD J 3
+		BULD J 0 A_SetPainThreshold(0)
 		BULD J 3 A_Pain
 		Goto Scurred
 	Punched:
