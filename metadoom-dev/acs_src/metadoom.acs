@@ -184,6 +184,7 @@ Script "Strip100PercentOnStart" ENTER
 	TakeInventory("100Percent_Running", 999);
 	
 	TakeInventory("InventoryCooldownToken", 999);
+	TakeInventory("ArtifactTimer", 999);
 }
 		
 
