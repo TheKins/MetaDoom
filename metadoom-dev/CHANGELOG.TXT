@@ -2,6 +2,10 @@ v5 "Klave" (NEXT)
 =================
 It's been a while, hasn't it?
 
+Not a vast amount of NEW things in this update, but what's there has a big
+impact, and there are a lot of changes and improvements to existing content,
+rounding off the sharp edges and generally making the entire mod way better.
+
 New Stuff:
 - Added 2 new inventory items! (Kinetic Mine, The... Artifact?!)
 
