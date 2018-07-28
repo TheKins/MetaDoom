@@ -320,7 +320,7 @@ class MetaDoomStatusBar : BaseStatusBar
 			// Render the icon half-transparent (greyed out) if we're still
 			// under cooldown and unable to spawn Cyberdemons to death with
 			// Siphon Grenades. Yeah, I know you.
-			if (CheckInventory("InventoryCooldownToken", 1))
+			if (CheckInventory("InventoryCooldownToken", 1) || CheckInventory("ArtifactTimer", 1))
 			{
 				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
 			} else {
