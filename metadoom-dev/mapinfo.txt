@@ -88,8 +88,11 @@ map TITLEMAP "Welcome to MetaDoom"
     ResetInventory
 }
 
-// Gross workaround for Ironman Cluster Stuffs
-
+// Gross workaround for Ironman Cluster Stuffs:
+// Attempting to warp the player to a different cluster results in a story text
+// screen popping up. To work around this, we have a duplicate of the Ironman
+// death map defined for many possible cluster numbers and use ACS to send the
+// player to the right one. This should cover everything in WadSmoosh...
 map DEAD0 "The Demons Gave You The Boot!"
 {
     ResetHealth
@@ -261,7 +264,7 @@ map DEAD20 "The Demons Gave You The Boot!"
 map DEAD21 "The Demons Gave You The Boot!"
 {
     ResetHealth
-	cluster = 20
+	cluster = 21
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
@@ -269,7 +272,7 @@ map DEAD21 "The Demons Gave You The Boot!"
 map DEAD22 "The Demons Gave You The Boot!"
 {
     ResetHealth
-	cluster = 20
+	cluster = 22
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
@@ -277,7 +280,7 @@ map DEAD22 "The Demons Gave You The Boot!"
 map DEAD23 "The Demons Gave You The Boot!"
 {
     ResetHealth
-	cluster = 20
+	cluster = 23
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
@@ -285,7 +288,7 @@ map DEAD23 "The Demons Gave You The Boot!"
 map DEAD24 "The Demons Gave You The Boot!"
 {
     ResetHealth
-	cluster = 20
+	cluster = 24
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
@@ -293,7 +296,7 @@ map DEAD24 "The Demons Gave You The Boot!"
 map DEAD25 "The Demons Gave You The Boot!"
 {
     ResetHealth
-	cluster = 20
+	cluster = 25
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
