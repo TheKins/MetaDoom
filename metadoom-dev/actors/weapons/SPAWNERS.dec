@@ -161,6 +161,7 @@ actor PlasmaRifleSpawner replaces PlasmaRifle
 	VarietyPack:
 		TNT1 A 0 
 		TNT1 A 0 A_Jump(64,"Gauss", "Thunderbolt")
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "ArtifactChance")
 		goto PlasmaRifle
 	Gauss:
 		TNT1 A 0 A_SpawnItemEx("MetaGaussCannonPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
@@ -171,6 +172,13 @@ actor PlasmaRifleSpawner replaces PlasmaRifle
 	Thunderbolt:
 		TNT1 A 0 A_SpawnItemEx("MetaLightningGunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
 		stop
+	ArtifactChance:
+		TNT1 A 0 A_JumpIf(CallACS("Item_Artifact", 0, 0, 0) == 2, "PlasmaRifle")
+		TNT1 A 0 A_Jump(64, "Artifactual")
+		goto PlasmaRifle
+	Artifactual:
+		TNT1 A 0 A_SpawnItemEx("ArtifactPickup",0,0,0,random(4,16),random(4,16),0,random(0,360))
+		goto PlasmaRifle
 	}
 }
 

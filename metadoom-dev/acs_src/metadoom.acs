@@ -507,6 +507,21 @@ script "Item_SoulCube" (void)
 	}
 }
 
+script "Item_Artifact" (void)
+{
+	for(int i = 1337; i < 1400; i++)
+	{
+		if(CheckActorInventory(i,"Artifact"))
+		{
+			if(GetCvar("meta_developer"))
+			log(s:"Someone has an Artifact! Artifact drops DISABLED.");
+			
+			SetResultValue(2);
+			break;
+		}
+	}
+}
+
 script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);
