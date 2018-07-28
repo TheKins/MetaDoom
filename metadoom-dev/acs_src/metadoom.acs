@@ -86,7 +86,7 @@ script "MetaBulletTime" ENTER
 			else { TakeInventory("PowerTimeFreezerSound",1); drawtimer = 0; }
 			TakeInventory("ArtifactTimer",1);
 			
-			if (CheckInventory("ArtifactTimer") < 45 && !CheckInventory("ArtifactSoundToken"))
+			if (CheckInventory("ArtifactTimer") < 52 && !CheckInventory("ArtifactSoundToken"))
 			{ 
 				AmbientSound("inventory/artifact/off", 127);
 				GiveInventory("ArtifactSoundToken", 1);
