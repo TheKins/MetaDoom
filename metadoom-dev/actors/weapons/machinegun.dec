@@ -42,7 +42,7 @@ ACTOR MetaMachineGun : MetaDoomWeapon
 		MACG J 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch")
 		Loop
 	Deselect:
-		MACG A 1 
+		MACG A 0
 		MACG A 0 A_JumpIf(health <= 0, "DeadDude")
 		MACG A 0 A_JumpIfInventory("MachinegunRockets",1,"AltfireDeselect")
 		MACG A 1 A_PlaySound("weapons/swap")

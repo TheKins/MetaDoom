@@ -54,6 +54,8 @@ Weapon Changes:
 - Disabled spawning of Fire Axe in Deathmatch mode, since it still doesn't have
   its proper effect on other players yet.
 - Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript.
+- Fixed a single-frame animation glitch when switching away from the Machinegun
+  while the micro-rockets mode was enabled.
 - Weapons now have brightmaps.
 
 Item Changes:
