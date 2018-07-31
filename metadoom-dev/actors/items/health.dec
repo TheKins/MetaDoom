@@ -76,6 +76,7 @@ ACTOR MetaMedikit : Health replaces Medikit
 // Alternate Medikit with no item spawn chance, used by Quad Damage
 ACTOR MetaMedikitNoItemSpawn : MetaMedikit
 {
+	+BLOCKASPLAYER
 	States
 	{
 	Spawn:
