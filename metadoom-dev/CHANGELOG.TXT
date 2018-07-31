@@ -55,7 +55,7 @@ Weapon Changes:
   its proper effect on other players yet.
 - Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript.
 - Fixed a single-frame animation glitch when switching away from the Machinegun
-  while the micro-rockets mode was enabled.
+  or Chaingun while their alternate modes were enabled.
 - Weapons now have brightmaps.
 
 Item Changes:
