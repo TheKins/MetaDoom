@@ -70,9 +70,8 @@ Item Changes:
 - Added additional skins for keycards and skull keys.
 - Treasure items can now be disabled via CVar (meta_lootspawns).
 - Additional polish and variety for treasure items...
-- Treasure items, inventory items and the medikits spawned by a Quad Damage pickup
-  now respect player-blocking lines, meaning it's less likely that cool stuff will
-  be spawned where you can't reach it.
+- Items "thrown" out by other items (treasures, Agent Cores, etc.) now respect
+  player-blocking lines, making it less likely that cool stuff will out of reach.
 - Light-Amp Visors now have new sprites.
 - Cell and Argent Core ammo pickups now have brightmaps.
 

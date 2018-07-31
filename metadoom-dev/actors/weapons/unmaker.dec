@@ -357,6 +357,7 @@ actor DemonKeyPickup1 : CustomInventory
 	inventory.pickupsound "weapons/unmaker/demonkey"
 	+INVENTORY.ALWAYSPICKUP
 	+FLOATBOB
+	+BLOCKASPLAYER
 	states
 	{
 	Spawn:

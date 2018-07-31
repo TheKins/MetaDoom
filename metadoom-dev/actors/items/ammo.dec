@@ -269,6 +269,7 @@ ACTOR BFGAmmo : Ammo
 	TeleFogSourceType MetaItemFog
 	TeleFogDestType MetaItemFog
 	scale 0.75
+	+BLOCKASPLAYER
 	States
 	{
 	Spawn:
