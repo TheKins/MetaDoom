@@ -7,6 +7,7 @@ actor TeslaRocketPickup : CustomInventory
 	inventory.pickupsound "inventory/teslarocket/get"
 	+INVENTORY.ALWAYSPICKUP
 	scale 0.5
+	+BLOCKASPLAYER
 	states
 	{
 	Spawn:

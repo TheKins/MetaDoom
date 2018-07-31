@@ -10,6 +10,7 @@ actor ArtifactPickup : CustomInventory
 	+INVENTORY.ALWAYSPICKUP
 	+FLOATBOB
 	scale 0.75
+	+BLOCKASPLAYER
 	states
 	{
 	Spawn:

@@ -7,6 +7,7 @@ actor HologramPickup : CustomInventory
 	inventory.pickupsound "inventory/hologram/get"
 	+INVENTORY.ALWAYSPICKUP
 	scale 0.5
+	+BLOCKASPLAYER
 	states
 	{
 	Spawn:

@@ -9,6 +9,7 @@ actor KineticMinePickup : CustomInventory
 	inventory.pickupsound "inventory/kineticmine/get"
 	+INVENTORY.ALWAYSPICKUP
 	scale 0.75
+	+BLOCKASPLAYER
 	states
 	{
 	Spawn:
