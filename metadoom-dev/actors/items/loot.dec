@@ -63,6 +63,7 @@ Actor LootItem : ScoreItem
 	BounceFactor 0.0
 	WallBounceFactor 1.0
 	-COUNTITEM
+	+BLOCKASPLAYER
 	States
 	{
 	Spawn:
