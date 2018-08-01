@@ -101,7 +101,7 @@ class MetaDoomStatusBar : BaseStatusBar
 
 	protected void DrawMainBar (double TicFrac)
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
 			
@@ -194,7 +194,7 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawKeys()
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDKEYS", (281, 170), DI_ITEM_OFFSETS);
 		}
@@ -254,7 +254,7 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawReserve()
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDAMMO", (225, 170), DI_ITEM_OFFSETS);
 		} else {
@@ -271,7 +271,7 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawStats()
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDSTAT", (94, 169), DI_ITEM_OFFSETS);
 		} else {
@@ -290,7 +290,7 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawFaceBox()
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDBOX", (142, 168), DI_ITEM_OFFSETS);
 		}
@@ -311,7 +311,7 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawItemBox()
 	{
-		if (screenblocks < 11)
+		if (screenblocks < 11 || automapactive)
 		{
 			DrawImage("HUDBOX", (184, 168), DI_ITEM_OFFSETS);
 		}
