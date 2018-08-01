@@ -35,3 +35,18 @@ object KineticMineBeepyBoop
 {
     frame KMIN { light MetaKineticLightBeepyBoop }
 }
+
+pulselight ArtifactSinister
+{
+    color 1.0 0.0 0.0
+    size 32
+    secondarySize 16
+    interval 2
+	dontlightself 1
+	offset 0 16 0
+} 
+
+object ArtifactPickup
+{
+    frame ARTI { light ArtifactSinister }
+}

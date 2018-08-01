@@ -14,7 +14,7 @@ actor ArtifactPickup : CustomInventory
 	states
 	{
 	Spawn:
-		ARTI ZYXY 10
+		ARTI ZYXY 10 bright
 		loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Artifact", 1)
