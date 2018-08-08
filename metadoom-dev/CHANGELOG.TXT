@@ -1,5 +1,5 @@
-v5 "Klave" (NEXT)
-=================
+v5 "Klave" (09/08/18)
+=====================
 It's been a while, hasn't it?
 
 Not a vast amount of NEW things in this update, but what's there has a big
@@ -100,7 +100,7 @@ Monster Changes:
 - Additional polish and variety in WolfSS and Commander Keen replacmements...
 
 v4.1 "Fred" (06/06/17)
-====================
+======================
 A number of small fixes based on feedback from the previous release. Thanks, folks!
 
 - Fixed Zombieman spawners only spawning Hell Razers when "More Actors" is off.
