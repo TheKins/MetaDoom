@@ -12,6 +12,4 @@ Stable Releases and Actual Info
 
 How to Build
 ------------
-Run _main_zip.bat to quickly compile a PK3 or PK7 of the main mod.
-
-Run _optional_zip.bat to quickly compile a PK3 or PK7 of the Optional Content.
+Run _zip.bat or the Makefile to quickly compile a PK3 or PK7. Alternatively, you can just run the metadoom-dev folder directly in GZDoom.
