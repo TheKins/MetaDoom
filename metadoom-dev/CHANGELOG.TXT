@@ -56,6 +56,7 @@ Weapon Changes:
 - Holy Water Pistol's ammo acquisition FX ported from ACS to ZScript.
 - Fixed a single-frame animation glitch when switching away from the Machinegun
   or Chaingun while their alternate modes were enabled.
+- Fixed punching walls creating bad decals when armed with Gauss Cannon or Unmaker.
 - Weapons now have brightmaps.
 
 Item Changes:
@@ -72,8 +73,8 @@ Item Changes:
 - Additional polish and variety for treasure items...
 - Items "thrown" out by other items (treasures, Agent Cores, etc.) now respect
   player-blocking lines, making it less likely that cool stuff will out of reach.
-- Light-Amp Visors now have new sprites.
 - Cell and Argent Core ammo pickups now have brightmaps.
+- Light-Amp Visors now have new sprites.
 
 Monster Changes:
 - Spiderdemon artwork has been updated and re-rendered (Thanks DrPySpy!)
