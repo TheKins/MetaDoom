@@ -658,7 +658,7 @@ script "PlayerInventoryFixer" ENTER
 	}
 	
 	// Precautions to prevent the player being unable to fight back
-	if (CheckInventory("MetaPistol") == 0 && CheckInventory("MetaLastResortFist") == 0)
+	if (CheckInventory("MetaPistol") == 0 && CheckInventory("MetaLastResortFist") == 0 && GameType() != GAME_TITLE_MAP)
 	{
 		if(GetCvar("meta_developer"))
 			log(s:"Player has no Pistol! Giving them some means of defending themselves...");
