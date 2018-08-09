@@ -25,7 +25,7 @@ ACTOR MetaGaussCannon : MetaDoomWeapon
 	Obituary "$OB_GAUSS"
 	Tag "$TAGGAUSS"
 	Inventory.PickupSound "weapons/gauss/get"
-	Decal PlasmaScorch
+	//Decal PlasmaScorch
 	damagetype Gauss
 	States
 	{
@@ -155,6 +155,7 @@ ACTOR GaussExplosion : Explosion
 	scale 2
 	Obituary "$OB_GAUSS"
 	+ALWAYSPUFF
+	+FORCEDECAL
 	Decal PlasmaScorch
 	damagetype Gauss
 	States
