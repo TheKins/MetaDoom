@@ -1,3 +1,10 @@
+v5.1 "Klave" (NEXT)
+===================
+Description.
+
+- Fixed an issue where Z-Sec wouldn't reward their Codex page when Potential
+  Map-Breakers was enabled.
+
 v5 "Klave" (09/08/18)
 =====================
 It's been a while, hasn't it?

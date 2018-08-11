@@ -147,6 +147,14 @@ ACTOR MetaZSec : MonsterCore
 	States
 	{
 	Spawn:
+		ZSEC A 0
+		ZSEC A 0
+		{
+			if (GetCvar(meta_mapbreakers) == 1)
+			{
+				A_ChangeFlag("NODROPOFF", TRUE);
+			}
+		}
 		ZSEC AB 10 A_Look
 		Loop
 	See:
@@ -286,10 +294,4 @@ ACTOR MetaZSec : MonsterCore
 		ZSEC KJIH 5
 		Goto See
 	}
-}
-
-// Just to make sure when you have "Map Breakers" turned off...
-ACTOR MetaZSec_NoMapBreaker : MetaZSec
-{
-	+NODROPOFF
 }
