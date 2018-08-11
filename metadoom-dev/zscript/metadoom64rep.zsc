@@ -29,7 +29,7 @@ class MetaDoom64Replacements : EventHandler
 			// Doom 64 Consolation Prize
 			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner",
 			// Doom 64 for Doom 2
-			"MetaNightmareImp", "MetaWretched", "CyberdemonSpawner_D64D2",
+			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2",
 			// Thing What Makes The Array Work
 			"IGNORETHISMAN"
 			
