@@ -689,6 +689,18 @@ actor CyberdemonSpawner replaces Cyberdemon
 	}
 }
 
+// For "Doom 64 for Doom 2"
+actor CyberdemonSpawner_D64D2 : CyberdemonSpawner
+{
+	States
+	{
+	Death:
+		TNT1 A 1
+		TNT1 A 1 A_KeenDie
+		Stop
+	}
+}
+
 actor SpiderMastermindSpawner replaces SpiderMastermind
 {
 	Health 0x7fffffff
