@@ -210,7 +210,7 @@ ACTOR MetaChainsawMeleePuff
 	Alpha 0.5
 	VSpeed 1
 	Mass 5
-	AttackSound "weapons/melee/hitwall"
+	//AttackSound "weapons/melee/hitwall"
 	SeeSound "weapons/melee/hit"
 	Obituary "$OB_METAFIST"
 	States
