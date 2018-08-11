@@ -137,7 +137,7 @@ page "Bestiary"
 	{
 		name "Nightmare Spectre";
         origin "Doom: Custom Playstation Edition (1995)";
-        description "These creatures were first (partially) sighted by clean-up crews in the ruins of a ruined Nuclear Plant. Bearing the same genetic modifications as the Spectre, it has also acquired even more muscle mass, turning it into a hulking monstrosity that can absorb even more punishment before going down.\n\nEven with their intense strength, these creatures still seem to be low on the food chain, and some larger monsters seem to consider them a rare delicacy...";
+        description "These creatures were first (partially) sighted by clean-up crews in the ruins of a destroyed Nuclear Plant. Bearing the same genetic modifications as the Spectre, it has also acquired even more muscle mass, turning it into a hulking monstrosity that can absorb even more punishment before going down.\n\nEven with their intense strength, these creatures still seem to be low on the food chain, and some larger monsters seem to consider them a rare delicacy...";
 	}
 	
 	//===========================================
@@ -154,7 +154,7 @@ page "Bestiary"
 	{
 		name "Sawcubus";
 		origin "Doom II RPG (2009)";
-		description "Some time after the demon experiments began, there were reports of chainsaws turning up missing. These were shortly followed by reports of demons being seen equipped with the stolen chainsaws, followed again by UAC personnel being killed in chainsaw related accidents. Eventually, a Sawcubus was captured and studied.\n\nThe Sawcubus is limited by his speed, range, and noisiness. It usually prefers smaller, cramped spaces, where its weaknesses become its strengths. Please return all stolen chainsaws to the UAC bookkeeper.";
+		description "Some time after the demon experiments began, there were reports of chainsaws turning up missing. These were shortly followed by reports of demons being seen equipped with the stolen chainsaws, followed again by UAC personnel being killed in chainsaw related accidents. Eventually, a Sawcubus was captured and studied.\n\nThe Sawcubus is limited by its speed, range, and noisiness. It usually prefers smaller, cramped spaces, where its weaknesses become its strengths. Please return all stolen chainsaws to the UAC bookkeeper.";
 	}
 	
 	//===========================================
@@ -264,7 +264,7 @@ page "Bestiary"
 		offset 0, 3;
         name "Pain Elemental";
         origin "Doom II: Hell on Earth (1994)";
-        description "A most mysterious abomination, the Pain Elemental lazily floats through the skies looking for prey. Upon finding a target, the creature opens its maw and emits Lost Souls, which quickly overcome and devour their target.\n\nThe relationship between the Skulls and their host is a topic of hot debate among Demonologists, with experts in the relatively new subject divided between a paternal or parasitical link between the two."; 
+        description "A most mysterious abomination, the Pain Elemental lazily floats through the skies looking for prey. Upon finding a target, the creature opens its maw and emits Lost Souls, which quickly overcome and devour their target.\n\nThe relationship between the Skulls and their host is a topic of hot debate among Demonologists, with experts in the relatively new subject divided between a paternal or parasitic link between the two."; 
     }
     entry "MetaBeholder"
     {
