@@ -6,6 +6,7 @@ Description.
   Map-Breakers was enabled.
 - The custom monsters in "Doom 64 for Doom 2" are now properly replaced with
   their MetaDoom equivalents. Except for the Motherdemon... for now.
+- Disabled infighting between Cacodemon variants.
 - Minor Codex text tweaks and fixes.
 
 v5 "Klave" (09/08/18)

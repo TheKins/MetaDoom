@@ -29,6 +29,7 @@ ACTOR MetaCacodemon : MonsterCore
 	Bloodtype Blueblood
 	BloodColor "0 0 80"
 	Decal "bluebloodsplat"
+	Species "Cacodemon"
 	States
 	{
 	Spawn:
@@ -279,6 +280,7 @@ ACTOR MetaMalwraith : MonsterCore
 	ActiveSound "monsters/malwraith/idle"
 	Obituary "$OB_MALWRAITH"
 	HitObituary "$OB_MALWRAITH"
+	Species "Cacodemon"
 	States
 	{
 	Spawn:
@@ -416,6 +418,7 @@ ACTOR MetaWretched : MonsterCore
 	BloodColor "0 0 80"
 	Decal "bluebloodsplat"
 	scale 0.65
+	Species "Cacodemon"
 	States
 	{
 	Spawn:
