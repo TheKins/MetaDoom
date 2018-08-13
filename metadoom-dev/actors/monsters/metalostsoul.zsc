@@ -490,15 +490,15 @@ class MetaForgottenOne : MonsterCore
 {
 	Default
 	{
-		Health 20;
+		Health 10;
 		Radius 8;
 		Height 8;
-		Mass 50;
+		Mass 5;
 		Speed 3;
 		Damage 1;
 		PainChance 256;
 		Monster;
-		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB +NOINFIGHTING;
+		+FLOAT +NOGRAVITY +MISSILEMORE +DONTFALL +NOICEDEATH +FLOATBOB +NOINFIGHTING +THRUSPECIES +PUSHABLE;
 		AttackSound "monsters/forgottenone/attack";
 		PainSound "monsters/lostsoul/pain";
 		Obituary "$OB_FORGOTTENONE";
