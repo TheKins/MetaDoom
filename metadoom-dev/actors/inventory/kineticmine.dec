@@ -129,7 +129,7 @@ ACTOR KineticMineLurkingFloor
 	scale 0.5
 	+LOOKALLAROUND
 	+FRIENDLY
-	
+	+DONTTHRUST
 	// This combination of flags here should (SHOULD) ultimately accomplish nothing
 	// except allowing the mines to be detected by A_RadiusGive. I'm not proud...
 	+SHOOTABLE
@@ -215,6 +215,7 @@ ACTOR KineticMineLurkingCeiling : KineticMineLurkingFloor
 	+LOOKALLAROUND
 	+FRIENDLY
 	+NOGRAVITY
+	+DONTTHRUST
 	States
 	{
 	Spawn:
@@ -265,6 +266,7 @@ ACTOR KineticMineLurkingWall : KineticMineLurkingFloor
 	+FRIENDLY
 	+WALLSPRITE
 	+NOGRAVITY
+	+DONTTHRUST
 	States
 	{
 	Spawn:
