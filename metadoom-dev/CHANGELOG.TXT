@@ -11,6 +11,7 @@ Description.
 - The Behemoth's flamethrower now creates half the GL lights, hopefully boosting
   performance on lower-end systems.
 - The Grenade Launcher grenades now do the same damage on impact as Rockets.
+- Subtly increased radius of Grenade Launcher's gas bomb.
 - Disabled infighting between Cacodemon variants.
 - Beholder no longer flickers when scared by Holy Water.
 - Minor Codex text tweaks and fixes.
