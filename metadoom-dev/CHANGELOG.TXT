@@ -1,6 +1,7 @@
 v5.1 "Klave" (NEXT)
 ===================
-This update addresses the issues that have popped up in the wake of v5's release.
+This update addresses some issues that popped up in the wake of v5's release.
+Thanks to everyone who submitted bug reports and feedback!
 
 Monster Changes:
 - The custom monsters in "Doom 64 for Doom 2" are now properly replaced with
@@ -15,6 +16,7 @@ Monster Changes:
 Weapon Changes:
 - The Grenade Launcher grenades now do the same damage on impact as Rockets.
 - Subtly increased radius of Grenade Launcher's gas bomb.
+- Fixed Kinetic Mines getting pushed around by Rocket explosions.
 
 Other Changes:
 - Fixed an issue where Z-Sec wouldn't reward their Codex page when Potential
