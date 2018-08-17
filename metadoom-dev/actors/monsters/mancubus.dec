@@ -120,9 +120,13 @@ ACTOR MetaBehemoth : MonsterCore
 	Obituary "$OB_FATSO2"
 	Species "Fatso"
 	scale 0.75
+	
+	var int user_yeahwelit;
+	
 	States
 	{
 	Spawn:
+		2FAT A 0 { user_yeahwelit = 1; }
 		2FAT AB 15 A_Look
 		Loop
 	See:
@@ -133,20 +137,59 @@ ACTOR MetaBehemoth : MonsterCore
 		2FAT H 20 { A_FaceTarget; A_PlaySound("monsters/behemoth/attack"); }
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
 		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32); A_CustomMissile("MetaBehemothFireFrontman",48,32); }
-		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32); A_CustomMissile("MetaBehemothFire",48,32); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
+		{
+			A_FaceTarget;
+			if ( user_yeahwelit = 1)
+			{
+				A_CustomMissile("MetaBehemothFire",48,-32);
+				A_CustomMissile("MetaBehemothFire",48,32);
+				user_yeahwelit = 0;
+			} else {
+				A_CustomMissile("MetaBehemothFireNoLight",48,-32);
+				A_CustomMissile("MetaBehemothFireNoLight",48,32);
+				user_yeahwelit = 1;
+			}
+		}
 		2FAT H 20 A_FaceTarget
 		2FAT H 0 A_Jump(128,"Missile3")
 		goto Missile2
 	Missile2:
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
 		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,10); A_CustomMissile("MetaBehemothFireFrontman",48,32,-10); }
-		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,10); A_CustomMissile("MetaBehemothFire",48,32,-10); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
+		{
+			A_FaceTarget;
+			if ( user_yeahwelit = 1)
+			{
+				A_CustomMissile("MetaBehemothFire",48,-32,10);
+				A_CustomMissile("MetaBehemothFire",48,32,-10);
+				user_yeahwelit = 0;
+			} else {
+				A_CustomMissile("MetaBehemothFireNoLight",48,-32,10);
+				A_CustomMissile("MetaBehemothFireNoLight",48,32,-10);
+				user_yeahwelit = 1;
+			}
+		}
 		2FAT H 20 A_FaceTarget
 		Goto See
 	Missile3:
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
 		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,-10); A_CustomMissile("MetaBehemothFireFrontman",48,32,10); }
-		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFire",48,-32,-10); A_CustomMissile("MetaBehemothFire",48,32,10); }
+		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
+		{
+			A_FaceTarget;
+			if ( user_yeahwelit = 1)
+			{
+				A_CustomMissile("MetaBehemothFire",48,-32,-10);
+				A_CustomMissile("MetaBehemothFire",48,32,10);
+				user_yeahwelit = 0;
+			} else {
+				A_CustomMissile("MetaBehemothFireNoLight",48,-32,-10);
+				A_CustomMissile("MetaBehemothFireNoLight",48,32,10);
+				user_yeahwelit = 1;
+			}
+		}
 		2FAT H 20 A_FaceTarget
 		Goto See
 	Pain:
@@ -201,9 +244,9 @@ ACTOR MetaBehemothFire
 	Spawn:
 		BAL1 A 0
 		BAL1 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
-		BAL1 A 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, -8, 0, 0)
+		BAL1 A 4 BRIGHT A_SpawnItem ("MetaBehemothFireTrail", 0, -8, 0, 0)
 		BAL1 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished")
-		BAL1 B 4 BRIGHT A_SpawnItem ("MetaLostSoulFire", 0, -8, 0, 0)
+		BAL1 B 4 BRIGHT A_SpawnItem ("MetaBehemothFireTrail", 0, -8, 0, 0)
 		Loop
 	Death:
 		BAL1 CDE 6 BRIGHT
@@ -215,6 +258,8 @@ ACTOR MetaBehemothFire
 	}
 }
 
+ACTOR MetaBehemothFireNoLight : MetaBehemothFire { }
+
 Actor MetaBehemothFireFrontman : MetaBehemothFire
 {
 	States
@@ -223,6 +268,34 @@ Actor MetaBehemothFireFrontman : MetaBehemothFire
 		BAL1 A 0
 		BAL1 A 0 A_PlaySoundEx("monsters/behemoth/missileloop", "Body", 1)
 		goto Super::Spawn
+	}
+}
+
+ACTOR MetaBehemothFireTrail
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALLOWPARTICLES
+	+RANDOMIZE
+	RenderStyle add
+	Alpha 0.5
+	VSpeed 1
+	Mass 5
+	height 1
+	radius 1
+	States
+	{
+	Spawn:
+		LFIR A 0
+		LFIR A 0 A_SetScale(frandom(1.0,1.7),frandom(0.7,1.0))
+		LFIR ABCD 2 Bright A_SetScale((scalex - 0.1),(scaley + 0.1))
+	StartFading:
+		LFIR ABCD 2 Bright
+		{
+			A_SetScale((scalex - 0.1),(scaley + 0.1));
+			A_FadeOut(0.2);
+		}
+		loop
 	}
 }
 

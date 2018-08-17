@@ -8,6 +8,8 @@ Description.
   their MetaDoom equivalents. Except for the Motherdemon... for now.
 - Forgotten Ones are now more interesting: They don't collide with each other
   and have even less health than before, so they're swarm-ier.
+- The Behemoth's flamethrower now creates half the GL lights, hopefully boosting
+  performance on lower-end systems.
 - Disabled infighting between Cacodemon variants.
 - Beholder no longer flickers when scared by Holy Water.
 - Minor Codex text tweaks and fixes.

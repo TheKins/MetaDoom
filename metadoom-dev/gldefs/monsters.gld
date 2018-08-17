@@ -278,3 +278,31 @@ object SpiborgPlasma
     frame PLSS { light MetaPlasmaBall }
     frame PLSE { light MetaPlasmaBallExplosion }
 }
+
+// Mancubi
+
+flickerlight BEHEMOTHFIRE
+{
+    color 0.3 0.1 0.0
+    size 32
+    secondarysize 34
+    chance 0.1
+}
+
+flickerlight BEHEMOTHFIRETRAIL
+{
+    color 0.3 0.1 0.0
+    size 18
+    secondarysize 21
+    chance 0.1
+}
+
+object MetaBehemothFireFrontman
+{
+    frame BAL1 { light BEHEMOTHFIRE }
+}
+
+object MetaBehemothFire
+{
+    frame BAL1 { light BEHEMOTHFIRETRAIL }
+}
