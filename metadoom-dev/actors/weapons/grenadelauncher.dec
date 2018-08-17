@@ -150,7 +150,7 @@ actor GrenadeLauncherProj
 	Radius 8
 	Height 8
 	Speed 30
-	Damage 0
+	Damage 20
 	PROJECTILE
 	+RANDOMIZE
 	-NOGRAVITY

@@ -10,6 +10,7 @@ Description.
   and have even less health than before, so they're swarm-ier.
 - The Behemoth's flamethrower now creates half the GL lights, hopefully boosting
   performance on lower-end systems.
+- The Grenade Launcher grenades now do the same damage on impact as Rockets.
 - Disabled infighting between Cacodemon variants.
 - Beholder no longer flickers when scared by Holy Water.
 - Minor Codex text tweaks and fixes.
