@@ -1,19 +1,24 @@
 v5.1 "Klave" (NEXT)
 ===================
-Description.
+This update addresses the issues that have popped up in the wake of v5's release.
 
-- Fixed an issue where Z-Sec wouldn't reward their Codex page when Potential
-  Map-Breakers was enabled.
+Monster Changes:
 - The custom monsters in "Doom 64 for Doom 2" are now properly replaced with
   their MetaDoom equivalents. Except for the Motherdemon... for now.
 - Forgotten Ones are now more interesting: They don't collide with each other
   and have even less health than before, so they're swarm-ier.
 - The Behemoth's flamethrower now creates half the GL lights, hopefully boosting
-  performance on lower-end systems.
+  performance on computers made out of cardboard.
+- Beholder no longer visually flickers when scared by Holy Water.
+- Disabled infighting between Cacodemon variants.
+
+Weapon Changes:
 - The Grenade Launcher grenades now do the same damage on impact as Rockets.
 - Subtly increased radius of Grenade Launcher's gas bomb.
-- Disabled infighting between Cacodemon variants.
-- Beholder no longer flickers when scared by Holy Water.
+
+Other Changes:
+- Fixed an issue where Z-Sec wouldn't reward their Codex page when Potential
+  Map-Breakers was disabled.
 - Minor Codex text tweaks and fixes.
 
 v5 "Klave" (09/08/18)
