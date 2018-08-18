@@ -56,7 +56,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		// Initialize the interpolation variables
 		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
-		mScoreInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 64);
+		mScoreInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 64000);
 		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 	}
 
