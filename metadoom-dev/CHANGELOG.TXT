@@ -1,4 +1,4 @@
-v5.1 "Klave" (NEXT)
+v5.1 "Klave" (19/08/18)
 ===================
 This update addresses some issues that popped up in the wake of v5's release.
 Thanks to everyone who submitted bug reports and feedback!
@@ -21,6 +21,7 @@ Weapon Changes:
 Other Changes:
 - Fixed an issue where Z-Sec wouldn't reward their Codex page when Potential
   Map-Breakers was disabled.
+- The score in the HUD interpolates much faster.
 - Minor Codex text tweaks and fixes.
 
 v5 "Klave" (09/08/18)
