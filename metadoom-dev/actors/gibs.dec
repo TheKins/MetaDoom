@@ -123,6 +123,8 @@ actor MetaGib1
 	gravity 0.5
 	Speed 5
 	scale 0.75
+	var int user_lifetime;
+	
 	States
 	{
 	Spawn:
@@ -151,8 +153,13 @@ actor MetaGib1
 		goto ChangeDir
 	Death:
 		"####" # 0 A_ChangeFlag(NOBLOCKMAP, 0)
-		"####" # -1
-		Stop
+	EternalRest:
+		"####" # 35 { user_lifetime += 35; }
+		"####" # 1 A_JumpIf(user_lifetime >= (GetCVar(meta_perf_bloodtime)), "FadeMeOut")
+		loop
+	FadeMeOut:
+		"####" "#" 1 A_FadeOut(0.02)
+		Wait
 	}
 }
 
