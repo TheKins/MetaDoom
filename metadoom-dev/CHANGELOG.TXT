@@ -4,8 +4,8 @@ Description
 
 - The Unwilling now have a toned-down gib effect, reducing the amount of debris
   generated in Arch-Vile heavy maps.
-- An extra, ugly, squished-down sprite has been added to the Wretched's death
-  state, hopefully providing additional visibility.
+- An extra, ugly, squished-down sprite has been added to the death states of
+  the Wretched and Spiderdemon, hopefully providing additional visibility.
 - Gibs now respect the Blood fade times CVar, mopping up your carnage and
   reducing your gratification severely, all because one guy couldn't tear himself
   away from playing slaughtermaps for six seconds. Six. Seconds.

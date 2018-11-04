@@ -203,9 +203,9 @@ ACTOR MetaSpiderMastermind : MonsterCore
 			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
 			A_SpawnItem("CyberdemonExplosionShockwave",0,32);
 		}
-		SPID MNNNNN 10
-		SPID N 30
-		SPID N -1 A_KillMaster //A_BossDeath
+		SPID MNOOOO 10
+		SPID O 30
+		SPID O -1 A_KillMaster //A_BossDeath
 		Stop
 	Crush:
 		SPIG A 0 A_SpawnItem("MetaSpiderMastermindCrush")
