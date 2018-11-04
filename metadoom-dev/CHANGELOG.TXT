@@ -1,3 +1,15 @@
+v5.2 "Klave" (NEXT)
+===================
+Description
+
+- The Unwilling now have a toned-down gib effect, reducing the amount of debris
+  generated in Arch-Vile heavy maps.
+- An extra, ugly, squished-down sprite has been added to the Wretched's death
+  state, hopefully providing additional visibility.
+- Gibs now respect the Blood fade times CVar, mopping up your carnage and
+  reducing your gratification severely, all because one guy couldn't tear himself
+  away from playing slaughtermaps for six seconds. Six. Seconds.
+
 v5.1 "Klave" (19/08/18)
 ===================
 This update addresses some issues that popped up in the wake of v5's release.
