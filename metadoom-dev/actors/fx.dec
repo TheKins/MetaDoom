@@ -92,6 +92,7 @@ ACTOR RocketTrailSmoke
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
+	+DONTSPLASH
 	states
 	{
 	Spawn:
@@ -106,6 +107,7 @@ ACTOR GrenadeTrailSmoke
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
+	+DONTSPLASH
 	alpha 0.75
 	states
 	{

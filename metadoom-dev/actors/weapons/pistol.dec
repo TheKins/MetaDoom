@@ -198,6 +198,7 @@ ACTOR PistolTracerTrail
 	+NOTELEPORT
 	+CANNOTPUSH
 	+NODAMAGETHRUST
+	+DONTSPLASH
 	Scale 0.4
 	States
 	{

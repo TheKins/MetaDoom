@@ -9,6 +9,9 @@ Description
 - Gibs now respect the Blood fade times CVar, mopping up your carnage and
   reducing your gratification severely, all because one guy couldn't tear himself
   away from playing slaughtermaps for six seconds. Six. Seconds.
+- Fixed certain weapons (Pistol, Unmaker, Lightning Gun, Rocket and Grenade
+  Launchers) spawmming water splashes when fired in a certain partially-submerged
+  position. Very specific, I know.
 
 v5.1 "Klave" (19/08/18)
 ===================

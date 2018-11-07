@@ -292,6 +292,7 @@ ACTOR UnmakerTracerTrail
 	+NOTELEPORT
 	+CANNOTPUSH
 	+NODAMAGETHRUST
+	+DONTSPLASH
 	Scale 0.75
 	States
 	{
