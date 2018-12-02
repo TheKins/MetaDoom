@@ -1,6 +1,7 @@
 v5.2 "Klave" (NEXT)
 ===================
-Description
+Some minor tweaks, fixes and optimisations to celebrate a less-than-minor
+milestone - Happy quarter-century, Doom!
 
 - The Unwilling now have a toned-down gib effect, reducing the amount of debris
   generated in Arch-Vile heavy maps.
@@ -9,8 +10,7 @@ Description
 - The Spiderdemon has been shrunk down slightly to hopefully increase visibility
   around its corpse slightly.
 - Gibs now respect the Blood fade times CVar, mopping up your carnage and
-  reducing your gratification severely, all because one guy couldn't tear himself
-  away from playing slaughtermaps for six seconds. Six. Seconds.
+  reducing your gratification severely. Blame the slaughtermap fans.
 - Fixed certain weapons (Pistol, Unmaker, Lightning Gun, Rocket and Grenade
   Launchers) spawmming water splashes when fired in a certain partially-submerged
   position. Very specific, I know.
