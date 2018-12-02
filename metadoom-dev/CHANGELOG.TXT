@@ -5,10 +5,10 @@ milestone - Happy quarter-century, Doom!
 
 - The Unwilling now have a toned-down gib effect, reducing the amount of debris
   generated in Arch-Vile heavy maps.
-- An extra, ugly, squished-down sprite has been added to the death states of
-  the Wretched and Spiderdemon, hopefully providing additional visibility.
-- The Spiderdemon has been shrunk down slightly to hopefully increase visibility
-  around its corpse slightly.
+- The death animations of the Wretched, Malwraith and Spiderdemon have been
+  tweaked to improve visibility, with varying degrees of skill.
+- The Spiderdemon has been scaled down a little bit to hopefully further
+  improve visibility around its corpse while still looking imposing.
 - Gibs now respect the Blood fade times CVar, mopping up your carnage and
   reducing your gratification severely. Blame the slaughtermap fans.
 - Fixed certain weapons (Pistol, Unmaker, Lightning Gun, Rocket and Grenade
