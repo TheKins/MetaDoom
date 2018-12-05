@@ -9,6 +9,8 @@ milestone - Happy quarter-century, Doom!
   tweaked to improve visibility, with varying degrees of skill.
 - The Spiderdemon has been scaled down a little bit to hopefully further
   improve visibility around its corpse while still looking imposing.
+- Spiderdemon corpses now also turn slightly transparent when a player is near,
+  to further reduce visibility issues.
 - Gibs now respect the Blood fade times CVar, mopping up your carnage and
   reducing your gratification severely. Blame the slaughtermap fans.
 - Fixed certain weapons (Pistol, Unmaker, Lightning Gun, Rocket and Grenade
