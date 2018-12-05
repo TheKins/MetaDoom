@@ -22,6 +22,7 @@ version "3.4"
 #include "actors/monsters/metadoomactor.zsc"
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
+#include "actors/monsters/metaspiderdemon.zsc"
 
 // Codex Stuff
 #include "zscript/codex/pyparse.zsc" // Sets up the classes for parsing

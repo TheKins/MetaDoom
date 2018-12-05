@@ -1,0 +1,219 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Spiderdemon
+----------------------------
+*/
+
+// Faster, Deadlier, Scarier
+
+class MetaSpiderMastermind : MonsterCore
+{
+	Default
+	{
+		Health 3200;
+		Radius 100;
+		Height 100;
+		Mass 1000;
+		Speed 24;
+		PainChance 40;
+		Monster;
+		MinMissileChance 160;
+		scale 0.8;
+		+BOSS
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		+NODROPOFF
+		//+BOSSDEATH
+		SeeSound "monsters/spidermastermind/see";
+		PainSound "monsters/spidermastermind/pain";
+		DeathSound "monsters/spidermastermind/die1";
+		ActiveSound "monsters/spidermastermind/idle";
+		Obituary "$OB_SPIDER";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+	}
+	
+	States
+	{
+	Spawn:
+		SPID A 10 A_Look;
+		Loop;
+	See:
+		SPID S 0;
+		SPID S 0 A_Quake(5,30,0,2048,0);
+		SPID S 35 A_FaceTarget();
+		goto Roam;
+	Roam:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		SPID A 3 { A_FastChase(); A_PlaySound("monsters/spidermastermind/walk"); }
+		SPID ABB 3 A_FastChase();
+		SPID C 3 { A_FastChase(); A_PlaySound("monsters/spidermastermind/walk"); }
+		SPID CDD 3 A_FastChase();
+		SPID E 3 { A_FastChase(); A_PlaySound("monsters/spidermastermind/walk"); }
+		SPID EFF 3 A_FastChase();
+		Loop;
+	Missile:
+		SPID A 0;
+		SPID A 0 A_Jump(64, "RollerTKAttack");
+		goto RapidAttack;
+	RapidAttack:
+		SPID A 20 BRIGHT { A_FaceTarget(); A_PlaySound("monsters/spidermastermind/ready1"); }
+		SPID G 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MetaSpiderdemonBall");
+			A_PlaySound("monsters/spidermastermind/fire");
+		}
+		SPID H 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MetaSpiderdemonBall",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MetaSpiderdemonBall");
+			A_PlaySound("monsters/spidermastermind/fire");
+		}
+		SPID H 1 BRIGHT A_MonsterRefire(20, "Roam");
+		Goto RapidAttack+1;
+	RollerTKAttack:
+		SPID A 0 A_Stop;
+		SPID A 0 { A_FaceTarget(); A_PlaySound("monsters/spidermastermind/ready2"); }
+		SPID AAAAAAA 0 BRIGHT { A_FaceTarget(); A_SpawnProjectile("SpiderDemonChargeupParticle",64,0,random(0,360),CMF_OFFSETPITCH,random(0,48)); }
+		SPID Z 0 A_PlaySound("monsters/spidermastermind/tkwave");
+		SPID Z 35 BRIGHT;
+		SPID X 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,0,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,64,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,96,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,128,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,160,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,192,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,224,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,256,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,288,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,320,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,352,CMF_AIMDIRECTION,0);
+		}
+		SPID YZY 4 BRIGHT;
+		SPID X 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,64+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,96+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,128+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,160+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,192+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,224+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,256+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,288+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,320+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,352+16,CMF_AIMDIRECTION,0);
+		}
+		SPID YZY 4 BRIGHT;
+		SPID X 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,64+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,96+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,128+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,160+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,192+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,224+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,256+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,288+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,320+32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,352+32,CMF_AIMDIRECTION,0);
+		}
+		SPID YZY 4 BRIGHT;
+		SPID Z 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,64+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,96+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,128+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,160+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,192+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,224+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,256+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,288+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,320+16,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,352+16,CMF_AIMDIRECTION,0);
+		}
+		SPID YZY 4 BRIGHT;
+		SPID X 4 BRIGHT
+		{
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,0,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,32,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,64,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,96,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,128,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,160,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,192,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,224,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,256,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,288,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,320,CMF_AIMDIRECTION,0);
+			A_SpawnProjectile("MetaSpiderdemonTKBall",64,0,352,CMF_AIMDIRECTION,0);
+		}
+		SPID YZY 4 BRIGHT;
+		SPID Z 35;
+		goto Roam;
+	Pain.Axe:
+	Pain.Fist:
+	Pain.BerserkFist:
+	Pain:
+		SPID I 3;
+		SPID I 3 A_Pain;
+		Goto Roam;
+	Death:
+		SPID J 0 A_GiveToTarget("ScoreItem", 10000);
+		SPID J 20 A_Scream;
+		SPID K 10 A_NoBlocking;
+		SPID L 10 A_PlaySound("monsters/spidermastermind/die2", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+		SPID M 0
+		{
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonExplosionParticle", random(0,48), 0, random (0, 360), 2, random (64, 110));
+			A_Quake (4,25,0,750,0);
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
+			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
+			A_SpawnItem("CyberdemonExplosionShockwave",0,32);
+		}
+		SPID MNOPPP 10;
+		SPID P 30;
+		SPID P -1 A_KillMaster; //A_BossDeath
+		Stop;
+	Crush:
+		SPIG A 0 A_SpawnItem("MetaSpiderMastermindCrush");
+		stop;
+	}
+}
