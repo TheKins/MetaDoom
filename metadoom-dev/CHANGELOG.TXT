@@ -13,8 +13,8 @@ Performance Improvements:
   position. Very specific, I know.
 
 Visibility Improvements:
-- The death animations of the Wretched, Malwraith and Spiderdemon have been
-  tweaked to improve visibility, with varying degrees of skill.
+- The death animations of the Wretched, Malwraith, Cyber-Mancubus and Spiderdemon
+  have been tweaked to improve visibility, with varying degrees of skill.
 - The Spiderdemon has been scaled down a little bit to hopefully further
   improve visibility around its corpse while still looking imposing.
 - Spiderdemon corpses now also turn slightly transparent when a player is near,
