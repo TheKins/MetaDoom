@@ -706,6 +706,7 @@ actor SpiderMastermindSpawner replaces SpiderMastermind
 	Health 0x7fffffff
 	Height 0
 	Radius 0
+	scale 0.8
 	MONSTER
 	-COUNTKILL
 	-SOLID
