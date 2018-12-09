@@ -1,4 +1,4 @@
-v5.2 "Klave" (NEXT)
+v5.2 "Klave" (10/12/18)
 ===================
 Some minor tweaks, fixes and optimisations to celebrate a less-than-minor
 milestone - Happy quarter-century, Doom!
