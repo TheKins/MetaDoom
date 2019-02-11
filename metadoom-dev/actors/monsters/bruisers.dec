@@ -72,10 +72,10 @@ ACTOR MetaBaronOfHell : MonsterCore
 			A_PlaySound("monsters/hellknight/land",CHAN_7);
 			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
 			A_SpawnItem("BaronShockwave",1,1);
-			A_CustomMissile("BaronSpikeStrip",1,0,0,CMF_AIMDIRECTION, 0);
-			A_CustomMissile("BaronSpikeStrip",1,0,90,CMF_AIMDIRECTION, 0);
-			A_CustomMissile("BaronSpikeStrip",1,0,180,CMF_AIMDIRECTION, 0);
-			A_CustomMissile("BaronSpikeStrip",1,0,270,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,0,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,90,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,180,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,270,CMF_AIMDIRECTION, 0);
 		}
 		BARO MZ 4
 		BARO Z 0 A_ChangeFlag("DROPOFF", TRUE)
@@ -262,13 +262,13 @@ ACTOR MetaSuperBaronBall
 		{
 			A_PlaySound("monsters/bruisers/fireballsplit");
 			A_Quake (2,5,0,750,0);
-			A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 0, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 0, CMF_AIMDIRECTION, 0);
 			//A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 45, CMF_AIMDIRECTION, 0);
-			A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 90, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 90, CMF_AIMDIRECTION, 0);
 			//A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 135, CMF_AIMDIRECTION, 0);
-			A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 180, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 180, CMF_AIMDIRECTION, 0);
 			//A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 225, CMF_AIMDIRECTION, 0);
-			A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 270, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 270, CMF_AIMDIRECTION, 0);
 			//A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 315, CMF_AIMDIRECTION, 0);
 			
 		}

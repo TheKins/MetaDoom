@@ -136,18 +136,18 @@ ACTOR MetaBehemoth : MonsterCore
 	Missile:
 		2FAT H 20 { A_FaceTarget; A_PlaySound("monsters/behemoth/attack"); }
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
-		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32); A_CustomMissile("MetaBehemothFireFrontman",48,32); }
+		2FAT G 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("MetaBehemothFireFrontman",48,-32); A_SpawnProjectile("MetaBehemothFireFrontman",48,32); }
 		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
 		{
 			A_FaceTarget;
 			if ( user_yeahwelit = 1)
 			{
-				A_CustomMissile("MetaBehemothFire",48,-32);
-				A_CustomMissile("MetaBehemothFire",48,32);
+				A_SpawnProjectile("MetaBehemothFire",48,-32);
+				A_SpawnProjectile("MetaBehemothFire",48,32);
 				user_yeahwelit = 0;
 			} else {
-				A_CustomMissile("MetaBehemothFireNoLight",48,-32);
-				A_CustomMissile("MetaBehemothFireNoLight",48,32);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,-32);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,32);
 				user_yeahwelit = 1;
 			}
 		}
@@ -156,18 +156,18 @@ ACTOR MetaBehemoth : MonsterCore
 		goto Missile2
 	Missile2:
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
-		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,10); A_CustomMissile("MetaBehemothFireFrontman",48,32,-10); }
+		2FAT G 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("MetaBehemothFireFrontman",48,-32,10); A_SpawnProjectile("MetaBehemothFireFrontman",48,32,-10); }
 		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
 		{
 			A_FaceTarget;
 			if ( user_yeahwelit = 1)
 			{
-				A_CustomMissile("MetaBehemothFire",48,-32,10);
-				A_CustomMissile("MetaBehemothFire",48,32,-10);
+				A_SpawnProjectile("MetaBehemothFire",48,-32,10);
+				A_SpawnProjectile("MetaBehemothFire",48,32,-10);
 				user_yeahwelit = 0;
 			} else {
-				A_CustomMissile("MetaBehemothFireNoLight",48,-32,10);
-				A_CustomMissile("MetaBehemothFireNoLight",48,32,-10);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,-32,10);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,32,-10);
 				user_yeahwelit = 1;
 			}
 		}
@@ -175,18 +175,18 @@ ACTOR MetaBehemoth : MonsterCore
 		Goto See
 	Missile3:
 		2FAT G 0 BRIGHT A_PlaySound("monsters/behemoth/fire")
-		2FAT G 1 BRIGHT { A_FaceTarget; A_CustomMissile("MetaBehemothFireFrontman",48,-32,-10); A_CustomMissile("MetaBehemothFireFrontman",48,32,10); }
+		2FAT G 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("MetaBehemothFireFrontman",48,-32,-10); A_SpawnProjectile("MetaBehemothFireFrontman",48,32,10); }
 		2FAT GGGGGGGGGGGGGGGGGGG 1 BRIGHT
 		{
 			A_FaceTarget;
 			if ( user_yeahwelit = 1)
 			{
-				A_CustomMissile("MetaBehemothFire",48,-32,-10);
-				A_CustomMissile("MetaBehemothFire",48,32,10);
+				A_SpawnProjectile("MetaBehemothFire",48,-32,-10);
+				A_SpawnProjectile("MetaBehemothFire",48,32,10);
 				user_yeahwelit = 0;
 			} else {
-				A_CustomMissile("MetaBehemothFireNoLight",48,-32,-10);
-				A_CustomMissile("MetaBehemothFireNoLight",48,32,10);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,-32,-10);
+				A_SpawnProjectile("MetaBehemothFireNoLight",48,32,10);
 				user_yeahwelit = 1;
 			}
 		}
@@ -333,9 +333,9 @@ ACTOR MetaCyberManc : MonsterCore
 		Loop
 	Missile:
 		CFAT G 20 { A_FaceTarget; A_PlaySound("monsters/cybermanc/attack"); }
-		CFAT H 10 BRIGHT { A_FaceTarget; A_CustomMissile("CyberMancShot",48,-32); A_CustomMissile("CyberMancShot",48,32); }
+		CFAT H 10 BRIGHT { A_FaceTarget; A_SpawnProjectile("CyberMancShot",48,-32); A_SpawnProjectile("CyberMancShot",48,32); }
 		CFAT IG 5 A_FaceTarget
-		CFAT H 10 BRIGHT { A_FaceTarget; A_CustomMissile("CyberMancShot",48,-32,10); A_CustomMissile("CyberMancShot",48,32,-10); }
+		CFAT H 10 BRIGHT { A_FaceTarget; A_SpawnProjectile("CyberMancShot",48,-32,10); A_SpawnProjectile("CyberMancShot",48,32,-10); }
 		CFAT IG 5 A_FaceTarget
 		CFAT G 0 A_MonsterRefire(60,"See")
 		Goto Missile+1

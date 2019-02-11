@@ -148,7 +148,7 @@ ACTOR MetaMarinePistol : MetaScriptedMarine // replaces MarinePistol
 		PLAP E 0 A_PlaySound ("grunt/attack")
 		PLAP F 8 
 		{
-			A_CustomMissile("MetaMarinePistolTracer");
+			A_SpawnProjectile("MetaMarinePistolTracer");
 			A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
 		}
 		PLAP E 8
@@ -177,10 +177,10 @@ ACTOR MetaMarineShotgun : MetaScriptedMarine // replaces MarineShotgun
 		PLSG E 10 A_FaceTarget
 		PLSG F 10 BRIGHT
 		{
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer");
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer");
 			A_PlaySound("weapons/shotgun/fire");
 		}
 		PLSG E 4
@@ -208,16 +208,16 @@ ACTOR MetaMarineSSG : MetaScriptedMarine // replaces MarineSSG
 		PLS2 E 10 A_FaceTarget
 		PLS2 F 10 BRIGHT
 		{
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
-			A_CustomMissile("MonsterShotgunGuyTracer");
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-24,24),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer");
 			A_PlaySound("weapons/ssg/fire");
 		}
 		PLS2 E 8
@@ -245,7 +245,7 @@ ACTOR MetaMarineChaingun : MetaScriptedMarine // replaces MarineChaingun
 		MGMR FE 4 BRIGHT 
 		{
 			A_PlaySound ("weapons/machinegun/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		MGMR F 1 A_CPosRefire
 		Goto Missile+1
@@ -269,7 +269,7 @@ ACTOR MetaMarineRocket : MetaScriptedMarine // replaces MarineRocket
 		PLAR E 10 A_FaceTarget
 		PLAR F 8 
 		{
-			A_CustomMissile("MetaLauncherRocket");
+			A_SpawnProjectile("MetaLauncherRocket");
 			A_PlaySound("weapons/rocketlauncher/fire", CHAN_WEAPON);
 		}
 		PLAR E 8
@@ -295,7 +295,7 @@ ACTOR MetaMarinePlasma : MetaScriptedMarine // replaces MarinePlasma
 		PLPR FE 4 BRIGHT 
 		{
 			A_PlaySound ("weapons/plasmarifle/fire");
-			A_CustomMissile("MetaPlasmaBall");
+			A_SpawnProjectile("MetaPlasmaBall");
 		}
 		PLPR F 1 A_CPosRefire
 		Goto Missile+1
@@ -352,9 +352,9 @@ ACTOR MetaMarineBFG : MetaScriptedMarine // replaces MarineBFG
 			// stops the marine from hurting himself with bfg tracers if he isn't friendly
 			if (A_CheckFlag ("FRIENDLY", "Null", AAPTR_DEFAULT))
 			{
-				A_CustomMissile("MetaBFGBall");
+				A_SpawnProjectile("MetaBFGBall");
 			} else {
-				A_CustomMissile("EvilMarineMetaBFGBall");
+				A_SpawnProjectile("EvilMarineMetaBFGBall");
 			}
 		}
 		PLBF A 4 A_FaceTarget
@@ -374,7 +374,7 @@ ACTOR EvilMarineMetaBFGBall : MetaBFGBall
 		}
 		BFS1 A 0
 		{
-			A_CustomMissile("EvilMarineBFGZapper", 8, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+			A_SpawnProjectile("EvilMarineBFGZapper", 8, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
 		}
 		Loop
 	}

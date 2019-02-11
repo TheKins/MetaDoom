@@ -63,7 +63,7 @@ ACTOR MetaZombieMan : MonsterCore
 	Missile:
 		POSS E 10 A_FaceTarget
 		POSS E 0 A_PlaySound ("monsters/zombieman/fire")
-		POSS F 8 A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2))
+		POSS F 8 A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2))
 		POSS E 8
 		Goto See
 	Pain:

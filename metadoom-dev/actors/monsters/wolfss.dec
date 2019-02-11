@@ -89,13 +89,13 @@ ACTOR MetaWolfensteinSS : MonsterCore
 		SSWV G 4 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfss/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		SSWV F 6 A_FaceTarget
 		SSWV G 4 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfss/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		SSWV F 1 A_CPosRefire
 		Goto Missile+1
@@ -192,7 +192,7 @@ ACTOR MetaWolfensteinSNES : MonsterCore
 	Missile:
 		WSNS EF 5 A_FaceTarget
 		WSNS G 0 A_PlaySound ("monsters/wolfsnes/fire")
-		WSNS G 8 A_CustomMissile("MonsterZombiemanTracer")
+		WSNS G 8 A_SpawnProjectile("MonsterZombiemanTracer")
 		WSNS F 8 A_CPosRefire
 		Goto Missile+2
 	Pain:
@@ -289,13 +289,13 @@ ACTOR MetaWolfensteinApple : MonsterCore
 	Missile:
 		APPL A 10 A_FaceTarget
 		APPL A 0 A_PlaySound ("monsters/wolfapple/fire")
-		APPL A 4 A_CustomMissile("MonsterZombiemanTracer")
+		APPL A 4 A_SpawnProjectile("MonsterZombiemanTracer")
 		APPL A 4 
 		APPL A 0 A_PlaySound ("monsters/wolfapple/fire")
-		APPL A 4 A_CustomMissile("MonsterZombiemanTracer")
+		APPL A 4 A_SpawnProjectile("MonsterZombiemanTracer")
 		APPL A 4 
 		APPL A 0 A_PlaySound ("monsters/wolfapple/fire")
-		APPL A 4 A_CustomMissile("MonsterZombiemanTracer")
+		APPL A 4 A_SpawnProjectile("MonsterZombiemanTracer")
 		APPL A 8 
 		Goto See
 	Pain:
@@ -394,13 +394,13 @@ ACTOR MetaWolfensteinMacOS : MonsterCore
 		WMAC G 4 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfss/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		WMAC F 5 A_FaceTarget
 		WMAC G 4 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfss/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		WMAC F 4 A_CPosRefire
 		Goto Missile+2
@@ -497,36 +497,36 @@ ACTOR MetaWolfensteinJava : MonsterCore
 		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
 		WJAV E 2 A_FaceTarget
 		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
 		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
-		}
-		WJAV E 2 A_FaceTarget
-		WJAV F 2 BRIGHT 
-		{
-			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
 		WJAV E 2 A_FaceTarget
 		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
 		WJAV E 2 A_FaceTarget
 		WJAV F 2 BRIGHT 
 		{
 			A_PlaySound ("monsters/wolfjava/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+		}
+		WJAV E 2 A_FaceTarget
+		WJAV F 2 BRIGHT 
+		{
+			A_PlaySound ("monsters/wolfjava/fire");
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 		}
 		WJAV E 10 A_FaceTarget
 		Goto See

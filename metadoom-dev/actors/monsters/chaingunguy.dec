@@ -44,7 +44,7 @@ ACTOR MetaMachineGunGuy : MonsterCore
 		MPOS FE 4 BRIGHT 
 		{
 			A_PlaySound ("weapons/machinegun/fire");
-			A_CustomMissile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-4,4),CMF_OFFSETPITCH,random(-4,4));
 		}
 		MPOS F 1 A_CPosRefire
 		Goto Missile+1
@@ -157,7 +157,7 @@ ACTOR MetaChainGunGuy : MonsterCore
 		CPOS FE 1 BRIGHT 
 		{
 			A_PlaySound ("weapons/chaingun/fire", CHAN_WEAPON);
-			A_CustomMissile("MonsterCommandoTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterCommandoTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 		}
 		CPOS F 1 A_MonsterRefire (10, "WindDown")
 		loop
@@ -278,7 +278,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 		PSCM FE 1 BRIGHT 
 		{
 			A_PlaySound ("weapons/chaingun/fire", CHAN_WEAPON);
-			A_CustomMissile("MonsterCommandoTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterCommandoTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
 		}
 		PSCM F 1 A_MonsterRefire (80, "WindDown")
 		loop
@@ -288,7 +288,7 @@ ACTOR MetaAssassinGuy : MonsterCore
 	MissileTentacle:
 		PSCM A 5 A_FaceTarget
 		PSCM E 5 A_FaceTarget
-		PSCM G 20 BRIGHT A_CustomMissile ("AssassinTentacle", 32, 0, 0)
+		PSCM G 20 BRIGHT A_SpawnProjectile ("AssassinTentacle", 32, 0, 0)
 		PSCM EA 5 A_FaceTarget
 		Goto See
 	Pain:

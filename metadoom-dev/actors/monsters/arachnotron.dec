@@ -40,7 +40,7 @@ ACTOR MetaArachnotron : MonsterCore
 		Goto See+1
 	Missile:
 		BSPI A 20 BRIGHT A_FaceTarget
-		BSPI G 4 BRIGHT A_CustomMissile("MetaArachnotronPlasma")
+		BSPI G 4 BRIGHT A_SpawnProjectile("MetaArachnotronPlasma")
 		BSPI H 4 BRIGHT
 		BSPI H 1 BRIGHT A_SpidRefire
 		Goto Missile+1
@@ -134,16 +134,16 @@ ACTOR MetaSpiborg : MonsterCore
 		{
 			A_SetPainThreshold (32);
 			A_FaceTarget;
-			A_CustomMissile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16));
+			A_SpawnProjectile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16));
 		}
 		2SPI A 0 A_PlaySound("monsters/spiborg/charge", CHAN_WEAPON)
-		2SPI BBBBBDDDDD 1 BRIGHT { A_FaceTarget; A_CustomMissile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
-		2SPI BBBDDDBBBDDD 1 BRIGHT { A_FaceTarget; A_CustomMissile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
-		2SPI BDBDBD 1 BRIGHT { A_FaceTarget; A_CustomMissile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
+		2SPI BBBBBDDDDD 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
+		2SPI BBBDDDBBBDDD 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
+		2SPI BDBDBD 1 BRIGHT { A_FaceTarget; A_SpawnProjectile("SpiborgChargeupParticle",32,0,random(-32,32),CMF_OFFSETPITCH,random(-16,16)); }
 		2SPI E 4 BRIGHT
 		{
 			A_PlaySound("monsters/spiborg/fire", CHAN_WEAPON);
-			A_CustomMissile("SpiborgPlasma",32);
+			A_SpawnProjectile("SpiborgPlasma",32);
 			A_SetPainThreshold (0);
 		}
 		2SPI E 4 BRIGHT

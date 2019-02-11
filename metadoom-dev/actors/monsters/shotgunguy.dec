@@ -43,10 +43,10 @@ ACTOR MetaShotgunGuy : MonsterCore
 		SPOS E 10 A_FaceTarget
 		SPOS F 10 BRIGHT
 		{
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		SPOS E 10
@@ -192,10 +192,10 @@ ACTOR MetaZSec : MonsterCore
 		}
 		ZSEC F 10 BRIGHT
 		{
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
 			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		ZSEC E 10
@@ -218,10 +218,10 @@ ACTOR MetaZSec : MonsterCore
 		ZPOC E 15 A_FaceTarget
 		ZPOC F 10 BRIGHT
 		{
-			A_CustomMissile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
-			A_CustomMissile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
-			A_CustomMissile("MonsterShotgunGuyTracer");
+			A_SpawnProjectile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",16,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer");
 			A_PlaySound("monsters/shotgunguy/fire");
 		}
 		ZPOC E 10

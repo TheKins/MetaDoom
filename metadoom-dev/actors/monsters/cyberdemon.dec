@@ -66,19 +66,19 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR F 6 A_FaceTarget
 		CYBR E 12 BRIGHT
 		{
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 12 A_FaceTarget
 		CYBR E 12 BRIGHT
 		{
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 12 A_FaceTarget
 		CYBR E 12 BRIGHT
 		{
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		Goto See+1
@@ -95,7 +95,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		{
 			A_FaceTarget;
 			A_Chase("","");
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
@@ -106,7 +106,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		{
 			A_FaceTarget;
 			A_Chase("","");
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBF E 3 { A_Chase("",""); A_PlaySound("monsters/cyberdemon/hoof"); A_FaceTarget; }
@@ -116,7 +116,7 @@ ACTOR MetaCyberdemon : MonsterCore
 		CYBR E 12 BRIGHT
 		{
 			A_FaceTarget;
-			A_CustomMissile("CyberdemonRocket", 48, -16);
+			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 6 A_FaceTarget
