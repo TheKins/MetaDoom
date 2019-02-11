@@ -1,3 +1,10 @@
+NEXT
+====
+
+Monster Changes:
+- Switched most monster A_CustomMissile calls to A_SpawnProjectile, for
+  general future-proofing purposes.
+
 v5.2 "Klave" (10/12/18)
 ===================
 Some minor tweaks, fixes and optimisations to celebrate a less-than-minor
