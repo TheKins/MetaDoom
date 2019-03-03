@@ -96,12 +96,12 @@ OptionMenu "MetaMenu"
 	Title "$OPTMNU_METADOOM"
 	StaticText " "
 	StaticText "$METAMENU_SPAWNINGHEADER", 1
-	Option "$METAMENU_SPAWNINGGUNS",              "meta_noalts_weapons", "OffOn"
-	Option "$METAMENU_SPAWNINGDUDES",              "meta_noalts_actors", "OffOn"
+	Option "$METAMENU_SPAWNINGGUNS",              "meta_noalts_weapons", "VanExt"
+	Option "$METAMENU_SPAWNINGDUDES",              "meta_noalts_actors", "VanExt"
 	Option "$METAMENU_MAPBREAKERS",					"meta_mapbreakers", "OnOff"
-	Option "$METAMENU_EPISODICSPAWNS",					"meta_episodicspawns", "OnOff"
+	Option "$METAMENU_SPAWNINGLIMITS",				"meta_contentlocust", "LocustChoice"
+	Option "$METAMENU_EPISODICSPAWNS",					"meta_episodicspawns", "EpisodicRules"
 	Option "$METAMENU_NOSPODERS",					"meta_nospoders", "OffOn"
-	Option "$METAMENU_SPAWNINGLIMITS",				"meta_contentlocust", "OnOff"
 	Option "$METAMENU_LOOTSPAWNS",				"meta_lootspawns", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_OPTIONAL", 1
@@ -124,4 +124,22 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_DEBUG",              "meta_developer", "OnOff"
 	Slider "$METAMENU_TOASTSIZE",			"meta_toastsize", "1", "4", "1", "0"
 	StaticText " "
+}
+
+OptionValue "VanExt"
+{
+	0, "$OPTVAL_EXTENDED"
+	1, "$OPTVAL_VANILLA"
+}
+
+OptionValue "LocustChoice"
+{
+	0, "$OPTVAL_GRAD"
+	1, "$OPTVAL_LOCUST"
+}
+
+OptionValue "EpisodicRules"
+{
+	0, "$OPTVAL_IGNORED"
+	1, "$OPTVAL_RESPECT"
 }

@@ -46,14 +46,14 @@ TXT_IMSCORE = "Score";
 METAMENU_DEBUG = "Debug Messages";
 
 METAMENU_SPAWNINGHEADER = "Spawning Controls";
-METAMENU_SPAWNINGGUNS = "More Weapons";
-METAMENU_SPAWNINGDUDES = "More Actors";
-METAMENU_SPAWNINGLIMITS = "Content Locust Mode";
-METAMENU_MAPBREAKERS = "Potential Map-Breakers";
+METAMENU_SPAWNINGGUNS = "Weapon Spawning";
+METAMENU_SPAWNINGDUDES = "Actor Spawning";
+METAMENU_SPAWNINGLIMITS = "Intelligent Spawn Rules";
+METAMENU_MAPBREAKERS = "Possible Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
-METAMENU_EPISODICSPAWNS = "Separate Episodic Spawn Rules";
+METAMENU_EPISODICSPAWNS = "Episodic Spawn Rules";
 METAMENU_TOASTSIZE = "\"100%\" Message Size";
-METAMENU_LOOTSPAWNS = "Treasure Pickups";
+METAMENU_LOOTSPAWNS = "Treasure Items";
 
 METAMENU_OPTIONAL = "Optional Content";
 METAMENU_OPTIONALDISC1 = "(Disable when playing map sets";
@@ -68,10 +68,19 @@ METAMENU_PISTOLAMMO = "Pistol Uses Ammo";
 METAMENU_PERFHEADER = "Performance Controls";
 METAMENU_PERFBRASS = "Spent Brass";
 METAMENU_PERFCULLER = "Blood Cull Radius";
-METAMENU_PERFBLOOD = "Force Blood to Fade Out";
-METAMENU_PERFBLOODTIME = "Blood Lifetime (in gametics)";
+METAMENU_PERFBLOOD = "Forced Blood Fade";
+METAMENU_PERFBLOODTIME = "Blood Lifetime";
 
 METAMENU_MISC = "Miscellany";
+
+OPTVAL_VANILLA = "Vanilla";
+OPTVAL_EXTENDED = "Extended";
+OPTVAL_GRAD = "Gradual Ramp-Up";
+OPTVAL_LOCUST = "Content Locust";
+OPTVAL_RESPECT = "Respected";
+OPTVAL_IGNORED = "Ignored";
+OPTVAL_SPODERS = "Allowed";
+OPTVAL_NOSPODERS = "Too Spooky";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";
