@@ -104,35 +104,6 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		return y + pinfo.mFont.GetHeight() * CleanYfac;
 	}
 
-	// Attempted to replace the "FINISHED" and "ENTERING" graphic lumps with a text string.
-	// Only half got it right. Maybe I'll get it right next time.
-	int drawLF ()
-	{
-		int y = TITLEY * CleanYfac;
-
-		y = DrawName(y, wbs.LName0, lnametexts[0]);
-	
-		// Adjustment for different font sizes for map name and 'finished'.
-		y -= ((mapname.mFont.GetHeight() - finished.mFont.GetHeight()) * CleanYfac) / 4;
-
-		// draw "Finished!"
-		if (y < (NG_STATSY - finished.mFont.GetHeight()*3/4) * CleanYfac)
-		{
-			// don't draw 'finished' if the level name is too tall
-			y = DrawCenterText(y, finished, "$TXT_IMFINISH");
-		}
-		return y;
-	}
-	
-	void drawEL ()
-	{
-		int y = TITLEY * CleanYfac;
-
-		y = DrawCenterText(y, entering, "TXT_IMENTER");
-		y += entering.mFont.GetHeight() * CleanYfac / 4;
-		DrawName(y, wbs.LName1, lnametexts[1]);
-	}
-	
 	// Draws images to the left and right of the traditional intermission graphic,
 	// as a sick hack to fill in space for widescreen players (aka. most players
 	// nowadays in this Brutal-tinged era.

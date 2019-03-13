@@ -8,6 +8,8 @@ Monster Changes:
 Other Changes:
 - Reworded options in MetaDoom Options to make more sense and to allow for
   expansion in some vague undefined future.
+- Removed some half-working functions that prevented the mod from starting in the
+  next version of GZDoom.
 
 v5.2 "Klave" (10/12/18)
 ===================
