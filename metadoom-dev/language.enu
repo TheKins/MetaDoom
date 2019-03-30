@@ -84,10 +84,10 @@ OPTVAL_NOSPODERS = "Too Spooky";
 
 METATOOLTIP_SPAWNINGCONTROLS = "Set to \"Vanilla\" to disable most of the extended-universe stuff.";
 METATOOLTIP_SPAWNINGLIMITS = "Introduce new items gradually as you play, or all at once?";
-METATOOLTIP_MAPBREAKERS = "Allow player/monster behavior that can break map progress.";
+METATOOLTIP_MAPBREAKERS = "Allow player/monster behavior that can potentially break map progress.";
 METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during Doom 1-length episodes.";
 METATOOLTIP_NOSPODERS = "Toggle spawning Trites. Useful for hardcore arachnophobes.";
-METATOOLTIP_LOOTSPAWNS = "Toggle spawning Treasure items, ala Wolf3D or the Doom Alphas.";
+METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless score items, ala Wolf3D or the Doom Alphas.";
 
 METATOOLTIP_OPTIONAL_MONSTERS = "Replace certain monsters. May cause issues with DEHACKED-based mapsets.";
 METATOOLTIP_OPTIONAL_PROPS = "Replace most props. May cause issues with DEHACKED-based mapsets.";
