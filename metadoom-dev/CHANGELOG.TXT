@@ -6,10 +6,13 @@ Monster Changes:
   general future-proofing purposes.
   
 Other Changes:
-- Reworded options in MetaDoom Options to make more sense and to allow for
-  expansion in some vague undefined future.
+- Replaced the impressive (yet gross) optional-replacement hack with GZDoom's
+  CheckReplacement event handler to offload all the hard stuff to proper
+  engine handling.
 - Removed some half-working functions that prevented the mod from starting in the
   next version of GZDoom.
+- Reworded options in MetaDoom Options to make more sense and to allow for
+  expansion in some vague undefined future.
 
 v5.2 "Klave" (10/12/18)
 ===================
