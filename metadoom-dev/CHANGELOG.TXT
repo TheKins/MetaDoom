@@ -12,6 +12,7 @@ UI Changes:
   screen - It looked buggy in the next version of GZDoom, and the BoA usage
   permissions seem to have changed since I last checked from "don't use stuff
   that isn't in an official release yet" to "not until episode 3 is out".
+- Added Nash's tooltips system to the MetaDoom Options menu!
   
 Other Changes:
 - Replaced the impressive (yet gross) optional-replacement hack with GZDoom's

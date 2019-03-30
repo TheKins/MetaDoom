@@ -55,6 +55,7 @@ Enjay (Terrain definitions)
 Gutawer (Zscript sensei, rewrote statscreen borders)
 Matt (Base for first version of actor replacement system)
 Blue Shadow (Time Freeze with sound)
+Nash (Menu tooltips system)
 
 ART RESOURCES (WEAPONS AND ITEMS):
 Captain J (Fire Extinguisher, all sorts of other nice sprites)

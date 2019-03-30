@@ -82,6 +82,27 @@ OPTVAL_IGNORED = "Ignored";
 OPTVAL_SPODERS = "Allowed";
 OPTVAL_NOSPODERS = "Too Spooky";
 
+METATOOLTIP_SPAWNINGCONTROLS = "Set to \"Vanilla\" to disable most of the extended-universe stuff.";
+METATOOLTIP_SPAWNINGLIMITS = "Introduce new items gradually as you play, or all at once?";
+METATOOLTIP_MAPBREAKERS = "Allow player/monster behavior that can break map progress.";
+METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during Doom 1-length episodes.";
+METATOOLTIP_NOSPODERS = "Toggle spawning Trites. Useful for hardcore arachnophobes.";
+METATOOLTIP_LOOTSPAWNS = "Toggle spawning Treasure items, ala Wolf3D or the Doom Alphas.";
+
+METATOOLTIP_OPTIONAL_MONSTERS = "Replace certain monsters. May cause issues with DEHACKED-based mapsets.";
+METATOOLTIP_OPTIONAL_PROPS = "Replace most props. May cause issues with DEHACKED-based mapsets.";
+
+METATOOLTIP_RETROBERSERK = "Disables the Berserk timer, for maps that assume it's still there.";
+METATOOLTIP_PISTOLAMMO = "Pistol uses Clip ammo and starts with 50 bullets, as is tradition.";
+
+METATOOLTIP_PERFBRASS = "Disables spent casings ejecting from weapons and laying around.";
+METATOOLTIP_PERFCULLER = "Increase to remove blood stains that are too close together.";
+METATOOLTIP_PERFBLOOD = "Force blood stains to fade immediately. Useful if the FPS drops.";
+METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second blood stains last before fading away.";
+
+METATOOLTIP_DEBUG = "Flood the top left of the screen with developer barf every now and then.";
+METATOOLTIP_TOASTSIZE = "Change the size of the \"All Monsters Cleared!\" pop-up. Bit buggy, mind.";
+
 // Keybinds
 MNU_MDHEADER = "MetaDoom";
 MNU_MDMELEE = "Melee Attack";
