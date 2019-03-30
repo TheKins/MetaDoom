@@ -1,17 +1,15 @@
 // Implement Optional Content as a CVar instead of a side-mod
-// Based on some really confusingly-formatted code by Matt
-// https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774
+// This was originally based on some really confusingly-formatted code by Matt
+// (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
+// uses engine-provided functionality to do the same thing, just less grossly
 
+// Replace Props with louder, breakable props
 class MetaOptionalProps : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) // void WorldTick() //WorldLoaded(WorldEvent e)
 	{
-		// The last entry is ignored for some stupid reason.
 		int replaceables = 50;
-		
-		actor actormans=null;
-		array<actor>actormansdelend;
-		
+				
 		static const string oldActor[] =
 		{
 			// Gore
@@ -30,9 +28,7 @@ class MetaOptionalProps : EventHandler
 			"TechLamp","TechLamp2","Column","BurningBarrel","TechPillar",
 			// Corpses
 			"DeadCacodemon", "DeadDemon", "DeadDoomImp", "DeadMarine",
-			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine",
-			// Thing What Makes The Array Work
-			"IGNOREME"
+			"DeadZombieman", "DeadShotgunGuy", "GibbedMarine"
 		};
 		
 		static const string newActor[] =
@@ -53,9 +49,7 @@ class MetaOptionalProps : EventHandler
 			"MetaTechLamp","MetaTechLamp2","MetaColumn","MetaBurningBarrel","MetaTechPillar",
 			// Corpses
 			"MetaDeadCacodemon", "MetaDeadPinky", "MetaDeadDoomImp", "MetaDeadMarine",
-			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine", 
-			// Thing What Makes The Array Work
-			"IGNORETHISMAN"
+			"MetaDeadZombieman", "MetaDeadShotgunGuy", "MetaGibbedMarine"
 			
 		};
 		
@@ -69,15 +63,13 @@ class MetaOptionalProps : EventHandler
 	}
 }
 
+// Replace certain monsters that tend to get replaced by DEHACKED with new,
+// fully meta-fied monsters
 class MetaOptionalMonsters : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
-		actor actormans=null;
-		array<actor>actormansdelend;
-		
-		// The last entry is ignored for some stupid reason.
-		int replaceables = 15;
+		int replaceables = 14;
 		
 		static const string oldActor[] =
 		{
@@ -86,9 +78,7 @@ class MetaOptionalMonsters : EventHandler
 			// Scripted Marines - Order is important!
 			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
 			"MarinePistol", "MarineShotgun", "MarineSSG", "MarineChaingun",
-			"MarinePlasma", "MarineRailgun", "MarineBFG", "ScriptedMarine", 
-			// Thing What Makes The Array Work
-			"IGNOREME"
+			"MarinePlasma", "MarineRailgun", "MarineBFG", "ScriptedMarine"
 		};
 		
 		static const string newActor[] =
@@ -98,10 +88,7 @@ class MetaOptionalMonsters : EventHandler
 			// Scripted Marines - Order is important!
 			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
 			"MetaMarinePistol", "MetaMarineShotgun", "MetaMarineSSG", "MetaMarineChaingun",
-			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine", 
-			// Thing What Makes The Array Work
-			"IGNORETHISMAN"
-			
+			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine"			
 		};
 		
 		if (meta_optional_monsters)
