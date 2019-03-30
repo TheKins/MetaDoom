@@ -1,17 +1,15 @@
-// Support for Consolation Prize: Doom 64
+// Support for various random mods and TCs I like and/or have worked on
 // This is mostly copy-pasted from metaoptional.zsc
 
-// Based on some really confusingly-formatted code by Matt
-// https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774
+// This was originally based on some really confusingly-formatted code by Matt
+// (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
+// uses engine-provided functionality to do the same thing, just less grossly
 
+// Support for Consolation Prize: Doom 64
 class MetaDoom64Replacements : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
-		actor actormans=null;
-		array<actor>actormansdelend;		
-		
-		// The last entry is ignored for some stupid reason.
 		int replaceables = 8;
 		
 		static const string oldActor[] =
@@ -19,9 +17,7 @@ class MetaDoom64Replacements : EventHandler
 			// Doom 64 Consolation Prize
 			"64NightmareImp","Unmaker","UnmakerUpgrade1","UnmakerUpgrade2","UnmakerUpgrade3",
 			// Doom 64 for Doom 2
-			"NightmareImp", "NightmareCacodemon", "D64D2Cyberdemon",
-			// Thing What Makes The Array Work
-			"IGNOREME"
+			"NightmareImp", "NightmareCacodemon", "D64D2Cyberdemon"
 		};
 		
 		static const string newActor[] =
@@ -29,9 +25,7 @@ class MetaDoom64Replacements : EventHandler
 			// Doom 64 Consolation Prize
 			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner",
 			// Doom 64 for Doom 2
-			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2",
-			// Thing What Makes The Array Work
-			"IGNORETHISMAN"
+			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2"
 			
 		};		
 
