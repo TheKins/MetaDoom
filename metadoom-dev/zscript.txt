@@ -37,7 +37,7 @@ version "3.4"
 // Other Bullshit Scripting
 #include "zscript/metaintermission.zsc"
 #include "zscript/metahud.zsc"
-#include "zscript/boa_iconlistmenu.zsc"
+//#include "zscript/boa_iconlistmenu.zsc"
 #include "zscript/metamenushit.zsc"
 #include "zscript/metaoptional.zsc"
 #include "zscript/metamodreps.zsc"
