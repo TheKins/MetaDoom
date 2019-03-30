@@ -74,10 +74,12 @@ OptionValue "OffOn"
 	1, "$OPTVAL_OFF"
 }
 
+/*
 OptionMenuSettings
 {
 	Linespacing 8
 }
+*/
 
 DefaultOptionMenu
 {
@@ -105,10 +107,10 @@ OptionMenu "MetaMenu"
 	Option "$METAMENU_LOOTSPAWNS",				"meta_lootspawns", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_OPTIONAL", 1
-	Option "$METAMENU_OPTIONAL_MONSTERS",				"meta_optional_monsters", "OnOff"
-	Option "$METAMENU_OPTIONAL_PROPS",				"meta_optional_props", "OnOff"
 	StaticText "$METAMENU_OPTIONALDISC1", 1
 	StaticText "$METAMENU_OPTIONALDISC2", 1
+	Option "$METAMENU_OPTIONAL_MONSTERS",				"meta_optional_monsters", "OnOff"
+	Option "$METAMENU_OPTIONAL_PROPS",				"meta_optional_props", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_ITEMHEADER", 1
 	Option "$METAMENU_RETROBERSERK",              "meta_retroberserk", "OnOff"
