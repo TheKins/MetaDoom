@@ -97,8 +97,8 @@ METATOOLTIP_PISTOLAMMO = "Pistol uses Clip ammo and starts with 50 bullets, as i
 
 METATOOLTIP_PERFBRASS = "Disables spent casings ejecting from weapons and laying around.";
 METATOOLTIP_PERFCULLER = "Increase to remove blood stains that are too close together.";
-METATOOLTIP_PERFBLOOD = "Force blood stains to fade immediately. Useful if the FPS drops.";
-METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second blood stains last before fading away.";
+METATOOLTIP_PERFBLOOD = "Force blood and gibs to fade immediately. Useful if the FPS drops.";
+METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second blood and gibs last before fading away.";
 
 METATOOLTIP_DEBUG = "Flood the top left of the screen with developer barf every now and then.";
 METATOOLTIP_TOASTSIZE = "Change the size of the \"All Monsters Cleared!\" pop-up. Bit buggy, mind.";
