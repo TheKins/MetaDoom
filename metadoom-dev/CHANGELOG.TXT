@@ -1,5 +1,7 @@
 NEXT
 ====
+Tweaks, bug-fixes and improvements in preparations for the next build of GZDoom.
+And some un-improvements, but hey, it can't be helped.
 
 Monster Changes:
 - Switched most monster A_CustomMissile calls to A_SpawnProjectile, for
