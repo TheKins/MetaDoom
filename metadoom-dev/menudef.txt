@@ -120,7 +120,7 @@ OptionMenu "MetaMenu"
 	MetaOption "$METAMENU_PERFBRASS",   "$METATOOLTIP_PERFBRASS",           "meta_perf_spentbrass", "OnOff"
 	MetaOption "$METAMENU_PERFBLOOD",    "$METATOOLTIP_PERFBLOOD",          "meta_perf_fadeblood", "OnOff"
 	MetaSlider "$METAMENU_PERFBLOODTIME",	"$METATOOLTIP_PERFBLOODTIME",		"meta_perf_bloodtime", "0", "10500", "175", "0"
-	MetaSlider "$METAMENU_PERFCULLER",	"$METAMENU_PERFCULLER",		"meta_perf_bloodcullradius", "0", "16", "1", "0"
+	MetaSlider "$METAMENU_PERFCULLER",	"$METATOOLTIP_PERFCULLER",		"meta_perf_bloodcullradius", "0", "16", "1", "0"
 	StaticText " "
 	StaticText "$METAMENU_MISC", 1
 	MetaOption "$METAMENU_DEBUG",  "$METATOOLTIP_DEBUG",            "meta_developer", "OnOff"
