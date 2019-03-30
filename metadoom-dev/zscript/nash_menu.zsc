@@ -134,8 +134,8 @@ class MetaOptionMenu : OptionMenu
 
 		if (tt.Length() > 0)
 		{
-			Screen.DrawText (OptionFont(), OptionMenuSettings.mFontColorValue,
-				(Screen.GetWidth() - OptionFont().StringWidth (tt) * CleanXfac_1) / 2,
+			Screen.DrawText (tinyBabyFont, OptionMenuSettings.mFontColorValue,
+				(Screen.GetWidth() - tinyBabyFont.StringWidth (tt) * CleanXfac_1) / 2,
 				BigFont.GetHeight() * CleanYfac_1 * 1.8,
 				tt,
 				DTA_CleanNoMove_1, true);
