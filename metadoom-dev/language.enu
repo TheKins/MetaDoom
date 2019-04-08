@@ -6,7 +6,7 @@
 [enu default]
 
 VERSION = "Development Build";
-//VERSION = "v.5.2 \"Klave\" - 10/12/2018";
+//VERSION = "v.5.3 \"Klave\" - 08/04/2019";
 
 // Startup Text
 STARTUP1 = "===========================================================";
