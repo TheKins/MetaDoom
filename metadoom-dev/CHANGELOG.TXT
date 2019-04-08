@@ -1,5 +1,5 @@
-NEXT
-====
+v5.3 "Klave" (08/04/19)
+=======================
 Tweaks, bug-fixes and improvements in preparations for the next build of GZDoom.
 And some un-improvements, but hey, it can't be helped.
 
@@ -9,17 +9,17 @@ Monster Changes:
   
 UI Changes:
 - Temporarily disabled the mugshot and description on the Skill Level select
-  screen - It looked buggy in the next version of GZDoom, and the BoA usage
-  permissions seem to have changed since I last checked from "don't use stuff
-  that isn't in an official release yet" to "not until episode 3 is out".
+  screen - It looked buggy GZDoom 4.0.0, and the BoA usage permissions seem
+  to have changed since I last checked from "don't use stuff   that isn't in
+  an official release yet" to "not until episode 3 is out". Alas.
 - Added Nash's tooltips system to the MetaDoom Options menu!
   
 Other Changes:
 - Replaced the impressive (yet gross) optional-replacement hack with GZDoom's
   CheckReplacement event handler to offload all the hard stuff to proper
   engine handling, hopefully reducing bugs.
-- Removed some half-working functions that prevented the mod from starting in the
-  next version of GZDoom.
+- Removed some half-working intermission functions that prevented the mod from
+  starting in GZDoom 4.0.0.
 - Reworded options in MetaDoom Options to make more sense and to allow for
   expansion in some vague undefined future.
 
