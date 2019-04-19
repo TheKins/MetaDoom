@@ -3,6 +3,8 @@ NEXT
 
 Player Changes:
 - Ported the player class to ZScript
+- Fixed the various visual issues (endless viewbobbing, angle resetting on bounce)
+  that have plagued the decapitated player skull since it was first added.
 
 Other Changes:
 - Updated the credits... https://i.imgur.com/zh1gxBR.jpg
@@ -19,7 +21,7 @@ Monster Changes:
 UI Changes:
 - Temporarily disabled the mugshot and description on the Skill Level select
   screen - It looked buggy GZDoom 4.0.0, and the BoA usage permissions seem
-  to have changed since I last checked from "don't use stuff   that isn't in
+  to have changed since I last checked from "don't use stuff that isn't in
   an official release yet" to "not until episode 3 is out". Alas.
 - Added Nash's tooltips system to the MetaDoom Options menu!
   
