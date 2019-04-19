@@ -203,8 +203,6 @@ class MetaDoomPlayer : PlayerPawn
 	}
 }
 
-// Playerchunks are so buggy. Might need to bust out some ZScript-fu to
-// iron out the folds in the future.
 class MetaPlayerSkull : PlayerChunk
 {
 	Default
@@ -233,6 +231,8 @@ class MetaPlayerSkull : PlayerChunk
 		Speed 5;
 	}
 	
+	// This is to fix a bug where the playerchunk's angle resets whenever it
+	// bounces off the floor.
 	double goodangle;
 	
 	States
@@ -242,7 +242,7 @@ class MetaPlayerSkull : PlayerChunk
 		PLHD A 0 
 		{
 			ThrustThingZ (0, 45, 0, 1);
-			viewbob = 0;
+			viewbob = 0; // playerchunks should not viewbob. ever. don't @ me.
 		}
 		goto See;
 	See:
