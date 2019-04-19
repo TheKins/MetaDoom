@@ -1,3 +1,12 @@
+NEXT
+====
+
+Player Changes:
+- Ported the player class to ZScript
+
+Other Changes:
+- Updated the credits... https://i.imgur.com/zh1gxBR.jpg
+
 v5.3 "Klave" (08/04/19)
 =======================
 Tweaks, bug-fixes and improvements in preparations for the next build of GZDoom.
