@@ -8,6 +8,9 @@ ZScript
 
 version "3.4"
 
+// Our Hero.
+#include "actors/player/metadoomplayer.zsc"
+
 // Weapons
 #include "actors/weapons/core.zsc"
 #include "actors/weapons/bfg.zsc"

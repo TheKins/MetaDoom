@@ -10,7 +10,7 @@ Index
 #include "actors/core.dec"
 
 // Our Hero.
-#include "actors/player.dec"
+#include "actors/player/playerremnants.dec"
 
 // Other Stuff
 #include "actors/fx.dec"
