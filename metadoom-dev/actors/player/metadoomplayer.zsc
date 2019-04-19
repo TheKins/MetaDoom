@@ -232,6 +232,9 @@ class MetaPlayerSkull : PlayerChunk
 		gravity 0.5;
 		Speed 5;
 	}
+	
+	double goodangle;
+	
 	States
 	{
 	Spawn:
@@ -244,14 +247,26 @@ class MetaPlayerSkull : PlayerChunk
 		goto See;
 	See:
 		PLHD B 0 A_SpawnProjectile("FlyingBloodCheap", -5,0,0);
-		PLHD AAABBBCCCDDD 1 A_SetRoll((roll + 1));
+		PLHD AAABBBCCCDDD 1 
+		{
+			A_SetRoll((roll + 1));
+			goodangle = angle;
+		}
 		loop;
 	See2:
 		PLHD B 0 A_SpawnProjectile("FlyingBloodCheap", -5,0,0);
-		PLHD AAABBBCCCDDD 1 A_SetRoll((roll - 1));
+		PLHD AAABBBCCCDDD 1 
+		{
+			A_SetRoll((roll - 1));
+			goodangle = angle;
+		}
 		loop;
 	Bounce.Floor:
-		PLHD B 0 A_SpawnItem("BloodSplatSmall");
+		PLHD B 0 
+		{
+			angle = goodangle;
+			A_SpawnItem("BloodSplatSmall");
+		}
 	Bounce:
 		PLHD B 0 A_Jump(128,"See2");
 		goto See;
