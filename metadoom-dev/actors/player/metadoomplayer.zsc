@@ -236,7 +236,11 @@ class MetaPlayerSkull : PlayerChunk
 	{
 	Spawn:
 		PLHD A 0;
-		PLHD A 0 ThrustThingZ (0, 45, 0, 1);
+		PLHD A 0 
+		{
+			ThrustThingZ (0, 45, 0, 1);
+			viewbob = 0;
+		}
 		goto See;
 	See:
 		PLHD B 0 A_SpawnProjectile("FlyingBloodCheap", -5,0,0);
@@ -252,7 +256,7 @@ class MetaPlayerSkull : PlayerChunk
 		PLHD B 0 A_Jump(128,"See2");
 		goto See;
 	Death:
-	   PLHD B -1 A_CheckPlayerDone;
-	   Wait;
+		PLHD B -1 A_CheckPlayerDone;
+		Wait;
 	}
 }
