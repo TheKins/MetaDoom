@@ -1,4 +1,11 @@
-// Gibs!
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Gibbage!
+----------------------------
+*/
+
 actor MetaGibber
 {
 	radius 20

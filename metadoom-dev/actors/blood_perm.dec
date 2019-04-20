@@ -1,5 +1,12 @@
-// Permanent version of the flat blood splat decal, to be spawned by props
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Blood
+----------------------------
+*/
 
+// Permanent version of the flat blood splat decal, to be spawned by props
 Actor BloodSplat_Permanent
 {
 	var float user_scaleadd;

@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Blood
+----------------------------
+*/
+
 // Taken from Smooth Doom, with alterations. Thanks, guys!
 actor BloodReducer : _Boolean {}
 
