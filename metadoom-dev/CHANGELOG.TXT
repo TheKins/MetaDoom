@@ -2,7 +2,8 @@ NEXT
 ====
 
 Player Changes:
-- Ported the player class to ZScript
+- Added unique "MetaDoomGuy" player sprites!
+- Ported the player code to ZScript.
 - Fixed the various visual issues (endless viewbobbing, angle resetting on bounce)
   that have plagued the decapitated player skull since it was first added.
 
