@@ -52,11 +52,11 @@ class MetaDoomPlayer : PlayerPawn
 	States
 	{
 	Spawn:
-		PLAY A -1;
+		PLAY Z -1;
 		Loop;
 	See:
 		PLAY ABCD 4;
-		Loop;
+		goto Spawn;
 	Missile:
 		PLAY E 12;
 		Goto Spawn;
