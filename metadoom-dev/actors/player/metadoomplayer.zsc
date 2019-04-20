@@ -6,6 +6,22 @@ Player Class
 ----------------------------
 */
 
+// counters for death states
+// these tell the metadoom weapon how you done fucked up
+class DeathStateFallingDown : _Boolean {}
+class DeathStateGibbed : _Boolean {}
+
+// counters for acs scripts
+class DisableHUD : _Boolean {}
+class PlayerHealthWarning : _Boolean {}
+class FireExtinguished : _Boolean {}
+
+class x100Percent_Monsters : _Boolean {}
+class x100Percent_Items : _Boolean {}
+class x100Percent_Secrets : _Boolean {}
+// prevent multiple 100% scripts from running at once
+class x100Percent_Running : _Boolean {}
+
 class MetaDoomPlayer : PlayerPawn
 {
 	Default

@@ -1,0 +1,38 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Core Actors
+----------------------------
+*/
+
+// Horrible remains of the pre-ZScript era. Legacy codebases, eh?
+
+class _Boolean : Inventory
+{
+    Default
+	{
+	Inventory.MaxAmount 1;
+    +Inventory.UNDROPPABLE
+    -Inventory.INVBAR
+	}
+}
+
+class Counter : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 0x7FFFFFFF;
+    +Inventory.UNDROPPABLE
+    -Inventory.INVBAR
+	}
+}
+
+class Trigger : CustomInventory
+{
+    Default
+	{
+    Inventory.MaxAmount 0;
+    +Inventory.AUTOACTIVATE
+	}
+}

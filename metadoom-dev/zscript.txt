@@ -8,6 +8,9 @@ ZScript
 
 version "3.4"
 
+// Core Actors that a bunch of shit inherits from: define above everything else!
+#include "actors/invtokens.zsc"
+
 // Our Hero.
 #include "actors/player/metadoomplayer.zsc"
 

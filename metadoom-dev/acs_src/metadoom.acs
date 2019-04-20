@@ -117,10 +117,10 @@ Script "100Percent" ENTER
 {
 	if (GameType () != GAME_NET_DEATHMATCH)
 	{
-		if (!CheckInventory("100Percent_Monsters") & !CheckInventory("100Percent_Running") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
+		if (!CheckInventory("x100Percent_Monsters") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
 		{
-			GiveInventory("100Percent_Running", 1);
-			GiveInventory("100Percent_Monsters", 1);
+			GiveInventory("x100Percent_Running", 1);
+			GiveInventory("x100Percent_Monsters", 1);
 			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
 			SetFont("100TOAST");
 			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
@@ -133,12 +133,12 @@ Script "100Percent" ENTER
 			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 10000);
 			delay(80);
-			TakeInventory("100Percent_Running", 1);
+			TakeInventory("x100Percent_Running", 1);
 		} 
-		if (!CheckInventory("100Percent_Items") & !CheckInventory("100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_ITEMS) == GetLevelInfo (LEVELINFO_TOTAL_ITEMS)) & (GetLevelInfo (LEVELINFO_TOTAL_ITEMS) != 0))
+		if (!CheckInventory("x100Percent_Items") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_ITEMS) == GetLevelInfo (LEVELINFO_TOTAL_ITEMS)) & (GetLevelInfo (LEVELINFO_TOTAL_ITEMS) != 0))
 		{
-			GiveInventory("100Percent_Running", 1);
-			GiveInventory("100Percent_Items", 1);
+			GiveInventory("x100Percent_Running", 1);
+			GiveInventory("x100Percent_Items", 1);
 			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
 			SetFont("100TOAST");
 			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
@@ -151,12 +151,12 @@ Script "100Percent" ENTER
 			HudMessage(s:"5000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 5000);
 			delay(80);
-			TakeInventory("100Percent_Running", 1);
+			TakeInventory("x100Percent_Running", 1);
 		}
-		if (!CheckInventory("100Percent_Secrets") & !CheckInventory("100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_SECRETS) == GetLevelInfo (LEVELINFO_TOTAL_SECRETS)) & (GetLevelInfo (LEVELINFO_TOTAL_SECRETS) != 0))
+		if (!CheckInventory("x100Percent_Secrets") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_SECRETS) == GetLevelInfo (LEVELINFO_TOTAL_SECRETS)) & (GetLevelInfo (LEVELINFO_TOTAL_SECRETS) != 0))
 		{
-			GiveInventory("100Percent_Running", 1);
-			GiveInventory("100Percent_Secrets", 1);
+			GiveInventory("x100Percent_Running", 1);
+			GiveInventory("x100Percent_Secrets", 1);
 			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
 			SetFont("100TOAST");
 			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
@@ -169,7 +169,7 @@ Script "100Percent" ENTER
 			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
 			GiveInventory("ScoreItem", 10000);
 			delay(80);
-			TakeInventory("100Percent_Running", 1);
+			TakeInventory("x100Percent_Running", 1);
 		}
 		Delay(1);
 		restart;
@@ -178,10 +178,10 @@ Script "100Percent" ENTER
 
 Script "Strip100PercentOnStart" ENTER
 {
-	TakeInventory("100Percent_Monsters", 999);
-	TakeInventory("100Percent_Items", 999);
-	TakeInventory("100Percent_Secrets", 999);
-	TakeInventory("100Percent_Running", 999);
+	TakeInventory("x100Percent_Monsters", 999);
+	TakeInventory("x100Percent_Items", 999);
+	TakeInventory("x100Percent_Secrets", 999);
+	TakeInventory("x100Percent_Running", 999);
 	
 	TakeInventory("InventoryCooldownToken", 999);
 	TakeInventory("ArtifactTimer", 999);

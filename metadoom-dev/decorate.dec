@@ -7,10 +7,10 @@ Index
 */
 
 // Core Actors that a bunch of shit inherits from: define above everything else!
-#include "actors/core.dec"
+//#include "actors/core.dec"
 
 // Our Hero.
-#include "actors/player/playerremnants.dec"
+//#include "actors/player/playerremnants.dec"
 
 // Other Stuff
 #include "actors/fx.dec"
