@@ -175,8 +175,8 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY H 10;
 		PLAY I 10 A_PlayerScream;
 		PLAY J 10 A_NoBlocking;
-		PLAY KLM 10;
-		PLAY N -1;
+		PLAY K 10;
+		PLAY L -1;
 		Stop;
 	Death.Crush:
 		PLAY H 0;
