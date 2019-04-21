@@ -134,11 +134,21 @@ class MetaOptionMenu : OptionMenu
 
 		if (tt.Length() > 0)
 		{
+			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 0, (Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
+			
+			Screen.DrawText (NewConsoleFont, OptionMenuSettings.mFontColorValue,
+				(Screen.GetWidth() - NewConsoleFont.StringWidth (tt) * CleanXfac_1) / 2,
+				(Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1)),
+				tt,
+				DTA_CleanNoMove_1, true);
+			
+			/*
 			Screen.DrawText (NewConsoleFont, OptionMenuSettings.mFontColorValue,
 				(Screen.GetWidth() - NewConsoleFont.StringWidth (tt) * CleanXfac_1) / 2,
 				BigFont.GetHeight() * CleanYfac_1 * 1.8,
 				tt,
 				DTA_CleanNoMove_1, true);
+			*/
 		}
 	}
 }
