@@ -44,6 +44,8 @@ class MetaDoomPlayer : PlayerPawn
 	Player.WeaponSlot 7, "MetaBFG9000", "MetaUnmaker", "MetaSoulcube";
 	Player.WeaponSlot 8, "MetaChainsaw", "MetaAxe";
 	
+	+NOSKIN
+	
 	Player.ColorRange 112, 127;
 	Player.Colorset 0, "Green",			0x70, 0x7F,  0x72;
 	Player.Colorset 1, "Gray",			0x60, 0x6F,  0x62;
