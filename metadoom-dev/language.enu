@@ -97,11 +97,11 @@ METATOOLTIP_PISTOLAMMO = "Pistol uses bullets and starts with 50 bullets, as is 
 
 METATOOLTIP_PERFBRASS = "Disables spent casings ejecting from weapons and laying around.";
 METATOOLTIP_PERFCULLER = "Increase to remove blood stains that are too close together.";
-METATOOLTIP_PERFBLOOD = "Forces carnage to fade immediately. Useful if the FPS drops.";
+METATOOLTIP_PERFBLOOD = "Forces carnage to fade immediately. Useful if the FPS drops!";
 METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second gore lasts before fading away.";
 
 METATOOLTIP_DEBUG = "Flood the top left of the screen with developer barf occasionally.";
-METATOOLTIP_TOASTSIZE = "Change the size of the \"All Monsters Cleared!\" pop-up. Bit buggy, mind.";
+METATOOLTIP_TOASTSIZE = "Change the size of the \"All X Cleared!\" pop-up. Bit buggy, mind.";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";
