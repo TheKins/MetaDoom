@@ -361,6 +361,7 @@ class MetaPlayerSkull : PlayerChunk
 		PLHD A 0;
 		PLHD A 0 
 		{
+			ThrustThing(random(0,255), random(2,8), 0, 0);
 			ThrustThingZ (0, 45, 0, 1);
 			viewbob = 0; // playerchunks should not viewbob. ever. don't @ me.
 		}
