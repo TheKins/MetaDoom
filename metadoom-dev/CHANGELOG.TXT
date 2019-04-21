@@ -9,11 +9,9 @@ Player Changes:
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
-- Removed modified DBigFont in order to use the official GZDoom version that
-  accomplishes the same thing but with more characters.
 
 Other Changes:
-- Updated the credits image.
+- Updated the credits...
 
 v5.3 "Klave" (08/04/19)
 =======================
