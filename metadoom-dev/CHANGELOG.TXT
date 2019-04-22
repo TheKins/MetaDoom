@@ -11,6 +11,7 @@ UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
 Other Changes:
+- Some minor re-sorting and cleaning-up of the sprites folders.
 - Updated the credits image.
 
 v5.3 "Klave" (08/04/19)
