@@ -41,9 +41,9 @@ Actor BloodSplat_Permanent
 			user_z = z;
 			
 			//Ordinary splat?
-			if (CheckClass("BloodSplat",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatGreen",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatBlue",AAPTR_DEFAULT))
+			if (CheckClass("BloodSplat_Permanent",AAPTR_DEFAULT) ||
+				CheckClass("BloodSplatGreen_Permanent",AAPTR_DEFAULT) ||
+				CheckClass("BloodSplatBlue_Permanent",AAPTR_DEFAULT))
 			{
 				return					A_Jump(256,"A","B","F");
 			}
