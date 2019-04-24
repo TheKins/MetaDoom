@@ -1,4 +1,86 @@
 // Kinetic Mine
+class MineDetatcherToken : _Boolean {}
+
+class KineticMinePickup : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTKINMINE";
+	Tag "$TAGKINMINE";
+	inventory.icon "INVMINE";
+	inventory.pickupsound "inventory/kineticmine/get";
+	+INVENTORY.ALWAYSPICKUP
+	scale 0.75;
+	+BLOCKASPLAYER
+	}
+	
+	states
+	{
+	Spawn:
+		KMIN Z -1;
+		stop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("KineticMine", 1);
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		stop;
+	}
+}
+
+class KineticMinePickupRetrieve : KineticMinePickup
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTKINMINERET";
+	}
+	
+	states
+	{
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("KineticMine", 1);
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 1);
+		stop;
+	}
+}
+
+class KineticMine : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTKINMINE";
+	Tag "$TAGKINMINE";
+	inventory.icon "INVMINE";
+	inventory.pickupsound "inventory/kineticmine/get";
+	inventory.amount 1;
+	inventory.maxamount 1;
+	+INVENTORY.INVBAR
+	scale 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		KMIN Z -1;
+		stop;
+	Use:
+		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
+		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
+		goto Failure;
+	Fire:
+		TNT1 A 0 A_FireProjectile("KineticMineProj",0,0,0,0);
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
+		fail;
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid");
+		TNT1 A 0 A_Log("You don't have any grenades!", 1);
+		fail;
+	FailureCooldown:
+		TNT1 A 0;
+		TNT1 A 0;
+		fail;
+	}
+}
+
 class KineticMineProj : Actor
 {
 	Default
@@ -61,6 +143,282 @@ class KineticMineProj : Actor
 				return ResolveState("Flying"); 
 			}
 		}
+		Stop;
+	}
+}
+
+class KineticMineBeepyBoop : Actor
+{
+	Default
+	{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	Radius 1;
+	Height 1;
+	scale 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		KMIN Y 1 BRIGHT A_FadeOut;
+		loop;
+	}
+}
+
+class KineticMineLurkingFloor : Actor
+{
+	Default
+	{
+	Radius 8;
+	Height 8;
+	scale 0.5;
+	+LOOKALLAROUND
+	+FRIENDLY
+	+DONTTHRUST
+	// This combination of flags here should (SHOULD) ultimately accomplish nothing
+	// except allowing the mines to be detected by A_RadiusGive. I'm not proud...
+	+SHOOTABLE
+	+INVULNERABLE
+	-SOLID
+	+NOBLOOD
+	+NOTAUTOAIMED
+	}
+	
+	int user_fuse;
+	
+	States
+	{
+	Spawn:
+		KMIN B 0;
+		KMIN B 0
+		{
+			user_fuse = 0;
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
+		KMIN B 0 A_PlaySound("inventory/kineticmine/land");
+		goto ArmUp;
+	ArmUp:
+		"####" "#" 40;
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/arm");
+		"####" "#" 0 A_Jump(256, "WaitMyLove"); // constant inheritance has its downsides
+		goto WaitMyLove;
+	WaitMyLove:
+		"####" "#" 0 { user_fuse++; }
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch");
+		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,8);
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return ResolveState("Detatch");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		Loop;
+	See:
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track");
+		"####" "#" 2 Bright;
+		"####" "#" 2;
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track");
+		"####" "#" 2 Bright;
+		"####" "#" 2;
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track");
+		"####" "#" 2 Bright;
+		"####" "#" 2;
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track");
+		"####" "#" 2 Bright;
+		"####" "#" 2;
+		"####" "#" 0 A_PlaySound("inventory/kineticmine/track");
+		"####" "#" 2 Bright;
+		"####" "#" 2;
+		"####" "#" 0 A_Jump(256, "Kaboom");
+		goto Kaboom;
+	Kaboom:
+		"####" "#" 0
+		{
+			A_FaceTarget();
+			A_PlaySound("inventory/kineticmine/launch");
+			A_SpawnProjectile("KineticMineLeapy",4);
+		}
+		Stop;
+	Detatch:
+		TNT1 A 0 A_PlaySound("inventory/kineticmine/detatch");
+		TNT1 A 0 A_SpawnItem("KineticMinePickupRetrieve");
+		Stop;
+	}
+}
+
+class KineticMineLurkingCeiling : KineticMineLurkingFloor
+{
+	Default
+	{
+	Radius 8;
+	Height 4;
+	scale -0.5;
+	+LOOKALLAROUND
+	+FRIENDLY
+	+NOGRAVITY
+	+DONTTHRUST
+	}
+	
+	States
+	{
+	Spawn:
+		KMIN B 0;
+		KMIN B 0
+		{
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
+		KMIN B 0 A_PlaySound("inventory/kineticmine/land");
+		goto ArmUp;
+		
+	WaitMyLove:
+		"####" "#" 0 { user_fuse++; }
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch");
+		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",0,0,-8);
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return ResolveState("Detatch");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		Loop;
+	Kaboom:
+		"####" "#" 0
+		{
+			A_FaceTarget();
+			A_PlaySound("inventory/kineticmine/launch");
+			A_SpawnProjectile("KineticMineLeapy",-4);
+		}
+		Stop;
+	}
+}
+
+class KineticMineLurkingWall : KineticMineLurkingFloor
+{
+	Default
+	{
+	Radius 8;
+	Height 8;
+	scale 0.5;
+	+LOOKALLAROUND
+	+FRIENDLY
+	+WALLSPRITE
+	+NOGRAVITY
+	+DONTTHRUST
+	}
+	
+	States
+	{
+	Spawn:
+		KMIN C 0;
+		KMIN B 0
+		{
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingFloor");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingCeiling");
+			A_RadiusGive ("MineDetatcherToken", 32, RGF_OBJECTS, 1, "KineticMineLurkingWall");
+		}
+		KMIN C 0 A_PlaySound("inventory/kineticmine/land");
+		goto ArmUp;
+	WaitMyLove:
+		"####" "#" 0 { user_fuse++; }
+		"####" "#" 0 A_JumpIf(user_fuse == 20, "Detatch");
+		"####" "#" 0 A_SpawnItemEx("KineticMineBeepyBoop",-4,0,0);
+		"####" "####################" 1 
+		{
+			A_LookEx (LOF_NOSOUNDCHECK, 0, 256, 0, 360);
+			//A_JumpIfInventory("MineDetatcherToken", 1, "Detatch");
+			
+			// If we get attached to the inner wall of a lift or a wall that's
+			// moved by a button elsewhere, things can get fucky. If this happens,
+			// panic and detach to ensure sanity ensures.
+			if (pos.z == floorz)
+			{
+				return ResolveState("Detatch");
+			} else {
+				return ResolveState(null);
+			}
+			
+			if (CountInv("MineDetatcherToken") > 0)
+			{
+				return ResolveState("Detatch");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		Loop;
+	Kaboom:
+		"####" "#" 0
+		{
+			A_SpawnItemEx("KineticMineLurkingWallWorkaround",-32,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		}
+		Stop;
+	Detatch:
+		TNT1 A 0 A_PlaySound("inventory/kineticmine/detatch");
+		TNT1 A 0 A_SpawnItemEx("KineticMinePickupRetrieve",-32,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+// uggh, gross
+class KineticMineLurkingWallWorkaround : Actor
+{
+	Default
+	{
+	+NOGRAVITY
+	}
+	
+	States
+	{
+		Spawn:
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			A_FaceTarget();
+			A_PlaySound("inventory/kineticmine/launch");
+			A_SpawnProjectile("KineticMineLeapy",4);
+		}
+		Stop;
+	}
+}
+
+class KineticMineLeapy : Actor
+{
+	Default
+	{
+	Radius 11;
+	Height 8;
+	Speed 20;
+	Damage 20;
+	Projectile;
+	+RANDOMIZE
+	Obituary "$OB_KINMINE";
+	Decal "Scorch";
+	}
+	
+	States
+	{
+	Spawn:
+		KMIS A 0 A_SpawnItem ("RocketTrailSmoke", 0, 6, 0, 0);
+		KMIS AA 1 Bright;
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	}
 }
