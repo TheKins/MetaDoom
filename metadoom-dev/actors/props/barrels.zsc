@@ -46,9 +46,11 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		BEXP A 0
 		{
 			A_PlaySound("barrel/hit");
-			A_SpawnItem("GreenBlood",0,random(32,42));
-			A_SpawnItem("GreenBlood",0,random(32,42));
-			A_SpawnItem("GreenBlood",0,random(32,42));
+			
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItem("GreenBlood",0,random(32,42));
+			}
 		}
 		goto Spawn;
 	Death:
@@ -67,21 +69,19 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		BEXP D 2 BRIGHT //A_Explode
 		{
 			A_SpawnItemEx("ExplosiveBarrelExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
-			A_SpawnItem("GreenBlood",0,random(16,42));
-			A_SpawnItem("GreenBlood",0,random(16,42));
-			A_SpawnItem("GreenBlood",0,random(16,42));
-			A_SpawnItem("GreenBlood",0,random(16,42));
-			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnItem("GreenBlood",0,random(16,42));
+				A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			}
+			
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItem("MetaGibBarrel",0,random(16,42));
+				A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			}
+			
 			A_PlaySound("barrel/explode", CHAN_BODY);
 			A_Fall();
 		}
@@ -94,12 +94,12 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 	Death.Axe:
 		BEXP U 0
 		{
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(16,42));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
-			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItem("MetaGibBarrel",0,random(16,42));
+				A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			}
+			
 			A_PlaySound("barrel/break", CHAN_BODY);
 			A_Stop();
 			A_Fall();
