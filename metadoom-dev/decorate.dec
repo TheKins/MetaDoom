@@ -68,7 +68,7 @@ Index
 
 // Monsters
 //#include "actors/monsters/spawners.dec"
- #include "actors/monsters/spawners_stealth.dec"
+//#include "actors/monsters/spawners_stealth.dec"
 #include "actors/monsters/core.dec"
 #include "actors/monsters/zombieman.dec"
 #include "actors/monsters/shotgunguy.dec"

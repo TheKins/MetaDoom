@@ -691,3 +691,18 @@ class NightmareImpSpawner : MetaSpawner // replaces 64NightmareImp
 		stop;
 	}
 }
+
+// stealth monsters are shit for losers. let's fix this.
+
+class StealthArachnotronSpawner : ArachnotronSpawner replaces StealthArachnotron {}
+class StealthArchVileSpawner : ArchVileSpawner replaces StealthArchvile {}
+class StealthBaronOfHellSpawner : BaronOfHellSpawner replaces StealthBaron {}
+class StealthCacodemonSpawner : CacodemonSpawner replaces StealthCacodemon {}
+class StealthChaingunGuySpawner : ChaingunGuySpawner replaces StealthChaingunGuy {}
+class StealthDemonSpawner : SpectreSpawner replaces StealthDemon {}
+class StealthHellKnightSpawner : HellKnightSpawner replaces StealthHellKnight {}
+class StealthImpSpawner : ImpSpawner replaces StealthDoomImp {}
+class StealthMancubusSpawner : MancubusSpawner replaces StealthFatso {}
+class StealthRevenantSpawner : RevenantSpawner replaces StealthRevenant {}
+class StealthShotgunGuySpawner : ShotgunGuySpawner replaces StealthShotgunGuy {}
+class StealthZombiemanSpawner : ZombiemanSpawner replaces StealthZombieMan {}
