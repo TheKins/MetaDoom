@@ -13,7 +13,8 @@ UI Changes:
 Other Changes:
 - Ported the following things from DECORATE to ZScript:
   - The actor spawners (Still plenty of ACS, but if it ain't broke...)
-  - The remaining DECORATE bits of the Shield Wall, Kinetic Mine, Tesla Rocket...
+  - Certain inventory items that were a horrible multi-file blend of DECORATE
+    and ZScript, restoring my sanity.
   - Explosions and some other visual FX.
 - Some minor re-sorting and cleaning-up of the sprites folders.
 - Updated the credits image.
