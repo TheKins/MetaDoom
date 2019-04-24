@@ -47,7 +47,7 @@ class ShieldWall : CustomInventory
 		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
 		goto Failure;
 	Fire:
-		TNT1 A 0 A_FireCustomMissile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
+		TNT1 A 0 A_FireProjectile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
 		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
 		fail;
 	Failure:
