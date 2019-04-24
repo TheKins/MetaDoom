@@ -60,6 +60,7 @@ class MetaSpiderMastermind : MonsterCore
 		Loop;
 	Missile:
 		SPID A 0;
+		SPID A 0 A_Jump(256, "RollerTKAttack");
 		SPID A 0 A_Jump(64, "RollerTKAttack");
 		goto RapidAttack;
 	RapidAttack:
@@ -84,8 +85,17 @@ class MetaSpiderMastermind : MonsterCore
 		Goto RapidAttack+1;
 	RollerTKAttack:
 		SPID A 0 A_Stop;
-		SPID A 0 { A_FaceTarget(); A_PlaySound("monsters/spidermastermind/ready2"); }
-		SPID AAAAAAA 0 BRIGHT { A_FaceTarget(); A_SpawnProjectile("SpiderDemonChargeupParticle",64,0,random(0,360),CMF_OFFSETPITCH,random(0,48)); }
+		SPID A 0 { A_FaceTarget(); A_PlaySound("monsters/spidermastermind/ready2", CHAN_6); }
+		SPID A 0 BRIGHT
+		{
+			A_FaceTarget();
+			
+			for (int i = 0; i < 12; i ++)
+			{
+				A_SpawnProjectile("SpiderDemonChargeupParticle",64,0,(30 * i),CMF_OFFSETPITCH,random(0,-32));
+			}
+			
+		}
 		SPID Z 0 A_PlaySound("monsters/spidermastermind/tkwave");
 		SPID Z 35 BRIGHT;
 		SPID X 4 BRIGHT
@@ -228,5 +238,136 @@ class MetaSpiderMastermind : MonsterCore
 			A_SetRenderStyle(1.0, STYLE_Normal);
 		}
 		Super.Tick();
+	}
+}
+
+class MetaSpiderdemonBall : Actor
+{
+	Default
+	{
+	Radius 6;
+	Height 8;
+	Speed 32;
+	FastSpeed 48;
+	Damage 4;
+	Projectile;
+	+RANDOMIZE
+	+EXTREMEDEATH
+	RenderStyle "Add";
+	Alpha 1;
+	decal "DoomImpScorch";
+	damagetype "SpiderdemonAttack";
+	}
+	
+	States
+	{
+	Spawn:
+		APLS A 0 A_PlaySound ("weapons/plasmarifle/loop", CHAN_BODY, 1.0, 1);
+		APLS AB 5 BRIGHT;
+		Loop;
+	Death:
+		APBX A 0 A_Quake (3,5,0,750,0);
+		APBX A 0 A_Explode(8,64,!XF_HURTSOURCE);
+		APBX A 0 A_StopSound(CHAN_BODY);
+		APBX A 0 A_PlaySound("monsters/spidermastermind/firehit",CHAN_7);
+		APBX ABCDE 5 BRIGHT;
+		Stop;
+	}
+}
+
+class SpiderDemonChargeupParticle : Actor
+{
+	Default
+	{
+	Radius 3;
+	Height 3;
+	Speed 32;
+	FastSpeed 32;
+	Damage 0;
+	Projectile;
+	+RANDOMIZE
+	+NOINTERACTION
+	RenderStyle "Add";
+	Alpha 1;
+	scale 0.5;
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 8;
+		TNT1 A 0 a_scalevelocity (-0.3); //A_ChangeVelocity(-4, 0, 0, CVF_RELATIVE | CVF_REPLACE)
+	FlyForABit:
+		SBSH AAAAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT A_SetScale(scale.x + 0.1);
+	Death:
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+class MetaSpiderdemonTKBall : Actor
+{
+	Default
+	{
+	Radius 8;
+	Height 16;
+	Speed 8;
+	FastSpeed 8;
+	DamageFunction (32);
+	Projectile;
+	+RANDOMIZE
+	-NOGRAVITY	
+	+NOEXPLODEFLOOR
+	+EXTREMEDEATH
+	gravity 0.25;
+	RenderStyle "Add";
+	scale 2;
+	Alpha 1;
+	decal "CacoScorch";
+	damagetype "SpiderdemonTKAttack";
+	}
+	
+	States
+	{
+	Spawn:
+		BAL2 A 0;
+		BAL2 A 0 A_PlaySound("monsters/caco/lightningball/loop", CHAN_BODY, 1.0, 1);
+		BAL2 ABABAB 4 BRIGHT;
+		BAL2 A 0 { bNoGravity = 0; }
+		BAL2 A 0 ThrustThingZ(0,0,0,0);
+	Idle:
+		BAL2 AB 4 BRIGHT;
+		Loop;
+	Death:
+		BAL2 A 0 A_StopSound(CHAN_BODY);
+		BAL2 A 0 A_Quake (3,5,0,750,0);
+		BAL2 A 0 A_Explode(8,64,!XF_HURTSOURCE);
+		BAL2 C 0 A_PlaySound("monsters/spidermastermind/firehit", CHAN_7);
+		BAL2 CDE 6 BRIGHT;
+		Stop;
+	}
+}
+
+class MetaSpiderMastermindCrush : Actor
+{
+	Default
+	{
+	+DROPOFF
+	+CORPSE
+	+NOTELEPORT
+	+DONTGIB
+	}
+	
+	States
+	{
+		Spawn:
+			SPIG A 0;
+			SPIG A 0 
+			{	
+				A_PlaySound("monsters/crushed");
+			}
+			SPIG A -1;
+			Stop;
 	}
 }

@@ -87,7 +87,7 @@ Index
 #include "actors/monsters/revenant.dec"
 
 #include "actors/monsters/cyberdemon.dec"
-#include "actors/monsters/spiderdemon.dec"
+//include "actors/monsters/spiderdemon.dec"
 
 // ---Optional Shit---
 // Other Stuff
