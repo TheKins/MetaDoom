@@ -1,3 +1,102 @@
+// Tesla Rockets
+class TeslaRocketPickup : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTTESLA";
+	Tag "$TAGTESLA";
+	inventory.icon "INVTESL";
+	inventory.pickupsound "inventory/teslarocket/get";
+	+INVENTORY.ALWAYSPICKUP
+	scale 0.5;
+	+BLOCKASPLAYER
+	}
+	
+	states
+	{
+	Spawn:
+		TSLA Z -1;
+		stop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("TeslaRocket", 1);
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		stop;
+	}
+}
+
+class TeslaRocket : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTTESLA";
+	Tag "$TAGTESLA";
+	inventory.icon "INVTESL";
+	inventory.pickupsound "inventory/grenade/get";
+	inventory.amount 1;
+	inventory.maxamount 1;
+	+INVENTORY.INVBAR
+	scale 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		TSLA Z -1;
+		stop;
+	Use:
+		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
+		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
+		goto Failure;
+	Fire:
+		TNT1 A 0 A_FireProjectile("TeslaRocketProj",0,0,0,0,FPF_NOAUTOAIM | CMF_TRACKOWNER);
+		TNT1 A 0 A_AlertMonsters;
+		TNT1 A 0 A_PlaySound ("inventory/teslarocket/throw");
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
+		fail;
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid");
+		TNT1 A 0 A_Log("You don't have any grenades!", 1);
+		fail;
+	FailureCooldown:
+		TNT1 A 0;
+		TNT1 A 0;
+		fail;
+	}
+}
+
+class TeslaRocketProj : Actor
+{
+	Default
+	{
+	Radius 11;
+	Height 8;
+	Speed 10;
+	DamageFunction (5);
+	Projectile;
+	+RANDOMIZE
+	+RIPPER
+	scale 0.5;
+	Obituary "$OB_TESLA";
+	Decal "CacoScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		TSLA A 0 A_PlaySound ("inventory/teslarocket/loop", CHAN_BODY, 1.0, 1);
+		TSLA ACBC 1 Bright 
+		{
+			A_SpawnItem("TeslaZapperTrail",random(-8,8),random(-8,8));
+			A_SpawnProjectile("TeslaZapper", -4, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+		}
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("TeslaRocketExplosion",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
 // More Tesla Rockets, with grody workarounds
 class TeslaZapper : Actor
 {
@@ -42,6 +141,50 @@ class TeslaZapper : Actor
 		Goto Death;
 	Death:
 		TNT1 A 0;
+		Stop;
+	}
+}
+
+class TeslaZapperTrail : Actor
+{
+	Default
+	{
+	//Renderstyle Add
+	Alpha 0.75;
+	Scale 0.5;
+	+NOINTERACTION
+	}
+	
+	States
+	{
+	Spawn:
+		TSPK A 2 Bright;
+		TSPK B 1 Bright;
+		Stop;
+	}
+}
+
+class TeslaRocketExplosion : Explosion
+{
+	Default
+	{
+	//scale 0.5
+	Obituary "$OB_TESLA";
+	}
+	
+	States
+	{
+		Spawn:
+		EXPL A 0;
+		BAL2 C 4 BRIGHT
+		{
+			A_PlaySound("inventory/teslarocket/explode", CHAN_WEAPON);
+			A_Explode(72,128);
+			A_Quake (3,5,0,750,0);
+			A_SpawnItem("ShockwaveSmall");
+		}
+		BAL2 D 3 BRIGHT;
+		BAL2 E 2 BRIGHT;
 		Stop;
 	}
 }

@@ -55,7 +55,7 @@ Index
 // Inventory
 #include "actors/inventory/core.dec"
 #include "actors/inventory/handgrenade.dec"
-#include "actors/inventory/teslarocket.dec"
+//#include "actors/inventory/teslarocket.dec"
 //#include "actors/inventory/shieldwall.dec"
 #include "actors/inventory/siphongrenade.dec"
 #include "actors/inventory/hologram.dec"
