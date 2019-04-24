@@ -16,7 +16,7 @@ Index
 //#include "actors/fx.dec"
 #include "actors/blood.dec"
 #include "actors/gibs.dec"
-#include "actors/props.dec"
+//#include "actors/props.dec"
 
 // Weapons
 #include "actors/weapons/spawners.dec"

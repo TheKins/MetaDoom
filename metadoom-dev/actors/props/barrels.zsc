@@ -1,0 +1,176 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Props
+----------------------------
+*/
+
+// These props aren't affected by Optional Content and are non-negotiable.
+
+// The Explosive Barrel, everyone's favorite prop.
+class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
+{
+	Default
+	{
+	Health 20;
+	Radius 10;
+	Height 42;
+	+SOLID
+	+SHOOTABLE
+	+ACTIVATEMCROSS
+	+DONTGIB
+	+NOICEDEATH
+	+OLDRADIUSDMG
+	+FORCEPAIN
+	Obituary "$OB_BARREL";
+	bloodtype "GreenBlood";
+	bloodcolor "49 9a 3d";
+	damagefactor "HolyWater", 0;
+	damagefactor "Fist", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	painchance "LightningStun", 0;
+	painchance 255;
+	damagetype "ExplodingBarrel";
+	}
+	
+	States
+	{
+	Spawn:
+		BAR1 ABCDEFGHIJKLM 3;
+		Loop;
+	Pain:
+		BEXP A 0;
+		BEXP A 0
+		{
+			A_PlaySound("barrel/hit");
+			A_SpawnItem("GreenBlood",0,random(32,42));
+			A_SpawnItem("GreenBlood",0,random(32,42));
+			A_SpawnItem("GreenBlood",0,random(32,42));
+		}
+		goto Spawn;
+	Death:
+		BEXP A 2 BRIGHT;
+		BEXP B 2 BRIGHT;
+		BEXP C 2 BRIGHT;
+		goto Kaboom;
+	// Delay demise a little bit if the exploding barrel was killed by another
+	// exploding barrel, to preserve the original timing and keep MAP23 playable.
+	Death.ExplodingBarrel:
+		BEXP A 5 BRIGHT;
+		BEXP B 5 BRIGHT;
+		BEXP C 5 BRIGHT;
+		goto Kaboom;
+	Kaboom:
+		BEXP D 2 BRIGHT //A_Explode
+		{
+			A_SpawnItemEx("ExplosiveBarrelExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItem("GreenBlood",0,random(16,42));
+			A_SpawnItem("GreenBlood",0,random(16,42));
+			A_SpawnItem("GreenBlood",0,random(16,42));
+			A_SpawnItem("GreenBlood",0,random(16,42));
+			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_PlaySound("barrel/explode", CHAN_BODY);
+			A_Fall();
+		}
+		BEXP E 4 BRIGHT;
+		BEXP RSTRSTRSTRST 4;
+		BEXP U -1;
+		BEXP U 1050 BRIGHT A_BarrelDestroy;
+		BEXP U 5 A_Respawn;
+		Wait;
+	Death.Axe:
+		BEXP U 0
+		{
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(16,42));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			A_PlaySound("barrel/break", CHAN_BODY);
+			A_Stop();
+			A_Fall();
+		}
+		BEXP U -1;
+		BEXP U 1050 BRIGHT A_BarrelDestroy;
+		BEXP U 5 A_Respawn;
+		Wait;
+	}
+}
+
+// This is so barrels explode at their old speed when killed by another barrel,
+// so as to avoid making Barrels 'O' Fun unwinnable.
+class ExplosiveBarrelExplosion : Explosion
+{
+	Default
+	{
+	damagetype "ExplodingBarrel";
+	}
+}
+
+class MetaGibBarrel : Actor
+{
+	Default
+	{
+	+DOOMBOUNCE
+	PROJECTILE;
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 2;
+	Damage 0;
+	bouncefactor 0.5;
+	SeeSound "barrel/gib";
+	gravity 0.5;
+	Speed 5;
+	}
+	
+	States
+	{
+	Spawn:
+		BAGI A 0;
+		BAGI ABCDE 0 A_Jump(128, "Setup");
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") ;
+		goto See;
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Bounce.Floor:
+		//"####" # 0 A_SpawnItem("BloodSplat")
+		goto ChangeDir;
+	Bounce.Wall:
+		goto ChangeDir;
+	Death:
+		"####" # 0 A_ChangeLinkFlags(true);
+		"####" # -1;
+		Stop;
+    }
+}

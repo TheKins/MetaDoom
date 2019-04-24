@@ -16,6 +16,7 @@ Other Changes:
   - Certain inventory items that were a horrible multi-file blend of DECORATE
     and ZScript, restoring my sanity.
   - Explosions and some other visual FX.
+  - Exploding Barrels.
 - Some minor re-sorting and cleaning-up of the sprites folders.
 - Updated the credits image.
 
