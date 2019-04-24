@@ -1,3 +1,104 @@
+// Shield Wall
+class ShieldWallPickup : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTSHIELDWALL";
+	Tag "$TAGSHIELDWALL";
+	inventory.icon "INVSHLD";
+	inventory.pickupsound "inventory/shieldwall/get";
+	+INVENTORY.ALWAYSPICKUP
+	//scale 0.5
+	+BLOCKASPLAYER
+	}
+	states
+	{
+	Spawn:
+		SHLD Z -1;
+		stop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ShieldWall", 1);
+		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		stop;
+	}
+}
+
+class ShieldWall : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "$GOTSHIELDWALL";
+	Tag "$TAGSHIELDWALL";
+	inventory.icon "INVSHLD";
+	inventory.pickupsound "inventory/shieldwall/get";
+	inventory.amount 1;
+	inventory.maxamount 1;
+	+INVENTORY.INVBAR
+	scale 0.5;
+	}
+	states
+	{
+	Spawn:
+		SHLD Z -1;
+		stop;
+	Use:
+		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
+		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
+		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
+		goto Failure;
+	Fire:
+		TNT1 A 0 A_FireCustomMissile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
+		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
+		fail;
+	Failure:
+		TNT1 A 0 A_PlaySound("menu/invalid");
+		TNT1 A 0 A_Log("You don't have any grenades!", 1);
+		fail;
+	FailureCooldown:
+		TNT1 A 0;
+		TNT1 A 0;
+		fail;
+	}
+}
+
+class ShieldWallProj : Actor
+{
+	Default
+	{
+	+CANBOUNCEWATER
+	Radius 8;
+	Height 8;
+	Speed 15;
+	Damage 0;
+	PROJECTILE;
+	+RANDOMIZE
+	-NOGRAVITY
+	+USEBOUNCESTATE
+	+ROLLSPRITE
+	SeeSound "inventory/throw";
+	Obituary "$OB_MPGRENADE";
+	scale 0.5;
+	ReactionTime 60;	//Just over five seconds
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 A_PlaySound("weapons/grenadethrow");
+		goto Flying;
+	Flying:
+		SHLD Y 1;
+		loop;
+	Death:
+		TNT1 A 0 A_SetAngle(angle + 90);
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
 // Shield Wall - Useful Edition!
 class ShieldWallPiece : Actor
 {
