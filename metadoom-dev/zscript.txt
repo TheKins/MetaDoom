@@ -25,6 +25,7 @@ version "3.4"
 #include "actors/inventory/theartifact.zsc"
 
 // Monsters
+#include "actors/monsters/spawners.zsc"
 #include "actors/monsters/metadoomactor.zsc"
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
