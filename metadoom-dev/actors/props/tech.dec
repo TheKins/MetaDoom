@@ -32,7 +32,7 @@ ACTOR MetaTechLamp // replaces TechLamp
 	Spawn:
 		TLMP A 0
 		TLMP A 0 A_PlaySoundEx("props/lighthum1", "Body", 1)
-		TLMP A 0 A_SpawnItemEx("MetaTechLamp_Glow",68,0,0,0,0,0,0,SXF_SETMASTER)
+		TLMP A 0 A_SpawnItemEx("MetaTechLamp_Glow",0,0,68,0,0,0,0,SXF_SETMASTER)
 		goto Idle
 	Idle:
 		TLMP ABCD 4 Bright
@@ -155,7 +155,7 @@ ACTOR MetaTechLamp2 // replaces TechLamp2
 	Spawn:
 		TLP2 A 0
 		TLP2 A 0 A_PlaySoundEx("props/lighthum1", "Body", 1)
-		TLP2 A 0 A_SpawnItemEx("MetaTechLamp2_Glow",52,0,0,0,0,0,0,SXF_SETMASTER)
+		TLP2 A 0 A_SpawnItemEx("MetaTechLamp2_Glow",0,0,52,0,0,0,0,SXF_SETMASTER)
 		goto Idle
 	Idle:
 		TLP2 ABCD 4 Bright
@@ -218,7 +218,7 @@ Actor MetaColumn // replaces Column
 	Spawn:
 		COLU A 0
 		COLU A 0 A_PlaySoundEx("props/lighthum3", "Body", 1)
-		COLU A 0 A_SpawnItemEx("MetaColumn_Glow",45,0,0,0,0,0,0,SXF_SETMASTER)
+		COLU A 0 A_SpawnItemEx("MetaColumn_Glow",0,0,45,0,0,0,0,SXF_SETMASTER)
 		goto Idle
 	Idle:
 		COLU A 1 Bright
