@@ -60,7 +60,7 @@ Index
 #include "actors/inventory/siphongrenade.dec"
 #include "actors/inventory/hologram.dec"
 //#include "actors/inventory/kineticmine.dec"
-#include "actors/inventory/theartifact.dec"
+//#include "actors/inventory/theartifact.dec"
 #include "actors/inventory/dogcollar.dec"
  #include "actors/weapons/doggun.dec"
  
