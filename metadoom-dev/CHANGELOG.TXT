@@ -10,6 +10,10 @@ Player Changes:
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
+Generalized Bug Fixes:
+- Fixed a typo that would result in glow effects on light-source props being
+  displaced on the very first tic that they're spawned.
+
 Other Changes:
 - Ported the following things from DECORATE to ZScript:
   - The actor spawners (Still plenty of ACS, but if it ain't broke...)
