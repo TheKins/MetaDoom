@@ -13,7 +13,7 @@ Index
 //#include "actors/player/playerremnants.dec"
 
 // Other Stuff
-#include "actors/fx.dec"
+//#include "actors/fx.dec"
 #include "actors/blood.dec"
 #include "actors/gibs.dec"
 #include "actors/props.dec"

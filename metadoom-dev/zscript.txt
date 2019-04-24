@@ -14,6 +14,9 @@ version "3.4"
 // Our Hero.
 #include "actors/player/metadoomplayer.zsc"
 
+// Other Stuff
+#include "actors/fx.zsc"
+
 // Weapons
 #include "actors/weapons/core.zsc"
 #include "actors/weapons/bfg.zsc"
