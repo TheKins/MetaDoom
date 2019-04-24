@@ -11,8 +11,10 @@ UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
 Other Changes:
-- ZScriptified and reorganized most of the actor spawning code. Still plenty of
-  ACS reliance, but if it ain't broke...
+- Ported the following things from DECORATE to ZScript:
+  - The actor spawners (Still plenty of ACS, but if it ain't broke...)
+  - The remaining DECORATE bits of the Shield Wall, Kinetic Mine, Tesla Rocket...
+  - Explosions and some other visual FX.
 - Some minor re-sorting and cleaning-up of the sprites folders.
 - Updated the credits image.
 
