@@ -6,6 +6,9 @@ Player Changes:
 - Ported the player code to ZScript.
 - Fixed the various visual issues (endless viewbobbing, angle resetting on bounce)
   that have plagued the decapitated player skull since it was first added.
+  
+Monster Changes:
+- Various bugfixes and improvements to the Spider Mastermind.
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
