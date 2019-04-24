@@ -693,7 +693,6 @@ class NightmareImpSpawner : MetaSpawner // replaces 64NightmareImp
 }
 
 // stealth monsters are shit for losers. let's fix this.
-
 class StealthArachnotronSpawner : ArachnotronSpawner replaces StealthArachnotron {}
 class StealthArchVileSpawner : ArchVileSpawner replaces StealthArchvile {}
 class StealthBaronOfHellSpawner : BaronOfHellSpawner replaces StealthBaron {}
@@ -706,3 +705,80 @@ class StealthMancubusSpawner : MancubusSpawner replaces StealthFatso {}
 class StealthRevenantSpawner : RevenantSpawner replaces StealthRevenant {}
 class StealthShotgunGuySpawner : ShotgunGuySpawner replaces StealthShotgunGuy {}
 class StealthZombiemanSpawner : ZombiemanSpawner replaces StealthZombieMan {}
+
+// Optional Content Spawners. These don't use the standard replacement method.
+class WolfSSSpawner : MetaSpawner
+{
+	States
+	{
+	Spawn:
+		SSWV A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_actors, "WolfSS");
+		TNT1 A 0 A_Jump (256, "WolfSS", "WolfSNES", "WolfApple", "WolfMac", "WolfJava");
+	WolfSS:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinSS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	WolfSNES:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinSNES",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	WolfApple:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinApple",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	WolfMac:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinMacOS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	WolfJava:
+		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinJava",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class KeenSpawner : MetaSpawner
+{
+	Default
+	{
+	Health 0x7fffffff;
+	Height 0;
+	Radius 0;
+	MONSTER;
+	-COUNTKILL
+	-SOLID
+	+NOCLIP
+	+NOTDMATCH
+	+SPAWNCEILING 
+	}
+	
+	States
+	{
+	Spawn:
+		KEEN A 0;
+		KEEN A 0 A_JumpIf(meta_noalts_actors, "Keen");
+		KEEN A 0 A_Jump(256,"Keen","Budo","Dave","Hovertank","Rover","Catacomb");
+	Keen:
+		TNT1 A 0 A_SpawnItemEx("MetaKeen",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	Budo:
+		TNT1 A 0 A_SpawnItemEx("MetaBudo",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	Dave:
+		TNT1 A 0 A_SpawnItemEx("MetaDave",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	Hovertank:
+		TNT1 A 0 A_SpawnItemEx("MetaHovertank",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	Rover:
+		TNT1 A 0 A_SpawnItemEx("MetaRover",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	Catacomb:
+		TNT1 A 0 A_SpawnItemEx("MetaCatacomb",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG);
+		goto CreepyStalker;
+	CreepyStalker:
+		TNT1 A 1; // SFX: HEAVY BREATHING
+		loop;
+	Death:
+		TNT1 A 1;
+		TNT1 A 1 A_KeenDie;
+		TNT1 A -1;
+		Stop;
+	}
+}

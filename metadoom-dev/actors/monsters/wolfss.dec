@@ -6,34 +6,6 @@ Optional Content
 ----------------------------
 */
 
-actor WolfSSSpawner// replaces WolfensteinSS
-{
-	+ISMONSTER
-	-COUNTKILL
-	States
-	{
-	Spawn:
-		SSWV A 0
-		TNT1 A 0 A_JumpIf(GetCvar(meta_noalts_actors) == 1, "WolfSS")
-		TNT1 A 0 A_Jump (256, "WolfSS", "WolfSNES", "WolfApple", "WolfMac", "WolfJava")
-	WolfSS:
-		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinSS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	WolfSNES:
-		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinSNES",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	WolfApple:
-		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinApple",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	WolfMac:
-		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinMacOS",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	WolfJava:
-		TNT1 A 0 A_SpawnItemEx("MetaWolfensteinJava",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION)
-		stop
-	}
-}
-
 // Wolfenstein 3D - MS-DOS version.
 // Basically the same as the Doom 2 monster, but with more aiming angles and
 // no hitscan. Maybe twiddle with him a bit in the future?
