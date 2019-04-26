@@ -46,7 +46,8 @@ Erick194 & Gerardo194 (id Mobile game tools)
 
 CODE RESOURCES:
 WildWeasel (Tracer fastprojectiles effect)
-The Zombie Killer (Flashlight, footsteps system, landing zscript, powerup bars)
+Author of FlashlightInterpBug.pk3 (Flashlight)
+The Zombie Killer (Footsteps system, landing zscript, powerup bars)
 DavidPH (ACS advice)
 Marrub (ACS and ZScript advice)
 comet1338 (Fixed a z-fighting bug with flat decals)
