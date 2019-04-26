@@ -272,8 +272,7 @@ Class BF_CoolFlashlight : Spotlight
 		SpotInnerAngle = 16;        
         SpotOuterAngle = 20;
 		
-        A_Warp(AAPTR_MASTER,0,0,32,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE|WARPF_USECALLERANGLE|WARPF_COPYPITCH);
-		angle = master.angle;
+        A_Warp(AAPTR_MASTER,0,0,32,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE|WARPF_COPYPITCH);
 		Super.Tick();  
 	}
 	
