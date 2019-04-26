@@ -133,9 +133,11 @@ ACTOR MetaPistol : MetaDoomWeapon
 			if (CountInv("PistolFlashlight") == 0)
 			{
 				A_GiveInventory("PistolFlashlight", 1);
+				A_SpawnItemEx("BF_CoolFlashlight",0,0,32,0,0,0,0,SXF_SETMASTER);
 				A_PlaySound("weapons/flashlight/on", CHAN_BODY);
 			} else {
 				A_TakeInventory("PistolFlashlight", 1);
+				A_RemoveChildren(1,RMVF_EVERYTHING,"BF_CoolFlashlight");
 				A_PlaySound("weapons/flashlight/off", CHAN_BODY);
 			}
 		}

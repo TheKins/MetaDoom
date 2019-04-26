@@ -193,7 +193,7 @@ Script "PointerPitch" (void)
 {
 	SetResultValue(GetActorPitch(0) / -182);
 }
-
+/*
 Script "FlashlightHandling" ENTER
 {
 	While(1)
@@ -203,6 +203,7 @@ Script "FlashlightHandling" ENTER
 		Delay(1);
 	}
 }
+*/
 
 // Holy Water
 Script "TakeWater" ENTER
