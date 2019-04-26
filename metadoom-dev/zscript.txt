@@ -33,6 +33,8 @@ version "3.4"
 #include "actors/monsters/metadoomactor.zsc"
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
+
+#include "actors/monsters/metacyberdemon.zsc"
 #include "actors/monsters/metaspiderdemon.zsc"
 
 // Codex Stuff
