@@ -188,23 +188,6 @@ Script "Strip100PercentOnStart" ENTER
 }
 		
 
-// TZK's Flashlight
-Script "PointerPitch" (void)
-{
-	SetResultValue(GetActorPitch(0) / -182);
-}
-/*
-Script "FlashlightHandling" ENTER
-{
-	While(1)
-	{
-		if (CheckInventory("PistolFlashlight") & !CheckInventory("PowerTimeFreezer") )
-			GiveInventory("FlashlightSpawner", 1);
-		Delay(1);
-	}
-}
-*/
-
 // Holy Water
 Script "TakeWater" ENTER
 {
