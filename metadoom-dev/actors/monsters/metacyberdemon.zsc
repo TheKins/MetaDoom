@@ -224,7 +224,7 @@ class CyberdemonRocket : Actor
 	{
 	Spawn:
 		CISL A 0 A_PlaySound ("weapons/rocketlauncher/loop", CHAN_BODY, 1.0, 1);
-		CISL A 0 A_SpawnItem ("RocketTrailSmoke", 0, 4, 0, 0);
+		CISL A 0 A_SpawnItem ("RocketTrailSmoke");
 		CISL AAAA 1 Bright;
 		Loop;
 	Death:
