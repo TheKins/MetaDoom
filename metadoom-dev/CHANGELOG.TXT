@@ -11,6 +11,11 @@ Monster Changes:
 - Various bugfixes and improvements to the Spider Mastermind.
 - ZScript porting, various bugfixes and improvements to the Cyberdemon.
 
+Weapon Changes:
+- ZScript porting, various bugfixes and improvements far and wide.
+- The Pistol flashlight now uses an actual spotlight as opposed to a constant
+  spray of invisible spotlight projectiles.
+
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
