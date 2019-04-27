@@ -91,7 +91,7 @@ Index
 
 // ---Optional Shit---
 // Other Stuff
-#include "actors/blood_perm.dec"
+//#include "actors/blood_perm.dec"
 
 // Props
 #include "actors/props/tech.dec"
