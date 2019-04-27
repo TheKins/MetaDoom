@@ -23,7 +23,7 @@ version "3.4"
 #include "actors/weapons/spawners.zsc"
 #include "actors/weapons/metafists.zsc"
 #include "actors/weapons/metapistol.zsc"
-#include "actors/weapons/bfg.zsc"
+#include "actors/weapons/metabfg.zsc"
 
 // Inventory
 #include "actors/inventory/teslarocket.zsc"
