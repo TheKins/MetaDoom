@@ -6,7 +6,7 @@
 THE TEAM:
 The Kins (Lead Developer)
 Techokami (Bughunter General)
-DrPySpy (Spiderdemon sprites, Codex system, HUD faces, heavy code lifting)
+DrPySpy (Spiderdemon sprites, Codex system, HUD faces, Flashlight, heavy code lifting)
 
 STUFF FROM COMMERCIAL GAMES:
 Id Software (Oh, a few things here and there...)
@@ -46,7 +46,6 @@ Erick194 & Gerardo194 (id Mobile game tools)
 
 CODE RESOURCES:
 WildWeasel (Tracer fastprojectiles effect)
-Author of FlashlightInterpBug.pk3 (Flashlight)
 The Zombie Killer (Footsteps system, landing zscript, powerup bars)
 DavidPH (ACS advice)
 Marrub (ACS and ZScript advice)

@@ -262,7 +262,7 @@ class PistolTracerSpark : Actor
 	}
 }
 
-// I'm not sure where this came from at the moment, sorry. Was from "FlashlightInterpBug.pk3"
+// Based on "FlashlightInterpBug.pk3" by DrPySpy
 Class BF_CoolFlashlight : Spotlight
 {
 	Default
