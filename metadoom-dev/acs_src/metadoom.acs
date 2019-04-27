@@ -251,7 +251,7 @@ Script "FireSelfSpray_Control" (void)
 	LocalAmbientSound("*ext1", 127);
 	FadeTo (255, 255, 255, 0.1, 0.1);
 	GiveInventory("FireExtinguished",1);
-	delay(125);
+	delay(175);
 	LocalAmbientSound("*ext2", 127);
 	TakeInventory("FireExtinguished",999);
 	FadeTo (255, 255, 255, 0.0, 0.1);
