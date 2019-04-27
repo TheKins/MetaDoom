@@ -343,7 +343,7 @@ class GasBombCloud : Actor
 	+DONTSPLASH
 	+BLOODLESSIMPACT
 	-BLOCKEDBYSOLIDACTORS
-	//+FLOATBOB
+	+ROLLSPRITE
 	RenderStyle "Translucent";
 	Obituary "$OB_GRENLAUNCHER_GAS";
 	Alpha 0.6;
@@ -354,6 +354,7 @@ class GasBombCloud : Actor
 	{
 	Spawn:
 		GBOC X 0;
+		GBOX X 0 A_SetRoll(random(0,360));
 		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,70);
 		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,70);
 		GBOC XXXXXXXXXXXXXXXX 2 A_Explode(4,70);
