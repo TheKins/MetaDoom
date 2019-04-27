@@ -162,3 +162,4 @@ doors/slow/closestop	DSDORCLX
 // Ignore this if you want to find cheats by yourself!
 cheats/doom3			cheatd3
 cheats/snes				cheat16b
+cheats/420				cheat420

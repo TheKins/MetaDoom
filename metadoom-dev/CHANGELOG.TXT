@@ -36,6 +36,7 @@ Other Changes:
   - Explosions and some other visual FX.
   - Exploding Barrels.
 - General re-sorting and spring cleaning all around
+- Added a new cheat!
 - Updated the credits image.
 
 v5.3 "Klave" (08/04/19)

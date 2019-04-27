@@ -15,6 +15,7 @@ class DeathStateGibbed : _Boolean {}
 class DisableHUD : _Boolean {}
 class PlayerHealthWarning : _Boolean {}
 class FireExtinguished : _Boolean {}
+class FireExtinguisherCheat : _Boolean {}
 
 class x100Percent_Monsters : _Boolean {}
 class x100Percent_Items : _Boolean {}
@@ -224,7 +225,7 @@ class MetaDoomPlayer : PlayerPawn
 	override void Tick()
 	{
 		// Fire Extinguisher Self-Sprayed FX
-		if(CheckInventory("FireExtinguished",1))
+		if(CheckInventory("FireExtinguished",1) || CheckInventory("FireExtinguisherCheat",1))
 		{
 			A_SpawnItemEx("MetaFireExtinguisherSelfSprayFX",random(-16,16),random(-16,16),0,0,0,4);
 		}
