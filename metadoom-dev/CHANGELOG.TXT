@@ -1,5 +1,5 @@
-NEXT
-====
+NEXT VERSION
+============
 
 Player Changes:
 - Added unique "MetaDoomGuy" player sprites!
@@ -15,10 +15,11 @@ Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
 - The Pistol flashlight now uses an actual spotlight as opposed to a constant
   spray of invisible spotlight projectiles.
-- The Fire Extinguisher's particle effects while the player is under the effects
-  of having sprayed themselves now look a little less buggy.
-- Fixed bug where exiting a map while having sprayed themselves with the Fire
-  Extinguisher would result in them having the self-extinguished buff forever.
+- Improvements and updates to the Fire Extinguisher:
+  - The particle effects while the player is under the effects of having sprayed
+    themselves now look a little less buggy.
+  - Fixed bug where exiting a map while having sprayed themselves would result
+    in them having the self-extinguished buff forever.
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
@@ -27,15 +28,11 @@ Prop Changes:
 - Fixed a typo that would result in glow effects on light-source props being
   displaced on the very first tic that they're spawned.
 - Fixed a visual oddity where the "permanent" blood stains spawned by certain
-  props would spawn on top of liquid textures. They now despawn immediately.
+  props would spawn on top of liquid textures.
 
 Other Changes:
-- Ported the following things from DECORATE to ZScript:
-  - The actor spawners (Still plenty of ACS, but if it ain't broke...)
-  - Certain inventory items that were a nasty blend of DECORATE and ZScript.
-  - Explosions and some other visual FX.
-  - Exploding Barrels.
-- General re-sorting and spring cleaning all around
+- ZScript porting, various bugfixes and minor tweaks far and wide.
+- General re-sorting and spring cleaning of code and assets all around.
 - Added a new cheat!
 - Updated the credits image.
 
