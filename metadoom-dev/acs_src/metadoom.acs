@@ -209,7 +209,7 @@ Script "TakeWater" ENTER
 		"FWATER02"
 	};
 	
-	if (CheckInventory("HolyWaterPistol") && GetActorZ (0) == GetActorFloorZ (0)
+	if (CheckInventory("MetaHolyWaterPistol") && GetActorZ (0) == GetActorFloorZ (0)
 	    && GetActorProperty (0, APROP_Health) > 0 && CheckInventory("HolyWater") < 15)
 	{
 		for (int i = 0; i < 37; i++)
@@ -218,7 +218,7 @@ Script "TakeWater" ENTER
 		}
 	}
 	
-	if (CheckInventory("HolyWaterPistol") && GetActorProperty (0, APROP_Waterlevel) >= 2 && CheckInventory("HolyWater") < 15)
+	if (CheckInventory("MetaHolyWaterPistol") && GetActorProperty (0, APROP_Waterlevel) >= 2 && CheckInventory("HolyWater") < 15)
 	{
 		GiveInventory("GimmeWater", 1); //ACS_NamedExecute("GimmeWater",0);
 	}
