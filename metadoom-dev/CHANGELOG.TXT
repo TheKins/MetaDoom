@@ -19,7 +19,7 @@ Weapon Changes:
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
-Generalized Bug Fixes:
+Prop Changes:
 - Fixed a typo that would result in glow effects on light-source props being
   displaced on the very first tic that they're spawned.
 - Fixed a visual oddity where the "permanent" blood stains spawned by certain
@@ -31,7 +31,7 @@ Other Changes:
   - Certain inventory items that were a nasty blend of DECORATE and ZScript.
   - Explosions and some other visual FX.
   - Exploding Barrels.
-- Some minor re-sorting and cleaning-up of the sprites folders.
+- General re-sorting and spring cleaning all around
 - Updated the credits image.
 
 v5.3 "Klave" (08/04/19)
