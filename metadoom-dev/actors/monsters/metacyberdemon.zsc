@@ -180,16 +180,16 @@ class MetaCyberdemon : MonsterCore
 		{
 			for (int i = 0; i < 6; i++)
 			{
-				A_SpawnProjectile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (32, 64));
-				A_SpawnProjectile ("CyberdemonExplosionParticle", random(8,32), 0, random (0, 360), 2, random (64, 110));
+				A_SpawnProjectile ("CyberdemonExplosionParticle", random(8,55), 0, random (0, 360), 2, random (-8, 8));
+				A_SpawnProjectile ("CyberdemonExplosionParticle", random(55,112), 0, random (0, 360), 2, random (-8, 8));
 			}
 			
 			A_Quake (4,25,0,750,0);
 			
 			for (int i = 0; i < 4; i++)
 			{
-				A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
-				A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (64, 110));
+				A_SpawnProjectile ("CyberdemonGibber", random(8,55), 0, random (0, 360), 2, random (32, 64));
+				A_SpawnProjectile ("CyberdemonGibber", random(55,112), 0, random (0, 360), 2, random (64, 110));
 			}
 			
 			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
@@ -239,9 +239,10 @@ class CyberdemonExplosionParticle : Actor
 	{
 	Radius 10;
 	Height 10;
-	Speed 15;
+	Speed 7;
 	PROJECTILE;
 	+NOCLIP
+	+NOGRAVITY
 	Decal "Scorch";
 	}
 	
