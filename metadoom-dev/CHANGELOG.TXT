@@ -16,6 +16,8 @@ Weapon Changes:
 - The Pistol flashlight now uses an actual spotlight as opposed to a constant
   spray of invisible spotlight projectiles.
 - Improvements and updates to the Fire Extinguisher:
+  - The period of time that extinguishing yourself lasts has been increased from
+    3.5 seconds to 5 seconds.
   - The particle effects while the player is under the effects of having sprayed
     themselves now look a little less buggy.
   - Fixed bug where exiting a map while having sprayed themselves would result
