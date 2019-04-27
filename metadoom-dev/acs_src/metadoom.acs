@@ -257,16 +257,6 @@ Script "FireSelfSpray_Control" (void)
 	FadeTo (255, 255, 255, 0.0, 0.1);
 }
 
-Script "FireSelfSpray_FX" ENTER
-{
-	if(CheckInventory("FireExtinguished"))
-	{
-		SpawnForced("MetaFireExtinguisherSelfSprayFX", (GetActorX(0) + random(-64,64)), (GetActorY(0) + random(-64,64)), (GetActorZ(0)));
-	}
-	delay(1);
-	restart;
-}
-
 // Soulcube Popup
 Script "SoulCubeMsg_Warn" ENTER
 {

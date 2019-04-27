@@ -220,6 +220,18 @@ class MetaDoomPlayer : PlayerPawn
 		Stop;
 	}
 	
+	// Per-Tick FX
+	override void Tick()
+	{
+		// Fire Extinguisher Self-Sprayed FX
+		if(CheckInventory("FireExtinguished",1))
+		{
+			A_SpawnItemEx("MetaFireExtinguisherSelfSprayFX",random(-16,16),random(-16,16),0,0,0,4);
+		}
+		
+		Super.Tick();
+	}
+	
 	// This version of DeathThink() is copy-pasted and modified slightly to allow
 	// for additional control over the camera height lowering when killed.
 	override void DeathThink ()
