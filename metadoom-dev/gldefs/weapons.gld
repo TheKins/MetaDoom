@@ -82,6 +82,11 @@ Object GasBombExplosion
 	frame EXPL { light MetaExplosion }
 }
 
+Object CyberdemonExplosionParticle
+{
+	frame EXPL { light MetaExplosion }
+}
+
 pointlight MetaPlasmaBall
 {
     color 0.0 0.1 1.0
