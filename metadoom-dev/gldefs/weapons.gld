@@ -39,17 +39,17 @@ Object MetaLauncherRocket
 pulselight MetaExplosion
 {
     color 1.0 0.7 0.0
-    size 48
-    secondarySize 0
-    interval 2
+    size 0
+    secondarySize 48
+    interval 0.25
 } 
 
 pulselight MetaExplosionSmall
 {
     color 1.0 0.7 0.0
-    size 24
-    secondarySize 0
-    interval 2
+    size 0
+    secondarySize 24
+    interval 0.25
 } 
 
 Object Explosion
@@ -68,6 +68,16 @@ Object MicroRocketExplosion
 }
 
 Object HandGrenadeExplosion
+{
+	frame EXPL { light MetaExplosion }
+}
+
+Object GrenadeLauncherExplosion
+{
+	frame EXPL { light MetaExplosion }
+}
+
+Object GasBombExplosion
 {
 	frame EXPL { light MetaExplosion }
 }
