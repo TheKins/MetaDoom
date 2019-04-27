@@ -28,7 +28,7 @@ Index
 //#include "actors/weapons/berserkfist.dec"
 //#include "actors/weapons/pistol.dec"
 // #include "actors/weapons/pistol_flashlight.dec"
-#include "actors/weapons/shotgun.dec"
+//#include "actors/weapons/shotgun.dec"
  #include "actors/weapons/holywaterpistol.dec"
 #include "actors/weapons/ssg.dec"
  #include "actors/weapons/fireextinguisher.dec"

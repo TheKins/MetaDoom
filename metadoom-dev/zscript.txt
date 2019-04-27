@@ -29,6 +29,8 @@ version "3.4"
 #include "actors/weapons/metachainsaw.zsc"
 #include "actors/weapons/metaaxe.zsc"
 #include "actors/weapons/metapistol.zsc"
+#include "actors/weapons/metashotgun.zsc"
+
 #include "actors/weapons/metabfg.zsc"
 
 // Inventory
