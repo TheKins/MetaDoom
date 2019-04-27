@@ -16,6 +16,8 @@ version "3.4"
 
 // Other Stuff
 #include "actors/fx.zsc"
+#include "actors/blood.zsc"
+#include "actors/gibs.zsc"
 #include "actors/props/barrels.zsc"
 
 // Weapons

@@ -14,8 +14,8 @@ Index
 
 // Other Stuff
 //#include "actors/fx.dec"
-#include "actors/blood.dec"
-#include "actors/gibs.dec"
+//#include "actors/blood.dec"
+//#include "actors/gibs.dec"
 //#include "actors/props.dec"
 
 // Weapons
