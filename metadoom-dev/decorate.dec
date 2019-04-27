@@ -21,7 +21,7 @@ Index
 // Weapons
 //#include "actors/weapons/spawners.dec"
 //#include "actors/weapons/core.dec"
-#include "actors/weapons/fx.dec"
+//#include "actors/weapons/fx.dec"
 #include "actors/weapons/chainsaw.dec"
  #include "actors/weapons/axe.dec"
 //#include "actors/weapons/lastresortfist.dec"
