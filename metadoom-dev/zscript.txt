@@ -24,7 +24,9 @@ version "3.4"
 #include "actors/weapons/core.zsc"
 #include "actors/weapons/spawners.zsc"
 #include "actors/weapons/metacasings.zsc"
+
 #include "actors/weapons/metafists.zsc"
+#include "actors/weapons/metachainsaw.zsc"
 #include "actors/weapons/metapistol.zsc"
 #include "actors/weapons/metabfg.zsc"
 
