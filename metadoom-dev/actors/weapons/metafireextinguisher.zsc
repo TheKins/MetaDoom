@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Fire Extinguisher
+----------------------------
+*/
+
 class ExtinguisherToken : _Boolean {}
 
 class HalonCannister : Ammo
