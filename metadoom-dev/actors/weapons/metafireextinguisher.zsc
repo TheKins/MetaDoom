@@ -1,0 +1,201 @@
+class ExtinguisherToken : _Boolean {}
+
+class HalonCannister : Ammo
+{
+	Default
+	{
+	Inventory.PickupMessage "Picked up a Halon Cannister";
+	Inventory.Amount 1;
+	Inventory.MaxAmount 100;
+	Ammo.BackpackAmount 5;
+	Ammo.BackpackMaxAmount 100;
+	Inventory.Icon "HWPAA0";
+	Inventory.PickupSound "weapons/waterpistol/ammo";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 8;
+		Stop;
+	}
+}
+
+class MetaFireExtinguisherPickup : WeaponGiver
+{
+	Default
+	{
+	DropItem "MetaFireExtinguisher";
+	Inventory.Pickupmessage "$GOTFIREX";
+	Inventory.PickupSound "weapons/fireextinguisher/get";
+	}
+	
+	States
+	{
+	Spawn:
+		FIEX Z 0;
+		FIEX Z 0 { bDROPPED = 0; }
+		FIEX Z -1;
+		Stop;
+	}
+}
+
+class MetaFireExtinguisher : MetaDoomWeapon
+{
+	Default
+	{
+	Weapon.SelectionOrder 1900;
+	Weapon.AmmoUse 1;
+	Weapon.AmmoGive 100;
+	Weapon.AmmoType "HalonCannister";
+	+WEAPON.WIMPY_WEAPON;
+	Inventory.Pickupmessage "$GOTFIREX";
+	Tag "$TAGFIREX";
+	Inventory.PickupSound "weapons/fireextinguisher/get";
+	}
+	
+	States
+	{
+	Ready:
+		FIEX A 1 A_WeaponReady;
+		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		Loop;
+	Deselect:
+		FIEX A 1 A_StopSound(CHAN_WEAPON);
+		FIEX A 0 A_JumpIf(health <= 0, "DeadDude");
+		FIEX A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		FIEX A 1 Offset(0,35);
+		FIEX A 1 Offset(0,39);
+		FIEX A 1 Offset(0,44);
+		FIEX A 1 Offset(0,49);
+		FIEX A 1 Offset(0,55);
+		FIEX A 1 Offset(0,60);
+		FIEX A 1 Offset(0,70);
+		FIEX A 1 Offset(0,80);
+		FIEX A 1 Offset(0,90);
+	FinishDeselect:
+		FIEX A 0 A_Lower;
+		Loop;
+	Select:
+		FIEX A 1 Offset(0,90) A_PlaySound("weapons/fireextinguisher/use");
+		FIEX A 1 Offset(0,80);
+		FIEX A 1 Offset(0,70);
+		FIEX A 1 Offset(0,60);
+		FIEX A 1 Offset(0,55);
+		FIEX A 1 Offset(0,49);
+		FIEX A 1 Offset(0,44);
+		FIEX A 1 Offset(0,39);
+		FIEX A 1 Offset(0,35);
+		FIEX A 1 Offset(0,33);
+		FIEX A 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		FIEX A 0 
+		{
+			A_PlaySound("weapons/fireextinguisher/fire", CHAN_WEAPON, 1.0, 1);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
+		FIEX B 1 Offset(1,32) A_FireProjectile ("MetaFireExtinguisherSpray", random(-16,16), 1, 4, 0, FPF_NOAUTOAIM, random(-4,4));
+		FIEX B 1 Offset(-1,32) A_FireProjectile ("MetaFireExtinguisherSpray", random(-16,16), 0, 4, 0, FPF_NOAUTOAIM, random(-4,4));
+		FIEX B 1 Offset(1,32) A_FireProjectile ("MetaFireExtinguisherSpray", random(-16,16), 0, 4, 0, FPF_NOAUTOAIM, random(-4,4));
+		FIEX B 1 Offset(-1,32) A_FireProjectile ("MetaFireExtinguisherSpray", random(-16,16), 0, 4, 0, FPF_NOAUTOAIM, random(-4,4));
+		FIEX A 0 A_ReFire();
+		FIEX A 10 A_StopSound(CHAN_WEAPON);
+		Goto Ready;
+	AltFire:
+		FIEX A 4 A_JumpIfInventory("FireExtinguished",1,"NoAmmo");
+		FIEX A 0 A_JumpIf(CountInv("HalonCannister") < 10, "NoAmmo");
+		FIEX A 1 ;
+		FIEX A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		FIEX A 1 Offset(0,39);
+		FIEX A 1 Offset(0,49);
+		FIEX A 1 Offset(0,60);
+		FIEX A 1 Offset(0,80);
+		TNT1 A 4 Offset(0,90);
+		TNT1 A 0 A_TakeInventory("HalonCannister", 10);
+		TNT1 A 0 A_PlaySound("weapons/fireextinguisher/burst", CHAN_WEAPON);
+		TNT1 A 0 ACS_NamedExecuteAlways("FireSelfSpray_Control",0);
+		TNT1 A 20;
+		goto Select;
+	NoAmmo:
+		FIEX B 1 Offset(0,34) A_PlaySound("weapons/waterpistol/empty", CHAN_WEAPON);
+		FIEX B 1 Offset(0,33);
+		FIEX A 8 Offset(0,32);
+		goto Ready;
+ 	Spawn:
+		FIEX Z -1;
+		Stop;
+	}
+}
+
+class MetaFireExtinguisherSpray : Actor
+{
+	Default
+	{
+	Radius 15;
+	Height 15;
+	Speed 5;
+	DamageFunction (1);
+	Projectile;
+	+RANDOMIZE
+	+DONTSPLASH
+	+BLOODLESSIMPACT
+	RenderStyle "Add";
+	Alpha 0.75;
+	scale 0.05;
+	damagetype "FireExtinguisher";
+	Decal "FireExtinguisherSpray";
+	}
+	
+	States
+	{
+	Spawn:
+		FIFX AB 3
+		{
+			A_FadeOut(0.1);
+			A_SetScale(scale.x + 0.05);
+			A_RadiusGive ("ExtinguisherToken", 96, RGF_MISSILES);
+		}
+		FIFX CDEF 3
+		{
+			A_FadeOut(0.1);
+			A_SetScale(scale.x + 0.05);
+			A_RadiusGive ("ExtinguisherToken", 96, RGF_MISSILES);
+		}
+		Stop;
+	}
+}
+
+class MetaFireExtinguisherSelfSprayFX : Actor
+{
+	Default
+	{
+	Radius 8;
+	Height 8;
+	Speed 2;
+	Damage 0;
+	Projectile;
+	+RANDOMIZE
+	RenderStyle "Add";
+	Alpha 0.75;
+	scale 0.2;
+	vspeed 3;
+	}
+	
+	States
+	{
+	Spawn:
+		FIFX A 0;
+		FIFX A 0 A_SetAngle(random(0,360));
+		FIFX ABCDEF 3
+		{
+			A_FadeOut(0.1);
+			//A_SetScale(scalex + 0.05);
+		}
+		Stop;
+	}
+}

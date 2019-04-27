@@ -32,6 +32,7 @@ version "3.4"
 #include "actors/weapons/metashotgun.zsc"
  #include "actors/weapons/metaholywaterpistol.zsc"
 #include "actors/weapons/metassg.zsc"
+ #include "actors/weapons/metafireextinguisher.zsc"
 
 #include "actors/weapons/metabfg.zsc"
 
