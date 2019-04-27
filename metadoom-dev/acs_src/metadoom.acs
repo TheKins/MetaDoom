@@ -257,6 +257,11 @@ Script "FireSelfSpray_Control" (void)
 	FadeTo (255, 255, 255, 0.0, 0.1);
 }
 
+Script "StripExtinguishedOnStart" ENTER
+{
+	TakeInventory("FireExtinguished",999);
+}
+
 // Soulcube Popup
 Script "SoulCubeMsg_Warn" ENTER
 {
