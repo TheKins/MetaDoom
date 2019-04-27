@@ -12,7 +12,7 @@ class HolyWater : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "Created some Holy Water.";
+	Inventory.PickupMessage "$GOTHOLYWATER";
 	Inventory.Amount 1;
 	Inventory.MaxAmount 15;
 	Ammo.BackpackAmount 5;
@@ -166,7 +166,7 @@ class HolyWaterShot : Actor
 	Damage 1;
 	Projectile;
 	-NOGRAVITY
-	Obituary "%o was exorcised by %k.";
+	Obituary "$OB_HOLYWATER";
 	scale 0.25;
 	damagetype "HolyWater";
 	}
