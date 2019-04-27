@@ -5,6 +5,8 @@ to notice the hints I gave about them (too subtle?) So I figure I'll just drop
 them off here. Type these into the console to activate. Be warned: If you enter
 an invalid number, you'll be killed instantly.
 
+---
+
 impulse 35 - Toggle Micro-Rocket Placeholder Mode
 -------------------------------------------------
 While active, this makes the Machinegun's alt-fire shoot Shotgun grenades instead
@@ -20,10 +22,12 @@ impulse 16 - Enable SNES Mode
 -----------------------------
 This stretches out all the floor and ceiling textures to look flat-shaded.
 
-I'll add more if I get some feedback or suggestions. Drop 'em off at the usual
-addresses and I'll see what I can do!
-
 impulse 420 - Obvious Joke Mode
 -------------------------------
 Permanently enables the smoke effect from extinguishing yourself. I can't imagine
 why, to be honest. It's a bit above my head.
+
+---
+
+I'll add more if I get some feedback or suggestions. Drop 'em off at the usual
+addresses and I'll see what I can do!
