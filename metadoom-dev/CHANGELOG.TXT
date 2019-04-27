@@ -17,6 +17,8 @@ Weapon Changes:
   spray of invisible spotlight projectiles.
 - The Fire Extinguisher's particle effects while the player is under the effects
   of having sprayed themselves now look a little less buggy.
+- Fixed bug where exiting a map while having sprayed themselves with the Fire
+  Extinguisher would result in them having the self-extinguished buff forever.
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
