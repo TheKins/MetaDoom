@@ -1,0 +1,273 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Spawners
+----------------------------
+*/
+
+class ChainsawSpawner : Actor replaces Chainsaw
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "ShowUsYourSoul");
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,"Axe");
+		goto Chainsaw;
+	ShowUsYourSoul:
+		TNT1 A 0 A_JumpIf(CallACS("Item_SoulCube", 0, 0, 0) == 1, "SoulCube");
+		goto VarietyPack;
+	Axe:
+		TNT1 A 0
+		{
+			if (deathmatch) // Disable axe in Deathmatch
+			{
+				return ResolveState("Chainsaw"); 
+			} else {
+				return ResolveState(null);
+			}
+		}
+		TNT1 A 0 A_SpawnItemEx("MetaAxePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	Chainsaw:
+		TNT1 A 0 A_SpawnItemEx("MetaChainsawPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	SoulCube:
+		TNT1 A 0 A_SpawnItemEx("MetaSoulCubePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class PistolSpawner : Actor replaces Pistol
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("MetaPistolPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class ShotgunSpawner : Actor replaces Shotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "Shotgun");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Item_Shotgun", 0, 0, 0) == 1, "Shotgun");
+		TNT1 A 0 A_JumpIf(CallACS("Item_Shotgun", 0, 0, 0) == 2, "VarietyPack");
+		goto Shotgun;
+	VarietyPack:
+		TNT1 A 0 A_JumpIf(CallACS("Item_GameDetector", 0, 0, 0) == 2, "Doom1VarietyPack");
+		TNT1 A 0 A_Jump(64,"HolyWaterPistol");
+		goto Shotgun;
+	Doom1VarietyPack:
+		TNT1 A 0 A_Jump(64,"HolyWaterPistol", "SSG");
+		goto Shotgun;
+	Shotgun:
+		TNT1 A 0 A_SpawnItemEx("MetaShotgunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	SSG:
+		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	HolyWaterPistol:
+		TNT1 A 0 A_SpawnItemEx("HolyWaterPistolPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class SuperShotgunSpawner : Actor replaces SuperShotgun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "SuperShotgun");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Item_SuperShotgun", 0, 0, 0) == 1, "SuperShotgun");
+		TNT1 A 0 A_JumpIf(CallACS("Item_SuperShotgun", 0, 0, 0) == 2, "VarietyPack");
+		goto SuperShotgun;
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(64,"FireExt");
+		goto SuperShotgun;
+	FireExt:
+		TNT1 A 0 A_SpawnItemEx("MetaFireExtinguisherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	SuperShotgun:
+		TNT1 A 0 A_SpawnItemEx("MetaSuperShotgunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class ChaingunSpawner : Actor replaces Chaingun
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "Machinegun");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Item_Machinegun", 0, 0, 0) == 1, "Machinegun");
+		TNT1 A 0 A_JumpIf(CallACS("Item_Machinegun", 0, 0, 0) == 2, "VarietyPack");
+		goto Machinegun;
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(64,"Chaingun");
+		goto Machinegun;
+	Machinegun:
+		TNT1 A 0 A_SpawnItemEx("MetaMachineGunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	Chaingun:
+		TNT1 A 0 A_SpawnItemEx("MetaChaingunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class RocketLauncherSpawner : Actor replaces RocketLauncher
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "RocketLauncher");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Item_RocketLauncher", 0, 0, 0) == 1, "RocketLauncher");
+		TNT1 A 0 A_JumpIf(CallACS("Item_RocketLauncher", 0, 0, 0) == 2, "VarietyPack");
+		goto RocketLauncher;
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(64,"GrenadeLauncher");
+		goto RocketLauncher;
+	RocketLauncher:
+		TNT1 A 0 A_SpawnItemEx("MetaRocketLauncherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	GrenadeLauncher:
+		TNT1 A 0 A_SpawnItemEx("MetaGrenadeLauncherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class PlasmaRifleSpawner : Actor replaces PlasmaRifle
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "PlasmaRifle");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPackLocust");
+		TNT1 A 0 A_JumpIf(CallACS("Item_PlasmaRifle", 0, 0, 0) == 1, "PlasmaRifle");
+		TNT1 A 0 A_JumpIf(CallACS("Item_PlasmaRifle", 0, 0, 0) == 2, "VarietyPack");
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(64,"Gauss", "Thunderbolt");
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "ArtifactChance");
+		goto PlasmaRifle;
+	VarietyPackLocust:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(64,"Gauss", "Thunderbolt");
+		TNT1 A 0 A_Jump(32, "Artifactual");
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "ArtifactChance");
+		goto PlasmaRifle;
+	Gauss:
+		TNT1 A 0 A_SpawnItemEx("MetaGaussCannonPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	PlasmaRifle:
+		TNT1 A 0 A_SpawnItemEx("MetaPlasmaRiflePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	Thunderbolt:
+		TNT1 A 0 A_SpawnItemEx("MetaLightningGunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	ArtifactChance:
+		TNT1 A 0 A_JumpIf(CallACS("Item_Artifact", 0, 0, 0) == 2, "PlasmaRifle");
+		TNT1 A 0 A_Jump(64, "Artifactual");
+		goto PlasmaRifle;
+	Artifactual:
+		TNT1 A 0 A_SpawnItemEx("ArtifactPickup",0,0,0,random(4,16),random(4,16),0,random(0,360));
+		goto PlasmaRifle;
+	}
+}
+
+class BFGSpawner : Actor replaces BFG9000
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_noalts_weapons == 1, "BFG9000");
+		TNT1 A 0 A_JumpIf(meta_contentlocust == 1, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 1, "BFG9000");
+		TNT1 A 0 A_JumpIf(CallACS("Item_BFG9000", 0, 0, 0) == 2, "VarietyPack");
+	VarietyPack:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(128,"PrepareForUnmaker");
+		goto BFG9000;
+	PrepareForUnmaker:
+		TNT1 A 0 A_JumpIf(CallACS("Item_Unmaker", 0, 0, 0) == 1, "Unmaker");
+		TNT1 A 0 A_JumpIf(CallACS("Item_Unmaker", 0, 0, 0) == 2, "DemonKeySpawning");
+		goto BFG9000;
+	DemonKeySpawning:
+		TNT1 A 0 A_SpawnItem("DemonKeySpawner");
+		TNT1 A 0 A_Jump(128,"Unmaker");
+		goto BFG9000;
+	BFG9000:
+		TNT1 A 0 A_SpawnItemEx("MetaBFG9000Pickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	Unmaker:
+		TNT1 A 0 A_SpawnItemEx("MetaUnmakerPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+// Doom 64 Shit
+// These have been transitioned to the Zscripts to reduce harmless-but-frustrating
+// error messages in the startup console when Doom 64 isn't present.
+class UnmakerSpawner : Actor //replaces Unmaker
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("MetaUnmakerPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class UnmakerKey1Spawner : Actor //replaces UnmakerUpgrade1
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class UnmakerKey2Spawner : Actor //replaces UnmakerUpgrade2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup2",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class UnmakerKey3Spawner : Actor //replaces UnmakerUpgrade3
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("DemonKeyPickup3",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
