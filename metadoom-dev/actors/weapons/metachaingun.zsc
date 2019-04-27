@@ -1,0 +1,251 @@
+/*
+----------------------------
+MetaDoom
+class Definitions
+Chaingun
+----------------------------
+*/
+
+class ChaingunTurretMode : _Boolean {}
+
+class MetaChaingunPickup : WeaponGiver
+{
+	Default
+	{
+	DropItem "MetaChaingun";
+	Inventory.PickupMessage "$GOTCHAINGUN";
+	Inventory.PickupSound "weapons/chaingun/get";
+	}
+	
+	States
+	{
+	Spawn:
+		CHGN Z 0;
+		CHGN Z 0 { bDROPPED = 0; }
+		CHGN Z -1;
+		Stop;
+	}
+}
+
+class MetaChaingun : MetaDoomWeapon
+{
+	Default
+	{
+	Inventory.PickupMessage "$GOTCHAINGUN";
+	Tag "$TAG_CHAINGUN";
+	Obituary "$OB_MPCHAINGUN";
+	Inventory.PickupSound "weapons/chaingun/get";
+	Weapon.SelectionOrder 400;
+	Weapon.Kickback 90;
+	Weapon.AmmoType "Clip";
+	Weapon.AmmoGive 100;
+	Weapon.AmmoUse 1;
+	}
+	
+	States
+	{
+	Spawn:
+		CHGN Z -1;
+		loop;
+	Ready:
+		CHGN A 0;
+		CHGN A 0 A_JumpIfInventory("ChaingunTurretMode",1,"AltfireReady");
+		CHGN A 1 A_WeaponReady;
+		"####" # 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		Loop;
+	AltfireReady:
+		CHGN J 1 A_WeaponReady(WRF_NOBOB);
+		"####" # 0 A_JumpIfInventory("MeleePunch", 1, "AltfireReady");
+		Loop;
+	Deselect:
+		CHGN A 0;
+		TNT1 A 0 Offset(0,32);
+		TNT1 A 0 
+		{
+			A_StopSound(CHAN_BODY);
+			A_StopSound(CHAN_WEAPON);
+			A_StopSound(CHAN_6);
+		}
+		CHGN A 0 A_JumpIf(health <= 0, "DeadDude");
+		CHGN A 0 A_JumpIfInventory("ChaingunTurretMode",1,"AltfireDeselect");
+		CHGN A 1 A_PlaySound("weapons/swap");
+		CHGN A 1 Offset(0,35);
+		CHGN A 1 Offset(0,39);
+		CHGN A 1 Offset(0,44);
+		CHGN A 1 Offset(0,49);
+		CHGN A 1 Offset(0,55);
+		CHGN A 1 Offset(0,60);
+		CHGN A 1 Offset(0,70);
+		CHGN A 1 Offset(0,80);
+		CHGN A 1 Offset(0,90);
+	FinishDeselect:
+		CHGN A 0 A_Lower;
+		Loop;
+	Select:
+		CHGN A 1 Offset(0,90) A_PlaySound("weapons/chaingun/use");
+		CHGN A 1 Offset(0,80);
+		CHGN A 1 Offset(0,70);
+		CHGN A 1 Offset(0,60);
+		CHGN A 1 Offset(0,55);
+		CHGN A 1 Offset(0,49);
+		CHGN A 1 Offset(0,44);
+		CHGN A 1 Offset(0,39);
+		CHGN A 1 Offset(0,35);
+		CHGN A 1 Offset(0,33);
+		CHGN A 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		MACG A 0 A_JumpIfInventory("ChaingunTurretMode",1,"Altfirefire");
+		CHGN B 6 A_PlaySound("weapons/chaingun/windup",6);
+		CHGN C 5;
+		CHGN D 4;
+		CHGN A 3;
+		CHGN B 2;
+		CHGN BCDABCD 1;
+		CHGN D 0 A_ReFire;
+	WindDown:
+		CHGN A 1 A_PlaySound("weapons/chaingun/winddown",6);
+		CHGN B 2;
+		CHGN C 3;
+		CHGN D 4;
+		CHGN A 5;
+		CHGN BCD 6;
+		CHGN A 0 A_CheckReload();
+		Goto Ready;
+	Hold:
+		CHGN A 0 A_JumpIfInventory("ChaingunTurretMode",1,"Altfirefire");
+		CHGN A 0 A_Quake(8,2,0,128,"null");
+		CHGN A 0 A_PlaySound("weapons/chaingun/loop",6,1,1);
+		CHGN E 1 BRIGHT 
+		{
+			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
+			A_FireBullets(5.6,5.6,1,5,"MetaBulletPuff");
+			if (meta_perf_spentbrass == 1)
+			{
+				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
+			}
+			A_GunFlash();
+			A_Quake (3,5,0,750,0);
+		}
+		CHGN D 0 A_JumpIfNoAmmo("WindDown");
+		CHGN F 1 BRIGHT 
+		{
+			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
+			A_FireBullets(5.6,5.6,0,5,"MetaBulletPuff");
+			if (meta_perf_spentbrass == 1)
+			{
+				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
+			}
+			A_Quake (3,5,0,750,0);
+		}
+		CHGN D 0 A_JumpIfNoAmmo("WindDown");
+		CHGN G 1 BRIGHT 
+		{
+			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
+			A_FireBullets(5.6,5.6,0,5,"MetaBulletPuff");
+			if (meta_perf_spentbrass == 1)
+			{
+				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
+			}
+			A_GunFlash();
+			A_Quake (3,5,0,750,0);
+		}
+		CHGN D 0 A_JumpIfNoAmmo("WindDown");
+		CHGN H 1 BRIGHT 
+		{
+			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
+			A_FireBullets(5.6,5.6,0,5,"MetaBulletPuff");
+			if (meta_perf_spentbrass == 1)
+			{
+				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
+			}
+			A_Quake (3,5,0,750,0);
+		}
+		CHGN D 0 A_JumpIfNoAmmo("WindDown");
+		CHGN D 0 A_ReFire;
+		Goto WindDown;
+	Flash:
+		TNT1 A 2 Bright A_Light1;
+		Goto LightDone;
+		TNT1 A 2 Bright A_Light2;
+		Goto LightDone;
+		
+	Altfire:
+		MACG E 0 A_JumpIfInventory("ChaingunTurretMode",1,"AltfireEnd");
+	AltfireStart:
+		MACG E 0 A_JumpIf(CountInv("Clip") < 10, "AltfireBlank");
+		MACG E 0 SetPlayerProperty(0, 1, PROP_FROZEN);
+		MACG E 0 A_PlaySound("weapons/chaingun/turretup");
+		CHFL A 2 Offset (0,33);
+		CHFL B 2 Offset (0,34);
+		CHFL C 2 Offset (0,35);
+		CHFL D 2 Offset (0,36);
+		CHFL E 2 Offset (0,35);
+		CHFL F 2 Offset (0,34);
+		CHFL G 2 Offset (0,33);
+		CHTR A 5 Offset (0,32) A_GiveInventory("ChaingunTurretMode", 1);
+		goto Ready;
+	AltfireEnd:
+		CHTR A 0 A_StopSound(CHAN_6);
+		MACG J 0 A_PlaySound("weapons/chaingun/turretdown");
+		MACG E 0 SetPlayerProperty(0, 0, PROP_FROZEN);
+		CHFL G 2 Offset (0,31);
+		CHFL F 2 Offset (0,30);
+		CHFL E 2 Offset (0,29);
+		CHFL D 2 Offset (0,30);
+		CHFL C 2 Offset (0,31);
+		CHFL B 2 Offset (0,32);
+		CHFL A 2 Offset (0,33);
+		//CHFL GFEDCBA 2
+		MACG A 0 Offset (0,32)A_TakeInventory("ChaingunTurretMode", 999);
+		Goto Ready;
+	AltfireDeselect:
+		CHTR A 0 A_StopSound(CHAN_6);
+		MACG J 0 A_PlaySound("weapons/chaingun/turretdown");
+		MACG E 0 SetPlayerProperty(0, 0, PROP_FROZEN);
+		CHFL G 2 Offset (0,31);
+		CHFL F 2 Offset (0,30);
+		CHFL E 2 Offset (0,29);
+		CHFL D 2 Offset (0,30);
+		CHFL C 2 Offset (0,31);
+		CHFL B 2 Offset (0,32);
+		CHFL A 2 Offset (0,33);
+		//CHFL GFEDCBA 2
+		MACG A 0 Offset (0,32) A_TakeInventory("ChaingunTurretMode", 999);
+		Goto Deselect;
+	AltfireBlank:
+		CHGN A 1 Offset(0,34) A_PlaySound("weapons/machinegun/dry", CHAN_BODY);
+		CHGN A 1 Offset(0,33);
+		CHGN A 1 Offset(0,32) A_TakeInventory("ChaingunTurretMode", 1);
+		CHGN A 10;
+		goto Ready;
+		
+	AltfireReady:
+		CHTR A 1 A_WeaponReady;
+		CHTR A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		Loop;
+		
+	AltfireFire:
+		CHTR A 0 A_PlaySound("weapons/chaingun/turretfire",6,1,1);
+		CHTR BC 1 bright 
+		{
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",FBF_USEAMMO);
+			A_FireBullets(3,3,1,5,"MetaTurretPuff",!FBF_USEAMMO);
+			//A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
+			//A_FireProjectile("BulletCasingSpawn",10,0,16,-9);
+			//A_FireProjectile("BulletCasingSpawn",5,0,-16,4);
+			A_Quake (1,2,0,750,0);
+		}
+		CHTR A 0 A_ReFire;
+		CHTR A 0 A_PlaySound("weapons/chaingun/turretend",6);
+		Goto Ready;
+	}
+}

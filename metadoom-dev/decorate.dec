@@ -33,7 +33,7 @@ Index
 //#include "actors/weapons/ssg.dec"
 // #include "actors/weapons/fireextinguisher.dec"
 //#include "actors/weapons/machinegun.dec"
- #include "actors/weapons/chaingun.dec"
+// #include "actors/weapons/chaingun.dec"
 #include "actors/weapons/rocketlauncher.dec"
  #include "actors/weapons/grenadelauncher.dec"
 #include "actors/weapons/plasmarifle.dec"
