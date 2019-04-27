@@ -1,3 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Animation Definitions
+----------------------------
+*/
+
 // Warp effects for liquids
 warp2 flat BLOOD1
 warp2 flat BLOOD2

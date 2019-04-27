@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Sound Definitions
+Sound Sequences
+----------------------------
+*/
+
 :DoorOpenNormal
 	play		doors/slow/open
 	stopsound	doors/slow/openstop

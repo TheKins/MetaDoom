@@ -1,3 +1,8 @@
+//----------------------------
+//MetaDoom
+//Keybind Definitions
+//----------------------------
+
 addkeysection "$MNU_MDHEADER" MetaDoomActions
 
 addmenukey "$MNU_MDMELEE" metadoom_melee

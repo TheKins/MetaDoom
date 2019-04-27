@@ -1,3 +1,10 @@
-metadoom
-metairon
-FOOTSTEP
+/*
+----------------------------
+MetaDoom
+Script Loading
+----------------------------
+*/
+
+metadoom // Core Scripts
+metairon // Ironman Scripts
+FOOTSTEP // Zombie's footstep code

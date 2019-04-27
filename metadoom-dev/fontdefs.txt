@@ -1,3 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Font Definitions
+----------------------------
+*/
+
 SMALLFONT
 {
 	Template STCFN%03d

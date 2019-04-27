@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Sound Definitions
+Weapons
+----------------------------
+*/
+
 // Sounds for guns and also not-guns.
 $random weapons/swap { weapons/swap1 weapons/swap2 weapons/swap3 weapons/swap4 weapons/swap5 }
 weapons/swap1				swap1

@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Sound Definitions
+Inventory Items
+----------------------------
+*/
+
 // Sounds for Inventory Items
 inventory/throw				invtoss
 

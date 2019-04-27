@@ -1,3 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Terrain Definitions
+----------------------------
+*/
+
 // Based off Enjay's terrain definitions WAD, which at this point I'm pretty sure
 // is older than most ZScript experts.
 

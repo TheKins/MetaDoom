@@ -1,3 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Renderer FX Definitions
+----------------------------
+*/
+
 #include "gldefs/weapons.gld"
 #include "gldefs/healtharmor.gld"
 #include "gldefs/monsters.gld"

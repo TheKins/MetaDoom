@@ -1,4 +1,10 @@
-// Unrelated sounds
+/*
+----------------------------
+MetaDoom
+Sound Definitions
+General Miscellany
+----------------------------
+*/
 
 // Item Crumbs
 items/armor/shard			armrshrd

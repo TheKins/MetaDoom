@@ -1,3 +1,10 @@
+/*
+----------------------------
+MetaDoom
+Menu Definitions
+----------------------------
+*/
+
 DEFAULTLISTMENU
 {
 	Font "BigFont", "Untranslated"
