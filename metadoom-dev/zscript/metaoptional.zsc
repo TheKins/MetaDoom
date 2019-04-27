@@ -1,4 +1,13 @@
-// Implement Optional Content as a CVar instead of a side-mod
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Replacement Scripts
+----------------------------
+*/
+
+// Implements Optional Content as a CVar instead of a side-mod
+
 // This was originally based on some really confusingly-formatted code by Matt
 // (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
 // uses engine-provided functionality to do the same thing, just less grossly

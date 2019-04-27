@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Status Bar
+----------------------------
+*/
+
 // The HUD! ZScript edition. ZScript HUDs are also nasty, but they're mostly a
 // kind of nasty I can deal with. This port wasn't TOO troublesome, probably
 // because I got most of the profanity out of the way during JPF.

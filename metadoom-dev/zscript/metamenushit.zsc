@@ -1,4 +1,10 @@
-// Menu class definitions
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Menu Classes
+----------------------------
+*/
 
 // Draw background graphics behind the menus. This is from JPF, so odds are
 // Gutawer walked me through this like the mental infant I am.
