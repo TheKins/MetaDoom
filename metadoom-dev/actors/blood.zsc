@@ -638,8 +638,7 @@ class BloodSplat_Permanent : BloodSplat
 				CheckClass("BloodSplatGreen_Permanent",AAPTR_DEFAULT) ||
 				CheckClass("BloodSplatBlue_Permanent",AAPTR_DEFAULT))
 			{
-				if (user_water == 3)	{ return resolvestate("Null"); }
-				if (user_water == 2)	{ return resolvestate("Null"); }
+				if (user_water != 1)	{ return resolvestate("Null"); }
 				return					A_Jump(256,"A","B","F");
 			}
 			
@@ -660,11 +659,18 @@ class BloodSplat_Permanent : BloodSplat
 		WaitForever:
 		"####" "#" 35
 		{
+			if (user_water != 1)
+			{
+				return resolvestate("null");
+			}
+			
 			if (user_z != pos.z)
 			{
 				A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
 				user_z = pos.z;
 			}
+			
+			return resolvestate(null);
 		}
 		Wait;
 	}

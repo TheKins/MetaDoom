@@ -22,6 +22,8 @@ UI Changes:
 Generalized Bug Fixes:
 - Fixed a typo that would result in glow effects on light-source props being
   displaced on the very first tic that they're spawned.
+- Fixed a visual oddity where the "permanent" blood stains spawned by certain
+  props would spawn on top of liquid textures. They now despawn immediately.
 
 Other Changes:
 - Ported the following things from DECORATE to ZScript:
