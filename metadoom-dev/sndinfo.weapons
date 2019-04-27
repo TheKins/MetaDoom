@@ -113,6 +113,11 @@ weapons/rocketlauncher/use	rlncuse
 weapons/rocketlauncher/deto	rlncdet
 weapons/rocketlauncher/loop	rlncloop
 
+$random weapons/rocketlauncher/fragment { weapons/rocketlauncher/fragment1 weapons/rocketlauncher/fragment2 weapons/rocketlauncher/fragment3 }
+weapons/rocketlauncher/fragment1	rlncfrg1
+weapons/rocketlauncher/fragment2	rlncfrg2
+weapons/rocketlauncher/fragment3	rlncfrg3
+
 // PLASMA RIFLE
 weapons/plasmarifle/fire	plasfire
 weapons/plasmarifle/pop		plasaltf

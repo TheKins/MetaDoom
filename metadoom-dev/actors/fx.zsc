@@ -118,6 +118,14 @@ class RocketTrailSmoke : Actor
 	}
 }
 
+class RocketFragmentTrailSmoke : RocketTrailSmoke
+{
+	Default
+	{
+	scale 0.25;
+	}
+}
+
 class GrenadeTrailSmoke : RocketTrailSmoke
 {
 	Default
