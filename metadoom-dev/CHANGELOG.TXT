@@ -20,6 +20,8 @@ Weapon Changes:
     themselves now look a little less buggy.
   - Fixed bug where exiting a map while having sprayed themselves would result
     in them having the self-extinguished buff forever.
+- The Rocket Launcher alt-fire has been updated to be actually useful - manually
+  detonating your rocket now sprays ripping fragments for additional damage.
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
