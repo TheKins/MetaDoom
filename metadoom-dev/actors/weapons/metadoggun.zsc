@@ -1,0 +1,345 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Collared Hellhounds
+----------------------------
+*/
+
+class MetaDogGun_HellHound : MetaDoomWeapon
+{
+	Default
+	{
+	Weapon.SelectionOrder 1900;
+	Weapon.AmmoUse 0;
+	Weapon.AmmoGive 100;
+	//Weapon.AmmoType "DogGunHealth"
+	+WEAPON.WIMPY_WEAPON
+	Inventory.Pickupmessage "DOG GUN!";
+	Tag "$TAGHDOG";
+	Inventory.PickupSound "weapons/fireextinguisher/get";
+	}
+	
+	States
+	{
+	Ready:
+		HDGG AAAAAAAABBBBBBBB 1
+		{
+			A_WeaponReady();
+			return A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		}
+		Loop;
+	Deselect:
+		"####" A 1;
+		"####" A 0 A_JumpIf(health <= 0, "DeadDude");
+		goto AltFire;
+	Select:
+		HDGG A 1 Offset(0,90) A_PlaySound("monsters/hellhound/see");
+		"####" A 1 Offset(0,80);
+		"####" A 1 Offset(0,70);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,55);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,44);
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,35);
+		"####" A 1 Offset(0,33);
+		"####" A 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		"####" A 0 
+		{
+			A_PlaySound("monsters/hellhound/bite");
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+		}
+		"####" CD 2;
+		"####" E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"MetaDogPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite");
+		"####" F 2;
+		"####" DCB 2;
+		Goto Ready;
+	AltFire:
+		"####" A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,80);
+		TNT1 A 1 Offset(0,32);
+		TNT1 A 0 
+		{
+			A_FireProjectile("MetaDogBomb_HellHound",0,0,0,0,FPF_NOAUTOAIM);
+			A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}			
+		}
+		TNT1 A 10;
+		TNT1 A 0 A_TakeInventory("MetaDogGun_HellHound", 999);
+ 	Spawn:
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+class DogArmorBonus : BasicArmorBonus
+{
+	Default
+	{
+	Radius 20;
+	Height 16;
+	Inventory.Pickupmessage "$GOTARMBONUS";
+	Inventory.Icon "BON2A0";
+	Armor.Savepercent 33.335;
+	Armor.Saveamount 1;
+	Armor.Maxsaveamount 100;
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	}
+	
+	States
+	{
+	Spawn:
+		BON2 ABCDCB 6;
+		loop;
+	}
+}
+
+class MetaDogPuff : Actor
+{
+	Default
+	{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALLOWPARTICLES
+	+RANDOMIZE
+	damagetype "DogBite";
+	RenderStyle "Translucent";
+	Alpha 0.5;
+	VSpeed 1;
+	Mass 5;
+	AttackSound "weapons/melee/hitwall";
+	SeeSound "weapons/melee/hit";
+	Obituary "$OB_METADOG_BITE";
+	}
+	
+	States
+	{
+	Spawn:
+		PUFF A 4 Bright;
+		PUFF B 4;
+	Melee:
+		PUFF CD 4;
+		Stop;
+	}
+}
+
+class MetaDogBomb_HellHound : Actor
+{
+	Default
+	{
+	Radius 25;
+	Height 25;
+	Speed 40;
+	Damage 10;
+	yscale -1;
+	Projectile;
+	+RANDOMIZE
+	-NOGRAVITY
+	Decal "Scorch";
+	Obituary "$OB_METADOG_HELLHOUND";
+	}
+	
+	States
+	{
+	Spawn:
+		HDOG I 0;
+		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 A_PlaySound ("monsters/hellhound/die");
+	FlyMyPrettyFly:
+		HDOG I 1;
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Dogsplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+class Dogsplosion : Explosion
+{
+	Default
+	{
+	damagetype "Dogsplosion";
+	}
+}
+
+class MetaDogGun_DemonDog : MetaDogGun_HellHound
+{
+	Default
+	{
+	Tag "$TAGDDOG";
+	}
+	
+	States
+	{
+	Deselect:
+		"####" A 1;
+		"####" A 0 A_JumpIf(health <= 0, "DeadDude");
+		goto AltFire;
+	Ready:
+		DDGG AAAAAAAABBBBBBBB 1
+		{
+			A_WeaponReady();
+			return A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		}
+		Loop;
+	Select:
+		DDGG A 1 Offset(0,90) A_PlaySound("monsters/demondog/see");
+		"####" A 1 Offset(0,80);
+		"####" A 1 Offset(0,70);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,55);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,44);
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,35);
+		"####" A 1 Offset(0,33);
+		"####" A 1 Offset(0,32) ;
+		goto Ready;
+	Fire:
+		"####" A 0 A_PlaySound("monsters/hellhound/bite");
+		"####" CD 2;
+		"####" E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"MetaDogPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite");
+		"####" F 2 ;
+		"####" DCB 2;
+		Goto Ready;
+	AltFire:
+		"####" A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,80);
+		TNT1 A 1 Offset(0,32);
+		TNT1 A 0 
+		{
+		A_FireProjectile("MetaDogBomb_DemonDog",0,0,0,0,FPF_NOAUTOAIM);
+		A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
+		}
+		TNT1 A 10;
+		TNT1 A 0 A_TakeInventory("MetaDogGun_DemonDog", 999);
+ 	Spawn:
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+class MetaDogBomb_DemonDog : MetaDogBomb_HellHound
+{
+	Default
+	{
+	Obituary "$OB_METADOG_DEMONDOG";
+	}
+	
+	States
+	{
+	Spawn:
+		DDOG I 0;
+		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 A_PlaySound ("monsters/hellhound/die");
+	FlyMyPrettyFly:
+		DDOG I 1;
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Dogsplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+class MetaDogGun_Cerberus : MetaDogGun_HellHound
+{
+	Default
+	{
+	Tag "$TAGCDOG";
+	}
+	
+	States
+	{
+	Deselect:
+		"####" A 1;
+		"####" A 0 A_JumpIf(health <= 0, "DeadDude");
+		goto AltFire;
+	Ready:
+		CDGG AAAAAAAABBBBBBBB 1
+		{
+			A_WeaponReady();
+			return A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		}
+		Loop;
+	Select:
+		CDGG A 1 Offset(0,90) A_PlaySound("monsters/demondog/see");
+		"####" A 1 Offset(0,80);
+		"####" A 1 Offset(0,70);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,55);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,44);
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,35);
+		"####" A 1 Offset(0,33);
+		"####" A 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		"####" A 0 A_PlaySound("monsters/hellhound/bite");
+		"####" CD 2;
+		"####" E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"MetaDogPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite");
+		"####" F 2;
+		"####" DCB 2;
+		Goto Ready;
+	AltFire:
+		"####" A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		"####" A 1 Offset(0,39);
+		"####" A 1 Offset(0,49);
+		"####" A 1 Offset(0,60);
+		"####" A 1 Offset(0,80);
+		TNT1 A 1 Offset(0,32);
+		TNT1 A 0 
+		{
+		A_FireProjectile("MetaDogBomb_Cerberus",0,0,0,0,FPF_NOAUTOAIM);
+		A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
+		}
+		TNT1 A 10;
+		TNT1 A 0 A_TakeInventory("MetaDogGun_Cerberus", 999);
+ 	Spawn:
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+class MetaDogBomb_Cerberus : MetaDogBomb_HellHound
+{
+	Default
+	{
+	Obituary "$OB_METADOG_CERBERUS";
+	}
+	
+	States
+	{
+	Spawn:
+		CDOG I 0;
+		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 A_PlaySound ("monsters/hellhound/die");
+	FlyMyPrettyFly:
+		CDOG I 1;
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("Dogsplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
