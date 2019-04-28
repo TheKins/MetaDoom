@@ -170,7 +170,7 @@ class MetaUnmaker : MetaDoomWeapon
 		UNMA A 0;
 		UNMA A 0 A_JumpIfInventory("DemonKey", 1, "AltFire_Charge");
 	AltFire_Keys0:
-		UNMA A 1 Offset(0,34) A_PlaySound("weapons/rocketlauncher/deto", CHAN_BODY);
+		UNMA A 1 Offset(0,34) A_PlaySound("weapons/unmaker/butan", CHAN_BODY);
 		UNMA A 1 Offset(0,33);
 		UNMA A 1 Offset(0,32);// A_TakeInventory("RLDetonator", 1);
 		UNMA A 10;
