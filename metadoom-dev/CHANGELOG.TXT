@@ -25,6 +25,7 @@ Weapon Changes:
     in them having the self-extinguished buff forever.
 - The Rocket Launcher alt-fire has been updated to be actually useful - manually
   detonating your rocket now sprays ripping fragments for additional damage.
+- Fixed a one-frame visual bug when deselecting the Gauss Cannon while zoomed.
 
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
