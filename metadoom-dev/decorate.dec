@@ -40,7 +40,7 @@ Index
 // #include "actors/weapons/gauss.dec"
 // #include "actors/weapons/lightninggun.dec"
 //#include "actors/weapons/bfg.dec"
- #include "actors/weapons/unmaker.dec"
+// #include "actors/weapons/unmaker.dec"
  #include "actors/weapons/soulcube.dec"
 
 // Items
