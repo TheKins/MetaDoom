@@ -42,6 +42,7 @@ version "3.4"
  #include "actors/weapons/metalightninggun.zsc"
 #include "actors/weapons/metabfg.zsc"
  #include "actors/weapons/metaunmaker.zsc"
+ #include "actors/weapons/metasoulcube.zsc"
 
 // Inventory
 #include "actors/inventory/teslarocket.zsc"

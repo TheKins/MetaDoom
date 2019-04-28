@@ -41,7 +41,7 @@ Index
 // #include "actors/weapons/lightninggun.dec"
 //#include "actors/weapons/bfg.dec"
 // #include "actors/weapons/unmaker.dec"
- #include "actors/weapons/soulcube.dec"
+// #include "actors/weapons/soulcube.dec"
 
 // Items
 #include "actors/items/health.dec"
