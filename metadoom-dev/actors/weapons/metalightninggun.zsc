@@ -1,0 +1,342 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Lightning Gun
+----------------------------
+*/
+
+class LightningFired : Counter { Default { Inventory.MaxAmount 5; } }
+
+class MetaLightningGunPickup : WeaponGiver
+{
+	Default
+	{
+	DropItem "MetaLightningGun";
+	Inventory.PickupMessage "$GOTLIGHTNING";
+	Inventory.PickupSound "weapons/lightninggun/get";
+	scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		THUN Z 0;
+		THUN Z 0 { bDROPPED = 0; }
+		THUN Z -1;
+		Stop;
+	}
+}
+
+class MetaLightningGun : MetaDoomWeapon
+{
+	Default
+	{
+	Weapon.SelectionOrder 100;
+	Weapon.AmmoUse1 1;
+	Weapon.AmmoUse2 15;
+	Weapon.AmmoGive 40;
+	Weapon.AmmoType1 "Cell";
+	Weapon.AmmoType2 "Cell";
+	Inventory.PickupMessage "$GOTLIGHTNING";
+	Tag "$TAGLIGHTNING";
+	Obituary "$OB_LIGHTNING";
+	Inventory.PickupSound "weapons/lightninggun/get";
+	+WEAPON.NOALERT
+	+WEAPON.ALT_AMMO_OPTIONAL
+	scale 0.75;
+	}
+	
+	States
+	{
+	Ready:
+		THUN A 0 A_PlaySound ("weapons/lightninggun/idle", CHAN_WEAPON, 0.5, 1);
+		THUN A 1 A_WeaponReady;
+		THUN A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		THUN B 1 A_WeaponReady;
+		THUN B 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		THUN C 1 A_WeaponReady;
+		THUN C 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		loop;
+	Deselect:
+		THUN A 1;
+		TNT1 A 0 A_StopSound(CHAN_BODY);
+		TNT1 A 0 A_StopSound(CHAN_WEAPON);
+		TNT1 A 0 A_StopSound(CHAN_6);
+		THUN A 0 A_JumpIf(health <= 0, "DeadDude");
+		THUN A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		THUN B 1 Offset(0,35);
+		THUN C 1 Offset(0,39);
+		THUN A 1 Offset(0,44);
+		THUN B 1 Offset(0,49);
+		THUN C 1 Offset(0,55);
+		THUN A 1 Offset(0,60);
+		THUN B 1 Offset(0,70);
+		THUN C 1 Offset(0,80);
+		THUN A 1 Offset(0,90);
+	FinishDeselect:
+		THUN A 0 A_Lower;
+		Loop;
+	Select:
+		THUN A 1 Offset(0,90) A_PlaySound("weapons/lightninggun/use");
+		THUN B 1 Offset(0,80);
+		THUN C 1 Offset(0,70);
+		THUN A 1 Offset(0,60);
+		THUN B 1 Offset(0,55);
+		THUN C 1 Offset(0,49);
+		THUN A 1 Offset(0,44);
+		THUN B 1 Offset(0,39);
+		THUN C 1 Offset(0,35);
+		THUN A 1 Offset(0,33);
+		THUN B 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		THUN D 0;
+		THUN DE 1 bright A_PlaySound("weapons/lightninggun/fire",7);
+	Hold:
+		THUN F 2 bright 
+		{
+			A_PlaySound("weapons/lightninggun/loop",6,1,1);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
+			A_GunFlash();
+			A_RailAttack(14,0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
+			A_AlertMonsters();
+			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
+		}
+		THUN F 2 bright 
+		{
+			A_PlaySound("weapons/lightninggun/loop",6,1,1);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
+			A_GunFlash();
+			A_RailAttack(14,0,0,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"MetaLightningPuff",0,0,384,35,16.0,0,"LightningTrailSpawner");
+			A_AlertMonsters();
+			A_WeaponOffset(random(-2,2),random(30,34), WOF_INTERPOLATE);
+		}
+		THUN E 0 A_Refire;
+	FireEnd:
+		THUN E 1 bright Offset(0,35) A_PlaySound("weapons/lightninggun/stop",6);
+		THUN E 1 bright Offset(0,34);
+		THUN D 1 bright Offset(0,33);
+		THUN D 1 bright Offset(0,32);
+		THUN A 0 A_ReFire;
+		goto Ready;
+		
+	AltFire:
+		THUN A 0 A_JumpIfInventory("Cell",15,"StunShot");
+		THUN A 1 Offset(0,34) A_PlaySound("weapons/grenadelauncher/altdeny", CHAN_BODY);
+		THUN B 1 Offset(0,33);
+		THUN C 1 Offset(0,32);
+		THUN ABCABCABC 1;
+		goto Ready;
+	StunShot:
+		THUN DE 2 bright A_PlaySound("weapons/lightninggun/altfire");
+		THUN D 0 A_GunFlash;
+		THUN F 0 
+		{
+			A_FireCustomMissile ("MetaLightningStunProj");
+			A_GunFlash();
+			A_AlertMonsters();
+		}
+		THUN F 1 bright Offset(0,45) A_SetPitch(pitch-2);
+		THUN F 1 bright Offset(0,48) A_SetPitch(pitch-2);
+		THUN F 1 bright Offset(0,47);
+		THUN E 1 bright Offset(0,46) A_SetPitch(pitch+1);
+		THUN E 1 bright Offset(0,44) A_SetPitch(pitch+1);
+		THUN E 1 bright Offset(0,42) A_SetPitch(pitch+1);
+		THUN D 1 bright Offset(0,38) A_SetPitch(pitch+1) ;
+		THUN D 1 bright Offset(0,36); //A_PlaySound("weapons/lightninggun/stop")
+		THUN D 1 Offset(0,34);
+		THUN D 1 Offset(0,33);
+		THUN A 1 Offset(0,32);
+		THUN B 1;
+		THUN CABCABCABC 1;
+		THUN A 0 A_Refire;
+		Goto Ready;
+		
+	Flash:
+		TNT1 A 4 Bright A_Light1;
+		Goto LightDone;
+		TNT1 B 4 Bright A_Light1;
+		Goto LightDone;
+	Spawn:
+		THUN Z -1;
+		Stop;
+	}
+}
+
+class LightningTrailSpawner : Actor
+{
+	Default
+	{
+	Radius 8;
+	Height 8;
+	RenderStyle "Add";
+	Alpha 0.75;
+	scale 0.25;
+	}
+	
+	States
+	{
+	Spawn:
+		PLSE A 0;
+		PLSE A 0 A_CheckRange(8, "Brrp");
+		stop;
+	Brrp:
+		TNT1 A 0 A_SpawnItemEx("LightningTrailParticle",0,random(-8,8),random(-8,8));
+		TNT1 A 0 A_SpawnItemEx("LightningTrailParticle2",0,random(-2,2),random(-2,2));
+		stop;
+	}
+}
+
+class LightningTrailParticle : Actor
+{
+	Default
+	{
+	Radius 8;
+	Height 8;
+	+RANDOMIZE
+	RenderStyle "Add";
+	Alpha 0.75;
+	scale 0.25;
+	}
+	
+	States
+	{
+	Spawn:
+		PLSE ABCDE 1 Bright;
+		Stop;
+	}
+}
+
+class LightningTrailParticle2 : LightningTrailParticle { }
+
+class MetaLightningPuff : MetaBulletPuff
+{
+	Default
+	{
+	damagetype "LightningGun";
+	Decal "BulletChip";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 4 BRIGHT A_SpawnDebris("PistolTracerSpark");
+		Stop;
+	}
+}
+
+class MetaLightningStunProj : Actor
+{
+	Default
+	{
+	+CANBOUNCEWATER
+	Radius 8;
+	Height 8;
+	Speed 30;
+	Damage 0;
+	PROJECTILE;
+	+RANDOMIZE
+	-NOGRAVITY
+	+FORCERADIUSDMG
+	+CAUSEPAIN
+	+FORCEPAIN
+	+BLOODLESSIMPACT
+	//+RIPPER
+	damagetype "LightningStun";
+	Obituary "$OB_LIGHTNING";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 ThrustThingZ(0,16,0,1);
+		goto Flying;
+	Flying:
+		PLSE AB 1 bright;
+		loop;
+	Death:
+		TNT1 A 0 A_PlaySound("weapons/lightninggun/altboom");
+		TNT1 A 0 A_SpawnItem("MetaLightningStunFX");
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_Explode((1), 64, !XF_HURTSOURCE, 1, 64);
+		Stop;
+	}
+}
+
+class MetaLightningStunFX : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	+NOBLOCKMAP
+	-SOLID
+	+NOGRAVITY
+	//+FORCEXYBILLBOARD
+	+ROLLSPRITE
+	+FLATSPRITE
+	renderstyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			SHOK DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 bright 
+			{
+				A_SetScale(frandom(1.9,2.1),frandom(1.9,2.1));
+				A_SetTranslucent(frandom(0.9,0.8), 1);
+				A_SetRoll(random(0,360));
+				A_SetAngle(random(0,360));
+				A_SpawnItem("MetaLightningStunFXZappy",random(-48,48),random(0,48));
+				A_SpawnItem("MetaLightningStunFXZappy",random(-48,48),random(0,48));
+				A_SpawnItem("MetaLightningStunFXZappy",random(-48,48),random(0,48));
+				A_SpawnItem("MetaLightningStunFXZappy",random(-48,48),random(0,48));
+				//A_Warp(AAPTR_DEFAULT,0,0,8,0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+			}
+		Die:
+			SHOK DD 1 bright A_FadeOut(0.25);
+			loop;
+	}
+}
+
+class MetaLightningStunFXZappy : Actor
+{
+	Default
+	{
+	Radius 1;
+	Height 1;
+	+NOBLOCKMAP
+	-SOLID
+	+NOGRAVITY
+	+ROLLSPRITE
+	+DONTSPLASH
+	//+FLATSPRITE
+	//scale 2.5
+	renderstyle "Add";
+	}
+	
+	States
+	{
+		Spawn:
+			TNT1 A 0;
+			TNT1 A 0 A_SetAngle(random(0,360));
+			TNT1 A 0 A_SetRoll(random(0,360));
+			TNT1 A 0 A_SetPitch(random(0,360));
+		DoAThing:
+			ZAPP ABCD 1 bright A_FadeOut(0.5);
+			loop;
+	}
+}

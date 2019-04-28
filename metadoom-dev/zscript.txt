@@ -39,7 +39,7 @@ version "3.4"
  #include "actors/weapons/metagrenadelauncher.zsc"
 #include "actors/weapons/metaplasmarifle.zsc"
  #include "actors/weapons/metagauss.zsc"
-
+ #include "actors/weapons/metalightninggun.zsc"
 #include "actors/weapons/metabfg.zsc"
 
 // Inventory
