@@ -1,0 +1,255 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Plasma Rifle
+----------------------------
+*/
+
+class PlasmaHeat : Counter { Default { Inventory.MaxAmount 5; }}
+class PlasmaFired : Counter { Default {Inventory.MaxAmount 10; }}
+
+class MetaPlasmaRiflePickup : WeaponGiver
+{
+	Default
+	{
+	DropItem "MetaPlasmaRifle";
+	Inventory.PickupMessage "$GOTPLASMA";
+	Inventory.PickupSound "weapons/plasmarifle/get";
+	}
+	
+	States
+	{
+	Spawn:
+		PLA0 Z 0;
+		PLA0 Z 0 { bDROPPED = 0; }
+		PLA0 Z -1;
+		Stop;
+	}
+}
+
+class MetaPlasmaRifle : MetaDoomWeapon
+{
+	Default
+	{
+	Weapon.SelectionOrder 100;
+	Weapon.AmmoUse 1;
+	Weapon.AmmoGive 40;
+	Weapon.AmmoType "Cell";
+	Inventory.PickupMessage "$GOTPLASMA";
+	Tag "$TAG_PLASMARIFLE";
+	Inventory.PickupSound "weapons/plasmarifle/get";
+	+WEAPON.NOALERT;
+	}
+	
+	States
+	{
+	Ready:
+		PLA0 A 0;
+		goto AnimSwitcher;
+	ReallyReady:
+		"####" A 1 A_WeaponReady;
+		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		loop;
+	Deselect:
+		PLA0 A 1; 
+		PLA0 A 0 A_JumpIf(health <= 0, "DeadDude");
+		PLA0 A 1 Offset(0,33) A_PlaySound("weapons/swap");
+		PLA0 A 1 Offset(0,35);
+		PLA0 A 1 Offset(0,39);
+		PLA0 A 1 Offset(0,44);
+		PLA0 A 1 Offset(0,49);
+		PLA0 A 1 Offset(0,55);
+		PLA0 A 1 Offset(0,60);
+		PLA0 A 1 Offset(0,70);
+		PLA0 A 1 Offset(0,80);
+		PLA0 A 1 Offset(0,90);
+	FinishDeselect:
+		PLA0 A 0 A_Lower;
+		Loop;
+	Select:
+		PLA0 A 1 Offset(0,90) A_PlaySound("weapons/plasmarifle/use");
+		PLA0 A 1 Offset(0,80);
+		PLA0 A 1 Offset(0,70);
+		PLA0 A 1 Offset(0,60);
+		PLA0 A 1 Offset(0,55);
+		PLA0 A 1 Offset(0,49);
+		PLA0 A 1 Offset(0,44);
+		PLA0 A 1 Offset(0,39);
+		PLA0 A 1 Offset(0,35);
+		PLA0 A 1 Offset(0,33);
+		PLA0 A 1 Offset(0,32);
+		goto Ready;
+	Fire:
+		"####" B 1 bright Offset(0,37)
+		{
+			A_PlaySound("weapons/plasmarifle/fire", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
+			A_GunFlash();
+			A_FireProjectile("MetaPlasmaBall");
+			A_GiveInventory("PlasmaFired");
+			A_AlertMonsters();
+		}
+		"####" B 1 bright Offset(0,35);
+		"####" B 1 bright Offset(0,34);
+		"####" C 1 bright Offset(0,33);
+		"####" C 1 bright Offset(0,32);
+		"####" A 0 A_JumpIfInventory("PlasmaFired", 10,"GimmeHeat");
+		"####" A 0 A_ReFire;
+		goto Ready;
+	GimmeHeat:
+		"####" A 0 A_TakeInventory("PlasmaFired", 10);
+		"####" A 0 A_GiveInventory("PlasmaHeat", 1);
+		goto AnimSwitcher;
+	AnimSwitcher:
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 5,"Anim5");
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 4,"Anim4");
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 3,"Anim3");
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 2,"Anim2");
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 1,"Anim1");
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 0,"Ready");
+		goto ReallyReady;
+	Anim1:
+		PLA1 A 0;
+		goto ReallyReady;
+	Anim2:
+		PLA2 A 0;
+		goto ReallyReady;
+	Anim3:
+		PLA3 A 0;
+		goto ReallyReady;
+	Anim4:
+		PLA4 A 0;
+		goto ReallyReady;
+	Anim5:
+		PLA5 A 0;
+		goto ReallyReady;
+	Flash:
+		TNT1 A 4 Bright A_Light1;
+		Goto LightDone;
+		TNT1 B 4 Bright A_Light1;
+		Goto LightDone;
+	AltFire:
+		"####" A 0;
+		"####" A 0 A_JumpIfInventory("PlasmaHeat", 5,"AltBlast");
+		"####" A 1 Offset(0,34) A_PlaySound("weapons/plasmarifle/dry", CHAN_BODY);
+		"####" A 1 Offset(0,33);
+		"####" A 1 Offset(0,32) ;
+		"####" A 8;
+		goto ReallyReady;
+	AltBlast:
+		"####" B 1 bright Offset(0,37)
+		{
+			A_PlaySound("weapons/plasmarifle/pop", CHAN_WEAPON);
+			
+			if (CountInv("PowerDamage") > 0)
+			{
+				A_PlaySound("powerups/quad/use", CHAN_5);
+			}
+			
+			A_GunFlash();
+			
+			for (int i = 0; i < 22; i ++)
+			{
+				A_FireProjectile("MetaPlasmaPop", (16 * i), 0, 0, 0, FPF_NOAUTOAIM);
+			}
+			
+			A_TakeInventory("PlasmaFired", 999);
+			A_TakeInventory("PlasmaHeat", 999);
+			A_AlertMonsters();
+		}
+		"####" B 1 bright Offset(0,35);
+		"####" B 1 bright Offset(0,35);
+		"####" C 1 bright Offset(0,34);
+		"####" C 1 bright Offset(0,33);
+		"####" C 1 bright Offset(0,32);
+		PLA0 A 10;
+		goto Ready;
+	Spawn:
+		PLA0 Z -1;
+		Stop;
+	}
+}
+
+class MetaPlasmaBall : Actor
+{
+	Default
+	{
+	Radius 13;
+	Height 8;
+	Speed 25;
+	Damage 5;
+	Projectile;
+	+RANDOMIZE
+	RenderStyle "Add";
+	Alpha 0.75;
+	Obituary "$OB_MPPLASMARIFLE";
+	Decal "PlasmaScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		PLSS A 0 A_PlaySound ("weapons/plasmarifle/loop", CHAN_BODY, 1.0, 1);
+		PLSS AB 6 Bright;
+		Loop;
+	Death:
+		PLSE A 0 A_PlaySound("weapons/plasmarifle/hit");
+		PLSE ABCDE 4 Bright;
+		Stop;
+	}
+}
+
+class MetaPlasmaPop : Actor
+{
+	Default
+	{
+	Radius 13;
+	Height 8;
+	Speed 45;
+	Damage 20;
+	Projectile;
+	+RANDOMIZE
+	RenderStyle "Add";
+	Alpha 0.75;
+	Obituary "$OB_MPPLASMARIFLE";
+	Decal "PlasmaScorch";
+	}
+	
+	States
+	{
+	Spawn:
+		PLSS A 0 A_PlaySound ("weapons/plasmarifle/loop", CHAN_BODY, 1.0, 1);
+		PLSE BC 2 Bright A_SpawnItem("MetaPlasmaPopTrail");
+		Loop;
+	Death:
+		PLSE A 0 A_PlaySound("weapons/plasmarifle/hit");
+		PLSE A 0 A_Quake (1,3,0,750,0);
+		PLSE A 0 A_Explode(64,128,0);
+		PLSE ABCDE 4 Bright;
+		Stop;
+	}
+}
+
+class MetaPlasmaPopTrail : Actor
+{
+	Default
+	{
+	+NOBLOCKMAP;
+	+NOGRAVITY;
+	RenderStyle "Add";
+	Alpha 0.75;
+	}
+	
+	states
+	{
+	Spawn:
+		PLSE ABCDE 2 Bright;
+		Stop;
+	}
+}

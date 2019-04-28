@@ -36,7 +36,7 @@ Index
 // #include "actors/weapons/chaingun.dec"
 //#include "actors/weapons/rocketlauncher.dec"
 // #include "actors/weapons/grenadelauncher.dec"
-#include "actors/weapons/plasmarifle.dec"
+//#include "actors/weapons/plasmarifle.dec"
  #include "actors/weapons/gauss.dec"
  #include "actors/weapons/lightninggun.dec"
 //#include "actors/weapons/bfg.dec"
