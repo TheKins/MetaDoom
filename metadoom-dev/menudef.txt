@@ -18,7 +18,7 @@ DEFAULTLISTMENU
 
 LISTMENU "MainMenu"
 {
-	StaticPatch 94, 2, "M_DOOM"
+	StaticPatch 103, 2, "M_DOOM"
 	
 	Font "TinyBaby", MetaBlack
 	StaticText 1, 214, "$VERSION"
@@ -42,14 +42,14 @@ LISTMENU "MainMenu"
 ListMenu "EpisodeMenu"
 {
 	Position 24, 43
-	StaticText 54, 18, "$MNU_EPISODE"
+	StaticTextCentered 160, 4, "$MNU_EPISODE"
 	// items will be filled in by MAPINFO
 }
 
 ListMenu "SkillMenu"
 {
 	//StaticPatch 0, 10, "M_BAR"
-	StaticTextCentered 160, 14, "$MNU_CHOOSESKILL"
+	StaticTextCentered 160, 4, "$MNU_CHOOSESKILL"
 	Position 48, 43
 	
 	//Class "StaticIconListMenu"
