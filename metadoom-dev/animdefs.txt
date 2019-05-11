@@ -43,6 +43,8 @@ warp2 flat FWATER02
 warp2 flat FCANZ0
 warp2 flat CEYEZ0
 
+warp texture M_BGWARP 0.83445
+
 flat FWATER1
     pic 1 tics 1
     pic 1 tics 1
