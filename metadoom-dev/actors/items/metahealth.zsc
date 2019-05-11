@@ -91,13 +91,20 @@ class MetaMedikitNoItemSpawn : MetaMedikit
 	Default
 	{
 	+BLOCKASPLAYER
+	BounceType "Grenade";
+	BounceFactor 0.0;
+	WallBounceFactor 1.0;
 	}
 	
 	States
 	{
 	Spawn:
 		MEDI A 0;
-		MEDI A 0;
+		"####" "#" 0;
+		goto MoveAround;
+	MoveAround:
+		"####" "#" 35;
+		"####" "#" 0 A_Stop; // Prevents bouncing around wallsliding all day
 		goto Chill;
 	}
 }

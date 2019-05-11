@@ -307,10 +307,10 @@ class MetaQuadDamage : PowerupGiver
 		QUAD A 0;
 		QUAD A 0 
 		{	
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
 		}
 		goto Chill;
 	Chill:
