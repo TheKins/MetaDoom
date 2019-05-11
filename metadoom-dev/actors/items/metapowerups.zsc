@@ -1,0 +1,320 @@
+/*
+----------------------------
+MetaDoom
+class Definitions
+Powerup Items
+----------------------------
+*/
+
+// Radsuit
+class MetaRadSuit : PowerupGiver replaces RadSuit
+{
+	Default
+	{
+	Height 46;
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0;
+	Inventory.PickupMessage "$GOTSUIT";
+	powerup.type "PowerIronFeet";
+	Inventory.PickupSound "powerups/radsuit";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright;
+		Stop;
+	}
+}
+
+// Berserk
+class BerserkSpawner : Actor replaces Berserk
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_JumpIf(meta_retroberserk == 1, "Berserk");
+		TNT1 A 0 A_Jump(64, "Quad");
+		goto Berserk;
+	Berserk:
+		TNT1 A 0 A_SpawnItemEx("MetaBerserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	Quad:
+		TNT1 A 0 A_SpawnItemEx("MetaQuadDamage",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		stop;
+	}
+}
+
+class MetaBerserk : CustomInventory //replaces Berserk
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "$GOTBERSERK";
+	Inventory.PickupSound "powerups/berserk";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		PSTR A -1;
+		Stop;
+	Pickup:
+		TNT1 A 0 A_JumpIf(meta_retroberserk == 1, "ClassicPickup");
+		TNT1 A 0 A_TakeInventory("PowerWeaponLevel2", 999);
+		TNT1 A 0 A_GiveInventory("MetaBerserkTimer");
+		TNT1 A 0 A_GiveInventory("MetaBerserkFist");
+		TNT1 A 0 HealThing(100, 0);
+		TNT1 A 0 A_SelectWeapon("MetaBerserkFist");
+		Stop;
+	ClassicPickup:
+		TNT1 A 0 A_GiveInventory("PowerStrength");
+		TNT1 A 0 A_GiveInventory("MetaBerserkFist");
+		TNT1 A 0 HealThing(100, 0);
+		TNT1 A 0 A_SelectWeapon("MetaBerserkFist");
+		Stop;
+	}
+}
+
+// PowerStrength timers are fucked in ways I can't recall (I think they went in
+// reverse?) so I used an unused, otherwise effectless powerup type as a patsy.
+// Look, this was before ZScript and defining your own power types, okay?!?
+class MetaBerserkTimer : PowerupGiver
+{
+	Default
+	{
+	+INVENTORY.AUTOACTIVATE
+	powerup.type "PowerWeaponLevel2";
+	Powerup.Duration -60;
+	Powerup.Color "FF 00 00", 0.3;
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright;
+		Stop;
+	}
+}
+
+// LightAmp
+class MetaLightAmp : PowerupGiver replaces Infrared
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0;
+	powerup.type "PowerLightAmp";
+	Inventory.PickupMessage "$GOTVISOR";
+	Inventory.PickupSound "items/lightamp";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		PVIS A 6 Bright;
+		PVIS B 6;
+		Loop;
+	}
+}
+
+// Haste
+// Has a 25% chance of spawning a Hologram alongside it
+class MetaHasteSphere : PowerupGiver replaces BlurSphere
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	+FLOATBOB
+	Inventory.MaxAmount 0;
+	powerup.type "PowerSpeed";
+	Speed 1.5;
+	scale 0.75;
+	RenderStyle "Translucent";
+	Inventory.PickupMessage "$GOTHASTE";
+	Inventory.PickupSound "powerups/haste";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		HAST A 0;
+		HAST A 0 A_Jump(64, "SpawnInv");
+		goto Chill;
+	SpawnInv:
+		HAST A 0 A_Jump(256, "Hologram");
+		goto Chill;
+	Hologram:
+		HAST A 0 A_SpawnItemEx("HologramPickup",0,0,0,random(0,16),random(0,16),0,random(0,360));
+		goto Chill;
+	Chill:
+		HAST ABCD 2 Bright;
+		Loop;
+	}
+}
+
+// Invuln
+class MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	+FLOATBOB
+	scale 0.75;
+	Inventory.MaxAmount 0;
+	powerup.type "PowerInvulnerable";
+	//Powerup.Color InverseMap
+	Powerup.Color "00 00 FF", 0.3; //1.0, 1.0, 0.3
+	Inventory.PickupMessage "$GOTINVUL";
+	Inventory.PickupSound "powerups/invuln";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		PINV ABCDCB 6 Bright;
+		Loop;
+	}
+}
+
+// Soulsphere
+class MetaSoulsphere : Health replaces Soulsphere
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.FANCYPICKUPSOUND
+	+FLOATBOB
+	scale 0.75;
+	Inventory.Amount 100;
+	Inventory.MaxAmount 200;
+	Inventory.PickupMessage "$GOTSUPER";
+	Inventory.PickupSound "items/soulsphere";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright;
+		Loop;
+	}
+}
+
+// Megasphere
+class MetaMegasphere : CustomInventory replaces Megasphere
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	+FLOATBOB
+	scale 0.75;
+	Inventory.PickupMessage "$GOTMSPHERE";
+	Inventory.PickupSound "items/megasphere";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		MEGA ABCD 6 BRIGHT;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory("MetaBlueArmor", 1);
+		TNT1 A 0 A_GiveInventory("MegasphereHealth", 1);
+		Stop;
+	}
+}	
+
+class MetaAllmap : MapRevealer replaces Allmap
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.FANCYPICKUPSOUND
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0;
+	Inventory.PickupSound "items/automap";
+	Inventory.PickupMessage "$GOTMAP";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		PMAP ABCDCB 3 Bright;
+		Loop;
+	}
+}
+
+// Quad Damage
+class MetaQuadDamage : PowerupGiver
+{
+	Default
+	{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	+FLOATBOB
+	Inventory.MaxAmount 0;
+	powerup.type "PowerDamage";
+	Powerup.Duration -60;
+	damagefactor "normal", 4;
+	damagefactor "SoulCube", 1;
+	Powerup.Color "AF 00 FF", 0.3;
+	scale 0.75;
+	RenderStyle "Translucent";
+	Inventory.PickupMessage "$GOTQUAD";
+	Inventory.PickupSound "powerups/quad";
+	TeleFogSourceType "MetaItemFog";
+	TeleFogDestType "MetaItemFog";
+	}
+	
+	States
+	{
+	Spawn:
+		QUAD A 0;
+		QUAD A 0 
+		{	
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
+			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(0,16),random(0,16),0,random(0,360));
+		}
+		goto Chill;
+	Chill:
+		QUAD ABCDCB 6 Bright;
+		Loop;
+	}
+}

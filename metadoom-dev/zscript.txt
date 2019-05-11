@@ -43,6 +43,15 @@ version "3.4"
 #include "actors/weapons/metabfg.zsc"
  #include "actors/weapons/metaunmaker.zsc"
  #include "actors/weapons/metasoulcube.zsc"
+ 
+// Items
+#include "actors/items/metahealth.zsc"
+#include "actors/items/metaarmor.zsc"
+#include "actors/items/metaammo.zsc"
+#include "actors/items/metakeys.zsc"
+#include "actors/items/metapowerups.zsc"
+#include "actors/items/metaloot.zsc"
+#include "actors/items/metapinata.zsc"
 
 // Inventory
 #include "actors/inventory/teslarocket.zsc"
