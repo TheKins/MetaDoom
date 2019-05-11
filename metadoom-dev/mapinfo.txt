@@ -19,6 +19,7 @@ gameinfo
 				   "$QUITMSG22", "$QUITMSG23", "$QUITMSG24", "$QUITMSG25", "$QUITMSG26", "$QUITMSG27", "$QUITMSG28", "$QUITMSG29"
 	statscreen_single = "MetaDoomStatusScreen"
 	statusbarclass = "MetaDoomStatusBar"
+	messageboxclass = "MetaMessageBoxMenu"
 	AddEventHandlers = "MetaCodex_Event", "MetaOptionalProps", "MetaOptionalMonsters", "MetaDoom64Replacements"
 	weaponslot = 1, "MetaPistol", "MetaBerserkFist", "MetaCheatDetector"
 	weaponslot = 2, "MetaHolyWaterPistol", "MetaShotgun"

@@ -92,6 +92,8 @@ class MetaMessageBoxMenu : MessageBoxMenu
 	int bgpicked;
 	int bgnum;
 	TextureID bg;
+	TextureID border;
+	TextureID warpy;
 	
 	override void Drawer ()
 	{
@@ -102,22 +104,28 @@ class MetaMessageBoxMenu : MessageBoxMenu
 			
 			if (bgnum == 1)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG1", TexMan.Type_MiscPatch);
 			} else if (bgnum == 2)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG2", TexMan.Type_MiscPatch);
 			} else if (bgnum == 3)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT3", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG3", TexMan.Type_MiscPatch);
 			} else if (bgnum == 4)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT4", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG4", TexMan.Type_MiscPatch);
 			} 
 			
 			bgpicked = 1;
 		}
 		
-		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
+		border = TexMan.CheckForTexture("M_BGBRDR", TexMan.Type_MiscPatch);
+		warpy = TexMan.CheckForTexture("M_BGWARP", TexMan.Type_MiscPatch);
+		
+		screen.DrawTexture (warpy, true, 29, 34, DTA_320x200, true);
+		screen.DrawTexture (bg, true, 29, 34, DTA_320x200, true);
+		screen.DrawTexture (border, true, 0, 0, DTA_320x200, true);
+		
 		Super.Drawer();
 	}
 }
