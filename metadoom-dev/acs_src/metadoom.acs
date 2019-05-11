@@ -47,7 +47,7 @@ Script "MeleePunch" (void) net
 
 Script "MeleeHandleBerserk" ENTER
 {
-	If (!CheckInventory("PowerWeaponLevel2") && CheckInventory("MetaBerserkFist") && !GetCvar("meta_retroberserk"))
+	If (!CheckInventory("PowerMetaBerserkTimer") && CheckInventory("MetaBerserkFist") && !GetCvar("meta_retroberserk"))
 	{
 		TakeInventory("MetaBerserkFist", 999);
 	}
@@ -58,7 +58,7 @@ Script "MeleeHandleBerserk" ENTER
 Script "MeleeStripBerserkOnStart" ENTER
 {
 	TakeInventory("MetaBerserkFist", 999);
-	TakeInventory("PowerWeaponLevel2", 999);
+	TakeInventory("PowerMetaBerserkTimer", 999);
 	TakeInventory("PowerStrength", 999);
 }
 

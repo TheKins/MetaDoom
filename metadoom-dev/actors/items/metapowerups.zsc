@@ -68,7 +68,7 @@ class MetaBerserk : CustomInventory //replaces Berserk
 		Stop;
 	Pickup:
 		TNT1 A 0 A_JumpIf(meta_retroberserk == 1, "ClassicPickup");
-		TNT1 A 0 A_TakeInventory("PowerWeaponLevel2", 999);
+		TNT1 A 0 A_TakeInventory("PowerMetaBerserkTimer", 999);
 		TNT1 A 0 A_GiveInventory("MetaBerserkTimer");
 		TNT1 A 0 A_GiveInventory("MetaBerserkFist");
 		TNT1 A 0 HealThing(100, 0);
@@ -91,7 +91,7 @@ class MetaBerserkTimer : PowerupGiver
 	Default
 	{
 	+INVENTORY.AUTOACTIVATE
-	powerup.type "PowerWeaponLevel2";
+	powerup.type "PowerMetaBerserkTimer";
 	Powerup.Duration -60;
 	Powerup.Color "FF 00 00", 0.3;
 	TeleFogSourceType "MetaItemFog";
@@ -104,6 +104,30 @@ class MetaBerserkTimer : PowerupGiver
 		SUIT A -1 Bright;
 		Stop;
 	}
+}
+
+class PowerMetaBerserkTimer : Powerup
+{
+	Default
+	{
+		Powerup.Duration -40;
+		+INVENTORY.NOTELEPORTFREEZE
+	}
+	
+	override void InitEffect ()
+	{
+		
+		Super.InitEffect();
+
+		let player = Owner.player;
+	}
+
+	override void EndEffect ()
+	{
+		Super.EndEffect();
+		if (Owner == null) return;
+		let player = Owner.player;
+	}	
 }
 
 // LightAmp
