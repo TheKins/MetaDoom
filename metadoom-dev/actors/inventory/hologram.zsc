@@ -1,4 +1,11 @@
-// Holograms
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Holograms
+----------------------------
+*/
+
 class HologramPickup : CustomInventory
 {
 	Default

@@ -1,4 +1,11 @@
-// The Artifact!!!
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+The Artifact!!!
+----------------------------
+*/
+
 class ArtifactSoundToken : _Boolean {}
 
 class ArtifactPickup : CustomInventory

@@ -1,4 +1,11 @@
-// Kinetic Mine
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Kinetic Mine
+----------------------------
+*/
+
 class MineDetatcherToken : _Boolean {}
 
 class KineticMinePickup : CustomInventory

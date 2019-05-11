@@ -1,4 +1,11 @@
-// Tesla Rockets
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Tesla Rocket
+----------------------------
+*/
+
 class TeslaRocketPickup : CustomInventory
 {
 	Default

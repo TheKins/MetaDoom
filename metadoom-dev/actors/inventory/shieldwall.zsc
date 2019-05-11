@@ -1,4 +1,11 @@
-// Shield Wall
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Shield Wall
+----------------------------
+*/
+
 class ShieldWallPickup : CustomInventory
 {
 	Default
