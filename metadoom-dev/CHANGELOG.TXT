@@ -30,6 +30,11 @@ Weapon Changes:
   Demon Keys, instead of reusing the Rocket Launcher's altfire sound.
 - The blades of the Soulcube have been given some much needed shading.
 
+Item Changes:
+- ZScript porting, various bugfixes and improvements far and wide.
+- Adjusted Hologram projectile trajectory so it lands further away.
+- Changed how Medikits are spawned by Quad Damage.
+
 UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
