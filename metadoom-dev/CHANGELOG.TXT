@@ -36,6 +36,7 @@ Item Changes:
 - Changed how Medikits are spawned by Quad Damage.
 
 UI Changes:
+- Overhauled ListMenus and MessageBoxMenus with a nice new look!
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
 Prop Changes:
