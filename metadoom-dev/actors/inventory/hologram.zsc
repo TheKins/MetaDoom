@@ -70,7 +70,7 @@ class HologramProj : Actor
 	+CANBOUNCEWATER
 	Radius 8;
 	Height 8;
-	Speed 5;
+	Speed 10;
 	Damage 0;
 	PROJECTILE;
 	+RANDOMIZE
@@ -83,13 +83,14 @@ class HologramProj : Actor
 	-BOUNCEONFLOORS
 	scale 0.3;
 	ReactionTime 60;	//Just over five seconds
+	gravity 0.75;
 	}
 	
 	States
 	{
 	Spawn:
 		TNT1 A 0;
-		TNT1 A 0 ThrustThingZ(0,32,0,1);
+		TNT1 A 0 ThrustThingZ(0,24,0,1);
 		TNT1 A 0 A_PlaySound("weapons/grenadethrow");
 		goto Flying;
 	Flying:
