@@ -24,35 +24,18 @@ class MetaHealthPinata : Health
 	RenderStyle "Add";
 	}
 	
+	int lifespan;
+	
 	States
 	{
 	Spawn:
+		PINH A 0;
+		PINH A 0 { lifespan = 0; }
+	Sit:
 		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
-		PINH A 4 bright;
-		PINH A 4;
+		PINH A 4 { lifespan++; }
+		PINH A 0 A_JumpIf(lifespan >= 12, "Fade");
+		loop;
 	Fade:
 		PINH A 4 bright A_FadeOut(0.2);
 		PINH A 4 A_FadeOut(0.2);
