@@ -54,12 +54,18 @@ version "3.4"
 #include "actors/items/metapinata.zsc"
 
 // Inventory
+#include "actors/inventory/core.zsc"
+#include "actors/inventory/handgrenade.zsc"
 #include "actors/inventory/teslarocket.zsc"
 #include "actors/inventory/shieldwall.zsc"
+#include "actors/inventory/siphongrenade.zsc"
+#include "actors/inventory/hologram.zsc"
 #include "actors/inventory/kineticmine.zsc"
 #include "actors/inventory/theartifact.zsc"
-
+#include "actors/inventory/dogcollar.zsc"
  #include "actors/weapons/metadoggun.zsc"
+ 
+#include "actors/inventory/cheats.zsc"
 
 // Monsters
 #include "actors/monsters/spawners.zsc"

@@ -1,0 +1,36 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Cheat Items
+----------------------------
+*/
+
+// NO THIS IS AGAINST MY VISION WEASEL DELETE THIS!!!
+
+class DemonKeyCheat : CustomInventory
+{
+	Default
+	{
+	inventory.pickupmessage "Demon Key Cheat";
+	Tag "Spawn a Demon Key!";
+	inventory.icon "INVCHT1";
+	inventory.pickupsound "inventory/grenade/get";
+	inventory.amount 3;
+	inventory.maxamount 3;
+	+INVENTORY.INVBAR
+	scale 1;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		stop;
+	Use:
+		TNT1 A 0;
+		TNT1 A 0 A_SpawnItemEx("DemonKeySpawner",64);
+		stop;
+	}
+}
