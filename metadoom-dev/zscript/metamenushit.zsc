@@ -66,7 +66,7 @@ class MetaFatOptionMenu : OptionMenu
 			
 			if (bgnum == 1)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BGFAT1", TexMan.Type_MiscPatch);
 			} else if (bgnum == 2)
 			{
 				bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
