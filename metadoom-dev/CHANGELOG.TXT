@@ -23,9 +23,12 @@ Weapon Changes:
     themselves now look a little less buggy.
   - Fixed bug where exiting a map while having sprayed themselves would result
     in them having the self-extinguished buff forever.
+- Improvements and updates to the Gauss Cannon:
+  - Fixed a one-frame visual bug when deselecting the Gauss Cannon while zoomed.
+  - Reduced the amount of time between firing the and being able to scope/unscope.
+  - Updated scope artwork.
 - The Rocket Launcher alt-fire has been updated to be actually useful - manually
   detonating your rocket now sprays ripping fragments for additional damage.
-- Fixed a one-frame visual bug when deselecting the Gauss Cannon while zoomed.
 - Added a new sound to when you try and use the Unmaker's altfire without any
   Demon Keys, instead of reusing the Rocket Launcher's altfire sound.
 - The blades of the Soulcube have been given some much needed shading.
