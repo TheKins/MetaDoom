@@ -49,7 +49,7 @@ Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
 - General re-sorting and spring cleaning of code and assets all around.
 - Added a new cheat!
-- Updated the credits image.
+- Resorted the credits by alphabetical order, and updated the credits image.
 
 v5.3 "Klave" (08/04/19)
 =======================
