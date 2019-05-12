@@ -112,7 +112,7 @@ class MetaGaussCannon : MetaDoomWeapon
 		GAUS B 1 Offset(0,34);
 		GAUS C 1 Offset(0,33);
 		GAUS A 1 Offset(0,32);
-		GAUS BCABCABCABCABC 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
+		GAUS BCABCABCABCABC 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY);
 		Goto Ready;
 	Flash:
 		TNT1 I 4 Bright A_Light1;
@@ -158,7 +158,7 @@ class MetaGaussCannon : MetaDoomWeapon
 		GAUS Y 1 bright A_SetPitch(pitch+1);
 		GAUS Y 1 A_SetPitch(pitch+1);
 		GAUS Y 1 A_SetPitch(pitch+1) ;
-		GAUS Y 19 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE|WRF_NOBOB);
+		GAUS Y 19 A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
 		Goto Ready;
 	}
 }
