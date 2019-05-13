@@ -18,7 +18,7 @@ DEFAULTLISTMENU
 
 LISTMENU "MainMenu"
 {
-	StaticPatch 103, 2, "M_DOOM"
+	StaticPatch 100, 2, "M_DOOM"
 	
 	Font "TinyBaby", MetaBlack
 	StaticText 1, 214, "$VERSION"
