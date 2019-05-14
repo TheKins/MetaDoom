@@ -17,17 +17,12 @@ class MetaDeadCacodemon : Actor //replaces DeadCacodemon
 		HEAD L 0;
 		HEAD L 0
 		{
-			A_SpawnItemEx("BloodSplatBlue_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatBlue_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatBlue_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplatBlue_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmallBlue_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		HEAD L 0 A_Jump(128,2);
 		HEAD L 0 { bSPRITEFLIP = 1; }
@@ -45,17 +40,12 @@ class MetaDeadPinky : Actor //replaces DeadDemon
 		SARG N 0;
 		SARG N 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		SARG N 0 A_Jump(128,2);
 		SARG N 0 { bSPRITEFLIP = 1; }
@@ -73,17 +63,12 @@ class MetaDeadDoomImp : Actor //replaces DeadDoomImp
 		TROO M 0;
 		TROO M 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		TROO M 0 A_Jump(128,2);
 		TROO M 0 { bSPRITEFLIP = 1; }
@@ -101,17 +86,12 @@ class MetaDeadMarine : Actor //replaces DeadMarine
 		PLAY N 0;
 		PLAY N 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		PLAY N 0 A_Jump(128,2);
 		PLAY N 0 { bSPRITEFLIP = 1; }
@@ -148,17 +128,12 @@ class MetaDeadShotgunGuy : Actor //replaces DeadShotgunGuy
 		SPOS L 0;
 		SPOS L 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		SPOS L 0 A_Jump(128,2);
 		SPOS L 0 { bSPRITEFLIP = 1; }
@@ -176,17 +151,12 @@ class MetaDeadZombieMan : Actor //replaces DeadZombieMan
 		POSS L 0;
 		POSS L 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		POSS L 0 A_Jump(128,2);
 		POSS L 0 { bSPRITEFLIP = 1; }
@@ -204,17 +174,12 @@ class MetaGibbedMarine : Actor // replaces GibbedMarine
 		PLAY W 0;
 		PLAY W 0
 		{
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
-			
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
-			A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("BloodSplat_Permanent",random(-8,8),random(-8,8),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-32,32),random(-32,32),0,0,0,0,random(0,360));
+				A_SpawnItemEx("BloodSplatSmall_Permanent",random(-64,64),random(-64,64),0,0,0,0,random(0,360));
+			}
 		}
 		PLAY W 0 A_Jump(128,"End");
 		PLAY W 0 { bSPRITEFLIP = 1; }
