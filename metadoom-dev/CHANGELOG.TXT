@@ -44,6 +44,7 @@ UI Changes:
 - Updated Nash's tooltips system to be better placed and more easily readable.
 
 Prop Changes:
+- ZScript porting, various bugfixes and improvements far and wide.
 - Fixed a typo that would result in glow effects on light-source props being
   displaced on the very first tic that they're spawned.
 - Fixed a visual oddity where the "permanent" blood stains spawned by certain
