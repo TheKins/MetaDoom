@@ -1,0 +1,1021 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Hell Props
+----------------------------
+*/
+
+class MetaFloatingSkull : Actor // replaces FloatingSkull
+{
+	Default
+	{
+	Radius 16;
+	Height 26;
+	ProjectilePassHeight -16;
+	+SOLID
+	+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		FSKU A 0;
+		FSKU A 0 A_PlaySound("props/floatingskull", CHAN_BODY, 1.0, 1);
+		FSKU ABCB 6 Bright;
+		Loop;
+	}
+}
+
+class MetaHeartColumn : Actor // replaces HeartColumn
+{
+	Default
+	{
+	Radius 16;
+	Height 40;
+	ProjectilePassHeight -16;
+	+SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		COL5 A 24 A_PlaySound("props/beatingheart");
+		COL5 B 24 A_PlaySound("props/beatingheart");
+		Loop;
+	}
+}
+
+// tall torches
+class MetaRedTorch : Actor // replaces RedTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 68;
+	DeathHeight 68;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		TRED A 0;
+		TRED A 0 A_PlaySound("props/torch/large", CHAN_BODY, 1.0, 1);
+		TRED A 0 A_SpawnItemEx("MetaRedTorch_Glow",0,0,60,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		TRED ABCD 4 Bright;
+		Loop;
+	Death:
+		TNON A 0 A_RemoveChildren(true,RMVF_MISC);
+		TNON A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		TNON AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,60);
+		TNON A -1;
+		stop;
+	
+	}
+}
+
+class MetaRedTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	+NOGRAVITY
+	-SOLID
+	xscale 0.5;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL A 1 bright A_Warp(AAPTR_MASTER,0,0,60,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+class MetaBlueTorch : Actor // replaces BlueTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 68;
+	DeathHeight 68;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		TBLU A 0;
+		TBLU A 0 A_PlaySound("props/torch/large", CHAN_BODY, 1.0, 1);
+		TBLU A 0 A_SpawnItemEx("MetaBlueTorch_Glow",0,0,60,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		TBLU ABCD 4 Bright;
+		Loop;
+	Death:
+		TNON A 0 A_RemoveChildren(true,RMVF_MISC);
+		TNON A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		TNON AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,60);
+		TNON A -1;
+		stop;
+	}
+}
+
+class MetaBlueTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	xscale 0.5;
+	+NOGRAVITY
+	-SOLID
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL B 1 bright A_Warp(AAPTR_MASTER,0,0,60,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+class MetaGreenTorch : Actor // replaces GreenTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 68;
+	DeathHeight 68;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		TGRN A 0;
+		TGRN A 0 A_PlaySound("props/torch/large", CHAN_BODY, 1.0, 1);
+		TGRN A 0 A_SpawnItemEx("MetaGreenTorch_Glow",0,0,60,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		TGRN ABCD 4 Bright;
+		Loop;
+	Death:
+		TNON A 0 A_RemoveChildren(true,RMVF_MISC);
+		TNON A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		TNON AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,60);
+		TNON A -1;
+		stop;
+	}
+}
+
+class MetaGreenTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	xscale 0.5;
+	+NOGRAVITY
+	-SOLID
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL C 1 bright A_Warp(AAPTR_MASTER,0,0,60,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+// babby torches
+class MetaShortRedTorch : Actor // replaces ShortRedTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 37;
+	DeathHeight 37;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		SMRT A 0;
+		SMRT A 0 A_PlaySound("props/torch/small", CHAN_BODY, 1.0, 1);
+		SMRT A 0 A_SpawnItemEx("MetaShortRedTorch_Glow",0,0,35,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		SMRT ABCD 4 Bright;
+		Loop;
+	Death:
+		SMNT A 0 A_RemoveChildren(true,RMVF_MISC);
+		SMNT A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		SMNT AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+		SMNT A -1;
+		stop;
+	}
+}
+
+class MetaShortRedTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	xscale 0.4;
+	yscale 0.8;
+	+NOGRAVITY
+	-SOLID
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL D 1 bright A_Warp(AAPTR_MASTER,0,0,35,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+class MetaShortBlueTorch : Actor // replaces ShortBlueTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 37;
+	DeathHeight 37;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		SMBT A 0;
+		SMBT A 0 A_PlaySound("props/torch/small", CHAN_BODY, 1.0, 1);
+		SMBT A 0 A_SpawnItemEx("MetaShortBlueTorch_Glow",0,0,35,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		SMBT ABCD 4 Bright;
+		Loop;
+	Death:
+		SMNT A 0 A_RemoveChildren(true,RMVF_MISC);
+		SMNT A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		SMNT AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+		SMNT A -1;
+		stop;
+	}
+}
+
+class MetaShortBlueTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	xscale 0.4;
+	yscale 0.8;
+	+NOGRAVITY
+	-SOLID;
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL E 1 bright A_Warp(AAPTR_MASTER,0,0,35,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+class MetaShortGreenTorch : Actor // replaces ShortGreenTorch
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 37;
+	DeathHeight 37;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 255;
+	damagefactor "FireExtinguisher", 255;
+	damagefactor "Normal", 0;
+	}
+	
+	States
+	{
+	Spawn:
+		SMGT A 0;
+		SMGT A 0 A_PlaySound("props/torch/small", CHAN_BODY, 1.0, 1);
+		SMGT A 0 A_SpawnItemEx("MetaShortGreenTorch_Glow",0,0,35,0,0,0,0,SXF_SETMASTER);
+		goto Idle;
+	Idle:
+		SMGT ABCD 4 Bright;
+		Loop;
+	Death:
+		SMNT A 0 A_RemoveChildren(true,RMVF_MISC);
+		SMNT A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		SMNT AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+		SMNT A -1;
+		stop;
+	}
+}
+
+class MetaShortGreenTorch_Glow : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	xscale 0.4;
+	yscale 0.8;
+	+NOGRAVITY
+	-SOLID
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+		goto Idle;
+	Idle:
+		TOFL F 1 bright A_Warp(AAPTR_MASTER,0,0,35,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+		loop;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+}
+
+// treeses
+
+class MetaBigTree : Actor // replaces BigTree
+{
+	Default
+	{
+	Radius 32;
+	Height 108;
+	ProjectilePassHeight -16;
+	health 50;
+	DeathHeight 108;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "Fist", 0;
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	painchance 255;
+	}
+	
+	States
+	{
+	Spawn:
+		TRE2 A -1;
+		Stop;
+	Pain:
+		TRE2 A 0;
+		TRE2 A 0
+		{
+			A_PlaySound("props/wood/pain");
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+		}
+		goto Spawn;	
+	Death:
+		TRE2 B 0 A_RemoveChildren(true,RMVF_MISC);
+		TRE2 B 0 A_PlaySound("props/wood/die1");
+		TRE2 B 1 
+		{
+			A_SpawnProjectile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibBigWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,108), 2, random(0,360), 2, 6);
+		}
+		TRE2 B -1;
+		stop;
+	}
+}
+
+class MetaGibWood : Actor
+{
+	Default
+	{
+	+DOOMBOUNCE
+	PROJECTILE;
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 1;
+	height 1;
+	Damage 0;
+	bouncefactor 0.5;
+	SeeSound "props/wood/gib";
+	gravity 0.5;
+	Speed 5;
+	}
+	
+	States
+	{
+	Spawn:
+		WOOD A 0;
+		WOOD A 0 A_SetScale(frandom(0.5, 2.0));
+		WOOD ABCD 0 A_Jump(128, "Setup");
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
+	Bounce.Floor:
+	Bounce.Wall:
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") ;
+		goto See;
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Death:
+		"####" # 0 
+		{
+			A_ChangeLinkFlags(true);
+			bFLATSPRITE = 1;
+		}
+		"####" # 0 A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+		"####" # -1;
+		Stop;
+    }
+}
+
+class MetaGibBigWood : Actor // and veiny
+{
+	Default
+	{
+	+DOOMBOUNCE
+	PROJECTILE;
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 16;
+	height 16;
+	Damage 0;
+	bouncefactor 0.5;
+	SeeSound "props/wood/gib";
+	gravity 0.5;
+	Speed 5;
+	}
+	
+	States
+	{
+	Spawn:
+		WOOD A 0;
+		WOOD A 0 A_SetScale(frandom(0.75, 2.0));
+		WOOD EFG 0 A_Jump(128, "Setup");
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
+		"####" # 0 A_SetRoll(random(0,360));
+	Bounce.Floor:
+	Bounce.Wall:
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Death:
+		"####" # 0 A_ChangeLinkFlags(true);
+		"####" # -1;
+		Stop;
+    }
+}
+
+class MetaTorchTree : Actor // replaces TorchTree
+{
+	Default
+	{
+	Radius 16;
+	Height 56;
+	health 10;
+	DeathHeight 56;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "Fist", 0;
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	painchance 255;
+	+SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TRE1 A -1;
+		Stop;
+	Pain:
+		TRE1 A 0;
+		TRE1 A 0
+		{
+			A_PlaySound("props/wood/pain");
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+		}
+		goto Spawn;
+	Death:
+		TRE1 B 0 A_RemoveChildren(true,RMVF_MISC);
+		TRE1 B 0 A_PlaySound("props/wood/die1");
+		TRE1 B 1 
+		{
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibWood", random(32,56), 2, random(0,360), 2, 6);
+		}
+		TRE1 B -1;
+		stop;
+	}
+}
+
+// candles
+class MetaCandelabra : Actor // replaces Candelabra
+{
+	Default
+	{
+	health 5;
+	Radius 16;
+	Height 60;
+	DeathHeight 60;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+NOBLOOD
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "Fist", 0;
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	}
+	
+	States
+	{
+	Spawn:
+		CBRA A 0;
+		CBRA A 0 A_PlaySound("props/candles/candelabra", CHAN_BODY, 1.0, 1);
+		goto Idle;
+	Idle:
+		CBRA A -1 Bright;
+		Loop;
+	Death:
+		CBRA B 0 A_RemoveChildren(true,RMVF_MISC);
+		CBRA B 0 A_PlaySound("props/techlamp/break");
+		CBRA B 1 
+		{
+			A_SpawnProjectile ("MetaGibGlass", 55, 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibGlass", 55, 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibGlass", 55, 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibGlass", 55, 2, random(0,360), 2, 6);
+			
+			A_SpawnProjectile ("MetaGibCandle", 55, 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibCandle", 55, 2, random(0,360), 2, 6);
+			A_SpawnProjectile ("MetaGibCandle", 55, 2, random(0,360), 2, 6);
+		}
+		CBRA B -1;
+		stop;
+	}
+}
+
+class MetaGibCandle : Actor
+{
+	Default
+	{
+	+DOOMBOUNCE
+	PROJECTILE;
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 2;
+	Damage 0;
+	bouncefactor 0.5;
+	SeeSound "barrel/gib";
+	gravity 0.5;
+	Speed 5;
+	}
+	
+	States
+	{
+	Spawn:
+		CAND B 0;
+		CAND B 0;
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
+		"####" # 0 A_SetRoll(random(0,360));
+	Bounce.Floor:
+	Bounce.Wall:
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Death:
+		"####" # 0 A_ChangeLinkFlags(true);
+		"####" # -1;
+		Stop;
+    }
+}
+
+class MetaCandlestick : Actor // replaces Candlestick
+{
+	Default
+	{
+	Radius 20;
+	Height 14;
+	ProjectilePassHeight -16;
+	}
+	
+	States
+	{
+	Spawn:
+		CAND A 0;
+		CAND A 0 A_PlaySound("props/candles/candlestick", CHAN_BODY, 1.0, 1);
+		CAND A -1 Bright;
+		Stop;
+	}
+}
+
+class MetaHeadCandles : Actor // replaces HeadCandles
+{
+	Default
+	{
+	Radius 16;
+	Height 42;
+	ProjectilePassHeight -16;
+	+SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		POL3 A 0;
+		POL3 A 0 A_PlaySound("props/candles/candelabra", CHAN_BODY, 1.0, 1);
+	Idle:
+		POL3 AB 6 Bright;
+		Loop;
+	}
+}
+
+class MetaEvilEye : Actor // replaces EvilEye
+{
+	Default
+	{
+	Radius 16;
+	Height 54;
+	ProjectilePassHeight -16;
+  	health 5;
+	DeathHeight 54;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	}
+	
+	States
+	{
+	Spawn:
+		CEYE A 0;
+		CEYE A 0 A_PlaySound("props/floatingskull", CHAN_BODY, 1.0, 1);
+		CEYE A 0 A_PlaySound("props/candles/candlestick", CHAN_VOICE, 1.0, 1);
+		goto Idle;
+	Idle:
+		CEYE A 0 A_SpawnItem("MetaEvilEyeRadiate",0,36);
+		CEYE ABCB 6 Bright;
+		Loop;
+	Death:
+		CEYE E 0;
+		CEYE E 0 A_PlaySound("props/evileye/die");
+		CEYE E 0
+		{
+			A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+			A_SpawnItem("MetaEvilEyeDed",0,32);
+			bNOBLOOD = 1;
+		}
+	DeathLooper:
+		CEYE EFGF 6 Bright;
+		loop;
+	}
+}
+
+class MetaEvilEyeRadiate : Actor
+{
+	Default
+	{
+	radius 10;
+	height 10;
+	+NOCLIP
+	+NOGRAVITY
+	+NOBLOCKMAP
+	Renderstyle "Add";
+	}
+	
+	states
+	{
+	Spawn:
+		CEYE D 0;
+		CEYE D 0;
+	DoTheThing:
+		CEYE D 1 BRIGHT
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scale.x + 0.01);
+		}
+		loop;
+	}
+}
+
+class MetaEvilEyeDed : Actor
+{
+	Default
+	{
+	Renderstyle "Add";
+	+NOGRAVITY
+	-SOLID
+	}
+	
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		CEYE Z -1 bright;
+		loop;
+	}
+}
+
+class MetaHeadOnAStick : Actor // replaces HeadOnAStick
+{
+	Default
+	{
+	Radius 16;
+	Height 56;
+  	health 5;
+	DeathHeight 56;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	}
+	
+	States
+	{
+	Spawn:
+		POL4 A -1;
+		Stop;
+	Death:
+		POL4 B 0;
+		POL4 B 0 A_PlaySound("props/evileye/die");
+		POL4 B 0
+		{
+			A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+			bNOBLOOD = 1;
+		}
+		POL4 B -1;
+		stop;
+	}
+}
+
+class MetaHeadsOnAStick : Actor // replaces HeadsOnAStick
+{
+	Default
+	{
+	Radius 16;
+	Height 64;
+  	health 5;
+	DeathHeight 64;
+	ProjectilePassHeight -16;
+	+SOLID
+	+NOTAUTOAIMED
+	+DONTTHRUST
+	+SHOOTABLE
+	+DONTGIB
+	+RANDOMIZE
+	+NOICEDEATH
+	damagefactor "HolyWater", 0;
+	damagefactor "FireExtinguisher", 0;
+	damagefactor "LightningStun", 0;
+	damagefactor "Axe", 50;
+	}
+	
+	States
+	{
+	Spawn:
+		POL2 A -1;
+		Stop;
+	Death:
+		POL4 B 0;
+		POL4 B 0 A_PlaySound("props/evileye/die");
+		POL4 B 0
+		{
+			A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2, random (0, 160));
+			A_SpawnItem("BloodSplat");
+			bNOBLOOD = 1;
+		}
+		POL4 B -1;
+		stop;
+	}
+}

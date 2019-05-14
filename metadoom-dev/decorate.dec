@@ -94,10 +94,10 @@ Index
 //#include "actors/blood_perm.dec"
 
 // Props
-#include "actors/props/tech.dec"
-#include "actors/props/hell.dec"
-#include "actors/props/gore.dec"
-#include "actors/props/corpses.dec"
+//#include "actors/props/tech.dec"
+//#include "actors/props/hell.dec"
+//#include "actors/props/gore.dec"
+//#include "actors/props/corpses.dec"
 
 // Actors
 #include "actors/monsters/wolfss.dec"
