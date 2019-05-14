@@ -148,7 +148,7 @@ class GreenBlood : XBlood
 {
 	Default
 	{
-	translation "16:47=112:127","185:191=11:12";
+	translation "16:47=112:127","185:191=11:12","175:191=112:127";
 	decal "greenbloodsplat";
 	}
 	states
