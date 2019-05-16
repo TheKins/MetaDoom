@@ -45,7 +45,7 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A -1;
 		loop;
 	MeleePunch:
-		PNCH A 0 A_JumpIfInventory("PowerWeaponLevel2", 1, "MeleePunchBerserk");
+		PNCH A 0 A_JumpIfInventory("PowerMetaBerserkTimer", 1, "MeleePunchBerserk");
 		PNCH A 0 A_JumpIfInventory("PowerStrength", 1, "MeleePunchBerserk");
 		PNCH A 1 
 		{
