@@ -1,0 +1,293 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Zombieman
+----------------------------
+*/
+
+// The original cannon fodder, de-hitscan-ized.
+
+class MetaZombieMan : MonsterCore
+{
+	Default
+	{
+	Health 20;
+	Radius 20;
+	Height 56;
+	Speed 8;
+	PainChance 200;
+	Monster;
+	+FLOORCLIP
+	+DOHARMSPECIES
+	SeeSound "monsters/zombieman/see";
+	AttackSound "monsters/zombieman/fire";
+	PainSound "monsters/zombieman/pain";
+	DeathSound "monsters/zombieman/die";
+	ActiveSound "monsters/zombieman/idle";
+	Obituary "$OB_ZOMBIE";
+	DropItem "Clip";
+	damagefactor "HolyWater", 0.25;
+	painchance "HolyWater", 255;
+	damagefactor "Axe", 50;
+	}
+	
+	States
+	{
+	Spawn:
+		POSS AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		POSS AABBCCDD 4 A_Chase;
+		Loop;
+	Scurred:
+		POSS A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		POSS A 0 A_GiveInventory("ScurredCounter", 1);
+		POSS A 2 A_Chase(null, null);
+		POSS A 2 A_Chase(null, null);
+		POSS A 0 A_SpawnItem("HolySweat",0,54);
+		POSS B 2 A_Chase(null, null);
+		POSS B 2 A_Chase(null, null);
+		POSS C 2 A_Chase(null, null);
+		POSS C 2 A_Chase(null, null);
+		POSS C 0 A_SpawnItem("HolySweat",0,54);
+		POSS D 2 A_Chase(null, null);
+		POSS D 2 A_Chase(null, null);
+		POSS D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		POSS D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Missile:
+		POSS E 10 A_FaceTarget;
+		POSS E 0 A_PlaySound ("monsters/zombieman/fire");
+		POSS F 8 A_SpawnProjectile("MonsterZombiemanTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+		POSS E 8;
+		Goto See;
+	Pain:
+		POSS G 3;
+		POSS G 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		POSS G 3 A_Pain;
+		Goto See;
+	Punched:
+		POSS G 3;
+		POSS G 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		POSS G 12 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		POSS G 3;
+		POSS G 3 A_Pain;
+		Goto Scurred;
+	Death:
+		POSS H 0 A_Jump (128, 2);
+		POSS H 0 { bSPRITEFLIP = 1; } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		POSS H 5 A_GiveToTarget("ScoreItem", 100);
+		POSS I 5 A_Scream;
+		POSS J 5 A_NoBlocking;
+		POSS K 5;
+		POSS L -1 A_PlaySound("bodyfalls/medium");
+		Stop;
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		POSS M 5 A_GiveToTarget("ScoreItem", 100);
+		"####" # 0 A_Fall;
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	Raise:
+		POSS K 5 { bSPRITEFLIP = 0; }
+		POSS JIH 5;
+		Goto See;
+	}
+}
+
+// The Hell Razer from Doom 4! This guy uses an annoying charge-up beam and has
+// more health. He's also really loud and annoying.
+
+class MetaHellRazer : MonsterCore
+{
+	Default
+	{
+	Health 80;
+	Radius 20;
+	Height 56;
+	Speed 8;
+	PainChance 200;
+	Monster;
+	+FLOORCLIP
+	+DOHARMSPECIES
+	SeeSound "monsters/hellrazer/see";
+	PainSound "monsters/hellrazer/pain";
+	DeathSound "monsters/hellrazer/die";
+	ActiveSound "monsters/hellrazer/idle";
+	Obituary "$OB_HELLRAZER";
+	DropItem "Clip";
+	damagefactor "HolyWater", 0.25;
+	painchance "HolyWater", 255;
+	}
+	
+	States
+	{
+	Spawn:
+		HRAZ AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		HRAZ AABBCCDD 4 A_Chase;
+		Loop;
+	Scurred:
+		HRAZ A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		HRAZ A 0 A_GiveInventory("ScurredCounter", 1);
+		HRAZ A 2 A_Chase(null, null);
+		HRAZ A 2 A_Chase(null, null);
+		HRAZ A 0 A_SpawnItem("HolySweat",0,54);
+		HRAZ B 2 A_Chase(null, null);
+		HRAZ B 2 A_Chase(null, null);
+		HRAZ C 2 A_Chase(null, null);
+		HRAZ C 2 A_Chase(null, null);
+		HRAZ C 0 A_SpawnItem("HolySweat",0,54);
+		HRAZ D 2 A_Chase(null, null);
+		HRAZ D 2 A_Chase(null, null);
+		HRAZ D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		HRAZ D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Missile:
+		HRAZ A 4 A_FaceTarget;
+		HRAZ E 0 A_PlaySound("monsters/hellrazer/charge", CHAN_WEAPON);
+		HRAZ EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 1
+		{
+			A_FaceTarget();
+			A_CustomRailgun ((0), 0, "", "Red", RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 0, "NoBloodPuff", 0, 0, 0, 8, 0.5, 1);
+		}
+		HRAZ E 0 A_PlaySound("monsters/hellrazer/fire", CHAN_WEAPON);
+		HRAZ EEEEEEEEEEEEEEE 1 bright
+		{
+			A_CustomRailgun ((1), 0, "Red", "", RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 0, "MetaBulletPuff", 0, 0, 0, 8, 3, 1, "HellRazerRailCore");
+		}
+		HRAZ E 8;
+		Goto See;
+	Pain:
+		HRAZ F 3;
+		HRAZ F 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		HRAZ F 3 A_Pain;
+		Goto See;
+	Punched:
+		HRAZ F 3;
+		HRAZ F 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		HRAZ F 12 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		HRAZ F 3;
+		HRAZ F 3 A_Pain;
+		Goto Scurred;
+	Death:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		HRAZ G 0 A_Jump (128, "Death2");
+		HRAZ H 5 A_GiveToTarget("ScoreItem", 500);
+		HRAZ I 5 A_Scream;
+		HRAZ J 5 A_NoBlocking;
+		HRAZ K -1 A_PlaySound("bodyfalls/medium");
+		Stop;
+	Death2:
+		HRAZ L 5
+		{
+			A_GiveToTarget("ScoreItem", 500);
+			A_SpawnItemEx ("MetaHellRazerArmGib", 0, 0, 32, random(0,5), random(0,5), random(4,10), random(0,360), 128, 0);
+		}
+		HRAZ M 5 A_Scream;
+		HRAZ N 5 A_NoBlocking;
+		HRAZ O 5;
+		HRAZ P -1 A_PlaySound("bodyfalls/medium");
+		Stop;
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		HRAZ L 5 A_GiveToTarget("ScoreItem", 500);
+		"####" # 0 A_Fall;
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	Raise:
+		HRAZ J 5;
+		HRAZ IHG 5;
+		Goto See;
+	}
+}
+
+// Thanks to the D4D Dudes
+class NoBloodPuff : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	+BLOODLESSIMPACT
+	+PAINLESS
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 3;
+		Stop;
+	}
+}
+
+// Thanks to the D4D Dudes
+class HellRazerRailCore : Actor
+{
+	Default
+	{
+	+NOINTERACTION
+	renderstyle "Add";
+	}
+	
+	States
+	{
+	Spawn:
+		HRSH A 0;
+		HRSH A 1 A_FadeOut(0.5);
+		wait;
+	}
+}
+
+class MetaHellRazerArmGib : MetaGib1
+{
+	Default
+	{
+		SeeSound "monsters/hellrazer/armgib";
+	}
+	
+	States
+	{
+	Spawn:
+		HRAG A 0;
+		goto Setup;
+    }
+}
