@@ -9,6 +9,7 @@ Player Class
 // counters for death states
 // these tell the metadoom weapon how you done fucked up
 class DeathStateFallingDown : _Boolean {}
+class DeathStateSpeedyDrop : _Boolean {}
 class DeathStateGibbed : _Boolean {}
 
 // counters for acs scripts
@@ -266,7 +267,12 @@ class MetaDoomPlayer : PlayerPawn
 			player.deltaviewheight = 0;
 			if (player.viewheight > 6)
 			{
-				player.viewheight -= 1;
+				CheckInventory("DeathStateSpeedyDrop", 1)
+				{
+					ifplayer.viewheight -= 2;
+				} else {
+					ifplayer.viewheight -= 1;
+				}
 			}
 			if (player.viewheight < 6)
 			{
