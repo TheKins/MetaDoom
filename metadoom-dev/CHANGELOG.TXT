@@ -52,6 +52,8 @@ Prop Changes:
   displaced on the very first tic that they're spawned.
 - Fixed a visual oddity where the "permanent" blood stains spawned by certain
   props would spawn on top of liquid textures.
+- Fixed a visual issue where gibs could be left floating in the air when
+  the floor beneath them lowered.
 
 Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
