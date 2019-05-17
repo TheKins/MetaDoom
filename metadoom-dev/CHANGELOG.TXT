@@ -8,8 +8,11 @@ Player Changes:
   that have plagued the decapitated player skull since it was first added.
   
 Monster Changes:
+- ZScript porting, various bugfixes and improvements far and wide.
+- Fixed a visual issue where gibs could be left floating in the air when
+  the floor beneath them lowered.
 - Various bugfixes and improvements to the Spider Mastermind.
-- ZScript porting, various bugfixes and improvements to the Cyberdemon.
+- Various bugfixes and improvements to the Cyberdemon.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
