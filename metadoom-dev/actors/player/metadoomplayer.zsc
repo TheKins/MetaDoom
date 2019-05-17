@@ -267,11 +267,11 @@ class MetaDoomPlayer : PlayerPawn
 			player.deltaviewheight = 0;
 			if (player.viewheight > 6)
 			{
-				CheckInventory("DeathStateSpeedyDrop", 1)
+				if (CheckInventory("DeathStateSpeedyDrop", 1))
 				{
-					ifplayer.viewheight -= 2;
+					player.viewheight -= 2;
 				} else {
-					ifplayer.viewheight -= 1;
+					player.viewheight -= 1;
 				}
 			}
 			if (player.viewheight < 6)
