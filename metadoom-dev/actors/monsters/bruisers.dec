@@ -59,7 +59,7 @@ ACTOR MetaBaronOfHell : MonsterCore
 		goto JumpAttack
 	JumpAttack:
 		BARO Z 0 A_JumpIf(GetCvar(meta_mapbreakers) == 0, "MeleeMissile")
-		BARO Z 0 A_PlaySound("monsters/hellknight/jump", CHAN_VOICE)
+		BARO Z 0 A_PlaySound("monsters/baron/jump", CHAN_VOICE)
 		BARO Z 4 A_FaceTarget
 		BARO J 4 { ThrustThingZ(0,48,0,0); ThrustThing(angle*256/360, 8, 0, 0); }
 		BARO K 1 A_CheckSolidFooting("JumpAttackLanding")
@@ -260,7 +260,7 @@ ACTOR MetaSuperBaronBall
 		BAL7 C 0
 		BAL7 C 0 
 		{
-			A_PlaySound("monsters/bruisers/fireballsplit");
+			A_PlaySound("monsters/bruisers/fireballsplit", CHAN_6);
 			A_Quake (2,5,0,750,0);
 			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 0, CMF_AIMDIRECTION, 0);
 			//A_CustomMissile ("MetaBabbyBaronBall", 0, 0, 45, CMF_AIMDIRECTION, 0);

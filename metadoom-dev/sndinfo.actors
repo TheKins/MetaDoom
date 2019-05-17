@@ -445,6 +445,7 @@ monsters/baron/die		barndie
 $random monsters/baron/idle { monsters/baron/idle1 monsters/baron/idle2 }
 monsters/baron/idle1	barnidl1
 monsters/baron/idle2	barnidl2
+monsters/baron/jump		barnjump
 
 // Cyberdemon!
 monsters/cyberdemon/see				cybrsee
