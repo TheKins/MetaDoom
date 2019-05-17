@@ -144,6 +144,7 @@ class MetaLauncherRocket : Weapon
 	+RANDOMIZE
 	Obituary "$OB_MPROCKET";
 	Decal "Scorch";
+	Damagetype "Explosive";
 	}
 	
 	States

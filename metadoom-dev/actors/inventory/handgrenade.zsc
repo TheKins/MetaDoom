@@ -93,6 +93,7 @@ class HandGrenadeProj : Actor
 	scale 0.5;
 	BounceFactor 0.3;
 	WallBounceFactor 0.2;
+	Damagetype "Explosive";
 	}
 	
 	

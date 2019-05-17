@@ -10,6 +10,7 @@ Player Class
 // these tell the metadoom weapon how you done fucked up
 class DeathStateFallingDown : _Boolean {}
 class DeathStateSpeedyDrop : _Boolean {}
+class DeathStateExplosion : _Boolean {}
 class DeathStateGibbed : _Boolean {}
 
 // counters for acs scripts
@@ -198,6 +199,18 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY K 10;
 		PLAY L -1;
 		Stop;
+	Death.ExplodingBarrel:
+	Death.Explosive:
+		PLAY H 0;
+		PLAY H 0 A_StopSound(CHAN_BODY);
+		PLAY H 0 A_StopSound(CHAN_WEAPON);
+		TNT1 A 0 A_StopSound(CHAN_6);
+		PLAY H 10 A_GiveInventory("DeathStateExplosion");
+		PLAY I 10 A_PlayerScream;
+		PLAY J 10 A_NoBlocking;
+		PLAY K 10;
+		PLAY L -1;
+		Stop;
 	Death.Crush:
 		PLAY H 0;
 		PLAY H 0 A_StopSound(CHAN_BODY);
@@ -206,8 +219,8 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY H 10 A_GiveInventory("DeathStateGibbed");
 		PLAY I 10 A_PlaySound("*crushed");
 		PLAY J 10 A_NoBlocking;
-		PLAY KLM 10;
-		PLAY N -1;
+		PLAY K 10;
+		PLAY L -1;
 		Stop;
 	XDeath:
 		PLAY H 0;

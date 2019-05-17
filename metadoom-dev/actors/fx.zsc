@@ -17,6 +17,7 @@ class Explosion : Actor
 	PROJECTILE;
 	+NOCLIP
 	Decal "Scorch";
+	Damagetype "Explosive";
 	}
 	States
 	{

@@ -179,6 +179,7 @@ class GrenadeLauncherProj : Actor
 	Obituary "$OB_GRENLAUNCHER";
 	scale 0.5;
 	ReactionTime 60;	//Just over five seconds;
+	Damagetype "Explosive";
 	}
 	
 	States

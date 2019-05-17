@@ -217,6 +217,7 @@ class CyberdemonRocket : Actor
 	+RANDOMIZE
 	Obituary "$OB_CYBORG";
 	Decal "Scorch";
+	Damagetype "Explosive";
 	scale 0.8;
 	}
 	
