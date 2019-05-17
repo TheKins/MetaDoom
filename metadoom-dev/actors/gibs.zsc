@@ -176,7 +176,11 @@ class MetaGib1 : Actor
 	Bounce.Wall:
 		goto ChangeDir;
 	Death:
-		"####" # 0 A_ChangeLinkFlags(true); //A_ChangeFlag(NOBLOCKMAP, 0);
+		"####" # 0 
+		{
+			A_ChangeLinkFlags(true); //A_ChangeFlag(NOBLOCKMAP, 0);
+			bMOVEWITHSECTOR = 1;
+		}
 	EternalRest:
 		"####" # 35 { user_lifetime += 35; }
 		"####" # 1 A_JumpIf((user_lifetime >= meta_perf_bloodtime), "FadeMeOut");
