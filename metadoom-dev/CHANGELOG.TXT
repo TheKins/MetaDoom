@@ -13,6 +13,7 @@ Monster Changes:
   the floor beneath them lowered.
 - Various bugfixes and improvements to the Spider Mastermind.
 - Various bugfixes and improvements to the Cyberdemon.
+- New jump sound and minor audio tweak for the Baron of Hell.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
