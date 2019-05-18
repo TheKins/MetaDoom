@@ -239,6 +239,7 @@ ACTOR MetaBehemothFire
 	Alpha 1
 	DeathSound "monsters/behemoth/missilehit"
 	decal DoomImpScorch
+	damagetype Fire
 	States
 	{
 	Spawn:
