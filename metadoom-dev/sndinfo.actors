@@ -143,6 +143,8 @@ cplayer/land3			cland3
 player/healthwarning			lifewarn
 $volume player/healthwarning 2.0
 
+player/burn						playburn
+
 $random player/helmetgib		{ player/helmetgib1 player/helmetgib2 }
 player/helmetgib1		pgib1
 player/helmetgib2		pgib2

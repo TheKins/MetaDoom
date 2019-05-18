@@ -218,7 +218,11 @@ class MetaDoomPlayer : PlayerPawn
 		BURN A 0 A_StopSound(CHAN_WEAPON);
 		BURN A 0 A_StopSound(CHAN_6);
 		BURN A 5 A_GiveInventory("DeathStateFire");
-		BURN A 3 Bright A_PlayerScream;
+		BURN A 3 Bright 
+		{
+			A_PlayerScream();
+			A_PlaySound("player/burn",CHAN_6);
+		}
 		BURN B 3 Bright;
 		BURN C 3 Bright ThrustThing(random(0,365),8,0,0);
 		BURN D 3 Bright A_NoBlocking;
