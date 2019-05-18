@@ -82,7 +82,7 @@ Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
 ART RESOURCES (ACTORS):
 Captain J (Dog-class Former Assassin AND Sawcubus sprites)
 Das M (Former Commando sprites)
-David G./ItsNatureToDie (Cacodemon Gib Sprites, Former Lieutenant sprites)
+David G./ItsNatureToDie (Cacodemon Gib Sprites, Former Lieutenant sprites, burning hands)
 Eriance (Beholder sprite)
 Mark Quinn, Vegeta, Ghastly_Dragon, MagicWazard (Z-Sec sprites)
 Megaherz (Hell Razor sprites)
