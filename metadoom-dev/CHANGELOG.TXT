@@ -6,7 +6,7 @@ Player Changes:
 - Ported the player code to ZScript.
 - Fixed the various visual issues (endless viewbobbing, angle resetting on bounce)
   that have plagued the decapitated player skull since it was first added.
-- Added a new first-person death sequence!
+- Added more first-person death sequences!
   
 Monster Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
