@@ -144,6 +144,7 @@ player/healthwarning			lifewarn
 $volume player/healthwarning 2.0
 
 player/burn						playburn
+player/zap						playzap
 
 $random player/helmetgib		{ player/helmetgib1 player/helmetgib2 }
 player/helmetgib1		pgib1

@@ -12,6 +12,7 @@ class DeathStateFallingDown : _Boolean {}
 class DeathStateSpeedyDrop : _Boolean {}
 class DeathStateExplosion : _Boolean {}
 class DeathStateFire : _Boolean {}
+class DeathStateElec : _Boolean {}
 class DeathStateGibbed : _Boolean {}
 
 // counters for acs scripts
@@ -235,6 +236,27 @@ class MetaDoomPlayer : PlayerPawn
 		BURN OPQPQ 5 Bright;
 		BURN RSTU 7 Bright;
 		BURN V -1;
+		Stop;
+	Death.Elec:
+		PLAY H 0;
+		PLAY H 0 A_StopSound(CHAN_BODY);
+		PLAY H 0 A_StopSound(CHAN_WEAPON);
+		TNT1 A 0 A_StopSound(CHAN_6);
+		PLAY O 0 A_GiveInventory("DeathStateElec");
+		PLAY H 0
+		{
+			A_PlayerScream();
+			A_PlaySound("player/zap",CHAN_7);
+		}
+		PLAY HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 1
+		{
+			A_SetScale(frandom(0.95,1.06));
+		}
+		PLAY H 10 A_SetScale(1.0);
+		PLAY I 10;
+		PLAY J 10 A_NoBlocking;
+		PLAY K 10;
+		PLAY L -1;
 		Stop;
 	Death.Crush:
 		PLAY H 0;
