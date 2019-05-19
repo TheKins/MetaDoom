@@ -25,7 +25,7 @@ page "Bestiary"
 	{
 		name "Former Sergeant";
 		origin "Doom (1993)";
-		description "Former Sergeants were members of the UAC's Rapid Response Tactical Squad. The RRTS was instated when the teleportation experiments resulted in demonic threats turning up very frequently, requiring a group of soldiers that would be able to contain a threat within minutes without question. RRTS soldiers weren't intended to be indisposable, but they weren't allowed to know that.\n\nThe Former Sergeant carries a combat shotgun missing the expensive underslung grenade launcher due to their disposable status.";
+		description "Former Sergeants were members of the UAC's Rapid Response Tactical Squad. The RRTS was instated when the teleportation experiments resulted in demonic threats turning up very frequently, requiring a group of soldiers that would be able to contain a threat within minutes without question. RRTS soldiers were fully intended to be disposable, but they weren't allowed to know that...\n\nThe Former Sergeant carries a combat shotgun missing the expensive underslung grenade launcher due to their disposable status.";
 	}
 	entry "MetaZSec"
 	{
