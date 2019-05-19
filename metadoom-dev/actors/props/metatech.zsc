@@ -83,65 +83,6 @@ class MetaTechLamp_Glow : Actor
 	}
 }
 
-class MetaGibGlass : Actor
-{
-	Default
-	{
-	+DOOMBOUNCE
-	PROJECTILE;
-	-NOGRAVITY
-	//-NOBLOCKMAP
-	-ACTIVATEIMPACT
-	+NOTELEPORT
-	-TELESTOMP
-	-SOLID
-	+ROLLSPRITE
-	+ROLLCENTER
-	Radius 1;
-	height 1;
-	Damage 0;
-	bouncefactor 0.5;
-	SeeSound "props/glass/shard";
-	gravity 0.5;
-	Speed 5;
-	}
-	
-	States
-	{
-	Spawn:
-		GLAS A 0;
-		GLAS A 0 A_SetScale(frandom(0.5, 1.0));
-		GLAS AB 0 A_Jump(128, "Setup");
-		goto Setup;
-	Setup:
-		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
-		"####" # 0 ThrustThing(random(0,360), 8, 1, 0);
-		"####" # 0 A_SetRoll(random(0,360));
-	Bounce.Floor:
-	Bounce.Wall:
-	ChangeDir:
-		"####" # 0 A_Jump(128,"Alt");
-		goto See;
-	See:
-		"####" # 0 ThrustThingZ(0,6,1,1);
-		"####" # 1 A_SetRoll((roll + 5));
-		loop;
-	Alt:
-		"####" # 0 ThrustThingZ(0,6,1,1);
-		"####" # 1 A_SetRoll((roll - 5));
-		loop;
-	Death:
-		"####" # 0
-		{
-			A_ChangeLinkFlags(true);
-			bFLATSPRITE = 1;
-			bMOVEWITHSECTOR = 1;
-		}
-		"####" # -1;
-		Stop;
-    }
-}
-
 // Small Tech Lamp
 class MetaTechLamp2 : Actor // replaces TechLamp2
 {
