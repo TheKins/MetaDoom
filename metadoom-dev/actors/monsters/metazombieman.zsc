@@ -93,8 +93,7 @@ class MetaZombieMan : MonsterCore
 		POSS G 3 A_Pain;
 		Goto Scurred;
 	Death:
-		POSS H 0 A_Jump (128, 2);
-		POSS H 0 { bSPRITEFLIP = 1; } // random chance of sprite flipping
+		POSS H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
 		POSS H 5 A_GiveToTarget("ScoreItem", 100);
 		POSS I 5 A_Scream;
