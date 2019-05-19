@@ -10,10 +10,9 @@ Player Changes:
   
 Monster Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
+- Additional bugfixes and improvements to the Spider Mastermind and Cyberdemon.
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
-- Various bugfixes and improvements to the Spider Mastermind.
-- Various bugfixes and improvements to the Cyberdemon.
 - New jump sound and minor audio tweak for the Baron of Hell.
 
 Weapon Changes:
