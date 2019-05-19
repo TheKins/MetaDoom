@@ -72,7 +72,7 @@ Index
 //#include "actors/monsters/core.dec"
 //#include "actors/monsters/zombieman.dec"
 //#include "actors/monsters/shotgunguy.dec"
-#include "actors/monsters/chaingunguy.dec"
+//#include "actors/monsters/chaingunguy.dec"
 #include "actors/monsters/imp.dec"
 #include "actors/monsters/demon.dec"
  #include "actors/monsters/spectre.dec"
