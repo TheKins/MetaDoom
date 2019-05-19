@@ -71,6 +71,7 @@ version "3.4"
 #include "actors/monsters/metadoomactor.zsc"
 
 #include "actors/monsters/metazombieman.zsc"
+#include "actors/monsters/metashotgunguy.zsc"
 
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
