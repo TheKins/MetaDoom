@@ -8,6 +8,7 @@ Core Loading
 
 version "3.4"
 
+// All Actor Definitions
 #include "zscript_actors.zsc"
 
 // Codex Stuff
@@ -20,11 +21,13 @@ version "3.4"
 #include "zscript/codex/metacodex_drawer.zsc" // Draws shit
 #include "zscript/codex/metacodex_gritty.zsc" // RenderStyle stuff written by Zombie
 
-// Other Bullshit Scripting
+// Actor Replacement Scripts
+#include "zscript/metaoptional.zsc"
+#include "zscript/metamodreps.zsc"
+
+// Menu Stuff
 #include "zscript/metaintermission.zsc"
 #include "zscript/metahud.zsc"
 //#include "zscript/boa_iconlistmenu.zsc"
 #include "zscript/metamenushit.zsc"
 #include "zscript/nash_menu.zsc"
-#include "zscript/metaoptional.zsc"
-#include "zscript/metamodreps.zsc"
