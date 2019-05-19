@@ -1,12 +1,10 @@
 /*
 ----------------------------
 MetaDoom
-Actor Definitions
 ZScript
+Actor Definitions
 ----------------------------
 */
-
-version "3.4"
 
 // Core Actors that a bunch of shit inherits from: define above everything else!
 #include "actors/invtokens.zsc"
@@ -79,28 +77,9 @@ version "3.4"
 #include "actors/monsters/metacyberdemon.zsc"
 #include "actors/monsters/metaspiderdemon.zsc"
 
-// Codex Stuff
-#include "zscript/codex/pyparse.zsc" // Sets up the classes for parsing
-
-#include "zscript/codex/metacodex_inventory.zsc" // The inventory items (important!)
-#include "zscript/codex/metacodex_event.zsc" // Controls the inventory handouts for the codex (also important!)
-#include "zscript/codex/metacodex_menu.zsc" // The menu itself (sans drawing)
-#include "zscript/codex/metacodex_parser.zsc" // Parses shit
-#include "zscript/codex/metacodex_drawer.zsc" // Draws shit
-#include "zscript/codex/metacodex_gritty.zsc" // RenderStyle stuff written by Zombie
-
 // Props
 #include "actors/props/metabarrels.zsc"
 #include "actors/props/metatech.zsc"
 #include "actors/props/metahell.zsc"
 #include "actors/props/metagore.zsc"
 #include "actors/props/metacorpses.zsc"
-
-// Other Bullshit Scripting
-#include "zscript/metaintermission.zsc"
-#include "zscript/metahud.zsc"
-//#include "zscript/boa_iconlistmenu.zsc"
-#include "zscript/metamenushit.zsc"
-#include "zscript/nash_menu.zsc"
-#include "zscript/metaoptional.zsc"
-#include "zscript/metamodreps.zsc"
