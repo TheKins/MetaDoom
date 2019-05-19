@@ -153,3 +153,39 @@ class MetaItemFog : Actor replaces ItemFog
 		Stop;
 	}
 }
+
+// Zzzap! Ported over from JPF
+class MetaZappy : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		Speed 16;
+		Projectile;
+		+RANDOMIZE
+		+NOCLIP
+		+CLIENTSIDEONLY
+		+FORCEXYBILLBOARD
+		+ROLLSPRITE
+		+ROLLCENTER
+		RenderStyle "Add";
+		scale 0.5;
+		Alpha 1;
+	}
+	States
+	{
+	Spawn:
+		ZAPP A 0;
+		ZAPP A 0 A_Stop;
+		ZAPP A 0 A_SetRoll(random(0,360));
+		ZAPP ABCD 0 A_Jump(256, "Death");
+	Death:
+		ZAPP A 1
+		{
+			A_FadeOut(0.1);
+			A_SetRoll(random(0,360));
+		}
+		loop;
+	}
+}

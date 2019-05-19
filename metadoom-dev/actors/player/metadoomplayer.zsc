@@ -251,6 +251,7 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 1
 		{
 			A_SetScale(frandom(0.95,1.06));
+			A_SpawnItemEx("MetaZappy",random((0-radius),radius),random((0-radius),radius),random(8,56),0,0,0);
 		}
 		PLAY H 10 A_SetScale(1.0);
 		PLAY I 10;
