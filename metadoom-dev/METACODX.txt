@@ -29,7 +29,7 @@ page "Arsenal"
 	entry "MetaAxe" {}
 	entry "MetaPistol" {}
 	entry "MetaShotgun" {}
-	entry "HolyWaterPistol" {}
+	entry "MetaHolyWaterPistol" {}
 	entry "MetaSuperShotgun" {}
 	entry "MetaFireExtinguisher" {}
 	entry "MetaMachineGun" {}

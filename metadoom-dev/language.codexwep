@@ -66,10 +66,10 @@ MC_MetaSoulCube_Origin = "Doom 3 (2004)";
 MC_MetaSoulCube_Icon = "MCDX_WSC";
 MC_MetaSoulCube_Desc = "A strange device developed by a long-extinct alien species. Next to nothing is known of it, even as archaeological efforts work to literally dig up the secret history of whoever previously occupied Mars. Some researchers claim that this is a living weapon. Others consider it a creepy-looking paperweight. When you have ten soul orbs, hitting either of the fire keys will launch off the cube, where it will home in on your target and deliver a grave blow, spewing forth a practical tidal wave of health and ammo!";
 
-MC_HolyWaterPistol_Name = "Holy Water Pistol";
-MC_HolyWaterPistol_Origin = "Doom II RPG (2009)";
-MC_HolyWaterPistol_Icon = "MCDX_WWP";
-MC_HolyWaterPistol_Desc = "UAC research has turned up a number of powerful relics, leftover from a great battle milennia ago. Why some researcher decided to shove one into a children's toy is currently unknown, but the end results are surprisingly impressive. The pistol turns any liquids placed inside of it into Holy Water, which scorches and terrifies lower-ranking demons. You can refill the device in many fluid sources you may find, including radioactive waste. Press Alternate Fire to drink from it and restore health.";
+MC_MetaHolyWaterPistol_Name = "Holy Water Pistol";
+MC_MetaHolyWaterPistol_Origin = "Doom II RPG (2009)";
+MC_MetaHolyWaterPistol_Icon = "MCDX_WWP";
+MC_MetaHolyWaterPistol_Desc = "UAC research has turned up a number of powerful relics, leftover from a great battle milennia ago. Why some researcher decided to shove one into a children's toy is currently unknown, but the end results are surprisingly impressive. The pistol turns any liquids placed inside of it into Holy Water, which scorches and terrifies lower-ranking demons. You can refill the device in many fluid sources you may find, including radioactive waste. Press Alternate Fire to drink from it and restore health.";
 
 MC_MetaFireExtinguisher_Name = "Fire Extinguisher";
 MC_MetaFireExtinguisher_Origin = "Doom RPG (2005)";
