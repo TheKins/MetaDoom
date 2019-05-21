@@ -42,6 +42,7 @@ Item Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
 - Adjusted Hologram projectile trajectory so it lands further away.
 - Changed how Medikits are spawned by Quad Damage.
+- Improved Light-Amp pickup sound.
 
 UI Changes:
 - Overhauled ListMenus and MessageBoxMenus with a nice new look!
