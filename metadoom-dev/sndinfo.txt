@@ -163,3 +163,5 @@ doors/slow/closestop	DSDORCLX
 cheats/doom3			cheatd3
 cheats/snes				cheat16b
 cheats/420				cheat420
+cheats/codex1			cheatcd1
+cheats/codex2			cheatcd2

@@ -337,14 +337,14 @@ Class MetaCodex_Menu : GenericMenu
 				case 0:
 				if(ev.KeyString~=="T")
 				{
-					S_Sound("intermission/tick",CHAN_UI);
+					S_Sound("cheats/codex1",CHAN_UI);
 					thing++;
 				}
 				break;
 				case 1:
 				if(ev.KeyString~=="H")
 				{
-					S_Sound("intermission/tick",CHAN_UI);
+					S_Sound("cheats/codex2",CHAN_UI);
 					thing++;
 				}
 				break;
@@ -356,7 +356,7 @@ Class MetaCodex_Menu : GenericMenu
 					switchPageHandler(0);
 					itemSelected = codexPages[curPageNum].entryList.Size()-1;
 					listScroll = codexPages[curPageNum].entryList.Size()-21;
-					S_Sound("misc/secret",CHAN_UI);
+					S_Sound("intermission/maxsecret",CHAN_UI);
 					updateItemListing();
 				}
 				break;

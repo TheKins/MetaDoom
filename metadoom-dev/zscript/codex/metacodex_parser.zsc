@@ -238,9 +238,9 @@ Extend Class MetaCodex_Menu
 			MetaCodex_Entry currentEntry = new("MetaCodex_Entry");
 			currentEntry.fallbackSprite = "graphics/codex/codex_gnomed.png";
 			currentEntry.itemToCheck = "MetaPistol";
-			currentEntry.bioName = "Defective gnome?";
-			currentEntry.bioOrigin = "My yard (today)";
-			currentEntry.bioDesc = "Is it some sort of factory error? I don't know what this is, but I've already called the cops. They told me not to mess with it, as it could be some sort of unexploded ordnance.";
+			currentEntry.bioName = "Defective Gnome?";
+			currentEntry.bioOrigin = "My Yard (Today)";
+			currentEntry.bioDesc = "Is it some sort of factory error? I don't know what this is, but I've already called the cops. They told me not to mess with it, as it could be some sort of unexploded ordnance...";
 			codexPages[0].entryList.Push(currentEntry);
 			currentEntry = null;
 		}
