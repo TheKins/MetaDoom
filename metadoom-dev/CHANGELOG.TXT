@@ -14,6 +14,7 @@ Monster Changes:
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
 - New jump sound and minor audio tweak for the Baron of Hell.
+- Cacodemons and Bruisers now squish in more appropriate ways.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
