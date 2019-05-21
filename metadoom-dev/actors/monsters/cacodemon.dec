@@ -288,7 +288,7 @@ actor MetaCacodemonCrush //: Actor
 					A_SpawnProjectile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
 				//}
 			
-				A_SpawnItem("BloodSplat_Blue");
+				A_SpawnItem("BloodSplatBlue");
 			}
 			CAGI Z -1
 			Stop
