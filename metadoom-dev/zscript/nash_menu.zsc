@@ -135,6 +135,7 @@ class MetaOptionMenu : OptionMenu
 		if (tt.Length() > 0)
 		{
 			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 0, (Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
+			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 1024, (Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
 			
 			Screen.DrawText (NewSmallFont, OptionMenuSettings.mFontColorValue,
 				(Screen.GetWidth() - NewSmallFont.StringWidth (tt) * CleanXfac_1) / 2,
