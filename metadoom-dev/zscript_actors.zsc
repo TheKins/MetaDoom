@@ -71,6 +71,8 @@ Actor Definitions
 #include "actors/monsters/metazombieman.zsc"
 #include "actors/monsters/metashotgunguy.zsc"
 #include "actors/monsters/metachaingunguy.zsc"
+#include "actors/monsters/metaimp.zsc"
+#include "actors/monsters/metademon.zsc"
 
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
