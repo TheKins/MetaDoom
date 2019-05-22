@@ -173,61 +173,100 @@ class MetaBullDemon : MonsterCore
 		BULD A 0 { user_accelerator = 3; user_chargecooldown = 5; A_PlaySound("monsters/bulldemon/charge"); }
 		BULD AB 4 A_FaceTarget;
 		BULD A 0 A_Recoil(-user_accelerator-2);
+		
 		// full acceleration round 1
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 A 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 { user_accelerator = (user_accelerator + 2); }
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0
+		{
+			user_accelerator = (user_accelerator + 2); 
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 B 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 B 0 { user_accelerator = (user_accelerator + 2); }
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			user_accelerator = (user_accelerator + 2); 
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 C 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 C 0 { user_accelerator = (user_accelerator + 2); }
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			user_accelerator = (user_accelerator + 2); 
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 D 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 D 0 { user_accelerator = (user_accelerator + 2); }
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			user_accelerator = (user_accelerator + 2); 
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
+		
 		// full acceleration round 2
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 A 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 B 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 C 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_Recoil(-user_accelerator);
-		TNT1 D 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
+		BULD H 0 
+		{
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
+		
 		//slowing down
 		BULD H 4 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 A 0 A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 
+		{
+			A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 B 0 A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 
+		{
+			A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 C 0 A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 
+		{
+			A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 4 A_JumpIf(vel.x==0 && vel.y==0,"CrashedSomewhere");
-		TNT1 D 0 A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,16,0);
-		TNT1 A 0 A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		BULD H 0 
+		{
+			A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
+			A_SpawnItemEx("BullDemonChargeFire",0,16,0);
+			A_SpawnItemEx("BullDemonChargeFire",0,-16,0);
+		}
 		BULD H 0 A_SetPainThreshold(0);
 		Goto See;
 		
