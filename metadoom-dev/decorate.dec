@@ -75,7 +75,7 @@ Index
 //#include "actors/monsters/chaingunguy.dec"
 //#include "actors/monsters/imp.dec"
 //#include "actors/monsters/demon.dec"
- #include "actors/monsters/spectre.dec"
+// #include "actors/monsters/spectre.dec"
  #include "actors/monsters/hellhound.dec"
 #include "actors/monsters/bruisers.dec"
 #include "actors/monsters/cacodemon.dec"
