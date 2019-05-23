@@ -67,6 +67,7 @@ Other Changes:
 - General re-sorting and spring cleaning of code and assets all around.
 - Added a new cheat!
 - Resorted the credits by alphabetical order, and updated the credits image.
+- Updated the ENDOOM, because at this point in the changelog, why not?
 
 v5.3 "Klave" (08/04/19)
 =======================
