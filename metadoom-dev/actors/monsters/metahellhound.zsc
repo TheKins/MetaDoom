@@ -1,0 +1,352 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Hellhound
+----------------------------
+*/
+
+// The Zombie Wolfenstein dogs from Doom RPG, with fancy new sprites.
+// Faster, but more fragile than Pinkies.
+
+class MetaHellhound : MonsterCore
+{
+	Default
+	{
+		Health 100;
+		Speed 15;
+		FastSpeed 20;
+		PainChance 180;
+		Radius 25;
+		Height 48;
+		Mass 100;
+		Monster;
+		ActiveSound "monsters/hellhound/bark";
+		AttackSound "monsters/hellhound/bite";
+		DeathSound "monsters/hellhound/die";
+		PainSound "monsters/hellhound/pain";
+		SeeSound "monsters/hellhound/see";
+		Obituary "$OB_DOG1";
+		painchance "HolyWater", 255;
+		damagefactor "DogCollar", 9999;
+		painchance "DogCollar", 255;
+		damagefactor "Axe", 50;
+		scale 1.25;
+	}
+
+	States
+	{
+	Spawn:
+		HDOG AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		"####" AABBCCDD 2 Fast A_Chase;
+		Loop;
+	Melee:
+		"####" EF 2 A_FaceTarget;
+		"####" G 8 A_SargAttack;
+		"####" FE 2;
+		Goto See;
+	Pain:
+		"####" H 0;
+		"####" H 2
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 2 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		"####" H 2;
+		"####" H 2 A_Pain;
+		Goto Scurred;
+	Punched:
+		"####" H 3;
+		"####" H 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 12 A_Pain;
+		Goto See;
+	Scurred:
+		"####" A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		"####" A 0 Fast A_GiveInventory("ScurredCounter", 1);
+		"####" A 2 Fast A_Chase(null, null);
+		"####" A 2 Fast A_Chase(null, null);
+		"####" A 0 Fast A_SpawnItem("HolySweat",0,54);
+		"####" B 2 Fast A_Chase(null, null);
+		"####" B 2 Fast A_Chase(null, null);
+		"####" C 2 Fast A_Chase(null, null);
+		"####" C 2 Fast A_Chase(null, null);
+		"####" C 0 Fast A_SpawnItem("HolySweat",0,54);
+		"####" D 2 Fast A_Chase(null, null);
+		"####" D 2 Fast A_Chase(null, null);
+		"####" D 0 Fast A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		"####" D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Death:
+		"####" H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		"####" H 0 A_SpawnItem("SoulSpawner");
+		"####" H 8 A_GiveToTarget("ScoreItem", 250);
+		"####" I 8 A_Scream;
+		"####" J 4 A_Fall;
+		"####" K 4 A_PlaySound("bodyfalls/medium");
+		"####" K -1;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		"####" H 5 A_GiveToTarget("ScoreItem", 250);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	Death.DogCollar:
+		"####" A 0 A_PlaySound("inventory/dogcollar/activate");
+		"####" A 0 A_SpawnDebris("CollarSpark");
+		"####" A 0 A_GiveToTarget("MetaDogGun_HellHound", 1);
+		"####" A 0 A_GiveToTarget("MakeMeGrabTheDogGun_Hellhound", 1);
+		stop;
+	Raise:
+		"####" K 0  { bSPRITEFLIP = 0; }
+		"####" KJIH 5;
+		Goto See;
+	}
+}
+
+// Stuff for the Dog Gun malarkey.
+
+class MakeMeGrabTheDogGun_Hellhound : CustomInventory
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_SelectWeapon("MetaDogGun_HellHound");
+		Stop;
+	}
+}
+
+// The Demon Dog is a variant that's keeps dodging around wildly, making it
+// a real pain to kill.
+
+class MetaDemonDog : MetaHellhound
+{
+	Default
+	{
+		Health 150;
+		Speed 17;
+		ActiveSound "monsters/demondog/bark";
+		SeeSound "monsters/demondog/see";
+		Obituary "$OB_DOG2";
+	}
+
+	States
+	{
+	Spawn:
+		DDOG AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		"####" AABB 2 Fast A_Chase("Melee",null);
+		"####" CCDD 2 Fast A_Chase("Melee",null,CHF_FASTCHASE);
+		Loop;
+	Melee:
+		"####" EF 2 A_FaceTarget;
+		"####" G 8 A_SargAttack;
+		"####" FE 2;
+		Goto See;
+	Pain:
+		"####" H 0;
+		"####" H 2
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 2 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		"####" H 2;
+		"####" H 2 A_Pain;
+		Goto Scurred;
+	Punched:
+		"####" H 3;
+		"####" H 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 12 A_Pain;
+		Goto See;
+	Death:
+		"####" H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		"####" H 0 A_SpawnItem("SoulSpawner");
+		"####" H 8 A_GiveToTarget("ScoreItem", 350);
+		"####" I 8 A_Scream;
+		"####" J 4 A_Fall;
+		"####" K 4 A_PlaySound("bodyfalls/medium");
+		"####" K -1;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		"####" H 5 A_GiveToTarget("ScoreItem", 350);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	Death.DogCollar:
+		"####" A 0 A_PlaySound("inventory/dogcollar/activate");
+		"####" A 0 A_SpawnDebris("CollarSpark");
+		"####" A 0 A_GiveToTarget("MetaDogGun_DemonDog", 1);
+		"####" A 0 A_GiveToTarget("MakeMeGrabTheDogGun_DemonDog", 1);
+		stop;
+	}
+}
+
+// Gun doggery.
+
+class MakeMeGrabTheDogGun_DemonDog : CustomInventory
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_SelectWeapon("MetaDogGun_DemonDog");
+		Stop;
+	}
+}
+
+// The last of the variants, the Cerberus has a lunging jump attack, ala the
+// Fiend from Quake.
+
+class MetaCerberus : MetaHellhound
+{
+	Default
+	{
+		Health 150;
+		Speed 17;
+		ActiveSound "monsters/cerberus/bark";
+		SeeSound "monsters/cerberus/see";
+		Obituary "$OB_DOG3";
+	}
+
+	States
+	{
+	Spawn:
+		CDOG AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		"####" AABBCCDD 2 Fast A_Chase("Melee","Missile");
+		Loop;
+	Melee:
+		"####" EF 2 A_FaceTarget;
+		"####" G 8 A_SargAttack;
+		"####" FE 2;
+		Goto See;
+	Missile:
+		"####" A 4 A_PlaySound("monsters/cerberus/jump");
+		"####" E 2
+		{
+			A_FaceTarget();
+			ThrustThingZ(0,32,0,0);
+			ThrustThing(angle*256/360, 16, 0, 0);
+		}
+		"####" F 2;
+		"####" FFFFFFF 1 A_CheckFloor("MissileLanding");
+	MissileLoop:
+		"####" F 1
+		{
+			return A_JumpIf(vel.z == 0, "MissileLanding");
+			return A_CheckFloor("MissileLanding");
+		}
+		loop;
+	MissileLanding:
+		"####" A 0 A_PlaySound("monsters/cerberus/land");
+		"####" A 4 A_Stop;
+		goto See;
+	Pain:
+		"####" H 0;
+		"####" H 2
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 2 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		"####" H 2;
+		"####" H 2 A_Pain;
+		Goto Scurred;
+	Punched:
+		"####" H 3;
+		"####" H 3
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		"####" H 12 A_Pain;
+		Goto See;
+	Death:
+		"####" H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		"####" H 0 A_SpawnItem("SoulSpawner");
+		"####" H 8 A_GiveToTarget("ScoreItem", 350);
+		"####" I 8 A_Scream;
+		"####" J 4 A_Fall;
+		"####" K 4 A_PlaySound("bodyfalls/medium");
+		"####" K -1;
+		Stop;
+	XDeath:
+		"####" H 0 A_SpawnItem("SoulSpawner");
+		"####" H 5 A_GiveToTarget("ScoreItem", 350);
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	Death.DogCollar:
+		"####" A 0 A_PlaySound("inventory/dogcollar/activate");
+		"####" A 0 A_SpawnDebris("CollarSpark");
+		"####" A 0 A_GiveToTarget("MetaDogGun_Cerberus", 1);
+		"####" A 0 A_GiveToTarget("MakeMeGrabTheDogGun_Cerberus", 1);
+		stop;
+	}
+}
+
+// Dog Gun. Dog. Gun. Say it out loud, and try not to smile.
+
+class MakeMeGrabTheDogGun_Cerberus : CustomInventory
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_SelectWeapon("MetaDogGun_Cerberus");
+		Stop;
+	}
+}
