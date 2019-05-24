@@ -112,6 +112,12 @@ intermission/maxkills		endlmaxk
 intermission/maxitems		endlmaxi
 intermission/maxsecret		endlmaxs
 
+$random cast/shot			{ cast/shot1 cast/shot2 cast/shot3 }
+cast/shot1					castsht1
+cast/shot2					castsht2
+cast/shot3					castsht3
+cast/end					castend
+
 // 100% toast
 menu/100percent				100it
 

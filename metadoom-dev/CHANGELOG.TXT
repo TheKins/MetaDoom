@@ -65,7 +65,7 @@ Prop Changes:
 Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
 - General re-sorting and spring cleaning of code and assets all around.
-- Replaced the end-game cast call sequence with something similar & less buggy.
+- Replaced the end-game cast call sequence with something less buggy.
 - Added a new cheat!
 - Resorted the credits by alphabetical order, and updated the credits image.
 - Updated the ENDOOM, because at this point in the changelog, why not?

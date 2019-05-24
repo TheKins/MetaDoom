@@ -329,72 +329,72 @@ Intermission MetaTheEnd
 	{
 		Draw = "END01", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END02", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END03", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END04", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END05", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END06", 108, 68
 		Time = -50
-		Sound = "weapons/pistol"
+		Sound = "intermission/nextstage"
 	}
 	Image
 	{
 		Draw = "END07", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "cast/shot"
 	}
 	Image
 	{
 		Draw = "END08", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "cast/shot"
 	}
 	Image
 	{
 		Draw = "END09", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "cast/shot"
 	}
 	Image
 	{
 		Draw = "END10", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "cast/shot"
 	}
 	Image
 	{
 		Draw = "END11", 108, 68
 		Time = -5
-		Sound = "weapons/pistol"
+		Sound = "cast/shot"
 	}
 	Image
 	{
 		Draw = "END12", 108, 68
 		Time = -50
-		Sound = "weapons/pistol"
+		Sound = "cast/end"
 	}
 }
