@@ -56,11 +56,11 @@ class CastCallActor : Actor
 		Loop;
 	Missile:
 		ENDG ABCDE 4;
-		ENDG F 99999;
+		ENDG FFFFFF 9999;
 		wait;
 	Death:
 		ENDG GHIJK 4;
-		ENDG L 99999;
+		ENDG LLLLLL 9999;
 		wait;
 	}
 }
