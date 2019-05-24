@@ -308,3 +308,15 @@ map DEAD25 "The Demons Gave You The Boot!"
 	NoAutosaveHint
 	music = "M_IRONMN"
 }
+
+// Doom 2 Ending Revamp
+Intermission Doom2Cast
+{
+	Cast
+	{
+		CastClass = "CastCallActor"
+		CastName = " "
+		AttackSound = "Missile", 1, "intermission/castcall1"
+	}
+	Link = Doom2Cast	// restart cast call
+}

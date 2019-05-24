@@ -115,6 +115,8 @@ intermission/maxsecret		endlmaxs
 // 100% toast
 menu/100percent				100it
 
+intermission/castcall1		cast1
+
 // Ricochet noises - these defs are from Wildweasel's "Nazis!" mod
 $random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }
 $random whiz { whiz1 whiz2 whiz3 }
