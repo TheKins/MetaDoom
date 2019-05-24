@@ -31,36 +31,3 @@ version "3.4"
 //#include "zscript/boa_iconlistmenu.zsc"
 #include "zscript/metamenushit.zsc"
 #include "zscript/nash_menu.zsc"
-
-// Cast Call Actor
-class CastCallActor : Actor
-{
-	Default
-	{
-		Health 20;
-		Radius 20;
-		Height 56;
-		Speed 8;
-		PainChance 200;
-		Monster;
-		+FLOORCLIP
-		DeathSound "intermission/castcall1";
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 1 A_Look;
-		Loop;
-	See:
-		TNT1 A 10 A_Chase;
-		Loop;
-	Missile:
-		ENDG ABCDE 4;
-		ENDG FFFFFF 9999;
-		wait;
-	Death:
-		ENDG GHIJK 4;
-		ENDG LLLLLL 9999;
-		wait;
-	}
-}

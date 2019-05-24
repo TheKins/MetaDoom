@@ -310,13 +310,91 @@ map DEAD25 "The Demons Gave You The Boot!"
 }
 
 // Doom 2 Ending Revamp
-Intermission Doom2Cast
+Intermission Inter_Cast
 {
-	Cast
+	Image
 	{
-		CastClass = "CastCallActor"
-		CastName = " "
-		AttackSound = "Missile", 1, "intermission/castcall1"
+		// This is only here to initialize the background and the music
+		Background = "$bgcastcall"
+		Time = -70
+		Music = "$MUSIC_EVIL"
 	}
-	Link = Doom2Cast	// restart cast call
+	Link = MetaTheEnd
+}
+
+Intermission MetaTheEnd
+{
+	// no backgrounds are set here so this will reuse the previous one.
+	Image
+	{
+		Draw = "END01", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END02", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END03", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END04", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END05", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END06", 108, 68
+		Time = -50
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END07", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END08", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END09", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END10", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END11", 108, 68
+		Time = -5
+		Sound = "weapons/pistol"
+	}
+	Image
+	{
+		Draw = "END12", 108, 68
+		Time = -50
+		Sound = "weapons/pistol"
+	}
 }
