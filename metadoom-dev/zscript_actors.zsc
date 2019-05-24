@@ -75,6 +75,7 @@ Actor Definitions
 #include "actors/monsters/metademon.zsc"
  #include "actors/monsters/metaspectre.zsc"
  #include "actors/monsters/metahellhound.zsc"
+#include "actors/monsters/metabruisers.zsc"
  
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"

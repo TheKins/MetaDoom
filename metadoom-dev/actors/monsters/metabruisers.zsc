@@ -1,0 +1,518 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Bruiser Bros
+----------------------------
+*/
+
+// Baron of Hell. Has a splitting fireball attack, as well as the jumping attack
+// from the new Hell Knight (see below). Very nasty stuff!
+
+class MetaBaronOfHell : MonsterCore
+{
+	Default
+	{
+		Health 1000;
+		Radius 24;
+		Height 64;
+		Mass 1000;
+		Speed 8;
+		PainChance 50;
+		Monster;
+		+FLOORCLIP
+		//+BOSSDEATH
+		+DONTHARMSPECIES
+		Species "Bruiser";
+		scale 0.75;
+		SeeSound "monsters/baron/see";
+		PainSound "monsters/baron/pain";
+		DeathSound "monsters/baron/die";
+		ActiveSound "monsters/baron/idle";
+		Obituary "$OB_BARON";
+		HitObituary "$OB_BARONHIT";
+		Bloodtype "greenblood";
+		BloodColor "0 78 0";
+		Decal "greenbloodsplat";
+		damagefactor "BaronSpike", 0;
+		painchance "BaronSpike", 0;
+	}
+
+	States
+	{
+	Spawn:
+		BARO Z 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("GreenFlyingBlood");
+		BARO AABBCCDD 3 A_Chase;
+		BARO Z 0 { bDROPOFF = 0; }							// Try and fix instances of being "stuck" on an edge after jumping
+		Loop;
+	Melee:
+	MeleeMissile:
+		BARO ZEF 4 A_FaceTarget;
+		BARO G 4 A_CustomComboAttack("MetaSuperBaronBall", 32, 10 * random(1, 8), "baron/melee");
+		BARO HHIZ 4 A_FaceTarget;
+		Goto See;
+	Missile:
+		BARO A 0;
+		BARO A 0; //A_Jump(256, "JumpAttack"); // for debug
+		BARO A 0 A_Jump(128, "MeleeMissile");
+		BARO A 0 A_CheckRange(255, "MeleeMissile", True );
+		BARO A 0 A_JumpIf(meta_mapbreakers == 0, "MeleeMissile");
+		goto JumpAttack;
+	JumpAttack:
+		BARO Z 0 A_JumpIf(meta_mapbreakers == 0, "MeleeMissile");
+		BARO Z 0 A_PlaySound("monsters/baron/jump", CHAN_VOICE);
+		BARO Z 4 A_FaceTarget;
+		BARO J 4 { ThrustThingZ(0,48,0,0); ThrustThing(angle*256/360, 8, 0, 0); }
+		BARO K 1 A_CheckSolidFooting("JumpAttackLanding");
+		wait;
+	JumpAttackLanding:
+		BARO L 0 A_Quake (3,10,0,2048,0);
+		BARO L 15
+		{
+			A_Stop();
+			A_PlaySound("monsters/hellknight/land",CHAN_7);
+			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
+			A_SpawnItem("BaronShockwave",1,1);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,0,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,90,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,180,CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile("BaronSpikeStrip",1,0,270,CMF_AIMDIRECTION, 0);
+		}
+		BARO MZ 4;
+		BARO Z 0 { bDROPOFF = 1; }
+		goto See;
+	Pain:
+		BARO N 2;
+		BARO N 2 A_Pain;
+		Goto See;
+	Death:
+		BARO O 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		BARO O  8 A_GiveToTarget("ScoreItem", 400);
+		BARO P  8 A_Scream;
+		BARO Q  8 A_NoBlocking;
+		BARO R  8 A_PlaySound("bodyfalls/heavy");
+		BARO S -1 A_KillMaster; //A_BossDeath
+		Stop;
+	Raise:
+		BARO R 8 { bSPRITEFLIP = 0; }
+		BARO QRON  8;
+		Goto See;
+	Crush:
+		BAGI Z 0 A_SpawnItem("MetaBaronCrush");
+		stop;
+	}
+}
+
+class MetaBaronCrush : Actor
+{
+	Default
+	{
+		+DROPOFF
+		+CORPSE
+		+NOTELEPORT
+		+DONTGIB
+		scale 0.75;
+	}
+
+	States
+	{
+		Spawn:
+			BAGI Z 0;
+			BAGI Z 0 
+			{	
+				A_PlaySound("monsters/crushed");
+				
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnProjectile ("GreenFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+					A_SpawnProjectile ("MetaSplooshGreen", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				}
+			
+				A_SpawnItem("BloodSplatGreen");
+			}
+			BAGI Z -1;
+			Stop;
+	}
+}
+
+// The Hell Knight has a nasty new jumping attack to add to its arsenal, so as to
+// differentiate it from all the goddamn imps.
+
+class MetaHellKnight : MonsterCore
+{
+	Default
+	{
+		Health 500;
+		Radius 24;
+		Height 64;
+		Mass 1000;
+		Speed 8;
+		PainChance 50;
+		Monster;
+		+FLOORCLIP
+		+DONTHARMSPECIES
+		Species "Bruiser";
+		scale 0.6;
+		SeeSound "monsters/hellknight/see";
+		ActiveSound "monsters/hellknight/idle";
+		PainSound "monsters/hellknight/pain";
+		DeathSound "monsters/hellknight/die";
+		HitObituary "$OB_KNIGHTHIT";
+		Obituary "$OB_KNIGHT";
+	}
+
+	States
+	{
+	Spawn:
+		HNGT Z 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		HNGT AABBCCDD 3 A_Chase;
+		HNGT Z 0 { bDROPOFF = 0; }								// Try and fix instances of being "stuck" on an edge after jumping
+		Loop;
+	Melee:
+	MeleeMissile:
+		HNGT ZEF 4 A_FaceTarget;
+		HNGT G 4 A_CustomComboAttack("MetaBaronBall", 32, 10 * random(1, 8), "baron/melee");
+		HNGT HHIZ 4 A_FaceTarget;
+		Goto See;
+	Missile:
+		HNGT A 0;
+		HNGT A 0 A_Jump(128, "MeleeMissile");
+		HNGT A 0 A_CheckRange(255, "MeleeMissile", True );
+		HNGT A 0 A_JumpIf(meta_mapbreakers == 0, "MeleeMissile");
+		goto JumpAttack;
+	JumpAttack:
+		HNGT Z 0 A_JumpIf(meta_mapbreakers == 0, "MeleeMissile");
+		HNGT Z 0 A_PlaySound("monsters/hellknight/jump", CHAN_VOICE);
+		HNGT Z 4 A_FaceTarget;
+		HNGT J 4 { ThrustThingZ(0,48,0,0); ThrustThing(angle*256/360, 8, 0, 0); }
+		HNGT K 1 A_CheckSolidFooting("JumpAttackLanding");
+		wait;
+	JumpAttackLanding:
+		HNGT L 0 A_Quake (3,10,0,750,0);
+		HNGT L 15
+		{
+			A_Stop();
+			A_PlaySound("monsters/hellknight/land",CHAN_7);
+			A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
+			A_SpawnItem("HellKnightShockwave",1,1);
+		}
+		HNGT MZ 4;
+		HNGT Z 0 { bDROPOFF = 1; }
+		goto See;
+	Pain:
+		HNGT N 2;
+		HNGT N 2 A_Pain;
+		Goto See;
+	Death:
+		HNGT O 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		HNGT O  8 A_GiveToTarget("ScoreItem", 400);
+		HNGT P  8 A_Scream;
+		HNGT Q  8 A_NoBlocking;
+		HNGT R  8 A_PlaySound("bodyfalls/heavy");
+		HNGT S -1;
+		Stop;
+	Raise:
+		HNGT R 8 { bSPRITEFLIP = 0; }
+		HNGT QRON  8;
+		Goto See;
+	Crush:
+		BAGI Y 0 A_SpawnItem("MetaHellknightCrush");
+		stop;
+	}
+}
+
+class MetaHellknightCrush : Actor
+{
+	Default
+	{
+		+DROPOFF
+		+CORPSE
+		+NOTELEPORT
+		+DONTGIB
+		scale 0.75;
+	}
+
+	States
+	{
+		Spawn:
+			BAGI Y 0;
+			BAGI Y 0 
+			{	
+				A_PlaySound("monsters/crushed");
+				
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+					A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				}
+			
+				A_SpawnItem("BloodSplat");
+			}
+			BAGI Y -1;
+			Stop;
+	}
+}
+
+class MetaBaronBall : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 16;
+		Speed 15;
+		FastSpeed 20;
+		Damage 8;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 1;
+		SeeSound "monsters/bruisers/fireball";
+		DeathSound "monsters/bruisers/fireballhit";
+		Decal "BaronScorch";
+	}
+
+	States
+	{
+	Spawn:
+		BAL7 A 0;
+		BAL7 A 0 A_PlaySound("monsters/imp/fireball/loop", CHAN_BODY, 1.0, 1);
+		BAL7 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 A 4 BRIGHT A_SpawnItem ("MetaBaronBallEffect", 0, 0, 0, 0);
+		BAL7 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 B 4 BRIGHT A_SpawnItem ("MetaBaronBallEffect", 0, 0, 0, 0);
+		Loop;
+	Death:
+		BAL7 C 0;
+		BAL7 C 0 A_Quake (2,5,0,750,0);
+		BAL7 CDE 6 BRIGHT;
+		Stop;
+	Extinguished:
+		BAL7 A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		stop;
+	}
+}
+
+class MetaSuperBaronBall : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 16;
+		Speed 10;
+		FastSpeed 15;
+		Damage 4; //8;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 1;
+		SeeSound "monsters/bruisers/fireball";
+		Decal "BaronScorch";
+		translation "112:127=174:191";
+	}
+
+	States
+	{
+	Spawn:
+		BAL7 A 0;
+		BAL7 A 0 A_PlaySound("monsters/imp/fireball/loop", CHAN_BODY, 1.0, 1);
+		BAL7 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 A 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 A 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		BAL7 B 0 A_JumpIfInventory("ExtinguisherToken",1,"Extinguished");
+		BAL7 B 4 BRIGHT A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+	Death:
+		BAL7 C 0;
+		BAL7 C 0 
+		{
+			A_PlaySound("monsters/bruisers/fireballsplit", CHAN_6);
+			A_Quake (2,5,0,750,0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 0, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 90, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 180, CMF_AIMDIRECTION, 0);
+			A_SpawnProjectile ("MetaBabbyBaronBall", 0, 0, 270, CMF_AIMDIRECTION, 0);
+			
+		}
+		BAL7 CDE 6 BRIGHT;
+		Stop;
+	Extinguished:
+		BAL7 A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		TNT1 AAAAA 1 A_SpawnItem ("DoomImpBallEffect", 0, 0, 0, 0);
+		stop;
+	}
+}
+
+class MetaBabbyBaronBall : MetaBaronBall
+{
+	Default
+	{
+		scale 0.75;
+		Radius 4;
+		Height 13;
+		Damage 3;
+		SeeSound "";
+		DeathSound "monsters/imp/fireball/hit";
+	}
+}
+
+class MetaBaronBallEffect : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		Radius 0;
+		Height 1;
+		Speed 0;
+		PROJECTILE;
+		Renderstyle "Add";
+		alpha 0.85;
+		scale 0.65;
+	}
+
+	States
+	{
+	Spawn:
+		GPUF A 2 Bright;
+		GPUF ABCDE 2 Bright;
+		Stop;
+	}
+} 
+
+class HellKnightShockwave : Actor
+{
+	Default
+	{
+		radius 10;
+		height 10;
+		+NOCLIP
+		+FLATSPRITE
+		+NOGRAVITY
+		+NOBLOCKMAP
+		Renderstyle "Add";
+	}
+
+	states
+	{
+		Spawn:
+		SHOK B 0;
+		SHOK B 0; //A_SetPitch(90);
+		DoTheThing:
+		SHOK B 1
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scale.X + 0.1);
+		}
+		loop;
+	}
+}
+
+class BaronShockwave : Actor
+{
+	Default
+	{
+		radius 10;
+		height 10;
+		+NOCLIP
+		+FLATSPRITE
+		+NOGRAVITY
+		+NOBLOCKMAP
+		Renderstyle "Add";
+	}
+
+	states
+	{
+		Spawn:
+		SHOK C 0;
+		SHOK C 0; //A_SetPitch(90);
+		DoTheThing:
+		SHOK C 1
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scale.X + 0.1);
+		}
+		loop;
+	}
+}
+
+class BaronSpike : Actor
+{
+	Default
+	{
+		radius 16;
+		height 32;
+		-SOLID
+		damagetype "BaronSpike";
+		renderstyle "Add";
+		alpha 0.75;
+	}
+
+	int user_lifecycle;
+
+	states
+	{
+		Spawn:
+			BSPK A 0;
+			BSPK A 0 bright { user_lifecycle = 0; }
+			BSPK A 1 bright { A_SetScale(1,1.5); }
+			BSPK B 1 bright { A_SetScale(1,1.3); }
+			BSPK C 1 bright { A_SetScale(1,1.2); }
+			BSPK A 1 bright { A_SetScale(1,1.15); }
+			BSPK B 1 bright { A_SetScale(1,1.1); }
+			BSPK C 1 bright { A_SetScale(1,1); }
+		LoopAnim:
+			BSPK ABC 1 bright { A_Explode((2),32); user_lifecycle++; }
+			BSPK A 0 bright A_JumpIf(user_lifecycle>=35, "End");
+			loop;
+		End:
+			BSPK ABC 1 bright { A_Explode((2),32); A_FadeOut(0.1);}
+			loop;
+	}
+}
+
+class BaronSpikeStrip : Actor
+{
+	Default
+	{
+		+Missile
+		+DROPOFF
+		+FOILINVUL
+		+RANDOMIZE
+		+RIPPER
+		+NOEXPLODEFLOOR
+		+STEPMISSILE
+		//+FLOORHUGGER
+		MaxStepHeight 16;
+		DamageFunction (0);
+		speed 48;
+	}
+
+	States
+	{
+	Spawn:
+		TNT1 AAAA 1 A_SpawnItemEx("BaronSpike");
+		Stop;
+	Death:
+		TNT1 A 0;
+		Stop;
+	}
+}
