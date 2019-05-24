@@ -22,7 +22,7 @@ Monster Changes:
 - Fixed a bug where after charging, the Bull Demon wouldn't charge again unless
   it left its roaming state by way of attacking or being attacked.
 - New jump sound and minor audio tweak for the Baron of Hell.
-- Cacodemons and Bruisers now squish in more appropriate ways.
+- Cacodemons and Bruisers now get crushed in more appropriate ways.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
