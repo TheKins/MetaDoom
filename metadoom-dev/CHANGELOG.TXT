@@ -25,6 +25,7 @@ Monster Changes:
 - Cacodemons and Bruisers now get crushed by the world in more appropriate ways.
 - Fixed the "bobbing up and down" effect on Cacodemons not being restored when
   they're resurrected by Archviles.
+- Fixed a bug where Spiborgs didn't award points upon death half of the time.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
