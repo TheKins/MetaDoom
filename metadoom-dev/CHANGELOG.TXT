@@ -23,9 +23,10 @@ Monster Changes:
   it left its roaming state by way of attacking or being attacked.
 - The Baron of Hell's jump attack no longer reuses the Hell Knight's grunt sound.
 - Cacodemons and Bruisers now get crushed by the world in more appropriate ways.
+- Malwraiths now use recoloured Cacodemon gibs instead of generic ones.
 - Fixed the "bobbing up and down" effect on Cacodemons not being restored when
   they're resurrected by Archviles.
-- Fixed a bug where Spiborgs didn't award points upon death half of the time.
+- Fixed a bug where 50% of the time, Spiborgs didn't award points upon death.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
