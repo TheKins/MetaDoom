@@ -218,8 +218,8 @@ class MetaBehemoth : MonsterCore
 
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 
 			A_SpawnItem("BloodSplat");
@@ -392,8 +392,8 @@ class MetaCyberManc : MonsterCore
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,64), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,64), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(32,64), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
