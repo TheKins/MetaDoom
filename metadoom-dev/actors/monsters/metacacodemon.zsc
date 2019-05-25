@@ -1,0 +1,660 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Cacodemon
+----------------------------
+*/
+
+// The normal Cacodemon is more or less the same as its original form.
+// Why mess with perfection?
+
+class MetaCacodemon : MonsterCore
+{
+	Default
+	{
+		Health 400;
+		GibHealth 50;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 8;
+		PainChance 128;
+		Monster;
+		+FLOAT +NOGRAVITY +FLOATBOB
+		SeeSound "caco/sight";
+		PainSound "caco/pain";
+		DeathSound "caco/death";
+		ActiveSound "caco/active";
+		Obituary "$OB_CACO";
+		HitObituary "$OB_CACOHIT";
+		Bloodtype "Blueblood";
+		BloodColor "0 0 80";
+		Decal "bluebloodsplat";
+		Species "Cacodemon";
+	}
+
+	States
+	{
+	Spawn:
+		HEAD A 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("BlueFlyingBlood");
+		HEAD AAAAAAAA 3 A_Chase;
+		Loop;
+	Scurred:
+		HEAD A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		HEAD A 0 A_GiveInventory("ScurredCounter", 1);
+		HEAD A 2 A_Chase(null, null);
+		HEAD A 2 A_Chase(null, null);
+		HEAD E 0 A_SpawnItem("HolySweat",0,54);
+		HEAD E 2 A_Chase(null, null);
+		HEAD E 2 A_Chase(null, null);
+		HEAD F 2 A_Chase(null, null);
+		HEAD F 2 A_Chase(null, null);
+		HEAD F 0 A_SpawnItem("HolySweat",0,54);
+		HEAD E 2 A_Chase(null, null);
+		HEAD E 2 A_Chase(null, null);
+		HEAD E 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		HEAD D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Missile:
+		HEAD B 5 A_FaceTarget;
+		HEAD C 5 A_FaceTarget;
+		HEAD D 5 BRIGHT A_CustomComboAttack("MetaCacodemonBall", 32, 10 * random(1, 6));
+		Goto See;
+	Pain:
+		HEAD E 3;
+		HEAD E 3 A_Pain;
+		HEAD F 6;
+		Goto See;
+	Pain.HolyWater:
+		HEAD E 3;
+		HEAD E 3 A_Pain;
+		HEAD F 6;
+		Goto Scurred;
+	Death:
+		HEAD G 0 A_GiveToTarget("ScoreItem", 400);
+		HEAD G 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		HEAD G 6 { bFLOATBOB = 0; }
+		HEAD H 6 A_Scream;
+		HEAD I 6;
+		HEAD J 6;
+		HEAD JJJJJJ 1 A_CheckSolidFooting("DeathLandSilent");
+		HEAD J 1 A_CheckSolidFooting("DeathLand");
+		wait;
+	DeathLand:
+		HEAD K 0 A_PlaySound("bodyfalls/cacodemon");
+	DeathLandSilent:
+		HEAD K 6 A_NoBlocking;
+		HEAD L -1 A_SetFloorClip;
+		Stop;
+	Death.Gauss:
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		HEAD G 0 A_GiveToTarget("ScoreItem", 400);
+		HEAD G 0 { bFLOATBOB = 0; }
+		HEAD G 3 A_Fall;
+		TNT1 A 0 A_PlaySound("monsters/caco/gib");
+		TNT1 A 0
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				A_SpawnProjectile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+
+				A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
+				A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
+			}
+
+			A_SpawnItem("BloodSplatBlue");
+		}
+        TNT1 A 1;
+		Stop;
+	Raise:
+		HEAD L 0 { bSPRITEFLIP = 0; } // random chance of sprite flipping
+		HEAD L 8 A_UnSetFloorClip;
+		HEAD KJIHG 8;
+		Goto See;
+	Crush:
+		CAGI Z 0 A_SpawnItem("MetaCacodemonCrush");
+		stop;
+	}
+}
+
+class MetaCacodemonBall : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 10;
+		FastSpeed 20;
+		Damage 5;
+		Projectile;
+		+RANDOMIZE;
+		RenderStyle "Add";
+		Alpha 1;
+		SeeSound "monsters/caco/lightningball/fire";
+		//DeathSound "weapons/plasmarifle/hit";
+		decal "CacoScorch";
+		damagetype "Elec";
+	}
+
+	States
+	{
+	Spawn:
+		BAL2 A 0;
+		BAL2 A 0 A_PlaySound("monsters/caco/lightningball/loop", CHAN_BODY, 1.0, 1);
+		BAL2 AB 4 BRIGHT;
+		Loop;
+	Death:
+		BAL2 C 0 A_PlaySound("monsters/caco/lightningball/hit", CHAN_BODY);
+		BAL2 CDE 6 BRIGHT;
+		Stop;
+	}
+}
+
+// Gibs
+class CacoGib1 : Actor
+{
+	Default
+	{
+		+DOOMBOUNCE
+		PROJECTILE;
+		-NOGRAVITY
+		//-NOBLOCKMAP
+		-NOTELEPORT
+		-SOLID
+		Radius 2;
+		Damage 0;
+		Decal "BloodSplat";
+		bouncefactor 0.5;
+		SeeSound "gibbage/gibphys";
+		gravity 0.5;
+		Speed 5;
+		scale 0.75;
+	}
+
+	States
+	{
+	Spawn:
+		CAGI A 0;
+		CAGI A 0 ThrustThingZ (0, random(32,45), 0, 1);
+		CAGI A 0 { bSPRITEFLIP = random(0,1); } 
+		CAGI A 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		CAGI ABCDEFG 1 
+		{
+			A_SpawnItem("BlueFlyingBloodCheap");
+			ThrustThingZ(0,6,1,1);
+		}
+		loop;
+	Alt:
+		CAGI GFEDCBA 1 
+		{
+			A_SpawnItem("BlueFlyingBloodCheap");
+			ThrustThingZ(0,6,1,1);
+		}
+		loop;
+	Death:
+		CAGI H 0 
+		{
+			A_ChangeLinkFlags(true); //A_ChangeFlag(NOBLOCKMAP, 0);
+			bMOVEWITHSECTOR = 1;
+		}
+		CAGI A 0 { bSPRITEFLIP = random(0,1); } 
+		CAGI H -1;
+		Stop;
+    }	
+}
+
+class CacoGib2 : MetaGib1
+{
+	States
+	{
+	Spawn:
+		CAGI I 0;
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		"####" # 0 A_SpawnItem("BlueFlyingBloodCheap");
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 A_SpawnItem("BlueFlyingBloodCheap");
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Death:
+		CAGI J 0 
+		{
+			A_ChangeLinkFlags(true); //A_ChangeFlag(NOBLOCKMAP, 0);
+			bMOVEWITHSECTOR = 1;
+			bSPRITEFLIP = random(0,1);
+			A_SetRoll(0);
+		}
+		CAGI J -1;
+		Stop;
+    }
+}
+
+class MetaCacodemonCrush : Actor
+{
+	Default
+	{
+		+DROPOFF
+		+CORPSE
+		+NOTELEPORT
+		+DONTGIB
+	}
+
+	States
+	{
+		Spawn:
+			CAGI Z 0;
+			CAGI Z 0
+			{	
+				A_PlaySound("monsters/crushed");
+				
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnProjectile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+					A_SpawnProjectile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				}
+			
+				A_SpawnItem("BloodSplatBlue");
+			}
+			CAGI Z -1;
+			Stop;
+	}
+}
+
+// The Malwrath (who I keep misspelling) is the Doom 64 Caco visually. It fires
+// a split fireball attack, to mix things up a bit.
+
+class MetaMalwraith : MonsterCore
+{
+	Default
+	{
+		Health 450;
+		GibHealth 50;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 8;
+		PainChance 128;
+		Monster;
+		+FLOAT +NOGRAVITY +FLOATBOB
+		SeeSound "monsters/malwraith/see";
+		PainSound "monsters/malwraith/pain";
+		DeathSound "monsters/malwraith/die";
+		ActiveSound "monsters/malwraith/idle";
+		Obituary "$OB_MALWRAITH";
+		HitObituary "$OB_MALWRAITH";
+		Species "Cacodemon";
+	}
+
+	States
+	{
+	Spawn:
+		MALW AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		"####" A 0
+		{
+			// if too close to the ground, punt the malwraith up in the air
+			// slightly to avoid FLOATBOB ugliness
+			if (pos.z <= (floorz + 16))
+			{
+				ThrustThingZ(0,2,0,0);
+			}
+		}
+		MALW AABBCCDD 3 A_Chase;
+		Loop;
+	Scurred:
+		MALW A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		MALW A 0 A_GiveInventory("ScurredCounter", 1);
+		MALW A 2 A_Chase(null, null);
+		MALW A 2 A_Chase(null, null);
+		MALW A 0 A_SpawnItem("HolySweat",0,72);
+		MALW B 2 A_Chase(null, null);
+		MALW B 2 A_Chase(null, null);
+		MALW C 2 A_Chase(null, null);
+		MALW C 2 A_Chase(null, null);
+		MALW C 0 A_SpawnItem("HolySweat",0,72);
+		MALW D 2 A_Chase(null, null);
+		MALW D 2 A_Chase(null, null);
+		MALW D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		MALW D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Missile:
+		MALW E 5 A_FaceTarget;
+		MALW F 5 A_FaceTarget;
+		MALW G 5 BRIGHT 
+		{
+			A_PlaySound("monsters/malwraith/attack");
+			A_SpawnProjectile ("MetaMalwraithBall", 32, 0, -16);
+			A_SpawnProjectile ("MetaMalwraithBall", 32, 0, 0);
+			A_SpawnProjectile ("MetaMalwraithBall", 32, 0, 16);
+		}
+		MALW FEA 4 A_FaceTarget;
+		Goto See;
+	Pain:
+		MALW E 3;
+		MALW H 3 A_Pain;
+		MALW E 6;
+		Goto See;
+	Pain.HolyWater:
+		MALW E 3;
+		MALW H 3 A_Pain;
+		MALW E 6;
+		Goto Scurred;
+	Death:
+		MALW H 0 A_GiveToTarget("ScoreItem", 500);
+		MALW H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		MALW H 6 { bFLOATBOB = 0; }
+		MALW I 6 A_Scream;
+		MALW J 6;
+		MALW JJJJJJ 1 A_CheckSolidFooting("DeathLandSilent");
+		MALW J 1 A_CheckSolidFooting("DeathLand");
+		wait;
+	DeathLand:
+		HEAD K 0 A_PlaySound("bodyfalls/cacodemon");
+	DeathLandSilent:
+		MALW K 6;
+		MALW L 6 A_NoBlocking;
+		MALW M -1 A_SetFloorClip;
+		Stop;
+	Death.Gauss:
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		MALW H 0 A_GiveToTarget("ScoreItem", 500);
+		MALW H 0 { bFLOATBOB = 0; }
+		MALW H 3 A_Fall;
+		TNT1 A 0 A_PlaySound("monsters/caco/gib");
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		/*
+        TNT1 A 1 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 1 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 1 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+        TNT1 A 0 A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0)
+		*/
+		Stop;
+	Raise:
+		HEAD M 0 { bSPRITEFLIP = 0; } // random chance of sprite flipping
+		MALW M 8 A_UnSetFloorClip;
+		MALW LKJIH 8;
+		Goto See;
+	Crush:
+		CAGI Y 0 A_SpawnItem("MetaMalwraithCrush");
+		stop;
+	}
+}
+
+class MetaMalwraithBall : MetaCacodemonBall
+{
+	Default
+	{
+		//scale 0.5;
+		damage 3;
+		//Radius 3;
+		//Height 3;
+		SeeSound "";
+	}
+}
+
+class MetaMalwraithCrush : Actor
+{
+	Default
+	{
+		+DROPOFF
+		+CORPSE
+		+NOTELEPORT
+		+DONTGIB
+	}
+
+	States
+	{
+		Spawn:
+			CAGI Y 0;
+			CAGI Y 0 
+			{	
+				A_PlaySound("monsters/crushed");
+				
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+					A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				}
+			
+				A_SpawnItem("BloodSplat");
+			}
+			CAGI Y -1;
+			Stop;
+	}
+}
+
+// The Wretched is based on Doom 4's Caco, and has a version of the nasty tongue
+// attack from the Hell Followed DLC. I don't much like it's sprites, just
+// quietly, but they'll do for now.
+
+class MetaWretched : MonsterCore
+{
+	Default
+	{
+		Health 450;
+		GibHealth 50;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 8;
+		PainChance 128;
+		Monster;
+		+FLOAT +NOGRAVITY +FLOATBOB
+		SeeSound "monsters/wretched/see";
+		PainSound "monsters/wretched/pain";
+		DeathSound "monsters/wretched/die";
+		ActiveSound "monsters/wretched/idle";
+		Obituary "$OB_WRETCHED";
+		HitObituary "$OB_WRETCHED";
+		Bloodtype "Blueblood";
+		BloodColor "0 0 80";
+		Decal "bluebloodsplat";
+		scale 0.65;
+		Species "Cacodemon";
+	}
+
+	States
+	{
+	Spawn:
+		WRET AB 10 A_Look;
+		Loop;
+	See:
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		"####" A 0 
+		{
+			// if too close to the ground, punt the wretched up in the air
+			// slightly to avoid FLOATBOB ugliness
+			if (pos.z <= (floorz + 16))
+			{
+				ThrustThingZ(0,2,0,0);
+			}
+		}
+		WRET AACCBBDD 3 A_Chase;
+		Loop;
+	Scurred:
+		WRET A 0 { bFRIGHTENED = 1; }
+	ScurredLoop:
+		WRET A 0 A_GiveInventory("ScurredCounter", 1);
+		WRET A 2 A_Chase(null, null);
+		WRET A 2 A_Chase(null, null);
+		WRET A 0 A_SpawnItem("HolySweat",0,72);
+		WRET C 2 A_Chase(null, null);
+		WRET C 2 A_Chase(null, null);
+		WRET B 2 A_Chase(null, null);
+		WRET B 2 A_Chase(null, null);
+		WRET C 0 A_SpawnItem("HolySweat",0,72);
+		WRET D 2 A_Chase(null, null);
+		WRET D 2 A_Chase(null, null);
+		WRET D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
+		loop;
+	ScurredEnd:
+		WRET D 0
+		{
+			bFRIGHTENED = 0;
+			A_TakeInventory("ScurredCounter",999);
+		}
+		goto See;
+	Missile:
+		WRET A 0 A_Jump(64, "MissileTongue");
+		WRET E 5;
+		WRET F 5 BRIGHT { A_FaceTarget(); A_SpawnProjectile ("MetaCacodemonBall", 24, 0, 0); }
+		WRET G 5 A_FaceTarget;
+		Goto See;
+	MissileTongue:
+		WRET A 5 A_FaceTarget;
+		WRET H 5 A_FaceTarget;
+		WRET I 0 A_Stop;
+		WRET I 20 { A_FaceTarget(); A_SpawnProjectile ("WretchedTongue", 24, 0, 0); }
+		WRET JA 5 A_FaceTarget;
+		Goto See;
+	Melee:
+		WRET A 4 A_FaceTarget;
+		WRET E 4 A_FaceTarget;
+		WRET I 4 A_FaceTarget;
+		WRET A 0 A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", "PainElementalBite", 1);
+		WRET A 4 A_FaceTarget;
+		WRET J 4 A_FaceTarget;
+		Goto See;
+	Pain:
+		WRET K 3;
+		WRET K 6 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		WRET K 3;
+		WRET K 6 A_Pain;
+		Goto Scurred;
+	Death:
+		WRET L 0 A_GiveToTarget("ScoreItem", 500);
+		WRET L 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		WRET L 6 { bFLOATBOB = 0; }
+		WRET M 6 A_Scream;
+		WRET N 6;
+		//WRET O 6;
+		WRET OOOOOO 1 A_CheckSolidFooting("DeathLandSilent");
+		WRET O 1 A_CheckSolidFooting("DeathLand");
+		wait;
+	DeathLand:
+		WRET P 0 A_PlaySound("bodyfalls/cacodemon");
+	DeathLandSilent:
+		WRET P 6 A_NoBlocking;
+		WRET Q -1 A_SetFloorClip;
+		Stop;
+	Death.Gauss:
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		WRET L 0 A_GiveToTarget("ScoreItem", 400);
+		WRET L 0 { bFLOATBOB = 0; }
+		WRET L 3 A_Fall;
+		TNT1 A 0 A_PlaySound("monsters/caco/gib");
+		TNT1 A 0
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				A_SpawnProjectile ("BlueFlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("MetaSplooshBlue", random(8,32), 0, random (0, 360), 2, random (0, 160));
+
+				A_SpawnItemEx ("CacoGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
+				A_SpawnItemEx ("CacoGib2", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
+			}
+
+			A_SpawnItem("BloodSplatBlue");
+		}
+		Stop;
+	Raise:
+		WRET P 0 { bSPRITEFLIP = 0; }
+		WRET P 8 A_UnSetFloorClip;
+		WRET ONML 8;
+		Goto See;
+	Crush:
+		CAGI Z 0 A_SpawnItem("MetaCacodemonCrush");
+		stop;
+	}
+}
+
+class WretchedTongue : LoreShot
+{
+	Default
+	{
+		Speed 15;
+		Height 14;
+		Radius 10;
+		Projectile;
+		//+STRIFEDAMAGE
+		Damage 2;
+		MaxStepHeight 4;
+		SeeSound "monsters/wretched/tongue";
+	}
+
+	States
+	{
+	Spawn:
+		WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("WretchedTongueTrail");
+		stop;
+	Death:
+		WTNG A 0 A_PlaySound("monsters/wretched/pull");
+		Stop;
+	}
+}
+
+class WretchedTongueTrail : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		scale 0.8;
+	}
+
+	states
+	{
+	Spawn:
+		WTNG A 0;
+		WTNG A 32;
+		stop;
+	}
+}
