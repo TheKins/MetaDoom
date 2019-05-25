@@ -249,7 +249,7 @@ class MetaZSec : MonsterCore
 		ZSEC G 3 A_Pain;
 		Goto Scurred;
 	Punched:
-		ZSEC G 3;
+		ZSEC G 3 A_SetRoll(0);
 		ZSEC G 3
 		{
 			bFRIGHTENED = 0;
