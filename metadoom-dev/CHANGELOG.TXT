@@ -27,6 +27,8 @@ Monster Changes:
 - Fixed the "bobbing up and down" effect on Cacodemons not being restored when
   they're resurrected by Archviles.
 - Fixed a bug where 50% of the time, Spiborgs didn't award points upon death.
+- Added a small chance for the Cyber-Mancubus to stop attacking instead of
+  launching its bombs forever as long as the player is in sight.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
