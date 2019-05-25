@@ -21,16 +21,16 @@ Monster Changes:
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
 - Fixed a bug where after charging, the Bull Demon wouldn't charge again unless
   it left its roaming state by way of attacking or being attacked.
-- New jump sound and minor audio tweak for the Baron of Hell.
-- Cacodemons and Bruisers now get crushed in more appropriate ways.
-- Fixed the "bobbing up and down" effect on Cacodemon-family monsters not being
-  restored when the monster is resurrected by Archviles.
+- The Baron of Hell's jump attack no longer reuses the Hell Knight's grunt sound.
+- Cacodemons and Bruisers now get crushed by the world in more appropriate ways.
+- Fixed the "bobbing up and down" effect on Cacodemons not being restored when
+  they're resurrected by Archviles.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
 - Greatly improved GL light definitions for various explosions.
 - The Pistol flashlight now uses an actual spotlight as opposed to a constant
-  spray of invisible spotlight projectiles.
+  spray of invisible pointlight projectiles.
 - Improvements and updates to the Fire Extinguisher:
   - The period of time that extinguishing yourself lasts has been increased from
     3.5 seconds to 5 seconds.
@@ -72,7 +72,7 @@ Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
 - General re-sorting and spring cleaning of code and assets all around.
 - Replaced the end-game cast call sequence with something less buggy.
-- Added a new cheat!
+- Added a new cheat-code, just for funsies...
 - Resorted the credits by alphabetical order, and updated the credits image.
 - Updated the ENDOOM, because at this point in the changelog, why not?
 
