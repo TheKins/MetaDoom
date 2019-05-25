@@ -23,6 +23,8 @@ Monster Changes:
   it left its roaming state by way of attacking or being attacked.
 - New jump sound and minor audio tweak for the Baron of Hell.
 - Cacodemons and Bruisers now get crushed in more appropriate ways.
+- Fixed the "bobbing up and down" effect on Cacodemon-family monsters not being
+  restored when the monster is resurrected by Archviles.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
