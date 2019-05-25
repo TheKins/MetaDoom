@@ -130,6 +130,8 @@ class MetaBeholder : MonsterCore
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood");
 		BEHO AAAAAAAA 3 A_Chase;
+		"####" A 0 A_MetaBleed("FlyingBlood");
+		BEHO AAAAAAAA 3 A_Chase("Melee", null);
 		Loop;
 	Scurred:
 		BEHO A 0 { bFRIGHTENED = 1; }
@@ -161,10 +163,16 @@ class MetaBeholder : MonsterCore
 		BEHO D 5 BRIGHT
 		{
 			A_PainAttack("MetaForgottenOne");
-			A_PainAttack("MetaForgottenOne",32,PAF_NOTARGET);
+			/*A_PainAttack("MetaForgottenOne",32,PAF_NOTARGET);
 			A_PainAttack("MetaForgottenOne",64,PAF_NOTARGET);
 			A_PainAttack("MetaForgottenOne",-32,PAF_NOTARGET);
 			A_PainAttack("MetaForgottenOne",-64,PAF_NOTARGET);
+			*/
+
+			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,32,SXF_NOCHECKPOSITION);
+			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,64,SXF_NOCHECKPOSITION);
+			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-32,SXF_NOCHECKPOSITION);
+			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-64,SXF_NOCHECKPOSITION);
 		}
 		BEHO CB 5;
 		BEHO A 10;
