@@ -29,6 +29,8 @@ Monster Changes:
 - Fixed a bug where 50% of the time, Spiborgs didn't award points upon death.
 - Added a small chance for the Cyber-Mancubus to stop attacking instead of
   launching its bombs forever as long as the player is in sight.
+- The Beholder is now less likely to spawn Forgotten Ones, and spawns them in a
+  different manner which doesn't immediately set them into an attacking state.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
