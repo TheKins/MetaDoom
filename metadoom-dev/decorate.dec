@@ -21,7 +21,7 @@ Index
 //#include "actors/monsters/cacodemon.dec"
 //#include "actors/monsters/arachnotron.dec"
 //#include "actors/monsters/mancubus.dec"
-#include "actors/monsters/painelemental.dec"
+//#include "actors/monsters/painelemental.dec"
 //#include "actors/monsters/lostsoul.dec"
 #include "actors/monsters/archvile.dec"
 #include "actors/monsters/revenant.dec"
