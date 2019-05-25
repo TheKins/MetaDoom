@@ -358,6 +358,7 @@ class MetaCyberManc : MonsterCore
 		CFAT IG 5 A_FaceTarget;
 		CFAT H 10 BRIGHT { A_FaceTarget(); A_SpawnProjectile("CyberMancShot",48,-32,10); A_SpawnProjectile("CyberMancShot",48,32,-10); }
 		CFAT IG 5 A_FaceTarget;
+		CGAT G 0 A_Jump(50, "See");
 		CFAT G 0 A_MonsterRefire(60,"See");
 		Goto Missile+1;
 	Pain:
