@@ -124,6 +124,7 @@ class MetaCacodemon : MonsterCore
 		HEAD L 0 { bSPRITEFLIP = 0; } // random chance of sprite flipping
 		HEAD L 8 A_UnSetFloorClip;
 		HEAD KJIHG 8;
+		"####" "#" 0 { bFLOATBOB = 1; }
 		Goto See;
 	Crush:
 		CAGI Z 0 A_SpawnItem("MetaCacodemonCrush");
@@ -417,6 +418,7 @@ class MetaMalwraith : MonsterCore
 		HEAD M 0 { bSPRITEFLIP = 0; } // random chance of sprite flipping
 		MALW M 8 A_UnSetFloorClip;
 		MALW LKJIH 8;
+		"####" "#" 0 { bFLOATBOB = 1; }
 		Goto See;
 	Crush:
 		CAGI Y 0 A_SpawnItem("MetaMalwraithCrush");
@@ -609,6 +611,7 @@ class MetaWretched : MonsterCore
 		WRET P 0 { bSPRITEFLIP = 0; }
 		WRET P 8 A_UnSetFloorClip;
 		WRET ONML 8;
+		"####" "#" 0 { bFLOATBOB = 1; }
 		Goto See;
 	Crush:
 		CAGI Z 0 A_SpawnItem("MetaCacodemonCrush");
