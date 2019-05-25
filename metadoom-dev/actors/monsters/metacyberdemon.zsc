@@ -16,34 +16,34 @@ class MetaCyberdemon : MonsterCore
 {
 	Default
 	{
-	Health 4000;
-	Radius 40;
-	Height 110;
-	Mass 1000;
-	Speed 16;
-	PainChance 20;
-	Monster;
-	MinMissileChance 160;
-	MeleeRange 64;
-	+BOSS 
-	+MISSILEMORE
-	+FLOORCLIP
-	+NORADIUSDMG
-	+DONTMORPH
-	//+BOSSDEATH
-	SeeSound "monsters/cyberdemon/see";
-	PainSound "monsters/cyberdemon/pain";
-	DeathSound "monsters/cyberdemon/die1";
-	ActiveSound "monsters/cyberdemon/idle";
-	Obituary "$OB_CYBORG";
-	damagefactor "ChaingunTurret", 0.2;
-	painchance "ChaingunTurret", 0;
-	damagefactor "SpiderdemonAttack", 0.5;
-	painchance "SpiderdemonAttack", 0;
-	damagefactor "SpiderdemonTKAttack", 0.5;
-	painchance "Vampire", 128;
-	damagefactor "Vampire", 0.25;
-	scale 0.75;
+		Health 4000;
+		Radius 40;
+		Height 110;
+		Mass 1000;
+		Speed 16;
+		PainChance 20;
+		Monster;
+		MinMissileChance 160;
+		MeleeRange 64;
+		+BOSS 
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		//+BOSSDEATH
+		SeeSound "monsters/cyberdemon/see";
+		PainSound "monsters/cyberdemon/pain";
+		DeathSound "monsters/cyberdemon/die1";
+		ActiveSound "monsters/cyberdemon/idle";
+		Obituary "$OB_CYBORG";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		damagefactor "SpiderdemonAttack", 0.5;
+		painchance "SpiderdemonAttack", 0;
+		damagefactor "SpiderdemonTKAttack", 0.5;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+		scale 0.75;
 	}
 	
 	States
@@ -209,16 +209,16 @@ class CyberdemonRocket : Actor
 {
 	Default
 	{
-	Radius 11;
-	Height 8;
-	Speed 20;
-	Damage 20;
-	Projectile;
-	+RANDOMIZE
-	Obituary "$OB_CYBORG";
-	Decal "Scorch";
-	Damagetype "Explosive";
-	scale 0.8;
+		Radius 11;
+		Height 8;
+		Speed 20;
+		Damage 20;
+		Projectile;
+		+RANDOMIZE
+		Obituary "$OB_CYBORG";
+		Decal "Scorch";
+		Damagetype "Explosive";
+		scale 0.8;
 	}
 	
 	States
@@ -238,13 +238,13 @@ class CyberdemonExplosionParticle : Actor
 {
 	Default
 	{
-	Radius 10;
-	Height 10;
-	Speed 7;
-	PROJECTILE;
-	+NOCLIP
-	+NOGRAVITY
-	Decal "Scorch";
+		Radius 10;
+		Height 10;
+		Speed 7;
+		PROJECTILE;
+		+NOCLIP
+		+NOGRAVITY
+		Decal "Scorch";
 	}
 	
 	States
@@ -263,9 +263,9 @@ class CyberdemonGibber : Actor
 {
 	Default
 	{
-	radius 20;
-	height 56;
-	+NOCLIP
+		radius 20;
+		height 56;
+		+NOCLIP
 	}
 	
 	states
@@ -305,11 +305,11 @@ class CyberdemonChargeFire : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	RenderStyle "Add";
-	Alpha 1;
-	scale 0.5;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 1;
+		scale 0.5;
 	}
 	
 	States
@@ -325,7 +325,7 @@ class CyberdemonExplosionScorchMark : ExplosionScorchMark
 {
 	Default
 	{
-	scale 3.0;
+		scale 3.0;
 	}
 }
 
@@ -333,7 +333,7 @@ class CyberdemonExplosionShockwave : Shockwave
 { 
 	Default
 	{
-	scale 2.0;
+		scale 2.0;
 	}
 	
 	states

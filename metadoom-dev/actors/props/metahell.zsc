@@ -10,11 +10,11 @@ class MetaFloatingSkull : Actor // replaces FloatingSkull
 {
 	Default
 	{
-	Radius 16;
-	Height 26;
-	ProjectilePassHeight -16;
-	+SOLID
-	+FLOATBOB
+		Radius 16;
+		Height 26;
+		ProjectilePassHeight -16;
+		+SOLID
+		+FLOATBOB
 	}
 	
 	States
@@ -31,10 +31,10 @@ class MetaHeartColumn : Actor // replaces HeartColumn
 {
 	Default
 	{
-	Radius 16;
-	Height 40;
-	ProjectilePassHeight -16;
-	+SOLID
+		Radius 16;
+		Height 40;
+		ProjectilePassHeight -16;
+		+SOLID
 	}
 	
 	States
@@ -51,22 +51,22 @@ class MetaRedTorch : Actor // replaces RedTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 68;
-	DeathHeight 68;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 68;
+		DeathHeight 68;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -93,10 +93,10 @@ class MetaRedTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	+NOGRAVITY
-	-SOLID
-	xscale 0.5;
+		Renderstyle "Add";
+		+NOGRAVITY
+		-SOLID
+		xscale 0.5;
 	}
 	
 	states
@@ -118,22 +118,22 @@ class MetaBlueTorch : Actor // replaces BlueTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 68;
-	DeathHeight 68;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 68;
+		DeathHeight 68;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -159,10 +159,10 @@ class MetaBlueTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	xscale 0.5;
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		xscale 0.5;
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -184,22 +184,22 @@ class MetaGreenTorch : Actor // replaces GreenTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 68;
-	DeathHeight 68;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 68;
+		DeathHeight 68;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -225,10 +225,10 @@ class MetaGreenTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	xscale 0.5;
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		xscale 0.5;
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -251,22 +251,22 @@ class MetaShortRedTorch : Actor // replaces ShortRedTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 37;
-	DeathHeight 37;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 37;
+		DeathHeight 37;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -292,11 +292,11 @@ class MetaShortRedTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	xscale 0.4;
-	yscale 0.8;
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		xscale 0.4;
+		yscale 0.8;
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -318,22 +318,22 @@ class MetaShortBlueTorch : Actor // replaces ShortBlueTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 37;
-	DeathHeight 37;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 37;
+		DeathHeight 37;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -359,11 +359,11 @@ class MetaShortBlueTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	xscale 0.4;
-	yscale 0.8;
-	+NOGRAVITY
-	-SOLID;
+		Renderstyle "Add";
+		xscale 0.4;
+		yscale 0.8;
+		+NOGRAVITY
+		-SOLID;
 	}
 	
 	states
@@ -385,22 +385,22 @@ class MetaShortGreenTorch : Actor // replaces ShortGreenTorch
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 37;
-	DeathHeight 37;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "Normal", 0;
+		health 5;
+		Radius 16;
+		Height 37;
+		DeathHeight 37;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "Normal", 0;
 	}
 	
 	States
@@ -426,11 +426,11 @@ class MetaShortGreenTorch_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	xscale 0.4;
-	yscale 0.8;
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		xscale 0.4;
+		yscale 0.8;
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -454,26 +454,26 @@ class MetaBigTree : Actor // replaces BigTree
 {
 	Default
 	{
-	Radius 32;
-	Height 108;
-	ProjectilePassHeight -16;
-	health 50;
-	DeathHeight 108;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
-	painchance 255;
+		Radius 32;
+		Height 108;
+		ProjectilePassHeight -16;
+		health 50;
+		DeathHeight 108;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance 255;
 	}
 	
 	States
@@ -516,26 +516,26 @@ class MetaTorchTree : Actor // replaces TorchTree
 {
 	Default
 	{
-	Radius 16;
-	Height 56;
-	health 10;
-	DeathHeight 56;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
-	painchance 255;
-	+SOLID
+		Radius 16;
+		Height 56;
+		health 10;
+		DeathHeight 56;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance 255;
+		+SOLID
 	}
 	
 	States
@@ -576,24 +576,24 @@ class MetaCandelabra : Actor // replaces Candelabra
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 60;
-	DeathHeight 60;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		health 5;
+		Radius 16;
+		Height 60;
+		DeathHeight 60;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -628,22 +628,22 @@ class MetaGibCandle : Actor
 {
 	Default
 	{
-	+DOOMBOUNCE
-	PROJECTILE;
-	-NOGRAVITY
-	//-NOBLOCKMAP
-	-ACTIVATEIMPACT
-	+NOTELEPORT
-	-TELESTOMP
-	-SOLID
-	+ROLLSPRITE
-	+ROLLCENTER
-	Radius 2;
-	Damage 0;
-	bouncefactor 0.5;
-	SeeSound "barrel/gib";
-	gravity 0.5;
-	Speed 5;
+		+DOOMBOUNCE
+		PROJECTILE;
+		-NOGRAVITY
+		//-NOBLOCKMAP
+		-ACTIVATEIMPACT
+		+NOTELEPORT
+		-TELESTOMP
+		-SOLID
+		+ROLLSPRITE
+		+ROLLCENTER
+		Radius 2;
+		Damage 0;
+		bouncefactor 0.5;
+		SeeSound "barrel/gib";
+		gravity 0.5;
+		Speed 5;
 	}
 	
 	States
@@ -680,9 +680,9 @@ class MetaCandlestick : Actor // replaces Candlestick
 {
 	Default
 	{
-	Radius 20;
-	Height 14;
-	ProjectilePassHeight -16;
+		Radius 20;
+		Height 14;
+		ProjectilePassHeight -16;
 	}
 	
 	States
@@ -699,10 +699,10 @@ class MetaHeadCandles : Actor // replaces HeadCandles
 {
 	Default
 	{
-	Radius 16;
-	Height 42;
-	ProjectilePassHeight -16;
-	+SOLID
+		Radius 16;
+		Height 42;
+		ProjectilePassHeight -16;
+		+SOLID
 	}
 	
 	States
@@ -720,22 +720,22 @@ class MetaEvilEye : Actor // replaces EvilEye
 {
 	Default
 	{
-	Radius 16;
-	Height 54;
-	ProjectilePassHeight -16;
-  	health 5;
-	DeathHeight 54;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 54;
+		ProjectilePassHeight -16;
+		health 5;
+		DeathHeight 54;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -775,12 +775,12 @@ class MetaEvilEyeRadiate : Actor
 {
 	Default
 	{
-	radius 10;
-	height 10;
-	+NOCLIP
-	+NOGRAVITY
-	+NOBLOCKMAP
-	Renderstyle "Add";
+		radius 10;
+		height 10;
+		+NOCLIP
+		+NOGRAVITY
+		+NOBLOCKMAP
+		Renderstyle "Add";
 	}
 	
 	states
@@ -802,9 +802,9 @@ class MetaEvilEyeDed : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -820,22 +820,22 @@ class MetaHeadOnAStick : Actor // replaces HeadOnAStick
 {
 	Default
 	{
-	Radius 16;
-	Height 56;
-  	health 5;
-	DeathHeight 56;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 56;
+		health 5;
+		DeathHeight 56;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -865,22 +865,22 @@ class MetaHeadsOnAStick : Actor // replaces HeadsOnAStick
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States

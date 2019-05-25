@@ -10,13 +10,13 @@ class HandGrenadePickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTGRENADES";
-	Tag "$TAGGRENADES";
-	inventory.icon "INVGREN";
-	inventory.pickupsound "inventory/grenade/get";
-	+INVENTORY.ALWAYSPICKUP;
-	scale 0.5;
-	+BLOCKASPLAYER;
+		inventory.pickupmessage "$GOTGRENADES";
+		Tag "$TAGGRENADES";
+		inventory.icon "INVGREN";
+		inventory.pickupsound "inventory/grenade/get";
+		+INVENTORY.ALWAYSPICKUP;
+		scale 0.5;
+		+BLOCKASPLAYER;
 	}
 	
 	states
@@ -35,14 +35,14 @@ class HandGrenade : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTGRENADES";
-	Tag "$TAGGRENADES";
-	inventory.icon "INVGREN";
-	inventory.pickupsound "inventory/grenade/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTGRENADES";
+		Tag "$TAGGRENADES";
+		inventory.icon "INVGREN";
+		inventory.pickupsound "inventory/grenade/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -75,25 +75,25 @@ class HandGrenadeProj : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	Speed 30;
-	Damage 0;
-	PROJECTILE
-	+RANDOMIZE;
-	-NOGRAVITY;
-	+USEBOUNCESTATE;
-	+ROLLSPRITE;
-	+CANBOUNCEWATER;
-	+BOUNCEAUTOOFF;
-	BounceType "Doom";
-	SeeSound "inventory/throw";
-	BounceSound "inventory/grenade/bounce";
-	Obituary "$OB_MPGRENADE";
-	scale 0.5;
-	BounceFactor 0.3;
-	WallBounceFactor 0.2;
-	Damagetype "Explosive";
+		Radius 8;
+		Height 8;
+		Speed 30;
+		Damage 0;
+		PROJECTILE
+		+RANDOMIZE;
+		-NOGRAVITY;
+		+USEBOUNCESTATE;
+		+ROLLSPRITE;
+		+CANBOUNCEWATER;
+		+BOUNCEAUTOOFF;
+		BounceType "Doom";
+		SeeSound "inventory/throw";
+		BounceSound "inventory/grenade/bounce";
+		Obituary "$OB_MPGRENADE";
+		scale 0.5;
+		BounceFactor 0.3;
+		WallBounceFactor 0.2;
+		Damagetype "Explosive";
 	}
 	
 	
@@ -178,7 +178,7 @@ class HandGrenadeExplosion : Explosion
 {
 	Default
 	{
-	scale 1.5;
+		scale 1.5;
 	}
 	
 	States

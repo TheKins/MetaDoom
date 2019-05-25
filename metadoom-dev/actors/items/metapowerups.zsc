@@ -11,15 +11,15 @@ class MetaRadSuit : PowerupGiver replaces RadSuit
 {
 	Default
 	{
-	Height 46;
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.MaxAmount 0;
-	Inventory.PickupMessage "$GOTSUIT";
-	powerup.type "PowerIronFeet";
-	Inventory.PickupSound "powerups/radsuit";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Height 46;
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.MaxAmount 0;
+		Inventory.PickupMessage "$GOTSUIT";
+		powerup.type "PowerIronFeet";
+		Inventory.PickupSound "powerups/radsuit";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -53,12 +53,12 @@ class MetaBerserk : CustomInventory //replaces Berserk
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.PickupMessage "$GOTBERSERK";
-	Inventory.PickupSound "powerups/berserk";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.PickupMessage "$GOTBERSERK";
+		Inventory.PickupSound "powerups/berserk";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -90,12 +90,12 @@ class MetaBerserkTimer : PowerupGiver
 {
 	Default
 	{
-	+INVENTORY.AUTOACTIVATE
-	powerup.type "PowerMetaBerserkTimer";
-	Powerup.Duration -60;
-	Powerup.Color "FF 00 00", 0.3;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+INVENTORY.AUTOACTIVATE
+		powerup.type "PowerMetaBerserkTimer";
+		Powerup.Duration -60;
+		Powerup.Color "FF 00 00", 0.3;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -135,15 +135,15 @@ class MetaLightAmp : PowerupGiver replaces Infrared
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.MaxAmount 0;
-	powerup.type "PowerLightAmp";
-	Inventory.PickupMessage "$GOTVISOR";
-	Inventory.PickupSound "items/lightamp";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.MaxAmount 0;
+		powerup.type "PowerLightAmp";
+		Inventory.PickupMessage "$GOTVISOR";
+		Inventory.PickupSound "items/lightamp";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -161,20 +161,20 @@ class MetaHasteSphere : PowerupGiver replaces BlurSphere
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.BIGPOWERUP
-	+FLOATBOB
-	Inventory.MaxAmount 0;
-	powerup.type "PowerSpeed";
-	Speed 1.5;
-	scale 0.75;
-	RenderStyle "Translucent";
-	Inventory.PickupMessage "$GOTHASTE";
-	Inventory.PickupSound "powerups/haste";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		Inventory.MaxAmount 0;
+		powerup.type "PowerSpeed";
+		Speed 1.5;
+		scale 0.75;
+		RenderStyle "Translucent";
+		Inventory.PickupMessage "$GOTHASTE";
+		Inventory.PickupSound "powerups/haste";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -200,20 +200,20 @@ class MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.BIGPOWERUP
-	+FLOATBOB
-	scale 0.75;
-	Inventory.MaxAmount 0;
-	powerup.type "PowerInvulnerable";
-	//Powerup.Color InverseMap
-	Powerup.Color "00 00 FF", 0.3; //1.0, 1.0, 0.3
-	Inventory.PickupMessage "$GOTINVUL";
-	Inventory.PickupSound "powerups/invuln";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		scale 0.75;
+		Inventory.MaxAmount 0;
+		powerup.type "PowerInvulnerable";
+		//Powerup.Color InverseMap
+		Powerup.Color "00 00 FF", 0.3; //1.0, 1.0, 0.3
+		Inventory.PickupMessage "$GOTINVUL";
+		Inventory.PickupSound "powerups/invuln";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -229,18 +229,18 @@ class MetaSoulsphere : Health replaces Soulsphere
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.FANCYPICKUPSOUND
-	+FLOATBOB
-	scale 0.75;
-	Inventory.Amount 100;
-	Inventory.MaxAmount 200;
-	Inventory.PickupMessage "$GOTSUPER";
-	Inventory.PickupSound "items/soulsphere";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.FANCYPICKUPSOUND
+		+FLOATBOB
+		scale 0.75;
+		Inventory.Amount 100;
+		Inventory.MaxAmount 200;
+		Inventory.PickupMessage "$GOTSUPER";
+		Inventory.PickupSound "items/soulsphere";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -256,14 +256,14 @@ class MetaMegasphere : CustomInventory replaces Megasphere
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	+FLOATBOB
-	scale 0.75;
-	Inventory.PickupMessage "$GOTMSPHERE";
-	Inventory.PickupSound "items/megasphere";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+FLOATBOB
+		scale 0.75;
+		Inventory.PickupMessage "$GOTMSPHERE";
+		Inventory.PickupSound "items/megasphere";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -282,15 +282,15 @@ class MetaAllmap : MapRevealer replaces Allmap
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.FANCYPICKUPSOUND
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.MaxAmount 0;
-	Inventory.PickupSound "items/automap";
-	Inventory.PickupMessage "$GOTMAP";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
+		+COUNTITEM
+		+INVENTORY.FANCYPICKUPSOUND
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.MaxAmount 0;
+		Inventory.PickupSound "items/automap";
+		Inventory.PickupMessage "$GOTMAP";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
 	}
 	
 	States
@@ -306,23 +306,23 @@ class MetaQuadDamage : PowerupGiver
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.BIGPOWERUP
-	+FLOATBOB
-	Inventory.MaxAmount 0;
-	powerup.type "PowerDamage";
-	Powerup.Duration -60;
-	damagefactor "normal", 4;
-	damagefactor "SoulCube", 1;
-	Powerup.Color "AF 00 FF", 0.3;
-	scale 0.75;
-	RenderStyle "Translucent";
-	Inventory.PickupMessage "$GOTQUAD";
-	Inventory.PickupSound "powerups/quad";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		Inventory.MaxAmount 0;
+		powerup.type "PowerDamage";
+		Powerup.Duration -60;
+		damagefactor "normal", 4;
+		damagefactor "SoulCube", 1;
+		Powerup.Color "AF 00 FF", 0.3;
+		scale 0.75;
+		RenderStyle "Translucent";
+		Inventory.PickupMessage "$GOTQUAD";
+		Inventory.PickupSound "powerups/quad";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States

@@ -1,3 +1,11 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+BFG 9000
+----------------------------
+*/
+
 Class MetaBFG9000Pickup : WeaponGiver
 {
 	Default

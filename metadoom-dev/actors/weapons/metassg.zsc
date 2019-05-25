@@ -10,9 +10,9 @@ class MetaSuperShotgunPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaSuperShotgun";
-	Inventory.PickupMessage "$GOTSHOTGUN2";
-	Inventory.PickupSound "weapons/ssg/get";
+		DropItem "MetaSuperShotgun";
+		Inventory.PickupMessage "$GOTSHOTGUN2";
+		Inventory.PickupSound "weapons/ssg/get";
 	}
 	
 	States
@@ -29,16 +29,16 @@ class MetaSuperShotgun : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 400;
-	Weapon.AmmoUse1 2;
-	Weapon.AmmoUse2 2;
-	Weapon.AmmoGive 8;
-	Weapon.AmmoType1 "Shell";
-	Weapon.AmmoType2 "Shell";
-	Inventory.PickupMessage "$GOTSHOTGUN2";
-	Obituary "$OB_MPSSHOTGUN";
-	Tag "$TAG_SUPERSHOTGUN";
-	Inventory.PickupSound "weapons/ssg/get";
+		Weapon.SelectionOrder 400;
+		Weapon.AmmoUse1 2;
+		Weapon.AmmoUse2 2;
+		Weapon.AmmoGive 8;
+		Weapon.AmmoType1 "Shell";
+		Weapon.AmmoType2 "Shell";
+		Inventory.PickupMessage "$GOTSHOTGUN2";
+		Obituary "$OB_MPSSHOTGUN";
+		Tag "$TAG_SUPERSHOTGUN";
+		Inventory.PickupSound "weapons/ssg/get";
 	}
 	
 	States

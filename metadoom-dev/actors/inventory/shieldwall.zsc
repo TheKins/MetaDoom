@@ -10,13 +10,13 @@ class ShieldWallPickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTSHIELDWALL";
-	Tag "$TAGSHIELDWALL";
-	inventory.icon "INVSHLD";
-	inventory.pickupsound "inventory/shieldwall/get";
-	+INVENTORY.ALWAYSPICKUP
-	//scale 0.5
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTSHIELDWALL";
+		Tag "$TAGSHIELDWALL";
+		inventory.icon "INVSHLD";
+		inventory.pickupsound "inventory/shieldwall/get";
+		+INVENTORY.ALWAYSPICKUP
+		//scale 0.5
+		+BLOCKASPLAYER
 	}
 	states
 	{
@@ -34,14 +34,14 @@ class ShieldWall : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTSHIELDWALL";
-	Tag "$TAGSHIELDWALL";
-	inventory.icon "INVSHLD";
-	inventory.pickupsound "inventory/shieldwall/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTSHIELDWALL";
+		Tag "$TAGSHIELDWALL";
+		inventory.icon "INVSHLD";
+		inventory.pickupsound "inventory/shieldwall/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	states
 	{
@@ -72,20 +72,20 @@ class ShieldWallProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 15;
-	Damage 0;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	+USEBOUNCESTATE
-	+ROLLSPRITE
-	SeeSound "inventory/throw";
-	Obituary "$OB_MPGRENADE";
-	scale 0.5;
-	ReactionTime 60;	//Just over five seconds
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 15;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+ROLLSPRITE
+		SeeSound "inventory/throw";
+		Obituary "$OB_MPGRENADE";
+		scale 0.5;
+		ReactionTime 60;	//Just over five seconds
 	}
 	States
 	{
@@ -111,12 +111,12 @@ class ShieldWallPiece : Actor
 {
 	Default
 	{
-	Radius 16;
-	Height 56;
-	+SOLID
-	+WALLSPRITE
-	+NOGRAVITY
-	renderstyle "add";
+		Radius 16;
+		Height 56;
+		+SOLID
+		+WALLSPRITE
+		+NOGRAVITY
+		renderstyle "add";
 	}
 	
 	int user_lifespan;

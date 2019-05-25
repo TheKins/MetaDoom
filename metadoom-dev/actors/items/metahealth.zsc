@@ -11,14 +11,14 @@ class MetaHealthBonus : Health replaces HealthBonus
 {
 	Default
 	{
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.Amount 1;
-	Inventory.MaxAmount 200;
-	Inventory.PickupMessage "$GOTHTHBONUS";
-	Inventory.PickupSound "items/health/shard";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.Amount 1;
+		Inventory.MaxAmount 200;
+		Inventory.PickupMessage "$GOTHTHBONUS";
+		Inventory.PickupSound "items/health/shard";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -38,11 +38,11 @@ class MetaStimpack : Health replaces Stimpack
 {
 	Default
 	{
-	Inventory.Amount 10;
-	Inventory.PickupMessage "$GOTSTIM";
-	Inventory.PickupSound "items/health/stim";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.Amount 10;
+		Inventory.PickupMessage "$GOTSTIM";
+		Inventory.PickupSound "items/health/stim";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -58,13 +58,13 @@ class MetaMedikit : Health replaces Medikit
 {
 	Default
 	{
-	Inventory.Amount 25;
-	Inventory.PickupMessage "$GOTMEDIKIT";
-	Health.LowMessage 25, "$GOTMEDINEED";
-	Inventory.PickupSound "items/health/medi";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	Scale 0.5;
+		Inventory.Amount 25;
+		Inventory.PickupMessage "$GOTMEDIKIT";
+		Health.LowMessage 25, "$GOTMEDINEED";
+		Inventory.PickupSound "items/health/medi";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		Scale 0.5;
 	}
 	
 	States
@@ -90,10 +90,10 @@ class MetaMedikitNoItemSpawn : MetaMedikit
 {
 	Default
 	{
-	+BLOCKASPLAYER
-	BounceType "Grenade";
-	BounceFactor 0.0;
-	WallBounceFactor 1.0;
+		+BLOCKASPLAYER
+		BounceType "Grenade";
+		BounceFactor 0.0;
+		WallBounceFactor 1.0;
 	}
 	
 	States

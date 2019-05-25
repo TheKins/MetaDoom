@@ -12,14 +12,14 @@ class DemonKeyCheat : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "Demon Key Cheat";
-	Tag "Spawn a Demon Key!";
-	inventory.icon "INVCHT1";
-	inventory.pickupsound "inventory/grenade/get";
-	inventory.amount 3;
-	inventory.maxamount 3;
-	+INVENTORY.INVBAR
-	scale 1;
+		inventory.pickupmessage "Demon Key Cheat";
+		Tag "Spawn a Demon Key!";
+		inventory.icon "INVCHT1";
+		inventory.pickupsound "inventory/grenade/get";
+		inventory.amount 3;
+		inventory.maxamount 3;
+		+INVENTORY.INVBAR
+		scale 1;
 	}
 	
 	states

@@ -12,13 +12,13 @@ class HolyWater : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTHOLYWATER";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 15;
-	Ammo.BackpackAmount 5;
-	Ammo.BackpackMaxAmount 15;
-	Inventory.Icon "HWPAA0";
-	Inventory.PickupSound "weapons/waterpistol/ammo";
+		Inventory.PickupMessage "$GOTHOLYWATER";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 15;
+		Ammo.BackpackAmount 5;
+		Ammo.BackpackMaxAmount 15;
+		Inventory.Icon "HWPAA0";
+		Inventory.PickupSound "weapons/waterpistol/ammo";
 	}
 	
 	States
@@ -33,9 +33,9 @@ class MetaHolyWaterPistolPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaHolyWaterPistol";
-	Inventory.Pickupmessage "$GOTHWP";
-	Inventory.PickupSound "weapons/waterpistol/get";
+		DropItem "MetaHolyWaterPistol";
+		Inventory.Pickupmessage "$GOTHWP";
+		Inventory.PickupSound "weapons/waterpistol/get";
 	}
 	
 	States
@@ -52,17 +52,17 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 1900;
-	Weapon.AmmoUse 1;
-	Weapon.AmmoGive 5;
-	Weapon.AmmoType "HolyWater";
-	Obituary "$OB_HOLYWATER";
-	+WEAPON.WIMPY_WEAPON
-	Inventory.Pickupmessage "$GOTHWP";
-	Tag "$TAGHWP";
-	+WEAPON.AMMO_OPTIONAL
-	Inventory.PickupSound "weapons/waterpistol/get";
-	scale 0.5;
+		Weapon.SelectionOrder 1900;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 5;
+		Weapon.AmmoType "HolyWater";
+		Obituary "$OB_HOLYWATER";
+		+WEAPON.WIMPY_WEAPON
+		Inventory.Pickupmessage "$GOTHWP";
+		Tag "$TAGHWP";
+		+WEAPON.AMMO_OPTIONAL
+		Inventory.PickupSound "weapons/waterpistol/get";
+		scale 0.5;
 	}
 	
 	States
@@ -159,16 +159,16 @@ class HolyWaterShot : Actor
 {
 	Default
 	{
-	Speed 25;
-	Height 8;
-	Radius 8;
-	Mass 1;
-	Damage 1;
-	Projectile;
-	-NOGRAVITY
-	Obituary "$OB_HOLYWATER";
-	scale 0.25;
-	damagetype "HolyWater";
+		Speed 25;
+		Height 8;
+		Radius 8;
+		Mass 1;
+		Damage 1;
+		Projectile;
+		-NOGRAVITY
+		Obituary "$OB_HOLYWATER";
+		scale 0.25;
+		damagetype "HolyWater";
 	}
 	
 	States
@@ -190,11 +190,11 @@ class HolyWaterFire : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	RenderStyle "Add";
-	Alpha 1;
-	scale 0.3;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 1;
+		scale 0.3;
 	}
 	
 	States
@@ -211,17 +211,17 @@ class HolySweat : Actor
 {
 	Default
 	{
-	Radius 2;
-	Height 4;
-	+NOBLOCKMAP 
-	+MISSILE 
-	+DROPOFF
-	+NOTELEPORT
-	+LOWGRAVITY
-	+CANNOTPUSH
-	+DONTSPLASH
-	+DONTBLAST
-	alpha 0.75;
+		Radius 2;
+		Height 4;
+		+NOBLOCKMAP 
+		+MISSILE 
+		+DROPOFF
+		+NOTELEPORT
+		+LOWGRAVITY
+		+CANNOTPUSH
+		+DONTSPLASH
+		+DONTBLAST
+		alpha 0.75;
 	}
 	
 	States

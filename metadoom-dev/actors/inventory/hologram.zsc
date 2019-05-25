@@ -10,13 +10,13 @@ class HologramPickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTHOLOGRAM";
-	Tag "$TAGHOLOGRAM";
-	inventory.icon "INVHOLO";
-	inventory.pickupsound "inventory/hologram/get";
-	+INVENTORY.ALWAYSPICKUP
-	scale 0.5;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTHOLOGRAM";
+		Tag "$TAGHOLOGRAM";
+		inventory.icon "INVHOLO";
+		inventory.pickupsound "inventory/hologram/get";
+		+INVENTORY.ALWAYSPICKUP
+		scale 0.5;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -35,14 +35,14 @@ class Hologram : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTHOLOGRAM";
-	Tag "$TAGHOLOGRAM";
-	inventory.icon "INVHOLO";
-	inventory.pickupsound "inventory/hologram/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTHOLOGRAM";
+		Tag "$TAGHOLOGRAM";
+		inventory.icon "INVHOLO";
+		inventory.pickupsound "inventory/hologram/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -74,23 +74,23 @@ class HologramProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 10;
-	Damage 0;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	+USEBOUNCESTATE
-	+ROLLSPRITE
-	BounceType "Doom";
-	SeeSound "inventory/hologram/toss";
-	BounceSound "inventory/grenade/bounce";
-	-BOUNCEONFLOORS
-	scale 0.3;
-	ReactionTime 60;	//Just over five seconds
-	gravity 0.75;
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 10;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+ROLLSPRITE
+		BounceType "Doom";
+		SeeSound "inventory/hologram/toss";
+		BounceSound "inventory/grenade/bounce";
+		-BOUNCEONFLOORS
+		scale 0.3;
+		ReactionTime 60;	//Just over five seconds
+		gravity 0.75;
 	}
 	
 	States
@@ -113,17 +113,17 @@ class HologramSam : Actor			// you're my main man!
 {
 	Default
 	{
-	Radius 20;
-	Height 56;
-	Speed 8;
-	+FLOORCLIP
-	+SHOOTABLE
-	+FRIENDLY
-	+INVULNERABLE
-	+NODAMAGE
-	+NOBLOCKMAP
-	-SOLID
-	+NONSHOOTABLE
+		Radius 20;
+		Height 56;
+		Speed 8;
+		+FLOORCLIP
+		+SHOOTABLE
+		+FRIENDLY
+		+INVULNERABLE
+		+NODAMAGE
+		+NOBLOCKMAP
+		-SOLID
+		+NONSHOOTABLE
 	}
 	
 	int user_seconds;

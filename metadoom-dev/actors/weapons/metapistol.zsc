@@ -13,9 +13,9 @@ class MetaPistolPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaPistol";
-	Inventory.Pickupmessage "$GOTPISTOL";
-	Inventory.PickupSound "weapons/pistol/get";
+		DropItem "MetaPistol";
+		Inventory.Pickupmessage "$GOTPISTOL";
+		Inventory.PickupSound "weapons/pistol/get";
 	}
 	States
 	{
@@ -31,15 +31,15 @@ class MetaPistol : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 1900;
-	Obituary "$OB_METAPISTOL";
-	+WEAPON.WIMPY_WEAPON
-	Inventory.Pickupmessage "$GOTPISTOL";
-	Inventory.PickupSound "weapons/pistol/get";
-	Tag "$TAGPISTOL";
-	+INVENTORY.ALWAYSPICKUP
-	+WEAPON.NOALERT
-	+INVENTORY.UNTOSSABLE
+		Weapon.SelectionOrder 1900;
+		Obituary "$OB_METAPISTOL";
+		+WEAPON.WIMPY_WEAPON
+		Inventory.Pickupmessage "$GOTPISTOL";
+		Inventory.PickupSound "weapons/pistol/get";
+		Tag "$TAGPISTOL";
+		+INVENTORY.ALWAYSPICKUP
+		+WEAPON.NOALERT
+		+INVENTORY.UNTOSSABLE
 	}
 	
 	States
@@ -176,20 +176,20 @@ class PistolTracer : FastProjectile
 {
 	Default
 	{
-	Alpha 0.90;
-	RenderStyle "Add";
-	Radius 2;
-	Height 2;
-	damage 5;
-	Speed 75;
-	PROJECTILE;
-	+BLOODSPLATTER
-	+NOEXTREMEDEATH
-	Scale 0.4;
-	MissileType "PistolTracerTrail";
-	MissileHeight 8;
-	Decal "BulletChip";
-	Obituary "$OB_METAPISTOL";
+		Alpha 0.90;
+		RenderStyle "Add";
+		Radius 2;
+		Height 2;
+		damage 5;
+		Speed 75;
+		PROJECTILE;
+		+BLOODSPLATTER
+		+NOEXTREMEDEATH
+		Scale 0.4;
+		MissileType "PistolTracerTrail";
+		MissileHeight 8;
+		Decal "BulletChip";
+		Obituary "$OB_METAPISTOL";
 	}
 	
 	States
@@ -214,16 +214,16 @@ class PistolTracerTrail : Actor
 { 
 	Default
 	{
-	Alpha 0.75;
-	RenderStyle "Add";
-	Speed 0;
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+NOTELEPORT
-	+CANNOTPUSH
-	+NODAMAGETHRUST
-	+DONTSPLASH
-	Scale 0.4;
+		Alpha 0.75;
+		RenderStyle "Add";
+		Speed 0;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+NOTELEPORT
+		+CANNOTPUSH
+		+NODAMAGETHRUST
+		+DONTSPLASH
+		Scale 0.4;
 	}
 	States
 	{
@@ -237,19 +237,19 @@ class PistolTracerSpark : Actor
 {
 	Default
 	{
-	Health 4;
-	radius 3;
-	height 6;
-	speed .1;
-	RenderStyle "Add";
-	Alpha 1;
-	Scale 0.5;
-	Mass 0;
-	+missile
-	+doombounce
-	+FLOORCLIP
-	+DONTSPLASH
-	+NOTELEPORT
+		Health 4;
+		radius 3;
+		height 6;
+		speed .1;
+		RenderStyle "Add";
+		Alpha 1;
+		Scale 0.5;
+		Mass 0;
+		+missile
+		+doombounce
+		+FLOORCLIP
+		+DONTSPLASH
+		+NOTELEPORT
 	}
 	States
 	{

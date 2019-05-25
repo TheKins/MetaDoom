@@ -12,13 +12,13 @@ class HalonCannister : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "Picked up a Halon Cannister";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 100;
-	Ammo.BackpackAmount 5;
-	Ammo.BackpackMaxAmount 100;
-	Inventory.Icon "HWPAA0";
-	Inventory.PickupSound "weapons/waterpistol/ammo";
+		Inventory.PickupMessage "Picked up a Halon Cannister";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 100;
+		Ammo.BackpackAmount 5;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "HWPAA0";
+		Inventory.PickupSound "weapons/waterpistol/ammo";
 	}
 	
 	States
@@ -33,9 +33,9 @@ class MetaFireExtinguisherPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaFireExtinguisher";
-	Inventory.Pickupmessage "$GOTFIREX";
-	Inventory.PickupSound "weapons/fireextinguisher/get";
+		DropItem "MetaFireExtinguisher";
+		Inventory.Pickupmessage "$GOTFIREX";
+		Inventory.PickupSound "weapons/fireextinguisher/get";
 	}
 	
 	States
@@ -52,14 +52,14 @@ class MetaFireExtinguisher : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 1900;
-	Weapon.AmmoUse 1;
-	Weapon.AmmoGive 100;
-	Weapon.AmmoType "HalonCannister";
-	+WEAPON.WIMPY_WEAPON;
-	Inventory.Pickupmessage "$GOTFIREX";
-	Tag "$TAGFIREX";
-	Inventory.PickupSound "weapons/fireextinguisher/get";
+		Weapon.SelectionOrder 1900;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 100;
+		Weapon.AmmoType "HalonCannister";
+		+WEAPON.WIMPY_WEAPON;
+		Inventory.Pickupmessage "$GOTFIREX";
+		Tag "$TAGFIREX";
+		Inventory.PickupSound "weapons/fireextinguisher/get";
 	}
 	
 	States
@@ -144,19 +144,19 @@ class MetaFireExtinguisherSpray : Actor
 {
 	Default
 	{
-	Radius 15;
-	Height 15;
-	Speed 5;
-	DamageFunction (1);
-	Projectile;
-	+RANDOMIZE
-	+DONTSPLASH
-	+BLOODLESSIMPACT
-	RenderStyle "Add";
-	Alpha 0.75;
-	scale 0.05;
-	damagetype "FireExtinguisher";
-	Decal "FireExtinguisherSpray";
+		Radius 15;
+		Height 15;
+		Speed 5;
+		DamageFunction (1);
+		Projectile;
+		+RANDOMIZE
+		+DONTSPLASH
+		+BLOODLESSIMPACT
+		RenderStyle "Add";
+		Alpha 0.75;
+		scale 0.05;
+		damagetype "FireExtinguisher";
+		Decal "FireExtinguisherSpray";
 	}
 	
 	States
@@ -182,16 +182,16 @@ class MetaFireExtinguisherSelfSprayFX : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	Speed 2;
-	Damage 0;
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 0.75;
-	scale 0.2;
-	vspeed 3;
+		Radius 8;
+		Height 8;
+		Speed 2;
+		Damage 0;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		scale 0.2;
+		vspeed 3;
 	}
 	
 	States

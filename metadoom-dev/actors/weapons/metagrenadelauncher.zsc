@@ -10,9 +10,9 @@ class MetaGrenadeLauncherPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaGrenadeLauncher";
-	Inventory.PickupMessage "$GOTGRENLAUN";
-	Inventory.PickupSound "weapons/grenadelauncher/get";
+		DropItem "MetaGrenadeLauncher";
+		Inventory.PickupMessage "$GOTGRENLAUN";
+		Inventory.PickupSound "weapons/grenadelauncher/get";
 	}
 	
 	States
@@ -29,20 +29,20 @@ class MetaGrenadeLauncher : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 2500;
-	Weapon.AmmoUse1 1;
-	Weapon.AmmoUse2 3;
-	Weapon.AmmoGive 4;
-	Weapon.AmmoType1 "RocketAmmo";
-	Weapon.AmmoType2 "RocketAmmo";
-	+WEAPON.NOAUTOFIRE
-	Inventory.PickupMessage "$GOTGRENLAUN";
-	Tag "$TAGGRENLAUN";
-	Inventory.PickupSound "weapons/grenadelauncher/get";
-	+WEAPON.NOALERT
-	+WEAPON.ALT_AMMO_OPTIONAL
-	Weapon.BobRangeX 0.5;
-	Weapon.BobRangey 0.75;
+		Weapon.SelectionOrder 2500;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse2 3;
+		Weapon.AmmoGive 4;
+		Weapon.AmmoType1 "RocketAmmo";
+		Weapon.AmmoType2 "RocketAmmo";
+		+WEAPON.NOAUTOFIRE
+		Inventory.PickupMessage "$GOTGRENLAUN";
+		Tag "$TAGGRENLAUN";
+		Inventory.PickupSound "weapons/grenadelauncher/get";
+		+WEAPON.NOALERT
+		+WEAPON.ALT_AMMO_OPTIONAL
+		Weapon.BobRangeX 0.5;
+		Weapon.BobRangey 0.75;
 	}
 	
 	States
@@ -164,22 +164,22 @@ class GrenadeLauncherProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 30;
-	Damage 20;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	+USEBOUNCESTATE
-	+ROLLSPRITE
-	BounceType "Doom";
-	BounceSound "weapons/grenadelauncher/bounce";
-	Obituary "$OB_GRENLAUNCHER";
-	scale 0.5;
-	ReactionTime 60;	//Just over five seconds;
-	Damagetype "Explosive";
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 30;
+		Damage 20;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+ROLLSPRITE
+		BounceType "Doom";
+		BounceSound "weapons/grenadelauncher/bounce";
+		Obituary "$OB_GRENLAUNCHER";
+		scale 0.5;
+		ReactionTime 60;	//Just over five seconds;
+		Damagetype "Explosive";
 	}
 	
 	States
@@ -242,21 +242,21 @@ class GasBombProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 30;
-	Damage 0;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	+USEBOUNCESTATE
-	+ROLLSPRITE
-	BounceType "Doom";
-	-BOUNCEONFLOORS
-	BounceSound "weapons/grenadelauncher/bounce";
-	Obituary "$OB_GRENLAUNCHER_GAS";
-	scale 0.5;
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 30;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+ROLLSPRITE
+		BounceType "Doom";
+		-BOUNCEONFLOORS
+		BounceSound "weapons/grenadelauncher/bounce";
+		Obituary "$OB_GRENLAUNCHER_GAS";
+		scale 0.5;
 	}
 	
 	States
@@ -293,13 +293,13 @@ class GasBombExplosion : Actor
 {
 	Default
 	{
-	Radius 10;
-	Height 10;
-	Speed 5;
-	PROJECTILE;
-	+NOCLIP
-	Decal "Scorch";
-	Obituary "$OB_GRENLAUNCHER_GAS";
+		Radius 10;
+		Height 10;
+		Speed 5;
+		PROJECTILE;
+		+NOCLIP
+		Decal "Scorch";
+		Obituary "$OB_GRENLAUNCHER_GAS";
 	}
 	
 	States
@@ -333,22 +333,22 @@ class GasBombCloud : Actor
 {
 	Default
 	{
-	Radius 32;
-	Height 32;
-	Mass 0x7fffffff;
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+DROPOFF
-	-SOLID
-	//+NODAMAGETHRUST
-	+DONTSPLASH
-	+BLOODLESSIMPACT
-	-BLOCKEDBYSOLIDACTORS
-	+ROLLSPRITE
-	RenderStyle "Translucent";
-	Obituary "$OB_GRENLAUNCHER_GAS";
-	Alpha 0.6;
-	DamageType "PoisonCloud";
+		Radius 32;
+		Height 32;
+		Mass 0x7fffffff;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+DROPOFF
+		-SOLID
+		//+NODAMAGETHRUST
+		+DONTSPLASH
+		+BLOODLESSIMPACT
+		-BLOCKEDBYSOLIDACTORS
+		+ROLLSPRITE
+		RenderStyle "Translucent";
+		Obituary "$OB_GRENLAUNCHER_GAS";
+		Alpha 0.6;
+		DamageType "PoisonCloud";
 	}
 
 	States

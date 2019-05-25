@@ -12,10 +12,10 @@ class MetaLightningGunPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaLightningGun";
-	Inventory.PickupMessage "$GOTLIGHTNING";
-	Inventory.PickupSound "weapons/lightninggun/get";
-	scale 0.75;
+		DropItem "MetaLightningGun";
+		Inventory.PickupMessage "$GOTLIGHTNING";
+		Inventory.PickupSound "weapons/lightninggun/get";
+		scale 0.75;
 	}
 	
 	States
@@ -32,19 +32,19 @@ class MetaLightningGun : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 100;
-	Weapon.AmmoUse1 1;
-	Weapon.AmmoUse2 15;
-	Weapon.AmmoGive 40;
-	Weapon.AmmoType1 "Cell";
-	Weapon.AmmoType2 "Cell";
-	Inventory.PickupMessage "$GOTLIGHTNING";
-	Tag "$TAGLIGHTNING";
-	Obituary "$OB_LIGHTNING";
-	Inventory.PickupSound "weapons/lightninggun/get";
-	+WEAPON.NOALERT
-	+WEAPON.ALT_AMMO_OPTIONAL
-	scale 0.75;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse2 15;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType1 "Cell";
+		Weapon.AmmoType2 "Cell";
+		Inventory.PickupMessage "$GOTLIGHTNING";
+		Tag "$TAGLIGHTNING";
+		Obituary "$OB_LIGHTNING";
+		Inventory.PickupSound "weapons/lightninggun/get";
+		+WEAPON.NOALERT
+		+WEAPON.ALT_AMMO_OPTIONAL
+		scale 0.75;
 	}
 	
 	States
@@ -177,11 +177,11 @@ class LightningTrailSpawner : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	RenderStyle "Add";
-	Alpha 0.75;
-	scale 0.25;
+		Radius 8;
+		Height 8;
+		RenderStyle "Add";
+		Alpha 0.75;
+		scale 0.25;
 	}
 	
 	States
@@ -201,12 +201,12 @@ class LightningTrailParticle : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 0.75;
-	scale 0.25;
+		Radius 8;
+		Height 8;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		scale 0.25;
 	}
 	
 	States
@@ -223,8 +223,8 @@ class MetaLightningPuff : MetaBulletPuff
 {
 	Default
 	{
-	damagetype "LightningGun";
-	Decal "BulletChip";
+		damagetype "LightningGun";
+		Decal "BulletChip";
 	}
 	
 	States
@@ -240,21 +240,21 @@ class MetaLightningStunProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 30;
-	Damage 0;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	+FORCERADIUSDMG
-	+CAUSEPAIN
-	+FORCEPAIN
-	+BLOODLESSIMPACT
-	//+RIPPER
-	damagetype "LightningStun";
-	Obituary "$OB_LIGHTNING";
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 30;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+FORCERADIUSDMG
+		+CAUSEPAIN
+		+FORCEPAIN
+		+BLOODLESSIMPACT
+		//+RIPPER
+		damagetype "LightningStun";
+		Obituary "$OB_LIGHTNING";
 	}
 	
 	States
@@ -278,15 +278,15 @@ class MetaLightningStunFX : Actor
 {
 	Default
 	{
-	Radius 1;
-	Height 1;
-	+NOBLOCKMAP
-	-SOLID
-	+NOGRAVITY
-	//+FORCEXYBILLBOARD
-	+ROLLSPRITE
-	+FLATSPRITE
-	renderstyle "Add";
+		Radius 1;
+		Height 1;
+		+NOBLOCKMAP
+		-SOLID
+		+NOGRAVITY
+		//+FORCEXYBILLBOARD
+		+ROLLSPRITE
+		+FLATSPRITE
+		renderstyle "Add";
 	}
 	
 	States
@@ -315,16 +315,16 @@ class MetaLightningStunFXZappy : Actor
 {
 	Default
 	{
-	Radius 1;
-	Height 1;
-	+NOBLOCKMAP
-	-SOLID
-	+NOGRAVITY
-	+ROLLSPRITE
-	+DONTSPLASH
-	//+FLATSPRITE
-	//scale 2.5
-	renderstyle "Add";
+		Radius 1;
+		Height 1;
+		+NOBLOCKMAP
+		-SOLID
+		+NOGRAVITY
+		+ROLLSPRITE
+		+DONTSPLASH
+		//+FLATSPRITE
+		//scale 2.5
+		renderstyle "Add";
 	}
 	
 	States

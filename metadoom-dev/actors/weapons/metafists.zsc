@@ -12,13 +12,13 @@ class MetaLastResortFist : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 3700;
-	Weapon.Kickback 100;
-	Obituary "$OB_BERSERK";
-	Tag "$TAG_FIST";
-	+WEAPON.WIMPY_WEAPON
-	+WEAPON.MELEEWEAPON
-	+WEAPON.NOALERT
+		Weapon.SelectionOrder 3700;
+		Weapon.Kickback 100;
+		Obituary "$OB_BERSERK";
+		Tag "$TAG_FIST";
+		+WEAPON.WIMPY_WEAPON
+		+WEAPON.MELEEWEAPON
+		+WEAPON.NOALERT
 	}
 	
 	States
@@ -57,13 +57,13 @@ class MetaBerserkFist : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 3700;
-	Weapon.Kickback 100;
-	Obituary "$OB_BERSERK";
-	Tag "$TAG_FIST";
-	+WEAPON.WIMPY_WEAPON
-	+WEAPON.MELEEWEAPON
-	+WEAPON.NOALERT
+		Weapon.SelectionOrder 3700;
+		Weapon.Kickback 100;
+		Obituary "$OB_BERSERK";
+		Tag "$TAG_FIST";
+		+WEAPON.WIMPY_WEAPON
+		+WEAPON.MELEEWEAPON
+		+WEAPON.NOALERT
 	}
 	
 	States

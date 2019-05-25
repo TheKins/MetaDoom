@@ -12,13 +12,13 @@ class KineticMinePickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTKINMINE";
-	Tag "$TAGKINMINE";
-	inventory.icon "INVMINE";
-	inventory.pickupsound "inventory/kineticmine/get";
-	+INVENTORY.ALWAYSPICKUP
-	scale 0.75;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTKINMINE";
+		Tag "$TAGKINMINE";
+		inventory.icon "INVMINE";
+		inventory.pickupsound "inventory/kineticmine/get";
+		+INVENTORY.ALWAYSPICKUP
+		scale 0.75;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -37,7 +37,7 @@ class KineticMinePickupRetrieve : KineticMinePickup
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTKINMINERET";
+		inventory.pickupmessage "$GOTKINMINERET";
 	}
 	
 	states
@@ -53,14 +53,14 @@ class KineticMine : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTKINMINE";
-	Tag "$TAGKINMINE";
-	inventory.icon "INVMINE";
-	inventory.pickupsound "inventory/kineticmine/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTKINMINE";
+		Tag "$TAGKINMINE";
+		inventory.icon "INVMINE";
+		inventory.pickupsound "inventory/kineticmine/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -158,11 +158,11 @@ class KineticMineBeepyBoop : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	Radius 1;
-	Height 1;
-	scale 0.5;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		Radius 1;
+		Height 1;
+		scale 0.5;
 	}
 	
 	states
@@ -177,19 +177,19 @@ class KineticMineLurkingFloor : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	scale 0.5;
-	+LOOKALLAROUND
-	+FRIENDLY
-	+DONTTHRUST
-	// This combination of flags here should (SHOULD) ultimately accomplish nothing
-	// except allowing the mines to be detected by A_RadiusGive. I'm not proud...
-	+SHOOTABLE
-	+INVULNERABLE
-	-SOLID
-	+NOBLOOD
-	+NOTAUTOAIMED
+		Radius 8;
+		Height 8;
+		scale 0.5;
+		+LOOKALLAROUND
+		+FRIENDLY
+		+DONTTHRUST
+		// This combination of flags here should (SHOULD) ultimately accomplish nothing
+		// except allowing the mines to be detected by A_RadiusGive. I'm not proud...
+		+SHOOTABLE
+		+INVULNERABLE
+		-SOLID
+		+NOBLOOD
+		+NOTAUTOAIMED
 	}
 	
 	int user_fuse;
@@ -266,13 +266,13 @@ class KineticMineLurkingCeiling : KineticMineLurkingFloor
 {
 	Default
 	{
-	Radius 8;
-	Height 4;
-	scale -0.5;
-	+LOOKALLAROUND
-	+FRIENDLY
-	+NOGRAVITY
-	+DONTTHRUST
+		Radius 8;
+		Height 4;
+		scale -0.5;
+		+LOOKALLAROUND
+		+FRIENDLY
+		+NOGRAVITY
+		+DONTTHRUST
 	}
 	
 	States
@@ -320,14 +320,14 @@ class KineticMineLurkingWall : KineticMineLurkingFloor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	scale 0.5;
-	+LOOKALLAROUND
-	+FRIENDLY
-	+WALLSPRITE
-	+NOGRAVITY
-	+DONTTHRUST
+		Radius 8;
+		Height 8;
+		scale 0.5;
+		+LOOKALLAROUND
+		+FRIENDLY
+		+WALLSPRITE
+		+NOGRAVITY
+		+DONTTHRUST
 	}
 	
 	States
@@ -387,7 +387,7 @@ class KineticMineLurkingWallWorkaround : Actor
 {
 	Default
 	{
-	+NOGRAVITY
+		+NOGRAVITY
 	}
 	
 	States
@@ -408,14 +408,14 @@ class KineticMineLeapy : Actor
 {
 	Default
 	{
-	Radius 11;
-	Height 8;
-	Speed 20;
-	Damage 20;
-	Projectile;
-	+RANDOMIZE
-	Obituary "$OB_KINMINE";
-	Decal "Scorch";
+		Radius 11;
+		Height 8;
+		Speed 20;
+		Damage 20;
+		Projectile;
+		+RANDOMIZE
+		Obituary "$OB_KINMINE";
+		Decal "Scorch";
 	}
 	
 	States

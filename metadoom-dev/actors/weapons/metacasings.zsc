@@ -12,10 +12,10 @@ class BulletCasingSpawn : Actor
 {
 	Default
 	{
-	Speed 20;
-	PROJECTILE;
-	+NOCLIP
-	+CLIENTSIDEONLY
+		Speed 20;
+		PROJECTILE;
+		+NOCLIP
+		+CLIENTSIDEONLY
 	}
 	
 	States
@@ -55,20 +55,21 @@ class EmptyBrass : Actor
 {
 	Default
 	{
-	BounceType "Doom";
-	PROJECTILE;
-	-NOGRAVITY
-	-NOBLOCKMAP
-	+NOTELEPORT
-	+dontsplash
-	//+FORCEXYBILLBOARD
-	+CLIENTSIDEONLY
-	Radius 2;
-	BounceSound "weapons/casing1";
-	Speed 6;
-	scale 0.2;
-	BounceFactor 0.4;
+		BounceType "Doom";
+		PROJECTILE;
+		-NOGRAVITY
+		-NOBLOCKMAP
+		+NOTELEPORT
+		+dontsplash
+		//+FORCEXYBILLBOARD
+		+CLIENTSIDEONLY
+		Radius 2;
+		BounceSound "weapons/casing1";
+		Speed 6;
+		scale 0.2;
+		BounceFactor 0.4;
 	}
+
 	States
 	{
 	Spawn:
@@ -120,8 +121,9 @@ class ShotgunCasing : EmptyBrass
 {
 	Default
 	{
-	BounceSound "weapons/casing2";
+		BounceSound "weapons/casing2";
 	}
+	
 	States
 	{
 	Spawn:

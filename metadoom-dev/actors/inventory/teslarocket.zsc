@@ -10,13 +10,13 @@ class TeslaRocketPickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTTESLA";
-	Tag "$TAGTESLA";
-	inventory.icon "INVTESL";
-	inventory.pickupsound "inventory/teslarocket/get";
-	+INVENTORY.ALWAYSPICKUP
-	scale 0.5;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTTESLA";
+		Tag "$TAGTESLA";
+		inventory.icon "INVTESL";
+		inventory.pickupsound "inventory/teslarocket/get";
+		+INVENTORY.ALWAYSPICKUP
+		scale 0.5;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -35,14 +35,14 @@ class TeslaRocket : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTTESLA";
-	Tag "$TAGTESLA";
-	inventory.icon "INVTESL";
-	inventory.pickupsound "inventory/grenade/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTTESLA";
+		Tag "$TAGTESLA";
+		inventory.icon "INVTESL";
+		inventory.pickupsound "inventory/grenade/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -76,16 +76,16 @@ class TeslaRocketProj : Actor
 {
 	Default
 	{
-	Radius 11;
-	Height 8;
-	Speed 10;
-	DamageFunction (5);
-	Projectile;
-	+RANDOMIZE
-	+RIPPER
-	scale 0.5;
-	Obituary "$OB_TESLA";
-	Decal "CacoScorch";
+		Radius 11;
+		Height 8;
+		Speed 10;
+		DamageFunction (5);
+		Projectile;
+		+RANDOMIZE
+		+RIPPER
+		scale 0.5;
+		Obituary "$OB_TESLA";
+		Decal "CacoScorch";
 	}
 	
 	States
@@ -156,10 +156,10 @@ class TeslaZapperTrail : Actor
 {
 	Default
 	{
-	//Renderstyle Add
-	Alpha 0.75;
-	Scale 0.5;
-	+NOINTERACTION
+		//Renderstyle Add
+		Alpha 0.75;
+		Scale 0.5;
+		+NOINTERACTION
 	}
 	
 	States
@@ -175,8 +175,8 @@ class TeslaRocketExplosion : Explosion
 {
 	Default
 	{
-	//scale 0.5
-	Obituary "$OB_TESLA";
+		//scale 0.5
+		Obituary "$OB_TESLA";
 	}
 	
 	States

@@ -13,15 +13,15 @@ class MetaHealthPinata : Health
 {
 	Default
 	{
-	-COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.Amount 2;
-	Inventory.PickupMessage "$GOTPINATAHEALTH";
-	Inventory.PickupSound "items/health/shard";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	RenderStyle "Add";
+		-COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.Amount 2;
+		Inventory.PickupMessage "$GOTPINATAHEALTH";
+		Inventory.PickupSound "items/health/shard";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	int lifespan;
@@ -48,7 +48,7 @@ class MetaHealthPinataPerm : MetaHealthPinata
 {
 	Default
 	{
-	Inventory.Amount 4;
+		Inventory.Amount 4;
 	}
 	
 	States
@@ -64,17 +64,17 @@ class MetaArmorPinata : BasicArmorBonus
 {
 	Default
 	{
-	-COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Armor.Savepercent 33.335;
-	Armor.Saveamount 4;
-	Armor.Maxsaveamount 100;
-	Inventory.PickupSound "items/armor/shard";
-	Inventory.PickupMessage "$GOTPINATAARMOR";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	RenderStyle "Add";
+		-COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 4;
+		Armor.Maxsaveamount 100;
+		Inventory.PickupSound "items/armor/shard";
+		Inventory.PickupMessage "$GOTPINATAARMOR";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	States
@@ -90,13 +90,13 @@ class MetaPinataClip : Clip
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTPINATAAMMO_CLIP";
-	Inventory.Amount 5;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	inventory.pickupsound "items/clip";
-	scale 0.75;
-	RenderStyle "Add";
+		Inventory.PickupMessage "$GOTPINATAAMMO_CLIP";
+		Inventory.Amount 5;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		inventory.pickupsound "items/clip";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	States
@@ -112,13 +112,13 @@ class MetaPinataShell : Shell
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTPINATAAMMO_SHELL";
-	Inventory.Amount 2;
-	inventory.pickupsound "items/shell";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	RenderStyle "Add";
+		Inventory.PickupMessage "$GOTPINATAAMMO_SHELL";
+		Inventory.Amount 2;
+		inventory.pickupsound "items/shell";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	States
@@ -134,13 +134,13 @@ class MetaPinataRocket : RocketAmmo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTPINATAAMMO_ROCKET";
-	Inventory.Amount 2;
-	inventory.pickupsound "items/rocket";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	RenderStyle "Add";
+		Inventory.PickupMessage "$GOTPINATAAMMO_ROCKET";
+		Inventory.Amount 2;
+		inventory.pickupsound "items/rocket";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	States
@@ -156,13 +156,13 @@ class MetaPinataCell : Cell
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTPINATAAMMO_CELL";
-	Inventory.Amount 10;
-	inventory.pickupsound "items/cell";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	RenderStyle "Add";
+		Inventory.PickupMessage "$GOTPINATAAMMO_CELL";
+		Inventory.Amount 10;
+		inventory.pickupsound "items/cell";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
 	}
 	
 	States

@@ -13,21 +13,21 @@ class MetaDemon : MonsterCore
 {
 	Default
 	{
-	Health 150;
-	PainChance 180;
-	Speed 10;
-	Radius 30;
-	Height 56;
-	Mass 400;
-	Monster;
-	+FLOORCLIP
-	SeeSound "demon/sight";
-	AttackSound "demon/melee";
-	PainSound "demon/pain";
-	DeathSound "demon/death";
-	ActiveSound "demon/active";
-	Obituary "$OB_DEMONHIT";
-	painchance "HolyWater", 255;
+		Health 150;
+		PainChance 180;
+		Speed 10;
+		Radius 30;
+		Height 56;
+		Mass 400;
+		Monster;
+		+FLOORCLIP
+		SeeSound "demon/sight";
+		AttackSound "demon/melee";
+		PainSound "demon/pain";
+		DeathSound "demon/death";
+		ActiveSound "demon/active";
+		Obituary "$OB_DEMONHIT";
+		painchance "HolyWater", 255;
 	}
 
 	States
@@ -117,22 +117,22 @@ class MetaBullDemon : MonsterCore
 {
 	Default
 	{
-	Health 200;
-	PainChance 180;
-	Speed 14;
-	Radius 30;
-	Height 56;
-	Mass 400;
-	Monster;
-	+FLOORCLIP
-	SeeSound "monsters/bulldemon/see";
-	AttackSound "monsters/bulldemon/bite";
-	PainSound "monsters/bulldemon/pain";
-	DeathSound "monsters/bulldemon/die";
-	ActiveSound "demon/active";
-	Obituary "$OB_BULLDEMONHIT";
-	painchance 64;
-	painchance "HolyWater", 255;
+		Health 200;
+		PainChance 180;
+		Speed 14;
+		Radius 30;
+		Height 56;
+		Mass 400;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/bulldemon/see";
+		AttackSound "monsters/bulldemon/bite";
+		PainSound "monsters/bulldemon/pain";
+		DeathSound "monsters/bulldemon/die";
+		ActiveSound "demon/active";
+		Obituary "$OB_BULLDEMONHIT";
+		painchance 64;
+		painchance "HolyWater", 255;
 	}
 
 	int user_accelerator;
@@ -354,11 +354,11 @@ class BullDemonChargeFire : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	RenderStyle "Add";
-	Alpha 1;
-	scale 0.25;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 1;
+		scale 0.25;
 	}
 
 	States
@@ -374,12 +374,12 @@ class BullDemonDustCloud : Actor
 {
 	Default
 	{
-	+NOINTERACTION
-	+CLIENTSIDEONLY
-	+FORCEXYBILLBOARD
-	Renderstyle "Shaded";
-	StencilColor "6b 54 32";
-	Scale 1.4;
+		+NOINTERACTION
+		+CLIENTSIDEONLY
+		+FORCEXYBILLBOARD
+		Renderstyle "Shaded";
+		StencilColor "6b 54 32";
+		Scale 1.4;
 	}
 
 	States
@@ -398,14 +398,14 @@ class BullDemonShockwave : Actor
 {
 	Default
 	{
-	radius 10;
-	height 10;
-	+NOCLIP
-	+WALLSPRITE
-	+NOGRAVITY
-	+NOBLOCKMAP
-	+ROLLCENTER
-	Renderstyle "Add";
+		radius 10;
+		height 10;
+		+NOCLIP
+		+WALLSPRITE
+		+NOGRAVITY
+		+NOBLOCKMAP
+		+ROLLCENTER
+		Renderstyle "Add";
 	}
 
 	states

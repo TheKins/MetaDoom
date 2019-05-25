@@ -13,25 +13,25 @@ class MetaMachineGunGuy : MonsterCore
 {
 	Default
 	{
-	Health 70;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 8;
-	PainChance 170;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/machinegunner/see";
-	PainSound "monsters/machinegunner/pain";
-	DeathSound "monsters/machinegunner/die";
-	ActiveSound "monsters/machinegunner/idle";
-	AttackSound "chainguy/attack";
-	Obituary "$OB_MGUNGUY";
-	Dropitem "MetaMachineGun";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 70;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 8;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/machinegunner/see";
+		PainSound "monsters/machinegunner/pain";
+		DeathSound "monsters/machinegunner/die";
+		ActiveSound "monsters/machinegunner/idle";
+		AttackSound "chainguy/attack";
+		Obituary "$OB_MGUNGUY";
+		Dropitem "MetaMachineGun";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -126,25 +126,25 @@ class MetaChainGunGuy : MonsterCore
 {
 	Default
 	{
-	Health 80;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 8;
-	PainChance 170;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/machinegunner/see";
-	PainSound "monsters/machinegunner/pain";
-	DeathSound "monsters/machinegunner/die";
-	ActiveSound "monsters/machinegunner/idle";
-	AttackSound "chainguy/attack";
-	Obituary "$OB_CGUNGUY";
-	Dropitem "MetaChainGun";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 80;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 8;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/machinegunner/see";
+		PainSound "monsters/machinegunner/pain";
+		DeathSound "monsters/machinegunner/die";
+		ActiveSound "monsters/machinegunner/idle";
+		AttackSound "chainguy/attack";
+		Obituary "$OB_CGUNGUY";
+		Dropitem "MetaChainGun";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -249,25 +249,25 @@ class MetaAssassinGuy : MonsterCore
 {
 	Default
 	{
-	Health 80;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 8;
-	PainChance 170;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/d3chaingunner/see";
-	PainSound "monsters/d3chaingunner/pain";
-	DeathSound "monsters/d3chaingunner/die";
-	ActiveSound "monsters/d3chaingunner/idle";
-	AttackSound "chainguy/attack";
-	Obituary "$OB_D3CGUNGUY";
-	Dropitem "MetaChainGun";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 80;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 8;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/d3chaingunner/see";
+		PainSound "monsters/d3chaingunner/pain";
+		DeathSound "monsters/d3chaingunner/die";
+		ActiveSound "monsters/d3chaingunner/idle";
+		AttackSound "chainguy/attack";
+		Obituary "$OB_D3CGUNGUY";
+		Dropitem "MetaChainGun";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -378,14 +378,14 @@ class AssassinTentacle : LoreShot
 {
 	Default
 	{
-	Speed 15;
-	Height 14;
-	Radius 10;
-	Projectile;
-	//+STRIFEDAMAGE
-	Damage 2;
-	MaxStepHeight 4;
-	SeeSound "monsters/d3chaingunner/tentacle";
+		Speed 15;
+		Height 14;
+		Radius 10;
+		Projectile;
+		//+STRIFEDAMAGE
+		Damage 2;
+		MaxStepHeight 4;
+		SeeSound "monsters/d3chaingunner/tentacle";
 	}
 	
 	States
@@ -403,9 +403,9 @@ class AssassinTentacleTrail : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	scale 0.8;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		scale 0.8;
 	}
 	states
 	{

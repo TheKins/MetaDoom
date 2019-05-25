@@ -12,9 +12,9 @@ class MetaGaussCannonPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaGaussCannon";
-	Inventory.PickupMessage "$GOTGAUSS";
-	Inventory.PickupSound "weapons/gauss/get";
+		DropItem "MetaGaussCannon";
+		Inventory.PickupMessage "$GOTGAUSS";
+		Inventory.PickupSound "weapons/gauss/get";
 	}
 	
 	States
@@ -31,16 +31,16 @@ class MetaGaussCannon : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 400;
-	Weapon.AmmoUse1 10;
-	Weapon.AmmoGive 40;
-	Weapon.AmmoType "Cell";
-	Inventory.PickupMessage "$GOTGAUSS";
-	Obituary "$OB_GAUSS";
-	Tag "$TAGGAUSS";
-	Inventory.PickupSound "weapons/gauss/get";
-	//Decal PlasmaScorch
-	damagetype "Gauss";
+		Weapon.SelectionOrder 400;
+		Weapon.AmmoUse1 10;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "Cell";
+		Inventory.PickupMessage "$GOTGAUSS";
+		Obituary "$OB_GAUSS";
+		Tag "$TAGGAUSS";
+		Inventory.PickupSound "weapons/gauss/get";
+		//Decal PlasmaScorch
+		damagetype "Gauss";
 	}
 	
 	States
@@ -170,12 +170,12 @@ class GaussExplosion : Explosion
 {
 	Default
 	{
-	scale 2;
-	Obituary "$OB_GAUSS";
-	+ALWAYSPUFF
-	+FORCEDECAL
-	Decal "PlasmaScorch";
-	damagetype "Gauss";
+		scale 2;
+		Obituary "$OB_GAUSS";
+		+ALWAYSPUFF
+		+FORCEDECAL
+		Decal "PlasmaScorch";
+		damagetype "Gauss";
 	}
 	
 	States

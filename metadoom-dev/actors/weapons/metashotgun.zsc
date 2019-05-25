@@ -10,9 +10,9 @@ class MetaShotgunPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaShotgun";
-	Inventory.PickupMessage "$GOTSHOTGUN";
-	Inventory.PickupSound "weapons/shotgun/get";
+		DropItem "MetaShotgun";
+		Inventory.PickupMessage "$GOTSHOTGUN";
+		Inventory.PickupSound "weapons/shotgun/get";
 	}
 	
 	States
@@ -29,17 +29,17 @@ class MetaShotgun : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 1300;
-	Weapon.AmmoUse1 1;
-	Weapon.AmmoUse2 4;
-	Weapon.AmmoGive 8;
-	Weapon.AmmoType1 "Shell";
-	Weapon.AmmoType2 "Shell";
-	Inventory.PickupMessage "$GOTSHOTGUN";
-	Obituary "$OB_METASHOTGUN_SHELL";
-	Tag "$TAG_SHOTGUN";
-	Inventory.PickupSound "weapons/shotgun/get";
-	+WEAPON.ALT_AMMO_OPTIONAL
+		Weapon.SelectionOrder 1300;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse2 4;
+		Weapon.AmmoGive 8;
+		Weapon.AmmoType1 "Shell";
+		Weapon.AmmoType2 "Shell";
+		Inventory.PickupMessage "$GOTSHOTGUN";
+		Obituary "$OB_METASHOTGUN_SHELL";
+		Tag "$TAG_SHOTGUN";
+		Inventory.PickupSound "weapons/shotgun/get";
+		+WEAPON.ALT_AMMO_OPTIONAL
 	}
 	
 	States
@@ -184,15 +184,15 @@ class MetaShotgunGrenade : Actor
 {
 	Default
 	{
-	Radius 11;
-	Height 8;
-	Speed 40;
-	Damage 10;
-	Projectile;
-	+RANDOMIZE
-	-NOGRAVITY
-	Decal "Scorch";
-	Obituary "$OB_METASHOTGUN_GREN";
+		Radius 11;
+		Height 8;
+		Speed 40;
+		Damage 10;
+		Projectile;
+		+RANDOMIZE
+		-NOGRAVITY
+		Decal "Scorch";
+		Obituary "$OB_METASHOTGUN_GREN";
 	}
 	
 	States
@@ -210,8 +210,8 @@ class ShotgunGrenadeExplosion : Explosion
 {
 	Default
 	{
-	scale 0.5;
-	Obituary "$OB_METASHOTGUN_GREN";
+		scale 0.5;
+		Obituary "$OB_METASHOTGUN_GREN";
 	}
 	
 	States
@@ -236,8 +236,8 @@ class ShockwaveSmall : Shockwave
 {
 	Default
 	{
-	radius 1;
-	height 1;
-	scale 0.5;
+		radius 1;
+		height 1;
+		scale 0.5;
 	}
 }

@@ -142,15 +142,15 @@ class MetaBulletPuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	Decal "BulletChip";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		Decal "BulletChip";
 	}
 	
 	States
@@ -172,7 +172,7 @@ class MetaTurretPuff : MetaBulletPuff
 {
 	Default
 	{
-	damagetype "ChaingunTurret";
+		damagetype "ChaingunTurret";
 	}
 }
 
@@ -180,18 +180,18 @@ class MetaMeleePuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	damagetype "Fist";
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	AttackSound "weapons/melee/hitwall";
-	SeeSound "weapons/melee/hit";
-	Obituary "$OB_METAFIST";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		damagetype "Fist";
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		AttackSound "weapons/melee/hitwall";
+		SeeSound "weapons/melee/hit";
+		Obituary "$OB_METAFIST";
 	}
 	
 	States
@@ -209,18 +209,18 @@ class MetaBerserkPuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	damagetype "BerserkFist";
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	AttackSound "weapons/melee/hitwall";
-	SeeSound "weapons/melee/hit";
-	Obituary "$OB_BERSERK";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		damagetype "BerserkFist";
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		AttackSound "weapons/melee/hitwall";
+		SeeSound "weapons/melee/hit";
+		Obituary "$OB_BERSERK";
 	}
 	States
 	{

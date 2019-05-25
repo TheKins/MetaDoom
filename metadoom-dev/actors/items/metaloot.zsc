@@ -15,8 +15,8 @@ class LootSpawner : Actor
 {
 	Default
 	{
-	radius 64;
-	height 32;
+		radius 64;
+		height 32;
 	}
 	
 	States
@@ -70,14 +70,14 @@ class LootItem : ScoreItem
 {
 	Default
 	{
-	Inventory.Amount 500;
-	Inventory.PickupMessage "$GOTLOOT6";
-	inventory.pickupsound "items/loot";
-	BounceType "Grenade";
-	Bouncefactor 0.0;
-	WallBouncefactor 1.0;
-	-COUNTITEM
-	+BLOCKASPLAYER
+		Inventory.Amount 500;
+		Inventory.PickupMessage "$GOTLOOT6";
+		inventory.pickupsound "items/loot";
+		BounceType "Grenade";
+		Bouncefactor 0.0;
+		WallBouncefactor 1.0;
+		-COUNTITEM
+		+BLOCKASPLAYER
 	}
 	
 	States
@@ -100,8 +100,8 @@ class LootGoblet : LootItem
 {
 	Default
 	{
-	Inventory.Amount 500;
-	Inventory.PickupMessage "$GOTLOOT6";
+		Inventory.Amount 500;
+		Inventory.PickupMessage "$GOTLOOT6";
 	}
 	
 	States
@@ -117,8 +117,8 @@ class LootDagger : LootItem
 {
 	Default
 	{
-	Inventory.Amount 500;
-	Inventory.PickupMessage "$GOTLOOT1";
+		Inventory.Amount 500;
+		Inventory.PickupMessage "$GOTLOOT1";
 	}
 	
 	States
@@ -134,8 +134,8 @@ class LootChest : LootItem
 {
 	Default
 	{
-	Inventory.Amount 1000;
-	Inventory.PickupMessage "$GOTLOOT2";
+		Inventory.Amount 1000;
+		Inventory.PickupMessage "$GOTLOOT2";
 	}
 	
 	States
@@ -151,8 +151,8 @@ class LootSceptre : LootItem
 {
 	Default
 	{
-	Inventory.Amount 1500;
-	Inventory.PickupMessage "$GOTLOOT3";
+		Inventory.Amount 1500;
+		Inventory.PickupMessage "$GOTLOOT3";
 	}
 	
 	States
@@ -168,8 +168,8 @@ class LootBible : LootItem
 {
 	Default
 	{
-	Inventory.Amount 2000;
-	Inventory.PickupMessage "$GOTLOOT4";
+		Inventory.Amount 2000;
+		Inventory.PickupMessage "$GOTLOOT4";
 	}
 	
 	States
@@ -185,8 +185,8 @@ class LootCrown : LootItem
 {
 	Default
 	{
-	Inventory.Amount 2500;
-	Inventory.PickupMessage "$GOTLOOT5";
+		Inventory.Amount 2500;
+		Inventory.PickupMessage "$GOTLOOT5";
 	}
 	
 	States
@@ -202,9 +202,9 @@ class LootCredits : LootItem
 {
 	Default
 	{
-	Inventory.Amount 500;
-	Inventory.PickupMessage "$GOTLOOT7";
-	scale 0.8;
+		Inventory.Amount 500;
+		Inventory.PickupMessage "$GOTLOOT7";
+		scale 0.8;
 	}
 	
 	States
@@ -222,10 +222,10 @@ class LootFigurine1 : LootItem
 {
 	Default
 	{
-	Inventory.Amount 6666;
-	Inventory.PickupMessage "$GOTLOOTFIG1";
-	inventory.pickupsound "items/lootfig";
-	scale 0.75;
+		Inventory.Amount 6666;
+		Inventory.PickupMessage "$GOTLOOTFIG1";
+		inventory.pickupsound "items/lootfig";
+		scale 0.75;
 	}
 	
 	States
@@ -242,7 +242,7 @@ class LootFigurine2 : LootFigurine1
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTLOOTFIG2";
+		Inventory.PickupMessage "$GOTLOOTFIG2";
 	}
 	
 	States
@@ -259,7 +259,7 @@ class LootFigurine3 : LootFigurine1
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTLOOTFIG3";
+		Inventory.PickupMessage "$GOTLOOTFIG3";
 	}
 	
 	States
@@ -276,7 +276,7 @@ class LootFigurine4 : LootFigurine1
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTLOOTFIG4";
+		Inventory.PickupMessage "$GOTLOOTFIG4";
 	}
 	
 	States

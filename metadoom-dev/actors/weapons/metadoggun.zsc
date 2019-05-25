@@ -10,14 +10,14 @@ class MetaDogGun_HellHound : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 1900;
-	Weapon.AmmoUse 0;
-	Weapon.AmmoGive 100;
-	//Weapon.AmmoType "DogGunHealth"
-	+WEAPON.WIMPY_WEAPON
-	Inventory.Pickupmessage "DOG GUN!";
-	Tag "$TAGHDOG";
-	Inventory.PickupSound "weapons/fireextinguisher/get";
+		Weapon.SelectionOrder 1900;
+		Weapon.AmmoUse 0;
+		Weapon.AmmoGive 100;
+		//Weapon.AmmoType "DogGunHealth"
+		+WEAPON.WIMPY_WEAPON
+		Inventory.Pickupmessage "DOG GUN!";
+		Tag "$TAGHDOG";
+		Inventory.PickupSound "weapons/fireextinguisher/get";
 	}
 	
 	States
@@ -90,15 +90,15 @@ class DogArmorBonus : BasicArmorBonus
 {
 	Default
 	{
-	Radius 20;
-	Height 16;
-	Inventory.Pickupmessage "$GOTARMBONUS";
-	Inventory.Icon "BON2A0";
-	Armor.Savepercent 33.335;
-	Armor.Saveamount 1;
-	Armor.Maxsaveamount 100;
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTARMBONUS";
+		Inventory.Icon "BON2A0";
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 1;
+		Armor.Maxsaveamount 100;
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
 	}
 	
 	States
@@ -113,18 +113,18 @@ class MetaDogPuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	damagetype "DogBite";
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	AttackSound "weapons/melee/hitwall";
-	SeeSound "weapons/melee/hit";
-	Obituary "$OB_METADOG_BITE";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		damagetype "DogBite";
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		AttackSound "weapons/melee/hitwall";
+		SeeSound "weapons/melee/hit";
+		Obituary "$OB_METADOG_BITE";
 	}
 	
 	States
@@ -142,16 +142,16 @@ class MetaDogBomb_HellHound : Actor
 {
 	Default
 	{
-	Radius 25;
-	Height 25;
-	Speed 40;
-	Damage 10;
-	yscale -1;
-	Projectile;
-	+RANDOMIZE
-	-NOGRAVITY
-	Decal "Scorch";
-	Obituary "$OB_METADOG_HELLHOUND";
+		Radius 25;
+		Height 25;
+		Speed 40;
+		Damage 10;
+		yscale -1;
+		Projectile;
+		+RANDOMIZE
+		-NOGRAVITY
+		Decal "Scorch";
+		Obituary "$OB_METADOG_HELLHOUND";
 	}
 	
 	States
@@ -174,7 +174,7 @@ class Dogsplosion : Explosion
 {
 	Default
 	{
-	damagetype "Dogsplosion";
+		damagetype "Dogsplosion";
 	}
 }
 
@@ -182,7 +182,7 @@ class MetaDogGun_DemonDog : MetaDogGun_HellHound
 {
 	Default
 	{
-	Tag "$TAGDDOG";
+		Tag "$TAGDDOG";
 	}
 	
 	States
@@ -242,7 +242,7 @@ class MetaDogBomb_DemonDog : MetaDogBomb_HellHound
 {
 	Default
 	{
-	Obituary "$OB_METADOG_DEMONDOG";
+		Obituary "$OB_METADOG_DEMONDOG";
 	}
 	
 	States
@@ -265,7 +265,7 @@ class MetaDogGun_Cerberus : MetaDogGun_HellHound
 {
 	Default
 	{
-	Tag "$TAGCDOG";
+		Tag "$TAGCDOG";
 	}
 	
 	States
@@ -325,7 +325,7 @@ class MetaDogBomb_Cerberus : MetaDogBomb_HellHound
 {
 	Default
 	{
-	Obituary "$OB_METADOG_CERBERUS";
+		Obituary "$OB_METADOG_CERBERUS";
 	}
 	
 	States

@@ -12,9 +12,9 @@ class MetaChaingunPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaChaingun";
-	Inventory.PickupMessage "$GOTCHAINGUN";
-	Inventory.PickupSound "weapons/chaingun/get";
+		DropItem "MetaChaingun";
+		Inventory.PickupMessage "$GOTCHAINGUN";
+		Inventory.PickupSound "weapons/chaingun/get";
 	}
 	
 	States
@@ -31,15 +31,15 @@ class MetaChaingun : MetaDoomWeapon
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTCHAINGUN";
-	Tag "$TAG_CHAINGUN";
-	Obituary "$OB_MPCHAINGUN";
-	Inventory.PickupSound "weapons/chaingun/get";
-	Weapon.SelectionOrder 400;
-	Weapon.Kickback 90;
-	Weapon.AmmoType "Clip";
-	Weapon.AmmoGive 100;
-	Weapon.AmmoUse 1;
+		Inventory.PickupMessage "$GOTCHAINGUN";
+		Tag "$TAG_CHAINGUN";
+		Obituary "$OB_MPCHAINGUN";
+		Inventory.PickupSound "weapons/chaingun/get";
+		Weapon.SelectionOrder 400;
+		Weapon.Kickback 90;
+		Weapon.AmmoType "Clip";
+		Weapon.AmmoGive 100;
+		Weapon.AmmoUse 1;
 	}
 	
 	States

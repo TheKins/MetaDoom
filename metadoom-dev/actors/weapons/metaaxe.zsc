@@ -10,9 +10,9 @@ class MetaAxePickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaAxe";
-	Inventory.PickupMessage "$GOTAXE";
-	Inventory.PickupSound "weapons/axe/get";
+		DropItem "MetaAxe";
+		Inventory.PickupMessage "$GOTAXE";
+		Inventory.PickupSound "weapons/axe/get";
 	}
 	States
 	{
@@ -28,15 +28,15 @@ class MetaAxe : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 2400;
-	Weapon.Kickback 100;
-	Obituary "$OB_AXE";
-	Tag "$TAGAXE";
-	+WEAPON.WIMPY_WEAPON
-	+WEAPON.MELEEWEAPON
-	+WEAPON.NOALERT
-	Inventory.PickupMessage "$GOTAXE";
-	Inventory.PickupSound "weapons/axe/get";
+		Weapon.SelectionOrder 2400;
+		Weapon.Kickback 100;
+		Obituary "$OB_AXE";
+		Tag "$TAGAXE";
+		+WEAPON.WIMPY_WEAPON
+		+WEAPON.MELEEWEAPON
+		+WEAPON.NOALERT
+		Inventory.PickupMessage "$GOTAXE";
+		Inventory.PickupSound "weapons/axe/get";
 	}
 	
 	States
@@ -112,18 +112,18 @@ class MetaAxePuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	damagetype "Axe";
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	AttackSound "weapons/axe/hitwall";
-	SeeSound "weapons/axe/hit";
-	Obituary "$OB_AXE";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		damagetype "Axe";
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		AttackSound "weapons/axe/hitwall";
+		SeeSound "weapons/axe/hit";
+		Obituary "$OB_AXE";
 	}
 	States
 	{

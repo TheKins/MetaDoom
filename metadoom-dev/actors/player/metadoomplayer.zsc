@@ -31,40 +31,40 @@ class MetaDoomPlayer : PlayerPawn
 {
 	Default
 	{
-	Speed 1;
-	Health 100;
-	Radius 16;
-	Height 56;
-	Mass 100;
-	PainChance 255;
-	Player.DisplayName "Slayer";
-	Player.CrouchSprite "PLYC";
-	Player.StartItem "MetaPistol";
-	Player.WeaponSlot 1, "MetaPistol", "MetaBerserkFist", "MetaLastResortFist", "MetaCheatDetector";
-	Player.WeaponSlot 2, "MetaHolyWaterPistol", "MetaShotgun";
-	Player.WeaponSlot 3, "MetaFireExtinguisher", "MetaSuperShotgun";
-	Player.WeaponSlot 4, "MetaChaingun", "MetaMachineGun";
-	Player.WeaponSlot 5, "MetaGrenadeLauncher", "MetaRocketLauncher";
-	Player.WeaponSlot 6, "MetaGaussCannon", "MetaLightningGun", "MetaPlasmaRifle";
-	Player.WeaponSlot 7, "MetaBFG9000", "MetaUnmaker", "MetaSoulcube";
-	Player.WeaponSlot 8, "MetaChainsaw", "MetaAxe";
-	
-	+NOSKIN
-	
-	Player.ColorRange 112, 127;
-	Player.Colorset 0, "Green",			0x70, 0x7F,  0x72;
-	Player.Colorset 1, "Gray",			0x60, 0x6F,  0x62;
-	Player.Colorset 2, "Brown",			0x40, 0x4F,  0x42;
-	Player.Colorset 3, "Red",			0x20, 0x2F,  0x22;
-	// Doom Legacy additions
-	Player.Colorset 4, "Light Gray",	0x58, 0x67,  0x5A;
-	Player.Colorset 5, "Light Brown",	0x38, 0x47,  0x3A;
-	Player.Colorset 6, "Light Red",		0xB0, 0xBF,  0xB2;
-	Player.Colorset 7, "Light Blue",	0xC0, 0xCF,  0xC2;
-	
-	damagefactor "DogCollar", 0;
-	damagefactor "Dogsplosion", 0;
-	damagefactor "NoHarmPlayer", 0;
+		Speed 1;
+		Health 100;
+		Radius 16;
+		Height 56;
+		Mass 100;
+		PainChance 255;
+		Player.DisplayName "Slayer";
+		Player.CrouchSprite "PLYC";
+		Player.StartItem "MetaPistol";
+		Player.WeaponSlot 1, "MetaPistol", "MetaBerserkFist", "MetaLastResortFist", "MetaCheatDetector";
+		Player.WeaponSlot 2, "MetaHolyWaterPistol", "MetaShotgun";
+		Player.WeaponSlot 3, "MetaFireExtinguisher", "MetaSuperShotgun";
+		Player.WeaponSlot 4, "MetaChaingun", "MetaMachineGun";
+		Player.WeaponSlot 5, "MetaGrenadeLauncher", "MetaRocketLauncher";
+		Player.WeaponSlot 6, "MetaGaussCannon", "MetaLightningGun", "MetaPlasmaRifle";
+		Player.WeaponSlot 7, "MetaBFG9000", "MetaUnmaker", "MetaSoulcube";
+		Player.WeaponSlot 8, "MetaChainsaw", "MetaAxe";
+		
+		+NOSKIN
+		
+		Player.ColorRange 112, 127;
+		Player.Colorset 0, "Green",			0x70, 0x7F,  0x72;
+		Player.Colorset 1, "Gray",			0x60, 0x6F,  0x62;
+		Player.Colorset 2, "Brown",			0x40, 0x4F,  0x42;
+		Player.Colorset 3, "Red",			0x20, 0x2F,  0x22;
+		// Doom Legacy additions
+		Player.Colorset 4, "Light Gray",	0x58, 0x67,  0x5A;
+		Player.Colorset 5, "Light Brown",	0x38, 0x47,  0x3A;
+		Player.Colorset 6, "Light Red",		0xB0, 0xBF,  0xB2;
+		Player.Colorset 7, "Light Blue",	0xC0, 0xCF,  0xC2;
+		
+		damagefactor "DogCollar", 0;
+		damagefactor "Dogsplosion", 0;
+		damagefactor "NoHarmPlayer", 0;
 	}
 	
 	// This is a part of a gross hack to ensure that the player's angle isn't

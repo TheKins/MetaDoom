@@ -12,9 +12,9 @@ class MetaUnmakerPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaUnmaker";
-	Inventory.Pickupmessage "$GOTUNMAKER";
-	Inventory.PickupSound "weapons/unmaker/get";
+		DropItem "MetaUnmaker";
+		Inventory.Pickupmessage "$GOTUNMAKER";
+		Inventory.PickupSound "weapons/unmaker/get";
 	}
 	
 	States
@@ -31,17 +31,17 @@ class MetaUnmaker : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 2900;
-	Obituary "$OB_UNMAKER";
-	Weapon.AmmoUse1 1;
-	Weapon.AmmoGive1 40;
-	Weapon.AmmoType1 "Cell";
-	Weapon.AmmoUse2 10;
-	Weapon.AmmoType2 "Cell";
-	Inventory.Pickupmessage "$GOTUNMAKER";
-	Inventory.PickupSound "weapons/unmaker/get";
-	Tag "$TAGUNMAKER";
-	//Decal Scorch;
+		Weapon.SelectionOrder 2900;
+		Obituary "$OB_UNMAKER";
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoGive1 40;
+		Weapon.AmmoType1 "Cell";
+		Weapon.AmmoUse2 10;
+		Weapon.AmmoType2 "Cell";
+		Inventory.Pickupmessage "$GOTUNMAKER";
+		Inventory.PickupSound "weapons/unmaker/get";
+		Tag "$TAGUNMAKER";
+		//Decal Scorch;
 	}
 	
 	States
@@ -268,20 +268,20 @@ class UnmakerTracer : FastProjectile
 {
 	Default
 	{
-	Alpha 1;
-	RenderStyle "Add";
-	Radius 2;
-	Height 2;
-	damage 7;
-	Speed 75;
-	PROJECTILE;
-	+BLOODSPLATTER
-	+NOEXTREMEDEATH
-	Scale 1;
-	MissileType "UnmakerTracerTrail";
-	MissileHeight 8;
-	Decal "BulletChip";
-	Obituary "$OB_UNMAKER";
+		Alpha 1;
+		RenderStyle "Add";
+		Radius 2;
+		Height 2;
+		damage 7;
+		Speed 75;
+		PROJECTILE;
+		+BLOODSPLATTER
+		+NOEXTREMEDEATH
+		Scale 1;
+		MissileType "UnmakerTracerTrail";
+		MissileHeight 8;
+		Decal "BulletChip";
+		Obituary "$OB_UNMAKER";
 	}
 	
 	States
@@ -306,16 +306,16 @@ class UnmakerTracerTrail : Actor
 { 
 	Default
 	{
-	Alpha 1;
-	RenderStyle "Add";
-	Speed 0;
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+NOTELEPORT
-	+CANNOTPUSH
-	+NODAMAGETHRUST
-	+DONTSPLASH
-	Scale 0.75;
+		Alpha 1;
+		RenderStyle "Add";
+		Speed 0;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+NOTELEPORT
+		+CANNOTPUSH
+		+NODAMAGETHRUST
+		+DONTSPLASH
+		Scale 0.75;
 	}
 	
 	States
@@ -330,20 +330,20 @@ class UnmakerTracerSpark : Actor
 {
 	Default
 	{
-	Health 4;
-	radius 3;
-	height 6;
-	speed .1;
-	RenderStyle "Add";
-	Alpha 1;
-	Scale 0.5;
-	Mass 0;
-	translation "224:224=176:176", "192:197=180:191";
-	+missile
-	+doombounce
-	+FLOORCLIP
-	+DONTSPLASH
-	+NOTELEPORT
+		Health 4;
+		radius 3;
+		height 6;
+		speed .1;
+		RenderStyle "Add";
+		Alpha 1;
+		Scale 0.5;
+		Mass 0;
+		translation "224:224=176:176", "192:197=180:191";
+		+missile
+		+doombounce
+		+FLOORCLIP
+		+DONTSPLASH
+		+NOTELEPORT
 	}
 	
 	States
@@ -362,8 +362,8 @@ class DemonKeySpawner : Actor
 {
 	Default
 	{
-	radius 64;
-	height 32;
+		radius 64;
+		height 32;
 	}
 	
 	States
@@ -388,11 +388,11 @@ class DemonKeyPickup1 : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTARTIFACT1";
-	inventory.pickupsound "weapons/unmaker/demonkey";
-	+INVENTORY.ALWAYSPICKUP
-	+FLOATBOB
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTARTIFACT1";
+		inventory.pickupsound "weapons/unmaker/demonkey";
+		+INVENTORY.ALWAYSPICKUP
+		+FLOATBOB
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -410,7 +410,7 @@ class DemonKeyPickup2 : DemonKeyPickup1
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTARTIFACT2";
+		inventory.pickupmessage "$GOTARTIFACT2";
 	}
 	
 	states
@@ -425,7 +425,7 @@ class DemonKeyPickup3 : DemonKeyPickup1
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTARTIFACT3";
+		inventory.pickupmessage "$GOTARTIFACT3";
 	}
 	
 	states
@@ -440,8 +440,8 @@ class UnmakerRailCore : Actor
 {
 	Default
 	{
-	+NOINTERACTION
-	renderstyle "Add";
+		+NOINTERACTION
+		renderstyle "Add";
 	}
 	
 	States
@@ -457,11 +457,11 @@ class UnmakerRailPuff : Explosion
 {
 	Default
 	{
-	scale 2;
-	Obituary "$OB_GAUSS";
-	+ALWAYSPUFF
-	+FORCEDECAL
-	Decal "Scorch";
+		scale 2;
+		Obituary "$OB_GAUSS";
+		+ALWAYSPUFF
+		+FORCEDECAL
+		Decal "Scorch";
 	}
 	
 	States
@@ -482,12 +482,12 @@ class UnmakerRailPuffShockwave : Actor
 {
 	Default
 	{
-	+WALLSPRITE
-	+NOGRAVITY
-	+NOBLOCKMAP
-	+NOCLIP
-	scale 0.5;
-	Renderstyle "add";
+		+WALLSPRITE
+		+NOGRAVITY
+		+NOBLOCKMAP
+		+NOCLIP
+		scale 0.5;
+		Renderstyle "add";
 	}
 	
 	states

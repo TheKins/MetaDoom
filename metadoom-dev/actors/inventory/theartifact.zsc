@@ -12,14 +12,14 @@ class ArtifactPickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTARTIFACT";
-	Tag "$TAGARTIFACT";
-	inventory.icon "INVARTI";
-	inventory.pickupsound "inventory/artifact/get";
-	+INVENTORY.ALWAYSPICKUP
-	+FLOATBOB
-	scale 0.75;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTARTIFACT";
+		Tag "$TAGARTIFACT";
+		inventory.icon "INVARTI";
+		inventory.pickupsound "inventory/artifact/get";
+		+INVENTORY.ALWAYSPICKUP
+		+FLOATBOB
+		scale 0.75;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -38,15 +38,15 @@ class Artifact : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTARTIFACT";
-	Tag "$TAGARTIFACT";
-	inventory.icon "INVARTI";
-	inventory.pickupsound "inventory/artifact/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.75;
-	+FLOATBOB
+		inventory.pickupmessage "$GOTARTIFACT";
+		Tag "$TAGARTIFACT";
+		inventory.icon "INVARTI";
+		inventory.pickupsound "inventory/artifact/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.75;
+		+FLOATBOB
 	}
 	
 	states
@@ -80,12 +80,12 @@ class ArtifactEffect : PowerupGiver
 {
 	Default
 	{
-	Powerup.Type "PowerTimeFreezerSound";
-	Powerup.Duration -4;
-	Inventory.MaxAmount 0;
-	Translation "128:143=48:63";
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.FANCYPICKUPSOUND;
+		Powerup.Type "PowerTimeFreezerSound";
+		Powerup.Duration -4;
+		Inventory.MaxAmount 0;
+		Translation "128:143=48:63";
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.FANCYPICKUPSOUND;
 	}
 	
 	States

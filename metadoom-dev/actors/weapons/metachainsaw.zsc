@@ -10,10 +10,11 @@ class MetaChainsawPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaChainsaw";
-	Inventory.PickupMessage "$GOTCHAINSAW";
-	Inventory.PickupSound "weapons/chainsaw/get";
+		DropItem "MetaChainsaw";
+		Inventory.PickupMessage "$GOTCHAINSAW";
+		Inventory.PickupSound "weapons/chainsaw/get";
 	}
+	
 	States
 	{
 	Spawn:
@@ -28,16 +29,16 @@ class MetaChainsaw : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.Kickback 0;
-	Weapon.SelectionOrder 2300;
-	Weapon.UpSound "weapons/sawup";
-	//Weapon.ReadySound "weapons/sawidle"
-	Inventory.PickupMessage "$GOTCHAINSAW";
-	Obituary "$OB_METACHAINSAW";
-	Tag "$TAG_CHAINSAW";
-	+WEAPON.MELEEWEAPON		
-	Inventory.PickupSound "weapons/chainsaw/get";
-	Weapon.YAdjust 10;
+		Weapon.Kickback 0;
+		Weapon.SelectionOrder 2300;
+		Weapon.UpSound "weapons/sawup";
+		//Weapon.ReadySound "weapons/sawidle"
+		Inventory.PickupMessage "$GOTCHAINSAW";
+		Obituary "$OB_METACHAINSAW";
+		Tag "$TAG_CHAINSAW";
+		+WEAPON.MELEEWEAPON		
+		Inventory.PickupSound "weapons/chainsaw/get";
+		Weapon.YAdjust 10;
 	}
 	
 	States
@@ -197,14 +198,14 @@ class ChainsawSlash : Actor
 {
 	Default
 	{
-	Radius 13;
-	Height 8;
-	Speed 10;
-	DamageFunction (3 * random(1, 4));
-	Projectile;
-	+RIPPER
-	Obituary "$OB_METACHAINSAW_SLASH";
-	alpha 0.5;
+		Radius 13;
+		Height 8;
+		Speed 10;
+		DamageFunction (3 * random(1, 4));
+		Projectile;
+		+RIPPER
+		Obituary "$OB_METACHAINSAW_SLASH";
+		alpha 0.5;
 	}
 	
 	States
@@ -222,18 +223,18 @@ class MetaChainsawMeleePuff : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ALLOWPARTICLES
-	+RANDOMIZE
-	damagetype "ChainsawMelee";
-	RenderStyle "Translucent";
-	Alpha 0.5;
-	VSpeed 1;
-	Mass 5;
-	//AttackSound "weapons/melee/hitwall"
-	SeeSound "weapons/melee/hit";
-	Obituary "$OB_METAFIST";
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		damagetype "ChainsawMelee";
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		//AttackSound "weapons/melee/hitwall"
+		SeeSound "weapons/melee/hit";
+		Obituary "$OB_METAFIST";
 	}
 	States
 	{

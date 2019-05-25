@@ -12,21 +12,21 @@ class MetaDoomImp : MonsterCore
 {
 	Default
 	{
-	Health 60;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 8;
-	PainChance 200;
-	Monster;
-	+FLOORCLIP
-	SeeSound "monsters/imp/see";
-	PainSound "monsters/imp/pain";
-	DeathSound "monsters/imp/die";
-	ActiveSound "monsters/imp/idle";
-	HitObituary "$OB_IMPHIT";
-	Obituary "$OB_IMP";
-	painchance "HolyWater", 255;
+		Health 60;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 8;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/imp/see";
+		PainSound "monsters/imp/pain";
+		DeathSound "monsters/imp/die";
+		ActiveSound "monsters/imp/idle";
+		HitObituary "$OB_IMPHIT";
+		Obituary "$OB_IMP";
+		painchance "HolyWater", 255;
 	}
 
 	States
@@ -113,18 +113,18 @@ class MetaDoomImpBall : Actor
 {
 	Default
 	{
-	Radius 6;
-	Height 8;
-	Speed 10;
-	FastSpeed 20;
-	Damage 3;
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 1;
-	SeeSound "monsters/imp/shoot";
-	DeathSound "monsters/imp/fireball/hit";
-	decal "DoomImpScorch";
+		Radius 6;
+		Height 8;
+		Speed 10;
+		FastSpeed 20;
+		Damage 3;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 1;
+		SeeSound "monsters/imp/shoot";
+		DeathSound "monsters/imp/fireball/hit";
+		decal "DoomImpScorch";
 	}
 
 	States
@@ -151,15 +151,15 @@ class DoomImpBallEffect : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	Radius 0;
-	Height 1;
-	Speed 0;
-	PROJECTILE;
-	RenderStyle "Add";
-	alpha 0.85;
-	scale 0.65;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		Radius 0;
+		Height 1;
+		Speed 0;
+		PROJECTILE;
+		RenderStyle "Add";
+		alpha 0.85;
+		scale 0.65;
 	}
 
 	States
@@ -178,27 +178,27 @@ class MetaNightmareImp : MonsterCore
 {
 	Default
 	{
-	Health 60;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 16;
-	FastSpeed 16;
-	PainChance 200;
-	scale 0.75;
-	yscale 0.65;
-	Monster;
-	+FLOORCLIP
-	-NEVERFAST
-	SeeSound "monsters/nightmareimp/see";
-	PainSound "monsters/nightmareimp/pain";
-	DeathSound "monsters/nightmareimp/die";
-	ActiveSound "monsters/nightmareimp/act";
-	HitObituary "$OB_NIGHTMAREIMPHIT";
-	Obituary "$OB_NIGHTMAREIMP";
-	renderstyle "Translucent";
-	alpha 0.75;
-	painchance "HolyWater", 255;
+		Health 60;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 16;
+		FastSpeed 16;
+		PainChance 200;
+		scale 0.75;
+		yscale 0.65;
+		Monster;
+		+FLOORCLIP
+		-NEVERFAST
+		SeeSound "monsters/nightmareimp/see";
+		PainSound "monsters/nightmareimp/pain";
+		DeathSound "monsters/nightmareimp/die";
+		ActiveSound "monsters/nightmareimp/act";
+		HitObituary "$OB_NIGHTMAREIMPHIT";
+		Obituary "$OB_NIGHTMAREIMP";
+		renderstyle "Translucent";
+		alpha 0.75;
+		painchance "HolyWater", 255;
 	}
 
 	States
@@ -278,19 +278,19 @@ class MetaNightmareImpBall : Actor
 {
 	Default
 	{
-	Radius 6;
-	Height 8;
-	Speed 20;
-	FastSpeed 20;
-	Damage 3;
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 1;
-	scale 0.6;
-	SeeSound "monsters/nightmareimp/shoot";
-	DeathSound "monsters/nightmareimp/explode";
-	decal "DoomImpScorch";
+		Radius 6;
+		Height 8;
+		Speed 20;
+		FastSpeed 20;
+		Damage 3;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 1;
+		scale 0.6;
+		SeeSound "monsters/nightmareimp/shoot";
+		DeathSound "monsters/nightmareimp/explode";
+		decal "DoomImpScorch";
 	}
 
 	States
@@ -319,21 +319,21 @@ class MetaDoomImpLord : MonsterCore
 {
 	Default
 	{
-	Health 80;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 10;
-	PainChance 200;
-	Monster;
-	+FLOORCLIP
-	SeeSound "monsters/implord/see";
-	PainSound "monsters/implord/pain";
-	DeathSound "monsters/implord/die";
-	ActiveSound "monsters/implord/idle";
-	HitObituary "$OB_IMPLORDHIT";
-	Obituary "$OB_IMPLORD";
-	painchance "HolyWater", 255;
+		Health 80;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 10;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		SeeSound "monsters/implord/see";
+		PainSound "monsters/implord/pain";
+		DeathSound "monsters/implord/die";
+		ActiveSound "monsters/implord/idle";
+		HitObituary "$OB_IMPLORDHIT";
+		Obituary "$OB_IMPLORD";
+		painchance "HolyWater", 255;
 	}
 
 	States
@@ -500,10 +500,10 @@ class MetaImpLordTeleportFog : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOTELEPORT
-	+NOGRAVITY
-	RenderStyle "Add";
+		+NOBLOCKMAP
+		+NOTELEPORT
+		+NOGRAVITY
+		RenderStyle "Add";
 	}
 
 	States
@@ -519,13 +519,13 @@ class MetaImpLordTeleportFogParticle : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOTELEPORT
-	+NOGRAVITY
-	+MISSILE
-	RenderStyle "Add";
-	speed 5;
-	scale 0.5;
+		+NOBLOCKMAP
+		+NOTELEPORT
+		+NOGRAVITY
+		+MISSILE
+		RenderStyle "Add";
+		speed 5;
+		scale 0.5;
 	}
 
 	States

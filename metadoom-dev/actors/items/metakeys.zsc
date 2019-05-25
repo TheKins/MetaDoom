@@ -13,13 +13,13 @@ class RedCard2 : Key replaces RedCard
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTREDCARD";
-	inventory.pickupsound "items/keycard";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "RedCard";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTREDCARD";
+		inventory.pickupsound "items/keycard";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "RedCard";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States
@@ -59,13 +59,13 @@ class YellowCard2 : Key replaces YellowCard
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTYELWCARD";
-	inventory.pickupsound "items/keycard";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "YellowCard";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTYELWCARD";
+		inventory.pickupsound "items/keycard";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "YellowCard";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States
@@ -105,13 +105,13 @@ class BlueCard2 : Key replaces BlueCard
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTBLUECARD";
-	inventory.pickupsound "items/keycard";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "BlueCard";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTBLUECARD";
+		inventory.pickupsound "items/keycard";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "BlueCard";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States
@@ -151,13 +151,13 @@ class RedSkull2 : Key replaces RedSkull
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTREDSKUL";
-	inventory.pickupsound "items/keyskull";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "RedSkull";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTREDSKUL";
+		inventory.pickupsound "items/keyskull";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "RedSkull";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States
@@ -187,13 +187,13 @@ class YellowSkull2 : Key replaces YellowSkull
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTYELWSKUL";
-	inventory.pickupsound "items/keyskull";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "YellowSkull";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTYELWSKUL";
+		inventory.pickupsound "items/keyskull";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "YellowSkull";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States
@@ -223,13 +223,13 @@ class BlueSkull2 : Key replaces BlueSkull
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTBLUESKUL";
-	inventory.pickupsound "items/keyskull";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	species "BlueSkull";
-	+NOTDMATCH
-	+DONTGIB
+		inventory.pickupmessage "$GOTBLUESKUL";
+		inventory.pickupsound "items/keyskull";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		species "BlueSkull";
+		+NOTDMATCH
+		+DONTGIB
 	}
 	
 	States

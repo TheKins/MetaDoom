@@ -12,24 +12,24 @@ class MetaZombieMan : MonsterCore
 {
 	Default
 	{
-	Health 20;
-	Radius 20;
-	Height 56;
-	Speed 8;
-	PainChance 200;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/zombieman/see";
-	AttackSound "monsters/zombieman/fire";
-	PainSound "monsters/zombieman/pain";
-	DeathSound "monsters/zombieman/die";
-	ActiveSound "monsters/zombieman/idle";
-	Obituary "$OB_ZOMBIE";
-	DropItem "Clip";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 20;
+		Radius 20;
+		Height 56;
+		Speed 8;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/zombieman/see";
+		AttackSound "monsters/zombieman/fire";
+		PainSound "monsters/zombieman/pain";
+		DeathSound "monsters/zombieman/die";
+		ActiveSound "monsters/zombieman/idle";
+		Obituary "$OB_ZOMBIE";
+		DropItem "Clip";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -121,22 +121,22 @@ class MetaHellRazer : MonsterCore
 {
 	Default
 	{
-	Health 80;
-	Radius 20;
-	Height 56;
-	Speed 8;
-	PainChance 200;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/hellrazer/see";
-	PainSound "monsters/hellrazer/pain";
-	DeathSound "monsters/hellrazer/die";
-	ActiveSound "monsters/hellrazer/idle";
-	Obituary "$OB_HELLRAZER";
-	DropItem "Clip";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
+		Health 80;
+		Radius 20;
+		Height 56;
+		Speed 8;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/hellrazer/see";
+		PainSound "monsters/hellrazer/pain";
+		DeathSound "monsters/hellrazer/die";
+		ActiveSound "monsters/hellrazer/idle";
+		Obituary "$OB_HELLRAZER";
+		DropItem "Clip";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
 	}
 	
 	States
@@ -245,9 +245,9 @@ class NoBloodPuff : Actor
 {
 	Default
 	{
-	+NOINTERACTION
-	+BLOODLESSIMPACT
-	+PAINLESS
+		+NOINTERACTION
+		+BLOODLESSIMPACT
+		+PAINLESS
 	}
 	
 	States
@@ -263,8 +263,8 @@ class HellRazerRailCore : Actor
 {
 	Default
 	{
-	+NOINTERACTION
-	renderstyle "Add";
+		+NOINTERACTION
+		renderstyle "Add";
 	}
 	
 	States

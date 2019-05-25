@@ -12,12 +12,12 @@ class GrenadeAmmo : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTROCKET";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 25;
-	Ammo.BackpackAmount 0;
-	Ammo.BackpackMaxAmount 25;
-	Inventory.Icon "ROCKA0";
+		Inventory.PickupMessage "$GOTROCKET";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 25;
+		Ammo.BackpackAmount 0;
+		Ammo.BackpackMaxAmount 25;
+		Inventory.Icon "ROCKA0";
 	}
 	
 	States
@@ -34,7 +34,7 @@ class MetaCheatDetector : MetaPistol
 {
 	Default
 	{
-	Weapon.SelectionOrder 0;
+		Weapon.SelectionOrder 0;
 	}
 }
 

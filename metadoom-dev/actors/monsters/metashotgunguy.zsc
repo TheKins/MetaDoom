@@ -13,25 +13,25 @@ class MetaShotgunGuy : MonsterCore
 {
 	Default
 	{
-	Health 30;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 8;
-	PainChance 170;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	SeeSound "monsters/shotgunguy/see";
-	AttackSound "monsters/shotgunguy/fire";
-	PainSound "monsters/shotgunguy/pain";
-	DeathSound "monsters/shotgunguy/die";
-	ActiveSound "monsters/shotgunguy/idle";
-	Obituary "$OB_SHOTGUY";
-	DropItem "MetaShotgun";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 30;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 8;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		SeeSound "monsters/shotgunguy/see";
+		AttackSound "monsters/shotgunguy/fire";
+		PainSound "monsters/shotgunguy/pain";
+		DeathSound "monsters/shotgunguy/die";
+		ActiveSound "monsters/shotgunguy/idle";
+		Obituary "$OB_SHOTGUY";
+		DropItem "MetaShotgun";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -128,27 +128,27 @@ class MetaZSec : MonsterCore
 {
 	Default
 	{
-	Health 50;
-	Radius 20;
-	Height 56;
-	Mass 100;
-	Speed 10;
-	PainChance 170;
-	Monster;
-	+FLOORCLIP
-	+DOHARMSPECIES
-	+ROLLSPRITE
-	+ROLLCENTER
-	SeeSound "monsters/zsec/see";
-	AttackSound "shotguy/attack";
-	PainSound "monsters/zsec/pain";
-	DeathSound "monsters/zsec/die";
-	ActiveSound "monsters/zsec/idle";
-	Obituary "$OB_ZSEC";
-	DropItem "MetaShotgun";
-	damagefactor "HolyWater", 0.25;
-	painchance "HolyWater", 255;
-	damagefactor "Axe", 50;
+		Health 50;
+		Radius 20;
+		Height 56;
+		Mass 100;
+		Speed 10;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		+DOHARMSPECIES
+		+ROLLSPRITE
+		+ROLLCENTER
+		SeeSound "monsters/zsec/see";
+		AttackSound "shotguy/attack";
+		PainSound "monsters/zsec/pain";
+		DeathSound "monsters/zsec/die";
+		ActiveSound "monsters/zsec/idle";
+		Obituary "$OB_ZSEC";
+		DropItem "MetaShotgun";
+		damagefactor "HolyWater", 0.25;
+		painchance "HolyWater", 255;
+		damagefactor "Axe", 50;
 	}
 	
 	States

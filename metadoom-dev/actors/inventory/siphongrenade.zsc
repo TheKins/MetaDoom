@@ -12,13 +12,13 @@ class SiphonGrenadePickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTSIPHON";
-	Tag "$TAGSIPHON";
-	inventory.icon "INVSIPH";
-	inventory.pickupsound "inventory/grenade/get";
-	+INVENTORY.ALWAYSPICKUP;
-	scale 0.5;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTSIPHON";
+		Tag "$TAGSIPHON";
+		inventory.icon "INVSIPH";
+		inventory.pickupsound "inventory/grenade/get";
+		+INVENTORY.ALWAYSPICKUP;
+		scale 0.5;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -37,14 +37,14 @@ class SiphonGrenade : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTSIPHON";
-	Tag "$TAGSIPHON";
-	inventory.icon "INVSIPH";
-	inventory.pickupsound "inventory/grenade/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTSIPHON";
+		Tag "$TAGSIPHON";
+		inventory.icon "INVSIPH";
+		inventory.pickupsound "inventory/grenade/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -76,24 +76,24 @@ class SiphonGrenadeProj : Actor
 {
 	Default
 	{
-	+CANBOUNCEWATER
-	Radius 8;
-	Height 8;
-	Speed 20;
-	Damage 0;
-	PROJECTILE;
-	+RANDOMIZE
-	-NOGRAVITY
-	//+USEBOUNCESTATE
-	+ROLLSPRITE
-	+FORCERADIUSDMG
-	//BounceType "Doom"
-	SeeSound "inventory/throw";
-	//BounceSound "inventory/grenade/bounce"
-	Obituary "$OB_SIPHON";
-	//scale 0.5
-	damagetype "Vampire";
-	ReactionTime 60;	//Just over five seconds
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 20;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		//+USEBOUNCESTATE
+		+ROLLSPRITE
+		+FORCERADIUSDMG
+		//BounceType "Doom"
+		SeeSound "inventory/throw";
+		//BounceSound "inventory/grenade/bounce"
+		Obituary "$OB_SIPHON";
+		//scale 0.5
+		damagetype "Vampire";
+		ReactionTime 60;	//Just over five seconds
 	}
 	
 	States
@@ -133,14 +133,14 @@ class SiphonExplosionFX : Actor
 {
 	Default
 	{
-	Radius 10;
-	Height 10;
-	+NOBLOCKMAP
-	-SOLID
-	+NOGRAVITY
-	+FORCEXYBILLBOARD
-	+ROLLSPRITE
-	renderstyle "Add";
+		Radius 10;
+		Height 10;
+		+NOBLOCKMAP
+		-SOLID
+		+NOGRAVITY
+		+FORCEXYBILLBOARD
+		+ROLLSPRITE
+		renderstyle "Add";
 	}
 	
 	States

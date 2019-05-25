@@ -13,10 +13,10 @@ class MetaSoulcubePickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaSoulcube";
-	Inventory.Pickupmessage "$GOTSOULCUBE";
-	Inventory.PickupSound "weapons/soulcube/get";
-	+FLOATBOB;
+		DropItem "MetaSoulcube";
+		Inventory.Pickupmessage "$GOTSOULCUBE";
+		Inventory.PickupSound "weapons/soulcube/get";
+		+FLOATBOB;
 	}
 	
 	States
@@ -34,18 +34,18 @@ class MetaSoulcube : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 2900;
-	Obituary "$OB_METASOULCUBE";
-	Weapon.AmmoUse1 10;
-	Weapon.AmmoType1 "SoulAmmo";
-	Weapon.AmmoUse2 10;
-	Weapon.AmmoType2 "SoulAmmo";
-	Inventory.Pickupmessage "$GOTSOULCUBE";
-	Inventory.PickupSound "weapons/soulcube/get";
-	Tag "$TAGSOULCUBE";
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.UNTOSSABLE
-	+FLOATBOB
+		Weapon.SelectionOrder 2900;
+		Obituary "$OB_METASOULCUBE";
+		Weapon.AmmoUse1 10;
+		Weapon.AmmoType1 "SoulAmmo";
+		Weapon.AmmoUse2 10;
+		Weapon.AmmoType2 "SoulAmmo";
+		Inventory.Pickupmessage "$GOTSOULCUBE";
+		Inventory.PickupSound "weapons/soulcube/get";
+		Tag "$TAGSOULCUBE";
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.UNTOSSABLE
+		+FLOATBOB
 	}
 	
 	States
@@ -118,23 +118,23 @@ class MetaSoulCubeProj : Actor
 {
 	Default
 	{
-	Radius 13;
-	Height 8;
-	Speed 35;
-	DamageFunction (1000);
-	damagetype "SoulCube";
-	Projectile;
-	+RANDOMIZE
-	+FLATSPRITE
-	+ROLLSPRITE
-	+ROLLCENTER
-	+SEEKERMISSILE
-	+SCREENSEEKER
-	RenderStyle "Add";
-	Alpha 1;
-	Obituary "$OB_METASOULCUBE";
-	scale 0.5;
-	Decal "PlasmaScorch";
+		Radius 13;
+		Height 8;
+		Speed 35;
+		DamageFunction (1000);
+		damagetype "SoulCube";
+		Projectile;
+		+RANDOMIZE
+		+FLATSPRITE
+		+ROLLSPRITE
+		+ROLLCENTER
+		+SEEKERMISSILE
+		+SCREENSEEKER
+		RenderStyle "Add";
+		Alpha 1;
+		Obituary "$OB_METASOULCUBE";
+		scale 0.5;
+		Decal "PlasmaScorch";
 	}
 	
 	States
@@ -166,11 +166,11 @@ class SoulCubeTrail1 : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	RenderStyle "Add";
-	Alpha 1;
-	scale 0.5;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 1;
+		scale 0.5;
 	}
 	
 	states
@@ -186,11 +186,11 @@ class SoulCubeTrail2 : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+FLATSPRITE
-	RenderStyle "Add";
-	Alpha 1;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+FLATSPRITE
+		RenderStyle "Add";
+		Alpha 1;
 	}
 	
 	states

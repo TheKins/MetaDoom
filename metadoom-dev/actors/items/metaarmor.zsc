@@ -11,19 +11,19 @@ class MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
 {
 	Default
 	{
-	Radius 20;
-	Height 16;
-	Inventory.Pickupmessage "$GOTARMBONUS";
-	Inventory.Icon "BON2A0";
-	Armor.Savepercent 33.335;
-	Armor.Saveamount 1;
-	Armor.Maxsaveamount 200;
-	Inventory.PickupSound "items/armor/shard";
-	Scale 0.66;
-	+COUNTITEM;
-	+INVENTORY.ALWAYSPICKUP;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTARMBONUS";
+		Inventory.Icon "BON2A0";
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 1;
+		Armor.Maxsaveamount 200;
+		Inventory.PickupSound "items/armor/shard";
+		Scale 0.66;
+		+COUNTITEM;
+		+INVENTORY.ALWAYSPICKUP;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -44,15 +44,15 @@ class MetaGreenArmor : BasicArmorPickup replaces GreenArmor
 {
 	Default
 	{
-	Radius 20;
-	Height 16;
-	Inventory.Pickupmessage "$GOTARMOR";
-	Inventory.Icon "GARMA0";
-	Inventory.PickupSound "items/armor/green";
-	Armor.SavePercent 33.335;
-	Armor.SaveAmount 100;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTARMOR";
+		Inventory.Icon "GARMA0";
+		Inventory.PickupSound "items/armor/green";
+		Armor.SavePercent 33.335;
+		Armor.SaveAmount 100;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -68,16 +68,16 @@ class MetaBlueArmor : BasicArmorPickup replaces BlueArmor
 {
 	Default
 	{
-	Radius 20;
-	Height 16;
-	Inventory.Pickupmessage "$GOTMEGA";
-	Inventory.Icon "BARMA0";
-	Inventory.PickupSound "items/armor/blue";
-	Armor.Savepercent 50;
-	Armor.Saveamount 200;
-	Scale 0.66;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTMEGA";
+		Inventory.Icon "BARMA0";
+		Inventory.PickupSound "items/armor/blue";
+		Armor.Savepercent 50;
+		Armor.Saveamount 200;
+		Scale 0.66;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States

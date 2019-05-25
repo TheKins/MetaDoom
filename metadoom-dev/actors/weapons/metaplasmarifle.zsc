@@ -13,9 +13,9 @@ class MetaPlasmaRiflePickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaPlasmaRifle";
-	Inventory.PickupMessage "$GOTPLASMA";
-	Inventory.PickupSound "weapons/plasmarifle/get";
+		DropItem "MetaPlasmaRifle";
+		Inventory.PickupMessage "$GOTPLASMA";
+		Inventory.PickupSound "weapons/plasmarifle/get";
 	}
 	
 	States
@@ -32,14 +32,14 @@ class MetaPlasmaRifle : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 100;
-	Weapon.AmmoUse 1;
-	Weapon.AmmoGive 40;
-	Weapon.AmmoType "Cell";
-	Inventory.PickupMessage "$GOTPLASMA";
-	Tag "$TAG_PLASMARIFLE";
-	Inventory.PickupSound "weapons/plasmarifle/get";
-	+WEAPON.NOALERT;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 40;
+		Weapon.AmmoType "Cell";
+		Inventory.PickupMessage "$GOTPLASMA";
+		Tag "$TAG_PLASMARIFLE";
+		Inventory.PickupSound "weapons/plasmarifle/get";
+		+WEAPON.NOALERT;
 	}
 	
 	States
@@ -180,16 +180,16 @@ class MetaPlasmaBall : Actor
 {
 	Default
 	{
-	Radius 13;
-	Height 8;
-	Speed 25;
-	Damage 5;
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 0.75;
-	Obituary "$OB_MPPLASMARIFLE";
-	Decal "PlasmaScorch";
+		Radius 13;
+		Height 8;
+		Speed 25;
+		Damage 5;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		Obituary "$OB_MPPLASMARIFLE";
+		Decal "PlasmaScorch";
 	}
 	
 	States
@@ -209,16 +209,16 @@ class MetaPlasmaPop : Actor
 {
 	Default
 	{
-	Radius 13;
-	Height 8;
-	Speed 45;
-	Damage 20;
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 0.75;
-	Obituary "$OB_MPPLASMARIFLE";
-	Decal "PlasmaScorch";
+		Radius 13;
+		Height 8;
+		Speed 45;
+		Damage 20;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		Obituary "$OB_MPPLASMARIFLE";
+		Decal "PlasmaScorch";
 	}
 	
 	States
@@ -240,10 +240,10 @@ class MetaPlasmaPopTrail : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP;
-	+NOGRAVITY;
-	RenderStyle "Add";
-	Alpha 0.75;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		RenderStyle "Add";
+		Alpha 0.75;
 	}
 	
 	states

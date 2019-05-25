@@ -13,9 +13,9 @@ class MetaMachineGunPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaMachineGun";
-	Inventory.PickupMessage "$GOTMACGUN";
-	Inventory.PickupSound "weapons/machinegun/get";;
+		DropItem "MetaMachineGun";
+		Inventory.PickupMessage "$GOTMACGUN";
+		Inventory.PickupSound "weapons/machinegun/get";
 	}
 	
 	States
@@ -32,18 +32,18 @@ class MetaMachineGun : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 700;
-	Weapon.AmmoGive 20;
-	Weapon.AmmoUse1 1;
-	//Weapon.AmmoUse2 5;
-	Weapon.AmmoType1 "Clip";
-	Weapon.AmmoType2 "Clip";
-	Inventory.PickupMessage "$GOTMACGUN";
-	Obituary "$OB_METAMG_BULLET";
-	Tag "$TAGMACGUN";
-	Inventory.PickupSound "weapons/machinegun/get";
-	+WEAPON.ALT_AMMO_OPTIONAL
-	+WEAPON.NOALERT
+		Weapon.SelectionOrder 700;
+		Weapon.AmmoGive 20;
+		Weapon.AmmoUse1 1;
+		//Weapon.AmmoUse2 5;
+		Weapon.AmmoType1 "Clip";
+		Weapon.AmmoType2 "Clip";
+		Inventory.PickupMessage "$GOTMACGUN";
+		Obituary "$OB_METAMG_BULLET";
+		Tag "$TAGMACGUN";
+		Inventory.PickupSound "weapons/machinegun/get";
+		+WEAPON.ALT_AMMO_OPTIONAL
+		+WEAPON.NOALERT
 	}
 	
 	States
@@ -179,14 +179,14 @@ class MicroRocket : Actor
 {
 	Default
 	{
-	Radius 8;
-	Height 8;
-	Speed 40;
-	Damage 5;
-	Projectile;
-	Obituary "$OB_METAMG_MISSILE";
-	scale 0.5;
-	Decal "RevenantScorch";
+		Radius 8;
+		Height 8;
+		Speed 40;
+		Damage 5;
+		Projectile;
+		Obituary "$OB_METAMG_MISSILE";
+		scale 0.5;
+		Decal "RevenantScorch";
 	}
 	
 	States
@@ -205,8 +205,8 @@ class MicroRocketExplosion : Explosion
 {
 	Default
 	{
-	scale 0.3;
-	Obituary "$OB_METAMG_MISSILE";
+		scale 0.3;
+		Obituary "$OB_METAMG_MISSILE";
 	}
 	
 	States

@@ -11,13 +11,13 @@ class DogCollarPickup : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTCOLLAR";
-	Tag "$TACOLLAR";
-	inventory.icon "INVDOGC";
-	inventory.pickupsound "inventory/dogcollar/get";
-	+INVENTORY.ALWAYSPICKUP
-	scale 0.5;
-	+BLOCKASPLAYER
+		inventory.pickupmessage "$GOTCOLLAR";
+		Tag "$TACOLLAR";
+		inventory.icon "INVDOGC";
+		inventory.pickupsound "inventory/dogcollar/get";
+		+INVENTORY.ALWAYSPICKUP
+		scale 0.5;
+		+BLOCKASPLAYER
 	}
 	
 	states
@@ -36,14 +36,14 @@ class DogCollar : CustomInventory
 {
 	Default
 	{
-	inventory.pickupmessage "$GOTCOLLAR";
-	Tag "$TACOLLAR";
-	inventory.icon "INVDOGC";
-	inventory.pickupsound "inventory/grenade/get";
-	inventory.amount 1;
-	inventory.maxamount 1;
-	+INVENTORY.INVBAR
-	scale 0.5;
+		inventory.pickupmessage "$GOTCOLLAR";
+		Tag "$TACOLLAR";
+		inventory.icon "INVDOGC";
+		inventory.pickupsound "inventory/grenade/get";
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+INVENTORY.INVBAR
+		scale 0.5;
 	}
 	
 	states
@@ -81,15 +81,15 @@ class DogCollarProj : Actor
 {
 	Default
 	{
-	Radius 13;
-	Height 8;
-	Speed 15;
-	DamageFunction (1);
-	Projectile;
-	+RANDOMIZE
-	RenderStyle "Add";
-	Alpha 0.75;
-	damagetype "DogCollar";
+		Radius 13;
+		Height 8;
+		Speed 15;
+		DamageFunction (1);
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		damagetype "DogCollar";
 	}
 	
 	States
@@ -114,19 +114,19 @@ class CollarSpark : Actor
 {
 	Default
 	{
-	Health 12;
-	radius 3;
-	height 6;
-	speed .1;
-	RenderStyle "Add";
-	Alpha 1;
-	Scale 0.5;
-	Mass 0;
-	+missile
-	+doombounce
-	+FLOORCLIP
-	+DONTSPLASH
-	+NOTELEPORT
+		Health 12;
+		radius 3;
+		height 6;
+		speed .1;
+		RenderStyle "Add";
+		Alpha 1;
+		Scale 0.5;
+		Mass 0;
+		+missile
+		+doombounce
+		+FLOORCLIP
+		+DONTSPLASH
+		+NOTELEPORT
 	}
 	
 	States

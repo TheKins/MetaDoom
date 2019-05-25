@@ -11,24 +11,24 @@ class MetaTechLamp : Actor // replaces TechLamp
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 80;
-	DeathHeight 80;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		health 5;
+		Radius 16;
+		Height 80;
+		DeathHeight 80;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -63,9 +63,9 @@ class MetaTechLamp_Glow : Actor
 {
 	Default
 	{
-	Renderstyle "Add";
-	+NOGRAVITY
-	-SOLID
+		Renderstyle "Add";
+		+NOGRAVITY
+		-SOLID
 	}
 	
 	states
@@ -88,24 +88,24 @@ class MetaTechLamp2 : Actor // replaces TechLamp2
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 60;
-	DeathHeight 60;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		health 5;
+		Radius 16;
+		Height 60;
+		DeathHeight 60;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -155,24 +155,24 @@ class MetaColumn : Actor // replaces Column
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 48;
-	DeathHeight 48;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		health 5;
+		Radius 16;
+		Height 48;
+		DeathHeight 48;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -207,7 +207,7 @@ class MetaColumn_Glow : MetaTechLamp_Glow
 {
 	Default
 	{
-	yscale 0.5;
+		yscale 0.5;
 	}
 	
 	states
@@ -227,27 +227,27 @@ class MetaBurningBarrel : Actor // replaces BurningBarrel
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 32;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+ALLOWPAIN
-	damagefactor "Normal", 0;
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 255;
-	damagefactor "FireExtinguisher", 255;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
-	painchance "LightningStun", 0;
-	painchance 255;
+		health 5;
+		Radius 16;
+		Height 32;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+ALLOWPAIN
+		damagefactor "Normal", 0;
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 255;
+		damagefactor "FireExtinguisher", 255;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance "LightningStun", 0;
+		painchance 255;
 	}
 	
 	States
@@ -279,26 +279,26 @@ class MetaBurningBarrelExtinguished : Actor
 {
 	Default
 	{
-	Radius 16;
-	Height 32;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NODAMAGE
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
-	painchance "LightningStun", 0;
-	painchance "FireExtinguisher", 0;
-	painchance 255;
+		Radius 16;
+		Height 32;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NODAMAGE
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance "LightningStun", 0;
+		painchance "FireExtinguisher", 0;
+		painchance 255;
 	}
 	
 	States
@@ -317,15 +317,15 @@ class MetaBurningBarrelSmoke : Actor
 {
 	Default
 	{
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+ROLLSPRITE
-	+ROLLCENTER
-	+NOINTERACTION
-	VSpeed 2;
-	Renderstyle "Add";
-	scale 0.5;
-	alpha 0.7;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ROLLSPRITE
+		+ROLLCENTER
+		+NOINTERACTION
+		VSpeed 2;
+		Renderstyle "Add";
+		scale 0.5;
+		alpha 0.7;
 	}
 	
 	states
@@ -345,24 +345,24 @@ class MetaTechPillar : Actor // replaces TechPillar
 {
 	Default
 	{
-	health 5;
-	Radius 16;
-	Height 128;
-	DeathHeight 128;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+NOBLOOD
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "Fist", 0;
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		health 5;
+		Radius 16;
+		Height 128;
+		DeathHeight 128;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "Fist", 0;
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States

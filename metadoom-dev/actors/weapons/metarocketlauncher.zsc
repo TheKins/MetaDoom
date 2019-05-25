@@ -12,10 +12,10 @@ class MetaRocketLauncherPickup : WeaponGiver
 {
 	Default
 	{
-	DropItem "MetaRocketLauncher";
-	Inventory.PickupMessage "$GOTLAUNCHER";
-	Inventory.PickupSound "weapons/rocketlauncher/get";
-	scale 0.75;
+		DropItem "MetaRocketLauncher";
+		Inventory.PickupMessage "$GOTLAUNCHER";
+		Inventory.PickupSound "weapons/rocketlauncher/get";
+		scale 0.75;
 	}
 	
 	States
@@ -32,19 +32,19 @@ class MetaRocketLauncher : MetaDoomWeapon
 {
 	Default
 	{
-	Weapon.SelectionOrder 2500;
-	Weapon.AmmoUse 1;
-	Weapon.AmmoGive 2;
-	Weapon.AmmoType "RocketAmmo";
-	+WEAPON.NOAUTOFIRE
-	Inventory.PickupMessage "$GOTLAUNCHER";
-	Tag "$TAG_ROCKETLAUNCHER";
-	Weapon.YAdjust 10;
-	Inventory.PickupSound "weapons/rocketlauncher/get";
-	scale 0.75;
-	+WEAPON.NOALERT
-	Weapon.BobRangeX 0.5;
-	Weapon.BobRangey 0.75;
+		Weapon.SelectionOrder 2500;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 2;
+		Weapon.AmmoType "RocketAmmo";
+		+WEAPON.NOAUTOFIRE
+		Inventory.PickupMessage "$GOTLAUNCHER";
+		Tag "$TAG_ROCKETLAUNCHER";
+		Weapon.YAdjust 10;
+		Inventory.PickupSound "weapons/rocketlauncher/get";
+		scale 0.75;
+		+WEAPON.NOALERT
+		Weapon.BobRangeX 0.5;
+		Weapon.BobRangey 0.75;
 	}
 	
 	States
@@ -136,15 +136,15 @@ class MetaLauncherRocket : Weapon
 {
 	Default
 	{
-	Radius 11;
-	Height 8;
-	Speed 30;
-	Damage 20;
-	Projectile;
-	+RANDOMIZE
-	Obituary "$OB_MPROCKET";
-	Decal "Scorch";
-	Damagetype "Explosive";
+		Radius 11;
+		Height 8;
+		Speed 30;
+		Damage 20;
+		Projectile;
+		+RANDOMIZE
+		Obituary "$OB_MPROCKET";
+		Decal "Scorch";
+		Damagetype "Explosive";
 	}
 	
 	States
@@ -175,22 +175,22 @@ class MetaRocketFragment : Actor
 {
 	Default
 	{
-	+DOOMBOUNCE
-	PROJECTILE;
-	-NOGRAVITY
-	-ACTIVATEIMPACT
-	+NOTELEPORT
-	-TELESTOMP
-	-SOLID
-	+ROLLSPRITE
-	+ROLLCENTER
-	+RIPPER
-	Radius 2;
-	Damage 3;
-	bouncefactor 0.5;
-	SeeSound "weapons/rocketlauncher/fragment";
-	gravity 0.25;
-	Speed 2;
+		+DOOMBOUNCE
+		PROJECTILE;
+		-NOGRAVITY
+		-ACTIVATEIMPACT
+		+NOTELEPORT
+		-TELESTOMP
+		-SOLID
+		+ROLLSPRITE
+		+ROLLCENTER
+		+RIPPER
+		Radius 2;
+		Damage 3;
+		bouncefactor 0.5;
+		SeeSound "weapons/rocketlauncher/fragment";
+		gravity 0.25;
+		Speed 2;
 	}
 	
 	States

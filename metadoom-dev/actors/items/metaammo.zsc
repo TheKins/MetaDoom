@@ -13,15 +13,15 @@ class Clip2 : Clip replaces Clip
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTCLIP";
-	Inventory.Amount 10;
-	Inventory.MaxAmount 200;
-	Ammo.BackpackAmount 10;
-	Ammo.BackpackMaxAmount 400;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	Inventory.Icon "CLIPA0";
-	inventory.pickupsound "items/clip";
+		Inventory.PickupMessage "$GOTCLIP";
+		Inventory.Amount 10;
+		Inventory.MaxAmount 200;
+		Ammo.BackpackAmount 10;
+		Ammo.BackpackMaxAmount 400;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		Inventory.Icon "CLIPA0";
+		inventory.pickupsound "items/clip";
 	}
 	
 	States
@@ -37,11 +37,11 @@ class ClipBox2 : Clip replaces ClipBox
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTCLIPBOX";
-	Inventory.Amount 50;
-	inventory.pickupsound "items/clipx";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTCLIPBOX";
+		Inventory.Amount 50;
+		inventory.pickupsound "items/clipx";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -67,15 +67,15 @@ class RocketAmmo2 : RocketAmmo replaces RocketAmmo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTROCKET";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 50;
-	Ammo.BackpackAmount 1;
-	Ammo.BackpackMaxAmount 100;
-	Inventory.Icon "ROCKA0";
-	inventory.pickupsound "items/rocket";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTROCKET";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 1;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "ROCKA0";
+		inventory.pickupsound "items/rocket";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -101,11 +101,11 @@ class RocketBox2 : RocketAmmo replaces RocketBox
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTROCKBOX";
-	Inventory.Amount 5;
-	inventory.pickupsound "items/rocketx";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTROCKBOX";
+		Inventory.Amount 5;
+		inventory.pickupsound "items/rocketx";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -131,15 +131,15 @@ class Cell2 : Cell replaces Cell
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTCELL";
-	Inventory.Amount 20;
-	Inventory.MaxAmount 300;
-	Ammo.BackpackAmount 20;
-	Ammo.BackpackMaxAmount 600;
-	Inventory.Icon "CELLA0";
-	inventory.pickupsound "items/cell";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTCELL";
+		Inventory.Amount 20;
+		Inventory.MaxAmount 300;
+		Ammo.BackpackAmount 20;
+		Ammo.BackpackMaxAmount 600;
+		Inventory.Icon "CELLA0";
+		inventory.pickupsound "items/cell";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -170,11 +170,11 @@ class CellPack2 : Cell replaces CellPack
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTCELLBOX";
-	Inventory.Amount 100;
-	inventory.pickupsound "items/cellx";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTCELLBOX";
+		Inventory.Amount 100;
+		inventory.pickupsound "items/cellx";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -203,15 +203,15 @@ class Shell2 : Shell replaces Shell
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTSHELLS";
-	Inventory.Amount 4;
-	Inventory.MaxAmount 50;
-	Ammo.BackpackAmount 4;
-	Ammo.BackpackMaxAmount 100;
-	Inventory.Icon "SHELA0";
-	inventory.pickupsound "items/shell";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTSHELLS";
+		Inventory.Amount 4;
+		Inventory.MaxAmount 50;
+		Ammo.BackpackAmount 4;
+		Ammo.BackpackMaxAmount 100;
+		Inventory.Icon "SHELA0";
+		inventory.pickupsound "items/shell";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -226,11 +226,11 @@ class ShellBox2 : Shell replaces ShellBox
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTSHELLBOX";
-	inventory.pickupsound "items/shellx";
-	Inventory.Amount 20;
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Inventory.PickupMessage "$GOTSHELLBOX";
+		inventory.pickupsound "items/shellx";
+		Inventory.Amount 20;
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -248,8 +248,8 @@ class BackpackSpawner : Actor replaces Backpack
 {
 	Default
 	{
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -271,11 +271,11 @@ class Backpack2 : BackpackItem
 {
 	Default
 	{
-	Height 26;
-	Inventory.PickupMessage "$GOTBACKPACK";
-    inventory.pickupsound "items/pack";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
+		Height 26;
+		Inventory.PickupMessage "$GOTBACKPACK";
+		inventory.pickupsound "items/pack";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
 	}
 	
 	States
@@ -291,17 +291,17 @@ class BFGAmmo : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTARGENT";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 10;
-	Ammo.BackpackAmount 0;
-	Ammo.BackpackMaxAmount 10;
-	Inventory.Icon "ARGAA0";
-	inventory.pickupsound "items/bfg";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	scale 0.75;
-	+BLOCKASPLAYER
+		Inventory.PickupMessage "$GOTARGENT";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 10;
+		Ammo.BackpackAmount 0;
+		Ammo.BackpackMaxAmount 10;
+		Inventory.Icon "ARGAA0";
+		inventory.pickupsound "items/bfg";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		+BLOCKASPLAYER
 	}
 	
 	States
@@ -316,17 +316,17 @@ class SoulAmmo : Ammo
 {
 	Default
 	{
-	Inventory.PickupMessage "$GOTSOUL";
-	Inventory.Amount 1;
-	Inventory.MaxAmount 10;
-	Ammo.BackpackAmount 0;
-	Ammo.BackpackMaxAmount 10;
-	Inventory.Icon "SOLAA0";
-	inventory.pickupsound "weapons/soulcube/ammo";
-	TeleFogSourceType "MetaItemFog";
-	TeleFogDestType "MetaItemFog";
-	renderstyle "Add";
-	scale 0.5;
+		Inventory.PickupMessage "$GOTSOUL";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 10;
+		Ammo.BackpackAmount 0;
+		Ammo.BackpackMaxAmount 10;
+		Inventory.Icon "SOLAA0";
+		inventory.pickupsound "weapons/soulcube/ammo";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		renderstyle "Add";
+		scale 0.5;
 	}
 	
 	States
@@ -342,8 +342,8 @@ class SoulSpawner : Actor
 {
 	Default
 	{
-	radius 16;
-	height 16;
+		radius 16;
+		height 16;
 	}
 	
 	States

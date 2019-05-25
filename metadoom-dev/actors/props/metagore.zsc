@@ -101,25 +101,25 @@ class MetaBloodyTwitch : Actor // replaces BloodyTwitch
 {
 	Default
 	{
-	Radius 16;
-	Height 68;
-  	health 5;
-	DeathHeight 68;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 68;
+		health 5;
+		DeathHeight 68;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -166,11 +166,11 @@ class MetaNonsolidTwitch : Actor // replaces NonsolidTwitch
 {
 	Default
 	{
-	Radius 20;
-	Height 68;
-	-SOLID
-	+NOGRAVITY
-	+SPAWNCEILING
+		Radius 20;
+		Height 68;
+		-SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
 	}
 	
 	States
@@ -189,22 +189,22 @@ class MetaDeadStick : Actor // replaces DeadStick
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -248,22 +248,22 @@ class MetaLiveStick : Actor // replaces LiveStick
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	States
 	{
@@ -308,25 +308,25 @@ class MetaMeat2 : Actor // replaces Meat2
 {
 	Default
 	{
-	Radius 16;
-	Height 84;
-  	health 5;
-	DeathHeight 84;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 84;
+		health 5;
+		DeathHeight 84;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -370,25 +370,25 @@ class MetaMeat3 : Actor // replaces Meat3
 {
 	Default
 	{
-	Radius 16;
-	Height 84;
-  	health 5;
-	DeathHeight 84;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 84;
+		health 5;
+		DeathHeight 84;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -432,25 +432,25 @@ class MetaMeat4 : Actor // replaces Meat4
 {
 	Default
 	{
-	Radius 16;
-	Height 68;
-  	health 5;
-	DeathHeight 68;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 68;
+		health 5;
+		DeathHeight 68;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -494,25 +494,25 @@ class MetaMeat5 : Actor // replaces Meat5
 {
 	Default
 	{
-	Radius 16;
-	Height 52;
-  	health 5;
-	DeathHeight 52;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 52;
+		health 5;
+		DeathHeight 52;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -557,11 +557,11 @@ class MetaNonsolidMeat2 : Actor // replaces NonsolidMeat2
 {
 	Default
 	{
-	Radius 20;
-	Height 84;
-	-SOLID
-	+NOGRAVITY
-	+SPAWNCEILING
+		Radius 20;
+		Height 84;
+		-SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
 	}
 	
 	States
@@ -578,11 +578,11 @@ class MetaNonsolidMeat3 : Actor // replaces NonsolidMeat3
 {
 	Default
 	{
-	Radius 20;
-	Height 84;
-	-SOLID
-	+NOGRAVITY
-	+SPAWNCEILING
+		Radius 20;
+		Height 84;
+		-SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
 	}
 	
 	States
@@ -599,11 +599,11 @@ class MetaNonsolidMeat4 : Actor // replaces NonsolidMeat4
 {
 	Default
 	{
-	Radius 20;
-	Height 68;
-	-SOLID
-	+NOGRAVITY
-	+SPAWNCEILING
+		Radius 20;
+		Height 68;
+		-SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
 	}
 	
 	States
@@ -620,11 +620,11 @@ class MetaNonsolidMeat5 : Actor // replaces NonsolidMeat5
 {
 	Default
 	{
-	Radius 20;
-	Height 52;
-	-SOLID
-	+NOGRAVITY
-	+SPAWNCEILING
+		Radius 20;
+		Height 52;
+		-SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
 	}
 	
 	States
@@ -642,25 +642,25 @@ class MetaHangBNoBrain : Actor // replaces HangBNoBrain
 {
 	Default
 	{
-	Radius 16;
-	Height 88;
-  	health 5;
-	DeathHeight 88;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 88;
+		health 5;
+		DeathHeight 88;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -704,25 +704,25 @@ class MetaHangNoGuts : Actor // replaces HangNoGuts
 {
 	Default
 	{
-	Radius 16;
-	Height 88;
-  	health 5;
-	DeathHeight 88;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 88;
+		health 5;
+		DeathHeight 88;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -766,25 +766,25 @@ class MetaHangTLookingDown : Actor // replaces HangTLookingDown
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -828,25 +828,25 @@ class MetaHangTLookingUp : Actor // replaces HangTLookingUp
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States
@@ -890,25 +890,25 @@ class MetaHangTNoBrain : Actor // replaces HangTNoBrain
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	States
 	{
@@ -951,25 +951,25 @@ class MetaHangTSkull : Actor // replaces HangTSkull
 {
 	Default
 	{
-	Radius 16;
-	Height 64;
-  	health 5;
-	DeathHeight 64;
-	ProjectilePassHeight -16;
-	+SOLID
-	+NOTAUTOAIMED
-	+DONTTHRUST
-	+SHOOTABLE
-	+DONTGIB
-	+RANDOMIZE
-	+NOICEDEATH
-	+NOGRAVITY
-	+SPAWNCEILING
-	+DONTFALL
-	damagefactor "HolyWater", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
+		Radius 16;
+		Height 64;
+		health 5;
+		DeathHeight 64;
+		ProjectilePassHeight -16;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+NOGRAVITY
+		+SPAWNCEILING
+		+DONTFALL
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
 	}
 	
 	States

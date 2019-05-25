@@ -379,10 +379,10 @@ class MetaCrush : Actor replaces RealGibs
 {
 	Default
 	{
-	+DROPOFF
-	+CORPSE
-	+NOTELEPORT
-	+DONTGIB
+		+DROPOFF
+		+CORPSE
+		+NOTELEPORT
+		+DONTGIB
 	}
 	
 	States
@@ -411,17 +411,17 @@ class MonsterTracer : FastProjectile
 {
 	Default
 	{
-	Alpha 0.90;
-	RenderStyle "Add";
-	Radius 2;
-	Height 2;
-	Speed 50;
-	PROJECTILE;
-	+BLOODSPLATTER
-	Scale 0.4;
-	MissileType "MonsterTracerTrail";
-	MissileHeight 8;
-	Decal "BulletChip";
+		Alpha 0.90;
+		RenderStyle "Add";
+		Radius 2;
+		Height 2;
+		Speed 50;
+		PROJECTILE;
+		+BLOODSPLATTER
+		Scale 0.4;
+		MissileType "MonsterTracerTrail";
+		MissileHeight 8;
+		Decal "BulletChip";
 	}
 	
 	States
@@ -452,15 +452,15 @@ class MonsterTracerTrail : Actor
 { 
 	Default
 	{
-	Alpha 0.75;
-	RenderStyle "Add";
-	Speed 0;
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+NOTELEPORT
-	+CANNOTPUSH
-	+NODAMAGETHRUST
-	Scale 0.4;
+		Alpha 0.75;
+		RenderStyle "Add";
+		Speed 0;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+NOTELEPORT
+		+CANNOTPUSH
+		+NODAMAGETHRUST
+		Scale 0.4;
 	}
 	
 	States
@@ -475,19 +475,19 @@ class MonsterTracerSpark : Actor
 {
 	Default
 	{
-	Health 4;
-	radius 3;
-	height 6;
-	speed .1;
-	RenderStyle "Add";
-	Alpha 1;
-	Scale 0.5;
-	Mass 0;
-	+missile
-	+doombounce
-	+FLOORCLIP
-	+DONTSPLASH
-	+NOTELEPORT
+		Health 4;
+		radius 3;
+		height 6;
+		speed .1;
+		RenderStyle "Add";
+		Alpha 1;
+		Scale 0.5;
+		Mass 0;
+		+missile
+		+doombounce
+		+FLOORCLIP
+		+DONTSPLASH
+		+NOTELEPORT
 	}
 	
 	States
@@ -506,7 +506,7 @@ class MonsterZombiemanTracer : MonsterTracer
 {
 	Default
 	{
-	DamageFunction (random(1,4));
+		DamageFunction (random(1,4));
 	}
 }
 
@@ -514,7 +514,7 @@ class MonsterShotgunGuyTracer : MonsterTracer
 {
 	Default
 	{
-	DamageFunction (random(1,5)*3);
+		DamageFunction (random(1,5)*3);
 	}
 }
 
@@ -522,6 +522,6 @@ class MonsterCommandoTracer : MonsterTracer
 {
 	Default
 	{
-	DamageFunction (random(1,3));
+		DamageFunction (random(1,3));
 	}
 }

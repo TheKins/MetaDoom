@@ -13,27 +13,27 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 {
 	Default
 	{
-	Health 20;
-	Radius 10;
-	Height 42;
-	+SOLID
-	+SHOOTABLE
-	+ACTIVATEMCROSS
-	+DONTGIB
-	+NOICEDEATH
-	+OLDRADIUSDMG
-	+FORCEPAIN
-	Obituary "$OB_BARREL";
-	bloodtype "GreenBlood";
-	bloodcolor "49 9a 3d";
-	damagefactor "HolyWater", 0;
-	damagefactor "Fist", 0;
-	damagefactor "FireExtinguisher", 0;
-	damagefactor "LightningStun", 0;
-	damagefactor "Axe", 50;
-	painchance "LightningStun", 0;
-	painchance 255;
-	damagetype "ExplodingBarrel";
+		Health 20;
+		Radius 10;
+		Height 42;
+		+SOLID
+		+SHOOTABLE
+		+ACTIVATEMCROSS
+		+DONTGIB
+		+NOICEDEATH
+		+OLDRADIUSDMG
+		+FORCEPAIN
+		Obituary "$OB_BARREL";
+		bloodtype "GreenBlood";
+		bloodcolor "49 9a 3d";
+		damagefactor "HolyWater", 0;
+		damagefactor "Fist", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance "LightningStun", 0;
+		painchance 255;
+		damagetype "ExplodingBarrel";
 	}
 	
 	States
@@ -117,6 +117,6 @@ class ExplosiveBarrelExplosion : Explosion
 {
 	Default
 	{
-	damagetype "ExplodingBarrel";
+		damagetype "ExplodingBarrel";
 	}
 }
