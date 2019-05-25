@@ -535,15 +535,15 @@ class MetaBossSpawner : MetaSpawner
 {
 	Default
 	{
-	Health 0x7fffffff;
-	Height 0;
-	Radius 0;
-	MONSTER;
-	-COUNTKILL
-	-SOLID
-	+NOCLIP
-	+NOTDMATCH
-	+BOSSDEATH
+		Health 0x7fffffff;
+		Height 0;
+		Radius 0;
+		MONSTER;
+		-COUNTKILL
+		-SOLID
+		+NOCLIP
+		+NOTDMATCH
+		+BOSSDEATH
 	}
 	
 	States
@@ -737,15 +737,15 @@ class KeenSpawner : MetaSpawner
 {
 	Default
 	{
-	Health 0x7fffffff;
-	Height 0;
-	Radius 0;
-	MONSTER;
-	-COUNTKILL
-	-SOLID
-	+NOCLIP
-	+NOTDMATCH
-	+SPAWNCEILING 
+		Health 0x7fffffff;
+		Height 0;
+		Radius 0;
+		MONSTER;
+		-COUNTKILL
+		-SOLID
+		+NOCLIP
+		+NOTDMATCH
+		+SPAWNCEILING 
 	}
 	
 	States
