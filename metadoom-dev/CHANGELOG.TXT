@@ -78,6 +78,9 @@ Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
 - General re-sorting and spring cleaning of code and assets all around.
 - Replaced the end-game cast call sequence with something less buggy.
+- Stopped the "100% Monsters/Items/Secrets" message from popping up during
+  TITLEMAP sequences, like Doom 64's.
+- Updated the Episodic Spawn Rules CVar to support SIGIL.
 - Added a new cheat-code, just for funsies...
 - Resorted the credits by alphabetical order, and updated the credits image.
 - Updated the ENDOOM, because at this point in the changelog, why not?
