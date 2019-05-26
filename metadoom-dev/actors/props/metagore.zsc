@@ -138,8 +138,8 @@ class MetaBloodyTwitch : Actor // replaces BloodyTwitch
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -220,8 +220,8 @@ class MetaDeadStick : Actor // replaces DeadStick
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -279,8 +279,8 @@ class MetaLiveStick : Actor // replaces LiveStick
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -342,8 +342,8 @@ class MetaMeat2 : Actor // replaces Meat2
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -404,8 +404,8 @@ class MetaMeat3 : Actor // replaces Meat3
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -466,8 +466,8 @@ class MetaMeat4 : Actor // replaces Meat4
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -528,8 +528,8 @@ class MetaMeat5 : Actor // replaces Meat5
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -676,8 +676,8 @@ class MetaHangBNoBrain : Actor // replaces HangBNoBrain
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -738,8 +738,8 @@ class MetaHangNoGuts : Actor // replaces HangNoGuts
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -800,8 +800,8 @@ class MetaHangTLookingDown : Actor // replaces HangTLookingDown
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -862,8 +862,8 @@ class MetaHangTLookingUp : Actor // replaces HangTLookingUp
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -923,8 +923,8 @@ class MetaHangTNoBrain : Actor // replaces HangTNoBrain
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);
@@ -985,8 +985,8 @@ class MetaHangTSkull : Actor // replaces HangTSkull
 			
 			for (int i = 0; i < 5; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItemEx ("MetaGib1", 1, 1, random(8,32), random(0,5), random(0,5), random(8,18), random(0,360), 128, 0);

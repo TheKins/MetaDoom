@@ -757,8 +757,8 @@ class MetaEvilEye : Actor // replaces EvilEye
 			
 			for (int i = 0; i < 3; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItem("BloodSplat");
@@ -850,8 +850,8 @@ class MetaHeadOnAStick : Actor // replaces HeadOnAStick
 		{
 			for (int i = 0; i < 2; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			A_SpawnItem("BloodSplat");
 			bNOBLOOD = 1;
@@ -895,8 +895,8 @@ class MetaHeadsOnAStick : Actor // replaces HeadsOnAStick
 		{
 			for (int i = 0; i < 4; i++)
 			{
-				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2, random (0, 160));
-				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2, random (0, 160));
+				A_SpawnProjectile ("FlyingBlood", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+				A_SpawnProjectile ("MetaSploosh", random(8,32), 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
 			}
 			
 			A_SpawnItem("BloodSplat");
