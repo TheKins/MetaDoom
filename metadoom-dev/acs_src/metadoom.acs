@@ -115,7 +115,7 @@ script "PistolAmmoStart" ENTER
 // 100% Stats Handling Stuff
 Script "100Percent" ENTER
 {
-	if (GameType () != GAME_NET_DEATHMATCH)
+	if (GameType () < 2) // disqualities deathmatch and titlemap
 	{
 		if (!CheckInventory("x100Percent_Monsters") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
 		{
