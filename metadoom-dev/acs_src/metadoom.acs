@@ -505,7 +505,8 @@ script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);
 	
-	if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0 | StrCmp(StrLeft(maplump, 2), "E4") == 0)
+	if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0
+	| StrCmp(StrLeft(maplump, 2), "E4") == 0 | StrCmp(StrLeft(maplump, 2), "E5") == 0)
 	{
 		if(GetCvar("meta_developer"))
 			log(s:"Map Type: Doom 1 Episodic");
