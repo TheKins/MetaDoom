@@ -32,5 +32,5 @@ Index
 // ---Optional Shit---
 // Actors
 #include "actors/monsters/wolfss.dec"
-#include "actors/monsters/keen.dec"
+//#include "actors/monsters/keen.dec"
 #include "actors/monsters/scriptedmarine.dec"

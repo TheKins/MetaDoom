@@ -85,8 +85,12 @@ Actor Definitions
 
 #include "actors/monsters/metarevenant.zsc"
 
+// Bosses
 #include "actors/monsters/metacyberdemon.zsc"
 #include "actors/monsters/metaspiderdemon.zsc"
+
+// Optional Monsters
+#include "actors/monsters/metakeen.zsc"
 
 // Props
 #include "actors/props/metabarrels.zsc"
