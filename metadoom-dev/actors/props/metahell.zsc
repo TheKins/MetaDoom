@@ -724,7 +724,7 @@ class MetaEvilEye : Actor // replaces EvilEye
 		Height 54;
 		ProjectilePassHeight -16;
 		health 5;
-		DeathHeight 54;
+		DeathHeight 32;
 		+SOLID
 		+NOTAUTOAIMED
 		+DONTTHRUST
