@@ -120,6 +120,7 @@ cast/end					castend
 
 // 100% toast
 menu/100percent				100it
+menu/100percent2			100it2
 
 // Ricochet noises - these defs are from Wildweasel's "Nazis!" mod
 $random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }

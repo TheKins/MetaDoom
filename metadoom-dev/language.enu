@@ -52,8 +52,11 @@ METAMENU_SPAWNINGLIMITS = "Intelligent Spawn Rules";
 METAMENU_MAPBREAKERS = "Possible Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Episodic Spawn Rules";
-METAMENU_TOASTSIZE = "\"100%\" Message Size";
 METAMENU_LOOTSPAWNS = "Treasure Items";
+
+METAMENU_TOAST = "\"100%\" Message Customization";
+METAMENU_TOASTTYPE = "Message Type";
+METAMENU_TOASTSIZE = "Toast Size";
 
 METAMENU_OPTIONAL = "Optional Content";
 METAMENU_OPTIONALDISC1 = "(Disable when playing map sets";
@@ -81,6 +84,8 @@ OPTVAL_RESPECT = "Respected";
 OPTVAL_IGNORED = "Ignored";
 OPTVAL_SPODERS = "Allowed";
 OPTVAL_NOSPODERS = "Too Spooky";
+OPTVAL_TOASTBIG = "Loud Pop-Up \"Toast\"";
+OPTVAL_TOASTLITTLE = "Quiet Log Message";
 
 METATOOLTIP_SPAWNINGCONTROLS = "Set to \"Vanilla\" to disable most of the extended-universe stuff.";
 METATOOLTIP_SPAWNINGLIMITS = "Introduce new items gradually as you play, or all at once?";
@@ -100,8 +105,10 @@ METATOOLTIP_PERFCULLER = "Increase to remove blood stains that are too close tog
 METATOOLTIP_PERFBLOOD = "Forces carnage to fade immediately. Useful if the FPS drops!";
 METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second gore lasts before fading away.";
 
+METATOOLTIP_TOASTTYPE = "Change the obnoxiousness of the \"All X Cleared!\" message.";
+METATOOLTIP_TOASTSIZE = "Change the size of the \"Toast\" option. Bit buggy, mind.";
+
 METATOOLTIP_DEBUG = "Flood the top left of the screen with developer barf occasionally.";
-METATOOLTIP_TOASTSIZE = "Change the size of the \"All X Cleared!\" pop-up. Bit buggy, mind.";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";

@@ -121,55 +121,82 @@ Script "100Percent" ENTER
 		{
 			GiveInventory("x100Percent_Running", 1);
 			GiveInventory("x100Percent_Monsters", 1);
-			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
-			SetFont("100TOAST");
-			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
-			delay(17);
-			LocalAmbientSound("menu/100percent", 127);
-			delay(4);
-			SetFont("DBIGFONT");
-			HudMessage(l:"100_MONSTERS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			SetFont("SmallFont");
-			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			GiveInventory("ScoreItem", 10000);
-			delay(80);
-			TakeInventory("x100Percent_Running", 1);
+			if (GetCvar("meta_toasttype") == 1)
+			{
+				LocalAmbientSound("menu/100percent2", 127);
+				Log(s:"\cfAll Monsters Cleared! 10,000 Point Bonus!");
+				GiveInventory("ScoreItem", 10000);
+				delay(40);
+				TakeInventory("x100Percent_Running", 1);
+			} else {
+				SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
+				SetFont("100TOAST");
+				HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
+				delay(17);
+				LocalAmbientSound("menu/100percent", 127);
+				delay(4);
+				SetFont("DBIGFONT");
+				HudMessage(l:"100_MONSTERS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				SetFont("SmallFont");
+				HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				GiveInventory("ScoreItem", 10000);
+				delay(80);
+				TakeInventory("x100Percent_Running", 1);
+			}
 		} 
 		if (!CheckInventory("x100Percent_Items") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_ITEMS) == GetLevelInfo (LEVELINFO_TOTAL_ITEMS)) & (GetLevelInfo (LEVELINFO_TOTAL_ITEMS) != 0))
 		{
 			GiveInventory("x100Percent_Running", 1);
 			GiveInventory("x100Percent_Items", 1);
-			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
-			SetFont("100TOAST");
-			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
-			delay(17);
-			LocalAmbientSound("menu/100percent", 127);
-			delay(4);
-			SetFont("DBIGFONT");
-			HudMessage(l:"100_ITEMS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			SetFont("SmallFont");
-			HudMessage(s:"5000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			GiveInventory("ScoreItem", 5000);
-			delay(80);
-			TakeInventory("x100Percent_Running", 1);
+			if (GetCvar("meta_toasttype") == 1)
+			{
+				LocalAmbientSound("menu/100percent2", 127);
+				Log(s:"\cfAll Items Found! 5,000 Point Bonus!");
+				GiveInventory("ScoreItem", 5000);
+				delay(40);
+				TakeInventory("x100Percent_Running", 1);
+			} else {
+				SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
+				SetFont("100TOAST");
+				HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
+				delay(17);
+				LocalAmbientSound("menu/100percent", 127);
+				delay(4);
+				SetFont("DBIGFONT");
+				HudMessage(l:"100_ITEMS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				SetFont("SmallFont");
+				HudMessage(s:"5000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				GiveInventory("ScoreItem", 5000);
+				delay(80);
+				TakeInventory("x100Percent_Running", 1);
+			}
 		}
 		if (!CheckInventory("x100Percent_Secrets") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_FOUND_SECRETS) == GetLevelInfo (LEVELINFO_TOTAL_SECRETS)) & (GetLevelInfo (LEVELINFO_TOTAL_SECRETS) != 0))
 		{
 			GiveInventory("x100Percent_Running", 1);
 			GiveInventory("x100Percent_Secrets", 1);
-			SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
-			SetFont("100TOAST");
-			HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
-			delay(17);
-			LocalAmbientSound("menu/100percent", 127);
-			delay(4);
-			SetFont("DBIGFONT");
-			HudMessage(l:"100_SECRETS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			SetFont("SmallFont");
-			HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
-			GiveInventory("ScoreItem", 10000);
-			delay(80);
-			TakeInventory("x100Percent_Running", 1);
+			if (GetCvar("meta_toasttype") == 1)
+			{
+				LocalAmbientSound("menu/100percent2", 127);
+				Log(s:"\cfAll Secrets Uncovered! 10,000 Point Bonus!");
+				GiveInventory("ScoreItem", 10000);
+				delay(40);
+				TakeInventory("x100Percent_Running", 1);
+			} else {
+				SetHudSize((320 * GetCvar("meta_toastsize")),(200 * GetCvar("meta_toastsize")),1);
+				SetFont("100TOAST");
+				HudMessage(s:"A"; HUDMSG_FADEINOUT, 10, CR_RED, (160.0 * GetCvar("meta_toastsize")), (36.0 * GetCvar("meta_toastsize")), 2.0, 0.45, 1.0);
+				delay(17);
+				LocalAmbientSound("menu/100percent", 127);
+				delay(4);
+				SetFont("DBIGFONT");
+				HudMessage(l:"100_SECRETS"; HUDMSG_FADEINOUT, 0, CR_RED, (160.0 * GetCvar("meta_toastsize")), (32.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				SetFont("SmallFont");
+				HudMessage(s:"10,000 Point Bonus!"; HUDMSG_FADEINOUT, 5, CR_RED, (160.0 * GetCvar("meta_toastsize")), (45.0 * GetCvar("meta_toastsize")), 2.0, 0.01, 1.0);
+				GiveInventory("ScoreItem", 10000);
+				delay(80);
+				TakeInventory("x100Percent_Running", 1);
+			}
 		}
 		Delay(1);
 		restart;

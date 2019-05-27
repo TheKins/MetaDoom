@@ -129,9 +129,12 @@ OptionMenu "MetaMenu"
 	MetaSlider "$METAMENU_PERFBLOODTIME",	"$METATOOLTIP_PERFBLOODTIME",		"meta_perf_bloodtime", "0", "10500", "175", "0"
 	MetaSlider "$METAMENU_PERFCULLER",	"$METATOOLTIP_PERFCULLER",		"meta_perf_bloodcullradius", "0", "16", "1", "0"
 	StaticText " "
+	StaticText "$METAMENU_TOAST", 1
+	MetaOption "$METAMENU_TOASTTYPE",	"$METATOOLTIP_TOASTTYPE",	"meta_toasttype", "ToastType"
+	MetaSlider "$METAMENU_TOASTSIZE",	"$METATOOLTIP_TOASTSIZE",		"meta_toastsize", "1", "4", "1", "0"
+	StaticText " "
 	StaticText "$METAMENU_MISC", 1
 	MetaOption "$METAMENU_DEBUG",  "$METATOOLTIP_DEBUG",            "meta_developer", "OnOff"
-	MetaSlider "$METAMENU_TOASTSIZE",	"$METATOOLTIP_TOASTSIZE",		"meta_toastsize", "1", "4", "1", "0"
 	StaticText " "
 	Class "MetaOptionMenu"
 }
@@ -152,4 +155,10 @@ OptionValue "EpisodicRules"
 {
 	0, "$OPTVAL_IGNORED"
 	1, "$OPTVAL_RESPECT"
+}
+
+OptionValue "ToastType"
+{
+	0, "$OPTVAL_TOASTBIG"
+	1, "$OPTVAL_TOASTLITTLE"
 }

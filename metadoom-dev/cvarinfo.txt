@@ -34,4 +34,5 @@ server int meta_perf_spentbrass = 1;
 server int meta_pistolammo = 0;
 
 // ui crap
-server int meta_toastsize = 1;
+user int meta_toasttype = 0;
+user int meta_toastsize = 1;

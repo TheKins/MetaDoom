@@ -64,6 +64,9 @@ UI Changes:
 - Overhauled ListMenus and MessageBoxMenus with a nice new look!
 - Replaced the main menu's hi-res logo with a more consistent pixel-art version.
 - Updated Nash's tooltips system to be better placed and more easily readable.
+- Added a new CVar to change how the 100% kills/items/secrets message is displayed.
+  You can now choose between MetaDoom's traditional loud pop-up "toast" or a
+  simple log message accompanied by unobtrusive beeping sounds.
 
 Prop Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
