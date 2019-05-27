@@ -829,14 +829,41 @@ class MetaEvilEyeForSigil : Actor
 	States
 	{
 	Spawn:
-		CEYE A 0;
-		CEYE A 0 A_PlaySound("props/floatingskull", CHAN_BODY, 1.0, 1);
-		CEYE A 0 A_PlaySound("props/candles/candlestick", CHAN_VOICE, 1.0, 1);
+		SEYE A 0;
+		SEYE A 0 A_PlaySound("props/floatingskull", CHAN_BODY, 1.0, 1);
+		SEYE A 0 A_PlaySound("props/candles/candlestick", CHAN_VOICE, 1.0, 1);
 		goto Idle;
 	Idle:
-		CEYE A 0 A_SpawnItem("MetaEvilEyeRadiate",0,36);
-		CEYE ABCB 6 Bright;
+		SEYE A 0 A_SpawnItem("MetaEvilEyeForSigilRadiate",0,36);
+		SEYE ABCB 6 Bright;
 		Loop;
+	}
+}
+
+class MetaEvilEyeForSigilRadiate : Actor
+{
+	Default
+	{
+		radius 10;
+		height 10;
+		+NOCLIP
+		+NOGRAVITY
+		+NOBLOCKMAP
+		Renderstyle "Add";
+	}
+	
+	states
+	{
+	Spawn:
+		SEYE D 0;
+		SEYE D 0;
+	DoTheThing:
+		SEYE D 1 BRIGHT
+		{
+			A_FadeOut(0.05);
+			A_SetScale(scale.x + 0.01);
+		}
+		loop;
 	}
 }
 
