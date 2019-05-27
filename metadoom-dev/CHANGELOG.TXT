@@ -34,7 +34,7 @@ Monster Changes:
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
-- Greatly improved GL light definitions for various explosions.
+- Greatly improved dynamic light definitions for various explosions.
 - The Pistol flashlight now uses an actual spotlight as opposed to a constant
   spray of invisible pointlight projectiles.
 - Improvements and updates to the Fire Extinguisher:
@@ -46,7 +46,7 @@ Weapon Changes:
     in them having the self-extinguished buff forever.
 - Improvements and updates to the Gauss Cannon:
   - Fixed a one-frame visual bug when deselecting the Gauss Cannon while zoomed.
-  - Reduced the amount of time between firing the and being able to scope/unscope.
+  - Reduced the amount of time between firing and being able to scope/unscope.
   - Updated scope artwork.
 - The Rocket Launcher alt-fire has been updated to be actually useful - manually
   detonating your rocket now sprays ripping fragments for additional damage.

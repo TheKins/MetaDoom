@@ -10,7 +10,7 @@ DrPySpy (Spiderdemon sprites, Codex system, HUD faces, Flashlight, heavy code li
 
 STUFF FROM COMMERCIAL GAMES:
 Id Software (Oh, a few things here and there...)
-3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite)
+3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite, Rocket Fragment sprites)
 Bethesda Softworks (Elder Scrolls and Fallout sounds)
 Epic Games (Some metal gibbing sounds, Cyber-Mancubus attack sounds)
 EuroCom Entertainment Software (Duke 64 smoke and blood sprites)
