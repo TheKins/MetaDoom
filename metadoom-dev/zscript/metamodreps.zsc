@@ -43,3 +43,16 @@ class MetaDoom64Replacements : EventHandler
 		}
     }
 }
+
+// Replaces the EvilEye prop in SIGIL to ensure that it's funky level scripting
+// works as originally intended by the legendary creator of Red Faction for nGage
+class MetaSigilReplacements : EventHandler
+{
+    override void CheckReplacement(ReplaceEvent e)
+	{		
+		if (level.MapName.Left(2) ~== "E5") // thanks zombie!
+		{
+			if ( e.Replacee == "MetaEvilEye" ) e.Replacement = "MetaEvilEyeForSigil";	
+		}
+	}
+}

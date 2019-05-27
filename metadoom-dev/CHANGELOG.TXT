@@ -74,9 +74,8 @@ Prop Changes:
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
 - Fixed blood splashes from gibbed props launching straight downwards.
-- Modified the EvilEye prop to work a little better with SIGIL. It's still not
-  quite how I'd like it, though (you'll typically need one extra shot after
-  shooting the eye to activate the triggers... this may change in the future)
+- Added a unique replacement for the EvilEye for SIGIL, fixing a number of issues
+  while adding a tiny bit of unique polish.
 
 Other Changes:
 - ZScript porting, various bugfixes and minor tweaks far and wide.
