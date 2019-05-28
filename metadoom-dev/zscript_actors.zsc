@@ -90,6 +90,7 @@ Actor Definitions
 #include "actors/monsters/metaspiderdemon.zsc"
 
 // Optional Monsters
+#include "actors/monsters/metawolfss.zsc"
 #include "actors/monsters/metakeen.zsc"
 #include "actors/monsters/metascriptedmarine.zsc"
 
