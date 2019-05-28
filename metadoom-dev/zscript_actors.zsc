@@ -91,6 +91,7 @@ Actor Definitions
 
 // Optional Monsters
 #include "actors/monsters/metakeen.zsc"
+#include "actors/monsters/metascriptedmarine.zsc"
 
 // Props
 #include "actors/props/metabarrels.zsc"
