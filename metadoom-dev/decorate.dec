@@ -6,29 +6,6 @@ Index
 ----------------------------
 */
 
-// Monsters
-//#include "actors/monsters/spawners.dec"
-//#include "actors/monsters/spawners_stealth.dec"
-//#include "actors/monsters/core.dec"
-//#include "actors/monsters/zombieman.dec"
-//#include "actors/monsters/shotgunguy.dec"
-//#include "actors/monsters/chaingunguy.dec"
-//#include "actors/monsters/imp.dec"
-//#include "actors/monsters/demon.dec"
-// #include "actors/monsters/spectre.dec"
-// #include "actors/monsters/hellhound.dec"
-//#include "actors/monsters/bruisers.dec"
-//#include "actors/monsters/cacodemon.dec"
-//#include "actors/monsters/arachnotron.dec"
-//#include "actors/monsters/mancubus.dec"
-//#include "actors/monsters/painelemental.dec"
-//#include "actors/monsters/lostsoul.dec"
-#include "actors/monsters/archvile.dec"
-//#include "actors/monsters/revenant.dec"
-
-//#include "actors/monsters/cyberdemon.dec"
-//include "actors/monsters/spiderdemon.dec"
-
 // ---Optional Shit---
 // Actors
 #include "actors/monsters/wolfss.dec"

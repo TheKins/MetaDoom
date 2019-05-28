@@ -82,7 +82,7 @@ Actor Definitions
  #include "actors/monsters/metapainelemental.zsc"
 #include "actors/monsters/metalostsoul.zsc"
 #include "actors/monsters/metatrite.zsc"
-
+#include "actors/monsters/metaarchvile.zsc"
 #include "actors/monsters/metarevenant.zsc"
 
 // Bosses
