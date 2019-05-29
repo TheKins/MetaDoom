@@ -41,7 +41,7 @@ LISTMENU "MainMenu"
 
 ListMenu "EpisodeMenu"
 {
-	Position 24, 43
+	Position 24, 25
 	StaticTextCentered 160, 4, "$MNU_EPISODE"
 	// items will be filled in by MAPINFO
 }
