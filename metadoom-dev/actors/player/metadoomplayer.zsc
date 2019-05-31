@@ -270,6 +270,8 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY K 10;
 		PLAY L -1;
 		Stop;
+	XDeath.ExplodingBarrel:
+	XDeath.Explosive:
 	XDeath:
 		PLAY H 0;
 		PLAY H 0 A_StopSound(CHAN_BODY);
