@@ -14,7 +14,8 @@ Player Changes:
   
 Monster Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
-- Additional bugfixes and improvements to the Spider Mastermind and Cyberdemon.
+- Fixed visual issues with the Spider Mastermind's telekinesis attack and death.
+- Fixed visual issues with the Cyberdemon's death.
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
