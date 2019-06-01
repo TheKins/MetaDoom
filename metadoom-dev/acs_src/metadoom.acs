@@ -832,6 +832,29 @@ Script "Impulse" (int n)
 	}
 }
 
+// Fix death animations after resurrecting
+script "MetaResurrectChecker" DEATH
+{
+	if (GameType() == GAME_SINGLE_PLAYER && !(ClassifyActor(0) & ACTOR_VOODOODOLL))
+	{
+		while(true)
+		{
+		if (GetActorProperty(0,APROP_Health) > 0)
+		{
+			TakeInventory("DeathStateFallingDown", 999);
+			TakeInventory("DeathStateSpeedyDrop", 999);
+			TakeInventory("DeathStateExplosion", 999);
+			TakeInventory("DeathStateFire", 999);
+			TakeInventory("DeathStateElec", 999);
+			TakeInventory("DeathStateGibbed", 999);
+			Log(s:"Oh. Okay. You aren't dead, then.");
+			break;
+		}
+		delay(1);
+		}
+	}
+}
+
 // don't get too brutal, kid
 
 function int unusedTID(int start, int end)
