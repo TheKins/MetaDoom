@@ -107,7 +107,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 	// Draws images to the left and right of the traditional intermission graphic,
 	// as a sick hack to fill in space for widescreen players (aka. most players
 	// nowadays in this Brutal-tinged era.
-	// Rewritten by Gutawer. Kudos to him!
+	// Rewritten by Gutawer. Kudos!
 	void widescreenDatShit ()
     {
         TextureID interborder = TexMan.CheckForTexture("INTBACK", TexMan.Type_MiscPatch);
