@@ -166,7 +166,7 @@ class ExtendedListMenu : ListMenu
 
 		// Default position is centered, 35 pixels off the bottom of the screen
 		if (x < 0) { x = 150; }
-		if (y < 0) { y = 160; }
+		if (y < 0) { y = 155; }
 
 		// Semi-hard-coded, unfortunately - Descriptions must be named [Menu name]DESCRIPTION1, [Menu name]DESCRIPTION2, etc.
 		String text = StringTable.Localize("$" .. lookupBase .. "DESCRIPTION"..index);
@@ -180,7 +180,7 @@ class ExtendedListMenu : ListMenu
 
 		for (int i = 0; i < c; i++)
 		{
-			screen.DrawText (SmallFont, OptionMenuSettings.mFontColor, x / scale - message.StringWidth(i) / 2, y  / (scale / 1.15), message.StringAt(i), DTA_Clean, true, DTA_Alpha, alpha, DTA_VirtualWidthF, 320 / scale, DTA_VirtualHeightF, 240 / scale);
+			screen.DrawText (SmallFont, OptionMenuSettings.mFontColor, x / scale - message.StringWidth(i) / 2, y / scale, message.StringAt(i), DTA_Clean, true, DTA_Alpha, alpha, DTA_VirtualWidthF, 320 / scale, DTA_VirtualHeightF, 200 / scale);
 			y += fontheight;
 		}
 	}
