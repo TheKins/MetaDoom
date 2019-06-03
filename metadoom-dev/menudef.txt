@@ -48,11 +48,11 @@ ListMenu "EpisodeMenu"
 
 ListMenu "SkillMenu"
 {
-	//StaticPatch 0, 10, "M_BAR"
+	StaticPatch 0, 0, "M_BAR"
 	StaticTextCentered 160, 4, "$MNU_CHOOSESKILL"
-	Position 48, 43
+	Position 48, 33
 	
-	//Class "StaticIconListMenu"
+	Class "StaticIconListMenu"
 }
 
 // Options Menus

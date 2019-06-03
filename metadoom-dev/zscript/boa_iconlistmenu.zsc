@@ -146,7 +146,7 @@ class ExtendedListMenu : ListMenu
 
 				for (int i = 0; i < c; i++)
 				{
-					screen.DrawText (BigFont, 0, x / scale - message.StringWidth(i) / 2, y / scale, message.StringAt(i), DTA_Clean, true, DTA_KeepRatio, true, DTA_VirtualWidthF, width / scale, DTA_VirtualHeightF, height / scale);
+					screen.DrawText (BigFont, 0, x / scale - message.StringWidth(i) / 2, y / scale, message.StringAt(i), DTA_Clean|DTA_320x200, true, DTA_KeepRatio, true, DTA_VirtualWidthF, width / scale, DTA_VirtualHeightF, height / scale);
 					y += fontheight;
 				}
 			}
@@ -166,7 +166,7 @@ class ExtendedListMenu : ListMenu
 
 		// Default position is centered, 35 pixels off the bottom of the screen
 		if (x < 0) { x = 150; }
-		if (y < 0) { y = 165; }
+		if (y < 0) { y = 160; }
 
 		// Semi-hard-coded, unfortunately - Descriptions must be named [Menu name]DESCRIPTION1, [Menu name]DESCRIPTION2, etc.
 		String text = StringTable.Localize("$" .. lookupBase .. "DESCRIPTION"..index);
@@ -180,7 +180,7 @@ class ExtendedListMenu : ListMenu
 
 		for (int i = 0; i < c; i++)
 		{
-			screen.DrawText (SmallFont, OptionMenuSettings.mFontColor, x / scale - message.StringWidth(i) / 2, y / scale, message.StringAt(i), DTA_Clean, true, DTA_Alpha, alpha, DTA_VirtualWidthF, 320 / scale, DTA_VirtualHeightF, 200 / scale);
+			screen.DrawText (SmallFont, OptionMenuSettings.mFontColor, x / scale - message.StringWidth(i) / 2, y  / (scale / 1.15), message.StringAt(i), DTA_Clean, true, DTA_Alpha, alpha, DTA_VirtualWidthF, 320 / scale, DTA_VirtualHeightF, 240 / scale);
 			y += fontheight;
 		}
 	}
@@ -394,6 +394,8 @@ class StaticIconListMenu : ExtendedListMenu
 	int bgpicked;
 	int bgnum;
 	TextureID bg;
+	TextureID border;
+	TextureID warpy;
 
 	override void Drawer()
 	{
@@ -403,25 +405,29 @@ class StaticIconListMenu : ExtendedListMenu
 			
 			if (bgnum == 1)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG1", TexMan.Type_MiscPatch);
 			} else if (bgnum == 2)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG2", TexMan.Type_MiscPatch);
 			} else if (bgnum == 3)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT3", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG3", TexMan.Type_MiscPatch);
 			} else if (bgnum == 4)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT4", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BG4", TexMan.Type_MiscPatch);
 			} 
 			
 			bgpicked = 1;
 		}
 		
-		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
+		border = TexMan.CheckForTexture("M_BGBRDR", TexMan.Type_MiscPatch);
+		warpy = TexMan.CheckForTexture("M_BGWARP", TexMan.Type_MiscPatch);
 		
+		screen.DrawTexture (warpy, true, 29, 34, DTA_320x200, true);
+		screen.DrawTexture (bg, true, 29, 34, DTA_320x200, true);
+		screen.DrawTexture (border, true, 0, 0, DTA_320x200, true);
 		// Draw the icon for the currently selected item
-		DrawItemIcon(mDesc.mSelectedItem, 270, 180, 1.0); // -1, 165
+		DrawItemIcon(mDesc.mSelectedItem, 270, 165, 1.0); // -1, 165
 
 		Super.Drawer();
 	}

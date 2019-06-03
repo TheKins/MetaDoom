@@ -63,6 +63,10 @@ Item Changes:
 
 UI Changes:
 - Overhauled ListMenus and MessageBoxMenus with a nice new look!
+- Re-enabled the Difficulty Menu description stuff with the reassurance that
+  AFADoomer probably won't gut me for it. In the future this will be redone
+  using the code from the Wolfenstein 3D TC just to be safe, but there's a lot
+  of twiddling that needs to be done.
 - Replaced the main menu's hi-res logo with a more consistent pixel-art version.
 - Updated Nash's tooltips system to be better placed and more easily readable.
 - Added a new CVar to change how the 100% kills/items/secrets message is displayed.
