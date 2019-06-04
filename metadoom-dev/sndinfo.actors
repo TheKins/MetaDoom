@@ -499,6 +499,11 @@ $random monsters/forgottenone/attack { monsters/forgottenone/attack1 monsters/fo
 monsters/forgottenone/attack1	frgtn1
 monsters/forgottenone/attack2	frgtn2
 
+// Rahovart - apparently these definitions went missing for quite a while?!
+monsters/rahovart/see		rahosee
+monsters/rahovart/pain		rahopain
+monsters/rahovart/die		rahodie
+
 // fiend
 monsters/fiend/see			fiensee
 monsters/fiend/idle			fienidle
