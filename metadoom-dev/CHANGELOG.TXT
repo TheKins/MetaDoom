@@ -14,10 +14,12 @@ Player Changes:
   
 Monster Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
-- Fixed visual issues with the Spider Mastermind's telekinesis attack and death.
-- Fixed visual issues with the Cyberdemon's death.
+- Fixed an issue where under certain circumstances, melee'd enemies would be
+  hurled the wrong direction, towards the player instead of away.
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
+- Fixed visual issues with the Spider Mastermind's telekinesis attack and death.
+- Fixed visual issues with the Cyberdemon's death.
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
 - Fixed a bug where after charging, the Bull Demon wouldn't charge again unless

@@ -121,6 +121,7 @@ class MonsterCore : Actor
 		stop;
 	// Fists - Standard
 	Pain.Fist:
+		"####" # 1;
 		"####" # 0 
 		{
 			A_FaceTarget();
@@ -139,6 +140,7 @@ class MonsterCore : Actor
 		"####" # 0 A_Jump(256,"Pain");
 		stop;
 	Death.Fist:
+		"####" # 1;
 		"####" # 0
 		{
 			A_FaceTarget();
@@ -160,6 +162,7 @@ class MonsterCore : Actor
 		stop;
 	// Fists - Berserker
 	Pain.BerserkFist:
+		"####" # 1;
 		"####" # 0 
 		{
 			A_FaceTarget();
@@ -175,6 +178,7 @@ class MonsterCore : Actor
 		"####" # 0 A_Jump(256,"Pain");
 		stop;
 	Death.BerserkFist:
+		"####" # 1;
 		"####" # 0
 		{
 			A_FaceTarget();
@@ -185,6 +189,7 @@ class MonsterCore : Actor
 		"####" # 0 A_Jump(256,"Death");
 		stop;
 	XDeath.BerserkFist:
+		"####" # 1;
 		"####" # 0 
 		{
 			A_FaceTarget();
@@ -196,6 +201,7 @@ class MonsterCore : Actor
 		stop;
 	// Wolfenstein Java Kick
 	Pain.KrautBoot:
+		"####" # 1;
 		"####" # 0 
 		{
 			A_FaceTarget();
@@ -210,6 +216,7 @@ class MonsterCore : Actor
 		"####" # 0 A_Jump(256,"Punched");
 		stop;
 	Death.KrautBoot:
+		"####" # 1;
 		"####" # 0
 		{
 			A_FaceTarget();
@@ -219,6 +226,7 @@ class MonsterCore : Actor
 		"####" # 0 A_Jump(256,"Death");
 		stop;
 	XDeath.KrautBoot:
+		"####" # 1;
 		"####" # 0 
 		{
 			A_FaceTarget();
