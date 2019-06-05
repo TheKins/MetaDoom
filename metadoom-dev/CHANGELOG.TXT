@@ -22,13 +22,14 @@ Monster Changes:
 - Fixed visual issues with the Cyberdemon's death.
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
+- Bull Demons now play nicer with line triggers in certain situations (MAP13).
 - Fixed a bug where after charging, the Bull Demon wouldn't charge again unless
   it left its roaming state by way of attacking or being attacked.
 - The Baron of Hell's jump attack no longer reuses the Hell Knight's grunt sound.
-- Cacodemons and Bruisers now get crushed by the world in more appropriate ways.
+- Cacodemon and Bruiser-family monsters now have appropriate "crushed" sprites.
 - Malwraiths now use recoloured Cacodemon gibs instead of generic ones.
-- Fixed the "bobbing up and down" effect on Cacodemons not being restored when
-  they're resurrected by Archviles.
+- Fixed the "bobbing up and down" effect on Cacodemon-family monsters not being
+  restored when they're resurrected by Archviles.
 - Fixed a bug where 50% of the time, Spiborgs didn't award points upon death.
 - Added a small chance for Cyber-Mancubi to stop attacking instead of launching
   its bombs forever as long as the player is in sight.
