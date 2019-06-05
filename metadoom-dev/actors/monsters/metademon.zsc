@@ -120,8 +120,8 @@ class MetaBullDemon : MonsterCore
 		Health 200;
 		PainChance 180;
 		Speed 7;
-		Radius 30;
-		Height 56;
+		Radius 28;
+		Height 50;
 		Mass 400;
 		Monster;
 		+FLOORCLIP
