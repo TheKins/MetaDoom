@@ -25,10 +25,10 @@ class MetaArchvile : MonsterCore
 		+QUICKTORETALIATE
 		+FLOORCLIP
 		+NOTARGET
-		SeeSound "vile/sight";
-		PainSound "vile/pain";
-		DeathSound "vile/death";
-		ActiveSound "vile/active";
+		SeeSound "monsters/archvile/see";
+		PainSound "monsters/archvile/pain";
+		DeathSound "monsters/archvile/die";
+		ActiveSound "monsters/archvile/idle";
 		MeleeSound "vile/stop";
 		Obituary "$OB_VILE";
 		damagefactor "HolyWater", 1.5;

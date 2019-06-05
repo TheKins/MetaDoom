@@ -418,6 +418,11 @@ monsters/archvile/gib2	archgib2
 $volume monsters/archvile/boom 2.0
 $volume monsters/archvile/dud 2.0
 
+monsters/archvile/see			archsee
+monsters/archvile/idle			archidle
+monsters/archvile/pain			archpain
+monsters/archvile/die			archdie
+
 // Hell Razer
 $random monsters/hellrazer/see	{ monsters/hellrazer/see1 monsters/hellrazer/see2 monsters/hellrazer/see3 }
 monsters/hellrazer/see1			hrazsee1
