@@ -22,6 +22,7 @@ Monster Changes:
 - Fixed visual issues with the Cyberdemon's death.
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
+- Converted Nightmare Imp sounds from FLAC to OGG, for consistency's sake.
 - Bull Demons now play nicer with line triggers in certain situations (MAP13).
 - Bull Demons now have a slightly smaller collision box.
 - Fixed a bug where after charging, Bull Demons wouldn't charge again unless
@@ -37,6 +38,7 @@ Monster Changes:
 - Beholders are now less likely to spawn Forgotten Ones, and spawn them in a
   different manner which doesn't immediately set them into an attacking state.
 - Fixed the sound definitions for Rahovarts not existing, embarassingly.
+- Arch-Viles now have new sounds (with thanks to Captain J for some of them!)
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
