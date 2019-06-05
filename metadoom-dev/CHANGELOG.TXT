@@ -23,8 +23,9 @@ Monster Changes:
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
 - Bull Demons now play nicer with line triggers in certain situations (MAP13).
-- Fixed a bug where after charging, the Bull Demon wouldn't charge again unless
-  it left its roaming state by way of attacking or being attacked.
+- Bull Demons now have a slightly smaller collision box.
+- Fixed a bug where after charging, Bull Demons wouldn't charge again unless
+  they left their roaming state by way of attacking or being attacked.
 - The Baron of Hell's jump attack no longer reuses the Hell Knight's grunt sound.
 - Cacodemon and Bruiser-family monsters now have appropriate "crushed" sprites.
 - Malwraiths now use recoloured Cacodemon gibs instead of generic ones.
