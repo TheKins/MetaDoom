@@ -15,7 +15,7 @@ Player Changes:
 Monster Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
 - Fixed an issue where under certain circumstances, melee'd enemies would be
-  hurled the wrong direction, towards the player instead of away.
+  hurled the wrong direction, TOWARDS the player instead of AWAY.
 - Fixed a visual issue where gibs could be left floating in the air when
   the floor beneath them lowered.
 - Fixed visual issues with the Spider Mastermind's telekinesis attack and death.
@@ -39,7 +39,7 @@ Monster Changes:
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
-- Greatly improved dynamic light definitions for various explosions.
+- Greatly improved dynamic light definitions for various explosion effects.
 - The Pistol flashlight now uses an actual spotlight as opposed to a constant
   spray of invisible pointlight projectiles.
 - Improvements and updates to the Fire Extinguisher:
