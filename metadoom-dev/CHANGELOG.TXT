@@ -10,6 +10,7 @@ Player Changes:
 - Ported the player code to ZScript.
 - Fixed the various visual issues (endless viewbobbing, angle resetting on bounce)
   that have plagued the decapitated player skull since it was first added.
+- Redid the footstep sounds for slime/blood/etc.
 - Added more first-person death sequences!
   
 Monster Changes:
@@ -39,6 +40,7 @@ Monster Changes:
   different manner which doesn't immediately set them into an attacking state.
 - Fixed the sound definitions for Rahovarts not existing, embarassingly.
 - Arch-Viles now have new sounds (with thanks to Captain J for some of them!)
+- A certain WolfSS variant's sounds are now less ear-splitting.
 
 Weapon Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
@@ -65,7 +67,7 @@ Weapon Changes:
 Item Changes:
 - ZScript porting, various bugfixes and improvements far and wide.
 - Adjusted Hologram projectile trajectory so it lands further away.
-- Changed how Medikits are spawned by Quad Damage.
+- Changed how Medikits are spawned by the Quad Damage pickup.
 - Improved Light-Amp pickup sound.
 
 UI Changes:
