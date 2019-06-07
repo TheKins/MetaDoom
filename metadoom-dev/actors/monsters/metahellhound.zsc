@@ -14,8 +14,8 @@ class MetaHellhound : MonsterCore
 	Default
 	{
 		Health 100;
-		Speed 15;
-		FastSpeed 20;
+		Speed 7;
+		FastSpeed 13;
 		PainChance 180;
 		Radius 25;
 		Height 48;
@@ -41,7 +41,14 @@ class MetaHellhound : MonsterCore
 		Loop;
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood");
-		"####" AABBCCDD 2 Fast A_Chase;
+		"####" AA 1 A_Chase("Melee", null);
+		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" BB 1 A_Chase("Melee", null);
+		"####" BB 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" CC 1 A_Chase("Melee", null);
+		"####" CC 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" DD 1 A_Chase("Melee", null);
+		"####" DD 1 A_Chase("Melee", null, CHF_DONTTURN);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
@@ -149,7 +156,8 @@ class MetaDemonDog : MetaHellhound
 	Default
 	{
 		Health 150;
-		Speed 17;
+		Speed 8;
+		FastSpeed 13;
 		ActiveSound "monsters/demondog/bark";
 		SeeSound "monsters/demondog/see";
 		Obituary "$OB_DOG2";
@@ -162,8 +170,14 @@ class MetaDemonDog : MetaHellhound
 		Loop;
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood");
-		"####" AABB 2 Fast A_Chase("Melee",null);
-		"####" CCDD 2 Fast A_Chase("Melee",null,CHF_FASTCHASE);
+		"####" AA 1 A_Chase("Melee", null);
+		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" BB 1 A_Chase("Melee", null);
+		"####" BB 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" CC 1 A_Chase("Melee", null, CHF_FASTCHASE);
+		"####" CC 1 A_Chase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
+		"####" DD 1 A_Chase("Melee", null, CHF_FASTCHASE);
+		"####" DD 1 A_Chase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
@@ -244,7 +258,8 @@ class MetaCerberus : MetaHellhound
 	Default
 	{
 		Health 150;
-		Speed 17;
+		Speed 8;
+		FastSpeed 13;
 		ActiveSound "monsters/cerberus/bark";
 		SeeSound "monsters/cerberus/see";
 		Obituary "$OB_DOG3";
@@ -257,7 +272,14 @@ class MetaCerberus : MetaHellhound
 		Loop;
 	See:
 		"####" A 0 A_MetaBleed("FlyingBlood");
-		"####" AABBCCDD 2 Fast A_Chase("Melee","Missile");
+		"####" AA 1 A_Chase("Melee", "Missile");
+		"####" AA 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
+		"####" BB 1 A_Chase("Melee", "Missile");
+		"####" BB 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
+		"####" CC 1 A_Chase("Melee", "Missile");
+		"####" CC 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
+		"####" DD 1 A_Chase("Melee", "Missile");
+		"####" DD 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
