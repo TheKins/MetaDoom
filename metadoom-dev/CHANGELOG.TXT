@@ -24,7 +24,8 @@ Monster Changes:
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
 - Converted Nightmare Imp sounds from FLAC to OGG, for consistency's sake.
-- Bull Demons now play nicer with line triggers in certain situations (MAP13).
+- Bull Demons and Hellhound-family monsters now move "smoothly", fixing an issue
+  where they'd walk through line triggers in certain situations (DOOM2 MAP13).
 - Bull Demons now have a slightly smaller collision box.
 - Fixed a bug where after charging, Bull Demons wouldn't charge again unless
   they left their roaming state by way of attacking or being attacked.
