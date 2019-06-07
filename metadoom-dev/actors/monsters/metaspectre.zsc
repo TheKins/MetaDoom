@@ -16,11 +16,11 @@ class MetaSpectre : MetaDemon
 		+SHADOW;
 		RenderStyle "OptFuzzy";
 		Alpha 0.5;
-		SeeSound "spectre/sight";
-		AttackSound "spectre/melee";
-		PainSound "spectre/pain";
-		DeathSound "spectre/death";
-		ActiveSound "spectre/active";
+		SeeSound "monsters/pinky/see";
+		AttackSound "monsters/pinky/attack";
+		PainSound "monsters/pinky/pain";
+		DeathSound "monsters/pinky/die";
+		ActiveSound "monsters/pinky/idle";
 		HitObituary "$OB_SPECTREHIT";
 	}
 }

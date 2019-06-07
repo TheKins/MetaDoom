@@ -21,11 +21,11 @@ class MetaDemon : MonsterCore
 		Mass 400;
 		Monster;
 		+FLOORCLIP
-		SeeSound "demon/sight";
-		AttackSound "demon/melee";
-		PainSound "demon/pain";
-		DeathSound "demon/death";
-		ActiveSound "demon/active";
+		SeeSound "monsters/pinky/see";
+		AttackSound "monsters/pinky/attack";
+		PainSound "monsters/pinky/pain";
+		DeathSound "monsters/pinky/die";
+		ActiveSound "monsters/pinky/idle";
 		Obituary "$OB_DEMONHIT";
 		painchance "HolyWater", 255;
 	}
@@ -129,7 +129,7 @@ class MetaBullDemon : MonsterCore
 		AttackSound "monsters/bulldemon/bite";
 		PainSound "monsters/bulldemon/pain";
 		DeathSound "monsters/bulldemon/die";
-		ActiveSound "demon/active";
+		//ActiveSound "monsters/pinky/idle";
 		Obituary "$OB_BULLDEMONHIT";
 		painchance 64;
 		painchance "HolyWater", 255;

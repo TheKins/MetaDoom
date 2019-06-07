@@ -24,6 +24,7 @@ Monster Changes:
 - Fixed a mistake where a bugfix intended for the Imp Lord was actually applied
   to the Nightmare Imp instead, presumably in a bout of insomnia-induced idiocy.
 - Converted Nightmare Imp sounds from FLAC to OGG, for consistency's sake.
+- Added higher-definition sounds for Pinkies and Spectres.
 - Bull Demons and Hellhound-family monsters now move "smoothly", fixing an issue
   where they'd walk through line triggers in certain situations (DOOM2 MAP13).
 - Bull Demons now have a slightly smaller collision box.

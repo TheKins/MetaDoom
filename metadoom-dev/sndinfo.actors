@@ -256,6 +256,16 @@ monsters/imp/fireball/hit1		fball1
 monsters/imp/fireball/hit2		fball2
 monsters/imp/fireball/hit3		fball3
 
+// pinky demon / spectre
+monsters/pinky/see			pinksee
+monsters/pinky/pain			pinkpain
+monsters/pinky/attack		pinkattk
+monsters/pinky/die			pinkdie
+
+$random monsters/pinky/idle { monsters/pinky/idle1 monsters/pinky/idle2 }
+monsters/pinky/idle1		pinkact1
+monsters/pinky/idle2		pinkact2
+
 // Cacodemon
 monsters/caco/lightningball/fire		lballfir
 monsters/caco/lightningball/loop		lballoop
