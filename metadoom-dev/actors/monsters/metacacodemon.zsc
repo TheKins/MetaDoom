@@ -22,10 +22,10 @@ class MetaCacodemon : MonsterCore
 		PainChance 128;
 		Monster;
 		+FLOAT +NOGRAVITY +FLOATBOB
-		SeeSound "caco/sight";
-		PainSound "caco/pain";
-		DeathSound "caco/death";
-		ActiveSound "caco/active";
+		SeeSound "monsters/caco/see";
+		PainSound "monsters/caco/pain";
+		DeathSound "monsters/caco/die";
+		ActiveSound "monsters/caco/idle";
 		Obituary "$OB_CACO";
 		HitObituary "$OB_CACOHIT";
 		Bloodtype "Blueblood";

@@ -267,6 +267,11 @@ monsters/pinky/idle1		pinkact1
 monsters/pinky/idle2		pinkact2
 
 // Cacodemon
+monsters/caco/see		cacosee
+monsters/caco/pain		cacopain
+monsters/caco/idle		cacoidle
+monsters/caco/die		cacodie
+
 monsters/caco/lightningball/fire		lballfir
 monsters/caco/lightningball/loop		lballoop
 $random monsters/caco/lightningball/hit	{ monsters/caco/lightningball/hit1 monsters/caco/lightningball/hit2 monsters/caco/lightningball/hit3 }
