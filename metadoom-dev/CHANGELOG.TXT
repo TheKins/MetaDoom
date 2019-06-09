@@ -1,5 +1,5 @@
-v5.666 "Klave EX" (NEXT)
-========================
+v5.666 "Klave EX" (10/06/19)
+============================
 This update moves every last remaining piece of DECORATE script in the mod (and
 there was a lot) to ZScript! As such, there's no NEW monsters or weapons, but in
 the process I was able to review and polish all the existing stuff, bringing
