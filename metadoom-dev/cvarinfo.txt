@@ -36,3 +36,8 @@ server int meta_pistolammo = 0;
 // ui crap
 user int meta_toasttype = 0;
 user int meta_toastsize = 1;
+
+// footsteps
+server int fs_enabled = 1;
+server float fs_volume_mul = 1.0;
+server float fs_delay_mul = 1.0;

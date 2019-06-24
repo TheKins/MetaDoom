@@ -403,6 +403,21 @@ class MetaDoomPlayer : PlayerPawn
 			}
 		}
 	}
+
+	// Footsteps Code
+	Footsteps fsteps;
+
+	override void PostBeginPlay()
+	{
+		Super.PostBeginPlay();
+
+		Actor fstepsActor = Spawn("Footsteps",pos);
+		if(fstepsActor != null)
+		{
+			fsteps = Footsteps(fstepsActor);
+			fsteps.Init(self);
+		}
+	}
 }
 
 class MetaPlayerSkull : PlayerChunk
