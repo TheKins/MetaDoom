@@ -9,6 +9,9 @@ class Footsteps : Actor
 	array<string> fstep_sounds;
 	array<int> fstep_textures;
 	string fstep_default_sound;
+
+	double fstep_delay_mul;
+
 	
 	//VSO: only needed for debug.
 	array<string> fstep_textures_names_debug;
@@ -20,6 +23,8 @@ class Footsteps : Actor
 	{
 		next_update_tics_countdown = -1;
 		self.toFollow = attached_player;
+
+		fstep_delay_mul = 1.0;
 		
 		//Read SOUNDINFO and LANGUAGE to map textures on sounds.
 		//only add to (fstep_sounds;fstep_textures) if the texture exist.
@@ -66,7 +71,7 @@ class Footsteps : Actor
 		double player_speed2d = sqrt(self.toFollow.vel.x * self.toFollow.vel.x + self.toFollow.vel.y * self.toFollow.vel.y);
 		
 		//2) Only play footsteps when on ground, and if the player is moving fast enough.
-		if ((CVar.GetCvar("fs_enabled").GetInt() > 0) && (player_speed2d > 0.1) && (self.toFollow.pos.z - self.toFollow.floorz <= 0)) {
+		if ((CVar.GetCvar("meta_footsteps").GetInt() > 0) && (player_speed2d > 0.1) && (self.toFollow.pos.z - self.toFollow.floorz <= 0)) {
 			
 			 //trace
 			 //Console.PrintF("Speed2d = %f",player_speed2d);
@@ -75,7 +80,7 @@ class Footsteps : Actor
 			int player_floor_tx_id = int(self.toFollow.floorpic);
 		   
 			//sound volume is amplified by speed.
-			double soundLevel = CVar.GetCvar("fs_volume_mul").GetFloat() * player_speed2d;
+			double soundLevel = 0.1 * player_speed2d;
 				  
 			//3) Find the matching index of player_floor_tx_id in fstep_textures and retreive the sound to play matching the texture we are in.
 			int foundIndex  = fstep_textures.Find(player_floor_tx_id);
@@ -99,7 +104,7 @@ class Footsteps : Actor
 				player_speed2d = 5.0;
 			}
 			//fastest sound playing speed is set to roughly 0.3s => 10 ticks ( * fs_delay_mul)
-			next_update_tics_countdown = (35.0 - ((25.0 / 5.0) * player_speed2d)) * CVar.GetCvar("fs_delay_mul").GetFloat();
+			next_update_tics_countdown = (35.0 - ((25.0 / 5.0) * player_speed2d)) * fstep_delay_mul;
 		   
 		} else {
 			// no need to poll for change too often

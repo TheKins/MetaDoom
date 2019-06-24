@@ -112,6 +112,7 @@ OptionMenu "MetaMenu"
 	MetaOption "$METAMENU_EPISODICSPAWNS",	"$METATOOLTIP_EPISODICSPAWNS",	"meta_episodicspawns", "EpisodicRules"
 	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
 	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
+	MetaOption "$METAMENU_FOOTSTEPS",	"$METATOOLTIP_FOOTSTEPS",	"meta_footsteps", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_OPTIONAL", 1
 	StaticText "$METAMENU_OPTIONALDISC1", 1

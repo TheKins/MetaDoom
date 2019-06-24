@@ -53,6 +53,7 @@ METAMENU_MAPBREAKERS = "Possible Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Episodic Spawn Rules";
 METAMENU_LOOTSPAWNS = "Treasure Items";
+METAMENU_FOOTSTEPS = "Player Footsteps";
 
 METAMENU_TOAST = "\"100%\" Message Customization";
 METAMENU_TOASTTYPE = "Message Type";
@@ -93,6 +94,7 @@ METATOOLTIP_MAPBREAKERS = "Allow player/monster behavior that can potentially br
 METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during Doom 1-length episodes.";
 METATOOLTIP_NOSPODERS = "Toggle spawning Trites. Useful for hardcore arachnophobes.";
 METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless score items, ala Wolf3D or the Doom Alphas.";
+METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises as you sprint around.";
 
 METATOOLTIP_OPTIONAL_MONSTERS = "Replace some monsters. May cause issues with DEHACKED-based mapsets.";
 METATOOLTIP_OPTIONAL_PROPS = "Replace most props. May cause issues with DEHACKED-based mapsets.";
