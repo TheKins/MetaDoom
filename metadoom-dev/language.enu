@@ -54,6 +54,7 @@ METAMENU_NOSPODERS = "Scary Spoders";
 METAMENU_EPISODICSPAWNS = "Episodic Spawn Rules";
 METAMENU_LOOTSPAWNS = "Treasure Items";
 METAMENU_FOOTSTEPS = "Player Footsteps";
+METAMENU_UNIQUEBOSSES = "Unique Bosses";
 
 METAMENU_TOAST = "\"100%\" Message Customization";
 METAMENU_TOASTTYPE = "Message Type";
@@ -95,6 +96,7 @@ METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during Doo
 METATOOLTIP_NOSPODERS = "Toggle spawning Trites. Useful for hardcore arachnophobes.";
 METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless score items, ala Wolf3D or the Doom Alphas.";
 METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises as you sprint around.";
+METATOOLTIP_UNIQUEBOSSES = "Replaces bosses on certain map slots (ex. E4M8) with new bosses.";
 
 METATOOLTIP_OPTIONAL_MONSTERS = "Replace some monsters. May cause issues with DEHACKED-based mapsets.";
 METATOOLTIP_OPTIONAL_PROPS = "Replace most props. May cause issues with DEHACKED-based mapsets.";
