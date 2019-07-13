@@ -18,6 +18,7 @@ server int meta_noalts_actors = 0;
 server int meta_mapbreakers = 1;
 server int meta_contentlocust = 0;
 server int meta_episodicspawns = 1;
+server int meta_uniquebosses = 1;
 server int meta_nospoders = 0;
 server int meta_lootspawns = 1;
 

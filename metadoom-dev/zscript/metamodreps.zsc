@@ -23,17 +23,17 @@ class MetaDoom64Replacements : EventHandler
 		static const string oldActor[] =
 		{
 			// Doom 64 Consolation Prize
-			"64NightmareImp","Unmaker","UnmakerUpgrade1","UnmakerUpgrade2","UnmakerUpgrade3",
+			"64NightmareImp","Unmaker","UnmakerUpgrade1","UnmakerUpgrade2","UnmakerUpgrade3","64MotherDemon",
 			// Doom 64 for Doom 2
-			"NightmareImp", "NightmareCacodemon", "D64D2Cyberdemon"
+			"NightmareImp", "NightmareCacodemon", "D64D2Cyberdemon", "Motherdemon"
 		};
 		
 		static const string newActor[] =
 		{
 			// Doom 64 Consolation Prize
-			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner",
+			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner","MetaMotherDemon",
 			// Doom 64 for Doom 2
-			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2"
+			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2", "MetaMotherDemon"
 			
 		};		
 
