@@ -61,6 +61,8 @@ Class MetaCodex_MetaUnwilling : MetaCodex_InvBase {}
 Class MetaCodex_MetaCyberdemon: MetaCodex_InvBase {}
 Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}
 
+Class MetaCodex_MetaMotherDemon: MetaCodex_InvBase {}
+
 //
 
 Class MetaCodex_MetaRadSuit : MetaCodex_InvBase {}

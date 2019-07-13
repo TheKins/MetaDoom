@@ -382,4 +382,13 @@ page "Bestiary"
 		origin "Doom (1993)";
 		description "Referred to in archeological digs and ancient tablets as ''The Aranea Imperatrix'', the Spider Mastermind appears to be an ancient ruler of some plane of Hell who has descended upon our realm to supervise and command the assault against humanity.\n\nOften described in mythical and deity-like tones, the Spider Mastermind commands unimaginable psychic power, as well as a custom-built cybernetic power-walker loaded with powerful plasma weapons. None of our researchers have witnessed it and lived. We STRONGLY advise against being the first.";
 	}
+	
+	entry "MetaMotherDemon"
+	{
+		offset 0, 48;
+		frameskip 3;
+		name "Mother Demon";
+		origin "Doom 64 (1997)";
+		description "When the first demonic invasion began, the UAC dealt with it by quarantining the afflicted outpost with apocalyptic levels of radiation. For years.\n\nWhen they returned, they found that something had survived - and mutated - into a unique and terrifying monstrosity that no human OR demon had ever witnessed before.\n\nNow, the Mother Demon feverishly works to knit her fallen peers back together, creating a new army of Hellspawn to swarm through the known cosmos...";
+	}
 }
