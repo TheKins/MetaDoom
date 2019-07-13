@@ -306,3 +306,93 @@ object MetaBehemothFire
 {
     frame BAL1 { light BEHEMOTHFIRETRAIL }
 }
+
+// Motherdemon
+object MetaMotherFire
+{
+    frame FIREA { light ARCHFIRE1 }
+    frame FIREB { light ARCHFIRE2 }
+    frame FIREC { light ARCHFIRE3 }
+    frame FIRED { light ARCHFIRE4 }
+    frame FIREE { light ARCHFIRE5 }
+    frame FIREF { light ARCHFIRE6 }
+    frame FIREG { light ARCHFIRE7 }
+    frame FIREH { light ARCHFIRE8 }
+}
+
+object MetaRevenantTracer
+{
+    frame RBALA { light TRACER    }
+    frame RBALB { light TRACER    }
+}
+
+flickerlight MOTHATK1
+{
+    color 1.0 1.0 0.4
+    size 84
+    secondarySize 96
+    chance 0.3
+    offset 0 64 0
+	//attenuate 1
+}
+
+flickerlight MOTHATK2
+{
+    color 1.0 1.0 0.4
+    size 120
+    secondarySize 132
+    chance 0.3
+    offset 0 40 0
+	//attenuate 1
+}
+
+flickerlight MOTHATK3
+{
+    color 0.3 0.3 0.1
+    size 156
+    secondarySize 168
+    chance 0.3
+    offset 0 40 0
+	//attenuate 1
+}
+
+flickerlight MOTHATK4
+{
+    color 1.0 0.5 0.1
+    size 84
+    secondarySize 96
+    chance 0.3
+    offset 0 64 0
+	//attenuate 1
+}
+
+flickerlight MOTHATK5
+{
+    color 1.0 0.5 0.1
+    size 120
+    secondarySize 132
+    chance 0.3
+    offset 0 40 0
+	//attenuate 1
+}
+
+flickerlight MOTHATK6
+{
+    color 0.5 0.25 0.1
+    size 156
+    secondarySize 168
+    chance 0.3
+    offset 0 40 0
+	//attenuate 1
+}
+
+object MetaMotherDemon
+{
+	frame RECTH { light MOTHATK1 }
+	frame RECTI { light MOTHATK2 }
+	frame RECTJ { light MOTHATK3 }
+	
+	frame RECTE { light MOTHATK4 }
+	frame RECTF { light MOTHATK5 }
+	frame RECTG { light MOTHATK6 }
+}

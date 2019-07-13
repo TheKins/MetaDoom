@@ -54,7 +54,16 @@ class MetaMotherDemon : MonsterCore
 			RECT U 35 A_FaceTarget();
 			goto Roam;
 		Roam:
-			"####" A 0 A_MetaBleed("FlyingBlood");
+			RECT A 0 A_MetaBleed("FlyingBlood");
+			RECT A 0
+			{
+				// if too close to the ground, punt her up in the air
+				// slightly to avoid FLOATBOB ugliness
+				if (pos.z <= (floorz + 16))
+				{
+					ThrustThingZ(0,2,0,0);
+				}
+			}
 			RECT AAABBBCCCDDD 2 A_Chase;
 			Loop;
 		Missile:
