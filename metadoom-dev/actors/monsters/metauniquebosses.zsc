@@ -28,9 +28,9 @@ class MetaMotherDemon : MonsterCore
 		+NORADIUSDMG
 		+DONTMORPH
 		+BOSSDEATH
-		+FLOAT
-		+FLOATBOB
-		+NOGRAVITY
+		//+FLOAT
+		//+FLOATBOB
+		//+NOGRAVITY
 		+NOTELEFRAG  //Adding this to help mitigate easy MAP30 telefrag kills
 		SeeSound "monsters/motherdemon/see";
 		PainSound "monsters/motherdemon/pain";
@@ -55,15 +55,6 @@ class MetaMotherDemon : MonsterCore
 			goto Roam;
 		Roam:
 			RECT A 0 A_MetaBleed("FlyingBlood");
-			RECT A 0
-			{
-				// if too close to the ground, punt her up in the air
-				// slightly to avoid FLOATBOB ugliness
-				if (pos.z <= (floorz + 16))
-				{
-					ThrustThingZ(0,2,0,0);
-				}
-			}
 			RECT AAABBBCCCDDD 2 A_Chase;
 			Loop;
 		Missile:
