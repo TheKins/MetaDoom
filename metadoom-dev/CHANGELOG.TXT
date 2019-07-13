@@ -1,6 +1,12 @@
 NEXT
 ====
 
+Monster Changes:
+- Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
+  slots (like E4M8) with new bosses from throughout Doom history!
+- Added # unique boss monsters!
+
+Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
 - Added a CVar to toggle footstep sounds.
 
