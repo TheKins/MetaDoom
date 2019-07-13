@@ -755,3 +755,8 @@ $random monsters/motherdemon/magic { monsters/motherdemon/magic1 monsters/mother
 monsters/motherdemon/magic1		rectmgk1
 monsters/motherdemon/magic2		rectmgk2
 monsters/motherdemon/magic3		rectmgk3
+
+$random monsters/motherdemon/flare { monsters/motherdemon/flare1 monsters/motherdemon/flare2 monsters/motherdemon/flare3 }
+monsters/motherdemon/flare1		rectfla1
+monsters/motherdemon/flare2		rectfla2
+monsters/motherdemon/flare3		rectfla3

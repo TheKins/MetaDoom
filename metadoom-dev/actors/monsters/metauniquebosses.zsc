@@ -147,6 +147,7 @@ class MetaMotherBall : Actor
 	{
 		Spawn:
 			RBAL A 0 BRIGHT;
+			RBAL A 0 A_PlaySound ("weapons/rocketlauncher/loop", CHAN_BODY, 1.0, 1);
 			RBAL A 0 { trackerizer = 0; }
 		Fly:
 			RBAL A 0 BRIGHT A_SpawnProjectile("MetaMotherBallTrailSmoke", 0, 0, 0, 2, 0);
@@ -222,6 +223,8 @@ class MetaMotherFire : Actor
 	States
 	{
 		Spawn:
+			FIRE A 0;
+			FIRE A 0 A_PlaySound ("monsters/motherdemon/flare", CHAN_BODY, 0.5, 1);
 			FIRE ABCDE 4 BRIGHT A_SpawnProjectile("MetaMotherFireTrail", 0, 0, 0, 2, 0);
 			Loop;
 		Death:
