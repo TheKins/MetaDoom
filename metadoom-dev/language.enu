@@ -337,6 +337,8 @@ OB_SPIDER = "%o stood in awe of the Spider Mastermind!";
 OB_BABY = "%o let an Arachnotron get %h.";
 OB_CYBORG = "%o was splattered by the Cyberdemon!";
 
+OB_MOTHERDEMON = "%o was absolved by the Mother Demon!";
+
 OB_WOLFSS = "%o fell to the SS.";
 OB_WOLFSNES = "%o succumbed to the NOA Licensed Software Approval Process.";
 OB_WOLFAPPLE = "%o considered %p Muse.";

@@ -36,7 +36,7 @@ class MetaMotherDemon : MonsterCore
 		PainSound "monsters/motherdemon/pain";
 		DeathSound "monsters/motherdemon/die";
 		ActiveSound "monsters/motherdemon/idle";
-		Obituary "$OB_MOTHER";
+		Obituary "$OB_MOTHERDEMON";
 		damagefactor "ChaingunTurret", 0.2;
 		painchance "ChaingunTurret", 0;
 		painchance "Vampire", 128;
