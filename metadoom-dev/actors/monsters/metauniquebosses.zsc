@@ -58,6 +58,7 @@ class MetaMotherDemon : MonsterCore
 			RECT AAABBBCCCDDD 2 A_Chase;
 			Loop;
 		Missile:
+		MissileClassic:
 			RECT HI 6 A_FaceTarget;
 			RECT J 14 Bright
 			{
@@ -68,7 +69,7 @@ class MetaMotherDemon : MonsterCore
 				A_SpawnProjectile("MetaMotherFire", 0, 0, -90, 2, 0);
 				A_SpawnProjectile("MetaMotherFire", 0, 0, 180, 2, 0);
 			}
-			RECT IEF 8;
+			RECT IEF 8 A_FaceTarget;
 			RECT G 14 Bright
 			{
 				A_FaceTarget();
@@ -79,19 +80,26 @@ class MetaMotherDemon : MonsterCore
 				A_SpawnProjectile("MetaMotherBall", 40,  48, -90); // BOTTOM RIGHT
 			}
 			Goto Roam;
+		Pain.Axe:
+		Pain.Fist:
+		Pain.BerserkFist:
 		Pain:
-			RECT K 40 A_Pain;
-			RECT H 4 Bright A_FaceTarget;
-			RECT I 6 Bright A_FaceTarget;
-			RECT JJJJ 4 Bright A_PainAttack;
+			RECT K 3;
+			RECT K 3 A_Pain;
 			Goto Roam;
 		Death:
-			RECT L 20 A_Scream;
-			RECT M 10 A_Fall;
+			RECT L 20
+			{
+				bNOGRAVITY = 1;
+				A_Scream();
+			}
+			RECT M 10;
 			RECT N 8
 			{
 				A_PlaySound("monsters/motherdemon/gib", CHAN_AUTO, 1.0, 0, ATTN_NONE);
-				
+				A_Fall();
+				bFLOATBOB = 0;
+				bNOGRAVITY = 0;
 				for (int i = 0; i < 4; i++)
 				{
 					A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
