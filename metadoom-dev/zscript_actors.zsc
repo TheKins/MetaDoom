@@ -88,6 +88,7 @@ Actor Definitions
 // Bosses
 #include "actors/monsters/metacyberdemon.zsc"
 #include "actors/monsters/metaspiderdemon.zsc"
+#include "actors/monsters/metauniquebosses.zsc"
 
 // Optional Monsters
 #include "actors/monsters/metawolfss.zsc"

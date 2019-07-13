@@ -1,0 +1,235 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Unique Bosses
+----------------------------
+*/
+
+// The Mother Demon from Doom 64! Art from the Doom 64 for Doom 2 TC by Cage.
+// Some code taken from the Doom 64 for Doom 2 TC by Mechadon.
+// A good deal of attack code taken from Doom 64 Retribution by Nevander with
+// lots of tweaks and edits to taste.
+class MetaMotherDemon : MonsterCore
+{
+	Default
+	{
+		Health 3500;
+		Radius 40;
+		Height 105;
+		Mass 10000;
+		Speed 25;
+		PainChance 4;
+		Monster;
+		MinMissileChance 160;
+		+BOSS
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		+BOSSDEATH
+		+FLOAT
+		+FLOATBOB
+		+NOGRAVITY
+		+NOTELEFRAG  //Adding this to help mitigate easy MAP30 telefrag kills
+		SeeSound "monsters/motherdemon/see";
+		PainSound "monsters/motherdemon/pain";
+		DeathSound "monsters/motherdemon/die";
+		ActiveSound "monsters/motherdemon/idle";
+		Obituary "$OB_MOTHER";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+	}
+	
+	States
+	{
+		Spawn:
+			RECT AB 10 A_Look;
+			Loop;
+		See:
+			RECT U 0;
+			RECT U 0 A_Quake(5,30,0,2048,0);
+			RECT U 35 A_FaceTarget();
+			goto Roam;
+		Roam:
+			"####" A 0 A_MetaBleed("FlyingBlood");
+			RECT AAABBBCCCDDD 2 A_Chase;
+			Loop;
+		Missile:
+			RECT HI 6 A_FaceTarget;
+			RECT J 14 Bright
+			{
+				A_FaceTarget();
+				A_PlaySound("monsters/motherdemon/magic", CHAN_6);
+				A_SpawnProjectile("MetaMotherFire", 0, 0, 0, 2, 0);
+				A_SpawnProjectile("MetaMotherFire", 0, 0, 90, 2, 0);
+				A_SpawnProjectile("MetaMotherFire", 0, 0, -90, 2, 0);
+				A_SpawnProjectile("MetaMotherFire", 0, 0, 180, 2, 0);
+			}
+			RECT IEF 8;
+			RECT G 14 Bright
+			{
+				A_FaceTarget();
+				A_PlaySound("monsters/motherdemon/fire", CHAN_7);
+				A_SpawnProjectile("MetaMotherBall", 100, -16,  90); // TOP LEFT
+				A_SpawnProjectile("MetaMotherBall",  40, -48,  90); // BOTTOM LEFT
+				A_SpawnProjectile("MetaMotherBall", 100,  16, -90); // TOP RIGHT
+				A_SpawnProjectile("MetaMotherBall", 40,  48, -90); // BOTTOM RIGHT
+			}
+			Goto Roam;
+		Pain:
+			RECT K 40 A_Pain;
+			RECT H 4 Bright A_FaceTarget;
+			RECT I 6 Bright A_FaceTarget;
+			RECT JJJJ 4 Bright A_PainAttack;
+			Goto Roam;
+		Death:
+			RECT L 20 A_Scream;
+			RECT M 10 A_Fall;
+			RECT N 8
+			{
+				A_PlaySound("monsters/motherdemon/gib", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+				
+				for (int i = 0; i < 4; i++)
+				{
+					A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+					A_SpawnProjectile ("CyberdemonGibber", random(32,64), 0, random (0, 360), 2, random (64, 110));
+				}
+			}
+			RECT O 8;
+			RECT PQRS 6;
+			RECT T 48;
+			RECT T -1 A_KillMaster; //A_BrainDie;
+			Stop;
+	}
+}
+
+// Attack code ported from Doom 64 Retribution by Nevander and heavily edited.
+// Sort of like a Revenant fireball, but it only tracks for a little bit after
+// being spawned, which is a bit fairer given everything else going on.
+class MetaMotherBall : Actor
+{
+	Default
+	{
+		Radius 11;
+		Height 8;
+		Speed 14;
+		Damage 10;
+		Projectile;
+		+SEEKERMISSILE 
+		+RANDOMIZE
+		DeathSound "skeleton/tracex";
+		Decal "RevenantScorch";
+	}
+	
+	int trackerizer;
+	
+	States
+	{
+		Spawn:
+			RBAL A 0 BRIGHT;
+			RBAL A 0 { trackerizer = 0; }
+		Fly:
+			RBAL A 0 BRIGHT A_SpawnProjectile("MetaMotherBallTrailSmoke", 0, 0, 0, 2, 0);
+			RBAL A 2 BRIGHT A_SeekerMissile(5, 15, SMF_PRECISE);
+			RBAL B 0 BRIGHT A_SpawnProjectile("MetaMotherBallTrailSmoke", 0, 0, 0, 2, 0);
+			RBAL B 2 BRIGHT A_SeekerMissile(5, 15, SMF_PRECISE);
+			RBAL A 0
+			{
+				// Only track for a little bit
+				trackerizer++;
+
+				if (trackerizer >= 8)
+				{
+					return ResolveState("StopSeeking");
+				} else {
+					return ResolveState(null);
+				}
+			}
+			Loop;
+		Death:
+		XDeath:
+			TNT1 A 0;
+			TNT1 A 0 A_SpawnItem("MetaRevenantTracerExplosion");
+			Stop;
+		StopSeeking:
+			RBAL A 0 BRIGHT A_SpawnProjectile("MetaMotherBallTrailSmoke", 0, 0, 0, 2, 0);
+			RBAL A 2 BRIGHT;
+			RBAL B 0 BRIGHT A_SpawnProjectile("MetaMotherBallTrailSmoke", 0, 0, 0, 2, 0);
+			RBAL B 2 BRIGHT;
+			Loop;
+	}
+}
+
+class MetaMotherBallTrailSmoke : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+DONTSPLASH
+		RenderStyle "Translucent";
+		Alpha 0.50;
+		VSpeed 1;
+	}
+	
+	states
+	{
+	Spawn:
+		PUF3 ABCD 2 A_FadeOut;
+	Finalize:
+		PUF3 E 2 A_FadeOut;
+		loop;
+	}
+}
+
+class MetaMotherFire : Actor
+{
+	Default
+	{
+		Height 8;
+		Radius 6;
+		Damage 6;
+		Speed 15;
+		RenderStyle "Translucent";
+		Alpha 0.50;
+		damagetype "SpiderdemonTKAttack";
+		PROJECTILE;
+		+RANDOMIZE
+		+NODAMAGETHRUST
+		+FLOORHUGGER
+	}
+	
+	States
+	{
+		Spawn:
+			FIRE ABCDE 4 BRIGHT A_SpawnProjectile("MetaMotherFireTrail", 0, 0, 0, 2, 0);
+			Loop;
+		Death:
+			FIRE E 0 BRIGHT;
+			Stop;
+	}
+}
+
+class MetaMotherFireTrail : Actor
+{
+	Default
+	{
+		Height 8;
+		Radius 6;
+		Speed 0;
+		Damage 0;
+		RenderStyle "Translucent";
+		Alpha 0.60;
+		+NOGRAVITY
+	}
+	
+	States
+	{
+		Spawn:
+			FIRE ABCDE 4 BRIGHT A_FadeOut(0.20);
+			Loop;
+	}
+}

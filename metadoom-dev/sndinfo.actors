@@ -737,3 +737,21 @@ monsters/chainsawgoblin/pain		goblpain
 monsters/chainsawgoblin/die			gobldie
 monsters/chainsawgoblin/attack		goblattk
 monsters/chainsawgoblin/loop		goblloop
+
+// motherdemon
+monsters/motherdemon/see		rectsee
+monsters/motherdemon/idle		rectidle
+monsters/motherdemon/pain		rectpain
+monsters/motherdemon/die		rectdie1
+monsters/motherdemon/gib		rectdie2
+monsters/motherdemon/attack		rectattk
+
+$random monsters/motherdemon/fire { monsters/motherdemon/fire1 monsters/motherdemon/fire2 monsters/motherdemon/fire3 }
+monsters/motherdemon/fire1		rectfir1
+monsters/motherdemon/fire2		rectfir2
+monsters/motherdemon/fire3		rectfir3
+
+$random monsters/motherdemon/magic { monsters/motherdemon/magic1 monsters/motherdemon/magic2 monsters/motherdemon/magic3 }
+monsters/motherdemon/magic1		rectmgk1
+monsters/motherdemon/magic2		rectmgk2
+monsters/motherdemon/magic3		rectmgk3
