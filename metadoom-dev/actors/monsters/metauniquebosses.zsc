@@ -27,11 +27,6 @@ class MetaMotherDemon : MonsterCore
 		+FLOORCLIP
 		+NORADIUSDMG
 		+DONTMORPH
-		+BOSSDEATH
-		//+FLOAT
-		//+FLOATBOB
-		//+NOGRAVITY
-		+NOTELEFRAG  //Adding this to help mitigate easy MAP30 telefrag kills
 		SeeSound "monsters/motherdemon/see";
 		PainSound "monsters/motherdemon/pain";
 		DeathSound "monsters/motherdemon/die";
@@ -242,5 +237,114 @@ class MetaMotherFireTrail : Actor
 		Spawn:
 			FIRE ABCDE 4 BRIGHT A_FadeOut(0.20);
 			Loop;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+// The Hell Guard from Doom 2016! Art is still a problem on this one.
+class MetaHellGuard : MonsterCore
+{
+	Default
+	{
+		Health 2000;
+		Radius 40;
+		Height 105;
+		Mass 10000;
+		Speed 25;
+		Monster;
+		MinMissileChance 160;
+		+BOSS
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		+NODROPOFF
+		+ROLLSPRITE
+		+ROLLCENTER
+		SeeSound "monsters/hellguard/see";
+		PainSound "monsters/hellguard/pain";
+		DeathSound "monsters/hellguard/die";
+		ActiveSound "monsters/hellguard/idle";
+		Obituary "$OB_HELLGUARD";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+	}
+	
+	States
+	{
+		Spawn:
+			HGAR AA 10 A_Look;
+			Loop;
+		See:
+			HGAR E 0;
+			HGAR E 0 A_Quake(5,30,0,2048,0);
+			HGAR E 35 A_FaceTarget();
+			goto Roam;
+		Roam:
+			HGAR A 0 A_MetaBleed("FlyingBlood");
+			HGAR AAABBBCCCDDD 2 A_Chase("Melee","Missile",CHF_FASTCHASE);
+			Loop;
+		Melee:
+			HGAR E 8;
+			HGAR F 16
+			{
+				A_Stop();
+				A_PlaySound("monsters/hellknight/land",CHAN_7);
+				A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
+				A_SpawnItem("BaronShockwave",1,1);
+			}
+			HGAR BA 8;
+			goto Roam;
+		Missile:
+			HGAR E 0 A_Jump(128, "Roll");
+		MissileClassic:
+			HGAR E 0 A_SetRoll(0);
+			HGAR E 6 A_FaceTarget;
+			HGAR F 16 Bright
+			{
+				A_FaceTarget();
+				A_PlaySound("monsters/motherdemon/magic", CHAN_6);
+				A_FatAttack1("MetaFatShot");
+				A_FatAttack2("MetaFatShot");
+				A_FatAttack3("MetaFatShot");
+			}
+			Goto Roam;
+		Roll:
+			HGAR E 0 A_FaceTarget;
+			HGAR E 0 A_PlaySound("monsters/zsec/roll");
+			HGAR E 0 A_Jump(128, "RollLeft");
+			goto RollRight;
+		RollLeft:
+			HGAR E 0 ThrustThing(angle*256/360+192, 12, 0, 0);
+			HGAR EEEEEEEEEEEEEEEEE 1 A_SetRoll((roll + 20));
+			goto MissileClassic;
+		RollRight:
+			HGAR E 0 ThrustThing(angle*256/360+64, 12, 0, 0);
+			HGAR EEEEEEEEEEEEEEEEE 1 A_SetRoll((roll - 20));
+			goto MissileClassic;
+		Pain.Axe:
+		Pain.Fist:
+		Pain.BerserkFist:
+		Pain:
+			HGAR G 3 A_SetRoll(0);
+			HGAR G 3 A_Pain;
+			Goto Roam;
+		Death:
+			HGAR G 20 A_Scream;
+			HGAR H 8
+			{
+				A_PlaySound("monsters/hellguard/gib", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+				A_Fall();
+				for (int i = 0; i < 4; i++)
+				{
+					A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
+					A_SpawnProjectile ("CyberdemonGibber", random(32,64), 0, random (0, 360), 2, random (64, 110));
+				}
+			}
+			HGAR H -1 A_KillMaster; //A_BrainDie;
+			Stop;
 	}
 }

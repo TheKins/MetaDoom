@@ -760,3 +760,18 @@ $random monsters/motherdemon/flare { monsters/motherdemon/flare1 monsters/mother
 monsters/motherdemon/flare1		rectfla1
 monsters/motherdemon/flare2		rectfla2
 monsters/motherdemon/flare3		rectfla3
+
+// hell guard
+$random monsters/hellguard/see 		{ monsters/hellguard/see1 monsters/hellguard/see2 monsters/hellguard/see3 }
+monsters/hellguard/see1		hgarsee1
+monsters/hellguard/see2		hgarsee2
+monsters/hellguard/see3		hgarsee3
+
+$random monsters/hellguard/idle 	{ monsters/hellguard/idle1 monsters/hellguard/idle2 monsters/hellguard/idle3 }
+monsters/hellguard/idle1	hgaract1
+monsters/hellguard/idle2	hgaract2
+monsters/hellguard/idle3	hgaract3
+
+monsters/hellguard/die		hgardie1
+monsters/hellguard/gib		hgardie2
+monsters/hellguard/pain		hgarpain
