@@ -83,18 +83,12 @@ class MetaMotherDemon : MonsterCore
 			RECT K 3 A_Pain;
 			Goto Roam;
 		Death:
-			RECT L 20
-			{
-				bNOGRAVITY = 1;
-				A_Scream();
-			}
+			RECT L 20 A_Scream;
 			RECT M 10;
 			RECT N 8
 			{
 				A_PlaySound("monsters/motherdemon/gib", CHAN_AUTO, 1.0, 0, ATTN_NONE);
 				A_Fall();
-				bFLOATBOB = 0;
-				bNOGRAVITY = 0;
 				for (int i = 0; i < 4; i++)
 				{
 					A_SpawnProjectile ("CyberdemonGibber", random(8,32), 0, random (0, 360), 2, random (32, 64));
