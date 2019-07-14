@@ -287,8 +287,8 @@ class MetaHellGuard : MonsterCore
 			{
 				A_Stop();
 				A_PlaySound("monsters/hellknight/land",CHAN_7);
-				A_Explode(64,64,XF_NOTMISSILE|!XF_HURTSOURCE);
-				A_SpawnItem("BaronShockwave",1,1);
+				A_Explode(64,128,XF_NOTMISSILE|!XF_HURTSOURCE);
+				A_SpawnItem("BaronShockwave",32,1);
 			}
 			HGAR BA 8;
 			goto Roam;
