@@ -8,6 +8,7 @@ Monster Changes:
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
+- Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
 - Added a CVar to toggle footstep sounds.
 
 v5.666 "Klave EX" (10/06/19)

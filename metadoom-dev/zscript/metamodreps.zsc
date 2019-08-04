@@ -18,7 +18,7 @@ class MetaDoom64Replacements : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
-		int replaceables = 8;
+		int replaceables = 10;
 		
 		static const string oldActor[] =
 		{
