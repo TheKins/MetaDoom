@@ -189,6 +189,9 @@ GOTSOULCUBE = "We are the Praeleanthor, you know us as the SoulCube.";
 GOTGRENLAUN = "You got the Grenade Launcher!";
 GOTLIGHTNING = "You got the Lightning Gun!";
 
+// This is here to prevent a crash of GZDoom if another language than english is used.
+SECRETMESSAGE       = "A secret is revealed!";
+
 TAGPISTOL = "EMG Sidearm";
 TAGMACGUN = "Machine Gun";
 TAGHWP = "Holy Water Pistol";
