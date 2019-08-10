@@ -191,6 +191,12 @@ GOTLIGHTNING = "You got the Lightning Gun!";
 
 // This is here to prevent a crash of GZDoom if another language than english is used.
 SECRETMESSAGE       = "A secret is revealed!";
+PD_BLUEO			= "You need a blue key to activate this object";
+PD_REDO				= "You need a red key to activate this object";
+PD_YELLOWO			= "You need a yellow key to activate this object";
+PD_BLUEK			= "You need a blue key to open this door";
+PD_REDK				= "You need a red key to open this door";
+PD_YELLOWK			= "You need a yellow key to open this door";
 
 TAGPISTOL = "EMG Sidearm";
 TAGMACGUN = "Machine Gun";
