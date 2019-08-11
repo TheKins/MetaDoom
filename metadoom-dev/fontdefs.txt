@@ -5,11 +5,6 @@ Font Definitions
 ----------------------------
 */
 
-SMALLFONT
-{
-	Template STCFN%03d
-}
-
 SMALLFONT2
 {
 	Template STCF2%03d
