@@ -6,6 +6,11 @@ Monster Changes:
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
 
+UI Changes:
+- Converted the fonts to the modern, Unicode-friendly standard, for localization
+  support and better compatibility with custom mapsets that replace the original
+  font graphics.
+
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
 - Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
