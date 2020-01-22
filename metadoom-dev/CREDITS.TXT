@@ -10,7 +10,7 @@ DrPySpy (Spiderdemon sprites, Codex system, HUD faces, Flashlight, heavy code li
 
 STUFF FROM COMMERCIAL GAMES:
 Id Software (Oh, a few things here and there...)
-3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite, Rocket Fragment sprites)
+3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite, Rocket Fragment sprites, Tiny font)
 Bethesda Softworks (Elder Scrolls and Fallout sounds)
 Epic Games (Some metal gibbing sounds, Cyber-Mancubus attack sounds)
 EuroCom Entertainment Software (Duke 64 smoke and blood sprites)
@@ -80,6 +80,7 @@ VriskaSerket (BFG sprites)
 Zrrion (Grenade Launcher sprites, Lightning Gun sprites, Radsuit sprite)
 
 ART RESOURCES (ACTORS):
+Cage (Mother Demon sprites)
 Captain J (Dog-class Former Assassin AND Sawcubus sprites)
 Das M (Former Commando sprites)
 David G./ItsNatureToDie (Cacodemon Gib Sprites, Former Lieutenant sprites, burning hands)
