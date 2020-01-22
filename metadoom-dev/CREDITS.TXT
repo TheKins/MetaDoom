@@ -23,7 +23,7 @@ Rockstar Games (Fire Extinguisher sounds)
 Rogue Entertainment (Strife item sounds)
 Saber Interactive (Quake Champions stuff)
 The Bloated Corpse Of Midway Games (PSX/N64 assets)
-Valve Software (Footsteps, Lost Soul extinguishing and Unmaker Altfire sounds)
+Valve Software (Footsteps, Lost Soul extinguishing, Unmaker Altfire, Hell Guard Footstep sounds)
 
 STUFF FROM OTHER MODS:
 AFADoomer (Difficulty Select Screen ZScript)
