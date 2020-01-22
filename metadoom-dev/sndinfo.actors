@@ -772,6 +772,20 @@ monsters/hellguard/idle1	hgaract1
 monsters/hellguard/idle2	hgaract2
 monsters/hellguard/idle3	hgaract3
 
+$random monsters/hellguard/fire 	{ monsters/hellguard/fire1 monsters/hellguard/fire2 monsters/hellguard/fire3 }
+monsters/hellguard/fire1	hgarfir1
+monsters/hellguard/fire2	hgarfir2
+monsters/hellguard/fire3	hgarfir3
+
+$random monsters/hellguard/step { monsters/hellguard/step1 monsters/hellguard/step2 monsters/hellguard/step3 monsters/hellguard/step4 monsters/hellguard/step5 monsters/hellguard/step6 }
+monsters/hellguard/step1	hgarstp1
+monsters/hellguard/step2	hgarstp2
+monsters/hellguard/step3	hgarstp3
+monsters/hellguard/step4	hgarstp4
+monsters/hellguard/step5	hgarstp5
+monsters/hellguard/step6	hgarstp6
+
 monsters/hellguard/die		hgardie1
 monsters/hellguard/gib		hgardie2
 monsters/hellguard/pain		hgarpain
+monsters/hellguard/roll		hgarroll

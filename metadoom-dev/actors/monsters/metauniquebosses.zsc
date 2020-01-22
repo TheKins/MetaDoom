@@ -279,7 +279,10 @@ class MetaHellGuard : MonsterCore
 			goto Roam;
 		Roam:
 			HGAR A 0 A_MetaBleed("FlyingBlood");
-			HGAR AABBCCDDEECC 2 A_Chase("Melee","Missile",CHF_FASTCHASE);
+			HGAR A 0 A_PlaySound("monsters/hellguard/step");
+			HGAR AABBCC 3 A_Chase("Melee","Missile",CHF_FASTCHASE);
+			HGAR A 0 A_PlaySound("monsters/hellguard/step");
+			HGAR DDEECC 3 A_Chase("Melee","Missile",CHF_FASTCHASE);
 			Loop;
 		Melee:
 			HGAR KLMN 2 A_FaceTarget;
@@ -302,16 +305,16 @@ class MetaHellGuard : MonsterCore
 			HGAR J 8 Bright
 			{
 				A_FaceTarget();
-				A_PlaySound("monsters/motherdemon/magic", CHAN_6);
-				A_SpawnProjectile("MetaFatShot",56,0,0);
-				A_SpawnProjectile("MetaFatShot",56,0,11.25);
-				A_SpawnProjectile("MetaFatShot",56,0,-11.25);
+				A_PlaySound("monsters/hellguard/fire", CHAN_6);
+				A_SpawnProjectile("MetaHellGuardShot",56,0,0);
+				A_SpawnProjectile("MetaHellGuardShot",56,0,11.25);
+				A_SpawnProjectile("MetaHellGuardShot",56,0,-11.25);
 			}
 			HGAR H 10;
 			Goto Roam;
 		Roll:
 			HGAR E 0 A_FaceTarget;
-			HGAR E 0 A_PlaySound("monsters/zsec/roll");
+			HGAR E 0 A_PlaySound("monsters/hellguard/roll");
 			HGAR E 0 A_Jump(128, "RollLeft");
 			goto RollRight;
 		RollLeft:
@@ -349,5 +352,37 @@ class MetaHellGuard : MonsterCore
 			}
 			HGAR [ -1 A_KillMaster; //A_BrainDie;
 			Stop;
+	}
+}
+
+class MetaHellGuardShot : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 20;
+		Damage 8;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 1;
+		DeathSound "monsters/mancubus/boom";
+		decal "Scorch";
+	}
+
+	States
+	{
+	Spawn:
+		HGAP A 0;
+		HGAP A 0 A_PlaySound("monsters/imp/fireball/loop", CHAN_BODY, 1.0, 1);
+		HGAP AB 4 BRIGHT A_SpawnItem ("MetaBaronBallEffect", 0, 0, 0, 0);
+		Loop;
+	Death:
+		HGAP C 0 A_Quake (3,5,0,750,0);
+		HGAP C 8 BRIGHT;
+		HGAP D 6 BRIGHT;
+		HGAP E 4 BRIGHT;
+		Stop;
 	}
 }
