@@ -680,6 +680,8 @@ class SpiderMastermindSpawner : MetaBossSpawner replaces SpiderMastermind
 			if(level.MapName ~== "e4m8")
 			{
 				return ResolveState("MotherDemon");
+			} else if(level.MapName ~== "map28") {
+				return ResolveState("HellGuard");
 			} else {
 				return ResolveState("SpiderMastermind");
 			}
@@ -689,6 +691,9 @@ class SpiderMastermindSpawner : MetaBossSpawner replaces SpiderMastermind
 		goto CreepyStalker;
 	MotherDemon:
 		TNT1 A 0 A_SpawnItemEx("MetaMotherDemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
+		goto CreepyStalker;
+	HellGuard:
+		TNT1 A 0 A_SpawnItemEx("MetaHellGuard",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
 		goto CreepyStalker;
 	}
 }
