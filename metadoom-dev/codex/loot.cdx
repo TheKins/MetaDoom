@@ -7,7 +7,7 @@ page "Other"
 		itemToCheck "MetaCodex_LootFigurine1";
         name "Familar Figurine";
         origin "Doom (1993)";
-        description "Description";
+        description "The first iteration of the marine, this design is relatively simple but iconic, commencing a trend of green-clad Space Marines in first person shooters that continues to this day.\n\nOne odd aspect of this armor design is the exposed midriff - later illustrations and 3D models play this off as the armor having been torn open by demonic claws.\n\nSome people call this iteration of the marine ''Flynn''. Those people are weird and should probably be avoided on the street.";
     }	
 	
 	entry "LootFigurine2"
@@ -15,7 +15,7 @@ page "Other"
 		itemToCheck "MetaCodex_LootFigurine2";
         name "Scary Figurine";
         origin "Doom 3 (2004)";
-        description "Description";
+        description "With a new milennium came a new aesthetic, drenched in darkness and dripping with malicious intent against a new generation of Space Marine.\n\nThis new set of armor is, well, greener, with its angular helmet design adopting the same colour as the main armor as opposed to a secondary colour as seen in previous designs.\n\nThis rookie marine proved less popular than his precursors or successors, and he was ultimately cast into the Arena Eternal, never to escape...";
     }
 	
 	entry "LootFigurine4"
@@ -23,7 +23,7 @@ page "Other"
 		itemToCheck "MetaCodex_LootFigurine4";
         name "Blurry Figurine";
         origin "Doom 64 (1997)";
-        description "Description";
+        description "When Midway took Doom to the Nintendo 64, a complete overhaul of the game's artwork and character designs followed. The marine was no exception, although his revamp wasn't as radical as what some of the demons went through...\n\nThis armor design's distinguishing characteristic is a rounder helmet with a radio antannae on the side. Who he's receiving signals from is unknown due to, you know, no multiplayer.\n\nUpon destroying the Mother Demon, this marine elected to stay in hell forever, to ensure the demons never rose again...";
     }	
 	
 	entry "LootFigurine3"
@@ -31,6 +31,6 @@ page "Other"
 		itemToCheck "MetaCodex_LootFigurine3";
         name "Trendy Figurine";
         origin "Doom (2016)";
-        description "Description";
+        description "After years in the development wilderness, this marine cast aside anonymity and branded himself as The Doom Slayer, clad in a full-body suit of heavy, visually complex armor dubbed the Praetor Suit.\n\nThis was routinely criticised at first, with many uncomplimentary references to the green space marines that the original ''Doom Guy'' inspired, although he has since grown a fanbase of his own though his mute expressions of rage.\n\nHe was last seen trading in his sleeves for a space fortress...";
     }
 }

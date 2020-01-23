@@ -1,0 +1,38 @@
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Lore Item Spawner
+----------------------------
+*/
+
+class MetaLoreItems : EventHandler
+{
+	override void WorldLoaded(WorldEvent e)
+	{
+		for (int i = 0; i < level.Sectors.Size(); i++)
+		{
+			let c = level.Sectors[i].centerspot;
+			
+			Vector3 spam3 = (c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c));
+			
+			if (level.IsPointInMap(spam3) && level.Sectors[i].IsSecret())
+			{
+				int lorerng = random(0,100);
+				
+				if (lorerng <= 10)
+				{
+					if (level.Sectors[i].floorplane.ZAtPoint(c) != level.Sectors[i].ceilingplane.ZAtPoint(c))
+					{
+						Actor.Spawn("LootFigurine1", spam3);
+						Console.printf("A lore item has spawned at %i %i...", c.x, c.y);
+					} else {
+						Console.printf("A lore item failed to spawn at %i %i...", c.x, c.y);
+					}
+				} else {
+					Console.printf("Failed loreRNG role (%i)", lorerng);
+				}
+			}
+		}
+	}
+}

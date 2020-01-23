@@ -24,6 +24,7 @@ version "3.4"
 // Actor Replacement Scripts
 #include "zscript/metaoptional.zsc"
 #include "zscript/metamodreps.zsc"
+#include "zscript/metaloreitems.zsc"
 
 // Menu Stuff
 #include "zscript/metaintermission.zsc"
