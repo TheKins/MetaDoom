@@ -45,3 +45,5 @@ page "Arsenal"
 }
 
 import "codex/powerups.cdx";
+
+import "codex/loot.cdx";

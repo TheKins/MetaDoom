@@ -63,7 +63,7 @@ Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}
 
 Class MetaCodex_MetaMotherDemon: MetaCodex_InvBase {}
 
-//
+// Inventory
 
 Class MetaCodex_MetaRadSuit : MetaCodex_InvBase {}
 Class MetaCodex_MetaBerserk : MetaCodex_InvBase {}
@@ -73,3 +73,9 @@ Class MetaCodex_MetaInvulnerabilitySphere : MetaCodex_InvBase {}
 Class MetaCodex_MetaQuadDamage : MetaCodex_InvBase {}
 Class MetaCodex_MetaAllmap : MetaCodex_InvBase {}
 Class MetaCodex_Backpack2 : MetaCodex_InvBase {}
+
+// Loot
+Class MetaCodex_LootFigurine1 : MetaCodex_InvBase {}
+Class MetaCodex_LootFigurine2 : MetaCodex_InvBase {}
+Class MetaCodex_LootFigurine3 : MetaCodex_InvBase {}
+Class MetaCodex_LootFigurine4 : MetaCodex_InvBase {}

@@ -1,7 +1,7 @@
 /*
 ----------------------------
 MetaDoom
-class Definitions
+Actor Definitions
 Score Items
 ----------------------------
 */
@@ -216,74 +216,3 @@ class LootCredits : LootItem
 	}
 }
 
-// Figurines
-// Classic Doom
-class LootFigurine1 : LootItem
-{
-	Default
-	{
-		Inventory.Amount 6666;
-		Inventory.PickupMessage "$GOTLOOTFIG1";
-		inventory.pickupsound "items/lootfig";
-		scale 0.75;
-	}
-	
-	States
-	{
-	Spawn:
-		LFIG A 0;
-		"####" "#" 0;
-		goto MoveAround;
-	}
-}
-
-// Doom 3
-class LootFigurine2 : LootFigurine1
-{
-	Default
-	{
-		Inventory.PickupMessage "$GOTLOOTFIG2";
-	}
-	
-	States
-	{
-	Spawn:
-		LFIG B 0;
-		"####" "#" 0;
-		goto MoveAround;
-	}
-}
-
-// Doom 2016
-class LootFigurine3 : LootFigurine1
-{
-	Default
-	{
-		Inventory.PickupMessage "$GOTLOOTFIG3";
-	}
-	
-	States
-	{
-	Spawn:
-		LFIG C 0;
-		"####" "#" 0;
-		goto MoveAround;
-	}
-}
-
-// Doom 64
-class LootFigurine4 : LootFigurine1
-{
-	Default
-	{
-		Inventory.PickupMessage "$GOTLOOTFIG4";
-	}
-	
-	States
-	{
-	Spawn:
-		LFIG D 0;
-		"####" "#" 0;
-		goto MoveAround;
-	}
-}

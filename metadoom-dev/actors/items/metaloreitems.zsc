@@ -1,0 +1,118 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Lore Items
+----------------------------
+*/
+
+class MetaLoreItem : CustomInventory
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG1";
+		inventory.pickupsound "items/lootfig";
+		scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG A -1;
+		loop;
+	}
+}
+
+// Classic Doom
+class LootFigurine1 : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG1";
+		inventory.pickupsound "items/lootfig";
+		scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG A 0;
+		LFIG A 35;
+		LFIG A 0 A_Stop; // Prevents bouncing around wallsliding all day
+		LFIG A -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine1");
+		stop;
+	}
+}
+
+// Doom 3
+class LootFigurine2 : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG2";
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG B 0;
+		LFIG B 35;
+		LFIG B 0 A_Stop; // Prevents bouncing around wallsliding all day
+		LFIG B -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine2");
+		stop;
+	}
+}
+
+// Doom 2016
+class LootFigurine3 : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG3";
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG C 0;
+		LFIG C 35;
+		LFIG C 0 A_Stop; // Prevents bouncing around wallsliding all day
+		LFIG C -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine3");
+		stop;
+	}
+}
+
+// Doom 64
+class LootFigurine4 : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG4";
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG D 0;
+		LFIG D 35;
+		LFIG D 0 A_Stop; // Prevents bouncing around wallsliding all day
+		LFIG D -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine4");
+		stop;
+	}
+}

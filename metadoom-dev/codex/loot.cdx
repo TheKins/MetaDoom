@@ -1,0 +1,36 @@
+page "Other"
+{
+    layout 0;
+
+	entry "LootFigurine1"
+    {
+		itemToCheck "MetaCodex_LootFigurine1";
+        name "Familar Figurine";
+        origin "Doom (1993)";
+        description "Description";
+    }	
+	
+	entry "LootFigurine2"
+    {
+		itemToCheck "MetaCodex_LootFigurine2";
+        name "Scary Figurine";
+        origin "Doom 3 (2004)";
+        description "Description";
+    }
+	
+	entry "LootFigurine4"
+    {
+		itemToCheck "MetaCodex_LootFigurine4";
+        name "Blurry Figurine";
+        origin "Doom 64 (1997)";
+        description "Description";
+    }	
+	
+	entry "LootFigurine3"
+    {
+		itemToCheck "MetaCodex_LootFigurine3";
+        name "Trendy Figurine";
+        origin "Doom (2016)";
+        description "Description";
+    }
+}
