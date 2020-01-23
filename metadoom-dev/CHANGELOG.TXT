@@ -12,6 +12,11 @@ UI Changes:
   font graphics.
 - The Game Over screen in Ultra-Nightmare mode will now provide a more accurate
   description of your demise beyond just dying to "something really mean".
+  
+Item Changes:
+- The rare figurine treasure items have been expanded into a new set of "Lore Items"
+  that have a rare chance of appearing in secret areas. Collect 'em all, and check
+  'em all out in your Codex when you have a spare moment!
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
