@@ -40,3 +40,6 @@ user int meta_toastsize = 1;
 
 // footsteps
 server int meta_footsteps = 1;
+
+// temp storage for ironman obit
+server string meta_ironmantemp = "None";
