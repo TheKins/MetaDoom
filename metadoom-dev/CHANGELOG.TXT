@@ -10,6 +10,8 @@ UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
   support and better compatibility with custom mapsets that replace the original
   font graphics.
+- The Game Over screen in Ultra-Nightmare mode will now provide a more accurate
+  description of your demise beyond just dying to "something really mean".
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.

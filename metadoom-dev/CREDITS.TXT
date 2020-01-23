@@ -56,6 +56,7 @@ Marrub (ACS and ZScript advice)
 Matt (Base for first version of actor replacement system)
 Nash (Menu tooltips system)
 The Zombie Killer (Footsteps system, landing zscript, powerup bars)
+vsonnier (Footsteps system ZScript port)
 WildWeasel (Tracer fastprojectiles effect)
 
 ART RESOURCES (WEAPONS AND ITEMS):
