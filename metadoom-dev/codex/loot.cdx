@@ -33,4 +33,12 @@ page "Other"
         origin "Doom (2016)";
         description "After years in the development wilderness, this marine cast aside anonymity and branded himself as The Doom Slayer, clad in a full-body suit of heavy, visually complex armor dubbed the Praetor Suit.\n\nThis was routinely criticised at first, with many uncomplimentary references to the green space marines that the original ''Doom Guy'' inspired, although he has since grown a fanbase of his own though his mute expressions of rage.\n\nHe was last seen trading in his sleeves for a space fortress...";
     }
+
+	entry "LoreSkateboard"
+    {
+		itemToCheck "MetaCodex_LoreSkateboard";
+        name "Skateboard";
+        origin "Tony Hawk's Pro Skater 3 (2001)";
+        description "At one point in the early 2000s, Gearbox Software were allegedly tasked with working on a new Doom project. This ultimately never eventuated, but the Gearbox team saw fit to bring a slice of Doom to a completely unrelated project going on at the same time - a PC port of a popular extreme-sports game.\n\nToday the marine's shredding past has been all but forgotten, which is probably for the best because just like in the original Doom games, he couldn't jump to save his life.";
+    }
 }

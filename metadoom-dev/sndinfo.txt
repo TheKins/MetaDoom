@@ -49,6 +49,7 @@ powerups/quad/use	quadshot
 // Phat Lewts
 items/loot			getloot
 items/lootfig		getfig
+items/lootskate		getsk8
 
 // Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }
