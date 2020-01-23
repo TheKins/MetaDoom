@@ -51,7 +51,7 @@ script "Ironman_StatsRun" (void)
 	if (GetCVarString("meta_ironmantemp") == "MetaZombieMan")
 		obit = "You were shot dead by a Zombieman.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaHellRazer")
-		obit = "You were scorched in half by a Hell Razer.";
+		obit = "You were scorched in two by a Hell Razer.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaShotgunGuy")
 		obit = "You were splattered by a Shotgun Guy.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaZSec")
@@ -59,15 +59,15 @@ script "Ironman_StatsRun" (void)
 	else if (GetCVarString("meta_ironmantemp") == "MetaMachineGunGuy")
 		obit = "You were tapped by a Machinegunner.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaChainGunGuy")
-		obit = "You were cut in half by a Heavy Weapon Dude.";
+		obit = "You were cut in half by a Chaingunner.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaAssassinGuy")
-		obit = "You were caught by an Assassin.";
+		obit = "You were caught by a Former Assassin.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaDoomImp")
 		obit = "You were burned by an Imp.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaNightmareImp")
 		obit = "You were dropped by a Nightmare Imp.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaDoomImpLord")
-		obit = "You bowed to the Imp Lord.";
+		obit = "You bowed down to the Imp Lord.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaHellhound")
 		obit = "You were de-jugulared by a HellHound.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaDemonDog")
@@ -111,7 +111,7 @@ script "Ironman_StatsRun" (void)
 	else if (GetCVarString("meta_ironmantemp") == "MetaRevenant")
 		obit = "You were pulped by a Revenant.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaFiend")
-		obit = "You were jumped by a Fiend.";
+		obit = "You were tackled by a Fiend.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaBaronOfHell")
 		obit = "You fell before the Baron of Hell.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaArachnotron")
@@ -155,13 +155,13 @@ script "Ironman_StatsRun" (void)
 	else if (GetCVarString("meta_ironmantemp") == "Suicide")
 		obit = "You took the lame way out.";
 	else if (GetCVarString("meta_ironmantemp") == "Exit")
-		obit = "You pushed the Whopper Button. Whoo!";
+		obit = "You pushed the Whopper Button. WHOO!";
 	else if (GetCVarString("meta_ironmantemp") == "Extreme")
 		obit = "You were painted all over the walls.";
 	else if (GetCVarString("meta_ironmantemp") == "InstantDeath")
 		obit = "You suffered an existence failure.";
 	else if (GetCVarString("meta_ironmantemp") == "Quake")
-		obit = "You were Quake'd to death.";
+		obit = "You were terminally shaken.";
 	else
 		obit = "You were killed by something really mean.";
 	
