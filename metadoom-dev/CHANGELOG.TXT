@@ -6,6 +6,10 @@ Monster Changes:
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
 
+Weapon Changes:
+- The Pistol now triggers "gunfire activated" linedefs like hitscan weapons do,
+  allowing it to trigger the Evil Eyes in SIGIL.
+
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
   support and better compatibility with custom mapsets that replace the original
