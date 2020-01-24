@@ -127,7 +127,10 @@ class MetaMessageBoxMenu : MessageBoxMenu
 		screen.DrawTexture (border, true, 0, 0, DTA_320x200, true);
 		*/
 		bg = TexMan.CheckForTexture("M_MSGBOX", TexMan.Type_MiscPatch);
-		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
+		//screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
+		
+		int w, h; [w, h] = TexMan.GetSize(bg);
+		screen.DrawTexture (bg, true, ((destWidth/2) - (w/2)), ((destHeight/2) - (h/2)), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
 		
 		TextDrawer();
 	}
