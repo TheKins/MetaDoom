@@ -185,7 +185,7 @@ script "Ironman_StatsRun" (void)
 	delay(16);
 	
 	SetHudSize(320,200,1);
-	SetFont("DBIGFONT");
+	SetFont("BIGMARE");
 	HudMessage(s:"Your Torment Has Ended"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 9999.0, 1.0, 1.0);
 	delay(35);
 	SetFont("SmallFont");

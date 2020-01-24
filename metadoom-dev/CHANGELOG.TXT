@@ -12,6 +12,7 @@ UI Changes:
   font graphics.
 - The Game Over screen in Ultra-Nightmare mode will now provide a more accurate
   description of your demise beyond just dying to "something really mean".
+- The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
   
 Item Changes:
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
