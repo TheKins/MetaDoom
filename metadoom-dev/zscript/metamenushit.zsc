@@ -98,7 +98,7 @@ class MetaMessageBoxMenu : MessageBoxMenu
 	override void Drawer ()
 	{
 		
-		if (bgpicked == 0)
+		/*if (bgpicked == 0)
 		{
 			bgnum = random(1,4);
 			
@@ -125,7 +125,44 @@ class MetaMessageBoxMenu : MessageBoxMenu
 		screen.DrawTexture (warpy, true, 29, 34, DTA_320x200, true);
 		screen.DrawTexture (bg, true, 29, 34, DTA_320x200, true);
 		screen.DrawTexture (border, true, 0, 0, DTA_320x200, true);
+		*/
+		bg = TexMan.CheckForTexture("M_MSGBOX", TexMan.Type_MiscPatch);
+		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
 		
-		Super.Drawer();
+		TextDrawer();
+	}
+	
+	void TextDrawer ()
+	{
+		int i, y;
+		int fontheight = textFont.GetHeight();
+
+		y = destHeight / 2.25;
+
+		int c = mMessage.Count();
+		y -= c * fontHeight / 2;
+
+		for (i = 0; i < c; i++)
+		{
+			screen.DrawText (textFont, Font.CR_UNTRANSLATED, destWidth/2 - mMessage.StringWidth(i)/2, y, mMessage.StringAt(i), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+			y += fontheight;
+		}
+
+		if (mMessageMode == 0)
+		{
+			y += fontheight;
+			mMouseY = y;
+			screen.DrawText(textFont, messageSelection == 0? OptionMenuSettings.mFontColorSelection : OptionMenuSettings.mFontColor, destWidth / 2, y, Stringtable.Localize("$TXT_YES"), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+			screen.DrawText(textFont, messageSelection == 1? OptionMenuSettings.mFontColorSelection : OptionMenuSettings.mFontColor, destWidth / 2, y + fontheight, Stringtable.Localize("$TXT_NO"), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+
+			if (messageSelection >= 0)
+			{
+				if ((MenuTime() % 8) < 6)
+				{
+					screen.DrawText(arrowFont, OptionMenuSettings.mFontColorSelection,
+						destWidth/2 - 11, y + fontheight * messageSelection, selector, DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+				}
+			}
+		}
 	}
 }
