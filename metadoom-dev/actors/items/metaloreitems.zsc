@@ -6,6 +6,9 @@ Lore Items
 ----------------------------
 */
 
+// Pointless but fun, these items do nothing but look nice, increase your score
+// and dump useless snarky history lessons in your Codex.
+// See zscript/metaloreitems.zsc for the spawning logic stuff.
 class MetaLoreItemSpawner : Actor
 {
 	Default
@@ -21,19 +24,19 @@ class MetaLoreItemSpawner : Actor
 		TNT1 A 0 A_Jump(256, "LootFig1", "LootFig2", "LootFig3", "LootFig4", "LootSkate");
 		stop;
 	LootFig1:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine1",0,0,0,random(1,8),random(1,8),0,random(0,360));
+		TNT1 A 0 A_SpawnItemEx("LootFigurine1",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	LootFig2:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine2",0,0,0,random(1,8),random(1,8),0,random(0,360));
+		TNT1 A 0 A_SpawnItemEx("LootFigurine2",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	LootFig3:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine3",0,0,0,random(1,8),random(1,8),0,random(0,360));
+		TNT1 A 0 A_SpawnItemEx("LootFigurine3",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	LootFig4:
-		TNT1 A 0 A_SpawnItemEx("LootFigurine4",0,0,0,random(1,8),random(1,8),0,random(0,360));
+		TNT1 A 0 A_SpawnItemEx("LootFigurine4",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	LootSkate:
-		TNT1 A 0 A_SpawnItemEx("LoreSkateboard",0,0,0,random(1,8),random(1,8),0,random(0,360));
+		TNT1 A 0 A_SpawnItemEx("LoreSkateboard",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	}
 }

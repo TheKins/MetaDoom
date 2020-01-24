@@ -278,6 +278,7 @@ class MetaMegasphere : CustomInventory replaces Megasphere
 	}
 }	
 
+// Computer Map
 class MetaAllmap : MapRevealer replaces Allmap
 {
 	Default

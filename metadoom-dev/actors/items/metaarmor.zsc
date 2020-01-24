@@ -6,7 +6,7 @@ Armor Pickups
 ----------------------------
 */
 
-// Armor bonuses occasionally spawn loot. See loot.dec
+// Armor bonuses occasionally spawn loot. See metaloot.zsc
 class MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
 {
 	Default

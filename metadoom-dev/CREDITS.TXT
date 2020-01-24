@@ -63,7 +63,7 @@ ART RESOURCES (WEAPONS AND ITEMS):
 Blue Shadow (Doom 3 Keycard Sprites)
 Cage (Doom 64 Shotgun sprites)
 Captain J (Fire Extinguisher, all sorts of other nice sprites)
-Eriance (Grenade Launcher parts)
+Eriance (Grenade Launcher parts, Nightmare font)
 Fulsam (Gauss Cannon sprite)
 IMX (Fire Extinguisher sprites)
 Marty Kirra (Uppercut sprite edit)

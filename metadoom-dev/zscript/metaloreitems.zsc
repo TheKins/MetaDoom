@@ -6,6 +6,10 @@ Lore Item Spawner
 ----------------------------
 */
 
+// This handles the potential spawning of lore items in secret rooms.
+// It should be about a 10% chance in secret sectors that have room for such
+// things to feasibly appear in (ie. not a closed door like half the fecking
+// secret sectors in Doom E1...
 class MetaLoreItems : EventHandler
 {
 	override void WorldLoaded(WorldEvent e)

@@ -10,7 +10,7 @@ Score Items
 
 // 25% chance of spawning a low-scoring item
 // 12.5% chance of spawning a high-scoring item
-// 0.78% chance of spawning a figurine
+// Figurines have been moved to metaloreitems.zsc
 class LootSpawner : Actor
 {
 	Default
