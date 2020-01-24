@@ -96,7 +96,6 @@ DefaultOptionMenu
 
 AddOptionMenu "OptionsMenu"
 {
-	StaticText " "
 	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
 }
 
