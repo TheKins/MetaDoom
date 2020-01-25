@@ -8,6 +8,7 @@ Actor Definitions
 
 // Core Actors that a bunch of shit inherits from: define above everything else!
 #include "actors/invtokens.zsc"
+#include "actors/mixins.zsc"
 
 // Our Hero.
 #include "actors/player/metadoomplayer.zsc"

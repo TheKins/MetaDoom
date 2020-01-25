@@ -23,9 +23,9 @@ Item Changes:
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
   that have a rare chance of appearing in secret areas. Collect 'em all, and check
   'em all out in your Codex when you have a spare moment!
-- Inventory pickups and treasure items now attempt to use a new spawning method
-  that tries to avoid placing items in damaging sectors. If it cannot do so, it'll
-  fall back to the old method.
+- Inventory pickups and treasure items now use a new spawning method that tries
+  to avoid placing items in damaging sectors, to avoid situations where those
+  much-needed Siphon Grenades are stuck in lava.
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
