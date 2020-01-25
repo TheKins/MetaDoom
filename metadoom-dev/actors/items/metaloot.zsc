@@ -27,26 +27,59 @@ class LootSpawner : Actor
 		TNT1 A 0 A_Jump(32, "Loot3", "Loot4", "Loot5");
 		stop;
 	Loot1:
-		TNT1 A 0 A_SpawnItemEx("LootDagger",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootDagger"); //A_SpawnItemEx("LootDagger",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot2:
-		TNT1 A 0 A_SpawnItemEx("LootChest",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootChest"); //A_SpawnItemEx("LootChest",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot3:
-		TNT1 A 0 A_SpawnItemEx("LootSceptre",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootSceptre"); //A_SpawnItemEx("LootSceptre",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot4:
-		TNT1 A 0 A_SpawnItemEx("LootBible",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootBible"); //A_SpawnItemEx("LootBible",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot5:
-		TNT1 A 0 A_SpawnItemEx("LootCrown",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootCrown"); //A_SpawnItemEx("LootCrown",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot6:
-		TNT1 A 0 A_SpawnItemEx("LootGoblet",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootGoblet"); //A_SpawnItemEx("LootGoblet",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
 	Loot7:
-		TNT1 A 0 A_SpawnItemEx("LootCredits",0,0,0,random(1,16),random(1,16),0,random(0,360));
+		TNT1 A 0 A_SpawnLoot("LootCredits"); //A_SpawnItemEx("LootCredits",0,0,0,random(1,16),random(1,16),0,random(0,360));
 		stop;
+	}
+	
+	// Try and spawn loot in a more normal way before using the weird old way.
+	void A_SpawnLoot(string item)
+	{
+		int xpos = random((self.pos.x - 256), (self.pos.x + 256));
+		int ypos = random((self.pos.y - 256), (self.pos.y + 256));
+		bool dunnit = false;
+		int tries = 0;
+		
+		Vector3 dongs = (xpos, ypos, GetZAt(xpos,ypos));
+		until (dunnit == true || tries > 100)
+		{
+			if (level.IsPointInMap(dongs))
+			{
+				Actor.Spawn(item, dongs);
+				if (meta_developer)
+					Console.printf("Loot: %s spawned at %ix%i", item, xpos, ypos);
+				dunnit = true;
+			} else {
+				xpos = random((self.pos.x - 256), (self.pos.x + 256));
+				ypos = random((self.pos.y - 256), (self.pos.y + 256));
+				tries++;
+			}
+		}
+		
+		// If the new way doesn't work, settle for the old way.
+		if (dunnit == false && tries > 100)
+		{
+			if (meta_developer)
+					Console.printf("Loot: %s failed at at %ix%i, using old method", item, self.pos.x, self.pos.y);
+			A_SpawnItemEx(item,0,0,0,random(1,16),random(1,16),0,random(0,360));
+		}
 	}
 }
 
