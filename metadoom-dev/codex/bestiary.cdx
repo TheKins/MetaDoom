@@ -391,4 +391,13 @@ page "Bestiary"
 		origin "Doom 64 (1997)";
 		description "When the first demonic invasion began, the UAC dealt with it by quarantining the afflicted outpost with apocalyptic levels of radiation. For years.\n\nWhen they returned, they found that something had survived - and mutated - into a unique and terrifying monstrosity that no human OR demon had ever witnessed before.\n\nNow, the Mother Demon feverishly works to knit her fallen peers back together, creating a new army of Hellspawn to swarm through the known cosmos...";
 	}
+
+	entry "MetaHellGuard"
+	{
+		offset 0, 48;
+		frameskip 3;
+		name "Hell Guard";
+		origin "Doom (2016)";
+		description "These bio-mechanical twin terrors, dubbed ''Abaddon'' and ''Apollyon'' in demonic scriptures, are suits of flesh and stone each controlled by a parasitic host nestled within the heavily-armored chest cavity. Armed with a powerful energy staff and a gargantuan mace, this duo are called upon by a dark host to defend places of specific demonic interest from interlopers such as yourself.\n\nWhile they may lack the ambition to seek power and control over the forces of Hell for themselves, they should not be taken lightly under any circumstances...";
+	}
 }

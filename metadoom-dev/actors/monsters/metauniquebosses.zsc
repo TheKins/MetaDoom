@@ -298,6 +298,7 @@ class MetaHellGuard : MonsterCore
 			goto Roam;
 		Missile:
 			HGAR E 0 A_Jump(128, "Roll");
+			HGAR E 0 A_Jump(64, "MissileFast", "TauntBefireMissileClassic");
 		MissileClassic:
 			HGAR E 0 A_SetRoll(0);
 			HGAR FG 3 A_FaceTarget;
@@ -314,24 +315,62 @@ class MetaHellGuard : MonsterCore
 				A_SpawnProjectile("MetaHellGuardShot",56,0,-11.25);
 				A_SpawnProjectile("MetaHellGuardShot",56,0,-22.5);
 			}
-			HGAR H 3
+			HGAR H 0 A_MonsterRefire(40, "See");
+			HGAR H 3 A_FaceTarget;
+			Goto MissileClassicLoop;
+		MissileFast:
+			HGAR E 0 A_SetRoll(0);
+			HGAR FG 3 A_FaceTarget;
+		MissileFastLoop:
+			HGAR H 2 A_FaceTarget;
+			HGAR I 2 Bright A_FaceTarget;
+			HGAR J 2 Bright
 			{
 				A_FaceTarget();
-				A_MonsterRefire(40, "See");
+				A_PlaySound("monsters/hellguard/fastfire", CHAN_6, 1.0, 0, ATTN_NORM, 0, frandom(0.8,1.2));
+				A_SpawnProjectile("MetaHellGuardShot",56,0,random(-10,10));
 			}
-			Goto MissileClassicLoop;
+			HGAR H 2
+			{
+				A_FaceTarget();
+				A_CPosRefire();
+			}
+			loop;
+		TauntBefireMissileClassic:
+			HGAR KLMN 2 A_FaceTarget;
+			HGAR O 6
+			{
+				A_FaceTarget();
+				A_Stop();
+				A_PlaySound("monsters/hellknight/land",CHAN_7);
+				A_Explode(64,128,XF_NOTMISSILE|!XF_HURTSOURCE);
+				A_SpawnItem("BaronShockwave",32,1);
+			}
+			HGAR KLMN 2 A_FaceTarget;
+			HGAR O 6
+			{
+				A_FaceTarget();
+				A_Stop();
+				A_PlaySound("monsters/hellknight/land",CHAN_7);
+				A_Explode(64,128,XF_NOTMISSILE|!XF_HURTSOURCE);
+				A_SpawnItem("BaronShockwave",32,1);
+			}
+			HGAR Z 8 A_FaceTarget;
+			goto MissileClassic;
 		Roll:
 			HGAR E 0 A_FaceTarget;
 			HGAR E 0 A_PlaySound("monsters/hellguard/roll");
-			HGAR E 0 A_Jump(128, "RollLeft");
+			HGAR E 0 A_Jump(64, "RollLeft");
 			goto RollRight;
 		RollLeft:
 			HGAR C 0 ThrustThing(angle*256/360+192, 12, 0, 0);
 			HGAR CQRRRRRRRRRRRRRQC 1 A_SetRoll((roll + 20));
+			HGAR C 0 A_Jump(64, "MissileFast", "RollRight");
 			goto MissileClassic;
 		RollRight:
 			HGAR C 0 ThrustThing(angle*256/360+64, 12, 0, 0);
 			HGAR CQRRRRRRRRRRRRRQC 1 A_SetRoll((roll - 20));
+			HGAR C 0 A_Jump(64, "MissileFast", "RollLeft");
 			goto MissileClassic;
 		Pain.Axe:
 		Pain.Fist:

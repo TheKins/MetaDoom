@@ -789,3 +789,5 @@ monsters/hellguard/die		hgardie1
 monsters/hellguard/gib		hgardie2
 monsters/hellguard/pain		hgarpain
 monsters/hellguard/roll		hgarroll
+
+monsters/hellguard/fastfire	hgarfasf
