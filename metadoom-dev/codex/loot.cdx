@@ -47,6 +47,6 @@ page "Other"
 		itemToCheck "MetaCodex_LoreHissy"
 		name "Hissy";
         origin "IRL (1995-ish)";
-        description "A crudely-made plush Cacodemon hand-assembled during the Doom community's early days, Hissy has inexplicably travelled the world, from ''hogger'' to ''hogger'', seeing the sights in Norway, France and the United States. The original plan was to only spend two weeks with each host, but...\n\nBefore it wound up here in the blood-soaked pits of god-knows-where, it was last seen assisting in the reverse-engineering of old console games. Will it ever return home to the fjords of Norway...? (No.)";
+        description "A crudely-made plush Cacodemon hand-assembled during the Doom community's early days, Hissy has inexplicably travelled the world, going from ''hogger'' to ''hogger'', seeing the sights in France and the US. The original plan was to only spend two weeks with each host, but... well...\n\nBefore it wound up here in the blood-soaked pits of god-knows-where, it was last seen assisting in the reverse-engineering of old console games. Will it ever return home to the fjords of Norway...? (No.)";
 	}
 }

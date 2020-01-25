@@ -168,6 +168,7 @@ class LoreHissy : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTHISSY";
+		inventory.pickupsound "items/loothissy";
 	}
 	
 	States
