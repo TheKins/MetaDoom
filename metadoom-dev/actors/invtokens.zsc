@@ -36,3 +36,41 @@ class Trigger : CustomInventory
     +Inventory.AUTOACTIVATE
 	}
 }
+
+// Let's learn what the hell mixins are.
+
+mixin class LootSpawn
+{
+	// Try and spawn loot in a more normal way before using the weird old way.
+	void A_SpawnLoot(string item)
+	{
+		int xpos = random((self.pos.x - 256), (self.pos.x + 256));
+		int ypos = random((self.pos.y - 256), (self.pos.y + 256));
+		bool dunnit = false;
+		int tries = 0;
+		
+		Vector3 dongs = (xpos, ypos, GetZAt(xpos,ypos));
+		until (dunnit == true || tries > 100)
+		{
+			if (level.IsPointInMap(dongs) && level.PointInSector((xpos,ypos)).damageamount != 0)
+			{
+				Actor.Spawn(item, dongs);
+				if (meta_developer)
+					Console.printf("Loot: %s spawned at %ix%i", item, xpos, ypos);
+				dunnit = true;
+			} else {
+				xpos = random((self.pos.x - 256), (self.pos.x + 256));
+				ypos = random((self.pos.y - 256), (self.pos.y + 256));
+				tries++;
+			}
+		}
+		
+		// If the new way doesn't work, settle for the old way.
+		if (dunnit == false && tries > 100)
+		{
+			if (meta_developer)
+					Console.printf("Loot: %s failed at at %ix%i, using old method", item, self.pos.x, self.pos.y);
+			A_SpawnItemEx(item,0,0,0,random(1,16),random(1,16),0,random(0,360));
+		}
+	}
+}

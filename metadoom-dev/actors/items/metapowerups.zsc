@@ -177,6 +177,8 @@ class MetaHasteSphere : PowerupGiver replaces BlurSphere
 		TeleFogDestType "MetaItemFog";
 	}
 	
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:
@@ -187,7 +189,7 @@ class MetaHasteSphere : PowerupGiver replaces BlurSphere
 		HAST A 0 A_Jump(256, "Hologram");
 		goto Chill;
 	Hologram:
-		HAST A 0 A_SpawnItemEx("HologramPickup",0,0,0,random(0,16),random(0,16),0,random(0,360));
+		HAST A 0 A_SpawnLoot("HologramPickup");
 		goto Chill;
 	Chill:
 		HAST ABCD 2 Bright;
@@ -326,16 +328,18 @@ class MetaQuadDamage : PowerupGiver
 		TeleFogDestType "MetaItemFog";
 	}
 	
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:
 		QUAD A 0;
 		QUAD A 0 
 		{	
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
-			A_SpawnItemEx("MetaMedikitNoItemSpawn",0,0,0,random(1,8),random(1,8),0,random(0,360));
+			A_SpawnLoot("MetaMedikitNoItemSpawn");
+			A_SpawnLoot("MetaMedikitNoItemSpawn");
+			A_SpawnLoot("MetaMedikitNoItemSpawn");
+			A_SpawnLoot("MetaMedikitNoItemSpawn");
 		}
 		goto Chill;
 	Chill:
