@@ -163,6 +163,23 @@ class LoreSkateboard : MetaLoreItem
 	}
 }
 
+// Seperate GFX for Codex
+class LoreSkateboardDummy : Actor
+{
+	Default
+	{
+		xscale 0.65;
+		yscale 0.5;
+	}
+	
+	States
+	{
+	Spawn:
+		LODM A -1;
+		loop;
+	}
+}
+
 class LoreHissy : MetaLoreItem
 {
 	Default
