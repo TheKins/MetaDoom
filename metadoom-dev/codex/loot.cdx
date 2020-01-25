@@ -41,4 +41,12 @@ page "Other"
         origin "Tony Hawk's Pro Skater 3 (2001)";
         description "At one point in the early 2000s, Gearbox Software were allegedly tasked with working on a new Doom project. This ultimately never eventuated, but the Gearbox team saw fit to bring a slice of Doom to a completely unrelated project going on at the same time - a PC port of a popular extreme-sports game.\n\nToday the marine's shredding past has been all but forgotten, which is probably for the best because just like in the original Doom games, he couldn't jump to save his life.";
     }
+	
+	entry "LoreHissy"
+    {
+		itemToCheck "MetaCodex_LoreHissy"
+		name "Hissy";
+        origin "IRL (1995-ish)";
+        description "A crudely-made plush Cacodemon hand-assembled during the Doom community's early days, Hissy has inexplicably travelled the world, from ''hogger'' to ''hogger'', seeing the sights in Norway, France and the United States. The original plan was to only spend two weeks with each host, but...\n\nBefore it wound up here in the blood-soaked pits of god-knows-where, it was last seen assisting in the reverse-engineering of old console games. Will it ever return home to the fjords of Norway...? (No.)";
+	}
 }

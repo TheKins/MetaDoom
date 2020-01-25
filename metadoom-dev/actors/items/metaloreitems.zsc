@@ -25,7 +25,8 @@ class MetaLoreItemSpawner : Actor
 		"LootFigurine2",
 		"LootFigurine3",
 		"LootFigurine4",
-		"LoreSkateboard"
+		"LoreSkateboard",
+		"LoreHissy"
 	};
 	
 	States
@@ -158,6 +159,25 @@ class LoreSkateboard : MetaLoreItem
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
 		TNT1 A 0 A_GiveInventory ("MetaCodex_LoreSkateboard");
+		stop;
+	}
+}
+
+class LoreHissy : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTHISSY";
+	}
+	
+	States
+	{
+	Spawn:
+		LORE B -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LoreHissy");
 		stop;
 	}
 }
