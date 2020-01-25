@@ -19,26 +19,24 @@ class MetaLoreItemSpawner : Actor
 	
 	mixin LootSpawn;
 	
+	static const string LoreItem[] =
+	{
+		"LootFigurine1",
+		"LootFigurine2",
+		"LootFigurine3",
+		"LootFigurine4",
+		"LoreSkateboard"
+	};
+	
 	States
 	{
 	Spawn:
 		TNT1 A 0;
-		TNT1 A 0 A_Jump(256, "LootFig1", "LootFig2", "LootFig3", "LootFig4", "LootSkate");
-		stop;
-	LootFig1:
-		TNT1 A 0 A_SpawnLoot("LootFigurine1");
-		stop;
-	LootFig2:
-		TNT1 A 0 A_SpawnLoot("LootFigurine2");
-		stop;
-	LootFig3:
-		TNT1 A 0 A_SpawnLoot("LootFigurine3");
-		stop;
-	LootFig4:
-		TNT1 A 0 A_SpawnLoot("LootFigurine4");
-		stop;
-	LootSkate:
-		TNT1 A 0 A_SpawnLoot("LoreSkateboard");
+		TNT1 A 0
+		{
+			int i = random(0,LoreItem.Size()-1);
+			A_SpawnLoot(LoreItem[i]);
+		}
 		stop;
 	}
 }
