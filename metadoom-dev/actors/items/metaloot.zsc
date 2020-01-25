@@ -72,10 +72,6 @@ class LootItem : ScoreItem
 	Spawn:
 		LOOT F 0;
 		"####" "#" 0;
-		goto MoveAround;
-	MoveAround:
-		"####" "#" 35;
-		"####" "#" 0 A_Stop; // Prevents bouncing around wallsliding all day
 		goto Sit;
 	Sit:
 		"####" "#" -1;
@@ -96,7 +92,7 @@ class LootGoblet : LootItem
 	Spawn:
 		LOOT F 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -113,7 +109,7 @@ class LootDagger : LootItem
 	Spawn:
 		LOOT A 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -130,7 +126,7 @@ class LootChest : LootItem
 	Spawn:
 		LOOT B 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -147,7 +143,7 @@ class LootSceptre : LootItem
 	Spawn:
 		LOOT C 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -164,7 +160,7 @@ class LootBible : LootItem
 	Spawn:
 		LOOT D 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -181,7 +177,7 @@ class LootCrown : LootItem
 	Spawn:
 		LOOT E 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
@@ -199,7 +195,7 @@ class LootCredits : LootItem
 	Spawn:
 		LOOT G 0;
 		"####" "#" 0;
-		goto MoveAround;
+		goto Sit;
 	}
 }
 
