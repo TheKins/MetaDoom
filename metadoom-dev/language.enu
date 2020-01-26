@@ -169,6 +169,7 @@ GOTLOOTFIG4 = "Picked up an oddly blurry figurine!";
 GOTLOOTSKATE = "Picked up a pro skateboard!";
 GOTLOOTHISSY = "Picked up an old plush toy!";
 GOTLOOTPUMPKIN = "Picked up a fragile pumpkin!";
+GOTLOOTCACOWARD = "Picked up a shiny trinket!";
 
 // Weapons
 GOTPISTOL = "You got the EMG Sidearm!";

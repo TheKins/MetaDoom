@@ -57,4 +57,12 @@ page "Other"
         origin "The Nightmare Hellscape of Usenet (1993)";
         description "A running joke spawned by Doom's pre-release hype, Smashing Pumpkins Into Small Piles of Putrid Debris was alleged to be a similar, more advanced FPS that just lacked that certain marketing je-ne-sais-quoi on account of having a name longer than some highways.\n\nId referenced this injoke with a suitably complex cheat code to enable No Clipping Mode, and an actual game under the name was eventually produced by future Growtopia co-creator Mike Hommel.\n\nThe moral of the story? Don't let your injokes grow too large, lest they become horrifying reality...";
 	}
+	
+	entry "LoreCacoward"
+    {
+		itemToCheck "MetaCodex_LoreCacoward"
+		name "Cacoward";
+        origin "Doomworld (2004)";
+        description "A curious trophy, depicting a golden version of one of those weird head monsters you've been fighting.\n\nSupposedly these were given out to the most skilled and inventive of creators once upon a time... but this one appears to have ''2012 WINNER - REELISM'' engraved into it, which has caused historians and archeologists to severely doubt the official historical record.\n\nYou think you can see a hastily-sealed coin slot on the top of the head, suggesting that it might just be a repainted piggy bank...";
+	}
 }

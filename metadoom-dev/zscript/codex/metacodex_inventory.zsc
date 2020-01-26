@@ -82,3 +82,4 @@ Class MetaCodex_LootFigurine4 : MetaCodex_InvBase {}
 Class MetaCodex_LoreSkateboard : MetaCodex_InvBase {}
 Class MetaCodex_LoreHissy : MetaCodex_InvBase {}
 Class MetaCodex_LorePumpkin : MetaCodex_InvBase {}
+Class MetaCodex_LoreCacoward : MetaCodex_InvBase {}
