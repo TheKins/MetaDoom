@@ -51,6 +51,7 @@ items/loot			getloot
 items/lootfig		getfig
 items/lootskate		getsk8
 items/loothissy		gethiss
+items/lootpumpkin	getpumpk
 
 // Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }
