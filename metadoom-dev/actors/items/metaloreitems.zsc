@@ -26,7 +26,9 @@ class MetaLoreItemSpawner : Actor
 		"LootFigurine3",
 		"LootFigurine4",
 		"LoreSkateboard",
-		"LoreHissy"
+		"LoreHissy",
+		"LorePumpkin",
+		"LoreCacoward"
 	};
 	
 	States
