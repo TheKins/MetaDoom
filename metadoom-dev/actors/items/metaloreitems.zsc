@@ -199,3 +199,23 @@ class LoreHissy : MetaLoreItem
 		stop;
 	}
 }
+
+class LorePumpkin : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTPUMPKIN";
+		inventory.pickupsound "items/lootpumpkin";
+	}
+	
+	States
+	{
+	Spawn:
+		LORE C -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LorePumpkin");
+		stop;
+	}
+}

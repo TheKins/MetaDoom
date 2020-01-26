@@ -49,4 +49,12 @@ page "Other"
         origin "IRL (1995-ish)";
         description "A crudely-made plush Cacodemon hand-assembled during the Doom community's early days, Hissy has inexplicably travelled the world, going from ''hogger'' to ''hogger'', seeing the sights in France and the US. The original plan was to only spend two weeks with each host, but... well...\n\nBefore it wound up here in the blood-soaked pits of god-knows-where, it was last seen assisting in the reverse-engineering of old console games. Will it ever return home to the fjords of Norway...? (No.)";
 	}
+	
+	entry "LorePumpkin"
+    {
+		itemToCheck "MetaCodex_LorePumpkin"
+		name "SPISPOPD";
+        origin "The Nightmare Hellscape of Usenet (1993)";
+        description "A running joke spawned by Doom's pre-release hype, Smashing Pumpkins Into Small Piles of Putrid Debris was alleged to be a similar, more advanced FPS that just lacked that certain marketing je-ne-sais-quoi on account of having a name longer than some highways.\n\nId referenced this injoke with a suitably complex cheat code to enable No Clipping Mode, and an actual game under the name was eventually produced by future Growtopia co-creator Mike Hommel.\n\nThe moral of the story? Don't let your injokes grow too large, lest they become horrifying reality...";
+	}
 }
