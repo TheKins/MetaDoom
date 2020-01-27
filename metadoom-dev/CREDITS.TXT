@@ -42,16 +42,16 @@ Xaser (Doom 4 sound recordings, "ARGENT" resources)
 
 TOOLS USED:
 Adrian Dale (Pinball FX Tools)
-DTZxPorter & id-daemon (Doom 4 model tools)
+DTZxPorter & id-daemon (Doom 2016 model tools)
 Erick194 & Gerardo194 (id Mobile game tools)
-NoirSuccubus (Doom 4 Audio Tools)
+NoirSuccubus (Doom 2016 Audio Tools)
 
 CODE RESOURCES:
 Blue Shadow (Time Freeze with sound)
 comet1338 (Fixed a z-fighting bug with flat decals)
 DavidPH (ACS advice)
 Enjay (Terrain definitions)
-Gutawer (Zscript sensei, rewrote statscreen borders)
+Gutawer (Rewrote statscreen borders)
 Major Cooke (Blood Stain recoding, engine-side support)
 Marrub (ACS and ZScript advice)
 Matt (Base for first version of actor replacement system)
@@ -129,6 +129,12 @@ Scuba Steve
 
 SPECIAL THANKS TO:
 Id Software (...for everything.)
-Sgt. Shivers (Moral support)
+Boondorl (ZScript babysitter)
+Civvie11 (Research assistance)
 Doom Wiki (Research assistance)
+Gutawer (ZScript babysitter)
+pagb666 (Research assistance)
+Phantombeta (ZScript babysitter)
+Sgt. Shivers (Moral support)
+Shadsy (Moral support)
 Various Secret Societies Across The Internet (You Know Who You Are!)
