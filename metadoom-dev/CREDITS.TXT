@@ -9,11 +9,12 @@ Techokami (Bughunter General)
 DrPySpy (Spiderdemon sprites, Codex system, HUD faces, Flashlight, heavy code lifting)
 
 STUFF FROM COMMERCIAL GAMES:
-Id Software (Oh, a few things here and there...)
 3D Realms (Some Exploding Barrel & Fire Extinguisher sounds, Hologram sprite, Rocket Fragment sprites, Tiny font)
 Bethesda Softworks (Elder Scrolls and Fallout sounds)
 Epic Games (Some metal gibbing sounds, Cyber-Mancubus attack sounds)
 EuroCom Entertainment Software (Duke 64 smoke and blood sprites)
+Gearbox Software (Easter Egg resources)
+Id Software (Oh, a few things here and there...)
 Infinity Ward (COD2 footstep sounds)
 Irrational Games (SWAT 4 flashlight sounds)
 Netherrealm Entertainment (MK9 and MKX melee sounds)
@@ -63,7 +64,7 @@ ART RESOURCES (WEAPONS AND ITEMS):
 Blue Shadow (Doom 3 Keycard Sprites)
 Cage (Doom 64 Shotgun sprites)
 Captain J (Fire Extinguisher, all sorts of other nice sprites)
-Eriance (Grenade Launcher parts, Nightmare font)
+Eriance (Grenade Launcher parts)
 Fulsam (Gauss Cannon sprite)
 IMX (Fire Extinguisher sprites)
 Marty Kirra (Uppercut sprite edit)
@@ -99,6 +100,7 @@ Zaneion (Hell Knight, Baron of Hell, Bull Demon, Wretched sprites)
 
 ART RESOURCES (INTERFACE)
 DHTP Team (High-res STARTAN used in TITLEMAP)
+Eriance ("Nightmare!" font)
 Jimmy (Upper-case version of SMALLFONT)
 
 ART RESOURCES (OPTIONAL CONTENT):
@@ -119,7 +121,14 @@ DiosPercha (Ironman Game Over music - https://youtu.be/cWcGxCS9Xmg )
 Leslie Wai (TITLEMAP music remix - https://youtu.be/tS0OwOaK28U )
 Old Classic Retro Gaming (Apple II sounds - https://www.youtube.com/user/oldclassicgame )
 
+EASTER EGG RESOURCES:
+Chris Schnefke
+Hidfan
+Mike Hommel
+Scuba Steve
+
 SPECIAL THANKS TO:
 Id Software (...for everything.)
 Sgt. Shivers (Moral support)
+Doom Wiki (Research assistance)
 Various Secret Societies Across The Internet (You Know Who You Are!)
