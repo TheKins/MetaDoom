@@ -273,9 +273,9 @@ class MetaHellGuard : MonsterCore
 			HGAR ZZ 10 A_Look;
 			Loop;
 		See:
-			HGAR G 0;
-			HGAR G 0 A_Quake(5,30,0,2048,0);
-			HGAR G 35 A_FaceTarget();
+			HGAR ] 0;
+			HGAR ] 0 A_Quake(5,30,0,2048,0);
+			HGAR ] 35 A_FaceTarget();
 			goto Roam;
 		Roam:
 			HGAR A 0 A_MetaBleed("FlyingBlood");
