@@ -7,7 +7,10 @@ Optional Content Actors
 */
 
 // Wolfenstein PC
-monsters/wolfss/see			wsssee
+//monsters/wolfss/see			wsssee
+$random monsters/wolfss/see { monsters/wolfss/see1 monsters/wolfss/see2 }
+monsters/wolfss/see1		wsssee1
+monsters/wolfss/see2		wsssee2
 monsters/wolfss/pain		wsspain
 monsters/wolfss/die			wssdie
 monsters/wolfss/fire		wssfire
