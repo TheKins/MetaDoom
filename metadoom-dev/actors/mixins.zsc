@@ -25,6 +25,7 @@ mixin class LootSpawn
 		int oldradius;
 		bool lavadive = false;
 		oldradius = newitem.radius;
+		int tries = 0;
 		
 		// Lower the item's radius so it's easier for it to run around without
 		// being clipped into a wall (see. healthkits spawned by a Quad at the
@@ -43,8 +44,16 @@ mixin class LootSpawn
 				newitem.maxstepheight = 128;
 				//newitem.setOrigin(self.pos, false);
 				lavadive = true;
-				i--;
+				tries++;
+				
+				// Avoids infinite loops
+				if (tries < 100)
+				{
+					i--;
+				}
+				
 			}
+			
 		}
 		
 		// Reset the radius from before so it's still easy to pick up.
