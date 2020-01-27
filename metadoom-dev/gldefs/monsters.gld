@@ -396,3 +396,49 @@ object MetaMotherDemon
 	frame RECTF { light MOTHATK5 }
 	frame RECTG { light MOTHATK6 }
 }
+
+// Hell Guard
+
+pointlight HELLGUARDSHOT
+{
+    color 0.0 1.0 0.0
+    size 84
+	attenuate 1
+}
+
+flickerlight HELLGUARDSHOT_X1
+{
+    color 0.0 1.0 0.0
+    size 96
+    secondarySize 108
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HELLGUARDSHOT_X2
+{
+    color 0.0 0.5 0.0
+    size 120
+    secondarySize 132
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight HELLGUARDSHOT_X3
+{
+    color 0.0 0.3 0.0
+    size 144
+    secondarySize 156
+    chance 0.3
+	attenuate 1
+}
+
+object MetaHellGuardShot
+{
+    frame HGAPA { light HELLGUARDSHOT    }
+	frame HGAPB { light HELLGUARDSHOT    }
+
+    frame HGAPC { light HELLGUARDSHOT_X1 }
+    frame HGAPD { light HELLGUARDSHOT_X2 }
+    frame HGAPE { light HELLGUARDSHOT_X3 }
+}
