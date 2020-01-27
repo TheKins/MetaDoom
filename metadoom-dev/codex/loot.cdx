@@ -65,4 +65,12 @@ page "Other"
         origin "Doomworld (2004)";
         description "A curious trophy, depicting a golden version of one of those weird head monsters you've been fighting.\n\nSupposedly these were given out to the most skilled and inventive of creators once upon a time... but this one appears to have ''2012 WINNER - REELISM'' engraved into it, which has caused historians and archeologists to severely doubt the official historical record.\n\nYou think you can see a hastily-sealed coin slot on the top of the head, suggesting that it might just be a repainted piggy bank...";
 	}
+	
+	entry "LoreRavenDummy"
+    {
+		itemToCheck "MetaCodex_LoreRaven"
+		name "Raven Software";
+        origin "Black Crypt (1992)";
+        description "Former long-time associates of Id Software from the Wisconsin days, Raven built a legion of quality games using Id's tech, including the Doom-powered Heretic and Hexen and even their own engine ''in-between'' Wolfenstein 3D and Doom for the adventure game ShadowCaster.\n\nIn the early 2010s, their experiments with the space-time continuum went horribly awry, and the survivors were forced to flee into the COD Mines in order to escape the carnage.\n\nMany believe they may still be down there, biding their time and regaining their strength... (Optimism is so cruel.)";
+	}
 }

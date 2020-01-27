@@ -28,7 +28,8 @@ class MetaLoreItemSpawner : Actor
 		"LoreSkateboard",
 		"LoreHissy",
 		"LorePumpkin",
-		"LoreCacoward"
+		"LoreCacoward",
+		"LoreRaven"
 	};
 	
 	States
@@ -240,5 +241,42 @@ class LoreCacoward : MetaLoreItem
 		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
 		TNT1 A 0 A_GiveInventory ("MetaCodex_LoreCacoward");
 		stop;
+	}
+}
+
+class LoreRaven : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTRAVEN";
+		inventory.pickupsound "items/lootraven";
+		scale 0.35;
+	}
+	
+	States
+	{
+	Spawn:
+		LORE E -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LoreRaven");
+		stop;
+	}
+}
+
+// Seperate GFX for Codex
+class LoreRavenDummy : Actor
+{
+	Default
+	{
+		scale 0.5;
+	}
+	
+	States
+	{
+	Spawn:
+		LORE E -1;
+		loop;
 	}
 }
