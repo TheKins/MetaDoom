@@ -9,6 +9,8 @@ Monster Changes:
 Weapon Changes:
 - The Pistol now triggers "gunfire activated" linedefs like hitscan weapons do,
   allowing it to trigger the Evil Eyes in SIGIL.
+- Corrected the pixel aspect ratio on the Unmaker's HUD sprites and hated every
+  second of it. Please add psprite scaling, Mr. Chicken...
 
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization

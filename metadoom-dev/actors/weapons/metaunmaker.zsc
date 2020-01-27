@@ -41,6 +41,7 @@ class MetaUnmaker : MetaDoomWeapon
 		Inventory.Pickupmessage "$GOTUNMAKER";
 		Inventory.PickupSound "weapons/unmaker/get";
 		Tag "$TAGUNMAKER";
+		Weapon.YAdjust 10;
 		//Decal Scorch;
 	}
 	
