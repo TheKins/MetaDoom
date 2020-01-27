@@ -5,6 +5,7 @@ Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
+- Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
 - The Pistol now triggers "gunfire activated" linedefs like hitscan weapons do,

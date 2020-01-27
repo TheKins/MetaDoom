@@ -25,9 +25,7 @@ class ChainsawSpawner : Actor replaces Chainsaw
 		{
 			if (deathmatch) // Disable axe in Deathmatch
 			{
-				return ResolveState("Chainsaw"); 
-			} else {
-				return ResolveState(null);
+				SetStateLabel("Chainsaw");
 			}
 		}
 		TNT1 A 0 A_SpawnItemEx("MetaAxePickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
