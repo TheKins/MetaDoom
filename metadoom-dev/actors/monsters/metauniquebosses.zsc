@@ -248,6 +248,7 @@ class MetaHellGuard : MonsterCore
 		Speed 25;
 		Monster;
 		MinMissileChance 160;
+		MeleeRange 72;
 		+BOSS
 		+MISSILEMORE
 		+FLOORCLIP
@@ -291,7 +292,7 @@ class MetaHellGuard : MonsterCore
 				A_FaceTarget();
 				A_Stop();
 				A_PlaySound("monsters/hellknight/land",CHAN_7);
-				A_Explode(64,128,XF_NOTMISSILE|!XF_HURTSOURCE);
+				A_Explode(128,128,XF_NOTMISSILE|!XF_HURTSOURCE);
 				A_SpawnItem("BaronShockwave",32,1);
 			}
 			HGAR ZZ 8 A_FaceTarget;
