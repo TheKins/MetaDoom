@@ -83,6 +83,7 @@ class MetaMotherDemon : MonsterCore
 			RECT K 3 A_Pain;
 			Goto Roam;
 		Death:
+			RECT L 0 { bSPRITEFLIP = random(0,1); }
 			RECT L 20 A_Scream;
 			RECT M 10;
 			RECT N 8
@@ -236,7 +237,9 @@ class MetaMotherFireTrail : Actor
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// The Hell Guard from Doom 2016! Art is still a problem on this one.
+// The Hell Guard from Doom 2016! Missing a couple of abilities from that game,
+// like the shield, but that's because fighting shield monsters in the Doom
+// engine is awful. Blame Hexen!
 class MetaHellGuard : MonsterCore
 {
 	Default
@@ -380,6 +383,7 @@ class MetaHellGuard : MonsterCore
 			HGAR S 3 A_Pain;
 			Goto Roam;
 		Death:
+			HGAR T 0 { bSPRITEFLIP = random(0,1); }
 			HGAR T 20 A_Scream;
 			HGAR U 8
 			{
