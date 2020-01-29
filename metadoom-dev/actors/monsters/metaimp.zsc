@@ -335,6 +335,8 @@ class MetaDoomImpLord : MonsterCore
 		Obituary "$OB_IMPLORD";
 		painchance "HolyWater", 255;
 	}
+	
+	int tries;
 
 	States
 	{
@@ -401,17 +403,43 @@ class MetaDoomImpLord : MonsterCore
 	TeleLoop:
 		TNT1 AAAAAAAAAAA 0 A_Chase(null, null);
 		TNT1 AAAAAAAAAAA 0 A_Wander;
+		TNT1 A 0
+		{
+			if (level.PointInSector(self.pos.xy).damageamount != 0)
+			{
+				if (tries < 10)
+				{
+					if (meta_developer)
+						Console.printf("Imp Lord at %i x %i declined to teleport into nukage", self.pos.x, self.pos.y);
+					tries++;
+					SetStateLabel("TeleLoop");
+				}
+			}
+		}
 		TNT1 A 0 A_Jump(128, "TeleStop");
 		loop;
 	TeleLoopAway:
 		TNT1 A 0 { bFRIGHTENED = 1; }
 		TNT1 AAAAAAAAAAA 0 A_Chase(null, null);
 		TNT1 AAAAAAAAAAA 0 A_Chase(null, null);
+		TNT1 A 0
+		{
+			if (level.PointInSector(self.pos.xy).damageamount != 0)
+			{
+				if (tries < 10)
+				{
+					if (meta_developer)
+						Console.printf("Imp Lord at %i x %i declined to teleport into nukage", self.pos.x, self.pos.y);
+					tries++;
+					SetStateLabel("TeleLoopAway");
+				}
+			}
+		}
 		TNT1 A 0 { bFRIGHTENED = 0; }
 		TNT1 A 0 A_Jump(128, "TeleStop");
 		loop;
 	TeleStop:
-		ROAC A 0 { A_PlaySound("monsters/implord/tele"); A_SpawnItem("MetaImpLordTeleportFog"); }
+		ROAC A 0 { A_PlaySound("monsters/implord/tele"); A_SpawnItem("MetaImpLordTeleportFog"); tries = 0; }
 		ROAC A 0 { bFLOAT = 0; bNOGRAVITY = 0; }
 		ROAC H 1 A_CheckSolidFooting("TeleLanding");
 		wait;
