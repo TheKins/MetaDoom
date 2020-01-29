@@ -513,6 +513,8 @@ class BloodSplat : Actor
 		int user_water;
 		float user_scaleadd;
 		float user_z;
+		
+		int bloodradius;
 	
 	States
 	{
@@ -537,10 +539,12 @@ class BloodSplat : Actor
 			{
 				if (user_water == 3)	{ return resolvestate("W"); }
 				if (user_water == 2)	{ return resolvestate("X"); }
+				bloodradius = 24;
 				return					A_Jump(256,"A","B","F");
 			}
 			
 			//Small splat.
+			bloodradius = 16;
 			return					A_Jump(256,"C","D","E","G");
 		}
 		
@@ -557,6 +561,11 @@ class BloodSplat : Actor
 	WaitForever:
 		"####" "#" 35
 		{
+			if (GetZAt(bloodradius,0) != floorz || GetZAt((0-bloodradius),0) != floorz || GetZAt(0,bloodradius) != floorz || GetZAt(0,(0-bloodradius)) != floorz)
+			{
+				A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+			}
+			
 			if (user_water >= 2)
 			{
 				A_SetTics(1);
@@ -639,10 +648,12 @@ class BloodSplat_Permanent : BloodSplat
 				CheckClass("BloodSplatBlue_Permanent",AAPTR_DEFAULT))
 			{
 				if (user_water != 1)	{ return resolvestate("Null"); }
+				bloodradius = 24;
 				return					A_Jump(256,"A","B","F");
 			}
 			
 			//Small splat.
+			bloodradius = 16;
 			return					A_Jump(256,"C","D","E","G");
 		}
 		
@@ -659,6 +670,11 @@ class BloodSplat_Permanent : BloodSplat
 		WaitForever:
 		"####" "#" 35
 		{
+			if (GetZAt(bloodradius,0) != floorz || GetZAt((0-bloodradius),0) != floorz || GetZAt(0,bloodradius) != floorz || GetZAt(0,(0-bloodradius)) != floorz)
+			{
+				A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+			}
+			
 			if (user_water != 1)
 			{
 				return resolvestate("null");
