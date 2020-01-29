@@ -522,6 +522,11 @@ class MonsterTracerSpark : Actor
 		PUFF AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1);
 		Stop;
 	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 // Monster Damage
