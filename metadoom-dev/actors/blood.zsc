@@ -113,9 +113,9 @@ class XBlood : Actor Replaces Blood
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AAAA 0 A_SpawnProjectile ("FlyingBloodFast", 0, 0, random (0, 360), 2, random (50, 120));
+		TNT1 AA 0; 
+		TNT1 AA 0 A_SpawnProjectile ("FlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AAAA 0 A_SpawnProjectile ("FlyingBloodFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (50, 120));
 		BLUD CBA 2;
 		stop;
 	Disappear:
@@ -136,9 +136,9 @@ class BlueBlood : XBlood
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180));
+		TNT1 AA 0;
+		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 180));
 		BLUD ABC 2;
 		stop;
 	}
@@ -154,9 +154,9 @@ class GreenBlood : XBlood
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180));
+		TNT1 AA 0;
+		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 180));
 		BLUD ABC 2;
 		stop;
 	}
@@ -179,9 +179,9 @@ class XBlood2 : Actor
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("FlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AA 0 A_SpawnProjectile ("FlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180));
+		TNT1 AA 0;
+		TNT1 AA 0 A_SpawnProjectile ("FlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AA 0 A_SpawnProjectile ("FlyingBloodFakeFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 180));
 		stop;
 	Disappear:
 		TNT1 A 1;
@@ -199,9 +199,9 @@ class GreenBlood2 : XBlood2
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180));
+		TNT1 AA 0;
+		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AA 0 A_SpawnProjectile ("GreenFlyingBloodFakeFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 180));
 		stop;
 	}
 }
@@ -216,9 +216,9 @@ class BlueBlood2 : XBlood2
 	states
 	{
 	Spawn:
-		TNT1 AA 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "Disappear")
-		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBlood", 0, 0, random (0, 360), 2, random (0, 160));
-		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2, random (0, 180));
+		TNT1 AA 0;
+		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBlood", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 160));
+		TNT1 AA 0 A_SpawnProjectile ("BlueFlyingBloodFakeFast", 0, 0, random (0, 360), 2|CMF_BADPITCH, random (0, 180));
 		stop;
 	}
 }

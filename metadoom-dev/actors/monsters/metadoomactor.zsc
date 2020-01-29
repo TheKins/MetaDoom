@@ -62,7 +62,7 @@ class MonsterCore : Actor
 		damagefactor "DogCollar", 0;
 		damagefactor "LightningStun", 0.1;
 		painchance "DogCollar", 0;
-		bloodcolor "68 00 00";
+		bloodcolor "ff 00 00";
 	}
 		
 	double oldVel;
