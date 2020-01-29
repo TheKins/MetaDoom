@@ -23,24 +23,27 @@ class MetaLoreItems : EventHandler
 			// Is the selected sector a secret, and is its center point actually within playable space?
 			if (level.IsPointInMap(spam3) && level.Sectors[i].IsSecret())
 			{
-				// Do an RNG roll - have lore items only have a 10% chance of spawning.
-				int lorerng = random(0,100);
-				
-				if (lorerng <= 10)
+				if (meta_lootspawns == 1)
 				{
-					// Make sure the secret isn't a closed door like in E1M1, so the item has room to spawn.
-					if (level.Sectors[i].floorplane.ZAtPoint(c) != level.Sectors[i].ceilingplane.ZAtPoint(c))
+					// Do an RNG roll - have lore items only have a 10% chance of spawning.
+					int lorerng = random(0,100);
+					
+					if (lorerng <= 10)
 					{
-						Actor.Spawn("MetaLoreItemSpawner", spam3);
-						if (meta_developer)
-							Console.printf("Lore Item: Spawned at %i %i", c.x, c.y);
+						// Make sure the secret isn't a closed door like in E1M1, so the item has room to spawn.
+						if (level.Sectors[i].floorplane.ZAtPoint(c) != level.Sectors[i].ceilingplane.ZAtPoint(c))
+						{
+							Actor.Spawn("MetaLoreItemSpawner", spam3);
+							if (meta_developer)
+								Console.printf("Lore Item: Spawned at %i %i", c.x, c.y);
+						} else {
+							if (meta_developer)
+								Console.printf("Lore Item: Failed to spawn at %i %i", c.x, c.y);
+						}
 					} else {
 						if (meta_developer)
-							Console.printf("Lore Item: Failed to spawn at %i %i", c.x, c.y);
+								Console.printf("Lore Items: Failed RNG Roll (%i)", lorerng);
 					}
-				} else {
-					if (meta_developer)
-							Console.printf("Lore Items: Failed RNG Roll (%i)", lorerng);
 				}
 			}
 		}
