@@ -115,6 +115,11 @@ class EmptyBrass : Actor
 		TNT1 A 1;
 		Stop;
 	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 class ShotgunCasing : EmptyBrass

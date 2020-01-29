@@ -82,6 +82,11 @@ class MetaSploosh : Actor // edited version of smoothdoom gib1
 		TNT1 A 1;
 		stop;
 	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 class MetaSplooshBlue : MetaSploosh
@@ -188,6 +193,12 @@ class MetaGib1 : Actor
 	FadeMeOut:
 		"####" "#" 1 A_FadeOut(0.02);
 		Wait;
+	}
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
 	}
 }
 
@@ -360,6 +371,12 @@ class MetaGibBarrel : Actor
 		"####" # -1;
 		Stop;
     }
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 // Tree Gibs
@@ -420,6 +437,12 @@ class MetaGibWood : Actor
 		"####" # -1;
 		Stop;
     }
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 class MetaGibBigWood : Actor // and veiny
@@ -478,6 +501,12 @@ class MetaGibBigWood : Actor // and veiny
 		"####" # -1;
 		Stop;
     }
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }
 
 // Glass Gibs
@@ -538,4 +567,10 @@ class MetaGibGlass : Actor
 		"####" # -1;
 		Stop;
     }
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
 }

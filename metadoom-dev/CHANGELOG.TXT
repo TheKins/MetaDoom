@@ -40,6 +40,9 @@ Item Changes:
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
 - Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
+- Disabled collisions between certain effects actors (gibs, casings etc.) and
+  all other actors, preventing awkward-looking cases of, say, casings getting stuck
+  inside a monster's head when shooting at them point-blank.
 - Added a CVar to toggle footstep sounds.
 - Various invisible bits of housekeeping and cleaning.
 
