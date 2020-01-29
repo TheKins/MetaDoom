@@ -46,7 +46,6 @@ class MetaBaronOfHell : MonsterCore
 		BARO Z 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("GreenFlyingBlood");
 		BARO AABBCCDD 3 A_Chase;
 		BARO Z 0 { bDROPOFF = 0; }							// Try and fix instances of being "stuck" on an edge after jumping
 		Loop;
@@ -188,7 +187,6 @@ class MetaHellKnight : MonsterCore
 		HNGT Z 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		HNGT AABBCCDD 3 A_Chase;
 		HNGT Z 0 { bDROPOFF = 0; }								// Try and fix instances of being "stuck" on an edge after jumping
 		Loop;

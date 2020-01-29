@@ -40,7 +40,6 @@ class MetaShotgunGuy : MonsterCore
 		SPOS AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		SPOS AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:
@@ -165,7 +164,6 @@ class MetaZSec : MonsterCore
 		ZSEC AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		ZSEC AABBCCDD 3 
 		{
 			A_CheckProximity ("Roll", "MetaBulletPuff", 128, 1, 0);

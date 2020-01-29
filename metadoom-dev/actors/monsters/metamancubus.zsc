@@ -35,7 +35,6 @@ class MetaMancubus : MonsterCore
 		FATT AB 15 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		FATT AABBCCDDEEFF 4 A_Chase;
 		Loop;
 	Missile:
@@ -141,7 +140,6 @@ class MetaBehemoth : MonsterCore
 		2FAT AB 15 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		2FAT AABBCCDDEEFF 4 A_Chase;
 		Loop;
 	Missile:
@@ -349,7 +347,6 @@ class MetaCyberManc : MonsterCore
 		CFAT G 15 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		CFAT AABBCCDDEEFF 4 A_Chase;
 		Loop;
 	Missile:

@@ -36,7 +36,6 @@ class MetaDemon : MonsterCore
 		SARG AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		SARG AABBCCDD 2 Fast A_Chase;
 		Loop;
 	Melee:
@@ -146,7 +145,6 @@ class MetaBullDemon : MonsterCore
 		BULD Z 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		BULD A 0 A_JumpIf(user_chargecooldown < 1 ,"RegularChase");
 	ChaseNoCharge:
 		BULD A 0 A_PlaySound("monsters/bulldemon/step");

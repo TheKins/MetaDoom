@@ -38,7 +38,6 @@ class MetaRevenant : MonsterCore
 		SKEL AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		SKEL AABBCCDDEEFF 2 A_Chase;
 		Loop;
 	Melee:
@@ -188,7 +187,6 @@ class MetaFiend : MonsterCore
 		FIEN AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		//FIEN A 0 A_Jump(256,"JumpAttackHalf");					// for debug
 		FIEN AABBCCDDEEFF 2 A_Chase;
 		FIEN A 0 { bDROPOFF = 0; }									// Try and fix instances of being "stuck" on an edge after jumping

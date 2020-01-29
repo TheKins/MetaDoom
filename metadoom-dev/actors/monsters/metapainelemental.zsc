@@ -36,7 +36,6 @@ class MetaPainElemental : MonsterCore
 		PAIN A 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		PAIN AABBCC 3 A_Chase;
 		Loop;
 	Scurred:
@@ -128,9 +127,7 @@ class MetaBeholder : MonsterCore
 		BEHO A 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		BEHO AAAAAAAA 3 A_Chase;
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		BEHO AAAAAAAA 3 A_Chase("Melee", null);
 		Loop;
 	Scurred:
@@ -235,7 +232,6 @@ class MetaRahovart : MonsterCore
 		RAHO A 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("BlueFlyingBlood");
 		RAHO AAAAAAAA 3 A_Chase;
 		Loop;
 	Scurred:

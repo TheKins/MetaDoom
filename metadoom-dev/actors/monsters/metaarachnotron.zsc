@@ -36,7 +36,6 @@ class MetaArachnotron : MonsterCore
 		Loop;
 	See:
 		BSPI A 20;
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		BSPI A 3 { A_Chase(); A_PlaySound("monsters/arachnotron/walk"); }
 		BSPI ABBCC 3 A_Chase;
 		BSPI D 3 { A_Chase(); A_PlaySound("monsters/arachnotron/walk"); }
@@ -134,7 +133,6 @@ class MetaSpiborg : MonsterCore
 		Loop;
 	See:
 		2SPI A 10;
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		2SPI A 3 { A_Chase(); A_PlaySound("monsters/spiborg/walk"); }
 		2SPI ABB 3 A_Chase;
 		2SPI C 3 { A_Chase(); A_PlaySound("monsters/spiborg/walk"); }

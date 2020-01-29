@@ -40,7 +40,6 @@ class MetaHellhound : MonsterCore
 		HDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		"####" AA 1 A_Chase("Melee", null);
 		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
 		"####" BB 1 A_Chase("Melee", null);
@@ -169,7 +168,6 @@ class MetaDemonDog : MetaHellhound
 		DDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		"####" AA 1 A_Chase("Melee", null);
 		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
 		"####" BB 1 A_Chase("Melee", null);
@@ -271,7 +269,6 @@ class MetaCerberus : MetaHellhound
 		CDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		"####" AA 1 A_Chase("Melee", "Missile");
 		"####" AA 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
 		"####" BB 1 A_Chase("Melee", "Missile");

@@ -40,7 +40,6 @@ class MetaMachineGunGuy : MonsterCore
 		MPOS AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		MPOS AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:
@@ -153,7 +152,6 @@ class MetaChainGunGuy : MonsterCore
 		CPOS AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		CPOS AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:
@@ -276,7 +274,6 @@ class MetaAssassinGuy : MonsterCore
 		PSCM AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		PSCM AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:

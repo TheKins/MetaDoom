@@ -36,7 +36,6 @@ class MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 		OPLA A 4 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		"####" ABCD 4 A_Chase;
 		Loop;
 	Missile:

@@ -41,7 +41,6 @@ class MetaArchvile : MonsterCore
 		VILE AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		VILE AABBCCDDEEFF 2 A_VileChase;
 		Loop;
 	Missile:
@@ -200,7 +199,6 @@ class MetaSummoner : MonsterCore
 		SUMN ABCDCB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		SUMN E 0 A_Jump(90, "Teleport");
 		SUMN EEFFGG 2 A_VileChase;
 		SUMN G 0 A_Jump(90, "Teleport");
@@ -208,7 +206,6 @@ class MetaSummoner : MonsterCore
 		VILE A 0 A_Jump(90, "Popcorn");
 		Loop;
 	SeeAlreadyTeleportedLately:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		SUMN EEFFGG 2 A_VileChase;
 		SUMN GGFF 2 A_VileChase;
 		SUMN A 0 A_Jump(90, "Popcorn");
@@ -473,7 +470,6 @@ class MetaUnwilling : MonsterCore
 		UNWI AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		UNWI AABBCCDD 3 A_Chase;
 		Loop;
 	Melee:

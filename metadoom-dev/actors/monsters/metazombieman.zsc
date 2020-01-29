@@ -38,7 +38,6 @@ class MetaZombieMan : MonsterCore
 		POSS AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		POSS AABBCCDD 4 A_Chase;
 		Loop;
 	Scurred:
@@ -145,7 +144,6 @@ class MetaHellRazer : MonsterCore
 		HRAZ AB 10 A_Look;
 		Loop;
 	See:
-		"####" A 0 A_MetaBleed("FlyingBlood");
 		HRAZ AABBCCDD 4 A_Chase;
 		Loop;
 	Scurred:
