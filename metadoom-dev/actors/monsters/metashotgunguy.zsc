@@ -164,37 +164,11 @@ class MetaZSec : MonsterCore
 		ZSEC AB 10 A_Look;
 		Loop;
 	See:
-		ZSEC AABBCCDD 3 
-		{
-			A_CheckProximity ("Roll", "MetaBulletPuff", 128, 1, 0);
-			A_CheckProximity ("Roll", "HolyWaterShot", 128, 1, 0);
-			A_CheckProximity ("Roll", "MicroRocket", 128, 1, 0);
-			A_CheckProximity ("Roll", "PistolTracer", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaPlasmaBall", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaLauncherRocket", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaShotgunGrenade", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaBFGBall", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaBFGAltfire", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaDoomPlayer", 128, 1, 0);
-			A_Chase();
-		}
+		ZSEC AABBCCDD 3 A_Chase();
 		Loop;
 	Missile:
 		ZPOC E 0 A_Jump(128, "Roll");
-		ZSEC EEEEEEEEEE 1 
-		{
-			A_FaceTarget();
-			A_CheckProximity ("Roll", "MetaBulletPuff", 128, 1, 0);
-			A_CheckProximity ("Roll", "HolyWaterShot", 128, 1, 0);
-			A_CheckProximity ("Roll", "MicroRocket", 128, 1, 0);
-			A_CheckProximity ("Roll", "PistolTracer", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaPlasmaBall", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaLauncherRocket", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaShotgunGrenade", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaBFGBall", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaBFGAltfire", 128, 1, 0);
-			A_CheckProximity ("Roll", "MetaDoomPlayer", 128, 1, 0);
-		}
+		ZSEC E 10 A_FaceTarget();
 		ZSEC F 10 BRIGHT
 		{
 			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));

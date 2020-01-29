@@ -12,6 +12,8 @@ Monster Changes:
   don't actually effect them. The fools.
 - Imp Lords now try not to teleport into damaging sectors, even though they'll
   happily throw themselves off a ledge straight into one after teleporting. Idiots.
+- Removed code for Z-Sec to try and actively dodge if projectiles were coming
+  their way, because it was always broken and had never worked.
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
