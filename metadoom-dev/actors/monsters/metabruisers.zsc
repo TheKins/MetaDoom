@@ -71,8 +71,7 @@ class MetaBaronOfHell : MonsterCore
 			// Not perfect, but that probably makes it more realistic...
 			neckchecker = level.Vec2Offset (self.pos.xy, AngleToVector (self.angle, 200));
 			
-			if (level.IsPointInLevel((neckchecker.x, neckchecker.y, GetZAt(neckchecker.x, neckchecker.y)))
-			&& level.PointInSector(neckchecker).damageamount != 0)
+			if (level.PointInSector(neckchecker).damageamount != 0)
 			{
 				if (meta_developer)
 					Console.printf("Bruiser at %i x %i declined to swan-dive into nukage", self.pos.x, self.pos.y);
@@ -213,8 +212,7 @@ class MetaHellKnight : MonsterCore
 			// Not perfect, but that probably makes it more realistic...
 			neckchecker = level.Vec2Offset (self.pos.xy, AngleToVector (self.angle, 200));
 			
-			if (level.IsPointInLevel((neckchecker.x, neckchecker.y, GetZAt(neckchecker.x, neckchecker.y)))
-			&& level.PointInSector(neckchecker).damageamount != 0)
+			if (level.PointInSector(neckchecker).damageamount != 0)
 			{
 				if (meta_developer)
 					Console.printf("Bruiser at %i x %i declined to swan-dive into nukage", self.pos.x, self.pos.y);
