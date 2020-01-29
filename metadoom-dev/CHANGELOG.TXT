@@ -5,6 +5,8 @@ Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
+- Monster bleeding after getting hit by the Axe has been completely rewritten to
+  be much more uniform across all monsters.
 - Hell Knights and Barons of Hell now avoid doing their jump attack if they have
   reason to believe they'll land in a damage sector, even though such things
   don't actually effect them. The fools.
