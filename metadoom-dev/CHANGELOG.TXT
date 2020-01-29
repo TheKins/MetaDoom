@@ -9,7 +9,7 @@ Monster Changes:
   reason to believe they'll land in a damage sector, even though such things
   don't actually effect them. The fools.
 - Imp Lords now try not to teleport into damaging sectors, even though they'll
-  happily throw themselves off a ledge straight after teleporting. Idiots.
+  happily throw themselves off a ledge straight into one after teleporting. Idiots.
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
