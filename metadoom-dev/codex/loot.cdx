@@ -73,4 +73,12 @@ page "Other"
         origin "Black Crypt (1992)";
         description "Former long-time associates of Id Software from the Wisconsin days, Raven built a legion of quality games using Id's tech, including the Doom-powered Heretic and Hexen and even their own engine ''in-between'' Wolfenstein 3D and Doom for the adventure game ShadowCaster.\n\nIn the early 2010s, their experiments with the space-time continuum went horribly awry, and the survivors were forced to flee into the COD Mines in order to escape the carnage.\n\nMany believe they may still be down there, biding their time and regaining their strength... (Optimism is so cruel.)";
 	}
+	
+	entry "LoreDehackedDummy"
+    {
+		itemToCheck "MetaCodex_LoreDehacked"
+		name "DeHackEd";
+        origin "The Internet (1994)";
+        description "A tool used to hack the original DOS Doom executables, DeHackEd was a first brave step towards stepping out from vanilla gameplay towards new and exciting types of mod, including the invention of the ''Total Conversion'', whole new games crammed into the Doom engine's confines.\n\nWhile the release of the engine's source code has rendered its original reason du jour irrelevant, it lives on as a universal standard for mods that can be played on nearly every source port...\n\n...except EDGE, I think. And the new official Unity thing. Universal-ish standard, then.";
+	}
 }

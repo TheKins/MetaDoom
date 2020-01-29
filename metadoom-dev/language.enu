@@ -171,6 +171,7 @@ GOTLOOTHISSY = "Picked up an old plush toy!";
 GOTLOOTPUMPKIN = "Picked up a fragile pumpkin!";
 GOTLOOTCACOWARD = "Picked up a shiny trinket!";
 GOTLOOTRAVEN = "Picked up the Symbol of the Raven!";
+GOTLOOTDEHACKED = "Picked up an EXE Patcher!";
 
 // Weapons
 GOTPISTOL = "You got the EMG Sidearm!";
