@@ -64,8 +64,11 @@ class MonsterCore : Actor
 		painchance "DogCollar", 0;
 		bloodcolor "ff 00 00";
 	}
-		
+	
+	// Part of A_CheckLanding
 	double oldVel;
+	
+	// Part of the bleeding code
 	int bleedtimer;
 	actor bloodletter;
 	
@@ -326,7 +329,14 @@ class MonsterCore : Actor
 	{
 		oldVel = vel.z;
 		
-		// Handles bleeding from Axe wounds
+		DoBleeding();
+		
+		Super.Tick();
+	}
+	
+	// Handles bleeding from Axe wounds
+	void DoBleeding()
+	{
 		if (CountInv("BleedingCounter") > 0)
 		{
 			bleedtimer++;
@@ -346,8 +356,6 @@ class MonsterCore : Actor
 				bleedtimer = 0;
 			}
 		}
-		
-		Super.Tick();
 	}
 	
 	// When damaged by the Axe, note down the inflictor as the cause of the bleeding damage
