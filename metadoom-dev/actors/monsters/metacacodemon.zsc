@@ -40,31 +40,8 @@ class MetaCacodemon : MonsterCore
 		HEAD A 10 A_Look;
 		Loop;
 	See:
-		HEAD A 3 A_Chase;
+		HEAD A 3 A_MetaChase;
 		Loop;
-	Scurred:
-		HEAD A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		HEAD A 0 A_GiveInventory("ScurredCounter", 1);
-		HEAD A 2 A_Chase(null, null);
-		HEAD A 2 A_Chase(null, null);
-		HEAD E 0 A_SpawnItem("HolySweat",0,54);
-		HEAD E 2 A_Chase(null, null);
-		HEAD E 2 A_Chase(null, null);
-		HEAD F 2 A_Chase(null, null);
-		HEAD F 2 A_Chase(null, null);
-		HEAD F 0 A_SpawnItem("HolySweat",0,54);
-		HEAD E 2 A_Chase(null, null);
-		HEAD E 2 A_Chase(null, null);
-		HEAD E 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		HEAD D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		HEAD B 5 A_FaceTarget;
 		HEAD C 5 A_FaceTarget;
@@ -75,11 +52,6 @@ class MetaCacodemon : MonsterCore
 		HEAD E 3 A_Pain;
 		HEAD F 6;
 		Goto See;
-	Pain.HolyWater:
-		HEAD E 3;
-		HEAD E 3 A_Pain;
-		HEAD F 6;
-		Goto Scurred;
 	Death:
 		HEAD G 0 A_GiveToTarget("ScoreItem", 400);
 		HEAD G 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
@@ -325,31 +297,8 @@ class MetaMalwraith : MonsterCore
 				ThrustThingZ(0,2,0,0);
 			}
 		}
-		MALW AABBCCDD 3 A_Chase;
+		MALW AABBCCDD 3 A_MetaChase;
 		Loop;
-	Scurred:
-		MALW A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		MALW A 0 A_GiveInventory("ScurredCounter", 1);
-		MALW A 2 A_Chase(null, null);
-		MALW A 2 A_Chase(null, null);
-		MALW A 0 A_SpawnItem("HolySweat",0,72);
-		MALW B 2 A_Chase(null, null);
-		MALW B 2 A_Chase(null, null);
-		MALW C 2 A_Chase(null, null);
-		MALW C 2 A_Chase(null, null);
-		MALW C 0 A_SpawnItem("HolySweat",0,72);
-		MALW D 2 A_Chase(null, null);
-		MALW D 2 A_Chase(null, null);
-		MALW D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		MALW D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		MALW E 5 A_FaceTarget;
 		MALW F 5 A_FaceTarget;
@@ -367,11 +316,6 @@ class MetaMalwraith : MonsterCore
 		MALW H 3 A_Pain;
 		MALW E 6;
 		Goto See;
-	Pain.HolyWater:
-		MALW E 3;
-		MALW H 3 A_Pain;
-		MALW E 6;
-		Goto Scurred;
 	Death:
 		MALW H 0 A_GiveToTarget("ScoreItem", 500);
 		MALW H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
@@ -600,31 +544,8 @@ class MetaWretched : MonsterCore
 				ThrustThingZ(0,2,0,0);
 			}
 		}
-		WRET AACCBBDD 3 A_Chase;
+		WRET AACCBBDD 3 A_MetaChase;
 		Loop;
-	Scurred:
-		WRET A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		WRET A 0 A_GiveInventory("ScurredCounter", 1);
-		WRET A 2 A_Chase(null, null);
-		WRET A 2 A_Chase(null, null);
-		WRET A 0 A_SpawnItem("HolySweat",0,72);
-		WRET C 2 A_Chase(null, null);
-		WRET C 2 A_Chase(null, null);
-		WRET B 2 A_Chase(null, null);
-		WRET B 2 A_Chase(null, null);
-		WRET C 0 A_SpawnItem("HolySweat",0,72);
-		WRET D 2 A_Chase(null, null);
-		WRET D 2 A_Chase(null, null);
-		WRET D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		WRET D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		WRET A 0 A_Jump(64, "MissileTongue");
 		WRET E 5;
@@ -650,10 +571,6 @@ class MetaWretched : MonsterCore
 		WRET K 3;
 		WRET K 6 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		WRET K 3;
-		WRET K 6 A_Pain;
-		Goto Scurred;
 	Death:
 		WRET L 0 A_GiveToTarget("ScoreItem", 500);
 		WRET L 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
@@ -661,7 +578,6 @@ class MetaWretched : MonsterCore
 		WRET L 6 { bFLOATBOB = 0; }
 		WRET M 6 A_Scream;
 		WRET N 6;
-		//WRET O 6;
 		WRET OOOOOO 1 A_CheckSolidFooting("DeathLandSilent");
 		WRET O 1 A_CheckSolidFooting("DeathLand");
 		wait;

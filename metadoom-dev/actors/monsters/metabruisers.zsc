@@ -36,6 +36,7 @@ class MetaBaronOfHell : MonsterCore
 		Decal "greenbloodsplat";
 		damagefactor "BaronSpike", 0;
 		painchance "BaronSpike", 0;
+		MonsterCore.CanBeScared false;
 	}
 	
 	vector2 neckchecker;
@@ -177,6 +178,7 @@ class MetaHellKnight : MonsterCore
 		DeathSound "monsters/hellknight/die";
 		HitObituary "$OB_KNIGHTHIT";
 		Obituary "$OB_KNIGHT";
+		MonsterCore.CanBeScared false;
 	}
 	
 	vector2 neckchecker;

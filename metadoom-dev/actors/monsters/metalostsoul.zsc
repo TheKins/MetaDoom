@@ -30,6 +30,7 @@ class MetaLostSoul : MonsterCore
 		bloodtype "LostSoulGib1";
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
+		MonsterCore.CanBeScared false;
 	}
 	
 	int firetimer;
@@ -307,6 +308,7 @@ class MetaPhantom : MonsterCore
 		bloodtype "MetaGibBarrel";
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
+		MonsterCore.CanBeScared false;
 	}
 	
 	int firetimer;
@@ -483,8 +485,8 @@ class MetaPhantomExplosion : Actor
 	}
 }
 
-// D3-style Lost Soul for the Beholder (see painelemental.dec). Boring and not
-// really worth discussing, more or a nuisance than anything.
+// D3-style Lost Soul for the Beholder (see metapainelemental.zsc). Boring and
+// not really worth discussing, more or a nuisance than anything.
 
 class MetaForgottenOne : MonsterCore
 {
@@ -505,6 +507,7 @@ class MetaForgottenOne : MonsterCore
 		bloodtype "LostSoulGib1";
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
+		MonsterCore.CanBeScared false;
 	}
 	
 	int firetimer;

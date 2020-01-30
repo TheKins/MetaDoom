@@ -66,9 +66,9 @@ class MetaTrite : MonsterCore
 		Loop;
 	See:
 		TRIT A 3 Fast A_TriteChaseDecide;
-		TRIT B 3 Fast A_Chase("Melee",null);
+		TRIT B 3 Fast A_MetaChase("Melee",null);
 		TRIT C 3 Fast A_TriteWalk;
-		TRIT D 3 Fast A_Chase("Melee",null);
+		TRIT D 3 Fast A_MetaChase("Melee",null);
 		Loop;
 	Melee:
 		TRIT A 3 Slow A_FaceTarget;
@@ -76,9 +76,9 @@ class MetaTrite : MonsterCore
 		goto SeeFloor;
 	SeeFloor:
 		TRIT A 3 Fast A_TriteWalk;
-		TRIT B 3 Fast A_Chase("Melee","JumpUp");
+		TRIT B 3 Fast A_MetaChase("Melee","JumpUp");
 		TRIT C 3 Fast A_TriteWalk;
-		TRIT D 3 Fast A_Chase("Melee","JumpUp");
+		TRIT D 3 Fast A_MetaChase("Melee","JumpUp");
 		Loop;
 	JumpUp:
 		TRIT A 0 A_JumpIf((ceilingz - floorz) > 100, "SeeFloor");
@@ -197,7 +197,7 @@ class MetaTrite : MonsterCore
 	void A_TriteWalk ()
 	{
 		A_PlaySound ("monsters/trite/walk", CHAN_BODY);
-		A_Chase ();
+		A_MetaChase ();
 	}
 
 	

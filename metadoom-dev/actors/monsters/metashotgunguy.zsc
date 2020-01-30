@@ -40,7 +40,7 @@ class MetaShotgunGuy : MonsterCore
 		SPOS AB 10 A_Look;
 		Loop;
 	See:
-		SPOS AABBCCDD 3 A_Chase;
+		SPOS AABBCCDD 3 A_MetaChase;
 		Loop;
 	Missile:
 		SPOS E 10 A_FaceTarget;
@@ -56,49 +56,14 @@ class MetaShotgunGuy : MonsterCore
 		Goto See;
 	Pain:
 		SPOS G 0;
-		SPOS G 3 
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		SPOS G 3 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		SPOS G 3;
 		SPOS G 3 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		SPOS G 3;
-		SPOS G 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		SPOS G 3;
 		SPOS G 12 A_Pain;
 		Goto See;
-	Scurred:
-		SPOS A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		SPOS A 0 A_GiveInventory("ScurredCounter", 1);
-		SPOS A 2 A_Chase(null, null);
-		SPOS A 2 A_Chase(null, null);
-		SPOS A 0 A_SpawnItem("HolySweat",0,54);
-		SPOS B 2 A_Chase(null, null);
-		SPOS B 2 A_Chase(null, null);
-		SPOS C 2 A_Chase(null, null);
-		SPOS C 2 A_Chase(null, null);
-		SPOS C 0 A_SpawnItem("HolySweat",0,54);
-		SPOS D 2 A_Chase(null, null);
-		SPOS D 2 A_Chase(null, null);
-		SPOS D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		SPOS D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		SPOS H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -164,7 +129,7 @@ class MetaZSec : MonsterCore
 		ZSEC AB 10 A_Look;
 		Loop;
 	See:
-		ZSEC AABBCCDD 3 A_Chase();
+		ZSEC AABBCCDD 3 A_MetaChase();
 		Loop;
 	Missile:
 		ZPOC E 0 A_Jump(128, "Roll");
@@ -208,18 +173,9 @@ class MetaZSec : MonsterCore
 		Goto See;
 	Pain:
 		ZSEC G 0;
-		ZSEC G 3
-		{
-			A_SetRoll(0);
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		ZSEC G 3 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		ZSEC G 3 A_SetRoll(0);
 		ZSEC G 3 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		ZSEC G 3 A_SetRoll(0);
 		ZSEC G 3
@@ -229,29 +185,6 @@ class MetaZSec : MonsterCore
 		}
 		ZSEC G 12 A_Pain;
 		Goto Roll;
-	Scurred:
-		ZSEC A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		ZSEC A 0 A_GiveInventory("ScurredCounter", 1);
-		ZSEC A 2 A_Chase(null, null);
-		ZSEC A 2 A_Chase(null, null);
-		ZSEC A 0 A_SpawnItem("HolySweat",0,54);
-		ZSEC B 2 A_Chase(null, null);
-		ZSEC B 2 A_Chase(null, null);
-		ZSEC C 2 A_Chase(null, null);
-		ZSEC C 2 A_Chase(null, null);
-		ZSEC C 0 A_SpawnItem("HolySweat",0,54);
-		ZSEC D 2 A_Chase(null, null);
-		ZSEC D 2 A_Chase(null, null);
-		ZSEC D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		ZSEC D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		ZSEC H 0 A_SetRoll(0);
 		ZSEC H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping

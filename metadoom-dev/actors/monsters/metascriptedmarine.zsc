@@ -28,6 +28,7 @@ class MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 		DeathSound "*death";
 		PainSound "*pain50";
 		Obituary "$OB_MARINE";
+		MonsterCore.CanBeScared false;
 	}
 
 	States

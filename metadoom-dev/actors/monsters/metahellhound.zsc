@@ -40,14 +40,14 @@ class MetaHellhound : MonsterCore
 		HDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" AA 1 A_Chase("Melee", null);
-		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
-		"####" BB 1 A_Chase("Melee", null);
-		"####" BB 1 A_Chase("Melee", null, CHF_DONTTURN);
-		"####" CC 1 A_Chase("Melee", null);
-		"####" CC 1 A_Chase("Melee", null, CHF_DONTTURN);
-		"####" DD 1 A_Chase("Melee", null);
-		"####" DD 1 A_Chase("Melee", null, CHF_DONTTURN);
+		"####" AA 1 A_MetaChase("Melee", null);
+		"####" AA 1 A_MetaChase("Melee", null, CHF_DONTTURN);
+		"####" BB 1 A_MetaChase("Melee", null);
+		"####" BB 1 A_MetaChase("Melee", null, CHF_DONTTURN);
+		"####" CC 1 A_MetaChase("Melee", null);
+		"####" CC 1 A_MetaChase("Melee", null, CHF_DONTTURN);
+		"####" DD 1 A_MetaChase("Melee", null);
+		"####" DD 1 A_MetaChase("Melee", null, CHF_DONTTURN);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
@@ -56,17 +56,9 @@ class MetaHellhound : MonsterCore
 		Goto See;
 	Pain:
 		"####" H 0;
-		"####" H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		"####" H 2 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		"####" H 2;
 		"####" H 2 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		"####" H 3;
 		"####" H 3
@@ -76,29 +68,6 @@ class MetaHellhound : MonsterCore
 		}
 		"####" H 12 A_Pain;
 		Goto See;
-	Scurred:
-		"####" A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		"####" A 0 Fast A_GiveInventory("ScurredCounter", 1);
-		"####" A 2 Fast A_Chase(null, null);
-		"####" A 2 Fast A_Chase(null, null);
-		"####" A 0 Fast A_SpawnItem("HolySweat",0,54);
-		"####" B 2 Fast A_Chase(null, null);
-		"####" B 2 Fast A_Chase(null, null);
-		"####" C 2 Fast A_Chase(null, null);
-		"####" C 2 Fast A_Chase(null, null);
-		"####" C 0 Fast A_SpawnItem("HolySweat",0,54);
-		"####" D 2 Fast A_Chase(null, null);
-		"####" D 2 Fast A_Chase(null, null);
-		"####" D 0 Fast A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		"####" D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		"####" H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		"####" H 0 A_SpawnItem("SoulSpawner");
@@ -168,14 +137,14 @@ class MetaDemonDog : MetaHellhound
 		DDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" AA 1 A_Chase("Melee", null);
-		"####" AA 1 A_Chase("Melee", null, CHF_DONTTURN);
-		"####" BB 1 A_Chase("Melee", null);
-		"####" BB 1 A_Chase("Melee", null, CHF_DONTTURN);
-		"####" CC 1 A_Chase("Melee", null, CHF_FASTCHASE);
-		"####" CC 1 A_Chase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
-		"####" DD 1 A_Chase("Melee", null, CHF_FASTCHASE);
-		"####" DD 1 A_Chase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
+		"####" AA 1 A_MetaChase("Melee", null);
+		"####" AA 1 A_MetaChase("Melee", null, CHF_DONTTURN);
+		"####" BB 1 A_MetaChase("Melee", null);
+		"####" BB 1 A_MetaChase("Melee", null, CHF_DONTTURN);
+		"####" CC 1 A_MetaChase("Melee", null, CHF_FASTCHASE);
+		"####" CC 1 A_MetaChase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
+		"####" DD 1 A_MetaChase("Melee", null, CHF_FASTCHASE);
+		"####" DD 1 A_MetaChase("Melee", null, CHF_DONTTURN|CHF_FASTCHASE);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
@@ -184,17 +153,9 @@ class MetaDemonDog : MetaHellhound
 		Goto See;
 	Pain:
 		"####" H 0;
-		"####" H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		"####" H 2 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		"####" H 2;
 		"####" H 2 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		"####" H 3;
 		"####" H 3
@@ -269,14 +230,14 @@ class MetaCerberus : MetaHellhound
 		CDOG AB 10 A_Look;
 		Loop;
 	See:
-		"####" AA 1 A_Chase("Melee", "Missile");
-		"####" AA 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
-		"####" BB 1 A_Chase("Melee", "Missile");
-		"####" BB 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
-		"####" CC 1 A_Chase("Melee", "Missile");
-		"####" CC 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
-		"####" DD 1 A_Chase("Melee", "Missile");
-		"####" DD 1 A_Chase("Melee", "Missile", CHF_DONTTURN);
+		"####" AA 1 A_MetaChase("Melee", "Missile");
+		"####" AA 1 A_MetaChase("Melee", "Missile", CHF_DONTTURN);
+		"####" BB 1 A_MetaChase("Melee", "Missile");
+		"####" BB 1 A_MetaChase("Melee", "Missile", CHF_DONTTURN);
+		"####" CC 1 A_MetaChase("Melee", "Missile");
+		"####" CC 1 A_MetaChase("Melee", "Missile", CHF_DONTTURN);
+		"####" DD 1 A_MetaChase("Melee", "Missile");
+		"####" DD 1 A_MetaChase("Melee", "Missile", CHF_DONTTURN);
 		Loop;
 	Melee:
 		"####" EF 2 A_FaceTarget;
@@ -306,24 +267,11 @@ class MetaCerberus : MetaHellhound
 		goto See;
 	Pain:
 		"####" H 0;
-		"####" H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		"####" H 2 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		"####" H 2;
 		"####" H 2 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		"####" H 3;
-		"####" H 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		"####" H 12 A_Pain;
 		Goto See;
 	Death:

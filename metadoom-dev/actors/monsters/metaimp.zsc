@@ -35,7 +35,7 @@ class MetaDoomImp : MonsterCore
 		TROO AB 10 A_Look;
 		Loop;
 	See:
-		TROO AABBCCDD 3 A_Chase;
+		TROO AABBCCDD 3 A_MetaChase;
 		Loop;
 	Melee:
 	Missile:
@@ -44,17 +44,9 @@ class MetaDoomImp : MonsterCore
 		Goto See;
 	Pain:
 		TROO H 0;
-		TROO H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		TROO H 2;
 		TROO H 2 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		TROO G 3;
-		TROO G 3 A_Pain;
-		Goto Scurred;
 	Punched:
 		TROO G 3;
 		TROO G 3
@@ -64,29 +56,6 @@ class MetaDoomImp : MonsterCore
 		}
 		TROO G 12 A_Pain;
 		Goto See;
-	Scurred:
-		TROO A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		TROO A 0 A_GiveInventory("ScurredCounter", 1);
-		TROO A 2 A_Chase(null, null);
-		TROO A 2 A_Chase(null, null);
-		TROO A 0 A_SpawnItem("HolySweat",0,54);
-		TROO B 2 A_Chase(null, null);
-		TROO B 2 A_Chase(null, null);
-		TROO C 2 A_Chase(null, null);
-		TROO C 2 A_Chase(null, null);
-		TROO C 0 A_SpawnItem("HolySweat",0,54);
-		TROO D 2 A_Chase(null, null);
-		TROO D 2 A_Chase(null, null);
-		TROO D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		TROO D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		TROO I 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -206,7 +175,7 @@ class MetaNightmareImp : MonsterCore
 		2ROO AB 10 A_Look;
 		Loop;
 	See:
-		2ROO AABBCCDD 3 A_Chase;
+		2ROO AABBCCDD 3 A_MetaChase;
 		Loop;
 	Melee:
 		2ROO EF 8 A_FaceTarget;
@@ -218,40 +187,9 @@ class MetaNightmareImp : MonsterCore
 		Goto See;
 	Pain:
 		2ROO H 0;
-		2ROO H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		2ROO H 2;
 		2ROO H 2 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		2ROO G 3;
-		2ROO G 3 A_Pain;
-		Goto Scurred;
-	Scurred:
-		2ROO A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		2ROO A 0 A_GiveInventory("ScurredCounter", 1);
-		2ROO A 2 A_Chase(null, null);
-		2ROO A 2 A_Chase(null, null);
-		2ROO A 0 A_SpawnItem("HolySweat",0,54);
-		2ROO B 2 A_Chase(null, null);
-		2ROO B 2 A_Chase(null, null);
-		2ROO C 2 A_Chase(null, null);
-		2ROO C 2 A_Chase(null, null);
-		2ROO C 0 A_SpawnItem("HolySweat",0,54);
-		2ROO D 2 A_Chase(null, null);
-		2ROO D 2 A_Chase(null, null);
-		2ROO D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		2ROO D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		2ROO L 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		2ROO L 8 A_GiveToTarget("ScoreItem", 250);
@@ -344,7 +282,7 @@ class MetaDoomImpLord : MonsterCore
 		ROAC AA 10 A_Look;
 		Loop;
 	See:
-		ROAC BBCCDDEE 2 A_Chase;
+		ROAC BBCCDDEE 2 A_MetaChase;
 		ROAC A 0 A_Jump(32, "TeleStart");
 		Loop;
 	Melee:
@@ -464,10 +402,6 @@ class MetaDoomImpLord : MonsterCore
 		}
 		ROAC H 2 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		ROAC H 3;
-		ROAC H 3 A_Pain;
-		Goto Scurred;
 	Punched:
 		ROAC H 3;
 		ROAC H 3
@@ -477,29 +411,6 @@ class MetaDoomImpLord : MonsterCore
 		}
 		ROAC H 12 A_Pain;
 		Goto See;
-	Scurred:
-		ROAC A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		ROAC E 0 A_GiveInventory("ScurredCounter", 1);
-		ROAC E 2 A_Chase(null, null);
-		ROAC E 2 A_Chase(null, null);
-		ROAC B 0 A_SpawnItem("HolySweat",0,54);
-		ROAC B 2 A_Chase(null, null);
-		ROAC B 2 A_Chase(null, null);
-		ROAC C 2 A_Chase(null, null);
-		ROAC C 2 A_Chase(null, null);
-		ROAC C 0 A_SpawnItem("HolySweat",0,54);
-		ROAC D 2 A_Chase(null, null);
-		ROAC D 2 A_Chase(null, null);
-		ROAC D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		ROAC E 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		ROAC I 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");

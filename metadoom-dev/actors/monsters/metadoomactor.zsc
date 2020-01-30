@@ -63,6 +63,7 @@ class MonsterCore : Actor
 		damagefactor "LightningStun", 0.1;
 		painchance "DogCollar", 0;
 		bloodcolor "ff 00 00";
+		MonsterCore.CanBeScared true;
 	}
 	
 	// Part of A_CheckLanding
@@ -72,8 +73,26 @@ class MonsterCore : Actor
 	int bleedtimer;
 	actor bloodletter;
 	
+	// Part of the Water Pistol code
+	int scurredamount;
+	int scurredtimer;
+	bool CanBeScared;
+	property CanBeScared: CanBeScared;
+	
 	States
 	{
+	// Holy Water Pistol
+	Pain.HolyWater:
+		"####" # 0
+		{
+			if (CanBeScared == true)
+			{
+				scurredamount = 7;
+				scurredtimer = 0;
+			}
+		}
+		"####" # 0 A_Jump(256,"Pain");
+		stop;
 	// Siphon Grenade
 	Pain.Vampire:
 		"####" # 0 A_GiveToTarget ("Health", 1);
@@ -329,9 +348,36 @@ class MonsterCore : Actor
 	{
 		oldVel = vel.z;
 		
-		DoBleeding();
+		if (health > 0)
+		{
+			DoBleeding();
+			DoSpooked();
+		}
 		
 		Super.Tick();
+	}
+	
+	// Handle scarediness
+	void A_MetaChase(statelabel melee = '_a_chase_default', statelabel missile = '_a_chase_default', int flags = 0)
+	{
+		if (scurredamount > 0)
+		{
+			A_Chase(null, null);
+			scurredtimer++;
+		} else {
+			A_Chase(melee,missile,flags);
+		}
+	}
+	
+	void A_MetaVileChase()
+	{
+		if (scurredamount > 0)
+		{
+			A_Chase(null, null);
+			scurredtimer++;
+		} else {
+			A_VileChase();
+		}
 	}
 	
 	// Handles bleeding from Axe wounds
@@ -358,9 +404,37 @@ class MonsterCore : Actor
 		}
 	}
 	
+	// Handles getting your ass spooked
+	void DoSpooked()
+	{
+		if (CanBeScared == false)
+		{
+			scurredamount = 0;
+			scurredtimer = 0;
+		}
+		
+		if (scurredtimer > 4)
+		{
+			scurredamount--;
+			scurredtimer = 0;
+			A_SpawnItem("HolySweat",0,height-2);
+		}
+		
+		if (scurredamount > 0)
+		{
+			bFRIGHTENED = 1;
+		} else {
+			bFRIGHTENED = 0;
+		}
+	}
+	
 	// When damaged by the Axe, note down the inflictor as the cause of the bleeding damage
 	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
 	{
+		// De-scare damaged monsters
+		scurredamount = 0;
+		scurredtimer = 0;
+		
 		if (mod == "Axe")
 		{
 			bloodletter = inflictor;

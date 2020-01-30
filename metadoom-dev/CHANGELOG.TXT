@@ -7,6 +7,9 @@ Monster Changes:
 - Added # unique boss monsters!
 - Monster bleeding after getting hit by the Axe has been completely rewritten to
   be much more uniform across all monsters.
+- Monster scarediness after getting hit by Holy Water has been completely
+  rewritten to be much more uniform (and much less copy-pasty) across all monsters.
+- Arachnotrons and Mancubi are now scared by Holy Water.
 - Hell Knights and Barons of Hell now avoid doing their jump attack if they have
   reason to believe they'll land in a damage sector, even though such things
   don't actually effect them. The fools.

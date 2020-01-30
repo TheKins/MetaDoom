@@ -44,6 +44,7 @@ class MetaCyberdemon : MonsterCore
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
 		scale 0.75;
+		MonsterCore.CanBeScared false;
 	}
 	
 	States

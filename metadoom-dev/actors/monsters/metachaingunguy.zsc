@@ -40,7 +40,7 @@ class MetaMachineGunGuy : MonsterCore
 		MPOS AB 10 A_Look;
 		Loop;
 	See:
-		MPOS AABBCCDD 3 A_Chase;
+		MPOS AABBCCDD 3 A_MetaChase;
 		Loop;
 	Missile:
 		MPOS E 10 A_FaceTarget;
@@ -53,49 +53,13 @@ class MetaMachineGunGuy : MonsterCore
 		Goto Missile+1;
 	Pain:
 		MPOS G 0;
-		MPOS G 3
-		{
-			{ bFRIGHTENED = 0; }
-			A_TakeInventory("ScurredCounter",999);
-		}
-		MPOS G 3 A_Pain;
-		Goto See;
-	Pain.HolyWater:
 		MPOS G 3;
 		MPOS G 3 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		MPOS G 3;
-		MPOS G 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		MPOS G 12 A_Pain;
 		Goto See;
-	Scurred:
-		MPOS A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		MPOS A 0 A_GiveInventory("ScurredCounter", 1);
-		MPOS A 2 A_Chase(null, null);
-		MPOS A 2 A_Chase(null, null);
-		MPOS A 0 A_SpawnItem("HolySweat",0,54);
-		MPOS B 2 A_Chase(null, null);
-		MPOS B 2 A_Chase(null, null);
-		MPOS C 2 A_Chase(null, null);
-		MPOS C 2 A_Chase(null, null);
-		MPOS C 0 A_SpawnItem("HolySweat",0,54);
-		MPOS D 2 A_Chase(null, null);
-		MPOS D 2 A_Chase(null, null);
-		MPOS D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		MPOS D 0
-		{
-			{ bFRIGHTENED = 0; }
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		MPOS H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -152,7 +116,7 @@ class MetaChainGunGuy : MonsterCore
 		CPOS AB 10 A_Look;
 		Loop;
 	See:
-		CPOS AABBCCDD 3 A_Chase;
+		CPOS AABBCCDD 3 A_MetaChase;
 		Loop;
 	Missile:
 		CPOS E 0 A_PlaySound("weapons/chaingun/windup", CHAN_WEAPON);
@@ -171,19 +135,9 @@ class MetaChainGunGuy : MonsterCore
 	Pain:
 		CPOS G 0;
 		CPOS G 0 A_StopSound(CHAN_WEAPON);
-		CPOS G 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		CPOS G 3 A_Pain;
-		Goto See;
-	Pain.HolyWater:
-		CPOS G 0;
-		CPOS G 0 A_StopSound(CHAN_WEAPON);
 		CPOS G 3;
 		CPOS G 3 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		CPOS G 3;
 		CPOS G 3
@@ -193,29 +147,6 @@ class MetaChainGunGuy : MonsterCore
 		}
 		CPOS G 12 A_Pain;
 		Goto See;
-	Scurred:
-		CPOS A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		CPOS A 0 A_GiveInventory("ScurredCounter", 1);
-		CPOS A 2 A_Chase(null, null);
-		CPOS A 2 A_Chase(null, null);
-		CPOS A 0 A_SpawnItem("HolySweat",0,54);
-		CPOS B 2 A_Chase(null, null);
-		CPOS B 2 A_Chase(null, null);
-		CPOS C 2 A_Chase(null, null);
-		CPOS C 2 A_Chase(null, null);
-		CPOS C 0 A_SpawnItem("HolySweat",0,54);
-		CPOS D 2 A_Chase(null, null);
-		CPOS D 2 A_Chase(null, null);
-		CPOS D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		CPOS D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		CPOS H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -274,7 +205,7 @@ class MetaAssassinGuy : MonsterCore
 		PSCM AB 10 A_Look;
 		Loop;
 	See:
-		PSCM AABBCCDD 3 A_Chase;
+		PSCM AABBCCDD 3 A_MetaChase;
 		Loop;
 	Missile:
 		PSCM E 0 A_Jump(64, "MissileTentacle");
@@ -300,19 +231,9 @@ class MetaAssassinGuy : MonsterCore
 	Pain:
 		PSCM H 0;
 		PSCM H 0 A_StopSound(CHAN_WEAPON);
-		PSCM H 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		PSCM H 3 A_Pain;
-		Goto See;
-	Pain.HolyWater:
-		PSCM H 0;
-		PSCM H 0 A_StopSound(CHAN_WEAPON);
 		PSCM H 3;
 		PSCM H 3 A_Pain;
-		Goto Scurred;
+		Goto See;
 	Punched:
 		PSCM H 3;
 		PSCM H 3
@@ -322,29 +243,6 @@ class MetaAssassinGuy : MonsterCore
 		}
 		PSCM H 12 A_Pain;
 		Goto See;
-	Scurred:
-		PSCM A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		PSCM A 0 A_GiveInventory("ScurredCounter", 1);
-		PSCM A 2 A_Chase(null, null);
-		PSCM A 2 A_Chase(null, null);
-		PSCM A 0 A_SpawnItem("HolySweat",0,54);
-		PSCM B 2 A_Chase(null, null);
-		PSCM B 2 A_Chase(null, null);
-		PSCM C 2 A_Chase(null, null);
-		PSCM C 2 A_Chase(null, null);
-		PSCM C 0 A_SpawnItem("HolySweat",0,54);
-		PSCM D 2 A_Chase(null, null);
-		PSCM D 2 A_Chase(null, null);
-		PSCM D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		PSCM D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		PSCM H 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		TNT1 A 0 A_SpawnItem("SoulSpawner");

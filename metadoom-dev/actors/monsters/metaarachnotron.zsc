@@ -36,10 +36,10 @@ class MetaArachnotron : MonsterCore
 		Loop;
 	See:
 		BSPI A 20;
-		BSPI A 3 { A_Chase(); A_PlaySound("monsters/arachnotron/walk"); }
-		BSPI ABBCC 3 A_Chase;
-		BSPI D 3 { A_Chase(); A_PlaySound("monsters/arachnotron/walk"); }
-		BSPI DEEFF 3 A_Chase;
+		BSPI A 3 { A_MetaChase(); A_PlaySound("monsters/arachnotron/walk"); }
+		BSPI ABBCC 3 A_MetaChase;
+		BSPI D 3 { A_MetaChase(); A_PlaySound("monsters/arachnotron/walk"); }
+		BSPI DEEFF 3 A_MetaChase;
 		Goto See+1;
 	Missile:
 		BSPI A 20 BRIGHT A_FaceTarget;
@@ -133,10 +133,10 @@ class MetaSpiborg : MonsterCore
 		Loop;
 	See:
 		2SPI A 10;
-		2SPI A 3 { A_Chase(); A_PlaySound("monsters/spiborg/walk"); }
-		2SPI ABB 3 A_Chase;
-		2SPI C 3 { A_Chase(); A_PlaySound("monsters/spiborg/walk"); }
-		2SPI CDD 3 A_Chase;
+		2SPI A 3 { A_MetaChase(); A_PlaySound("monsters/spiborg/walk"); }
+		2SPI ABB 3 A_MetaChase;
+		2SPI C 3 { A_MetaChase(); A_PlaySound("monsters/spiborg/walk"); }
+		2SPI CDD 3 A_MetaChase;
 		Goto See+1;
 	Missile:
 		2SPI AAAA 1 BRIGHT

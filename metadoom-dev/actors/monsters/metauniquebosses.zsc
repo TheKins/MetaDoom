@@ -36,6 +36,7 @@ class MetaMotherDemon : MonsterCore
 		painchance "ChaingunTurret", 0;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		MonsterCore.CanBeScared false;
 	}
 	
 	States
@@ -268,6 +269,7 @@ class MetaHellGuard : MonsterCore
 		painchance "ChaingunTurret", 0;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		MonsterCore.CanBeScared false;
 	}
 	
 	States

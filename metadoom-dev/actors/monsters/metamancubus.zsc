@@ -35,7 +35,7 @@ class MetaMancubus : MonsterCore
 		FATT AB 15 A_Look;
 		Loop;
 	See:
-		FATT AABBCCDDEEFF 4 A_Chase;
+		FATT AABBCCDDEEFF 4 A_MetaChase;
 		Loop;
 	Missile:
 		FATT G 20 { A_FaceTarget(); A_PlaySound("monsters/mancubus/attack"); }
@@ -140,7 +140,7 @@ class MetaBehemoth : MonsterCore
 		2FAT AB 15 A_Look;
 		Loop;
 	See:
-		2FAT AABBCCDDEEFF 4 A_Chase;
+		2FAT AABBCCDDEEFF 4 A_MetaChase;
 		Loop;
 	Missile:
 		2FAT H 20 { A_FaceTarget(); A_PlaySound("monsters/behemoth/attack"); }
@@ -347,7 +347,7 @@ class MetaCyberManc : MonsterCore
 		CFAT G 15 A_Look;
 		Loop;
 	See:
-		CFAT AABBCCDDEEFF 4 A_Chase;
+		CFAT AABBCCDDEEFF 4 A_MetaChase;
 		Loop;
 	Missile:
 		CFAT G 20 { A_FaceTarget(); A_PlaySound("monsters/cybermanc/attack"); }

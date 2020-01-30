@@ -30,6 +30,7 @@ class MetaRevenant : MonsterCore
 		HitObituary "$OB_UNDEADHIT";
 		Obituary "$OB_UNDEAD";
 		Species "Revenant";
+		MonsterCore.CanBeScared false;
 	}
 
 	States
@@ -179,6 +180,7 @@ class MetaFiend : MonsterCore
 		HitObituary "$OB_FIENDHIT";
 		Obituary "$OB_FIEND";
 		Species "Revenant";
+		MonsterCore.CanBeScared false;
 	}
 
 	States

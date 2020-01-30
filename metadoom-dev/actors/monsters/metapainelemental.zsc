@@ -36,31 +36,8 @@ class MetaPainElemental : MonsterCore
 		PAIN A 10 A_Look;
 		Loop;
 	See:
-		PAIN AABBCC 3 A_Chase;
+		PAIN AABBCC 3 A_MetaChase;
 		Loop;
-	Scurred:
-		PAIN A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		PAIN A 0 A_GiveInventory("ScurredCounter", 1);
-		PAIN A 2 A_Chase(null, null);
-		PAIN A 2 A_Chase(null, null);
-		PAIN A 0 A_SpawnItem("HolySweat",0,54);
-		PAIN B 2 A_Chase(null, null);
-		PAIN B 2 A_Chase(null, null);
-		PAIN C 2 A_Chase(null, null);
-		PAIN C 2 A_Chase(null, null);
-		PAIN C 0 A_SpawnItem("HolySweat",0,54);
-		PAIN B 2 A_Chase(null, null);
-		PAIN B 2 A_Chase(null, null);
-		PAIN B 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		POSS D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		PAIN D 5 A_FaceTarget;
 		PAIN E 5 A_FaceTarget;
@@ -78,10 +55,6 @@ class MetaPainElemental : MonsterCore
 		PAIN G 6;
 		PAIN G 6 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		PAIN G 3;
-		PAIN G 3 A_Pain;
-		Goto Scurred;
 	Death:
 		PAIN H 0 A_GiveToTarget("ScoreItem", 500);
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -127,32 +100,9 @@ class MetaBeholder : MonsterCore
 		BEHO A 10 A_Look;
 		Loop;
 	See:
-		BEHO AAAAAAAA 3 A_Chase;
-		BEHO AAAAAAAA 3 A_Chase("Melee", null);
+		BEHO AAAAAAAA 3 A_MetaChase;
+		BEHO AAAAAAAA 3 A_MetaChase("Melee", null);
 		Loop;
-	Scurred:
-		BEHO A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		BEHO A 0 A_GiveInventory("ScurredCounter", 1);
-		BEHO A 2 A_Chase(null, null);
-		BEHO A 2 A_Chase(null, null);
-		BEHO E 0 A_SpawnItem("HolySweat",0,54);
-		BEHO E 2 A_Chase(null, null);
-		BEHO E 2 A_Chase(null, null);
-		BEHO A 2 A_Chase(null, null);
-		BEHO A 2 A_Chase(null, null);
-		BEHO A 0 A_SpawnItem("HolySweat",0,54);
-		BEHO E 2 A_Chase(null, null);
-		BEHO E 2 A_Chase(null, null);
-		BEHO E 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		BEHO D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		BEHO B 0 A_PlaySound("monsters/beholder/fire");
 		BEHO B 5 A_FaceTarget;
@@ -186,11 +136,6 @@ class MetaBeholder : MonsterCore
 		BEHO E 3 A_Pain;
 		BEHO E 6;
 		Goto See;
-	Pain.HolyWater:
-		BEHO E 3;
-		BEHO E 3 A_Pain;
-		BEHO E 6;
-		Goto Scurred;
 	Death:
 		BEHO G 0 A_GiveToTarget("ScoreItem", 500);
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
@@ -232,31 +177,8 @@ class MetaRahovart : MonsterCore
 		RAHO A 10 A_Look;
 		Loop;
 	See:
-		RAHO AAAAAAAA 3 A_Chase;
+		RAHO AAAAAAAA 3 A_MetaChase;
 		Loop;
-	Scurred:
-		RAHO A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		RAHO A 0 A_GiveInventory("ScurredCounter", 1);
-		RAHO A 2 A_Chase(null, null);
-		RAHO A 2 A_Chase(null, null);
-		RAHO D 0 A_SpawnItem("HolySweat",0,54);
-		RAHO D 2 A_Chase(null, null);
-		RAHO D 2 A_Chase(null, null);
-		RAHO A 2 A_Chase(null, null);
-		RAHO A 2 A_Chase(null, null);
-		RAHO A 0 A_SpawnItem("HolySweat",0,54);
-		RAHO D 2 A_Chase(null, null);
-		RAHO D 2 A_Chase(null, null);
-		RAHO D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		RAHO D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Missile:
 		RAHO B 5 A_FaceTarget;
 		RAHO C 5 A_FaceTarget;
@@ -274,11 +196,6 @@ class MetaRahovart : MonsterCore
 		RAHO D 3 A_Pain;
 		RAHO D 6;
 		Goto See;
-	Pain.HolyWater:
-		RAHO D 3;
-		RAHO D 3 A_Pain;
-		RAHO D 6;
-		Goto Scurred;
 	Death:
 		RAHO E 0 A_GiveToTarget("ScoreItem", 500);
 		TNT1 A 0 A_SpawnItem("SoulSpawner");

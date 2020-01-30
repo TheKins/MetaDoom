@@ -41,7 +41,7 @@ class MetaArchvile : MonsterCore
 		VILE AB 10 A_Look;
 		Loop;
 	See:
-		VILE AABBCCDDEEFF 2 A_VileChase;
+		VILE AABBCCDDEEFF 2 A_MetaVileChase;
 		Loop;
 	Missile:
 		VILE G 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE);
@@ -66,45 +66,8 @@ class MetaArchvile : MonsterCore
 		Goto See;
 	Pain:
 		VILE Q 0;
-		VILE Q 5 
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		VILE Q 5 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		VILE Q 5;
-		VILE Q 5 A_Pain;
-		Goto Scurred;
-	Scurred:
-		VILE A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		VILE A 0 A_GiveInventory("ScurredCounter", 1);
-		VILE A 2 A_Chase(null, null);
-		VILE A 2 A_Chase(null, null);
-		VILE A 0 A_SpawnItem("HolySweat",0,54);
-		VILE B 2 A_Chase(null, null);
-		VILE B 2 A_Chase(null, null);
-		VILE C 2 A_Chase(null, null);
-		VILE C 2 A_Chase(null, null);
-		VILE C 0 A_SpawnItem("HolySweat",0,54);
-		VILE D 2 A_Chase(null, null);
-		VILE D 2 A_Chase(null, null);
-		VILE E 2 A_Chase(null, null);
-		VILE E 2 A_Chase(null, null);
-		VILE E 0 A_SpawnItem("HolySweat",0,54);
-		VILE F 2 A_Chase(null, null);
-		VILE F 2 A_Chase(null, null);
-		VILE F 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		VILE F 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		VILE Q 7 			// Make a filthy great mess once the Archvile dies,
 		{					// to make a point of it not being rez-ible.
@@ -200,14 +163,14 @@ class MetaSummoner : MonsterCore
 		Loop;
 	See:
 		SUMN E 0 A_Jump(90, "Teleport");
-		SUMN EEFFGG 2 A_VileChase;
+		SUMN EEFFGG 2 A_MetaVileChase;
 		SUMN G 0 A_Jump(90, "Teleport");
-		SUMN GGFF 2 A_VileChase;
+		SUMN GGFF 2 A_MetaVileChase;
 		VILE A 0 A_Jump(90, "Popcorn");
 		Loop;
 	SeeAlreadyTeleportedLately:
-		SUMN EEFFGG 2 A_VileChase;
-		SUMN GGFF 2 A_VileChase;
+		SUMN EEFFGG 2 A_MetaVileChase;
+		SUMN GGFF 2 A_MetaVileChase;
 		SUMN A 0 A_Jump(90, "Popcorn");
 		goto See;
 	Missile:
@@ -300,45 +263,10 @@ class MetaSummoner : MonsterCore
 		SUMN ABC 4 BRIGHT;
 		Goto SeeAlreadyTeleportedLately;
 	Pain:
-		SUMN R 5 
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		SUMN R 5;
 		SUMN R 5 A_Pain;
 		SUMN A 0 A_Jump(128, "Teleport");
 		Goto See;
-	Pain.HolyWater:
-		SUMN R 5;
-		SUMN R 5 A_Pain;
-		Goto Scurred;
-	Scurred:
-		VILE A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		SUMN E 0 A_GiveInventory("ScurredCounter", 1);
-		SUMN E 2 A_Chase(null, null);
-		SUMN E 2 A_Chase(null, null);
-		SUMN E 0 A_SpawnItem("HolySweat",0,54);
-		SUMN F 2 A_Chase(null, null);
-		SUMN F 2 A_Chase(null, null);
-		SUMN G 2 A_Chase(null, null);
-		SUMN G 2 A_Chase(null, null);
-		SUMN G 0 A_SpawnItem("HolySweat",0,54);
-		SUMN H 2 A_Chase(null, null);
-		SUMN H 2 A_Chase(null, null);
-		SUMN G 2 A_Chase(null, null);
-		SUMN G 2 A_Chase(null, null);
-		SUMN F 0 A_SpawnItem("HolySweat",0,54);
-		SUMN F 2 A_Chase(null, null);
-		SUMN F 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		SUMN F 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		SUMN T 7 			// Make a filthy great mess once the Archvile dies,
 		{					// to make a point of it not being rez-ible.
@@ -479,17 +407,9 @@ class MetaUnwilling : MonsterCore
 		UNWI G 6 A_CustomComboAttack("UnwillingGibBall", 32, 3 * random(1, 8), "monsters/unwilling/punch");
 		Goto See;
 	Pain:
-		UNWI H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		UNWI H 2;
 		UNWI H 2 A_Pain;
 		Goto See;
-	Pain.HolyWater:
-		UNWI G 3;
-		UNWI G 3 A_Pain;
-		Goto Scurred;
 	Punched:
 		UNWI G 3;
 		UNWI G 3
@@ -499,29 +419,6 @@ class MetaUnwilling : MonsterCore
 		}
 		UNWI G 12 A_Pain;
 		Goto See;
-	Scurred:
-		UNWI A 0 { bFRIGHTENED = 1; }
-	ScurredLoop:
-		UNWI A 0 A_GiveInventory("ScurredCounter", 1);
-		UNWI A 2 A_Chase(null, null);
-		UNWI A 2 A_Chase(null, null);
-		UNWI A 0 A_SpawnItem("HolySweat",0,54);
-		UNWI B 2 A_Chase(null, null);
-		UNWI B 2 A_Chase(null, null);
-		UNWI C 2 A_Chase(null, null);
-		UNWI C 2 A_Chase(null, null);
-		UNWI C 0 A_SpawnItem("HolySweat",0,54);
-		UNWI D 2 A_Chase(null, null);
-		UNWI D 2 A_Chase(null, null);
-		UNWI D 0 A_JumpIfInventory("ScurredCounter", 6, "ScurredEnd");
-		loop;
-	ScurredEnd:
-		UNWI D 0
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
-		goto See;
 	Death:
 		UNWI I 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		UNWI I 6 A_GiveToTarget("ScoreItem", 50);
