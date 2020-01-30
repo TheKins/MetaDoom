@@ -49,11 +49,6 @@ class MetaDemon : MonsterCore
 		Goto See;
 	Punched:
 		SARG H 3;
-		SARG H 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		SARG H 12 A_Pain;
 		Goto See;
 	Death:
@@ -266,11 +261,6 @@ class MetaBullDemon : MonsterCore
 		Goto See;
 	Punched:
 		BULD J 3;
-		BULD J 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		BULD J 12 A_Pain;
 		Goto See;
 	Death:

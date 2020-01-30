@@ -9,7 +9,6 @@ Shared Code
 // Inventory counters for certain behaviors. One day, I will refactor these
 // into user variables. Today is not that day. Tomorrow? Not looking too crash
 // hot either, honestly.
-class ScurredCounter : Counter { Default { Inventory.MaxAmount 20; } }
 class BleedingCounter : Counter { Default { Inventory.MaxAmount 20; } }
 
 // Flags for A_CheckSolidFooting
@@ -154,7 +153,6 @@ class MonsterCore : Actor
 			}
 			A_MetaPinata("MetaHealthPinata", 2);
 			bFrightened = False;
-			A_TakeInventory("ScurredCounter",999);
 		}
 		"####" # 0 A_Jump(256,"Punched");
 		stop;
@@ -195,7 +193,6 @@ class MonsterCore : Actor
 			}
 			A_MetaPinata("MetaHealthPinata", 1);
 			bFrightened = False;
-			A_TakeInventory("ScurredCounter",999);
 		}
 		"####" # 0 A_Jump(256,"Pain");
 		stop;
@@ -233,7 +230,6 @@ class MonsterCore : Actor
 				ThrustThingZ(0,32,0,1);
 			}
 			bFrightened = False;
-			A_TakeInventory("ScurredCounter",999);
 		}
 		"####" # 0 A_Jump(256,"Punched");
 		stop;
@@ -270,7 +266,6 @@ class MonsterCore : Actor
 			}
 			A_MetaPinata("MetaHealthPinata", 1);
 			bFrightened = False;
-			A_TakeInventory("ScurredCounter",999);
 		}
 		"####" # 0 A_Jump(256,"Punched");
 		stop;

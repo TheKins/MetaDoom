@@ -49,11 +49,6 @@ class MetaDoomImp : MonsterCore
 		Goto See;
 	Punched:
 		TROO G 3;
-		TROO G 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		TROO G 12 A_Pain;
 		Goto See;
 	Death:
@@ -395,20 +390,12 @@ class MetaDoomImpLord : MonsterCore
 		goto See;
 	Pain:
 		ROAC H 0;
-		ROAC H 2
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		ROAC H 2;
 		ROAC H 2 A_Pain;
 		Goto See;
 	Punched:
 		ROAC H 3;
-		ROAC H 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
+		ROAC H 3;
 		ROAC H 12 A_Pain;
 		Goto See;
 	Death:

@@ -126,20 +126,10 @@ class MetaHellRazer : MonsterCore
 		Goto See;
 	Pain:
 		HRAZ F 3;
-		HRAZ F 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		HRAZ F 3 A_Pain;
 		Goto See;
 	Punched:
 		HRAZ F 3;
-		HRAZ F 3
-		{
-			bFRIGHTENED = 0;
-			A_TakeInventory("ScurredCounter",999);
-		}
 		HRAZ F 12 A_Pain;
 		Goto See;
 	Death:
