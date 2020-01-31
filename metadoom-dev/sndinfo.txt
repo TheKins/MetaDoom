@@ -55,6 +55,7 @@ items/lootpumpkin	getpumpk
 items/lootcacoward	getcawa
 items/lootraven		getravn
 items/lootdehacked	getdeh
+items/lootcomic		getcomic
 
 // Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }

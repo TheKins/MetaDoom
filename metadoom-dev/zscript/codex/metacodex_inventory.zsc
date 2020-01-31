@@ -85,3 +85,4 @@ Class MetaCodex_LorePumpkin : MetaCodex_InvBase {}
 Class MetaCodex_LoreCacoward : MetaCodex_InvBase {}
 Class MetaCodex_LoreRaven : MetaCodex_InvBase {}
 Class MetaCodex_LoreDehacked : MetaCodex_InvBase {}
+Class MetaCodex_LoreComic : MetaCodex_InvBase {}

@@ -81,4 +81,12 @@ page "Other"
         origin "The Internet (1994)";
         description "A tool used to hack the original DOS Doom executables, DeHackEd was a first brave step towards stepping out from vanilla gameplay towards new and exciting types of mod, including the invention of the ''Total Conversion'', whole new games crammed into the Doom engine's confines.\n\nWhile the release of the engine's source code has rendered its original reason du jour irrelevant, it lives on as a universal standard for mods that can be played on nearly every source port...\n\n...except EDGE, I think. And the new official Unity thing. Universal-ish standard, then.";
 	}
+	
+	entry "LoreComicDummy"
+    {
+		itemToCheck "MetaCodex_LoreComic"
+		name "Comic Book";
+        origin "Id Anthology (1996)";
+        description "A promotional comic originally produced as a giveaway for a game convention and later included in the Id Anthology boxset. This tome of senseless violence, like most works of art, was largely unappreciated in its time.\n\nIt later achieved newfound notoriety upon being reviewed (and mocked) online in 1999, and its blend of comic gore and constant, ridiculous screamed catchphrases (''RIP AND TEAR!'') has influenced many Doom-related works since, ranging from Brutal Doom all the way to the modern Doom Slayer.";
+	}
 }
