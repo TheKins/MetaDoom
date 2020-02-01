@@ -95,7 +95,7 @@ Phobos867 (Imp Lord sprites)
 Smooth Doom Team (Explosion sprites, blood effects and decals)
 Unnamed Artists Not Listed In Brutal Doom's "Detailed" Credits (Lost Soul sprites)
 Vader, Finalizer and Horror Movie Guy (base sprites for Unwilling)
-Xim (Former Lieutenant sprites)
+Xim (Former Lieutenant sprites, Super Demon sprites)
 Zaneion (Hell Knight, Baron of Hell, Bull Demon, Wretched sprites)
 
 ART RESOURCES (INTERFACE)
