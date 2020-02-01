@@ -385,7 +385,7 @@ page "Bestiary"
 	
 	entry "MetaMotherDemon"
 	{
-		offset 0, 48;
+		offset 0, 32;
 		frameskip 3;
 		name "Mother Demon";
 		origin "Doom 64 (1997)";
@@ -406,6 +406,6 @@ page "Bestiary"
 		offset 0, 48;
 		name "Harbinger of Doom";
 		origin "Wolfenstein RPG (2008)";
-		description "A mysterious and ancient creature named in ancient tablets as the ''Balgaar'', the Harbinger of Doom was resurrected and summoned into the human realm by way of an occult ritual performed by a top-secret Paranormal Research Division within the German military during the darkest days of World War 2.\n\nClassified documents suggest that the Harbinger turned upon its summoners and destroyed them before being sent back to the realm where it came from by an American spy wielding the Spear of Destiny, a sacred relic reclaimed from the clutches of the Gestapo.";
+		description "A mysterious and ancient creature named in ancient tablets as the ''Balgaar'', the Harbinger of Doom was resurrected and summoned into the human realm by way of an occult ritual performed by the top-secret Paranormal Research Division within the German military during the darkest days of World War 2.\n\nClassified documents suggest that the Harbinger turned upon its summoners and destroyed them before being vanquished by an Allied spy wielding the Spear of Destiny, a holy relic reclaimed from the clutches of the Gestapo.";
 	}
 }
