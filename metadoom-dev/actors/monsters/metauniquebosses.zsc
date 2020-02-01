@@ -437,3 +437,124 @@ class MetaHellGuardShot : Actor
 		Stop;
 	}
 }
+
+// The Harbinger of Doom, the Cyberdemon pre-Spearing.
+class MetaHarbinger : MonsterCore
+{
+	Default
+	{
+		Health 4000;
+		Radius 40;
+		Height 110;
+		Mass 1000;
+		Speed 16;
+		PainChance 20;
+		Monster;
+		MinMissileChance 160;
+		+BOSS 
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		//+BOSSDEATH
+		SeeSound "monsters/cyberdemon/see";
+		PainSound "monsters/cyberdemon/pain";
+		DeathSound "monsters/cyberdemon/die1";
+		ActiveSound "monsters/cyberdemon/idle";
+		Obituary "$OB_CYBORG";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		damagefactor "SpiderdemonAttack", 0.5;
+		painchance "SpiderdemonAttack", 0;
+		damagefactor "SpiderdemonTKAttack", 0.5;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+		MonsterCore.CanBeScared false;
+	}
+	
+	States
+	{
+	Spawn:
+		SUPR AB 10 A_Look;
+		Loop;
+	See:
+		SUPR H 0;
+		SUPR H 0 A_Quake(5,30,0,2048,0);
+		SUPR H 35 A_FaceTarget();
+		goto Roam;
+	Roam:
+		SUPR A 3 { A_Chase(); A_PlaySound("monsters/cyberdemon/hoof"); }
+		SUPR ABB 3 A_Chase();
+		SUPR C 3 { A_Chase(); A_PlaySound("monsters/cyberdemon/hoof"); }
+		SUPR CDD 3 A_Chase();
+		goto Roam;		
+	Missile:
+		SUPR EEFF 3 A_FaceTarget();
+		SUPR G 12 BRIGHT
+		{
+			A_FaceTarget();
+			A_PlaySound("monsters/hellguard/fire", CHAN_6);
+			A_SpawnProjectile("MetaHellGuardShot",56,0,0);
+		}
+		SUPR EEFF 3 A_FaceTarget();
+		SUPR G 12 BRIGHT
+		{
+			A_FaceTarget();
+			A_PlaySound("monsters/hellguard/fire", CHAN_6);
+			A_SpawnProjectile("MetaHellGuardShot",56,0,0);
+		}
+		SUPR EEFF 3 A_FaceTarget();
+		SUPR G 12 BRIGHT
+		{
+			A_FaceTarget();
+			A_PlaySound("monsters/hellguard/fire", CHAN_6);
+			A_SpawnProjectile("MetaHellGuardShot",56,0,0);
+		}
+		Goto Roam;
+	// YOUR PUNY MITTS DO NOT WORK HERE
+	Pain.Axe:
+	Pain.Fist:
+	Pain.BerserkFist:
+	Pain:
+		SUPR H 0;
+		SUPR H 10 A_Pain;
+		Goto See+1;
+	Death:
+		SUPR I 0 A_GiveToTarget("ScoreItem", 10000);
+		SUPR I 20 A_Scream;
+		SUPR J 10;
+		SUPR K 8
+		{
+			A_Quake (4,25,0,750,0);
+			
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnProjectile ("CyberdemonGibber", random(8,55), 0, random (0, 360), 2, random (32, 64));
+				A_SpawnProjectile ("CyberdemonGibber", random(55,112), 0, random (0, 360), 2, random (64, 110));
+			}
+		}
+		SUPR K 8;
+		SUPR L 8 A_NoBlocking;
+		SUPR M 0 A_SetScale(1.0,0.9);
+		SUPR MN 10;
+		SUPR M 10 A_PlaySound("monsters/cyberdemon/pain", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+		SUPR NM 10;
+		SUPR N 10 A_PlaySound("monsters/cyberdemon/pain", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+		SUPR MMNNMMNN 5
+		{
+			for (int i = 0; i < 12; i++)
+			{
+				A_SpawnProjectile ("TeleportFog", random(8,56), random(-40,40), random (0, 360), 2, random (-8, 8));
+			}
+		}
+		TNT1 AAAAAAA 2
+		{
+			for (int i = 0; i < 12; i++)
+			{
+				A_SpawnProjectile ("TeleportFog", random(8,56), random(-40,40), random (0, 360), 2, random (-8, 8));
+			}
+		}
+		TNT1 A 10 A_KillMaster; //A_BossDeath
+		Stop;
+	}
+}
