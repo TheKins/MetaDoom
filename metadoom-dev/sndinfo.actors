@@ -791,3 +791,12 @@ monsters/hellguard/pain		hgarpain
 monsters/hellguard/roll		hgarroll
 
 monsters/hellguard/fastfire	hgarfasf
+
+// harbinger of doom
+monsters/harbinger/see			harbsee
+monsters/harbinger/laugh		harblaff
+monsters/harbinger/fire			harbfire
+monsters/harbinger/pain			harbpain
+monsters/harbinger/die			harbdie
+monsters/harbinger/moan			harbmoan
+monsters/harbinger/teleport		harbtele
