@@ -442,3 +442,13 @@ object MetaHellGuardShot
     frame HGAPD { light HELLGUARDSHOT_X2 }
     frame HGAPE { light HELLGUARDSHOT_X3 }
 }
+
+object MetaHarbingerShot
+{
+    frame HGAPA { light HELLGUARDSHOT    }
+	frame HGAPB { light HELLGUARDSHOT    }
+
+    frame HGAPC { light HELLGUARDSHOT_X1 }
+    frame HGAPD { light HELLGUARDSHOT_X2 }
+    frame HGAPE { light HELLGUARDSHOT_X3 }
+}
