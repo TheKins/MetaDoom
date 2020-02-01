@@ -63,6 +63,7 @@ Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}
 
 Class MetaCodex_MetaMotherDemon: MetaCodex_InvBase {}
 Class MetaCodex_MetaHellGuard: MetaCodex_InvBase {}
+Class MetaCodex_MetaHarbinger: MetaCodex_InvBase {}
 
 // Inventory
 

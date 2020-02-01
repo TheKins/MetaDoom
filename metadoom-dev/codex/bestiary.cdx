@@ -400,4 +400,12 @@ page "Bestiary"
 		origin "Doom (2016)";
 		description "These bio-mechanical twin terrors, dubbed ''Abaddon'' and ''Apollyon'' in demonic scriptures, are suits of flesh and stone each controlled by a parasitic host nestled within the heavily-armored chest cavity. Armed with a powerful energy staff and a gargantuan mace, this duo are called upon by a dark host to defend places of specific demonic interest from interlopers such as yourself.\n\nWhile they may lack the ambition to seek power and control over the forces of Hell for themselves, they should not be taken lightly under any circumstances...";
 	}
+	
+	entry "MetaHarbinger"
+	{
+		offset 0, 48;
+		name "Harbinger of Doom";
+		origin "Wolfenstein RPG (2008)";
+		description "A mysterious and ancient creature named in ancient tablets as the ''Balgaar'', the Harbinger of Doom was resurrected and summoned into the human realm by way of an occult ritual performed by a top-secret Paranormal Research Division within the German military during the darkest days of World War 2.\n\nClassified documents suggest that the Harbinger turned upon its summoners and destroyed them before being sent back to the realm where it came from by an American spy wielding the Spear of Destiny, a sacred relic reclaimed from the clutches of the Gestapo.";
+	}
 }
