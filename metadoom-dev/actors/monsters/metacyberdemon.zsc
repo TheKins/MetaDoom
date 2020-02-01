@@ -53,12 +53,16 @@ class MetaCyberdemon : MonsterCore
 		CYBR AB 10 A_Look;
 		Loop;
 	See:
-		CYBR F 10;
+		CYBR F 0;
+		CYBR F 0 A_Quake(5,30,0,2048,0);
+		CYBR F 35 A_FaceTarget();
+		goto Roam;
+	Roam:
 		CYBR A 3 { A_Chase(); A_PlaySound("monsters/cyberdemon/hoof"); }
 		CYBR ABBCC 3 A_Chase();
 		CYBR D 3 { A_Chase(); A_PlaySound("spider/walk"); }
 		CYBR D 3 A_Chase();
-		goto See+1;
+		goto Roam;
 		
 	Missile:
 		CYBR E 0;
@@ -85,7 +89,7 @@ class MetaCyberdemon : MonsterCore
 			A_SpawnProjectile("CyberdemonRocket", 48, -16);
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
-		Goto See+1;
+		goto Roam;
 	// Moving attack
 	MissileWalking:
 		CYBR F 0;
@@ -124,7 +128,7 @@ class MetaCyberdemon : MonsterCore
 			A_PlaySound ("monsters/cyberdemon/fire", CHAN_WEAPON);
 		}
 		CYBR F 6 A_FaceTarget();
-		Goto See;
+		goto Roam;
 	// Vroom!
 	MissileCharge:
 		CYBR F 0;
@@ -141,7 +145,7 @@ class MetaCyberdemon : MonsterCore
 			return A_JumpIf(vel.z != 0, "MissileChargeAbort");
 		}
 		CYBR F 0 { bSKULLFLY = 0; }
-		goto See;
+		goto Roam;
 	// About to fall off a ledge and break the map! Abort! Abort!
 	MissileChargeAbort:
 		CYBR F 0 { bSKULLFLY = 0; }
@@ -149,7 +153,7 @@ class MetaCyberdemon : MonsterCore
 		CYBR F 0 ThrustThing(angle*256/360+128, 8, 0, 0);
 		CYBR F 0 ThrustThingZ(0,8,0,0);
 		CYBR F 0 A_PlaySound("monsters/cyberdemon/chargebrake", CHAN_6);
-		goto See;
+		goto Roam;
 	// This sucks and either needs new sprites or removal
 	Melee:
 		CYBF A 5;
@@ -161,7 +165,7 @@ class MetaCyberdemon : MonsterCore
 		}
 		CYBF A 4;
 		CYBR A 4;
-		goto See+1;
+		goto Roam;
 	// YOUR PUNY MITTS DO NOT WORK HERE
 	Pain.Axe:
 	Pain.Fist:
