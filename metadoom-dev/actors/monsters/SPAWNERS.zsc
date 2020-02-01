@@ -669,11 +669,22 @@ class CyberdemonSpawner : MetaBossSpawner replaces Cyberdemon
 		TNT1 A 0 A_JumpIf(meta_uniquebosses == 0, "Cyberdemon");
 		TNT1 A 0
 		{
-			if(level.MapName ~== "map32")
+			BlockThingsIterator it = BlockThingsIterator.Create(self,32767,0);
+			while (it.Next())
 			{
-				return ResolveState("Harbinger");
-			} else {
-				return ResolveState("Cyberdemon");
+				Actor mo = it.thing;
+				
+				if (mo is "WolfSSSpawner"
+				|| mo is "MetaWolfensteinSS"
+				|| mo is "MetaWolfensteinSNES"
+				|| mo is "MetaWolfensteinApple"
+				|| mo is "MetaWolfensteinMacOS"
+				|| mo is "MetaWolfensteinJava"
+				|| mo is "WolfensteinSS")
+				{
+					SetStateLabel("Harbinger");
+					break;
+				}
 			}
 		}
 	Cyberdemon:
