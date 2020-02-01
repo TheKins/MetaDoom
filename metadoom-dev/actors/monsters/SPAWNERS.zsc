@@ -666,7 +666,21 @@ class CyberdemonSpawner : MetaBossSpawner replaces Cyberdemon
 	{
 	Spawn:
 		CYBR A 0;
+		TNT1 A 0 A_JumpIf(meta_uniquebosses == 0, "Cyberdemon");
+		TNT1 A 0
+		{
+			if(level.MapName ~== "map32")
+			{
+				return ResolveState("Harbinger");
+			} else {
+				return ResolveState("Cyberdemon");
+			}
+		}
+	Cyberdemon:
 		TNT1 A 0 A_SpawnItemEx("MetaCyberdemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
+		goto CreepyStalker;
+	Harbinger:
+		TNT1 A 0 A_SpawnItemEx("MetaHarbinger",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
 		goto CreepyStalker;
 	}
 }
