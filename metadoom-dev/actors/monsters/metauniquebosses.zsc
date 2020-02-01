@@ -450,7 +450,7 @@ class MetaHarbinger : MonsterCore
 		Speed 16;
 		PainChance 20;
 		Monster;
-		MinMissileChance 180;
+		//MinMissileChance 180;
 		+BOSS 
 		+MISSILEMORE
 		+FLOORCLIP
