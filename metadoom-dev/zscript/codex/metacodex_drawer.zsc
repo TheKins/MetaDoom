@@ -130,46 +130,44 @@ Extend Class MetaCodex_Menu
 				
 		if((class<Actor>)(loadedEntries[itemSelected].actorName)!=null)
 		{
-				
-		let monstClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].actorName));
-		
-		int renderStyle = monstClass.GetRenderStyle();
-		double alpha = monstClass.alpha;
-		
-		double floatbob = monstClass.bFloatBob ? sin(MenuTime()*3)*3 : 0;
-				
-		[sprite, flip, Scale] = bio_monsterState.GetSpriteTexture(0, 0, monstClass.Scale);
-				
-		Vector2 imageScale = TexMan.GetScaledSize(sprite);
-		Vector2 imageOffset = TexMan.GetScaledOffset(sprite);
-		imageScale.x *= Scale.x;
-		imageScale.y *= Scale.y;
-		//Console.Printf(imageOffset.."");
-		if(flip) imageOffset.x=imageScale.x-imageOffset.x;
-				
-		bg = sprite;
-		
-		bool actuallyHas = (loadedEntries[itemSelected].actuallyHas||isDebug);
-		
-		for(int i = 0;i<fireParticles.Size();i++)
-		{
-		
-			let partClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor));
-			[partScale, particleSpriteTex, partflip] = GetSpriteStuff(fireParticles[i].stateUse);
-			partScale.x *= partClass.scale.x;
-			partScale.y *= partClass.scale.y;
-			//Console.Printf(fireParticles[i].scale.."");
-			partScale.x *= fireParticles[i].scale.x;
-			partScale.y *= fireParticles[i].scale.y;
-			//Console.Printf(partScale.."");
-			double partAlpha = partClass.alpha*fireParticles[i].alpha;
+			let monstClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].actorName));
 			
-			screen.DrawTexture(particleSpriteTex, true, bioPicPos.x+fireParticles[i].pos.x, bioPicPos.y+floatbob+fireParticles[i].pos.y, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, partscale.x, DTA_DestHeightF, partscale.y, DTA_FlipX, flip, DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? partClass.Translation : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*partAlpha*fancyFadeInAlpha : 0.75*partAlpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(Style_Add) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
+			int renderStyle = monstClass.GetRenderStyle();
+			double alpha = monstClass.alpha;
 			
-		}
-		
-		screen.DrawTexture(bg, true, bioPicPos.x, bioPicPos.y+floatbob, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, imageScale.x, DTA_DestHeightF, imageScale.y, DTA_FlipX, flip, DTA_LeftOffset, int(imageOffset.x), DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? 0 : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*alpha*fancyFadeInAlpha : 0.75*alpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(renderstyle) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
-		
+			double floatbob = monstClass.bFloatBob ? sin(MenuTime()*3)*3 : 0;
+					
+			[sprite, flip, Scale] = bio_monsterState.GetSpriteTexture(0, 0, monstClass.Scale);
+					
+			Vector2 imageScale = TexMan.GetScaledSize(sprite);
+			Vector2 imageOffset = TexMan.GetScaledOffset(sprite);
+			imageScale.x *= Scale.x;
+			imageScale.y *= Scale.y;
+			//Console.Printf(imageOffset.."");
+			//if(flip) imageOffset.x=imageScale.x-imageOffset.x; //disabled
+					
+			bg = sprite;
+			
+			bool actuallyHas = (loadedEntries[itemSelected].actuallyHas||isDebug);
+			
+			for(int i = 0;i<fireParticles.Size();i++)
+			{
+			
+				let partClass = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor));
+				[partScale, particleSpriteTex, partflip] = GetSpriteStuff(fireParticles[i].stateUse);
+				partScale.x *= partClass.scale.x;
+				partScale.y *= partClass.scale.y;
+				//Console.Printf(fireParticles[i].scale.."");
+				partScale.x *= fireParticles[i].scale.x;
+				partScale.y *= fireParticles[i].scale.y;
+				//Console.Printf(partScale.."");
+				double partAlpha = partClass.alpha*fireParticles[i].alpha;
+				
+				screen.DrawTexture(particleSpriteTex, true, bioPicPos.x+fireParticles[i].pos.x, bioPicPos.y+floatbob+fireParticles[i].pos.y, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, partscale.x, DTA_DestHeightF, partscale.y, DTA_FlipX, flip, DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? partClass.Translation : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*partAlpha*fancyFadeInAlpha : 0.75*partAlpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(Style_Add) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
+				
+			}
+			
+			screen.DrawTexture(bg, true, bioPicPos.x, bioPicPos.y+floatbob, DTA_VirtualWidth, 160, DTA_VirtualHeight, 100, DTA_DestWidthF, imageScale.x, DTA_DestHeightF, imageScale.y, DTA_FlipX, flip, DTA_LeftOffset, int(imageOffset.x), DTA_CenterOffset, (codexPages[curPageNum].entryLayout==1), DTA_TranslationIndex, actuallyHas ? 0 : Translation.GetID('MetaCodex_Darken'), DTA_Alpha, actuallyHas ? 1.0*alpha*fancyFadeInAlpha : 0.75*alpha*fancyFadeInAlpha, DTA_RenderStyle, actuallyHas ? MetaCodex_RenderStyle.FromLegacy(renderstyle) : MetaCodex_RenderStyle.FromLegacy(Style_Normal));
 		}
 		else
 		{
