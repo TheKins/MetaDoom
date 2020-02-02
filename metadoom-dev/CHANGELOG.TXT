@@ -22,6 +22,10 @@ Monster Changes:
 - Cyberdemons now announce their entrance with the same gusto as other bosses.
 - Removed code for Z-Sec to try and actively dodge if projectiles were coming
   their way, because it was always broken and had never worked.
+- Summoners' popcorn attack is now ACTUALLY limited when they can't see the player,
+  and they won't summon when they don't think there's enough room to do so. There
+  are also new precautions in place to prevent Unwilling from spawning inside of
+  each other (fnarr!)
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:

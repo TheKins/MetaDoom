@@ -126,8 +126,6 @@ class MetaArchvileFire : Actor
 // The Summoner, from Doom 2016.
 // Hurls popcorn enemies out in babby bosscubes and zooms around like a bastard
 
-class SummonerOuttaSight : Counter { Default { Inventory.MaxAmount 2; } }
-
 class MetaSummoner : MonsterCore
 {
 	Default
@@ -155,6 +153,9 @@ class MetaSummoner : MonsterCore
 		painchance "HolyWater", 255;
 		yscale 0.9;
 	}
+	
+	int outtasight;
+	FLineTraceData SurfaceData;
 
 	States
 	{
@@ -198,26 +199,56 @@ class MetaSummoner : MonsterCore
 	Popcorn:
 		SUMN A 0
 		{
-			if (!CheckIfSeen())
+			// Limit popcorning if can't see player
+			if (CheckIfSeen())
 			{
-				if (CountInv("SummonerOuttaSight") < 2)
+				if (outtasight < 2)
 				{
-					A_GiveInventory("SummonerOuttaSight", 1);
+					if (meta_developer)
+							Console.printf("Summoner at %i x %i is summoning out of player sight", self.pos.x, self.pos.y);
+					outtasight++;
 				} else {
-					A_Jump(256, "See");
+					if (meta_developer)
+							Console.printf("Summoner at %i x %i isn't summoning out of player sight", self.pos.x, self.pos.y);
+					SetStateLabel("See");
 				}
 			}
-			return ResolveState(null);
+
+			// Prevent popcorning from happening if there's not enough room, one way or another
+			BlockThingsIterator it = BlockThingsIterator.Create(self,32,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				
+				if (mo is "MetaUnwilling")
+				{
+					if (meta_developer)
+						Console.printf("Summoner at %i x %i uncomfortable with popcorn proximity", self.pos.x, self.pos.y);
+					SetStateLabel("See");
+					break;
+				}
+			}
+			
+			for (int i = 0; i < 8; i++)
+			{
+				self.LineTrace(45*i, 32, 0, TRF_THRUACTORS, offsetz: self.height/2, data:SurfaceData);
+				
+				if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+				{
+					if (meta_developer)
+							Console.printf("Summoner at %i x %i doesn't have the room to summon", self.pos.x, self.pos.y);
+						SetStateLabel("See");
+				}
+			}
 		}
 		SUMN NLKJ 4;
 		SUMN I 0 
 		{
 			if (ceilingz - floorz < 256 || !A_SetSize(-1,256,true))
 			{
-				return ResolveState("PopcornLow");
+				SetStateLabel("PopcornLow");
 			}
 			A_SetSize(-1, 56);
-			return ResolveState(null);
 		}
 	PopcornHigh:
 		SUMN N 20 
@@ -333,9 +364,26 @@ class MetaSummonerPopcorn : Actor
 		BOSF ABCD 3 BRIGHT;
 		loop;
 	Death:
-		TNT1 A 0 A_PlaySound("inventory/siphongrenade/explode");
-		TNT1 A 0 A_SpawnItem("MetaArchvileFire");
-		TNT1 A 0 A_SpawnItem("MetaUnwilling");
+		TNT1 A 0 
+		{
+			A_PlaySound("inventory/siphongrenade/explode");
+			A_SpawnItem("MetaArchvileFire");
+			
+			BlockThingsIterator it = BlockThingsIterator.Create(self,32,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				
+				if (mo is "MetaUnwilling")
+				{
+					if (meta_developer)
+						Console.printf("Summoner Popcorn %i x %i uncomfortable with popcorn proximity", self.pos.x, self.pos.y);
+					SetStateLabel("See");
+					break;
+				}
+			}
+			A_SpawnItem("MetaUnwilling");
+		}
 		Stop;
 	}
 }
