@@ -18,7 +18,8 @@ Monster Changes:
 - Cyberdemons now try and avoid charging if there isn't a flat path for them to
   charge on, to avoid them slamming into walls, having to pump the breaks to
   avoid falling off a ledge, or charging while in a small "turret" area...
-- Cyberdemon charging attacks are no longer blocked by random junk in the way.
+- Cyberdemon charging attacks are no longer blocked by items and other random junk,
+  and now smoosh anybody stupid enough to be in the way.
 - Cyberdemons now announce their entrance with the same gusto as other bosses.
 - Removed code for Z-Sec to try and actively dodge if projectiles were coming
   their way, because it was always broken and had never worked.

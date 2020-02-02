@@ -343,6 +343,7 @@ OB_KNIGHT = "%o was splayed by a Hell Knight.";
 OB_SPIDER = "%o stood in awe of the Spider Mastermind!";
 OB_BABY = "%o let an Arachnotron get %h.";
 OB_CYBORG = "%o was splattered by the Cyberdemon!";
+OB_CYBORG_CHARGE = "%o was run over by the Cyberdemon!";
 
 OB_MOTHERDEMON = "%o was absolved by the Mother Demon!";
 OB_HELLGUARD = "%o was obstructed by the Hell Guard!";
