@@ -44,6 +44,7 @@ UI Changes:
 - The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
 - Fixed the Spider Mastermind's animation in the Codex (Thanks DrPySpy!)
 - Added a unique background for the Quit confirmation menu.
+- Changed OptionsMenu slider graphics.
   
 Item Changes:
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
