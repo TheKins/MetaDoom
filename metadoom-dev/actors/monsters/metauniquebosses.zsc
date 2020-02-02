@@ -450,7 +450,7 @@ class MetaHarbinger : MonsterCore
 		Speed 16;
 		PainChance 20;
 		Monster;
-		//MinMissileChance 180;
+		MinMissileChance 180;
 		+BOSS 
 		+MISSILEMORE
 		+FLOORCLIP
@@ -495,22 +495,6 @@ class MetaHarbinger : MonsterCore
 		{
 			A_FaceTarget();
 			//A_PlaySound("monsters/hellguard/fire", CHAN_6);
-			A_SpawnProjectile("MetaHarbingerShot",64,0,0);
-		}
-		SUPR E 0 A_PlaySound("monsters/harbinger/fire", CHAN_6);
-		SUPR EEFF 3 A_FaceTarget();
-		SUPR G 12 BRIGHT
-		{
-			A_FaceTarget();
-			//A_PlaySound("monsters/hellguard/fire", CHAN_6);
-			A_SpawnProjectile("MetaHarbingerShot",64,0,0);
-		}
-		SUPR E 0 A_PlaySound("monsters/harbinger/fire", CHAN_6);
-		SUPR EEFF 3 A_FaceTarget();
-		SUPR G 12 BRIGHT
-		{
-			A_FaceTarget();
-			A_PlaySound("monsters/hellguard/fire", CHAN_6);
 			A_SpawnProjectile("MetaHarbingerShot",64,0,0);
 		}
 		Goto Roam;
