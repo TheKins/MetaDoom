@@ -126,12 +126,16 @@ script "Ironman_StatsRun" (void)
 		obit = "You were wasted by a Cyber-Mancubus.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaCyberdemon")
 		obit = "You were gibbed by the Cyberdemon.";
+	else if (GetCVarString("meta_ironmantemp") == "CyberdemonChargeDamager")
+		obit = "You were stomped by the Cyberdemon.";	
 	else if (GetCVarString("meta_ironmantemp") == "MetaSpiderMastermind")
 		obit = "You were snuffed by the Spider Mastermind.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaMotherDemon")
 		obit = "You were ended by the Mother.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaHellGuard")
 		obit = "You were wasted by the Hell Guards.";
+	else if (GetCVarString("meta_ironmantemp") == "MetaHarbinger")
+		obit = "You were Harbinged to death.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinSS")
 		obit = "You were ray-traced from existence.";
 	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinSNES")
