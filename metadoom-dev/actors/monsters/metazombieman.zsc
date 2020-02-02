@@ -120,7 +120,7 @@ class MetaHellRazer : MonsterCore
 		HRAZ E 0 A_PlaySound("monsters/hellrazer/fire", CHAN_WEAPON);
 		HRAZ EEEEEEEEEEEEEEE 1 bright
 		{
-			A_CustomRailgun ((1), 0, "Red", "", RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 0, "MetaBulletPuff", 0, 0, 0, 8, 3, 1, "HellRazerRailCore");
+			A_CustomRailgun ((1), 0, "Red", "", RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT, 1, 0, "MetaBulletPuff", 0, 0, 0, 8, 8, 1, "HellRazerRailCore");
 		}
 		HRAZ E 8;
 		Goto See;
