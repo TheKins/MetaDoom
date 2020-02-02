@@ -5,16 +5,14 @@ Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
-- Monster bleeding after getting hit by the Axe has been completely rewritten to
-  be much more uniform across all monsters.
-- Monster scarediness after getting hit by Holy Water has been completely
-  rewritten to be much more uniform (and much less copy-pasty) across all monsters.
+- Monster bleeding and fear status effects have been completely rewritten to
+  be much more uniform (and much less copy-pasty) across all monsters.
 - Arachnotrons and Mancubi are now scared by Holy Water.
 - Hell Knights and Barons of Hell now avoid doing their jump attack if they have
   reason to believe they'll land in a damage sector, even though such things
   don't actually effect them. The fools.
 - Imp Lords now try not to teleport into damaging sectors, even though they'll
-  happily throw themselves off a ledge straight into one after teleporting. Idiots.
+  happily throw themselves off a ledge right into one after teleporting. Idiots.
 - Cyberdemons now try and avoid charging if there isn't a flat path for them to
   charge on, to avoid them slamming into walls, having to pump the breaks to
   avoid falling off a ledge, or charging while in a small "turret" area...
@@ -27,6 +25,8 @@ Monster Changes:
   and they won't summon when they don't think there's enough room to do so. There
   are also new precautions in place to prevent Unwilling from spawning inside of
   each other (fnarr!)
+- Hell Razer's beams are made up of less actors, hopefully making them less
+  intense on your 32-bit Acer laptop you got for schoolwork in 2003.
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
