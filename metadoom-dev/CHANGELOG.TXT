@@ -53,9 +53,9 @@ Item Changes:
 - Inventory pickups and treasure items now use a new spawning method that tries
   to avoid placing items in damaging sectors, to avoid situations where those
   much-needed Siphon Grenades are stuck in lava.
-- The Shield Wall now blocks the Hell Razer's beam and (MOST OF) the attacks of
-  other players in deathmatch mode.
-- The Shield Wall is now tinted the player's color.
+- The Shield Wall is now tinted the player's color, and blocks the projectile
+  attacks of other players in deathmatch mode. (Hitscans still sneak through,
+  alas. I tried to work around this, but every fix caused its own problems...)
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
