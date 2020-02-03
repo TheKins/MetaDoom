@@ -269,12 +269,15 @@ class MetaDoomPlayer : PlayerPawn
 			A_TakeInventory("DogGunHealth", damage);
 			A_PlaySound("monsters/hellhound/pain", CHAN_VOICE);
 			A_PlaySound("weapons/doggun/absorb", CHAN_BODY, 1.0, 0, ATTN_NORM, 0, frandom(0.8,1.2));
+			// TODO: Add some visual feedback as well.
 			return false;
 		} else {
 			return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
 		}
 	}
 	
+	// When killed, copy your means of death to a CVar so the Ironman game over map
+	// can react to it because when working with legacy code, nothing can ever be simple.
 	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
 	{
 		// Stop sound channels
