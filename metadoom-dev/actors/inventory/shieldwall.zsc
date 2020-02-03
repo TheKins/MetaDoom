@@ -99,9 +99,16 @@ class ShieldWallProj : Actor
 		loop;
 	Death:
 		TNT1 A 0 A_SetAngle(angle + 90);
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-		TNT1 A 0 A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 
+		{	
+			A_SpawnItemEx("ShieldWallPiece",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			
+			A_SpawnItemEx("ShieldWallHilight",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("ShieldWallHilight",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("ShieldWallHilight",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		}
 		Stop;
 	}
 }
@@ -116,7 +123,8 @@ class ShieldWallPiece : Actor
 		+SOLID
 		+WALLSPRITE
 		+NOGRAVITY
-		renderstyle "add";
+		renderstyle "Shaded";
+		StencilColor "89 f0 ff";
 		+SHOOTABLE
 		+NODAMAGE
 		+INVULNERABLE
@@ -148,6 +156,18 @@ class ShieldWallPiece : Actor
 		stop;
 	}
 	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		
+		// Set the Shield Wall's colour to the spawning player's colour.
+		// Thanks to Comet for giving me a hint on this!
+		if (target is "PlayerPawn")
+		{
+			SetShade(target.Player.GetColor());
+		}
+	}
+	
 	// Ignore player shots, but still block the enemy's
 	override bool CanCollideWith(Actor other, bool passive)
 	{
@@ -169,5 +189,33 @@ class ShieldWallPiece : Actor
 		
 		return true;
 	}
+}
 
+class ShieldWallHilight : Actor
+{
+	Default
+	{
+		-SOLID
+		+NOINTERACTION
+		+WALLSPRITE
+		+NOGRAVITY
+		renderstyle "Add";
+	}
+	
+	int user_lifespan;
+	
+	States
+	{
+	Spawn:
+		SHWA A 0;
+		SHWA A 0 A_SetAngle(angle + 90);
+	LifeSpan:
+		SHWA CD 4 BRIGHT;
+		SHWA A 0 { user_lifespan++; }
+		SHWA A 0 A_JumpIf(user_lifespan == 32, "Die");
+		Loop;
+	Die:
+		TNT1 A 0;
+		stop;
+	}
 }
