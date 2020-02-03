@@ -261,6 +261,21 @@ class MetaDoomPlayer : PlayerPawn
 		Stop;
 	}
 	
+	// If the DOG GUN is equipped, take ammo from that instead of damage
+	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
+	{
+		if (player.ReadyWeapon is "MetaDogGun_HellHound" && CountInv("DogGunHealth") > 0)
+		{
+			A_TakeInventory("DogGunHealth", damage);
+			A_PlaySound("monsters/hellhound/pain", CHAN_VOICE);
+			A_PlaySound("weapons/doggun/absorb", CHAN_BODY, 1.0, 0, ATTN_NORM, 0, frandom(0.8,1.2));
+			painflash = damage;
+			return false;
+		} else {
+			return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+		}
+	}
+	
 	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
 	{
 		// Stop sound channels

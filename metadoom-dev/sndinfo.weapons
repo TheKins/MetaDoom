@@ -193,6 +193,7 @@ weapons/fireextinguisher/burst		fiexbrst
 $random weapons/doggun/bite { weapons/doggun/bite1 weapons/doggun/bite2 }
 weapons/doggun/bite1	dgunbit1
 weapons/doggun/bite2	dgunbit2
+weapons/doggun/absorb	actabso
 
 // unmaker
 weapons/unmaker/get			unmaget

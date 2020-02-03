@@ -30,6 +30,8 @@ Monster Changes:
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
+- The collar-bound Zombie Dogs now absorb all damage taken by the player while
+  you have them equipped! Be warned, though, they don't last forever...
 - The Pistol now triggers "gunfire activated" linedefs like hitscan weapons do,
   allowing it to trigger the Evil Eyes in SIGIL.
 - Corrected the pixel aspect ratio on the Unmaker's HUD sprites and hated every
@@ -46,7 +48,7 @@ UI Changes:
 - The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
 - Fixed the Spider Mastermind's animation in the Codex (Thanks DrPySpy!)
 - Added a unique background for the Quit confirmation menu.
-- Changed OptionsMenu slider graphics.
+- Reskinned the sliders in the Options Menus.
   
 Item Changes:
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
