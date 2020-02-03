@@ -70,6 +70,31 @@ Script "InventoryCooldown" (void)
 	TakeInventory("InventoryCooldownToken", 999);
 }
 
+// Weapon Shortcuts
+Script "QuickSelect_HWP" (void) net
+{
+	If (CheckInventory("MetaHolyWaterPistol"))
+	{
+		 SetWeapon("MetaHolyWaterPistol");
+	}
+}
+
+Script "QuickSelect_FireEx" (void) net
+{
+	If (CheckInventory("MetaFireExtinguisher"))
+	{
+		 SetWeapon("MetaFireExtinguisher");
+	}
+}
+
+Script "QuickSelect_SoulCube" (void) net
+{
+	If (CheckInventory("MetaSoulCube"))
+	{
+		 SetWeapon("MetaSoulCube");
+	}
+}
+
 // The Artifact
 script "MetaBulletTime" ENTER
 {

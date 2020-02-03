@@ -8,8 +8,20 @@ addkeysection "$MNU_MDHEADER" MetaDoomActions
 addmenukey "$MNU_MDMELEE" metadoom_melee
 alias metadoom_melee "pukename MeleePunch"
 defaultbind F metadoom_melee
+
 addmenukey "$MNU_MDCODEX" metadoom_codex
 alias metadoom_codex "openmenu metacodex_menu"
 defaultbind N metadoom_codex
+
+addkeysection "$MNU_MDQUICKSEL" MetaDoomQuickSelect
+
+addmenukey "$MNU_QS_HWP" metadoom_qs_hwp
+alias metadoom_qs_hwp "pukename QuickSelect_HWP"
+
+addmenukey "$MNU_QS_FX" metadoom_qs_fx
+alias metadoom_qs_fx "pukename QuickSelect_FireEx"
+
+addmenukey "$MNU_QS_SC" metadoom_qs_sc
+alias metadoom_qs_sc "pukename QuickSelect_SoulCube"
 
 alias impulse "pukename impulse %1"

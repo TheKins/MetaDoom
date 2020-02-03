@@ -7,7 +7,7 @@ Monster Changes:
 - Added # unique boss monsters!
 - Monster bleeding and fear status effects have been completely rewritten to
   be much more uniform (and much less copy-pasty) across all monsters.
-- Arachnotrons and Mancubi are now scared by Holy Water.
+- More monsters are now scared by Holy Water.
 - Hell Knights and Barons of Hell now avoid doing their jump attack if they have
   reason to believe they'll land in a damage sector, even though such things
   don't actually effect them. The fools.
@@ -34,6 +34,8 @@ Weapon Changes:
   allowing it to trigger the Evil Eyes in SIGIL.
 - Corrected the pixel aspect ratio on the Unmaker's HUD sprites and hated every
   second of it. Please add psprite scaling, Mr. Chicken...
+- Added new bindable keys to quickly switch directly to the Holy Water Pistol,
+  Fire Extinguisher and SoulCube without fumbling through the rest of the arsenal.
 
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization

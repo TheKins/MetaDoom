@@ -119,6 +119,11 @@ MNU_MDHEADER = "MetaDoom";
 MNU_MDMELEE = "Melee Attack";
 MNU_MDCODEX = "Open Codex";
 
+MNU_MDQUICKSEL = "Quick Weapon Switch";
+MNU_QS_HWP = "Holy Water Pistol";
+MNU_QS_FX = "Fire Extinguisher";
+MNU_QS_SC = "Soul Cube";
+
 // Skills
 SKILL_JKILL = "I Just Wanna Kill";
 SKILL_EASY = "Hey, Not Too Rough";
