@@ -125,12 +125,6 @@ class ShieldWallPiece : Actor
 		+NOGRAVITY
 		renderstyle "Shaded";
 		StencilColor "89 f0 ff";
-		+SHOOTABLE
-		+NODAMAGE
-		+INVULNERABLE
-		+DONTTHRUST
-		+NOBLOOD
-		+NOBLOODDECALS
 	}
 	
 	int user_lifespan;
