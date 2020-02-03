@@ -87,6 +87,9 @@ class ShieldWallProj : Actor
 		scale 0.5;
 		ReactionTime 60;	//Just over five seconds
 	}
+	
+	FLineTraceData SurfaceData;
+	
 	States
 	{
 	Spawn:
@@ -104,12 +107,22 @@ class ShieldWallProj : Actor
 			A_PlaySound("inventory/shieldwall/start");
 			
 			A_SpawnItemEx("ShieldWallPiece",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-			
 			A_SpawnItemEx("ShieldWallHilight",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("ShieldWallHilight",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("ShieldWallHilight",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			
+			// Only spawn the other bits if there's room for them
+			self.LineTrace(angle, 16, 0, TRF_THRUACTORS, offsetz: 8, data:SurfaceData);
+			if (SurfaceData.HitType != SurfaceData.TRACE_HitWall)
+			{
+				A_SpawnItemEx("ShieldWallPiece",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+				A_SpawnItemEx("ShieldWallHilight",16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			}
+			
+			self.LineTrace(angle+180, 16, 0, TRF_THRUACTORS, offsetz: 8, data:SurfaceData);
+			if (SurfaceData.HitType != SurfaceData.TRACE_HitWall)
+			{
+				A_SpawnItemEx("ShieldWallPiece",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+				A_SpawnItemEx("ShieldWallHilight",-16,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+			}
 		}
 		Stop;
 	}
@@ -129,7 +142,7 @@ class ShieldWallPiece : Actor
 		StencilColor "89 f0 ff";
 	}
 	
-	int user_lifespan;
+	int lifespan;
 	color playercolor;
 	
 	States
@@ -143,8 +156,8 @@ class ShieldWallPiece : Actor
 		}
 	LifeSpan:
 		SHWA AB 4 BRIGHT;
-		SHWA A 0 { user_lifespan++; }
-		SHWA A 0 A_JumpIf(user_lifespan == 32, "Die");
+		SHWA A 0 { lifespan++; }
+		SHWA A 0 A_JumpIf(lifespan == 32, "Die");
 		Loop;
 	Die:
 		SHWA A 0 
@@ -153,6 +166,7 @@ class ShieldWallPiece : Actor
 			
 			for (int i; i < 12; i++)
 			{
+				// Spawn particles using the player's colour for consistency
 				A_SpawnParticle(playercolor,SPF_RELATIVE|SPF_FULLBRIGHT,random(8,56),random(3,8),0,random(-8,8),random(-8,8),random(8,52),0,0,0,0,0,-0.1);
 			}
 			
@@ -196,11 +210,13 @@ class ShieldWallPiece : Actor
 				return false;
 			} 
 		}
-		
 		return true;
 	}
 }
 
+// Since actors with a Shaded renderstyle don't really have a lot of contrast
+// so we spawn another actor with the highlights using additive renderstyle for
+// added consistency. Somehow the z-sorting just works out...
 class ShieldWallHilight : Actor
 {
 	Default
@@ -212,7 +228,7 @@ class ShieldWallHilight : Actor
 		renderstyle "Add";
 	}
 	
-	int user_lifespan;
+	int lifespan;
 	
 	States
 	{
@@ -221,8 +237,8 @@ class ShieldWallHilight : Actor
 		SHWA A 0 A_SetAngle(angle + 90);
 	LifeSpan:
 		SHWA CD 4 BRIGHT;
-		SHWA A 0 { user_lifespan++; }
-		SHWA A 0 A_JumpIf(user_lifespan == 32, "Die");
+		SHWA A 0 { lifespan++; }
+		SHWA A 0 A_JumpIf(lifespan == 32, "Die");
 		Loop;
 	Die:
 		TNT1 A 0;
