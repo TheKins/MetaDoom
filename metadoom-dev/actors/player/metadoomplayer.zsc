@@ -269,7 +269,6 @@ class MetaDoomPlayer : PlayerPawn
 			A_TakeInventory("DogGunHealth", damage);
 			A_PlaySound("monsters/hellhound/pain", CHAN_VOICE);
 			A_PlaySound("weapons/doggun/absorb", CHAN_BODY, 1.0, 0, ATTN_NORM, 0, frandom(0.8,1.2));
-			painflash = damage;
 			return false;
 		} else {
 			return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
