@@ -269,7 +269,27 @@ class MetaDoomPlayer : PlayerPawn
 			A_TakeInventory("DogGunHealth", damage);
 			A_PlaySound("monsters/hellhound/pain", CHAN_VOICE);
 			A_PlaySound("weapons/doggun/absorb", CHAN_BODY, 1.0, 0, ATTN_NORM, 0, frandom(0.8,1.2));
-			// TODO: Add some visual feedback as well.
+			
+			if (damage < 10)
+			{
+				A_Quake(3,8,0,8,0);
+			} else if (damage < 20)
+			{
+				A_Quake(4,12,0,8,0);
+			} else if (damage < 30)
+			{
+				A_Quake(5,16,0,8,0);
+			} else if (damage < 40)
+			{
+				A_Quake(6,20,0,8,0);
+			} else if (damage < 50)
+			{
+				A_Quake(7,25,0,8,0);
+			} else if (damage >= 50)
+			{
+				A_Quake(8,30,0,8,0);
+			}
+			
 			return false;
 		} else {
 			return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
