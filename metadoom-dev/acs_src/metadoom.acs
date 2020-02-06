@@ -560,20 +560,20 @@ script "Item_GameDetector" (void)
 	if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0
 	| StrCmp(StrLeft(maplump, 2), "E4") == 0 | StrCmp(StrLeft(maplump, 2), "E5") == 0)
 	{
-		if(GetCvar("meta_developer"))
-			log(s:"ACS: Map Type - Doom 1 Episodic");
+		//if(GetCvar("meta_developer"))
+		//	log(s:"ACS: Map Type - Doom 1 Episodic");
 		SetResultValue(2);
 	}
 	else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
 	{
-		if(GetCvar("meta_developer"))
-			log(s:"ACS: Map Type - Doom 2 Episodic");
+		//if(GetCvar("meta_developer"))
+		//	log(s:"ACS: Map Type - Doom 2 Episodic");
 		SetResultValue(3);
 	}
 	else
 	{
-		if(GetCvar("meta_developer"))
-			log(s:"ACS: Map Type - Doom 2... probably");
+		//if(GetCvar("meta_developer"))
+		//	log(s:"ACS: Map Type - Doom 2... probably");
 		SetResultValue(1);
 	}
 }
@@ -592,8 +592,8 @@ script "Monster_Init" ENTER
 
 script "Monster_ReturnMaps" (void)
 {
-	if(GetCvar("meta_developer"))
-			log(s:"ACS: ", n:0, s:" is checking the mapclear count... (", i:mapsCleared, s:")");
+	//if(GetCvar("meta_developer"))
+	//		log(s:"ACS: ", n:0, s:" is checking the mapclear count... (", i:mapsCleared, s:")");
 			
 	SetResultValue(mapsCleared);
 }
@@ -734,27 +734,6 @@ script "PlayerInventoryFixer" ENTER
 
 	delay(1);
 	restart;
-}
-
-// Get Sector Light for Decorate
-
-script "Spectre_SectorLight" (void)
-{
-	int i = 0;
-	i = GetActorLightLevel(0);
-	
-	if(i >= 128)
-	{
-		if(GetCvar("meta_developer"))
-			log(s:"ACS: Spectre is a bright one! (", i:i, s:")");
-		
-		SetResultValue(1);
-	} else {
-		if(GetCvar("meta_developer"))
-			log(s:"ACS: Spectre is a bit dim. (", i:i, s:")");
-		SetResultValue(0);
-	}
-    terminate;
 }
 
 // Get Ceiling Texture for DECORATE
