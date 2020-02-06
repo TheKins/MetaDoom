@@ -438,7 +438,11 @@ class MetaHellGuardShot : Actor
 	}
 }
 
-// The Harbinger of Doom, the Cyberdemon pre-Spearing.
+////////////////////////////////////////////////////////////////////////////////
+
+// The Harbinger of Doom, the Cyberdemon pre-Spearing. Attack is a bit like a
+// Super-Baron more than anything. May change in the future to be fairer, but
+// plays nice on intended map (DOOM2 MAP32) due to abundance of cover.
 class MetaHarbinger : MonsterCore
 {
 	Default
