@@ -353,6 +353,7 @@ OB_CYBORG_STOMP = "%o was stomped out by the Cyberdemon!";
 
 OB_MOTHERDEMON = "%o was absolved by the Mother Demon!";
 OB_HELLGUARD = "%o was obstructed by the Hell Guard!";
+OB_HELLGUARD_STOMP = "%o was flattened by the Hell Guard!";
 OB_HARBINGER = "%o was splattered by the Harbinger of Doom!";
 
 OB_WOLFSS = "%o fell to the SS.";
