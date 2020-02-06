@@ -384,8 +384,8 @@ Script "BloodFX_Water" ENTER
 			if (CheckActorFloorTexture(0, fluidtex_resb[j]))
 			{
 				SetResultValue(3);
-				if(GetCvar("meta_developer"))
-				Log(s:"Blood FX Result 3");
+				//if(GetCvar("meta_developer"))
+				//Log(s:"Blood FX Result 3");
 				break;
 			}
 		}
@@ -395,8 +395,8 @@ Script "BloodFX_Water" ENTER
 			if (CheckActorFloorTexture(0, fluidtex_resa[i]))
 			{
 				SetResultValue(2);
-				if(GetCvar("meta_developer"))
-				Log(s:"Blood FX Result 2");
+				//if(GetCvar("meta_developer"))
+				//Log(s:"Blood FX Result 2");
 				break;
 			}
 		}
@@ -416,7 +416,7 @@ script "Item_Shotgun" (void)
 		if(CheckActorInventory(i,"MetaShotgun"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a Shotgun! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a Shotgun! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -431,7 +431,7 @@ script "Item_SuperShotgun" (void)
 		if(CheckActorInventory(i,"MetaSuperShotgun"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a SSG! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a SSG! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -446,7 +446,7 @@ script "Item_RocketLauncher" (void)
 		if(CheckActorInventory(i,"MetaRocketLauncher"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a Rocket Launcher! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a Rocket Launcher! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -461,7 +461,7 @@ script "Item_Machinegun" (void)
 		if(CheckActorInventory(i,"MetaMachinegun"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a Machinegun! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a Machinegun! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -476,7 +476,7 @@ script "Item_PlasmaRifle" (void)
 		if(CheckActorInventory(i,"MetaPlasmaRifle"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a Plasma Rifle! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a Plasma Rifle! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -491,7 +491,7 @@ script "Item_BFG9000" (void)
 		if(CheckActorInventory(i,"PlayingDoom64"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Playing Doom 64. Alternate BFG Item Drops Disabled.");
+			log(s:"ACS: Playing Doom 64. Alternate BFG Item Drops Disabled.");
 			
 			SetResultValue(1);
 			break;
@@ -500,7 +500,7 @@ script "Item_BFG9000" (void)
 		if(CheckActorInventory(i,"MetaBFG9000"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a BFG9000! Alternate weapon drops enabled.");
+			log(s:"ACS: Someone has a BFG9000! Alternate weapon drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -515,7 +515,7 @@ script "Item_Unmaker" (void)
 		if(CheckActorInventory(i,"MetaUnmaker"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has an Unmaker! Demon Key drops enabled.");
+			log(s:"ACS: Someone has an Unmaker! Demon Key drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -530,7 +530,7 @@ script "Item_SoulCube" (void)
 		if(CheckActorInventory(i,"MetaSoulCube"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has a SoulCube! SoulAmmo drops enabled.");
+			log(s:"ACS: Someone has a SoulCube! SoulAmmo drops enabled.");
 			
 			SetResultValue(2);
 			break;
@@ -545,7 +545,7 @@ script "Item_Artifact" (void)
 		if(CheckActorInventory(i,"Artifact"))
 		{
 			if(GetCvar("meta_developer"))
-			log(s:"Someone has an Artifact! Artifact drops DISABLED.");
+			log(s:"ACS: Someone has an Artifact! Artifact drops DISABLED.");
 			
 			SetResultValue(2);
 			break;
@@ -561,19 +561,19 @@ script "Item_GameDetector" (void)
 	| StrCmp(StrLeft(maplump, 2), "E4") == 0 | StrCmp(StrLeft(maplump, 2), "E5") == 0)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Map Type: Doom 1 Episodic");
+			log(s:"ACS: Map Type - Doom 1 Episodic");
 		SetResultValue(2);
 	}
 	else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Map Type: Doom 2 Episodic");
+			log(s:"ACS: Map Type - Doom 2 Episodic");
 		SetResultValue(3);
 	}
 	else
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Map Type: Doom 2, probably");
+			log(s:"ACS: Map Type - Doom 2... probably");
 		SetResultValue(1);
 	}
 }
@@ -587,13 +587,13 @@ script "Monster_Init" ENTER
 	mapsCleared++;
 	
 	if(GetCvar("meta_developer"))
-			log(s:"Current mapclear count: ", i:mapsCleared);
+			log(s:"Mapclear Count: ", i:mapsCleared);
 }
 
 script "Monster_ReturnMaps" (void)
 {
 	if(GetCvar("meta_developer"))
-			log(n:0, s:" is checking the mapclear count... (", i:mapsCleared, s:")");
+			log(s:"ACS: ", n:0, s:" is checking the mapclear count... (", i:mapsCleared, s:")");
 			
 	SetResultValue(mapsCleared);
 }
@@ -606,8 +606,8 @@ script "Key_Init" OPEN
 	
 	if(GetCvar("meta_developer"))
 	{
-		log(s:"Current keycard skin: ", i:item_KeyType);
-		log(s:"Current skullkey skin: ", i:item_SkullKeyType);
+		log(s:"Keycard Skin: ", i:item_KeyType);
+		log(s:"Skullkey Skin: ", i:item_SkullKeyType);
 	}
 }
 
@@ -628,7 +628,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("Chainsaw") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old Chainsaw detected! Replacing with new one");
+			log(s:"ACS: Old Chainsaw detected! Replacing with new one");
 		
 		TakeInventory("Chainsaw",1);
 		GiveInventory("MetaChainsaw",1);
@@ -637,7 +637,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("Shotgun") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old Shotgun detected! Replacing with new one");
+			log(s:"ACS: Old Shotgun detected! Replacing with new one");
 		
 		TakeInventory("Shotgun",1);
 		GiveInventory("MetaShotgun",1);
@@ -646,7 +646,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("SuperShotgun") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old SSG detected! Replacing with new one");
+			log(s:"ACS: Old SSG detected! Replacing with new one");
 		
 		TakeInventory("SuperShotgun",1);
 		GiveInventory("MetaSuperShotgun",1);
@@ -655,7 +655,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("Chaingun") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old Chaingun detected! Replacing with Machinegun");
+			log(s:"ACS: Old Chaingun detected! Replacing with Machinegun");
 		
 		TakeInventory("Chaingun",1);
 		GiveInventory("MetaMachineGun",1);
@@ -664,7 +664,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("RocketLauncher") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old Rocket Launcher detected! Replacing with new one");
+			log(s:"ACS: Old Rocket Launcher detected! Replacing with new one");
 		
 		TakeInventory("RocketLauncher",1);
 		GiveInventory("MetaRocketLauncher",1);
@@ -673,7 +673,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("PlasmaRifle") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old Plasma Rifle detected! Replacing with new one");
+			log(s:"ACS: Old Plasma Rifle detected! Replacing with new one");
 				
 		TakeInventory("PlasmaRifle",1);
 		GiveInventory("MetaPlasmaRifle",1);
@@ -682,7 +682,7 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("BFG9000") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Old BFG detected! Replacing with new one");
+			log(s:"ACS: Old BFG detected! Replacing with new one");
 		
 		TakeInventory("BFG9000",1);
 		GiveInventory("MetaBFG9000",1);
@@ -693,14 +693,14 @@ script "PlayerInventoryFixer" ENTER
 	if (CheckInventory("MetaPistol") == 0 && CheckInventory("MetaLastResortFist") == 0 && GameType() != GAME_TITLE_MAP)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Player has no Pistol! Giving them some means of defending themselves...");
+			log(s:"ACS: Player has no Pistol! Giving them some means of defending themselves...");
 		GiveInventory("MetaLastResortFist",1);
 	}
 	
 	if (CheckInventory("MetaPistol") == 1  && CheckInventory("MetaLastResortFist") == 1)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Player has a Pistol! No need for the Last Resort anymore.");
+			log(s:"ACS: Player has a Pistol! No need for the Last Resort anymore.");
 		TakeInventory("MetaLastResortFist",1);
 	}
 	
@@ -710,7 +710,7 @@ script "PlayerInventoryFixer" ENTER
 		if (CheckInventory("DemonKey") == 1 && CheckInventory("UnmakerUpgrade1Icon") == 0)
 		{		
 			if(GetCvar("meta_developer"))
-				log(s:"Giving D64 Demon Key Token 1!");
+				log(s:"ACS: Giving D64 Demon Key Token 1!");
 				
 			GiveInventory("UnmakerUpgrade1Icon",1);
 		}
@@ -718,7 +718,7 @@ script "PlayerInventoryFixer" ENTER
 		if (CheckInventory("DemonKey") == 2 && CheckInventory("UnmakerUpgrade2Icon") == 0)
 		{		
 			if(GetCvar("meta_developer"))
-				log(s:"Giving D64 Demon Key Token 2!");
+				log(s:"ACS: Giving D64 Demon Key Token 2!");
 				
 			GiveInventory("UnmakerUpgrade2Icon",1);
 		}
@@ -726,7 +726,7 @@ script "PlayerInventoryFixer" ENTER
 		if (CheckInventory("DemonKey") == 3 && CheckInventory("UnmakerUpgrade3Icon") == 0)
 		{		
 			if(GetCvar("meta_developer"))
-				log(s:"Giving D64 Demon Key Token 3!");
+				log(s:"ACS: Giving D64 Demon Key Token 3!");
 				
 			GiveInventory("UnmakerUpgrade3Icon",1);
 		}
@@ -746,12 +746,12 @@ script "Spectre_SectorLight" (void)
 	if(i >= 128)
 	{
 		if(GetCvar("meta_developer"))
-			log(s:"Spectre is a bright one! (", i:i, s:")");
+			log(s:"ACS: Spectre is a bright one! (", i:i, s:")");
 		
 		SetResultValue(1);
 	} else {
 		if(GetCvar("meta_developer"))
-			log(s:"Spectre is a bit dim. (", i:i, s:")");
+			log(s:"ACS: Spectre is a bit dim. (", i:i, s:")");
 		SetResultValue(0);
 	}
     terminate;
