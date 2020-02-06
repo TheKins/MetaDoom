@@ -318,7 +318,18 @@ class SpectreSpawner : MetaSpawner replaces Spectre
 		SARG E 0;
 		TNT1 A 0 A_JumpIf(meta_noalts_actors, "Spectre");
 		TNT1 A 0 A_JumpIf(meta_contentlocust, "ContentLocustVarietyPack");
-		TNT1 A 0 A_JumpIf(CallACS("Spectre_SectorLight", 0, 0, 0) == 1, "BrightMap");
+		TNT1 A 0 
+		{
+			if (level.PointInSector(self.pos.xy).GetLightLevel() > 128)
+			{
+				if (meta_developer)
+						Console.printf("Spawners: SpectreSpawner at %i x %i is a bright one (%i)", self.pos.x, self.pos.y, level.PointInSector(self.pos.xy).GetLightLevel());
+				SetStateLabel("BrightMap");
+			} else {
+				if (meta_developer)
+						Console.printf("Spawners: SpectreSpawner at %i x %i is a bit dim (%i)", self.pos.x, self.pos.y, level.PointInSector(self.pos.xy).GetLightLevel());
+			}
+		}
 		goto Darkmap;
 	BrightMap:
 		TNT1 A 0;
