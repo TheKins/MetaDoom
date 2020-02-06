@@ -27,12 +27,3 @@ class Counter : Inventory
     -Inventory.INVBAR
 	}
 }
-
-class Trigger : CustomInventory
-{
-    Default
-	{
-    Inventory.MaxAmount 0;
-    +Inventory.AUTOACTIVATE
-	}
-}
