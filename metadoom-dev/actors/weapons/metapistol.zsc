@@ -98,7 +98,7 @@ class MetaPistol : MetaDoomWeapon
 	Fire:
 		PIST A 0		
 		{
-			if (meta_pistolammo == 1 && CountInv("Clip") == 0)
+			if (meta_pistolammo && CountInv("Clip") == 0)
 			{
 				return ResolveState("NoAmmo");
 			}
@@ -108,10 +108,11 @@ class MetaPistol : MetaDoomWeapon
 		PIST A 4;
 		PIST B 1 bright
 		{
-			if (meta_pistolammo == 0 || meta_pistolammo == 1 && CountInv("Clip") > 0)
+			if (!meta_pistolammo || (meta_pistolammo && CountInv("Clip") > 0))
 			{
 				A_FireProjectile("PistolTracer");
-				if (GetCVar ("meta_pistolammo") == 1)
+				
+				if (meta_pistolammo)
 				{
 					A_TakeInventory("Clip", 1);
 				}
