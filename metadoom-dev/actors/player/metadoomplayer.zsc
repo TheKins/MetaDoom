@@ -184,12 +184,6 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY G 4;
 		PLAY G 4 A_PlaySound("*hurtslime");
 		Goto Spawn;
-	Pain.SpiderdemonTKAttack:
-		PLAY G 0 
-		{
-			ThrustThingZ(0,32,0,1);
-		}
-		goto Pain;
 	Death:
 		PLAY H 10;
 		PLAY I 10 A_PlayerScream;

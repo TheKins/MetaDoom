@@ -298,6 +298,17 @@ class MetaSpiderdemonTKBall : Actor
 		BAL2 CDE 6 BRIGHT;
 		Stop;
 	}
+	
+	override int SpecialMissileHit (Actor victim)
+	{
+		if (victim is "PlayerPawn" ||
+		(victim is "MonsterCore" && victim.bBOSS == false))
+		{
+			victim.vel.z = 16;
+		}
+		
+		return Super.SpecialMissileHit(victim);
+	}
 }
 
 class MetaSpiderMastermindCrush : Actor
