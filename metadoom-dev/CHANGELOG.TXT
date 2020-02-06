@@ -18,6 +18,9 @@ Monster Changes:
   avoid falling off a ledge, or charging while in a small "turret" area...
 - Cyberdemon charging attacks are no longer blocked by items and other random junk,
   and now smoosh anybody stupid enough to be in the way.
+- Cyberdemon charging attacks now have a different audio-visual cue from the
+  walking-while-shooting attack, in that he stomps twice on the ground first.
+- Cyberdemon melee has been revamped into a new stomp attack.
 - Cyberdemons now announce their entrance with the same gusto as other bosses.
 - Removed code for Z-Sec to try and actively dodge if projectiles were coming
   their way, because it was always broken and had never worked.
