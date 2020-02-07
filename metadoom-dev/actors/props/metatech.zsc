@@ -29,6 +29,7 @@ class MetaTechLamp : Actor // replaces TechLamp
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Lamp";
 	}
 	
 	States
@@ -106,6 +107,7 @@ class MetaTechLamp2 : Actor // replaces TechLamp2
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Lamp";
 	}
 	
 	States
@@ -173,6 +175,7 @@ class MetaColumn : Actor // replaces Column
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Column";
 	}
 	
 	States
@@ -248,6 +251,7 @@ class MetaBurningBarrel : Actor // replaces BurningBarrel
 		damagefactor "Axe", 50;
 		painchance "LightningStun", 0;
 		painchance 255;
+		Tag "Burning Barrel";
 	}
 	
 	States
@@ -299,6 +303,7 @@ class MetaBurningBarrelExtinguished : Actor
 		painchance "LightningStun", 0;
 		painchance "FireExtinguisher", 0;
 		painchance 255;
+		Tag "Torched Barrel";
 	}
 	
 	States
@@ -363,6 +368,7 @@ class MetaTechPillar : Actor // replaces TechPillar
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Pillar";
 	}
 	
 	States

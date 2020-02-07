@@ -30,6 +30,7 @@ class MetaZombieMan : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Zombieman";
 	}
 	
 	States
@@ -99,6 +100,7 @@ class MetaHellRazer : MonsterCore
 		DropItem "Clip";
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
+		Tag "Hell Razer";
 	}
 	
 	States

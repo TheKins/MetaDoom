@@ -28,6 +28,7 @@ class MetaPainElemental : MonsterCore
 		DeathSound "monsters/painelemental/die";
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_PAINELEMENTAL";
+		Tag "Pain Elemental";
 	}
 
 	States
@@ -92,6 +93,7 @@ class MetaBeholder : MonsterCore
 		DeathSound "monsters/beholder/die";
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_BEHOLDER";
+		Tag "Beholder";
 	}
 
 	States
@@ -169,6 +171,7 @@ class MetaRahovart : MonsterCore
 		DeathSound "monsters/rahovart/die";
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_RAHOVART";
+		Tag "Rahovart";
 	}
 
 	States

@@ -38,6 +38,7 @@ class MetaTrite : MonsterCore
 		damagefactor "BerserkFist", 500;
 		damagefactor "KrautBoot", 500;
 		damagefactor "Axe", 500;
+		Tag "Trite";
 	}
 
 	States

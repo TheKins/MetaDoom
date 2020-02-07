@@ -28,6 +28,7 @@ class MetaDemon : MonsterCore
 		ActiveSound "monsters/pinky/idle";
 		Obituary "$OB_DEMONHIT";
 		painchance "HolyWater", 255;
+		Tag "Pinky";
 	}
 
 	States
@@ -96,6 +97,7 @@ class MetaBullDemon : MonsterCore
 		Obituary "$OB_BULLDEMONHIT";
 		painchance 64;
 		painchance "HolyWater", 255;
+		Tag "Bull Demon";
 	}
 
 	int user_accelerator;

@@ -27,6 +27,7 @@ class MetaArachnotron : MonsterCore
 		ActiveSound "monsters/arachnotron/idle";
 		Obituary "$OB_BABY";
 		Species "BabySpider";
+		Tag "Arachnotron";
 	}
 
 	States
@@ -124,6 +125,7 @@ class MetaSpiborg : MonsterCore
 		Obituary "$OB_SPIBORG";
 		scale 0.75;
 		Species "BabySpider";
+		Tag "Spiborg";
 	}
 
 	States

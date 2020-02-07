@@ -34,6 +34,7 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		painchance "LightningStun", 0;
 		painchance 255;
 		damagetype "ExplodingBarrel";
+		Tag "Explosive Barrel";
 	}
 	
 	States

@@ -37,6 +37,7 @@ class MetaBaronOfHell : MonsterCore
 		damagefactor "BaronSpike", 0;
 		painchance "BaronSpike", 0;
 		MonsterCore.CanBeScared false;
+		Tag "Baron of Hell";
 	}
 	
 	vector2 neckchecker;
@@ -179,6 +180,7 @@ class MetaHellKnight : MonsterCore
 		HitObituary "$OB_KNIGHTHIT";
 		Obituary "$OB_KNIGHT";
 		MonsterCore.CanBeScared false;
+		Tag "Hell Knight";
 	}
 	
 	vector2 neckchecker;

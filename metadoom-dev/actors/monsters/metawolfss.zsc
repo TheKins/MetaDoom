@@ -25,6 +25,7 @@ class MetaWolfensteinSS : MonsterCore
 		DeathSound "monsters/wolfss/die";
 		Obituary "$OB_WOLFSS";
 		Dropitem "Clip";
+		Tag "DOS SS";
 	}
 
 	States
@@ -101,6 +102,7 @@ class MetaWolfensteinSNES : MonsterCore
 		Obituary "$OB_WOLFSNES";
 		DropItem "Clip";
 		scale 2.0;
+		Tag "SNES Guard";
 	}
 
 	States
@@ -164,6 +166,7 @@ class MetaWolfensteinApple : MonsterCore
 		Obituary "$OB_WOLFAPPLE";
 		DropItem "Clip";
 		scale 2.0;
+		Tag "IIrooper";
 	}
 
 	States
@@ -232,6 +235,7 @@ class MetaWolfensteinMacOS : MonsterCore
 		Obituary "$OB_WOLFMAC";
 		Dropitem "Clip";
 		scale 0.6;
+		Tag "MacintOfficer";
 	}
 
 	States
@@ -306,6 +310,7 @@ class MetaWolfensteinJava : MonsterCore
 		Obituary "$OB_WOLFJAVA";
 		Dropitem "Clip";
 		scale 0.75;
+		Tag "Javanaut";
 	}
 
 	States

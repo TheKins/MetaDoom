@@ -32,6 +32,7 @@ class MetaCacodemon : MonsterCore
 		BloodColor "0 0 80";
 		Decal "bluebloodsplat";
 		Species "Cacodemon";
+		Tag "Cacodemon";
 	}
 
 	States
@@ -280,6 +281,7 @@ class MetaMalwraith : MonsterCore
 		Obituary "$OB_MALWRAITH";
 		HitObituary "$OB_MALWRAITH";
 		Species "Cacodemon";
+		Tag "Malwrath";
 	}
 
 	States
@@ -527,6 +529,7 @@ class MetaWretched : MonsterCore
 		Decal "bluebloodsplat";
 		scale 0.65;
 		Species "Cacodemon";
+		Tag "Wretched";
 	}
 
 	States

@@ -29,6 +29,7 @@ class MetaScriptedMarine : MonsterCore // replaces ScriptedMarine
 		PainSound "*pain50";
 		Obituary "$OB_MARINE";
 		MonsterCore.CanBeScared false;
+		Tag "Space Marine";
 	}
 
 	States

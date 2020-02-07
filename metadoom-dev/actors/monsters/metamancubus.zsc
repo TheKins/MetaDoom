@@ -27,6 +27,7 @@ class MetaMancubus : MonsterCore
 		ActiveSound "monsters/mancubus/idle";
 		Obituary "$OB_FATSO";
 		Species "Fatso";
+		Tag "Mancubus";
 	}
 
 	States
@@ -129,6 +130,7 @@ class MetaBehemoth : MonsterCore
 		Obituary "$OB_FATSO2";
 		Species "Fatso";
 		scale 0.75;
+		Tag "Behemoth";
 	}
 	
 	int user_yeahwelit;
@@ -339,6 +341,7 @@ class MetaCyberManc : MonsterCore
 		Species "Fatso";
 		scale 0.85;
 		yscale 0.75;
+		Tag "Cyber-Mancubus";
 	}
 
 	States

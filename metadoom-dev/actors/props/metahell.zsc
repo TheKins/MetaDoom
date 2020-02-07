@@ -67,6 +67,7 @@ class MetaRedTorch : Actor // replaces RedTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -134,6 +135,7 @@ class MetaBlueTorch : Actor // replaces BlueTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -200,6 +202,7 @@ class MetaGreenTorch : Actor // replaces GreenTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -267,6 +270,7 @@ class MetaShortRedTorch : Actor // replaces ShortRedTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -334,6 +338,7 @@ class MetaShortBlueTorch : Actor // replaces ShortBlueTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -401,6 +406,7 @@ class MetaShortGreenTorch : Actor // replaces ShortGreenTorch
 		damagefactor "HolyWater", 255;
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
+		Tag "Torch";
 	}
 	
 	States
@@ -474,6 +480,7 @@ class MetaBigTree : Actor // replaces BigTree
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		painchance 255;
+		Tag "Tree";
 	}
 	
 	States
@@ -536,6 +543,7 @@ class MetaTorchTree : Actor // replaces TorchTree
 		damagefactor "Axe", 50;
 		painchance 255;
 		+SOLID
+		Tag "Tree";
 	}
 	
 	States
@@ -594,6 +602,7 @@ class MetaCandelabra : Actor // replaces Candelabra
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Candelabra";
 	}
 	
 	States
@@ -736,6 +745,7 @@ class MetaEvilEye : Actor // replaces EvilEye
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Evil Eye";
 	}
 	
 	States
@@ -825,6 +835,7 @@ class MetaEvilEyeForSigil : Actor
 		Height 54;
 		ProjectilePassHeight 16;
 		+SOLID
+		Tag "Bare Witness";
 	}
 	States
 	{
@@ -887,6 +898,7 @@ class MetaHeadOnAStick : Actor // replaces HeadOnAStick
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Skull-Kabob";
 	}
 	
 	States
@@ -932,6 +944,7 @@ class MetaHeadsOnAStick : Actor // replaces HeadsOnAStick
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Skull-Kabob";
 	}
 	
 	States

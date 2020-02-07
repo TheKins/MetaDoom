@@ -37,6 +37,7 @@ class MetaMotherDemon : MonsterCore
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
+		Tag "Mother Demon";
 	}
 	
 	States
@@ -270,6 +271,7 @@ class MetaHellGuard : MonsterCore
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
+		Tag "Hell Guard";
 	}
 	
 	States
@@ -511,6 +513,7 @@ class MetaHarbinger : MonsterCore
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
+		Tag "Harbinger of Doom";
 	}
 	
 	States

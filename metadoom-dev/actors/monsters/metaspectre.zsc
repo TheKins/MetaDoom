@@ -22,6 +22,7 @@ class MetaSpectre : MetaDemon
 		DeathSound "monsters/pinky/die";
 		ActiveSound "monsters/pinky/idle";
 		HitObituary "$OB_SPECTREHIT";
+		Tag "Spectre";
 	}
 }
 
@@ -46,6 +47,7 @@ class MetaNightmareSpectre : MetaDemon
 		HitObituary "$OB_SPECTRENIGHTMARE";
 		scale 0.75;
 		yscale 0.65;
+		Tag "Nightmare Spectre";
 	}
 
 	States
@@ -112,6 +114,7 @@ class MetaSawcubus : MonsterCore
 		DeathSound "monsters/chainsawgoblin/die";
 		Obituary "$OB_SAWCUBUS";
 		painchance "HolyWater", 255;
+		Tag "Sawcubus";
 	}
 
 	States

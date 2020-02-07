@@ -45,6 +45,7 @@ class MetaCyberdemon : MonsterCore
 		damagefactor "Vampire", 0.25;
 		scale 0.75;
 		MonsterCore.CanBeScared false;
+		Tag "Cyberdemon";
 	}
 	
 	FLineTraceData SurfaceData;

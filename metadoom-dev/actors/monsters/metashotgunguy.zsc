@@ -32,6 +32,7 @@ class MetaShotgunGuy : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Shotgun Guy";
 	}
 	
 	States
@@ -113,6 +114,7 @@ class MetaZSec : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Z-Sec";
 	}
 	
 	States

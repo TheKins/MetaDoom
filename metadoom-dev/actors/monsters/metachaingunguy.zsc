@@ -32,6 +32,7 @@ class MetaMachineGunGuy : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Former Lieutenant";
 	}
 	
 	States
@@ -108,6 +109,7 @@ class MetaChainGunGuy : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Former Commando";
 	}
 	
 	States
@@ -192,6 +194,7 @@ class MetaAssassinGuy : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		Tag "Former Assassin";
 	}
 	
 	States

@@ -33,6 +33,7 @@ class MetaArchvile : MonsterCore
 		Obituary "$OB_VILE";
 		damagefactor "HolyWater", 1.5;
 		painchance "HolyWater", 255;
+		Tag "Arch-Vile";
 	}
 
 	States
@@ -152,6 +153,7 @@ class MetaSummoner : MonsterCore
 		damagefactor "HolyWater", 1.5;
 		painchance "HolyWater", 255;
 		yscale 0.9;
+		tag "Summoner";
 	}
 	
 	int outtasight;

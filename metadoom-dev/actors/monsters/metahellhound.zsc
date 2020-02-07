@@ -32,6 +32,7 @@ class MetaHellhound : MonsterCore
 		painchance "DogCollar", 255;
 		damagefactor "Axe", 50;
 		scale 1.25;
+		Tag "Hellhound";
 	}
 
 	States
@@ -124,6 +125,7 @@ class MetaDemonDog : MetaHellhound
 		ActiveSound "monsters/demondog/bark";
 		SeeSound "monsters/demondog/see";
 		Obituary "$OB_DOG2";
+		Tag "Demon Dog";
 	}
 
 	States
@@ -213,6 +215,7 @@ class MetaCerberus : MetaHellhound
 		ActiveSound "monsters/cerberus/bark";
 		SeeSound "monsters/cerberus/see";
 		Obituary "$OB_DOG3";
+		Tag "Cerberus";
 	}
 
 	States

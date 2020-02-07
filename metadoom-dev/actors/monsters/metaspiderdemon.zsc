@@ -38,6 +38,7 @@ class MetaSpiderMastermind : MonsterCore
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
+		Tag "Spider Mastermind";
 	}
 	
 	States

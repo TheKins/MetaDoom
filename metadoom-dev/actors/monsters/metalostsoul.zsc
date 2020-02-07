@@ -31,6 +31,7 @@ class MetaLostSoul : MonsterCore
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
+		Tag "Lost Soul";
 	}
 	
 	int firetimer;
@@ -309,6 +310,7 @@ class MetaPhantom : MonsterCore
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
+		Tag "Phantom";
 	}
 	
 	int firetimer;
@@ -508,6 +510,7 @@ class MetaForgottenOne : MonsterCore
 		damagefactor "HolyWater", 500;
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
+		Tag "Forgotten One";
 	}
 	
 	int firetimer;

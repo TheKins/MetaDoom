@@ -27,6 +27,7 @@ class MetaDoomImp : MonsterCore
 		HitObituary "$OB_IMPHIT";
 		Obituary "$OB_IMP";
 		painchance "HolyWater", 255;
+		Tag "Imp";
 	}
 
 	States
@@ -162,6 +163,7 @@ class MetaNightmareImp : MonsterCore
 		renderstyle "Translucent";
 		alpha 0.75;
 		painchance "HolyWater", 255;
+		Tag "Nightmare Imp";
 	}
 
 	States
@@ -265,6 +267,7 @@ class MetaDoomImpLord : MonsterCore
 		HitObituary "$OB_IMPLORDHIT";
 		Obituary "$OB_IMPLORD";
 		painchance "HolyWater", 255;
+		Tag "Imp Lord";
 	}
 	
 	int tries;

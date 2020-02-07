@@ -120,6 +120,7 @@ class MetaBloodyTwitch : Actor // replaces BloodyTwitch
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Twitching Corpse";
 	}
 	
 	States
@@ -205,6 +206,7 @@ class MetaDeadStick : Actor // replaces DeadStick
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Corpse-Kabob";
 	}
 	
 	States
@@ -264,6 +266,7 @@ class MetaLiveStick : Actor // replaces LiveStick
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Dude-Kabob";
 	}
 	States
 	{
@@ -327,6 +330,7 @@ class MetaMeat2 : Actor // replaces Meat2
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -389,6 +393,7 @@ class MetaMeat3 : Actor // replaces Meat3
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -451,6 +456,7 @@ class MetaMeat4 : Actor // replaces Meat4
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -513,6 +519,7 @@ class MetaMeat5 : Actor // replaces Meat5
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -661,6 +668,7 @@ class MetaHangBNoBrain : Actor // replaces HangBNoBrain
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -723,6 +731,7 @@ class MetaHangNoGuts : Actor // replaces HangNoGuts
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -785,6 +794,7 @@ class MetaHangTLookingDown : Actor // replaces HangTLookingDown
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -847,6 +857,7 @@ class MetaHangTLookingUp : Actor // replaces HangTLookingUp
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
@@ -909,6 +920,7 @@ class MetaHangTNoBrain : Actor // replaces HangTNoBrain
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	States
 	{
@@ -970,6 +982,7 @@ class MetaHangTSkull : Actor // replaces HangTSkull
 		damagefactor "FireExtinguisher", 0;
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
+		Tag "Fresh Meat";
 	}
 	
 	States
