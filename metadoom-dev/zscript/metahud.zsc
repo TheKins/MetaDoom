@@ -101,15 +101,8 @@ class MetaDoomStatusBar : BaseStatusBar
 	override void Draw (int state, double TicFrac)
 	{
 		Super.Draw (state, TicFrac);
-		BeginStatusBar();
-		DrawMainBar (TicFrac);
-		// We're only using the one set of code for this HUD, so we don't need
-		// a seperate method for fullscreen mode.
-	}
-
-	protected void DrawMainBar (double TicFrac)
-	{
-		if (screenblocks < 11 || automapactive)
+		
+		if (state == HUD_StatusBar || automapactive)
 		{
 			DrawImage("HUDBACK", (0, 168), DI_ITEM_OFFSETS);
 			
@@ -126,28 +119,45 @@ class MetaDoomStatusBar : BaseStatusBar
 			}
 		}
 		
-		if (screenblocks < 12)
+		if (state == HUD_StatusBar)
 		{
-			if (!CheckInventory("DisableHUD", 1))
-			{
-				// Everything's a seperate method for sanity's sake.
-				// This made sense at the time, I assure you.
-				if (hud_althud && screenblocks == 11)
-				{
-					DrawPowerupBars();
-				} else {
-					DrawScore();
-					DrawHealth();
-					DrawArmor();
-					DrawKeys();
-					DrawAmmo();
-					DrawReserve();
-					DrawStats();
-					DrawFaceBox();
-					DrawItemBox();
-					DrawPowerupBars();
-				}
-			}
+			BeginStatusBar();
+			DrawMainBar (TicFrac);
+		} else if (state == HUD_Fullscreen)	{
+			BeginStatusBar();
+			DrawMainBar (TicFrac);
+		} else if (state == HUD_AltHud) {
+			BeginStatusBar();
+			DrawAltBar (TicFrac);
+		}
+	}
+
+	protected void DrawMainBar (double TicFrac)
+	{
+		if (!CheckInventory("DisableHUD", 1))
+		{
+			// Everything's a seperate method for sanity's sake.
+			// This made sense at the time, I assure you.
+			DrawScore();
+			DrawHealth();
+			DrawArmor();
+			DrawKeys();
+			DrawAmmo();
+			DrawReserve();
+			DrawStats();
+			DrawFaceBox();
+			DrawItemBox();
+			DrawPowerupBars();
+		}
+	}
+
+	// Extremely cut down version of the HUD for weirdo althud-havers
+	protected void DrawAltBar (double TicFrac)
+	{
+		if (!CheckInventory("DisableHUD", 1))
+		{
+			DrawScore();
+			DrawPowerupBars();
 		}
 	}
 	
