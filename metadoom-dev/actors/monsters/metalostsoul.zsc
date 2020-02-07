@@ -105,6 +105,7 @@ class MetaLostSoulFire : Actor
 		+NOGRAVITY;
 		+ALLOWPARTICLES;
 		+RANDOMIZE;
+		+NOTIMEFREEZE;
 		RenderStyle "add";
 		Alpha 0.5;
 		VSpeed 1;
