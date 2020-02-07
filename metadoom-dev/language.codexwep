@@ -14,7 +14,7 @@ MC_MetaShotgun_Desc = "The latest iteration of a popular weapon, the Combat Shot
 MC_MetaSuperShotgun_Name = "Super Shotgun";
 MC_MetaSuperShotgun_Origin = "Doom II (1994)";
 MC_MetaSuperShotgun_Icon = "MCDX_WSS";
-MC_MetaSuperShotgun_Desc = "Among the state-of-the-art, high-tech implements of deterrance that make up the UAC arsenal, the 'Super' Shotgun is a curious anomaly, with very little to differentiate it from a traditional farmer's tool. While it's long been struck from the UAC's Approved Weapons List, many veteran security personnel insist on keeping theirs, and when you use it, it'll be easy to see why: a quick squeeze of the trigger effectively blankets the air in front of the user with a cloud of buckshot from both barrels.";
+MC_MetaSuperShotgun_Desc = "Among the state-of-the-art, high-tech implements of deterrance that make up the UAC arsenal, the ''Super'' Shotgun is a curious anomaly, with very little to differentiate it from a traditional farmer's tool. While it's long been struck from the UAC's Approved Weapons List, many veteran security personnel insist on keeping theirs, and when you use it, it'll be easy to see why: a quick squeeze of the trigger effectively blankets the air in front of the user with a cloud of buckshot from both barrels.";
 
 MC_MetaMachineGun_Name = "Assault Rifle";
 MC_MetaMachineGun_Origin = "Doom 3 (2004)";
@@ -29,7 +29,7 @@ MC_MetaChaingun_Desc = "There were experiments on both sides of World War 2 to c
 MC_MetaRocketLauncher_Name = "Rocket Launcher";
 MC_MetaRocketLauncher_Origin = "Doom (1993)";
 MC_MetaRocketLauncher_Icon = "MCDX_WRL";
-MC_MetaRocketLauncher_Desc = "Originally popularized in the 20th century as an anti-armor weapon, the Rocket Launcher received a new breath of life in the 21st as a tool for demolition and excavation in harsh non-Earth environments. Its origins weren't long-forgotten, though, and the tool was quickly re-repurposed. By hitting the alternate fire key, any rockets you have launched will be detonated in mid-air via radio signal, allowing for greater damage and crowd control. Be warned: safety mechanisms are minimal...";
+MC_MetaRocketLauncher_Desc = "Originally popularized in the 20th century as an anti-armor weapon, the Rocket Launcher received a new breath of life in the 21st as a tool for demolition and excavation in harsh non-Earth environments. Its origins weren't long-forgotten, though, and the tool was quickly re-repurposed. By hitting the alternate fire key, any rockets you have launched will be detonated in mid-air via radio signal, spraying the general vicinity with lethal shrapnel!";
 
 MC_MetaGrenadeLauncher_Name = "Grenade Launcher";
 MC_MetaGrenadeLauncher_Origin = "Doom DLC 3: Bloodfall (2016)";
@@ -44,7 +44,7 @@ MC_MetaPlasmaRifle_Desc = "The next generation of the UAC's standard-issue weapo
 MC_MetaGaussCannon_Name = "Gauss Cannon";
 MC_MetaGaussCannon_Origin = "Doom (2016)";
 MC_MetaGaussCannon_Icon = "MCDX_WGC";
-MC_MetaGaussCannon_Desc = "Based on Gauss Accelerator systems used in a number of industrial projects, as well as the experimental electromagnetic "Railgun" weapons from the early 21st century, the Gauss Cannon launches plasma charges at absurdly high velocities with extreme accuracy. The excessive speeds involved, along with the unstable makeup of the plasma charges, results in a violent explosion upon impact. Press Alternate Fire to toggle the weapon's scope, making it easier to hit enemies from a long range.";
+MC_MetaGaussCannon_Desc = "Based on Gauss Accelerator systems used in a number of industrial projects, as well as the experimental electromagnetic ''Railgun'' weapons from the early 21st century, the Gauss Cannon launches plasma charges at absurdly high velocities with extreme accuracy. The excessive speeds involved, along with the unstable makeup of the plasma charges, results in a violent explosion upon impact. Press Alternate Fire to toggle the weapon's scope, making it easier to hit enemies from a long range.";
 
 MC_MetaLightningGun_Name = "Lightning Gun";
 MC_MetaLightningGun_Origin = "Doom (2016)";

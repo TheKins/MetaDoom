@@ -49,6 +49,7 @@ UI Changes:
   description of your demise beyond just dying to "something really mean".
 - The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
 - Fixed the Spider Mastermind's animation in the Codex (Thanks DrPySpy!)
+- The Weapons section in the Codex has been updated for consistency and accuracy.
 - Added a unique background for the Quit confirmation menu.
 - Reskinned the sliders in the Options Menus.
   
