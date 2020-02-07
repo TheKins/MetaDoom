@@ -15,7 +15,7 @@ class DogGunHealth : Ammo
 		Inventory.MaxAmount 100;
 		Ammo.BackpackAmount 100;
 		Ammo.BackpackMaxAmount 100;
-		Inventory.Icon "HWPAA0";
+		Inventory.Icon "DGAMA0";
 	}
 	
 	States

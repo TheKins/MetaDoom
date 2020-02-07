@@ -17,14 +17,14 @@ class HalonCannister : Ammo
 		Inventory.MaxAmount 100;
 		Ammo.BackpackAmount 5;
 		Ammo.BackpackMaxAmount 100;
-		Inventory.Icon "HWPAA0";
+		Inventory.Icon "FIEAA0";
 		Inventory.PickupSound "weapons/waterpistol/ammo";
 	}
 	
 	States
 	{
 	Spawn:
-		TNT1 A 8;
+		TNT1 A -1;
 		Stop;
 	}
 }

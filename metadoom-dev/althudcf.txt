@@ -1,0 +1,12 @@
+/*
+----------------------------
+MetaDoom
+Alternate Hud
+----------------------------
+*/
+
+MetaDogGun_HellHound "HDOGH0"
+MetaDogGun_DemonDog "DDOGH0"
+MetaDogGun_Cerberus "CDOGH0"
+MetaLastResortFist "HUDFIST"
+MetaBerserkFist "HUDFIST"

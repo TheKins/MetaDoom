@@ -132,16 +132,21 @@ class MetaDoomStatusBar : BaseStatusBar
 			{
 				// Everything's a seperate method for sanity's sake.
 				// This made sense at the time, I assure you.
-				DrawScore();
-				DrawHealth();
-				DrawArmor();
-				DrawKeys();
-				DrawAmmo();
-				DrawReserve();
-				DrawStats();
-				DrawFaceBox();
-				DrawItemBox();
-				DrawPowerupBars();
+				if (hud_althud && screenblocks == 11)
+				{
+					DrawPowerupBars();
+				} else {
+					DrawScore();
+					DrawHealth();
+					DrawArmor();
+					DrawKeys();
+					DrawAmmo();
+					DrawReserve();
+					DrawStats();
+					DrawFaceBox();
+					DrawItemBox();
+					DrawPowerupBars();
+				}
 			}
 		}
 	}
