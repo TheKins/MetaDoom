@@ -29,6 +29,9 @@ class MetaPainElemental : MonsterCore
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_PAINELEMENTAL";
 		Tag "Pain Elemental";
+		//$Category "Monsters/MetaDoom/Pain Elemental"
+		//$Title "Pain Elemental"
+		//$Color 12
 	}
 
 	States
@@ -94,6 +97,9 @@ class MetaBeholder : MonsterCore
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_BEHOLDER";
 		Tag "Beholder";
+		//$Category "Monsters/MetaDoom/Pain Elemental"
+		//$Title "Beholder"
+		//$Color 12
 	}
 
 	States
@@ -172,6 +178,9 @@ class MetaRahovart : MonsterCore
 		ActiveSound "monsters/painelemental/idle";
 		Obituary "$OB_RAHOVART";
 		Tag "Rahovart";
+		//$Category "Monsters/MetaDoom/Pain Elemental"
+		//$Title "Rahovart"
+		//$Color 12
 	}
 
 	States

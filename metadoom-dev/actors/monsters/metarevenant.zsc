@@ -32,6 +32,9 @@ class MetaRevenant : MonsterCore
 		Species "Revenant";
 		MonsterCore.CanBeScared false;
 		Tag "Revenant";
+		//$Category "Monsters/MetaDoom/Revenant"
+		//$Title "Revenant"
+		//$Color 12
 	}
 
 	States
@@ -183,6 +186,9 @@ class MetaFiend : MonsterCore
 		Species "Revenant";
 		MonsterCore.CanBeScared false;
 		Tag "Fiend";
+		//$Category "Monsters/MetaDoom/Revenant"
+		//$Title "Fiend"
+		//$Color 12
 	}
 	
 	vector2 neckchecker;

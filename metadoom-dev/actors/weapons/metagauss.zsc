@@ -41,6 +41,10 @@ class MetaGaussCannon : MetaDoomWeapon
 		Inventory.PickupSound "weapons/gauss/get";
 		//Decal PlasmaScorch
 		damagetype "Gauss";
+		//$Category "Weapons/MetaDoom"
+		//$Title "Gauss Cannon"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

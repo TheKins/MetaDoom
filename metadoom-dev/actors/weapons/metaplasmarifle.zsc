@@ -40,6 +40,10 @@ class MetaPlasmaRifle : MetaDoomWeapon
 		Tag "$TAG_PLASMARIFLE";
 		Inventory.PickupSound "weapons/plasmarifle/get";
 		+WEAPON.NOALERT;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Plasma Rifle"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

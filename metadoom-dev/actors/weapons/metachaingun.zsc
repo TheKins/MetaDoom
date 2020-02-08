@@ -40,6 +40,10 @@ class MetaChaingun : MetaDoomWeapon
 		Weapon.AmmoType "Clip";
 		Weapon.AmmoGive 100;
 		Weapon.AmmoUse 1;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Chaingun"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

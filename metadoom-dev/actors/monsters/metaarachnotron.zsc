@@ -28,6 +28,9 @@ class MetaArachnotron : MonsterCore
 		Obituary "$OB_BABY";
 		Species "BabySpider";
 		Tag "Arachnotron";
+		//$Category "Monsters/MetaDoom/Arachnotron"
+		//$Title "Arachnotron"
+		//$Color 12
 	}
 
 	States
@@ -126,6 +129,9 @@ class MetaSpiborg : MonsterCore
 		scale 0.75;
 		Species "BabySpider";
 		Tag "Spiborg";
+		//$Category "Monsters/MetaDoom/Arachnotron"
+		//$Title "Spiborg"
+		//$Color 12
 	}
 
 	States

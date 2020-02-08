@@ -33,6 +33,9 @@ class MetaHellhound : MonsterCore
 		damagefactor "Axe", 50;
 		scale 1.25;
 		Tag "Hellhound";
+		//$Category "Monsters/MetaDoom/Pinky"
+		//$Title "Hellhound"
+		//$Color 12
 	}
 
 	States
@@ -126,6 +129,9 @@ class MetaDemonDog : MetaHellhound
 		SeeSound "monsters/demondog/see";
 		Obituary "$OB_DOG2";
 		Tag "Demon Dog";
+		//$Category "Monsters/MetaDoom/Pinky"
+		//$Title "Demon Dog"
+		//$Color 12
 	}
 
 	States
@@ -216,6 +222,9 @@ class MetaCerberus : MetaHellhound
 		SeeSound "monsters/cerberus/see";
 		Obituary "$OB_DOG3";
 		Tag "Cerberus";
+		//$Category "Monsters/MetaDoom/Pinky"
+		//$Title "Cerberus"
+		//$Color 12
 	}
 
 	States

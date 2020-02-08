@@ -37,6 +37,10 @@ class MetaAxe : MetaDoomWeapon
 		+WEAPON.NOALERT
 		Inventory.PickupMessage "$GOTAXE";
 		Inventory.PickupSound "weapons/axe/get";
+		//$Category "Weapons/MetaDoom"
+		//$Title "Fire Axe"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

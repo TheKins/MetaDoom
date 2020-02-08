@@ -33,6 +33,9 @@ class MetaCacodemon : MonsterCore
 		Decal "bluebloodsplat";
 		Species "Cacodemon";
 		Tag "Cacodemon";
+		//$Category "Monsters/MetaDoom/Cacodemon"
+		//$Title "Cacodemon"
+		//$Color 12
 	}
 
 	States
@@ -282,6 +285,9 @@ class MetaMalwraith : MonsterCore
 		HitObituary "$OB_MALWRAITH";
 		Species "Cacodemon";
 		Tag "Malwrath";
+		//$Category "Monsters/MetaDoom/Cacodemon"
+		//$Title "Malwrath"
+		//$Color 12
 	}
 
 	States
@@ -530,6 +536,9 @@ class MetaWretched : MonsterCore
 		scale 0.65;
 		Species "Cacodemon";
 		Tag "Wretched";
+		//$Category "Monsters/MetaDoom/Cacodemon"
+		//$Title "Wretched"
+		//$Color 12
 	}
 
 	States

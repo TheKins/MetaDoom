@@ -32,6 +32,9 @@ class MetaLostSoul : MonsterCore
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
 		Tag "Lost Soul";
+		//$Category "Monsters/MetaDoom/Lost Soul"
+		//$Title "Lost Soul"
+		//$Color 12
 	}
 	
 	int firetimer;
@@ -312,6 +315,9 @@ class MetaPhantom : MonsterCore
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
 		Tag "Phantom";
+		//$Category "Monsters/MetaDoom/Lost Soul"
+		//$Title "Phantom"
+		//$Color 12
 	}
 	
 	int firetimer;
@@ -512,6 +518,9 @@ class MetaForgottenOne : MonsterCore
 		damagefactor "FireExtinguisher", 500;
 		MonsterCore.CanBeScared false;
 		Tag "Forgotten One";
+		//$Category "Monsters/MetaDoom/Lost Soul"
+		//$Title "Forgotten One"
+		//$Color 12
 	}
 	
 	int firetimer;

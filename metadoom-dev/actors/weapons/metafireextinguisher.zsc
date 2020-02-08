@@ -60,6 +60,10 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		Inventory.Pickupmessage "$GOTFIREX";
 		Tag "$TAGFIREX";
 		Inventory.PickupSound "weapons/fireextinguisher/get";
+		//$Category "Weapons/MetaDoom"
+		//$Title "Fire Extinguisher"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

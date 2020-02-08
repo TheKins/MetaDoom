@@ -39,6 +39,9 @@ class MetaSpiderMastermind : MonsterCore
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Spider Mastermind";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Spider Mastermind"
+		//$Color 12
 	}
 	
 	States

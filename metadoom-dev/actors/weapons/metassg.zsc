@@ -39,6 +39,10 @@ class MetaSuperShotgun : MetaDoomWeapon
 		Obituary "$OB_MPSSHOTGUN";
 		Tag "$TAG_SUPERSHOTGUN";
 		Inventory.PickupSound "weapons/ssg/get";
+		//$Category "Weapons/MetaDoom"
+		//$Title "Super Shotgun"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

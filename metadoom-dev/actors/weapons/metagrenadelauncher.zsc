@@ -43,6 +43,10 @@ class MetaGrenadeLauncher : MetaDoomWeapon
 		+WEAPON.ALT_AMMO_OPTIONAL
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Grenade Launcher"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

@@ -34,6 +34,9 @@ class MetaArchvile : MonsterCore
 		damagefactor "HolyWater", 1.5;
 		painchance "HolyWater", 255;
 		Tag "Arch-Vile";
+		//$Category "Monsters/MetaDoom/Arch-Vile"
+		//$Title "Arch-Vile"
+		//$Color 12
 	}
 
 	States
@@ -154,6 +157,9 @@ class MetaSummoner : MonsterCore
 		painchance "HolyWater", 255;
 		yscale 0.9;
 		tag "Summoner";
+		//$Category "Monsters/MetaDoom/Arch-Vile"
+		//$Title "Summoner"
+		//$Color 12
 	}
 	
 	int outtasight;
@@ -440,6 +446,9 @@ class MetaUnwilling : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
+		//$Category "Monsters/MetaDoom/Arch-Vile"
+		//$Title "Unwilling (Summoner Popcorn)"
+		//$Color 12
 	}
 
 	States

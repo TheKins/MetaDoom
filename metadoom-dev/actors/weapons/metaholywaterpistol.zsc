@@ -63,6 +63,10 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		+WEAPON.AMMO_OPTIONAL
 		Inventory.PickupSound "weapons/waterpistol/get";
 		scale 0.5;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Holy Water Pistol"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

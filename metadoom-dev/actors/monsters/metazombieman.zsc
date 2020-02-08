@@ -31,6 +31,9 @@ class MetaZombieMan : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Zombieman";
+		//$Category "Monsters/MetaDoom/Possessed/Zombieman"
+		//$Title "Zombieman"
+		//$Color 12
 	}
 	
 	States
@@ -101,6 +104,9 @@ class MetaHellRazer : MonsterCore
 		damagefactor "HolyWater", 0.25;
 		painchance "HolyWater", 255;
 		Tag "Hell Razer";
+		//$Category "Monsters/MetaDoom/Possessed/Zombieman"
+		//$Title "Hell Razer"
+		//$Color 12
 	}
 	
 	States

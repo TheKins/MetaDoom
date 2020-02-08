@@ -43,6 +43,10 @@ class MetaUnmaker : MetaDoomWeapon
 		Tag "$TAGUNMAKER";
 		Weapon.YAdjust 10;
 		//Decal Scorch;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Unmaker"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

@@ -33,6 +33,9 @@ class MetaShotgunGuy : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Shotgun Guy";
+		//$Category "Monsters/MetaDoom/Possessed/Shotgun Guy"
+		//$Title "Shotgun Guy"
+		//$Color 12
 	}
 	
 	States
@@ -115,6 +118,9 @@ class MetaZSec : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Z-Sec";
+		//$Category "Monsters/MetaDoom/Possessed/Shotgun Guy"
+		//$Title "Z-Sec"
+		//$Color 12
 	}
 	
 	States

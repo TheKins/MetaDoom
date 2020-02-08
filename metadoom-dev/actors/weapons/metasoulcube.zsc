@@ -46,6 +46,10 @@ class MetaSoulcube : MetaDoomWeapon
 		+INVENTORY.ALWAYSPICKUP
 		+INVENTORY.UNTOSSABLE
 		+FLOATBOB
+		//$Category "Weapons/MetaDoom"
+		//$Title "Soul Cube"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

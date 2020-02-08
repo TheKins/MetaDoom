@@ -46,6 +46,9 @@ class MetaCyberdemon : MonsterCore
 		scale 0.75;
 		MonsterCore.CanBeScared false;
 		Tag "Cyberdemon";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Cyberdemon"
+		//$Color 12
 	}
 	
 	FLineTraceData SurfaceData;

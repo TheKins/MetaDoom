@@ -40,6 +40,10 @@ class MetaShotgun : MetaDoomWeapon
 		Tag "$TAG_SHOTGUN";
 		Inventory.PickupSound "weapons/shotgun/get";
 		+WEAPON.ALT_AMMO_OPTIONAL
+		//$Category "Weapons/MetaDoom"
+		//$Title "Combat Shotgun"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

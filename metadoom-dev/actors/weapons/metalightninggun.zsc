@@ -45,6 +45,10 @@ class MetaLightningGun : MetaDoomWeapon
 		+WEAPON.NOALERT
 		+WEAPON.ALT_AMMO_OPTIONAL
 		scale 0.75;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Lightning Gun"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

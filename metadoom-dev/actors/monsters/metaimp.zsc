@@ -28,6 +28,9 @@ class MetaDoomImp : MonsterCore
 		Obituary "$OB_IMP";
 		painchance "HolyWater", 255;
 		Tag "Imp";
+		//$Category "Monsters/MetaDoom/Imp"
+		//$Title "Imp"
+		//$Color 12
 	}
 
 	States
@@ -164,6 +167,9 @@ class MetaNightmareImp : MonsterCore
 		alpha 0.75;
 		painchance "HolyWater", 255;
 		Tag "Nightmare Imp";
+		//$Category "Monsters/MetaDoom/Imp"
+		//$Title "Nightmare Imp"
+		//$Color 12
 	}
 
 	States
@@ -268,6 +274,9 @@ class MetaDoomImpLord : MonsterCore
 		Obituary "$OB_IMPLORD";
 		painchance "HolyWater", 255;
 		Tag "Imp Lord";
+		//$Category "Monsters/MetaDoom/Imp"
+		//$Title "Imp Lord"
+		//$Color 12
 	}
 	
 	int tries;

@@ -33,6 +33,9 @@ class MetaMachineGunGuy : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Former Lieutenant";
+		//$Category "Monsters/MetaDoom/Possessed/Heavy Weapons Dude"
+		//$Title "Former Lieutenant"
+		//$Color 12
 	}
 	
 	States
@@ -110,6 +113,9 @@ class MetaChainGunGuy : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Former Commando";
+		//$Category "Monsters/MetaDoom/Possessed/Heavy Weapons Dude"
+		//$Title "Former Commando"
+		//$Color 12
 	}
 	
 	States
@@ -195,6 +201,9 @@ class MetaAssassinGuy : MonsterCore
 		painchance "HolyWater", 255;
 		damagefactor "Axe", 50;
 		Tag "Former Assassin";
+		//$Category "Monsters/MetaDoom/Possessed/Heavy Weapons Dude"
+		//$Title "Former Assassin"
+		//$Color 12
 	}
 	
 	States

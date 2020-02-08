@@ -41,6 +41,10 @@ Class MetaBFG9000 : MetaDoomWeapon
 		Inventory.PickupSound "weapons/bfg/get";
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.25;
+		//$Category "Weapons/MetaDoom"
+		//$Title "BFG9000"
+		//$NotAngled
+		//$Color 14
 	}
 	States
 	{

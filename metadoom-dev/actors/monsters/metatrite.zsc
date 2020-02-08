@@ -39,6 +39,9 @@ class MetaTrite : MonsterCore
 		damagefactor "KrautBoot", 500;
 		damagefactor "Axe", 500;
 		Tag "Trite";
+		//$Category "Monsters/MetaDoom/Spectre"
+		//$Title "Trite"
+		//$Color 12
 	}
 
 	States

@@ -26,6 +26,9 @@ class MetaWolfensteinSS : MonsterCore
 		Obituary "$OB_WOLFSS";
 		Dropitem "Clip";
 		Tag "DOS SS";
+		//$Category "Monsters/MetaDoom/Wolfenstein SS"
+		//$Title "MS-DOS"
+		//$Color 12
 	}
 
 	States
@@ -103,6 +106,9 @@ class MetaWolfensteinSNES : MonsterCore
 		DropItem "Clip";
 		scale 2.0;
 		Tag "SNES Guard";
+		//$Category "Monsters/MetaDoom/Wolfenstein SS"
+		//$Title "SNES"
+		//$Color 12
 	}
 
 	States
@@ -167,6 +173,9 @@ class MetaWolfensteinApple : MonsterCore
 		DropItem "Clip";
 		scale 2.0;
 		Tag "IIrooper";
+		//$Category "Monsters/MetaDoom/Wolfenstein SS"
+		//$Title "Apple II"
+		//$Color 12
 	}
 
 	States
@@ -236,6 +245,9 @@ class MetaWolfensteinMacOS : MonsterCore
 		Dropitem "Clip";
 		scale 0.6;
 		Tag "MacintOfficer";
+		//$Category "Monsters/MetaDoom/Wolfenstein SS"
+		//$Title "Macintosh"
+		//$Color 12
 	}
 
 	States
@@ -311,6 +323,9 @@ class MetaWolfensteinJava : MonsterCore
 		Dropitem "Clip";
 		scale 0.75;
 		Tag "Javanaut";
+		//$Category "Monsters/MetaDoom/Wolfenstein SS"
+		//$Title "J2ME"
+		//$Color 12
 	}
 
 	States

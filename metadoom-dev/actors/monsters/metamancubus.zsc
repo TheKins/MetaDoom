@@ -28,6 +28,9 @@ class MetaMancubus : MonsterCore
 		Obituary "$OB_FATSO";
 		Species "Fatso";
 		Tag "Mancubus";
+		//$Category "Monsters/MetaDoom/Mancubus"
+		//$Title "Mancubus"
+		//$Color 12
 	}
 
 	States
@@ -131,6 +134,9 @@ class MetaBehemoth : MonsterCore
 		Species "Fatso";
 		scale 0.75;
 		Tag "Behemoth";
+		//$Category "Monsters/MetaDoom/Mancubus"
+		//$Title "Behemoth"
+		//$Color 12
 	}
 	
 	int user_yeahwelit;
@@ -342,6 +348,9 @@ class MetaCyberManc : MonsterCore
 		scale 0.85;
 		yscale 0.75;
 		Tag "Cyber-Mancubus";
+		//$Category "Monsters/MetaDoom/Mancubus"
+		//$Title "Cyber-Manc"
+		//$Color 12
 	}
 
 	States

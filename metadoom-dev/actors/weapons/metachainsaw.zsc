@@ -39,6 +39,10 @@ class MetaChainsaw : MetaDoomWeapon
 		+WEAPON.MELEEWEAPON		
 		Inventory.PickupSound "weapons/chainsaw/get";
 		Weapon.YAdjust 10;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Chainsaw"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

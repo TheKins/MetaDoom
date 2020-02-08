@@ -29,6 +29,9 @@ class MetaDemon : MonsterCore
 		Obituary "$OB_DEMONHIT";
 		painchance "HolyWater", 255;
 		Tag "Pinky";
+		//$Category "Monsters/MetaDoom/Pinky"
+		//$Title "Pinky"
+		//$Color 12
 	}
 
 	States
@@ -98,6 +101,9 @@ class MetaBullDemon : MonsterCore
 		painchance 64;
 		painchance "HolyWater", 255;
 		Tag "Bull Demon";
+		//$Category "Monsters/MetaDoom/Pinky"
+		//$Title "Bull Demon"
+		//$Color 12
 	}
 
 	int user_accelerator;

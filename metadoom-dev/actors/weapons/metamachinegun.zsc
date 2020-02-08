@@ -44,6 +44,10 @@ class MetaMachineGun : MetaDoomWeapon
 		Inventory.PickupSound "weapons/machinegun/get";
 		+WEAPON.ALT_AMMO_OPTIONAL
 		+WEAPON.NOALERT
+		//$Category "Weapons/MetaDoom"
+		//$Title "Assault Rifle"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

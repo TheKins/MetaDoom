@@ -23,6 +23,9 @@ class MetaSpectre : MetaDemon
 		ActiveSound "monsters/pinky/idle";
 		HitObituary "$OB_SPECTREHIT";
 		Tag "Spectre";
+		//$Category "Monsters/MetaDoom/Spectre"
+		//$Title "Spectre"
+		//$Color 12
 	}
 }
 
@@ -48,6 +51,9 @@ class MetaNightmareSpectre : MetaDemon
 		scale 0.75;
 		yscale 0.65;
 		Tag "Nightmare Spectre";
+		//$Category "Monsters/MetaDoom/Spectre"
+		//$Title "Nightmare Spectre"
+		//$Color 12
 	}
 
 	States
@@ -115,6 +121,9 @@ class MetaSawcubus : MonsterCore
 		Obituary "$OB_SAWCUBUS";
 		painchance "HolyWater", 255;
 		Tag "Sawcubus";
+		//$Category "Monsters/MetaDoom/Spectre"
+		//$Title "Sawcubus"
+		//$Color 12
 	}
 
 	States

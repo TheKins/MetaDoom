@@ -32,6 +32,10 @@ class MetaKeen : Actor
 		damagefactor "DogCollar", 0;
 		painchance "DogCollar", 0;
 		Tag "Commander Keen";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Commander Keen"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States
@@ -63,6 +67,10 @@ class MetaBudo : MetaKeen
 		PainSound "keens/budo/hit";
 		DeathSound "keens/budo/die";
 		Tag "Shadow Knight";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Shadow Knight"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States
@@ -87,6 +95,10 @@ class MetaDave : MetaKeen
 		PainSound "keens/dave/hit";
 		DeathSound "keens/dave/die";
 		Tag "Dangerous Dave";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Dangerous Dave"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States
@@ -111,6 +123,10 @@ class MetaHovertank : MetaKeen
 		PainSound "keens/hovertank/hit";
 		DeathSound "keens/hovertank/die";
 		Tag "Hovertank Rescuee";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Hovertank Rescuee"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States
@@ -134,6 +150,10 @@ class MetaRover : MetaKeen
 		PainSound "keens/rover/hit";
 		DeathSound "keens/rover/die";
 		Tag "Rescued Rover";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Rescued Rover"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States
@@ -158,6 +178,10 @@ class MetaCatacomb : MetaKeen
 		PainSound "keens/catacomb/hit";
 		DeathSound "keens/catacomb/die";
 		Tag "Nemesis of the Catacombs";
+		//$Category "Monsters/MetaDoom/Commander Keen"
+		//$Title "Nemesis of the Catacombs"
+		//$Color 12
+		//$NotAngled
 	}
 
 	States

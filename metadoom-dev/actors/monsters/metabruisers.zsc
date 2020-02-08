@@ -38,6 +38,9 @@ class MetaBaronOfHell : MonsterCore
 		painchance "BaronSpike", 0;
 		MonsterCore.CanBeScared false;
 		Tag "Baron of Hell";
+		//$Category "Monsters/MetaDoom/Bruisers"
+		//$Title "Baron of Hell"
+		//$Color 12
 	}
 	
 	vector2 neckchecker;
@@ -181,6 +184,9 @@ class MetaHellKnight : MonsterCore
 		Obituary "$OB_KNIGHT";
 		MonsterCore.CanBeScared false;
 		Tag "Hell Knight";
+		//$Category "Monsters/MetaDoom/Bruisers"
+		//$Title "Hell Knight"
+		//$Color 12
 	}
 	
 	vector2 neckchecker;

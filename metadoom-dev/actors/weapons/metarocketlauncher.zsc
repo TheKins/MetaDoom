@@ -45,6 +45,10 @@ class MetaRocketLauncher : MetaDoomWeapon
 		+WEAPON.NOALERT
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
+		//$Category "Weapons/MetaDoom"
+		//$Title "Rocket Launcher"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

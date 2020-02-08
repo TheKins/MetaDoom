@@ -38,6 +38,9 @@ class MetaMotherDemon : MonsterCore
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Mother Demon";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Mother Demon"
+		//$Color 12
 	}
 	
 	States
@@ -272,6 +275,10 @@ class MetaHellGuard : MonsterCore
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Hell Guard";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Hell Guard"
+		//$Color 12
+		
 	}
 	
 	States
@@ -514,6 +521,9 @@ class MetaHarbinger : MonsterCore
 		damagefactor "Vampire", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Harbinger of Doom";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Harbinger of Doom"
+		//$Color 12
 	}
 	
 	States
