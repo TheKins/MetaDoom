@@ -88,7 +88,7 @@ class LootGoblet : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Goblet (500pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -109,7 +109,7 @@ class LootDagger : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Dagger (500pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -130,7 +130,7 @@ class LootChest : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Chest (1000pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -151,7 +151,7 @@ class LootSceptre : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Sceptre (1500pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -172,7 +172,7 @@ class LootBible : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Unholy Bible (2000pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -193,7 +193,7 @@ class LootCrown : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "Crown (2500pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -215,7 +215,7 @@ class LootCredits : LootItem
 		//$Category "MetaDoom Loot"
 		//$Title "UAC Credits (500pt)"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States

@@ -75,7 +75,7 @@ class LootFigurine1 : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 1"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -99,7 +99,7 @@ class LootFigurine2 : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 3"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 		
 	}
 	
@@ -124,7 +124,7 @@ class LootFigurine3 : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 2016"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -148,7 +148,7 @@ class LootFigurine4 : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 64"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -174,7 +174,7 @@ class LoreSkateboard : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Skateboard"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -215,7 +215,7 @@ class LoreHissy : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Hissy"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -239,7 +239,7 @@ class LorePumpkin : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "SPISPOPD"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -264,7 +264,7 @@ class LoreCacoward : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Cacoward"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -289,7 +289,7 @@ class LoreRaven : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Raven Software"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -331,7 +331,7 @@ class LoreDehacked : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Dehacked"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
@@ -372,7 +372,7 @@ class LoreComic : MetaLoreItem
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Doom Comic"
 		//$NotAngled
-		//$Color 14
+		//$Color 19
 	}
 	
 	States
