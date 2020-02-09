@@ -11,6 +11,11 @@ object MetaArmorBonus
     frame SHRD { light ARMORCRUMB }
 }
 
+object MetaArmorBonusNoItemSpawn
+{
+    frame SHRD { light ARMORCRUMB }
+}
+
 pulselight ARMORGREEN
 {
     color 0.0 0.6 0.0
@@ -50,6 +55,11 @@ object MetaHealthBonus
     frame BON1 { light HEALTHCRUMB }
 }
 
+object MetaHealthBonusNoItemSpawn
+{
+    frame BON1 { light HEALTHCRUMB }
+}
+
 object MetaHealthPinata
 {
     frame PINH { light HEALTHCRUMB }
@@ -71,6 +81,11 @@ object MetaStimpack
 }
 
 object MetaMedikit
+{
+    frame MEDI { light ARMORBLUE }
+}
+
+object MetaMedikitNoItemSpawn
 {
     frame MEDI { light ARMORBLUE }
 }

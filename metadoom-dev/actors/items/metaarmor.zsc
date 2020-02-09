@@ -40,6 +40,24 @@ class MetaArmorBonus : BasicArmorBonus replaces ArmorBonus
 	}
 }
 
+class MetaArmorBonusNoItemSpawn : MetaArmorBonus
+{
+	Default
+	{
+		//$Category "Health and Armor/MetaDoom"
+		//$Title "Armor Bonus (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 1
+	}
+	
+	States
+	{
+	Spawn:
+		SHRD A 0;
+		goto DoALoop;
+	}
+}
+
 class MetaGreenArmor : BasicArmorPickup replaces GreenArmor
 {
 	Default

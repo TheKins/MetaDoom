@@ -72,6 +72,10 @@ class LootFigurine1 : MetaLoreItem
 		Inventory.PickupMessage "$GOTLOOTFIG1";
 		inventory.pickupsound "items/lootfig";
 		scale 0.75;
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Figurine - Doom 1"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -92,6 +96,11 @@ class LootFigurine2 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG2";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Figurine - Doom 3"
+		//$NotAngled
+		//$Color 14
+		
 	}
 	
 	States
@@ -112,6 +121,10 @@ class LootFigurine3 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG3";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Figurine - Doom 2016"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -132,6 +145,10 @@ class LootFigurine4 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG4";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Figurine - Doom 64"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -154,6 +171,10 @@ class LoreSkateboard : MetaLoreItem
 		inventory.pickupsound "items/lootskate";
 		xscale 0.75;
 		yscale 0.6;
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Skateboard"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -191,6 +212,10 @@ class LoreHissy : MetaLoreItem
 	{
 		Inventory.PickupMessage "$GOTLOOTHISSY";
 		inventory.pickupsound "items/loothissy";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Hissy"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -211,6 +236,10 @@ class LorePumpkin : MetaLoreItem
 	{
 		Inventory.PickupMessage "$GOTLOOTPUMPKIN";
 		inventory.pickupsound "items/lootpumpkin";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "SPISPOPD"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -232,6 +261,10 @@ class LoreCacoward : MetaLoreItem
 		Inventory.PickupMessage "$GOTLOOTCACOWARD";
 		inventory.pickupsound "items/lootcacoward";
 		scale 0.25;
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Cacoward"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -253,6 +286,10 @@ class LoreRaven : MetaLoreItem
 		Inventory.PickupMessage "$GOTLOOTRAVEN";
 		inventory.pickupsound "items/lootraven";
 		scale 0.35;
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Raven Software"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -291,6 +328,10 @@ class LoreDehacked : MetaLoreItem
 		inventory.pickupsound "items/lootdehacked";
 		+FLOATBOB
 		scale 0.6;
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Dehacked"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -328,6 +369,10 @@ class LoreComic : MetaLoreItem
 	{
 		Inventory.PickupMessage "$GOTLOOTCOMIC";
 		inventory.pickupsound "items/lootcomic";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Doom Comic"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States

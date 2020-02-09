@@ -64,6 +64,24 @@ class ClipBox2 : Clip replaces ClipBox
 	}
 }
 
+class ClipBox2NoItemSpawn : ClipBox2
+{
+	Default
+	{
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Clip Box (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
+	}
+	
+	States
+	{
+	Spawn:
+		AMMO A 0;
+		goto Chill;
+	}
+}
+
 // Rockets have a 33% chance of spawning a Hand Grenade on spawn.
 class RocketAmmo2 : RocketAmmo replaces RocketAmmo
 {
@@ -100,6 +118,23 @@ class RocketAmmo2 : RocketAmmo replaces RocketAmmo
 	}
 }
 
+class RocketAmmo2NoItemSpawn : RocketAmmo2
+{
+	Default
+	{
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Rocket (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
+	}
+	States
+	{
+	Spawn:
+		ROCK A 0;
+		goto Chill;
+	}
+}
+
 // Rocket Boxes have a 37% chance of spawning a Hand Grenade on spawn.
 class RocketBox2 : RocketAmmo replaces RocketBox
 {
@@ -129,6 +164,24 @@ class RocketBox2 : RocketAmmo replaces RocketBox
 	Chill:
 		BROK A -1;
 		Stop;
+	}
+}
+
+class RocketBox2NoItemSpawn : RocketBox2
+{
+	Default
+	{
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Rocket Box (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
+	}
+	
+	States
+	{
+	Spawn:
+		BROK A 0;
+		goto Chill;
 	}
 }
 
@@ -172,6 +225,25 @@ class Cell2 : Cell replaces Cell
 	}
 }
 
+class Cell2NoItemSpawn : Cell2
+{
+	Default
+	{
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Cell (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
+	}
+	
+	
+	States
+	{
+	Spawn:
+		CELL A 0;
+		goto Chill;
+	}
+}
+
 // Cell Packs have a 25% chance of spawning BFG ammo alongside it. If this happens,
 // there is an additional 50% chance of a Tesla Rocket also spawning.
 class CellPack2 : Cell replaces CellPack
@@ -206,6 +278,24 @@ class CellPack2 : Cell replaces CellPack
 	Chill:
 		CELP A -1;
 		Stop;
+	}
+}
+
+class CellPack2NoItemSpawn : CellPack2
+{
+	Default
+	{
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Cell Pack (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
+	}
+	
+	States
+	{
+	Spawn:
+		CELP A 0;
+		goto Chill;
 	}
 }
 
@@ -288,6 +378,10 @@ class Backpack2 : BackpackItem
 		inventory.pickupsound "items/pack";
 		TeleFogSourceType "MetaItemFog";
 		TeleFogDestType "MetaItemFog";
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Backpack (No Item Spawn Chance)"
+		//$NotAngled
+		//$Color 6
 	}
 	
 	States
@@ -314,6 +408,10 @@ class BFGAmmo : Ammo
 		TeleFogDestType "MetaItemFog";
 		scale 0.75;
 		+BLOCKASPLAYER
+		//$Category "Ammunition/MetaDoom"
+		//$Title "BFG Core"
+		//$NotAngled
+		//$Color 6
 	}
 	
 	States
@@ -339,6 +437,10 @@ class SoulAmmo : Ammo
 		TeleFogDestType "MetaItemFog";
 		renderstyle "Add";
 		scale 0.5;
+		//$Category "Ammunition/MetaDoom"
+		//$Title "Soul Ammo"
+		//$NotAngled
+		//$Color 6
 	}
 	
 	States

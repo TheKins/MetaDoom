@@ -85,6 +85,10 @@ class LootGoblet : LootItem
 	{
 		Inventory.Amount 500;
 		Inventory.PickupMessage "$GOTLOOT6";
+		//$Category "MetaDoom Loot"
+		//$Title "Goblet (500pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -102,6 +106,10 @@ class LootDagger : LootItem
 	{
 		Inventory.Amount 500;
 		Inventory.PickupMessage "$GOTLOOT1";
+		//$Category "MetaDoom Loot"
+		//$Title "Dagger (500pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -119,6 +127,10 @@ class LootChest : LootItem
 	{
 		Inventory.Amount 1000;
 		Inventory.PickupMessage "$GOTLOOT2";
+		//$Category "MetaDoom Loot"
+		//$Title "Chest (1000pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -136,6 +148,10 @@ class LootSceptre : LootItem
 	{
 		Inventory.Amount 1500;
 		Inventory.PickupMessage "$GOTLOOT3";
+		//$Category "MetaDoom Loot"
+		//$Title "Sceptre (1500pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -153,6 +169,10 @@ class LootBible : LootItem
 	{
 		Inventory.Amount 2000;
 		Inventory.PickupMessage "$GOTLOOT4";
+		//$Category "MetaDoom Loot"
+		//$Title "Unholy Bible (2000pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -170,6 +190,10 @@ class LootCrown : LootItem
 	{
 		Inventory.Amount 2500;
 		Inventory.PickupMessage "$GOTLOOT5";
+		//$Category "MetaDoom Loot"
+		//$Title "Crown (2500pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
@@ -188,6 +212,10 @@ class LootCredits : LootItem
 		Inventory.Amount 500;
 		Inventory.PickupMessage "$GOTLOOT7";
 		scale 0.8;
+		//$Category "MetaDoom Loot"
+		//$Title "UAC Credits (500pt)"
+		//$NotAngled
+		//$Color 14
 	}
 	
 	States
