@@ -1,21 +1,49 @@
+pulselight METASOULSPHERE
+{
+	color 0.3 0.3 1.0
+	size 60
+	secondarySize 63
+	interval 2.0
+	offset 0 16 0
+	attenuate 1
+}
+
 object MetaSoulSphere
 {
-    frame SOUL { light SOULSPHERE }
+    frame SOUL { light METASOULSPHERE }
+}
+
+pulselight METAINVULN
+{
+	color 0.3 1.0 0.3
+	size 60
+	secondarySize 63
+	interval 2.0
+	offset 0 16 0
+	attenuate 1
 }
 
 object MetaInvulnerabilitySphere
 {
-    frame PINV { light INVULN }
+    frame PINV { light METAINVULN }
+}
+
+pointlight METAHASTESPHERE
+{
+	color 1.0 0.0 0.0
+	size 60
+	offset 0 16 0
+	attenuate 1
 }
 
 object MetaHasteSphere
 {
-    frame HAST { light BLURSPHERE1 }
+    frame HAST { light METAHASTESPHERE }
 }
 
 object MetaHasteSphereNoItemChance
 {
-    frame HAST { light BLURSPHERE1 }
+    frame HAST { light METAHASTESPHERE }
 }
 
 pulselight MEGASPHERE
