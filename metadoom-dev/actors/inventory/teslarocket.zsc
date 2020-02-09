@@ -17,6 +17,10 @@ class TeslaRocketPickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP
 		scale 0.5;
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "Tesla Rocket"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	states

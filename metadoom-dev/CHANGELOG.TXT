@@ -66,9 +66,10 @@ Item Changes:
   alas. I tried to work around this, but every fix caused its own problems...)
 
 Other Changes:
-- Added metadata to allow level designers to place individual monsters and
-  weapons in their maps. Sure, nobody makes maps for gameplay mods, but there's
-  always a first time for everything... right?
+- Added metadata and alternate versions of items, so as to allow level designers
+  to build maps for MetaDoom without having their intended gameplay experience
+  sabotaged by random spawns or item drops. Sure, nobody really makes maps for
+  gameplay mods, but there's always a first time for everything... right?
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port.
 - Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
 - Disabled collisions between certain effects actors (gibs, casings etc.) and

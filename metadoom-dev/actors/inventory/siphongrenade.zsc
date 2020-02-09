@@ -19,6 +19,10 @@ class SiphonGrenadePickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP;
 		scale 0.5;
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "Siphon Grenade"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	states

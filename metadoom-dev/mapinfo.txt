@@ -208,6 +208,16 @@ DoomEdNums
 	20515 = "LoreRaven"
 	20516 = "LoreDehacked"
 	20517 = "LoreComic"
+	
+	// Inventory Items
+	20600 = "DogCollarPickup"
+	20601 = "HandGrenadePickup"
+	20602 = "HologramPickup"
+	20603 = "KineticMinePickup"
+	20604 = "ShieldWallPickup"
+	20605 = "SiphonGrenadePickup"
+	20606 = "TeslaRocketPickup"
+	20607 = "ArtifactPickup"
 }
 
 // Map Definitions

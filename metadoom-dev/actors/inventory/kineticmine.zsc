@@ -19,6 +19,10 @@ class KineticMinePickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP
 		scale 0.75;
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "Kinetic Mine"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	states

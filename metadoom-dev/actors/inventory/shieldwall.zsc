@@ -17,6 +17,10 @@ class ShieldWallPickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP
 		//scale 0.5
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "Shield Wall"
+		//$NotAngled
+		//$Color 9
 	}
 	states
 	{

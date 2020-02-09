@@ -20,6 +20,10 @@ class ArtifactPickup : CustomInventory
 		+FLOATBOB
 		scale 0.75;
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "The Artifact"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	states

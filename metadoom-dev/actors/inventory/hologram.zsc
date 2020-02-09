@@ -17,6 +17,10 @@ class HologramPickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP
 		scale 0.5;
 		+BLOCKASPLAYER
+		//$Category "MetaDoom Inventory Items"
+		//$Title "Hologram"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	states
