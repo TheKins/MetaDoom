@@ -93,24 +93,6 @@ skill ironman
 // EdNum Definitions
 DoomEdNums
 {
-	// Weapons
-	20101 = "MetaShotgun"
-	20102 = "MetaHolyWaterPistol"
-	20103 = "MetaSuperShotgun"
-	20104 = "MetaFireExtinguisher"
-	20105 = "MetaMachineGun"
-	20106 = "MetaChaingun"
-	20107 = "MetaRocketLauncher"
-	20108 = "MetaGrenadeLauncher"
-	20109 = "MetaPlasmaRifle"
-	20110 = "MetaGaussCannon"
-	20111 = "MetaLightningGun"
-	20112 = "MetaBFG9000"
-	20113 = "MetaUnmaker"
-	20114 = "MetaSoulcube"
-	20115 = "MetaChainsaw"
-	20116 = "MetaAxe"
-	
 	// Monsters
 	20000 = "MetaZombieMan"
 	20001 = "MetaHellRazer"
@@ -168,6 +150,64 @@ DoomEdNums
 	20053 = "MetaHovertank"
 	20054 = "MetaRover"
 	20055 = "MetaCatacomb"
+	
+	// Weapons
+	20101 = "MetaShotgun"
+	20102 = "MetaHolyWaterPistol"
+	20103 = "MetaSuperShotgun"
+	20104 = "MetaFireExtinguisher"
+	20105 = "MetaMachineGun"
+	20106 = "MetaChaingun"
+	20107 = "MetaRocketLauncher"
+	20108 = "MetaGrenadeLauncher"
+	20109 = "MetaPlasmaRifle"
+	20110 = "MetaGaussCannon"
+	20111 = "MetaLightningGun"
+	20112 = "MetaBFG9000"
+	20113 = "MetaUnmaker"
+	20114 = "MetaSoulcube"
+	20115 = "MetaChainsaw"
+	20116 = "MetaAxe"
+	
+	// Health and Armor
+	20200 = "MetaHealthBonusNoItemSpawn"
+	20201 = "MetaMedikitNoItemSpawn"
+	20202 = "MetaArmorBonusNoItemSpawn"
+
+	// Ammo
+	20300 = "ClipBox2NoItemSpawn"
+	20301 = "RocketAmmo2NoItemSpawn"
+	20302 = "RocketBox2NoItemSpawn"
+	20303 = "Cell2NoItemSpawn"
+	20304 = "CellPack2NoItemSpawn"
+	20305 = "Backpack2"
+	20306 = "BFGAmmo"
+	20307 = "SoulAmmo"
+
+	// Powerups
+	20400 = "MetaBerserk"
+	20401 = "MetaHasteSphereNoItemChance"
+	20402 = "MetaQuadDamage"
+
+	// Loot
+	20500 = "LootGoblet"
+	20501 = "LootDagger"
+	20502 = "LootChest"
+	20503 = "LootSceptre"
+	20504 = "LootBible"
+	20505 = "LootCrown"
+	20506 = "LootCredits"
+	20507 = "LootFigurine1"
+	20508 = "LootFigurine2"
+	20509 = "LootFigurine3"
+	20510 = "LootFigurine4"
+	20511 = "LoreSkateboard"
+	20512 = "LoreHissy"
+	20513 = "LorePumpkin"
+	20514 = "LoreCacoward"
+	20515 = "LoreRaven"
+	20516 = "LoreDehacked"
+	20517 = "LoreComic"
 }
 
 // Map Definitions
