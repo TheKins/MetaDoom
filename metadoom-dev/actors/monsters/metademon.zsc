@@ -108,6 +108,7 @@ class MetaBullDemon : MonsterCore
 
 	int user_accelerator;
 	int user_chargecooldown;
+	FLineTraceData SurfaceData;
 
 	States
 	{
@@ -151,6 +152,20 @@ class MetaBullDemon : MonsterCore
 		Goto See;
 		
 	Missile:
+		BULD A 0 A_FaceTarget;
+		BULD A 0
+		{
+			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: 0, data:SurfaceData);
+			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: -16, data:SurfaceData);
+			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: 16, data:SurfaceData);
+			
+			if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+			{
+				if (meta_developer)
+						Console.printf("Bull Demon at %i x %i ain't got chargin' room", self.pos.x, self.pos.y);
+					SetStateLabel("See");
+			}
+		}
 		BULD A 0 A_SetPainThreshold(32);
 		BULD A 0 { user_accelerator = 3; user_chargecooldown = 5; A_PlaySound("monsters/bulldemon/charge"); }
 		BULD AB 4 A_FaceTarget;

@@ -31,6 +31,8 @@ Monster Changes:
 - Revenant rockets will now fire from the shoulder launchers on the sprite IF
   the ceiling is sufficiently high up enough to allow it. If not, the original
   behavior of firing from the Revenant's midsection will be used.
+- Bull Demons are now marginally (marginally) smarter about charging straight
+  into a wall they're right next to. Marginally.
 - Trites no longer spawn in damaging sectors.
 - Updated the sounds for a certain WolfSS variant.
 
