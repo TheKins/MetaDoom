@@ -5,9 +5,9 @@ Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
   slots (like E4M8) with new bosses from throughout Doom history!
 - Added # unique boss monsters!
-- Monster bleeding and fear status effects have been completely rewritten to
-  be much more uniform (and much less copy-pasty) across all monsters.
-- More monsters are now scared by Holy Water.
+- The "bleeding" and "scared" status effects have been completely rewritten to
+  be much more uniform (and much less copy-paste-y) across all monsters.
+- More monsters are now scared by Holy Water. As they well should be!
 - Hell Knights, Barons of Hell, Imp Lords and Fiends now try and avoid flinging
   themselves into damaging sectors. Not that it'd hurt them, but it stops them
   from falling out of the map or into places where the player can't reach them.
@@ -16,14 +16,14 @@ Monster Changes:
   avoid falling off a ledge, or charging while in a small "turret" area...
 - Cyberdemon charging attacks are no longer blocked by items and other random junk,
   and now smoosh anybody stupid enough to be in the way.
-- Cyberdemon charging attacks now have a different audio-visual cue from the
-  walking-while-shooting attack, in that he stomps twice on the ground first.
-- Cyberdemon melee has been revamped into a new stomp attack.
+- Cyberdemon charging attacks now have a different "tell" from the "walking while
+  shooting" attack, in that he stomps twice on the ground first.
+- Speaking of... Cyberdemon melee has been revamped into a new stomp attack.
 - Cyberdemons now announce their entrance with the same gusto as other bosses.
 - Removed code for Z-Sec to try and actively dodge if projectiles were coming
-  their way, because it was always broken and had never worked.
-- Summoners' popcorn attack is now ACTUALLY limited when they can't see the player,
-  and they won't summon when they don't think there's enough room to do so. There
+  their way, because, well, it was always broken and had never worked.
+- Summoners no longer, well, SUMMON if they haven't seen the player recently, 
+  and they won't summon if they don't think there's enough room to do so. There
   are also new precautions in place to prevent Unwilling from spawning inside of
   each other (fnarr!)
 - Hell Razer's beams are made up of less actors, hopefully making them less
@@ -37,8 +37,8 @@ Monster Changes:
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
-- The collar-bound Zombie Dogs now absorb all damage taken by the player while
-  you have them equipped! Be warned, though, they don't last forever...
+- Collar-bound Zombie Dogs now absorb all damage taken by the player while you
+  have them equipped! Be warned, though, they tend not to last too long.
 - The Pistol now triggers "gunfire activated" linedefs like hitscan weapons do,
   allowing it to trigger the Evil Eyes in SIGIL.
 - Corrected the pixel aspect ratio on the Unmaker's HUD sprites and hated every
@@ -49,12 +49,13 @@ Weapon Changes:
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
   support and better compatibility with custom mapsets that replace the original
-  font graphics.
+  font graphics like Hell Revealed 2.
 - The Game Over screen in Ultra-Nightmare mode will now provide a more accurate
   description of your demise beyond just dying to "something really mean".
 - The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
 - Fixed the Spider Mastermind's animation in the Codex (Thanks DrPySpy!)
-- The Weapons section in the Codex has been updated for consistency and accuracy.
+- Updated various Codex entries for consistency and to accurately reflect the
+  current state of the mod.
 - Added proper support for GZDoom's hilariously inflexible Alternate HUD.
 - Added a unique background for the Quit confirmation menu.
 - Reskinned the sliders in the Options Menus.
@@ -71,7 +72,6 @@ Item Changes:
 - The Shield Wall now physically blocks other players in Deathmatch, as well as
   their projectile attacks. (Hitscans still sneak through, alas. I tried to work
   around this, but every fix caused its own problems...)
-- The Shield Wall now lets the player who spawned it walk through it.
 
 Other Changes:
 - Added metadata and alternate versions of items, so as to allow level designers
