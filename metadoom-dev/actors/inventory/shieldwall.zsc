@@ -199,6 +199,11 @@ class ShieldWallPiece : Actor
 	// Ignore player shots, but still block the enemy's
 	override bool CanCollideWith(Actor other, bool passive)
 	{
+		if (other == target)
+		{
+			return false;
+		} 
+		
 		// Different deathmatch handling to differentiate between different
 		// players. In co-op, everyone should be able to shoot through to
 		// reduce frustration and/or trolling...
@@ -212,7 +217,7 @@ class ShieldWallPiece : Actor
 			if (passive && other.target is "MetaDoomPlayer" && !other.bISMONSTER)
 			{
 				return false;
-			} 
+			}
 		}
 		return true;
 	}

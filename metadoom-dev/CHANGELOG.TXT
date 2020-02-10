@@ -69,6 +69,7 @@ Item Changes:
 - The Shield Wall is now tinted the player's color, and blocks the projectile
   attacks of other players in deathmatch mode. (Hitscans still sneak through,
   alas. I tried to work around this, but every fix caused its own problems...)
+- The Shield Wall now lets the player who spawned it walk through it.
 
 Other Changes:
 - Added metadata and alternate versions of items, so as to allow level designers
