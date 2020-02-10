@@ -15,6 +15,10 @@ class MetaFloatingSkull : Actor // replaces FloatingSkull
 		ProjectilePassHeight -16;
 		+SOLID
 		+FLOATBOB
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Floating Skull (Bobbing)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States
@@ -68,6 +72,10 @@ class MetaRedTorch : Actor // replaces RedTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Big Red Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -136,6 +144,10 @@ class MetaBlueTorch : Actor // replaces BlueTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Big Blue Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -203,6 +215,10 @@ class MetaGreenTorch : Actor // replaces GreenTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Big Green Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -271,6 +287,10 @@ class MetaShortRedTorch : Actor // replaces ShortRedTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Short Red Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -339,6 +359,10 @@ class MetaShortBlueTorch : Actor // replaces ShortBlueTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Short Blue Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -407,6 +431,10 @@ class MetaShortGreenTorch : Actor // replaces ShortGreenTorch
 		damagefactor "FireExtinguisher", 255;
 		damagefactor "Normal", 0;
 		Tag "Torch";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Short Green Torch (Extinguishable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -481,6 +509,10 @@ class MetaBigTree : Actor // replaces BigTree
 		damagefactor "Axe", 50;
 		painchance 255;
 		Tag "Tree";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Big Tree (Breakable)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States
@@ -544,6 +576,10 @@ class MetaTorchTree : Actor // replaces TorchTree
 		painchance 255;
 		+SOLID
 		Tag "Tree";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Torched Tree (Breakable)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States
@@ -603,6 +639,10 @@ class MetaCandelabra : Actor // replaces Candelabra
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Candelabra";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Candelabra (Breakable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -746,6 +786,10 @@ class MetaEvilEye : Actor // replaces EvilEye
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Evil Eye";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Evil Eye (Shootable)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States
@@ -836,6 +880,10 @@ class MetaEvilEyeForSigil : Actor
 		ProjectilePassHeight 16;
 		+SOLID
 		Tag "Bare Witness";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Evil Eye (SIGIL)"
+		//$NotAngled
+		//$Color 3
 	}
 	States
 	{
@@ -899,6 +947,10 @@ class MetaHeadOnAStick : Actor // replaces HeadOnAStick
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Skull-Kabob";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Head-On-A-Stick (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -945,6 +997,10 @@ class MetaHeadsOnAStick : Actor // replaces HeadsOnAStick
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Skull-Kabob";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Heads-On-A-Stick (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States

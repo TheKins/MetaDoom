@@ -30,6 +30,10 @@ class MetaTechLamp : Actor // replaces TechLamp
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Lamp";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Tech Lamp (Breakable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -108,6 +112,10 @@ class MetaTechLamp2 : Actor // replaces TechLamp2
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Lamp";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Tech Lamp 2 (Breakable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -176,6 +184,10 @@ class MetaColumn : Actor // replaces Column
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Column";
+		//$Category "Light sources/MetaDoom"
+		//$Title "Column (Breakable)"
+		//$NotAngled
+		//$Color 11
 	}
 	
 	States
@@ -252,6 +264,10 @@ class MetaBurningBarrel : Actor // replaces BurningBarrel
 		painchance "LightningStun", 0;
 		painchance 255;
 		Tag "Burning Barrel";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Burning Barrel (Extinguishable)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States
@@ -369,6 +385,10 @@ class MetaTechPillar : Actor // replaces TechPillar
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Pillar";
+		//$Category "Obstacles/MetaDoom"
+		//$Title "Tech Pillar (Breakable)"
+		//$NotAngled
+		//$Color 3
 	}
 	
 	States

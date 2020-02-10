@@ -121,6 +121,10 @@ class MetaBloodyTwitch : Actor // replaces BloodyTwitch
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Twitching Corpse";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Twitching Corpse (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -207,6 +211,10 @@ class MetaDeadStick : Actor // replaces DeadStick
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Corpse-Kabob";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Corpse-Kabob (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -267,6 +275,10 @@ class MetaLiveStick : Actor // replaces LiveStick
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Dude-Kabob";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Dude-On-A-Stick (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	States
 	{
@@ -331,6 +343,10 @@ class MetaMeat2 : Actor // replaces Meat2
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Meat 2 (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -394,6 +410,10 @@ class MetaMeat3 : Actor // replaces Meat3
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Meat 3 (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -457,6 +477,10 @@ class MetaMeat4 : Actor // replaces Meat4
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Meat 4 (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -520,6 +544,10 @@ class MetaMeat5 : Actor // replaces Meat5
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Meat 5 (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -669,6 +697,10 @@ class MetaHangBNoBrain : Actor // replaces HangBNoBrain
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Meat No Brain (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -732,6 +764,10 @@ class MetaHangNoGuts : Actor // replaces HangNoGuts
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Meat No Guts (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -795,6 +831,10 @@ class MetaHangTLookingDown : Actor // replaces HangTLookingDown
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Torso Looking Down (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -858,6 +898,10 @@ class MetaHangTLookingUp : Actor // replaces HangTLookingUp
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Torso Looking Up (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
@@ -921,6 +965,10 @@ class MetaHangTNoBrain : Actor // replaces HangTNoBrain
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Torso No Brain (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	States
 	{
@@ -983,6 +1031,10 @@ class MetaHangTSkull : Actor // replaces HangTSkull
 		damagefactor "LightningStun", 0;
 		damagefactor "Axe", 50;
 		Tag "Fresh Meat";
+		//$Category "Decoration/MetaDoom"
+		//$Title "Hanging Torso No Skull (Breakable)"
+		//$NotAngled
+		//$Color 4
 	}
 	
 	States
