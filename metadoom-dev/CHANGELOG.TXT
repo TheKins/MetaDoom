@@ -28,6 +28,9 @@ Monster Changes:
   each other (fnarr!)
 - Hell Razer's beams are made up of less actors, hopefully making them less
   intense on your 32-bit Acer laptop you got for schoolwork in 2003.
+- Revenant rockets will now fire from the shoulder launchers on the sprite IF
+  the ceiling is sufficiently high up enough to allow it. If not, the original
+  behavior of firing from the Revenant's midsection will be used.
 - Trites no longer spawn in damaging sectors.
 - Updated the sounds for a certain WolfSS variant.
 
