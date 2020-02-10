@@ -11,3 +11,5 @@ Renderer FX Definitions
 #include "gldefs/powerups.gld"
 #include "gldefs/inventory.gld"
 #include "gldefs/props.gld"
+
+#include "gldefs/shutupdoombuilder.gld"

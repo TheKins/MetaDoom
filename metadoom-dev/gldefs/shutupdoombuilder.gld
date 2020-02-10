@@ -1,0 +1,108 @@
+// These are duplicate entries from lights.pk3 intended to tell Doom Builder to
+// shut the fuck up about these being "missing". Stupid program.
+
+pointlight LAMP
+{
+    color 1.0 1.0 0.8
+    size 84
+    offset 0 44 0
+	attenuate 1
+}
+
+pulselight SMALLLAMP
+{
+    color 0.8 0.8 1.0
+    size 84
+    secondarySize 87
+    interval 0.4
+    offset 0 44 0
+	attenuate 1
+}
+
+pulselight BIGLAMP
+{
+    color 0.8 0.8 1.0
+    size 96
+    secondarySize 99
+    interval 0.4
+    offset 0 72 0
+	attenuate 1
+}
+
+flickerlight2 FIREBARREL
+{
+    color 1.0 0.9 0.4
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 32 0
+	attenuate 1
+}
+
+flickerlight2 BIGREDTORCH
+{
+    color 0.7 0.35 0.14
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	attenuate 1
+}
+
+flickerlight2 BIGGREENTORCH
+{
+    color 0.2 0.7 0.2
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	attenuate 1
+}
+
+flickerlight2 BIGBLUETORCH
+{
+    color 0.2 0.2 0.7
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	attenuate 1
+}
+
+flickerlight2 SMALLREDTORCH
+{
+    color 0.7 0.35 0.14
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	attenuate 1
+}
+
+flickerlight2 SMALLGREENTORCH
+{
+    color 0.2 0.7 0.2
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	attenuate 1
+}
+
+flickerlight2 SMALLBLUETORCH
+{
+    color 0.2 0.2 0.7
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	attenuate 1
+}
+
+pointlight CANDELABRA
+{
+    color 1.0 1.0 0.3
+    size 67
+    offset 0 52 0
+	attenuate 1
+}
