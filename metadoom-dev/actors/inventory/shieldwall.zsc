@@ -203,7 +203,9 @@ class ShieldWallPiece : Actor
 		if (deathmatch && other == target)
 		{
 			return false;
-		} else if (!deathmatch && other is "MetaDoomPlayer")
+		}
+		
+		if (!deathmatch && other is "MetaDoomPlayer")
 		{
 			return false;
 		}
