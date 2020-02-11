@@ -39,7 +39,6 @@ class MetaDoomMapID : Actor
 		-SOLID
 		+DONTSPLASH
 		+INVISIBLE
-		//RenderStyle "None";
 		//$Category "Editor Things"
 		//$Title "This Is A MetaDoom Map!"
 		//$NotAngled
@@ -47,7 +46,7 @@ class MetaDoomMapID : Actor
 	States
 	{
 	Spawn:
-		UNKN A -1;
+		EDIT A -1;
 		Stop;
 	}
 }
