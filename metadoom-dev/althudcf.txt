@@ -5,9 +5,9 @@ Alternate Hud
 ----------------------------
 */
 
-MetaDogGun_HellHound "HDOGH0"
-MetaDogGun_DemonDog "DDOGH0"
-MetaDogGun_Cerberus "CDOGH0"
+MetaDogGun_HellHound "HUDDOG"
+MetaDogGun_DemonDog "HUDDOG"
+MetaDogGun_Cerberus "HUDDOG"
 MetaLastResortFist "HUDFIST"
 MetaBerserkFist "HUDFIST"
 MetaHolyWaterPistol "HUDHWP"
