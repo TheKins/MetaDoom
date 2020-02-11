@@ -27,3 +27,27 @@ class Counter : Inventory
     -Inventory.INVBAR
 	}
 }
+
+// For level designers to tell scripts that it's a MetaDoom map.
+class MetaDoomMapID : Actor
+{
+	Default
+	{
+		Radius 32;
+		Height 56;
+		+NOGRAVITY
+		-SOLID
+		+DONTSPLASH
+		+INVISIBLE
+		//RenderStyle "None";
+		//$Category "Editor Things"
+		//$Title "This Is A MetaDoom Map!"
+		//$NotAngled
+	}
+	States
+	{
+	Spawn:
+		UNKN A -1;
+		Stop;
+	}
+}

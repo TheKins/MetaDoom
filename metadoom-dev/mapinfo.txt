@@ -93,6 +93,9 @@ skill ironman
 // EdNum Definitions
 DoomEdNums
 {
+	// CoreItem
+	30000 = "MetaDoomMapID"
+	
 	// Monsters
 	20000 = "MetaZombieMan"
 	20001 = "MetaHellRazer"

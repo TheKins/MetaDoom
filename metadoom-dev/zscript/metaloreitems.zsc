@@ -14,6 +14,19 @@ class MetaLoreItems : EventHandler
 {
 	override void WorldLoaded(WorldEvent e)
 	{
+		bool metamap = false;
+		
+		BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+        while (it.Next())
+        {
+            Actor mo = it.thing;
+            if (mo is "MetaDoomMapID")
+			{
+				Console.printf("Lore Item: This is a MetaDoom map, snuff the lore item spawning!");
+				metamap = true;
+			}
+		}
+		
 		for (int i = 0; i < level.Sectors.Size(); i++)
 		{
 			// Grab the center point of all sectors in the map.
@@ -23,7 +36,7 @@ class MetaLoreItems : EventHandler
 			// Is the selected sector a secret, and is its center point actually within playable space?
 			if (level.IsPointInMap(spam3) && level.Sectors[i].IsSecret())
 			{
-				if (meta_lootspawns == 1)
+				if (metamap == false && meta_lootspawns == 1)
 				{
 					// Do an RNG roll - have lore items only have a 10% chance of spawning.
 					int lorerng = random(0,100);
