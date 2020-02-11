@@ -178,6 +178,7 @@ GOTLOOTCACOWARD = "Picked up a shiny trinket!";
 GOTLOOTRAVEN = "Picked up the Symbol of the Raven!";
 GOTLOOTDEHACKED = "Picked up an EXE Patcher!";
 GOTLOOTCOMIC = "Picked up a comic book!";
+GOTLOOTDAISY = "Picked up an unlucky rabbit's foot...";
 
 // Weapons
 GOTPISTOL = "You got the EMG Sidearm!";

@@ -208,6 +208,7 @@ DoomEdNums
 	20515 = "LoreRaven"
 	20516 = "LoreDehacked"
 	20517 = "LoreComic"
+	20518 = "LoreDaisy"
 	
 	// Inventory Items
 	20600 = "DogCollarPickup"

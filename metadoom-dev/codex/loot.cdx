@@ -89,4 +89,12 @@ page "Other"
         origin "Id Anthology (1996)";
         description "A promotional comic originally produced as a giveaway for a game convention and later included in the Id Anthology boxset. This tome of senseless violence, like most works of art, was largely unappreciated in its time.\n\nIt later achieved newfound notoriety upon being reviewed (and mocked) online in 1999, and its blend of comic gore and constant, ridiculous screamed catchphrases (''RIP AND TEAR!'') has influenced many Doom-related works since, ranging from Brutal Doom all the way to the modern Doom Slayer.";
 	}
+	
+	entry "LoreDaisyDummy"
+    {
+		itemToCheck "MetaCodex_LoreDaisy"
+		name "Rabbit's Foot";
+        origin "Quake Champions (2017)";
+        description "aaa";
+	}
 }

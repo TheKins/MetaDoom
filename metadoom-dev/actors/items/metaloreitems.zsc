@@ -31,7 +31,8 @@ class MetaLoreItemSpawner : Actor
 		"LoreCacoward",
 		"LoreRaven",
 		"LoreDehacked",
-		"LoreComic"
+		"LoreComic",
+		"LoreDaisy"
 	};
 	
 	States
@@ -400,6 +401,47 @@ class LoreComicDummy : Actor
 	{
 	Spawn:
 		LODM C -1;
+		loop;
+	}
+}
+
+class LoreDaisy : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTDAISY";
+		inventory.pickupsound "items/lootdaisy";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Rabbit's Foot"
+		//$NotAngled
+		//$Color 19
+	}
+	
+	States
+	{
+	Spawn:
+		LORE K -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LoreDaisy");
+		stop;
+	}
+}
+
+// Seperate GFX for Codex
+class LoreDaisyDummy : Actor
+{
+	Default
+	{
+		xscale 0.5;
+		yscale 0.4;
+	}
+	
+	States
+	{
+	Spawn:
+		LODM D -1;
 		loop;
 	}
 }
