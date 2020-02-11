@@ -18,55 +18,68 @@ mixin class LootSpawn
 {
 	void A_SpawnLoot(string item)
 	{
-		actor newitem = Actor.Spawn(item, self.pos);
+		bool dothething = true;
 		
-		newitem.angle = random(0,360);		
-		newitem.speed = 2;
-		int oldradius;
-		bool lavadive = false;
-		oldradius = newitem.radius;
-		int tries = 0;
-		
-		// Lower the item's radius so it's easier for it to run around without
-		// being clipped into a wall (see. healthkits spawned by a Quad at the
-		// very start of TNT MAP01)
-		newitem.A_SetSize(8);
-		
-		// Make the item wander around looking for a new forever-home
-		for (int i = 0; i < 64; i++)
+		ThinkerIterator it = ThinkerIterator.Create("MetaDoomMapID");
+		Actor mo;
+		while (mo = MetaDoomMapID(it.Next()))
 		{
-			newitem.A_Wander();
-			
-			// Stuck on a damage sector? Give it insane stepheight so it can haul
-			// its ass out to somewhere safe, and give it a little time.
-			if (level.PointInSector((newitem.pos.x,newitem.pos.y)).damageamount != 0)
-			{
-				newitem.maxstepheight = 128;
-				//newitem.setOrigin(self.pos, false);
-				lavadive = true;
-				tries++;
-				
-				// Avoids infinite loops
-				if (tries < 100)
-				{
-					i--;
-				}
-				
-			}
-			
+			if (meta_developer)
+				Console.printf("Item: This is a MetaDoom map, no automagic item spawning!");
+			dothething = false;
 		}
 		
-		// Reset the radius from before so it's still easy to pick up.
-		newitem.A_SetSize(oldradius);
-		
-		// Tell the people what they've won, John...
-		if (meta_developer)
+		if (dothething == true)
 		{
-			if (!lavadive)
+			actor newitem = Actor.Spawn(item, self.pos);
+			
+			newitem.angle = random(0,360);		
+			newitem.speed = 2;
+			int oldradius;
+			bool lavadive = false;
+			oldradius = newitem.radius;
+			int tries = 0;
+			
+			// Lower the item's radius so it's easier for it to run around without
+			// being clipped into a wall (see. healthkits spawned by a Quad at the
+			// very start of TNT MAP01)
+			newitem.A_SetSize(8);
+			
+			// Make the item wander around looking for a new forever-home
+			for (int i = 0; i < 64; i++)
 			{
-				Console.printf("Item: %s successfully placed at %i x %i", item, newitem.pos.x, newitem.pos.y);
-			} else {
-				Console.printf("Item: %s at %i x % i tried to take a lava dive, ended up at %i x %i", item, self.pos.x, self.pos.y, newitem.pos.x, newitem.pos.y);
+				newitem.A_Wander();
+				
+				// Stuck on a damage sector? Give it insane stepheight so it can haul
+				// its ass out to somewhere safe, and give it a little time.
+				if (level.PointInSector((newitem.pos.x,newitem.pos.y)).damageamount != 0)
+				{
+					newitem.maxstepheight = 128;
+					//newitem.setOrigin(self.pos, false);
+					lavadive = true;
+					tries++;
+					
+					// Avoids infinite loops
+					if (tries < 100)
+					{
+						i--;
+					}
+					
+				}
+			}
+		
+			// Reset the radius from before so it's still easy to pick up.
+			newitem.A_SetSize(oldradius);
+			
+			// Tell the people what they've won, John...
+			if (meta_developer)
+			{
+				if (!lavadive)
+				{
+					Console.printf("Item: %s successfully placed at %i x %i", item, newitem.pos.x, newitem.pos.y);
+				} else {
+					Console.printf("Item: %s at %i x % i tried to take a lava dive, ended up at %i x %i", item, self.pos.x, self.pos.y, newitem.pos.x, newitem.pos.y);
+				}
 			}
 		}
 	}
