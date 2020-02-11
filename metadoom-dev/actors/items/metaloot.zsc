@@ -25,6 +25,20 @@ class LootSpawner : Actor
 	{
 	Spawn:
 		TNT1 A 0;
+		TNT1 A 0
+		{
+			BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				if (mo is "MetaDoomMapID")
+				{
+					if (meta_developer)
+						Console.printf("Loot: This is a MetaDoom map, no loot spawning!");
+					self.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+				}
+			}
+		}
 		TNT1 A 0 A_Jump(64, "Loot1", "Loot2", "Loot6", "Loot7");
 		TNT1 A 0 A_Jump(32, "Loot3", "Loot4", "Loot5");
 		stop;
