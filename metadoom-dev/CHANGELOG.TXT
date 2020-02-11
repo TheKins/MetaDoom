@@ -1,5 +1,5 @@
-NEXT
-====
+v666 "Titan" (NEXT)
+===================
 
 Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
