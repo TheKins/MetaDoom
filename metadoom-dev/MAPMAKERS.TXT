@@ -1,0 +1,44 @@
+As of v666, MetaDoom now properly supports having custom levels for it. Having
+made one of the few mods that really got custom maps for it in Reelism, I really
+hope people enjoy messing around with this weird smushed up setting and creating
+real cool maps.
+
+Some things to keep in mind:
+
+MONSTERS, PROPS AND SUCH
+------------------------
+The vanilla actor placements act the same as they do when MetaDoom is loaded as
+a gameplay mod, which is to say that they randomize or may not be replaced,
+depending on game progress and/or CVars. The various folders in the Edit Thing
+window in Ultimate Doom Builder now have "MetaDoom" subfolders that allow you to
+place specific MetaDoom actors without being subject to randomization etc,
+allowing you to create gameplay scenarios and encounters with specific weapons
+and monsters in mind.
+
+TREASURE AND LORE ITEMS
+-----------------------
+Loot and Lore Items can be found at the bottom of the Edit Thing listing in the
+"MetaDoom Loot" and "MetaDoom Lore Items" folders. If you want to have complete
+control of how such items are placed (and you probably do so you can create cool
+appealing secrets!) place actor 30000 somewhere in the level. (You can find this
+in the Edit Thing window in the "Editor Things" menu, under the name of
+"This Is A MetaDoom Map!")
+
+THEMING
+-------
+MetaDoom is a mod that mashes together all of the different Doom games, so a
+good MetaDoom map will take the same sort of attitute. Try messing around with
+blending Doom 1 and Doom 3 visual elements together, or try mashing in Doom 64's
+lighting or environmental-alteration scripting tricks! Bonus points for sneaking
+in all sorts of deep cuts to obscure bits of Doom history, like the prototypes
+or, heck, even one of the movies...
+
+FINALY...
+---------
+Have fun! I'll add additional actors specifically for level designers (For
+example, extinguishable fire) if there's enough demand! If you make a MetaDoom
+level, don't hestitate to post it on the ZDoom Forums (https://forum.zdoom.org/)
+and/or tweet at me about it @kinsie.
+
+Rip and Tear!
+Kinsie
