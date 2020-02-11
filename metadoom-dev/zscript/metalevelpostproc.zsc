@@ -1,0 +1,43 @@
+class MetaMapFucker : LevelPostProcessor
+{
+	protected void Apply(Name checksum, String mapname)
+	{
+		if (mapname ~== "TEST")
+		{
+			// Add MetaDoomMapID
+			AddThing(30000, (0,0,0), 0, SKILLS_ALL, MODES_ALL);
+			
+			// Add Inventory Items
+			AddThing(20600, (-1472,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20601, (-1600,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20602, (-1728,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20603, (-1856,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20604, (-1984,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20605, (-2112,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20606, (-2240,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20607, (-2368,960,0), 0, SKILLS_ALL, MODES_ALL);
+			
+			// Add Treasure Shit
+			AddThing(20500, (-80,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20501, (-32,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20502, (16,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20503, (64,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20504, (112,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20505, (160,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20506, (208,1152,0), 0, SKILLS_ALL, MODES_ALL);
+			
+			AddThing(20507, (-224,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20508, (-176,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20509, (-128,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20510, (-80,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20511, (-32,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20512, (16,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20513, (64,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20514, (112,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20515, (160,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20516, (208,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20517, (256,1280,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20518, (304,1280,0), 0, SKILLS_ALL, MODES_ALL);
+		}
+	}
+}
