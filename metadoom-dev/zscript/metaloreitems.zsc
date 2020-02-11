@@ -22,7 +22,8 @@ class MetaLoreItems : EventHandler
             Actor mo = it.thing;
             if (mo is "MetaDoomMapID")
 			{
-				Console.printf("Lore Item: This is a MetaDoom map, snuff the lore item spawning!");
+				if (meta_developer)
+					Console.printf("Lore Item: This is a MetaDoom map, snuff the lore item spawning!");
 				metamap = true;
 			}
 		}
