@@ -14,18 +14,18 @@ class MetaLoreItems : EventHandler
 {
 	override void WorldLoaded(WorldEvent e)
 	{
+		// If the map has the MetaDoomMapID actor, than it means the mapper wants to
+		// place loot as they damn well please. So, like, don't place it automagically.
 		bool metamap = false;
 		
-		BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
-        while (it.Next())
+		//BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+		ThinkerIterator it = ThinkerIterator.Create("MetaDoomMapID");
+		Actor mo;
+        while (mo = MetaDoomMapID(it.Next()))
         {
-            Actor mo = it.thing;
-            if (mo is "MetaDoomMapID")
-			{
-				if (meta_developer)
-					Console.printf("Lore Item: This is a MetaDoom map, snuff the lore item spawning!");
-				metamap = true;
-			}
+			if (meta_developer)
+				Console.printf("Lore Item: This is a MetaDoom map, snuff the lore item spawning!");
+			metamap = true;
 		}
 		
 		for (int i = 0; i < level.Sectors.Size(); i++)

@@ -36,7 +36,7 @@ class MetaDoomMapID : Actor
 		Radius 32;
 		Height 56;
 		+NOGRAVITY
-		-SOLID
+		+NOBLOCKMAP
 		+DONTSPLASH
 		+INVISIBLE
 		//$Category "Editor Things"
