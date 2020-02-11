@@ -22,7 +22,8 @@ Loot and Lore Items can be found at the bottom of the Edit Thing listing in the
 control of how such items are placed (and you probably do so you can create cool
 appealing secrets!) place actor 30000 somewhere in the level. (You can find this
 in the Edit Thing window in the "Editor Things" menu, under the name of
-"This Is A MetaDoom Map!")
+"This Is A MetaDoom Map!"). This will stop automatic placement of such items,
+allowing you to place them manually and completely control how they're found...
 
 THEMING
 -------
