@@ -1,7 +1,8 @@
 As of v666, MetaDoom now properly supports having custom levels for it. Having
 made one of the few mods that really got custom maps for it in Reelism, I really
-hope people enjoy messing around with this weird smushed up setting and creating
-real cool maps.
+hope people enjoy messing around with this weird smushed up setting and take
+advantage of all the monsters and weapons I've assembled over the past four years
+or so to create some really kickass new maps.
 
 Some things to keep in mind:
 
@@ -21,7 +22,7 @@ Loot and Lore Items can be found at the bottom of the Edit Thing listing in the
 "MetaDoom Loot" and "MetaDoom Lore Items" folders. If you want to have complete
 control of how such items are placed (and you probably do so you can create cool
 appealing secrets!) place actor 30000 somewhere in the level. (You can find this
-in the Edit Thing window in the "Editor Things" menu, under the name of
+in the Edit Thing window in the "Editor Things" folder, under the name of
 "This Is A MetaDoom Map!"). This will stop automatic placement of such items,
 allowing you to place them manually and completely control how they're found...
 
