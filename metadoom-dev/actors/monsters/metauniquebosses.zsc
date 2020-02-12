@@ -669,3 +669,251 @@ class MetaHarbingerTeleportFog : Actor
 	}
 	
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Kronos. Super early, might not be shipped in v666
+class MetaKronos : MonsterCore
+{
+	Default
+	{
+		Health 4000;
+		Radius 40;
+		Height 110;
+		Mass 1000;
+		Speed 16;
+		PainChance 20;
+		Monster;
+		MinMissileChance 180;
+		+BOSS 
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		+FLOATBOB
+		//+BOSSDEATH
+		SeeSound "monsters/kronos/see";
+		PainSound "monsters/kronos/pain";
+		DeathSound "monsters/kronos/die";
+		//ActiveSound "monsters/harbinger/laugh";
+		Obituary "$OB_KRONOS";
+		damagefactor "ChaingunTurret", 0.2;
+		painchance "ChaingunTurret", 0;
+		damagefactor "SpiderdemonAttack", 0.5;
+		painchance "SpiderdemonAttack", 0;
+		damagefactor "SpiderdemonTKAttack", 0.5;
+		painchance "Vampire", 128;
+		damagefactor "Vampire", 0.25;
+		MonsterCore.CanBeScared false;
+		Tag "Kronos";
+		//$Category "Monsters/MetaDoom/Bosses"
+		//$Title "Kronos"
+		//$Color 12
+	}
+	
+	States
+	{
+	Spawn:
+		KRON A 10 A_Look;
+		Loop;
+	See:
+		KRON B 0;
+		KRON B 0 A_Quake(5,30,0,2048,0);
+		KRON B 35 A_FaceTarget();
+		goto Roam;
+	Roam:
+		KRON AAAAAAAA 3 A_Chase();
+		goto Roam;		
+	Missile:
+		KRON A 0;
+		KRON A 0 A_Jump(72,"MissileHomers");
+	MissileMotherBall:
+		KRON BA 8 A_FaceTarget();
+		KRON B 12 BRIGHT
+		{
+			A_FaceTarget();
+			A_PlaySound("monsters/hellguard/fire");
+			A_SpawnProjectile("MetaMotherBall", 100, -16,  90); // TOP LEFT
+			A_SpawnProjectile("MetaMotherBall", 100,  16, -90); // TOP RIGHT
+		}
+		KRON A 12;
+		Goto Roam;
+	MissileHomers:
+		KRON A 0 A_PlaySound("monsters/kronos/attack", CHAN_6);
+		KRON BA 8 A_FaceTarget();
+		KRON B 12 BRIGHT
+		{
+			A_FaceTarget();
+			A_PlaySound("monsters/hellguard/fire");
+			A_SpawnProjectile("MetaKronosMissile", 100, -16,  0, CMF_ABSOLUTEPITCH, -90);
+		}
+		KRON A 20 A_FaceTarget();
+		Goto Roam;
+	// YOUR PUNY MITTS DO NOT WORK HERE
+	Pain.Axe:
+	Pain.Fist:
+	Pain.BerserkFist:
+	Pain:
+		KRON B 0;
+		KRON B 10 A_Pain;
+		Goto Roam;
+	Death:
+		KRON B 0 A_GiveToTarget("ScoreItem", 10000);
+		KRON B 20 A_Scream;
+		KRON BBBBB 8
+		{
+			A_SpawnProjectile ("MetaKronosExplosionParticle", random(32,112), 0, random (0, 360), 2, random (-8, 8));
+			A_PlaySound("weapons/explosion", CHAN_WEAPON, 0.5, 0, ATTN_NONE, 0, frandom(0.75, 1.25));
+		}
+		KRON BBBBBBBBBBB 4 
+		{
+			A_SpawnProjectile ("MetaKronosExplosionParticle", random(32,112), 0, random (0, 360), 2, random (-8, 8));
+			A_PlaySound("weapons/explosion", CHAN_WEAPON, 0.75, 0, ATTN_NONE, 0, frandom(0.75, 1.25));
+		}
+		KRON B 0 A_PlaySound("monsters/cyberdemon/die2", CHAN_AUTO, 1.0, 0, ATTN_NONE);
+		KRON BBBBBBBBBBB 2 
+		{
+			A_SpawnProjectile ("MetaKronosExplosionParticle", random(32,112), 0, random (0, 360), 2, random (-8, 8));
+			A_PlaySound("weapons/explosion", CHAN_WEAPON, 1.0, 0, ATTN_NONE, 0, frandom(0.75, 1.25));
+		}
+		KRON B 8
+		{
+			bFLOATBOB = false;
+			A_NoBlocking();
+			for (int i = 0; i < 6; i++)
+			{
+				A_SpawnProjectile ("CyberdemonExplosionParticle", random(8,55), 0, random (0, 360), 2, random (-8, 8));
+				A_SpawnProjectile ("CyberdemonExplosionParticle", random(55,112), 0, random (0, 360), 2, random (-8, 8));
+			}
+			
+			A_Quake (4,25,0,750,0);
+			
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnProjectile ("CyberdemonGibber", random(8,55), 0, random (0, 360), 2, random (32, 64));
+				A_SpawnProjectile ("CyberdemonGibber", random(55,112), 0, random (0, 360), 2, random (64, 110));
+			}
+			
+			A_SpawnItem("CyberdemonExplosionScorchMark",0,0);
+			A_SpawnItem("CyberdemonExplosionShockwave",0,55);
+		}
+		KRON C 30;
+		KRON C -1 A_KillMaster; //A_BossDeath
+		Stop;
+	}
+}
+
+class MetaKronosMissile : Actor
+{
+	Default
+	{
+		Radius 11;
+		Height 8;
+		Speed 8;
+		Damage 0;
+		Projectile;
+		+SEEKERMISSILE 
+		+RANDOMIZE
+	}
+	States
+	{
+	Spawn:
+		KRBA A 0;
+		KRBA A 0 A_ChangeVelocity(vel.x*2, vel.y*2, vel.z*2, CVF_REPLACE);
+		KRBA ABCDABCDABCD 2 BRIGHT
+		{
+			A_ChangeVelocity(vel.x/2, vel.y/2, vel.z/2, CVF_REPLACE);
+			
+			for (int i; i < 6; i++)
+			{
+				A_SpawnParticle("Purple",SPF_RELATIVE,random(16,32),random(3,8),0,0,0,4,frandom(2.5,-2.5),frandom(2.5,-2.5),0,0,0,-0.4);
+			}
+		}
+	Fly:
+		KRBA AB 2 BRIGHT 
+		{
+			A_SeekerMissile(5, 15, SMF_PRECISE);
+			
+			for (int i; i < 6; i++)
+			{
+				A_SpawnParticle("Purple",SPF_RELATIVE,random(16,32),random(3,8),0,0,0,4,frandom(2.5,-2.5),frandom(2.5,-2.5),0,0,0,-0.4);
+			}
+		}
+		KRBA A 0 A_PlaySound("monsters/revenant/missile/beep");
+		KRBA CD 2 BRIGHT 
+		{
+			A_SeekerMissile(5, 15, SMF_PRECISE);
+			
+			for (int i; i < 6; i++)
+			{
+				A_SpawnParticle("Purple",SPF_RELATIVE,random(16,32),random(3,8),0,0,0,4,frandom(2.5,-2.5),frandom(2.5,-2.5),0,0,0,-0.4);
+			}
+		}
+		KRBA A 0 A_PlaySound("monsters/revenant/missile/beep");
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("MetaKronosExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+class MetaKronosExplosion : Actor
+{
+	Default
+	{
+	Radius 10;
+	Height 10;
+	Speed 5;
+	PROJECTILE;
+	+NOCLIP
+	Decal "Scorch";
+	Damagetype "Explosive";
+	}
+	States
+	{
+		Spawn:
+		EXPL A 0;
+		EXPL A 2 BRIGHT
+		{
+			A_PlaySound("weapons/explosion", CHAN_WEAPON);
+			A_Explode(40,90,!XF_HURTSOURCE);
+			A_Quake (3,10,0,750,0);
+			A_SpawnItem("Shockwave",0,0);
+			
+			if (pos.z <= (floorz + 64))
+			{
+				A_SpawnItem("ExplosionScorchMark",0,0);
+			}
+		}
+		EXPL B 2 BRIGHT; 
+		EXPL C 2 BRIGHT; 
+		EXPL DEF 2;
+		Stop;
+	}
+}
+
+class MetaKronosExplosionParticle : Actor
+{
+	Default
+	{
+		Radius 10;
+		Height 10;
+		Speed 7;
+		PROJECTILE;
+		+NOCLIP
+		+NOGRAVITY
+		Decal "Scorch";
+		scale 0.5;
+	}
+	
+	States
+	{
+		Spawn:
+		EXPL A 0;
+		EXPL A 2 BRIGHT;
+		EXPL B 2 BRIGHT ;
+		EXPL C 2 BRIGHT ;
+		EXPL DEF 2;
+		Stop;
+	}
+}

@@ -800,3 +800,9 @@ monsters/harbinger/pain			harbpain
 monsters/harbinger/die			harbdie
 monsters/harbinger/moan			harbmoan
 monsters/harbinger/teleport		harbtele
+
+// kronos
+monsters/kronos/see				kronsee
+monsters/kronos/attack			kronattk
+monsters/kronos/pain			kronpain
+monsters/kronos/die				krondie
