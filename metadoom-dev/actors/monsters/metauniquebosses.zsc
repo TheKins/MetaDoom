@@ -122,7 +122,6 @@ class MetaMotherBall : Actor
 		Projectile;
 		+SEEKERMISSILE 
 		+RANDOMIZE
-		DeathSound "skeleton/tracex";
 		Decal "RevenantScorch";
 	}
 	
