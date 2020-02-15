@@ -45,6 +45,8 @@ Weapon Changes:
   second of it. Please add psprite scaling, Mr. Chicken...
 - Added new bindable keys to quickly switch directly to the Holy Water Pistol,
   Fire Extinguisher and SoulCube without fumbling through the rest of the arsenal.
+- Renamed "Explosion" actor to be less generic and thus less likely to have an
+  actor name conflict with other mods or mappacks like KDiZD Lite.
 
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
