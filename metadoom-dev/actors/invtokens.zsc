@@ -49,4 +49,11 @@ class MetaDoomMapID : Actor
 		EDIT A -1;
 		Stop;
 	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		if (meta_developer)
+			bINVISIBLE = false;
+	}
 }
