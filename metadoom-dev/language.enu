@@ -43,7 +43,7 @@ TXT_IMTOTAL = "Total";
 TXT_IMSCORE = "Score";
 
 // MetaDoom Menu
-METAMENU_DEBUG = "Debug Messages";
+METAMENU_DEBUG = "MetaDebug";
 
 METAMENU_SPAWNINGHEADER = "Spawning Controls";
 METAMENU_SPAWNINGGUNS = "Weapon Spawning";
@@ -112,7 +112,7 @@ METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second gore lasts before fading
 METATOOLTIP_TOASTTYPE = "Change the obnoxiousness of the \"All X Cleared!\" message.";
 METATOOLTIP_TOASTSIZE = "Change the size of the \"Toast\" option. Bit buggy, mind.";
 
-METATOOLTIP_DEBUG = "Flood the top left of the screen with developer barf occasionally.";
+METATOOLTIP_DEBUG = "Displays things of interest to developers only. Best ignored.";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";
