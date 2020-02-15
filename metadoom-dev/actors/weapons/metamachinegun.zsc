@@ -205,7 +205,7 @@ class MicroRocket : Actor
 	}
 }
 
-class MicroRocketExplosion : Explosion
+class MicroRocketExplosion : MetaExplosion
 {
 	Default
 	{

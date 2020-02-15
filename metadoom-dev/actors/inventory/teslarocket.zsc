@@ -175,7 +175,7 @@ class TeslaZapperTrail : Actor
 	}
 }
 
-class TeslaRocketExplosion : Explosion
+class TeslaRocketExplosion : MetaExplosion
 {
 	Default
 	{

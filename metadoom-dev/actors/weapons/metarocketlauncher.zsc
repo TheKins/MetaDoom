@@ -159,10 +159,10 @@ class MetaLauncherRocket : Weapon
 		MISL AAAA 1 Bright A_JumpIfInTargetInventory("RLDetonator",1,"AltDeath");
 		Loop;
 	Death:
-		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	AltDeath:
-		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 		TNT1 A 0 A_PlaySound("weapons/rocketlauncher/split", CHAN_6);
 		TNT1 A 0
 		{

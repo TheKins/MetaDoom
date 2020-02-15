@@ -7,7 +7,7 @@ Effects - Both Visual and Practical
 */
 
 // Explosions of various kinds
-class Explosion : Actor
+class MetaExplosion : Actor
 {
 	Default
 	{

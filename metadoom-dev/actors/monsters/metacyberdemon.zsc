@@ -295,7 +295,7 @@ class CyberdemonRocket : Actor
 		CISL AAAA 1 Bright;
 		Loop;
 	Death:
-		TNT1 A 0 A_SpawnItemEx("Explosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("MetaExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	}
 }

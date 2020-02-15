@@ -229,7 +229,7 @@ class MetaDogBomb_HellHound : Actor
 	}
 }
 
-class Dogsplosion : Explosion
+class Dogsplosion : MetaExplosion
 {
 	Default
 	{

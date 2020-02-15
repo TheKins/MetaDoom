@@ -52,7 +52,7 @@ pulselight MetaExplosionSmall
     interval 0.25
 } 
 
-Object Explosion
+Object MetaExplosion
 {
 	frame EXPL { light MetaExplosion }
 }

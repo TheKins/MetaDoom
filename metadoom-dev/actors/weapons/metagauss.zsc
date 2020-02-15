@@ -170,7 +170,7 @@ class MetaGaussCannon : MetaDoomWeapon
 	}
 }
 
-class GaussExplosion : Explosion
+class GaussExplosion : MetaExplosion
 {
 	Default
 	{

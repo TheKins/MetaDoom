@@ -150,7 +150,7 @@ class MetaRevenantTracerSmoke : Actor replaces RevenantTracerSmoke
 	}
 }
 
-class MetaRevenantTracerExplosion : Explosion
+class MetaRevenantTracerExplosion : MetaExplosion
 {
 	Default
 	{
@@ -366,7 +366,7 @@ class FiendMicroRocket : MicroRocket
 	}
 }
 
-class FiendMicroRocketExplosion : Explosion
+class FiendMicroRocketExplosion : MetaExplosion
 {
 	Default
 	{

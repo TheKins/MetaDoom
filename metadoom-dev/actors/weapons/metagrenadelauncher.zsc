@@ -217,7 +217,7 @@ class GrenadeLauncherProj : Actor
 	}
 }
 
-class GrenadeLauncherExplosion : Explosion
+class GrenadeLauncherExplosion : MetaExplosion
 {
 	States
 	{

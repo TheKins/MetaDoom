@@ -114,7 +114,7 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 
 // This is so barrels explode at their old speed when killed by another barrel,
 // so as to avoid making Barrels 'O' Fun unwinnable.
-class ExplosiveBarrelExplosion : Explosion
+class ExplosiveBarrelExplosion : MetaExplosion
 {
 	Default
 	{

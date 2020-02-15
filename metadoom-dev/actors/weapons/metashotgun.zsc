@@ -210,7 +210,7 @@ class MetaShotgunGrenade : Actor
 	}
 }
 
-class ShotgunGrenadeExplosion : Explosion
+class ShotgunGrenadeExplosion : MetaExplosion
 {
 	Default
 	{
