@@ -63,6 +63,42 @@ class MetaLoreItem : CustomInventory
 		LFIG A -1;
 		loop;
 	}
+	
+	// Stop other items from cutting off lore item pickup sounds
+	override void PlayPickupSound (Actor toucher)
+	{
+		double atten;
+		int chan;
+		int flags = 0;
+
+		if (bNoAttenPickupSound)
+		{
+			atten = ATTN_NONE;
+		}
+		/*
+		else if ((ItemFlags & IF_FANCYPICKUPSOUND) &&
+			(toucher == NULL || toucher->CheckLocalView()))
+		{
+			atten = ATTN_NONE;
+		}
+		*/
+		else
+		{
+			atten = ATTN_NORM;
+		}
+
+		if (toucher != NULL && toucher.CheckLocalView())
+		{
+			chan = 47;
+			flags = CHANF_NOPAUSE | CHANF_MAYBE_LOCAL | CHANF_OVERLAP;
+		}
+		else
+		{
+			chan = 47;
+			flags = CHANF_MAYBE_LOCAL | CHANF_OVERLAP;
+		}
+		toucher.A_StartSound(PickupSound, chan, flags, 1, atten);
+	}
 }
 
 // Classic Doom
