@@ -280,6 +280,23 @@ class LoreCacoward : MetaLoreItem
 	}
 }
 
+// Seperate GFX for Codex
+class LoreCacowardDummy : Actor
+{
+	Default
+	{
+		xscale 0.5;
+		yscale 0.4;
+	}
+	
+	States
+	{
+	Spawn:
+		LORE D -1;
+		loop;
+	}
+}
+
 class LoreRaven : MetaLoreItem
 {
 	Default

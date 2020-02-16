@@ -58,7 +58,7 @@ page "Other"
         description "A running joke spawned by Doom's pre-release hype, Smashing Pumpkins Into Small Piles of Putrid Debris was alleged to be a similar, more advanced FPS that just lacked that certain marketing je-ne-sais-quoi on account of having a name longer than some highways.\n\nId referenced this injoke with a suitably complex cheat code to enable No Clipping Mode, and an actual game under the name was eventually produced by future Growtopia co-creator Mike Hommel.\n\nThe moral of the story? Don't let your injokes grow too large, lest they become horrifying reality...";
 	}
 	
-	entry "LoreCacoward"
+	entry "LoreCacowardDummy"
     {
 		itemToCheck "MetaCodex_LoreCacoward"
 		name "Cacoward";
