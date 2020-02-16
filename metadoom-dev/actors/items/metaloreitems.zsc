@@ -71,7 +71,7 @@ class LootFigurine1 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG1";
-		inventory.pickupsound "items/lootfig";
+		inventory.pickupsound "items/lootfig1";
 		scale 0.75;
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 1"
@@ -97,6 +97,7 @@ class LootFigurine2 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG2";
+		inventory.pickupsound "items/lootfig3";
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 3"
 		//$NotAngled
@@ -122,6 +123,7 @@ class LootFigurine3 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG3";
+		inventory.pickupsound "items/lootfig4";
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 2016"
 		//$NotAngled
@@ -146,6 +148,7 @@ class LootFigurine4 : MetaLoreItem
 	Default
 	{
 		Inventory.PickupMessage "$GOTLOOTFIG4";
+		inventory.pickupsound "items/lootfig2";
 		//$Category "MetaDoom Loot/Lore Items (6666pt)"
 		//$Title "Figurine - Doom 64"
 		//$NotAngled

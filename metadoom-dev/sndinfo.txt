@@ -49,6 +49,10 @@ powerups/quad/use	quadshot
 // Phat Lewts
 items/loot			getloot
 items/lootfig		getfig
+items/lootfig1		getfig1
+items/lootfig2		getfig2
+items/lootfig3		getfig3
+items/lootfig4		getfig4
 items/lootskate		getsk8
 items/loothissy		gethiss
 items/lootpumpkin	getpumpk
