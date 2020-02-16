@@ -74,6 +74,7 @@ Item Changes:
 - The Shield Wall now physically blocks other players in Deathmatch, as well as
   their projectile attacks. (Hitscans still sneak through, alas. I tried to work
   around this, but every fix caused its own problems...)
+- The Siphon Grenade now has a unique pickup sound instead of reusing the Grenade's.
 
 Other Changes:
 - Added appropriate metadata etc. to allow level designers to build maps for

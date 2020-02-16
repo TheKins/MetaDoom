@@ -15,7 +15,7 @@ class SiphonGrenadePickup : CustomInventory
 		inventory.pickupmessage "$GOTSIPHON";
 		Tag "$TAGSIPHON";
 		inventory.icon "INVSIPH";
-		inventory.pickupsound "inventory/grenade/get";
+		inventory.pickupsound "inventory/siphongrenade/get";
 		+INVENTORY.ALWAYSPICKUP;
 		scale 0.5;
 		+BLOCKASPLAYER
@@ -44,7 +44,7 @@ class SiphonGrenade : CustomInventory
 		inventory.pickupmessage "$GOTSIPHON";
 		Tag "$TAGSIPHON";
 		inventory.icon "INVSIPH";
-		inventory.pickupsound "inventory/grenade/get";
+		inventory.pickupsound "inventory/siphongrenade/get";
 		inventory.amount 1;
 		inventory.maxamount 1;
 		+INVENTORY.INVBAR

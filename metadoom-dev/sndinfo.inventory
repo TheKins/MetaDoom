@@ -34,6 +34,7 @@ $volume inventory/shieldwall/loop 0.3
 $volume inventory/shieldwall/end 0.3
 
 // Siphon Grenade
+inventory/siphongrenade/get		getsiph
 inventory/siphongrenade/explode	siphon
 
 // Dog Collar
