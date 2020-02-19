@@ -260,6 +260,12 @@ DoomEdNums
 	20733 = "MetaItemBox"
 }
 
+DamageType MapFire
+{
+    Obituary = "$OB_MAPFIRE"
+	NoArmor
+}
+
 // Map Definitions
 map TITLEMAP "Welcome to MetaDoom"
 {

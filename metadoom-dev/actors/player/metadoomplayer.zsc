@@ -180,6 +180,7 @@ class MetaDoomPlayer : PlayerPawn
 			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
 		}
 		goto XDeath;
+	Pain.MapFire:
 	Pain.Slime:
 		PLAY G 4;
 		PLAY G 4 A_PlaySound("*hurtslime");
@@ -199,6 +200,7 @@ class MetaDoomPlayer : PlayerPawn
 		PLAY STU 5;
 		PLAY V -1;
 		Stop;
+	Death.MapFire:
 	Death.Fire:
 		BURN A 5 A_GiveInventory("DeathStateFire");
 		BURN A 3 Bright 

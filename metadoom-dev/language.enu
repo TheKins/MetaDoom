@@ -325,6 +325,7 @@ OB_SPLASH = "%o stood in the wrong spot.";
 OB_R_SPLASH = "%o should have stood back.";
 OB_ROCKET = "%o should have stood back.";
 OB_KILLEDSELF = "%o killed %hself.";
+OB_MAPFIRE = "%o went up in smoke.";
 
 OB_VOODOO = "%o did that Voodoo you do.";
 OB_UNDEADHIT = "%o was punched by a Revenant.";
