@@ -112,3 +112,19 @@ object MetaEvilEyeForSigil
 	frame SEYEB { light EVILEYESIGIL }
 	frame SEYEC { light EVILEYESIGIL }
 }
+
+// New Props
+flickerlight2 METAFIRE
+{
+    color 1.0 0.9 0.4
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 16 0
+	attenuate 1
+}
+
+object MetaFire
+{
+    frame PRFI { light METAFIRE }
+}

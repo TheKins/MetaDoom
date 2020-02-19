@@ -37,10 +37,8 @@ or, heck, even one of the movies...
 
 FINALY...
 ---------
-Have fun! I'll add additional actors specifically for level designers (For
-example, extinguishable fire) if there's enough demand! If you make a MetaDoom
-level, don't hestitate to post it on the ZDoom Forums (https://forum.zdoom.org/)
-and/or tweet at me about it @kinsie.
+Have fun! If you make a MetaDoom level, don't hestitate to post it on the ZDoom
+Forums (https://forum.zdoom.org/) and/or tweet at me about it @kinsie.
 
 Rip and Tear!
 Kinsie

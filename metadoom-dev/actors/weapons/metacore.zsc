@@ -151,6 +151,10 @@ class MetaBulletPuff : Actor
 		VSpeed 1;
 		Mass 5;
 		Decal "BulletChip";
+		
+		+ALLOWTHRUFLAGS
+		+THRUSPECIES
+		Species "NoHitScan";
 	}
 	
 	States
