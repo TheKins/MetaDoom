@@ -180,6 +180,10 @@ class GaussExplosion : MetaExplosion
 		+FORCEDECAL
 		Decal "PlasmaScorch";
 		damagetype "Gauss";
+		
+		+ALLOWTHRUFLAGS
+		+THRUSPECIES
+		Species "NoHitScan";
 	}
 	
 	States

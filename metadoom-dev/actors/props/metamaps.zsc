@@ -152,10 +152,10 @@ class MetaItemBox : Actor // replaces TechLamp2
 		Tag "Container";
 		//$Category "MetaDoom Props & Objects"
 		//$Title "Item Box (Breakable)"
-		//$NotAngled
 		//$Color 11
 		//$Arg0 "Contents"
 		//$Arg0Str "Contents"
+		//$Sprite "PRIBA0"
 	}
 	
 	States
@@ -203,6 +203,7 @@ class MetaItemBox : Actor // replaces TechLamp2
 				mo.vel.x = random(-2,2);
 				mo.vel.y = random(-2,2);
 				mo.vel.z = 8;
+				mo.angle = self.angle;
 			}
 		} else {
 			int i = random(0,5);

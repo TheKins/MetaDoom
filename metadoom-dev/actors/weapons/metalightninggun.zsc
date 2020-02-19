@@ -229,6 +229,10 @@ class MetaLightningPuff : MetaBulletPuff
 	{
 		damagetype "LightningGun";
 		Decal "BulletChip";
+		
+		+ALLOWTHRUFLAGS
+		+THRUSPECIES
+		Species "NoHitScan";
 	}
 	
 	States
