@@ -76,12 +76,15 @@ Item Changes:
   around this, but every fix caused its own problems...)
 - The Siphon Grenade now has a unique pickup sound instead of reusing the Grenade's.
 
-Other Changes:
+Mapper Changes:
 - Added appropriate metadata etc. to allow level designers to build maps for
   MetaDoom without having their intended gameplay experience sabotaged by random
   spawns or item drops. Sure, nobody really makes maps for gameplay mods, but
   there's always a first time for everything... right?
-  See MAPMAKING.TXT inside the PK3 for important notes and info.
+- See MAPMAKING.TXT inside the PK3 for important notes and info!
+
+Other Changes:
+
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port, with some
   minor tweaks to fix footstep sounds playing globally in multiplayer. Ouch!
 - Added a CVar to toggle footstep sounds.

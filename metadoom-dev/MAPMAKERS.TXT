@@ -26,6 +26,21 @@ in the Edit Thing window in the "Editor Things" folder, under the name of
 "This Is A MetaDoom Map!"). This will stop automatic placement of such items,
 allowing you to place them manually and completely control how they're found...
 
+NEW ACTORS
+----------
+The following actors will not spawn as part of MetaDoom's usual gameplay moddery
+and are provided exclusively for custom levels. You can find them at the bottom
+of the Edit Thing list.
+
+BURNING FLAMES: These block the player from going through them and burn them if
+they're dumb enough to touch them. Flames can only be removed using the oft-ignored
+Fire Extinguisher weapon, giving it a fresh purpose.
+
+ITEM BOX: Drops some random loot when shot. More importantly, can drop other stuff
+if the mapper specifies as such. Should function in this regard in the same way
+as the Hexen Pottery, but you'll probably want to spawn a specific actor without
+arsing around with spawnids, so be sure to tick the "String" box on the argument.
+
 THEMING
 -------
 MetaDoom is a mod that mashes together all of the different Doom games, so a
