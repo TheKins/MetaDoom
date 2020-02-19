@@ -108,7 +108,6 @@ class MetaBullDemon : MonsterCore
 
 	int user_accelerator;
 	int user_chargecooldown;
-	FLineTraceData SurfaceData;
 
 	States
 	{
@@ -155,6 +154,7 @@ class MetaBullDemon : MonsterCore
 		BULD A 0 A_FaceTarget;
 		BULD A 0
 		{
+			FLineTraceData SurfaceData;
 			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: 0, data:SurfaceData);
 			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: -16, data:SurfaceData);
 			self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, offsetside: 16, data:SurfaceData);

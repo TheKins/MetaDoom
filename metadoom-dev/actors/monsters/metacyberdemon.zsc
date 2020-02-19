@@ -51,8 +51,6 @@ class MetaCyberdemon : MonsterCore
 		//$Color 12
 	}
 	
-	FLineTraceData SurfaceData;
-	
 	States
 	{
 	Spawn:
@@ -141,6 +139,7 @@ class MetaCyberdemon : MonsterCore
 		{
 			A_FaceTarget();
 			
+			FLineTraceData SurfaceData;
 			self.LineTrace(self.angle, 384, 0, TRF_THRUACTORS, offsetz: 8, data:SurfaceData);
 			
 			if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)

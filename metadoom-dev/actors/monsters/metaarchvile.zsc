@@ -163,7 +163,7 @@ class MetaSummoner : MonsterCore
 	}
 	
 	int outtasight;
-	FLineTraceData SurfaceData;
+	
 
 	States
 	{
@@ -207,6 +207,8 @@ class MetaSummoner : MonsterCore
 	Popcorn:
 		SUMN A 0
 		{
+			FLineTraceData SurfaceData;
+			
 			// Limit popcorning if can't see player
 			if (CheckIfSeen())
 			{
