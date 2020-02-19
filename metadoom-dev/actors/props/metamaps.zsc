@@ -1,0 +1,129 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Props - MetaDoom Maps
+----------------------------
+*/
+
+// Burning flames, adapted from Doom RPG. Blocks the player's path, can be
+// extinguished with the fire extinguisher weapon.
+class MetaFire : Actor
+{
+	Default
+	{
+		health 20;
+		Radius 32;
+		Height 32;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		+ALLOWPAIN
+		+INVISIBLE
+		+NORADIUSDMG
+		damagetype "Fire";
+		damagefactor "Normal", 0;
+		damagefactor "Fist", 0;
+		damagefactor "Fire", 0;
+		damagefactor "FireExtinguisher", 1;
+		damagefactor "LightningStun", 0;
+		damagefactor "Axe", 50;
+		painchance "LightningStun", 0;
+		painchance 255;
+		Tag "Scorching Flames";
+		Species "NoHitScan"; // GROSS hack!
+		//$Category "Obstacles/MetaDoom/Mapper-Exclusive!"
+		//$Title "Scorching Flames (Extinguishable)"
+		//$NotAngled
+		//$Color 3
+	}
+	
+	States
+	{
+	Spawn:
+		PRFI A 0;
+		PRFI A 0
+		{
+			A_PlaySound("props/burningbarrel/loop", CHAN_BODY, 1.0, 1);
+			A_SpawnItem("MetaFireScorchMark",0,0);
+		}
+	Idle:
+		PRFI A 4 Bright 
+		{
+			A_Explode(10,64,!XF_HURTSOURCE);
+			
+			A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItemEx("MetaFireParticle", random(-16, 16), random(-16, 16), 1);
+				//A_SpawnItemEx("MetaFireParticle", random(-16, 16), random(-16, 16), random(8,16));
+			}
+		}
+		Loop;
+	Pain:
+		PRFI A 0;
+		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish", CHAN_VOICE, 0.8, 0, ATTN_NORM, false, 1.5);
+		goto Spawn;
+	Death:
+		PRFI A 0;
+		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish");
+		PRFI AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+		stop;
+	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		if (other.bMISSILE && !(other is "MetaFireExtinguisherSpray"))
+		{	
+			return false;
+		} else {
+			return true;
+		}
+	}
+}
+
+class MetaFireParticle : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+ALLOWPARTICLES;
+		+RANDOMIZE;
+		+NOTIMEFREEZE;
+		RenderStyle "add";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		height 1;
+		radius 1;
+	}
+	
+	States
+	{
+	Spawn:
+		FIRE A 0;
+		FIRE A 0 A_SetScale(frandom(1.0,1.7),frandom(0.7,1.0)); 
+		FIRE ABCD 2 Bright A_SetScale(scale.x-0.1,scale.y+0.1);
+	StartFading:
+		FIRE EFGH 2 Bright
+		{
+			A_SetScale(scale.x-0.1,scale.y+0.1);
+			A_FadeOut(0.2);
+		}
+		stop;
+	}
+}
+
+class MetaFireScorchMark : ExplosionScorchMark
+{
+	Default
+	{
+		scale 2.0;
+	}
+}

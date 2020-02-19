@@ -103,3 +103,4 @@ Actor Definitions
 #include "actors/props/metahell.zsc"
 #include "actors/props/metagore.zsc"
 #include "actors/props/metacorpses.zsc"
+#include "actors/props/metamaps.zsc"
