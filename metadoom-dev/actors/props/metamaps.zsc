@@ -37,7 +37,7 @@ class MetaFire : Actor
 		painchance 255;
 		Tag "Scorching Flames";
 		Species "NoHitScan"; // GROSS hack!
-		//$Category "Obstacles/MetaDoom/Mapper-Exclusive!"
+		//$Category "MetaDoom Props & Objects"
 		//$Title "Scorching Flames (Extinguishable)"
 		//$NotAngled
 		//$Color 3
@@ -57,18 +57,20 @@ class MetaFire : Actor
 		{
 			A_Explode(10,64,!XF_HURTSOURCE);
 			
-			A_SpawnItem("MetaBurningBarrelSmoke",0,35);
-			for (int i = 0; i < 3; i++)
+			if (!CheckIfSeen())
 			{
-				A_SpawnItemEx("MetaFireParticle", random(-16, 16), random(-16, 16), 1);
-				//A_SpawnItemEx("MetaFireParticle", random(-16, 16), random(-16, 16), random(8,16));
+				A_SpawnItem("MetaBurningBarrelSmoke",0,35);
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnItemEx("MetaFireParticle", random(-16, 16), random(-16, 16), 1);
+				}
 			}
 		}
 		Loop;
 	Pain:
 		PRFI A 0;
 		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish", CHAN_VOICE, 0.8, 0, ATTN_NORM, false, 1.5);
-		goto Spawn;
+		goto Idle;
 	Death:
 		PRFI A 0;
 		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish");
@@ -125,5 +127,91 @@ class MetaFireScorchMark : ExplosionScorchMark
 	Default
 	{
 		scale 2.0;
+	}
+}
+
+// Item Box. Contains a mapper-specified item, or some loot if no item is present.
+class MetaItemBox : Actor // replaces TechLamp2
+{
+	Default
+	{
+		health 5;
+		Radius 16;
+		Height 32;
+		+SOLID
+		+NOTAUTOAIMED
+		+DONTTHRUST
+		+SHOOTABLE
+		+NOBLOOD
+		+DONTGIB
+		+RANDOMIZE
+		+NOICEDEATH
+		damagefactor "HolyWater", 0;
+		damagefactor "FireExtinguisher", 0;
+		damagefactor "LightningStun", 0;
+		Tag "Container";
+		//$Category "MetaDoom Props & Objects"
+		//$Title "Item Box (Breakable)"
+		//$NotAngled
+		//$Color 11
+		//$Arg0 "Contents"
+		//$Arg0Str "Contents"
+	}
+	
+	States
+	{
+	Spawn:
+		PRIB A 4;
+		Loop;
+	Death:
+		TNT1 A 0
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				A_SpawnItem("MetaGibBarrel",0,random(16,42));
+				A_SpawnItem("MetaGibBarrel",0,random(0,16));
+			}
+			
+			A_PlaySound("barrel/break", CHAN_BODY);
+			A_Stop();
+			A_Fall();
+			A_DropContents();
+		}
+		stop;
+	}
+	
+	void A_DropContents()
+	{
+		string RandLootList[] =
+		{
+			"LootCredits",
+			"LootDagger",
+			"LootChest",
+			"LootBible",
+			"LootCrown",
+			"LootGoblet"
+		};
+		
+		// Spawn an item?
+		Class<Actor> type = GetSpawnableType(args[0]);
+		if (type != null)
+		{
+			if (!(level.nomonsters || sv_nomonsters) || !(GetDefaultByType (type).bIsMonster))
+			{ // Only spawn monsters if not -nomonsters
+				Actor mo = Spawn (type, Pos, ALLOW_REPLACE);
+
+				mo.vel.x = random(-2,2);
+				mo.vel.y = random(-2,2);
+				mo.vel.z = 8;
+			}
+		} else {
+			int i = random(0,5);
+			
+			Actor mo = Spawn (RandLootList[i], Pos, ALLOW_REPLACE);
+
+			mo.vel.x = random(-2,2);
+			mo.vel.y = random(-2,2);
+			mo.vel.z = 8;
+		}
 	}
 }

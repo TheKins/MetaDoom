@@ -257,6 +257,7 @@ DoomEdNums
 	20730 = "MetaBurningBarrel"
 	20731 = "MetaTechPillar"
 	20732 = "MetaFire"
+	20733 = "MetaItemBox"
 }
 
 // Map Definitions

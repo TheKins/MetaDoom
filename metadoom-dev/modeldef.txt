@@ -1,0 +1,9 @@
+Model MetaItemBox
+{ 
+   Path "models/" 
+   Model 0 "CrateMod1.md3" 
+   Skin 0 "CrateMod1.png"
+   Scale 0.4 0.4 0.5
+   
+   FrameIndex PRIB A 0 0
+}

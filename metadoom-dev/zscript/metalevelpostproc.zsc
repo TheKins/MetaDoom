@@ -43,6 +43,9 @@ class MetaMapFucker : LevelPostProcessor
 			AddThing(20732, (608,1504,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20732, (672,1504,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20732, (736,1504,0), 0, SKILLS_ALL, MODES_ALL);
+			
+			// Add Crate Testers
+			AddThing(20733, (1456,1312,0), 0, SKILLS_ALL, MODES_ALL);
 		}
 	}
 }
