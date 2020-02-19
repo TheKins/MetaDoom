@@ -84,7 +84,6 @@ Mapper Changes:
 - See MAPMAKING.TXT inside the PK3 for important notes and info!
 
 Other Changes:
-
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port, with some
   minor tweaks to fix footstep sounds playing globally in multiplayer. Ouch!
 - Added a CVar to toggle footstep sounds.
