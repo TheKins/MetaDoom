@@ -55,7 +55,7 @@ class ShieldWall : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_ShieldWall") >= INV_COOLDOWN_GENERIC)
+			if (CountInv("InventoryFuel_ShieldWall") >= INV_COOLDOWN_SHIELD)
 			{
 				A_FireProjectile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
 				A_TakeInventory("InventoryFuel_ShieldWall", 999);

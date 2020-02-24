@@ -348,7 +348,7 @@ class MetaDoomStatusBar : BaseStatusBar
 				(CPlayer.mo.InvSel is "DogCollar" && GetAmount("InventoryFuel_DogCollar") < INV_COOLDOWN_GENERIC) ||
 				(CPlayer.mo.InvSel is "Hologram" && GetAmount("InventoryFuel_Hologram") < INV_COOLDOWN_HOLOGRAM) ||
 				(CPlayer.mo.InvSel is "KineticMine" && GetAmount("InventoryFuel_KineticMine") < INV_COOLDOWN_GENERIC) ||
-				(CPlayer.mo.InvSel is "ShieldWall" && GetAmount("InventoryFuel_ShieldWall") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "ShieldWall" && GetAmount("InventoryFuel_ShieldWall") < INV_COOLDOWN_SHIELD) ||
 				(CPlayer.mo.InvSel is "SiphonGrenade" && GetAmount("InventoryFuel_SiphonGrenade") < INV_COOLDOWN_SIPHON) ||
 				(CPlayer.mo.InvSel is "TeslaRocket" && GetAmount("InventoryFuel_TeslaRocket") < INV_COOLDOWN_GENERIC) ||
 				(CPlayer.mo.InvSel is "Artifact" && GetAmount("InventoryFuel_TheArtifact") < INV_COOLDOWN_ARTIFACT)

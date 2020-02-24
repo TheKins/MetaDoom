@@ -50,6 +50,7 @@ class MetaCheatDetector : MetaPistol
 // Declare the limits in global consts so they can be changed without having to
 // be redefined across multiple files. Wow, it's like I'm really in USER.CON!
 const INV_COOLDOWN_GENERIC = 70; // 2 secs
+const INV_COOLDOWN_SHIELD = 315; // 9 secs
 const INV_COOLDOWN_HOLOGRAM = 385; // 11 secs
 const INV_COOLDOWN_SIPHON = 175; // 5 secs
 const INV_COOLDOWN_ARTIFACT = 210; // 6 secs
@@ -58,7 +59,7 @@ class InventoryFuel_HandGrenade : Counter 	{ Default	{ Inventory.MaxAmount INV_C
 class InventoryFuel_DogCollar : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
 class InventoryFuel_Hologram : Counter 		{ Default	{ Inventory.MaxAmount INV_COOLDOWN_HOLOGRAM; } }
 class InventoryFuel_KineticMine : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
-class InventoryFuel_ShieldWall : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_ShieldWall : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_SHIELD; } }
 class InventoryFuel_SiphonGrenade : Counter { Default	{ Inventory.MaxAmount INV_COOLDOWN_SIPHON; } }
 class InventoryFuel_TeslaRocket : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
 class InventoryFuel_TheArtifact : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_ARTIFACT; } }
