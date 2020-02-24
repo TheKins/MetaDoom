@@ -13,13 +13,11 @@ Replacement Scripts
 // (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
 // uses engine-provided functionality to do the same thing, just less grossly
 
-// Support for Consolation Prize: Doom 64
+// Support for various Doom 64-themed mods
 class MetaDoom64Replacements : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
 	{
-		int replaceables = 10;
-		
 		static const string oldActor[] =
 		{
 			// Doom 64 Consolation Prize
@@ -37,7 +35,7 @@ class MetaDoom64Replacements : EventHandler
 			
 		};		
 
-		for(int i = 0; i < (replaceables); i++)
+		for(int i = 0; i < oldActor.size(); i++)
 		{
 			if ( e.Replacee == oldActor[i] ) e.Replacement = newActor[i];			
 		}
