@@ -15,7 +15,7 @@ class MetaSpawner : Actor
 	}
 }
 
-class ZombiemanSpawner : MetaSpawner replaces ZombieMan
+class ZombiemanSpawner : MetaSpawner // replaces ZombieMan
 {
 	States
 	{
@@ -48,7 +48,7 @@ class ZombiemanSpawner : MetaSpawner replaces ZombieMan
 	}
 }
 
-class ShotgunGuySpawner : MetaSpawner replaces ShotgunGuy
+class ShotgunGuySpawner : MetaSpawner // replaces ShotgunGuy
 {
 	States
 	{
@@ -81,7 +81,7 @@ class ShotgunGuySpawner : MetaSpawner replaces ShotgunGuy
 	}
 }
 
-class ChaingunGuySpawner : MetaSpawner replaces ChaingunGuy
+class ChaingunGuySpawner : MetaSpawner // replaces ChaingunGuy
 {	
 	States
 	{
@@ -124,7 +124,7 @@ class ChaingunGuySpawner : MetaSpawner replaces ChaingunGuy
 	}
 }
 
-class ImpSpawner : MetaSpawner replaces DoomImp
+class ImpSpawner : MetaSpawner // replaces DoomImp
 {
 	States
 	{
@@ -214,7 +214,7 @@ class ImpSpawner : MetaSpawner replaces DoomImp
 	}
 }
 
-class PinkySpawner : MetaSpawner replaces Demon
+class PinkySpawner : MetaSpawner // replaces Demon
 {	
 	States
 	{
@@ -327,7 +327,7 @@ class PinkySpawner : MetaSpawner replaces Demon
 	}
 }
 
-class DogSpawner : PinkySpawner replaces MBFHelperDog
+class DogSpawner : PinkySpawner // replaces MBFHelperDog
 {
 	States
 	{
@@ -338,7 +338,7 @@ class DogSpawner : PinkySpawner replaces MBFHelperDog
 	}
 }
 
-class SpectreSpawner : MetaSpawner replaces Spectre
+class SpectreSpawner : MetaSpawner // replaces Spectre
 {
 	Default
 	{
@@ -419,7 +419,7 @@ class SpectreSpawner : MetaSpawner replaces Spectre
 	}
 }
 
-class CacodemonSpawner : MetaSpawner replaces Cacodemon
+class CacodemonSpawner : MetaSpawner // replaces Cacodemon
 {
 	States
 	{
@@ -464,7 +464,7 @@ class CacodemonSpawner : MetaSpawner replaces Cacodemon
 	}
 }
 
-class HellKnightSpawner : MetaSpawner replaces HellKnight
+class HellKnightSpawner : MetaSpawner // replaces HellKnight
 {
 	States
 	{
@@ -475,7 +475,7 @@ class HellKnightSpawner : MetaSpawner replaces HellKnight
 	}
 }
 
-class PainElementalSpawner : MetaSpawner replaces PainElemental
+class PainElementalSpawner : MetaSpawner // replaces PainElemental
 {	
 	States
 	{
@@ -507,7 +507,7 @@ class PainElementalSpawner : MetaSpawner replaces PainElemental
 	}
 }
 
-class LostSoulSpawner : MetaSpawner replaces LostSoul
+class LostSoulSpawner : MetaSpawner // replaces LostSoul
 {
 
 	States
@@ -541,7 +541,7 @@ class LostSoulSpawner : MetaSpawner replaces LostSoul
 	}
 }
 
-class ArchVileSpawner : MetaSpawner replaces ArchVile
+class ArchVileSpawner : MetaSpawner // replaces ArchVile
 {
 	States
 	{
@@ -572,7 +572,7 @@ class ArchVileSpawner : MetaSpawner replaces ArchVile
 	}
 }
 
-class RevenantSpawner : MetaSpawner replaces Revenant
+class RevenantSpawner : MetaSpawner // replaces Revenant
 {
 	States
 	{
@@ -638,7 +638,7 @@ class MetaBossSpawner : MetaSpawner
 	}
 }
 
-class BaronOfHellSpawner : MetaBossSpawner replaces BaronOfHell
+class BaronOfHellSpawner : MetaBossSpawner // replaces BaronOfHell
 {
 	States
 	{
@@ -649,7 +649,7 @@ class BaronOfHellSpawner : MetaBossSpawner replaces BaronOfHell
 	}
 }
 
-class ArachnotronSpawner : MetaBossSpawner replaces Arachnotron
+class ArachnotronSpawner : MetaBossSpawner // replaces Arachnotron
 {
 	States
 	{
@@ -680,7 +680,7 @@ class ArachnotronSpawner : MetaBossSpawner replaces Arachnotron
 	}
 }
 
-class MancubusSpawner : MetaBossSpawner replaces Fatso
+class MancubusSpawner : MetaBossSpawner // replaces Fatso
 {
 	States
 	{
@@ -719,7 +719,7 @@ class MancubusSpawner : MetaBossSpawner replaces Fatso
 	}
 }
 
-class CyberdemonSpawner : MetaBossSpawner replaces Cyberdemon
+class CyberdemonSpawner : MetaBossSpawner // replaces Cyberdemon
 {
 	States
 	{
@@ -769,7 +769,7 @@ class CyberdemonSpawner_D64D2 : CyberdemonSpawner
 
 
 
-class SpiderMastermindSpawner : MetaBossSpawner replaces SpiderMastermind
+class SpiderMastermindSpawner : MetaBossSpawner // replaces SpiderMastermind
 {
 	States
 	{

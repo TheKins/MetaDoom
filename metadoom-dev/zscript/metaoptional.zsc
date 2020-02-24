@@ -75,7 +75,8 @@ class MetaOptionalProps : EventHandler
 				|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
 				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
 				{
-					Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+					if (meta_developer)
+						Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
 				} else {
 					e.Replacement = newActor[i];
 				}
@@ -92,7 +93,12 @@ class MetaOptionalMonsters : EventHandler
 	{
 		static const string oldActor[] =
 		{
-			// Actors
+			// Standard Doom Actors
+			"ZombieMan", "ShotgunGuy", "ChaingunGuy", "DoomImp", "Demon", 
+			"MBFHelperDog", "Spectre", "Cacodemon", "HellKnight", "PainElemental", 
+			"LostSoul", "ArchVile", "Revenant", "BaronOfHell", "Arachnotron", "Fatso",
+			"SpiderMastermind", "Cyberdemon",
+			// Traditionally "Optional" Actors
 			"WolfensteinSS", "CommanderKeen",
 			// Scripted Marines - Order is important!
 			"MarineRocket", "MarineBerserk", "MarineFist", "MarineChainsaw",
@@ -102,7 +108,12 @@ class MetaOptionalMonsters : EventHandler
 		
 		static const string newActor[] =
 		{
-			// Actors
+			// Standard Doom Actors
+			"ZombiemanSpawner", "ShotgunGuySpawner", "ChaingunGuySpawner", "ImpSpawner", "PinkySpawner",
+			"DogSpawner", "SpectreSpawner", "CacodemonSpawner", "HellKnightSpawner", "PainElementalSpawner",
+			"LostSoulSpawner", "ArchVileSpawner","RevenantSpawner",	"BaronOfHellSpawner", "ArachnotronSpawner", "MancubusSpawner",
+			"SpiderMastermindSpawner", "CyberdemonSpawner",
+			// Traditionally "Optional" Actors
 			"WolfSSSpawner", "KeenSpawner",
 			// Scripted Marines - Order is important!
 			"MetaMarineRocket", "MetaMarineBerserk", "MetaMarineFist", "MetaMarineChainsaw",
@@ -122,7 +133,8 @@ class MetaOptionalMonsters : EventHandler
 				|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
 				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
 				{
-					Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+					if (meta_developer)
+						Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
 				} else {
 					e.Replacement = newActor[i];
 				}
