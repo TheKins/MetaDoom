@@ -318,6 +318,13 @@ class MetaDoomPlayer : PlayerPawn
 	// Per-Tick FX
 	override void Tick()
 	{
+		// Tell voodoo dolls to fuck right off
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.Tick();
+			return;
+		}
+		
 		// Recharge Inventory Items
 		A_GiveInventory("InventoryFuel_HandGrenade", 1);
 		A_GiveInventory("InventoryFuel_DogCollar", 1);
@@ -449,8 +456,15 @@ class MetaDoomPlayer : PlayerPawn
 
 	override void PostBeginPlay()
 	{
-		Super.PostBeginPlay();
+		// Tell voodoo dolls to get proper stuffed
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.PostBeginPlay();
+			return;
+		} 
 		
+		Super.PostBeginPlay();
+	
 		// Restore Inventory Cooldown Junk
 		A_GiveInventory("InventoryFuel_HandGrenade", 999);
 		A_GiveInventory("InventoryFuel_DogCollar", 999);
