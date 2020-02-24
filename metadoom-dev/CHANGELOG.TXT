@@ -34,7 +34,6 @@ Monster Changes:
 - Bull Demons are now marginally (marginally) smarter about charging straight
   into a wall they're right next to. Marginally.
 - Trites no longer spawn in damaging sectors.
-- Updated the sounds for a certain WolfSS variant.
 
 Optional Content Changes:
 - Toggling of Optional Content is now handled automagically on a per-actor basis,
