@@ -12,6 +12,9 @@ Replacement Scripts
 // (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
 // uses engine-provided functionality to do the same thing, just less grossly
 
+// Massive, MASSIVE props to Boondorl for revealing the untold secrets of state-
+// specfic flags like bDEHACKED!
+
 // Replace Props with louder, breakable props
 class MetaOptionalProps : EventHandler
 {
@@ -62,18 +65,29 @@ class MetaOptionalProps : EventHandler
 			
 		};
 		
-		if (meta_optional_props)
+		for(int i = 0; i < (replaceables); i++)
 		{
-			for(int i = 0; i < (replaceables); i++)
+			if ( e.Replacee == oldActor[i] ) 
 			{
-				if ( e.Replacee == oldActor[i] ) e.Replacement = newActor[i];
+				if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
+				|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).MissileState != null && GetDefaultByType(e.Replacee).MissileState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("Pain") != null && GetDefaultByType(e.Replacee).FindState("Pain").bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
+				{
+					Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+				} else {
+					e.Replacement = newActor[i];
+				}
 			}
 		}
 	}
 }
 
 // Replace certain monsters that tend to get replaced by DEHACKED with new,
-// fully meta-fied monsters
+// fully meta-fied monsters.
 class MetaOptionalMonsters : EventHandler
 {
     override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
@@ -100,11 +114,22 @@ class MetaOptionalMonsters : EventHandler
 			"MetaMarinePlasma", "MetaMarineRailgun", "MetaMarineBFG", "MetaScriptedMarine"			
 		};
 		
-		if (meta_optional_monsters)
+		for(int i = 0; i < (replaceables); i++)
 		{
-			for(int i = 0; i < (replaceables); i++)
+			if ( e.Replacee == oldActor[i] ) 
 			{
-				if ( e.Replacee == oldActor[i] ) e.Replacement = newActor[i];
+				if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
+				|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).MissileState != null && GetDefaultByType(e.Replacee).MissileState.bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("Pain") != null && GetDefaultByType(e.Replacee).FindState("Pain").bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
+				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
+				{
+					Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+				} else {
+					e.Replacement = newActor[i];
+				}
 			}
 		}
     }

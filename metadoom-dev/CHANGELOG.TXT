@@ -36,6 +36,13 @@ Monster Changes:
 - Trites no longer spawn in damaging sectors.
 - Updated the sounds for a certain WolfSS variant.
 
+Optional Content Changes:
+- Toggling of Optional Content is now handled automagically on a per-actor basis,
+  as opposed to being toggled by a CVar, allowing for pain-free mixing of MetaDoom
+  with DEHACKED-addled mapsets such as Ancient Aliens and Going Down!
+  Massive thanks to Boondorl for figuring out how this could be done!
+- Updated the sounds for a certain WolfSS variant.
+
 Weapon Changes:
 - Collar-bound Zombie Dogs now absorb all damage taken by the player while you
   have them equipped! Be warned, though, they tend not to last too long.
