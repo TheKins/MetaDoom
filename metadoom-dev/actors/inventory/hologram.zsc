@@ -30,7 +30,7 @@ class HologramPickup : CustomInventory
 		stop;
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("Hologram", 1);
-		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
 		stop;
 	}
 }
@@ -55,21 +55,16 @@ class Hologram : CustomInventory
 		HOLO Z -1;
 		stop;
 	Use:
-		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
-		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
-		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
-		goto Failure;
-	Fire:
-		TNT1 A 0 A_FireProjectile("HologramProj",0,0,0,0,FPF_TRANSFERTRANSLATION); //A_SpawnItemEx("HologramSam",32,0,8,0,0,0,0,SXF_TRANSFERTRANSLATION) //A_FireProjectile("HologramProj",0,0)
-		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
-		fail;
-	Failure:
-		TNT1 A 0 A_PlaySound("menu/invalid");
-		TNT1 A 0 A_Log("You don't have any grenades!", 1);
-		fail;
-	FailureCooldown:
-		TNT1 A 0; 
-		TNT1 A 0; 
+		TNT1 A 0
+		{
+			if (CountInv("InventoryFuel_Hologram") >= INV_COOLDOWN_HOLOGRAM)
+			{
+				A_FireProjectile("HologramProj",0,0,0,0,FPF_TRANSFERTRANSLATION); //A_SpawnItemEx("HologramSam",32,0,8,0,0,0,0,SXF_TRANSFERTRANSLATION)
+				A_TakeInventory("InventoryFuel_Hologram", 999);
+			} else {
+				A_PlaySound("menu/invalid");
+			}
+		}
 		fail;
 	}
 }

@@ -318,6 +318,16 @@ class MetaDoomPlayer : PlayerPawn
 	// Per-Tick FX
 	override void Tick()
 	{
+		// Recharge Inventory Items
+		A_GiveInventory("InventoryFuel_HandGrenade", 1);
+		A_GiveInventory("InventoryFuel_DogCollar", 1);
+		A_GiveInventory("InventoryFuel_Hologram", 1);
+		A_GiveInventory("InventoryFuel_KineticMine", 1);
+		A_GiveInventory("InventoryFuel_ShieldWall", 1);
+		A_GiveInventory("InventoryFuel_SiphonGrenade", 1);
+		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
+		A_GiveInventory("InventoryFuel_TheArtifact", 1);
+		
 		// Fire Extinguisher Self-Sprayed FX
 		if(CheckInventory("FireExtinguished",1) || CheckInventory("FireExtinguisherCheat",1))
 		{
@@ -440,7 +450,18 @@ class MetaDoomPlayer : PlayerPawn
 	override void PostBeginPlay()
 	{
 		Super.PostBeginPlay();
-
+		
+		// Restore Inventory Cooldown Junk
+		A_GiveInventory("InventoryFuel_HandGrenade", 999);
+		A_GiveInventory("InventoryFuel_DogCollar", 999);
+		A_GiveInventory("InventoryFuel_Hologram", 999);
+		A_GiveInventory("InventoryFuel_KineticMine", 999);
+		A_GiveInventory("InventoryFuel_ShieldWall", 999);
+		A_GiveInventory("InventoryFuel_SiphonGrenade", 999);
+		A_GiveInventory("InventoryFuel_TeslaRocket", 999);
+		A_GiveInventory("InventoryFuel_TheArtifact", 999);
+		
+		// Footsteps Code
 		Actor fstepsActor = Spawn("Footsteps",pos);
 		if(fstepsActor != null)
 		{

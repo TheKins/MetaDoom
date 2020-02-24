@@ -6,6 +6,7 @@ Inventory Core
 ----------------------------
 */
 
+/*
 // This is shared by all the inventory items, because being lumped with 25 pre-buff
 // Shield Walls and 0 grenades seemed like a pretty shitty fate to lump a player with.
 class GrenadeAmmo : Ammo
@@ -27,6 +28,7 @@ class GrenadeAmmo : Ammo
 		Stop;
 	}
 }
+*/
 
 // This is used to detect usage of the IDKFA cheat
 // and dole out inventory items as appopriate
@@ -38,6 +40,25 @@ class MetaCheatDetector : MetaPistol
 	}
 }
 
-// Used for inventory cool-down. When this is in the player's inventory, their
-// inventory icon is greyed out and they can't use any items.
-class InventoryCooldownToken : _Boolean {}
+//class InventoryCooldownToken : _Boolean {}
+
+// Inventory cooldown stuff. When the player's InventoryFuel is less than the
+// item's MaxAmount, the item is greyed out and can't be used, conveniently
+// preventing spamming Cyberdemons to death with Siphon Grenades.
+// You know who you are.
+
+// Declare the limits in global consts so they can be changed without having to
+// be redefined across multiple files. Wow, it's like I'm really in USER.CON!
+const INV_COOLDOWN_GENERIC = 70; // 2 secs
+const INV_COOLDOWN_HOLOGRAM = 385; // 11 secs
+const INV_COOLDOWN_SIPHON = 175; // 5 secs
+const INV_COOLDOWN_ARTIFACT = 210; // 6 secs
+
+class InventoryFuel_HandGrenade : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_DogCollar : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_Hologram : Counter 		{ Default	{ Inventory.MaxAmount INV_COOLDOWN_HOLOGRAM; } }
+class InventoryFuel_KineticMine : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_ShieldWall : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_SiphonGrenade : Counter { Default	{ Inventory.MaxAmount INV_COOLDOWN_SIPHON; } }
+class InventoryFuel_TeslaRocket : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
+class InventoryFuel_TheArtifact : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_ARTIFACT; } }

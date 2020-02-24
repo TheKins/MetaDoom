@@ -29,7 +29,7 @@ class ShieldWallPickup : CustomInventory
 		stop;
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("ShieldWall", 1);
-		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
 		stop;
 	}
 }
@@ -53,21 +53,16 @@ class ShieldWall : CustomInventory
 		SHLD Z -1;
 		stop;
 	Use:
-		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
-		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
-		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
-		goto Failure;
-	Fire:
-		TNT1 A 0 A_FireProjectile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
-		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
-		fail;
-	Failure:
-		TNT1 A 0 A_PlaySound("menu/invalid");
-		TNT1 A 0 A_Log("You don't have any grenades!", 1);
-		fail;
-	FailureCooldown:
-		TNT1 A 0;
-		TNT1 A 0;
+		TNT1 A 0
+		{
+			if (CountInv("InventoryFuel_ShieldWall") >= INV_COOLDOWN_GENERIC)
+			{
+				A_FireProjectile("ShieldWallProj",0,0,0,0,FPF_NOAUTOAIM);
+				A_TakeInventory("InventoryFuel_ShieldWall", 999);
+			} else {
+				A_PlaySound("menu/invalid");
+			}
+		}
 		fail;
 	}
 }

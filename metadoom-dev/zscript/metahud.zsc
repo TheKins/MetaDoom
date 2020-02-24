@@ -337,19 +337,30 @@ class MetaDoomStatusBar : BaseStatusBar
 		{
 			DrawImage("HUDBOX", (184, 168), DI_ITEM_OFFSETS);
 		}
+		
+		// Render the icon half-transparent (greyed out) if we're still
+		// under cooldown and unable to spawn Cyberdemons to death with
+		// Siphon Grenades. Yeah, I know you.
 		if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
 		{
-			// Render the icon half-transparent (greyed out) if we're still
-			// under cooldown and unable to spawn Cyberdemons to death with
-			// Siphon Grenades. Yeah, I know you.
-			if (CheckInventory("InventoryCooldownToken", 1) || CheckInventory("ArtifactTimer", 1))
+			if (
+				(CPlayer.mo.InvSel is "HandGrenade" && GetAmount("InventoryFuel_HandGrenade") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "DogCollar" && GetAmount("InventoryFuel_DogCollar") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "Hologram" && GetAmount("InventoryFuel_Hologram") < INV_COOLDOWN_HOLOGRAM) ||
+				(CPlayer.mo.InvSel is "KineticMine" && GetAmount("InventoryFuel_KineticMine") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "ShieldWall" && GetAmount("InventoryFuel_ShieldWall") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "SiphonGrenade" && GetAmount("InventoryFuel_SiphonGrenade") < INV_COOLDOWN_SIPHON) ||
+				(CPlayer.mo.InvSel is "TeslaRocket" && GetAmount("InventoryFuel_TeslaRocket") < INV_COOLDOWN_GENERIC) ||
+				(CPlayer.mo.InvSel is "Artifact" && GetAmount("InventoryFuel_TheArtifact") < INV_COOLDOWN_ARTIFACT)
+			)
 			{
 				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
 			} else {
 				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
 			}
 		}
-		DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
+		
+		//DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 		
 		if (isInventoryBarVisible())
 		{

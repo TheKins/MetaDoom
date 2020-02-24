@@ -62,14 +62,6 @@ Script "MeleeStripBerserkOnStart" ENTER
 	TakeInventory("PowerStrength", 999);
 }
 
-// Inventory Cooldown
-Script "InventoryCooldown" (void)
-{
-	GiveInventory("InventoryCooldownToken", 1);
-	delay(25);
-	TakeInventory("InventoryCooldownToken", 999);
-}
-
 // Weapon Shortcuts
 Script "QuickSelect_HWP" (void) net
 {
@@ -235,7 +227,6 @@ Script "Strip100PercentOnStart" ENTER
 	TakeInventory("x100Percent_Secrets", 999);
 	TakeInventory("x100Percent_Running", 999);
 	
-	TakeInventory("InventoryCooldownToken", 999);
 	TakeInventory("ArtifactTimer", 999);
 }
 		

@@ -30,7 +30,7 @@ class HandGrenadePickup : CustomInventory
 		stop;
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("HandGrenade", 1);
-		TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
+		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
 		stop;
 	}
 }
@@ -55,21 +55,16 @@ class HandGrenade : CustomInventory
 		HGRE Z -1;
 		stop;
 	Use:
-		TNT1 A 0 A_JumpIfInventory("InventoryCooldownToken", 1, "FailureCooldown");
-		TNT1 A 0 ACS_NamedExecuteWithResult("InventoryCooldown");
-		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, "Fire");
-		goto Failure;
-	Fire:
-		TNT1 A 0 A_FireProjectile("HandGrenadeProj",0,0);
-		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1);
-		fail;
-	Failure:
-		TNT1 A 0 A_PlaySound("menu/invalid");
-		TNT1 A 0 A_Log("You don't have any grenades!", 1);
-		fail;
-	FailureCooldown:
-		TNT1 A 0;
-		TNT1 A 0;
+		TNT1 A 0
+		{
+			if (CountInv("InventoryFuel_HandGrenade") >= INV_COOLDOWN_GENERIC)
+			{
+				A_FireProjectile("HandGrenadeProj",0,0);
+				A_TakeInventory("InventoryFuel_HandGrenade", 999);
+			} else {
+				A_PlaySound("menu/invalid");
+			}
+		}
 		fail;
 	}
 }

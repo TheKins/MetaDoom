@@ -63,9 +63,10 @@ UI Changes:
 - Reskinned the sliders in the Options Menus.
   
 Item Changes:
-- The rare figurine treasure items have been expanded into a new set of "Lore Items"
-  that have a rare chance of appearing in secret areas. Collect 'em all, and check
-  'em all out in your Codex when you have a spare moment!
+- Inventory items have been completely redesigned! Instead of using the old
+  "shared ammo pool" system, they now have individual cooldown timers (typically
+  two seconds, although some items have a longer cooldown). This will allow for
+  more varied inventory items in the future!
 - Inventory pickups and treasure items now use a new spawning method that tries
   to avoid placing items in damaging sectors, to avoid situations where those
   much-needed Siphon Grenades are stuck in lava.
@@ -75,6 +76,9 @@ Item Changes:
   their projectile attacks. (Hitscans still sneak through, alas. I tried to work
   around this, but every fix caused its own problems...)
 - The Siphon Grenade now has a unique pickup sound instead of reusing the Grenade's.
+- The rare figurine treasure items have been expanded into a new set of "Lore Items"
+  that have a rare chance of appearing in secret areas. Collect 'em all, and check
+  'em all out in your Codex when you have a spare moment!
 
 Mapper Changes:
 - Added appropriate metadata etc. to allow level designers to build maps for
