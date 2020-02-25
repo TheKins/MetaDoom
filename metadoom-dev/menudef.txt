@@ -102,7 +102,6 @@ AddOptionMenu "OptionsMenu"
 OptionMenu "MetaMenu"
 {
 	Title "$OPTMNU_METADOOM"
-	StaticText " "
 	StaticText "$METAMENU_SPAWNINGHEADER", 1
 	MetaOption "$METAMENU_SPAWNINGGUNS",   "$METATOOLTIP_SPAWNINGCONTROLS",           "meta_noalts_weapons", "VanExt"
 	MetaOption "$METAMENU_SPAWNINGDUDES",   "$METATOOLTIP_SPAWNINGCONTROLS",	"meta_noalts_actors", "VanExt"
@@ -114,14 +113,6 @@ OptionMenu "MetaMenu"
 	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
 	MetaOption "$METAMENU_FOOTSTEPS",	"$METATOOLTIP_FOOTSTEPS",	"meta_footsteps", "OnOff"
 	StaticText " "
-	/*
-	StaticText "$METAMENU_OPTIONAL", 1
-	StaticText "$METAMENU_OPTIONALDISC1", 1
-	StaticText "$METAMENU_OPTIONALDISC2", 1
-	MetaOption "$METAMENU_OPTIONAL_MONSTERS",	"$METATOOLTIP_OPTIONAL_MONSTERS",		"meta_optional_monsters", "OnOff"
-	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",		"meta_optional_props", "OnOff"
-	StaticText " "
-	*/
 	StaticText "$METAMENU_ITEMHEADER", 1
 	MetaOption "$METAMENU_RETROBERSERK",   "$METATOOLTIP_RETROBERSERK",           "meta_retroberserk", "OnOff"
 	MetaOption "$METAMENU_PISTOLAMMO",   "$METATOOLTIP_PISTOLAMMO",           "meta_pistolammo", "OnOff"
@@ -138,6 +129,9 @@ OptionMenu "MetaMenu"
 	StaticText " "
 	StaticText "$METAMENU_MISC", 1
 	MetaOption "$METAMENU_DEBUG",  "$METATOOLTIP_DEBUG",            "meta_developer", "OnOff"
+	StaticText " "
+	StaticText " "
+	StaticText " "
 	StaticText " "
 	Class "MetaOptionMenu"
 }
