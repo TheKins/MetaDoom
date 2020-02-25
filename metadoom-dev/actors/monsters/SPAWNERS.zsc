@@ -826,7 +826,8 @@ class StealthRevenantSpawner : RevenantSpawner replaces StealthRevenant {}
 class StealthShotgunGuySpawner : ShotgunGuySpawner replaces StealthShotgunGuy {}
 class StealthZombiemanSpawner : ZombiemanSpawner replaces StealthZombieMan {}
 
-// Optional Content Spawners. These don't use the standard replacement method.
+// The once and former "Optional" content spawners. Now EVERYTHING is optional,
+// so seperating them is less relevant, but here they are.
 class WolfSSSpawner : MetaSpawner
 {
 	States

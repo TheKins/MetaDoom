@@ -6,19 +6,30 @@ Replacement Scripts
 ----------------------------
 */
 
-// Implements Optional Content as a CVar instead of a side-mod
+// Story time, kiddies!
+
+// OK, SO... Originally, breakable props and WolfSS/Keen replacement were kept
+// aside as a seperate add-on to avoid messing with mapsets that replace them
+// via the curse that is DEHACKED. As of v5, it was incorporated into the main
+// mod and toggled via a CVar. So far, so good, right?
+
+// Well, now, thanks to Boondorl figuring out the untold secrets of state-specific
+// flags like bDEHACKED, we no longer need a CVar as we can automatically detect
+// when an actor has been touched by the darkness of the MS-DOS era of modding and
+// not replace the actor as appropriate. As such, it's been expanded to cover
+// pretty much ALL monsters to allow for better compatibility with some mapsets
+// like Eviternity that replace vanilla monsters like the Baron.
 
 // This was originally based on some really confusingly-formatted code by Matt
 // (https://forum.zdoom.org/viewtopic.php?f=122&t=60916&p=1058774) but now it
 // uses engine-provided functionality to do the same thing, just less grossly
 
-// Massive, MASSIVE props to Boondorl for revealing the untold secrets of state-
-// specfic flags like bDEHACKED!
+////////////////////////////////////////////////////////////////////////////////
 
-// Replace Props with louder, breakable props
+// Replace environment props with louder, breakable props
 class MetaOptionalProps : EventHandler
 {
-    override void CheckReplacement(ReplaceEvent e) // void WorldTick() //WorldLoaded(WorldEvent e)
+    override void CheckReplacement(ReplaceEvent e)
 	{
 		static const string oldActor[] =
 		{
@@ -76,7 +87,7 @@ class MetaOptionalProps : EventHandler
 				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
 				{
 					if (meta_developer)
-						Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+						Console.printf("Optional: %s is DEHACKED, not replacing with %s", oldActor[i], newActor[i]);
 						break;
 				} else {
 					e.Replacement = newActor[i];
@@ -86,11 +97,10 @@ class MetaOptionalProps : EventHandler
 	}
 }
 
-// Replace certain monsters that tend to get replaced by DEHACKED with new,
-// fully meta-fied monsters.
+// Replace monsters that haven't been replaced by DEHACKED with new, fully meta-fied monsters.
 class MetaOptionalMonsters : EventHandler
 {
-    override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
+    override void CheckReplacement(ReplaceEvent e)
 	{
 		static const string oldActor[] =
 		{
@@ -135,7 +145,7 @@ class MetaOptionalMonsters : EventHandler
 				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
 				{
 					if (meta_developer)
-						Console.printf("Optional: %s is DEHACKED, don't replace!", OldActor[i]);
+						Console.printf("Optional: %s is DEHACKED, not replacing with %s", oldActor[i], newActor[i]);
 						break;
 				} else {
 					e.Replacement = newActor[i];
