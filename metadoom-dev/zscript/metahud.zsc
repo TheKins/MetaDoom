@@ -354,23 +354,51 @@ class MetaDoomStatusBar : BaseStatusBar
 				(CPlayer.mo.InvSel is "Artifact" && GetAmount("InventoryFuel_TheArtifact") < INV_COOLDOWN_ARTIFACT)
 			)
 			{
-				// Draw Cooldown Timers
-				if (CPlayer.mo.InvSel is "HandGrenade")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_HandGrenade"), INV_COOLDOWN_GENERIC, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "DogCollar")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_DogCollar"), INV_COOLDOWN_GENERIC, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "Hologram")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_Hologram"), INV_COOLDOWN_HOLOGRAM, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "KineticMine")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_KineticMine"), INV_COOLDOWN_GENERIC, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "ShieldWall")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_ShieldWall"), INV_COOLDOWN_SHIELD, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "SiphonGrenade")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_SiphonGrenade"), INV_COOLDOWN_SIPHON, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "TeslaRocket")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_TeslaRocket"), INV_COOLDOWN_GENERIC, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-				if (CPlayer.mo.InvSel is "Artifact")
-					DrawBar("COOLBAR1", "COOLBAR0", GetAmount("InventoryFuel_TheArtifact"), INV_COOLDOWN_ARTIFACT, (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
+				// Draw Cooldown Timers.
+				static const string invItem[] =
+				{
+					"HandGrenade",
+					"DogCollar",
+					"Hologram",
+					"KineticMine",
+					"ShieldWall",
+					"SiphonGrenade",
+					"TeslaRocket",
+					"Artifact"
+				};
+
+				static const string invCooldownCounter[] =
+				{
+					"InventoryFuel_HandGrenade",
+					"InventoryFuel_DogCollar",
+					"InventoryFuel_Hologram",
+					"InventoryFuel_KineticMine",
+					"InventoryFuel_ShieldWall",
+					"InventoryFuel_SiphonGrenade",
+					"InventoryFuel_TeslaRocket",
+					"InventoryFuel_TheArtifact"
+				};
+
+				static const int invCooldownCap[] =
+				{
+					INV_COOLDOWN_GENERIC,
+					INV_COOLDOWN_GENERIC,
+					INV_COOLDOWN_HOLOGRAM,
+					INV_COOLDOWN_GENERIC,
+					INV_COOLDOWN_SHIELD,
+					INV_COOLDOWN_SIPHON,
+					INV_COOLDOWN_GENERIC,
+					INV_COOLDOWN_ARTIFACT
+				};
+				
+				for(int i = 0; i < invItem.size(); i++)
+				{
+					if (CPlayer.mo.InvSel is invItem[i])
+					{
+						DrawBar("COOLBAR1", "COOLBAR0", GetAmount(invCooldownCounter[i]),
+						invCooldownCap[i], (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
+					}
+				}
 					
 				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
 			} else {
