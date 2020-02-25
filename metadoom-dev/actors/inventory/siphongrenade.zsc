@@ -121,9 +121,20 @@ class SiphonGrenadeProj : Actor
 		"####" # 1 A_SetRoll((roll - 5));
 		loop;
 	Death:
-		TNT1 A 0 A_PlaySound("inventory/siphongrenade/explode");
-		TNT1 A 0 A_SpawnItem("SiphonExplosionFX");
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_Explode((8), 100, !XF_HURTSOURCE);
+		TNT1 A 0 
+		{
+			bNOGRAVITY = 1;
+			A_PlaySound("inventory/siphongrenade/explode");
+			A_SpawnItem("SiphonExplosionFX");
+		}
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 
+		{
+			A_Explode((8), 100, !XF_HURTSOURCE);
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnItemEx("SiphonExplosionFXZappy",random(-150,150),random(-150,150),random(-150,150));
+			}
+		}
 		Stop;
 	}
 }
@@ -151,9 +162,23 @@ class SiphonExplosionFX : Actor
 				A_SetScale(frandom(0.9,1.1),frandom(0.9,1.1));
 				A_SetTranslucent(frandom(0.9,0.8), 1);
 				A_SetRoll(random(0,360));
+				//A_SetAngle(random(0,360));
 			}
 		Die:
-			SIBM AB 1 bright A_FadeOut(0.25);
+			SIBM AB 1 bright 
+			{
+				A_FadeOut(0.25);
+				A_SetRoll(random(0,360));
+				//A_SetAngle(random(0,360));
+			}
 			loop;
+	}
+}
+
+class SiphonExplosionFXZappy : MetaZappy
+{
+	Default
+	{
+		scale 1;
 	}
 }

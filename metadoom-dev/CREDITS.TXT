@@ -39,6 +39,7 @@ Pillowblaster ("ARGENT" resources)
 TerminusEst13 (Slow-motion implementation from High Noon Drifter)
 Upset & Half-Dead (Doom 3 model ports to Source Engine)
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
+Duke 64 TC Team (3D model used for Siphon Grenade explosions)
 
 TOOLS USED:
 Adrian Dale (Pinball FX Tools)

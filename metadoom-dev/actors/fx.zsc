@@ -181,7 +181,7 @@ class MetaZappy : Actor
 		ZAPP A 0 A_SetRoll(random(0,360));
 		ZAPP ABCD 0 A_Jump(256, "Death");
 	Death:
-		ZAPP A 1
+		ZAPP A 1 bright
 		{
 			A_FadeOut(0.1);
 			A_SetRoll(random(0,360));

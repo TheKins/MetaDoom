@@ -7,3 +7,17 @@ Model MetaItemBox
    
    FrameIndex PRIB A 0 0
 }
+
+Model SiphonExplosionFX
+{
+   Path "models/" 
+   Model 0 "siphonball.md3" 
+   Skin 0 "siphonball.png"
+   Scale 3.0 3.0 4.0
+   ROTATING
+   Rotation-Speed 32
+   Rotation-Vector 16 16 16
+   
+   FrameIndex SIBM A 0 0
+   FrameIndex SIBM B 0 0
+}

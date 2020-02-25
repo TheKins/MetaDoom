@@ -85,6 +85,8 @@ Item Changes:
   their projectile attacks. (Hitscans still sneak through, alas. I tried to work
   around this, but every fix caused its own problems...)
 - The Siphon Grenade now has a unique pickup sound instead of reusing the Grenade's.
+- The Siphon Grenade's explosion effect has been shifted from a cheesy-looking sprite
+  to a cheesy-looking 3D model, to provide a better measurement of its radius.
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
   that have a rare chance of appearing in secret areas. Collect 'em all, and check
   'em all out in your Codex when you have a spare moment!
@@ -106,6 +108,7 @@ Other Changes:
   inside a monster's head when shooting at them point-blank.
 - All monsters and other shootable actors now have name tags, for use by other
   mods such as Target Spy.
+- Fixed electrical shock effects when killed by a Cacodemon not being fullbright.
 - Blood splats no longer hang over ledges and look weird.
 - Debug messages are far less spammy. Not that you'll notice...
 - Various invisible bits of housekeeping and cleaning.
