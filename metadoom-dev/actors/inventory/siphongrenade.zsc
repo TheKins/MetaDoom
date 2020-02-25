@@ -132,7 +132,7 @@ class SiphonGrenadeProj : Actor
 			A_Explode((8), 100, !XF_HURTSOURCE);
 			for (int i = 0; i < 4; i++)
 			{
-				A_SpawnItemEx("SiphonExplosionFXZappy",random(-150,150),random(-150,150),random(-150,150));
+				A_SpawnItemEx("SiphonExplosionFXZappy",random(-100,100),random(-100,100),random(-100,100));
 			}
 		}
 		Stop;
@@ -157,18 +157,18 @@ class SiphonExplosionFX : Actor
 	{
 		Spawn:
 			EXPL A 0;
-			SIBM ABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 1 bright 
+			SIBM AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 bright 
 			{
 				A_SetScale(frandom(0.9,1.1),frandom(0.9,1.1));
 				A_SetTranslucent(frandom(0.9,0.8), 1);
-				A_SetRoll(random(0,360));
+				//A_SetRoll(random(0,360));
 				//A_SetAngle(random(0,360));
 			}
 		Die:
-			SIBM AB 1 bright 
+			SIBM AA 1 bright 
 			{
 				A_FadeOut(0.25);
-				A_SetRoll(random(0,360));
+				//A_SetRoll(random(0,360));
 				//A_SetAngle(random(0,360));
 			}
 			loop;
