@@ -338,71 +338,63 @@ class MetaDoomStatusBar : BaseStatusBar
 			DrawImage("HUDBOX", (184, 168), DI_ITEM_OFFSETS);
 		}
 		
-		// Render the icon half-transparent (greyed out) if we're still
-		// under cooldown and unable to spawn Cyberdemons to death with
-		// Siphon Grenades. Yeah, I know you.
+		// Handle drawing inventory items and the cooldown timer.
 		if (CPlayer.mo.InvSel != null && !level.NoInventoryBar)
 		{
-			if (
-				(CPlayer.mo.InvSel is "HandGrenade" && GetAmount("InventoryFuel_HandGrenade") < INV_COOLDOWN_GENERIC) ||
-				(CPlayer.mo.InvSel is "DogCollar" && GetAmount("InventoryFuel_DogCollar") < INV_COOLDOWN_GENERIC) ||
-				(CPlayer.mo.InvSel is "Hologram" && GetAmount("InventoryFuel_Hologram") < INV_COOLDOWN_HOLOGRAM) ||
-				(CPlayer.mo.InvSel is "KineticMine" && GetAmount("InventoryFuel_KineticMine") < INV_COOLDOWN_GENERIC) ||
-				(CPlayer.mo.InvSel is "ShieldWall" && GetAmount("InventoryFuel_ShieldWall") < INV_COOLDOWN_SHIELD) ||
-				(CPlayer.mo.InvSel is "SiphonGrenade" && GetAmount("InventoryFuel_SiphonGrenade") < INV_COOLDOWN_SIPHON) ||
-				(CPlayer.mo.InvSel is "TeslaRocket" && GetAmount("InventoryFuel_TeslaRocket") < INV_COOLDOWN_GENERIC) ||
-				(CPlayer.mo.InvSel is "Artifact" && GetAmount("InventoryFuel_TheArtifact") < INV_COOLDOWN_ARTIFACT)
-			)
+			static const string invItem[] =
 			{
-				// Draw Cooldown Timers.
-				static const string invItem[] =
-				{
-					"HandGrenade",
-					"DogCollar",
-					"Hologram",
-					"KineticMine",
-					"ShieldWall",
-					"SiphonGrenade",
-					"TeslaRocket",
-					"Artifact"
-				};
+				"HandGrenade",
+				"DogCollar",
+				"Hologram",
+				"KineticMine",
+				"ShieldWall",
+				"SiphonGrenade",
+				"TeslaRocket",
+				"Artifact"
+			};
 
-				static const string invCooldownCounter[] =
-				{
-					"InventoryFuel_HandGrenade",
-					"InventoryFuel_DogCollar",
-					"InventoryFuel_Hologram",
-					"InventoryFuel_KineticMine",
-					"InventoryFuel_ShieldWall",
-					"InventoryFuel_SiphonGrenade",
-					"InventoryFuel_TeslaRocket",
-					"InventoryFuel_TheArtifact"
-				};
+			static const string invCooldownCounter[] =
+			{
+				"InventoryFuel_HandGrenade",
+				"InventoryFuel_DogCollar",
+				"InventoryFuel_Hologram",
+				"InventoryFuel_KineticMine",
+				"InventoryFuel_ShieldWall",
+				"InventoryFuel_SiphonGrenade",
+				"InventoryFuel_TeslaRocket",
+				"InventoryFuel_TheArtifact"
+			};
 
-				static const int invCooldownCap[] =
+			static const int invCooldownCap[] =
+			{
+				INV_COOLDOWN_GENERIC,
+				INV_COOLDOWN_GENERIC,
+				INV_COOLDOWN_HOLOGRAM,
+				INV_COOLDOWN_GENERIC,
+				INV_COOLDOWN_SHIELD,
+				INV_COOLDOWN_SIPHON,
+				INV_COOLDOWN_GENERIC,
+				INV_COOLDOWN_ARTIFACT
+			};
+			
+			for(int i = 0; i < invItem.size(); i++)
+			{
+				// Draw the cooldown timers for the selected item.
+				if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) < invCooldownCap[i])
 				{
-					INV_COOLDOWN_GENERIC,
-					INV_COOLDOWN_GENERIC,
-					INV_COOLDOWN_HOLOGRAM,
-					INV_COOLDOWN_GENERIC,
-					INV_COOLDOWN_SHIELD,
-					INV_COOLDOWN_SIPHON,
-					INV_COOLDOWN_GENERIC,
-					INV_COOLDOWN_ARTIFACT
-				};
-				
-				for(int i = 0; i < invItem.size(); i++)
-				{
-					if (CPlayer.mo.InvSel is invItem[i])
-					{
-						DrawBar("COOLBAR1", "COOLBAR0", GetAmount(invCooldownCounter[i]),
-						invCooldownCap[i], (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
-					}
+					DrawBar("COOLBAR1", "COOLBAR0", GetAmount(invCooldownCounter[i]),
+					invCooldownCap[i], (185, 169), 0, SHADER_VERT|SHADER_REVERSE, DI_ITEM_OFFSETS);
 				}
-					
-				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
-			} else {
-				DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
+				
+				// Render the icon half-transparent (greyed out) if we're still
+				// under cooldown and unable to spawn Cyberdemons to death with
+				// Siphon Grenades. Yeah, I know you.
+				if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) < invCooldownCap[i])
+				{
+					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
+				} else if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) >= invCooldownCap[i]){
+					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
+				}
 			}
 		}
 		
