@@ -335,6 +335,21 @@ class MetaDoomPlayer : PlayerPawn
 		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
 		A_GiveInventory("InventoryFuel_TheArtifact", 1);
 		
+		// Play a noise when your shit's basically refilled
+		if (
+		(CountInv("InventoryFuel_HandGrenade") == INV_COOLDOWN_GENERIC-1)
+		|| (CountInv("InventoryFuel_DogCollar") == INV_COOLDOWN_GENERIC-1)
+		|| (CountInv("InventoryFuel_Hologram") == INV_COOLDOWN_HOLOGRAM-1)
+		|| (CountInv("InventoryFuel_KineticMine") == INV_COOLDOWN_GENERIC-1)
+		|| (CountInv("InventoryFuel_ShieldWall") == INV_COOLDOWN_SHIELD-1)
+		|| (CountInv("InventoryFuel_SiphonGrenade") == INV_COOLDOWN_SIPHON-1)
+		|| (CountInv("InventoryFuel_TeslaRocket") == INV_COOLDOWN_GENERIC-1)
+		|| (CountInv("InventoryFuel_TheArtifact") == INV_COOLDOWN_ARTIFACT-1)
+		)
+		{
+			A_PlaySound("inventory/refresh",CHAN_UI,1.0,0,ATTN_NONE,true);
+		}
+		
 		// Fire Extinguisher Self-Sprayed FX
 		if(CheckInventory("FireExtinguished",1) || CheckInventory("FireExtinguisherCheat",1))
 		{

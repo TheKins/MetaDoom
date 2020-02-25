@@ -8,6 +8,7 @@ Inventory Items
 
 // Sounds for Inventory Items
 inventory/throw				invtoss
+inventory/refresh			refresh
 
 // Hand Grenade
 inventory/grenade/get		getgren
