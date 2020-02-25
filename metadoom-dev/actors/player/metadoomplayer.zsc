@@ -38,7 +38,7 @@ class MetaDoomPlayer : PlayerPawn
 		Mass 100;
 		PainChance 255;
 		Player.DisplayName "Slayer";
-		Player.CrouchSprite "PLYC";
+		Player.CrouchSprite "MPLC";
 		Player.StartItem "MetaPistol";
 		Player.WeaponSlot 1, "MetaPistol", "MetaBerserkFist", "MetaLastResortFist", "MetaCheatDetector";
 		Player.WeaponSlot 2, "MetaHolyWaterPistol", "MetaShotgun";
@@ -75,23 +75,23 @@ class MetaDoomPlayer : PlayerPawn
 	States
 	{
 	Spawn:
-		PLAY Z -1;
+		MPLY Z -1;
 		Loop;
 	See:
-		PLAY ABCD 4;
+		MPLY ABCD 4;
 		goto Spawn;
 	Missile:
-		PLAY E 12;
+		MPLY E 12;
 		Goto Spawn;
 	Melee:
-		PLAY F 6 BRIGHT;
+		MPLY F 6 BRIGHT;
 		Goto Missile;
 	Pain:
-		PLAY G 4;
-		PLAY G 4 A_Pain;
+		MPLY G 4;
+		MPLY G 4 A_Pain;
 		Goto Spawn;
 	Pain.Fist:
-		PLAY G 0 
+		MPLY G 0 
 		{
 			// See above comment about gross hack.
 			oldangle = angle;
@@ -104,7 +104,7 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		goto Pain;
 	Pain.KrautBoot:
-		PLAY G 0 
+		MPLY G 0 
 		{
 			// Ditto.
 			oldangle = angle;
@@ -116,7 +116,7 @@ class MetaDoomPlayer : PlayerPawn
 		goto Pain;
 	Death.KrautBoot:
 	Death.Fist:
-		PLAY G 0
+		MPLY G 0
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 16, 1, 0);
@@ -130,7 +130,7 @@ class MetaDoomPlayer : PlayerPawn
 		goto Death;
 	XDeath.KrautBoot:
 	XDeath.Fist:
-		PLAY G 0 
+		MPLY G 0 
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 16, 1, 0);
@@ -148,7 +148,7 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		goto XDeath;
 	Pain.BerserkFist:
-		PLAY G 0 
+		MPLY G 0 
 		{
 			// You know the drill by now.
 			oldangle = angle;
@@ -160,7 +160,7 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		goto Pain;
 	Death.BerserkFist:
-		PLAY G 0
+		MPLY G 0
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
@@ -170,7 +170,7 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		goto Death;
 	XDeath.BerserkFist:
-		PLAY G 0 
+		MPLY G 0 
 		{
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
@@ -182,23 +182,23 @@ class MetaDoomPlayer : PlayerPawn
 		goto XDeath;
 	Pain.MapFire:
 	Pain.Slime:
-		PLAY G 4;
-		PLAY G 4 A_PlaySound("*hurtslime");
+		MPLY G 4;
+		MPLY G 4 A_PlaySound("*hurtslime");
 		Goto Spawn;
 	Death:
-		PLAY H 10;
-		PLAY I 10 A_PlayerScream;
-		PLAY J 10 A_NoBlocking;
-		PLAY K 10;
-		PLAY L -1;
+		MPLY H 10;
+		MPLY I 10 A_PlayerScream;
+		MPLY J 10 A_NoBlocking;
+		MPLY K 10;
+		MPLY L -1;
 		Stop;
 	Death.ExplodingBarrel:
 	Death.Explosive:
-		PLAY P 5 A_GiveInventory("DeathStateExplosion");
-		PLAY Q 5 A_PlayerScream;
-		PLAY R 5 A_NoBlocking;
-		PLAY STU 5;
-		PLAY V -1;
+		MPLY P 5 A_GiveInventory("DeathStateExplosion");
+		MPLY Q 5 A_PlayerScream;
+		MPLY R 5 A_NoBlocking;
+		MPLY STU 5;
+		MPLY V -1;
 		Stop;
 	Death.MapFire:
 	Death.Fire:
@@ -222,35 +222,35 @@ class MetaDoomPlayer : PlayerPawn
 		BURN V -1;
 		Stop;
 	Death.Elec:
-		PLAY O 0 A_GiveInventory("DeathStateElec");
-		PLAY H 0
+		MPLY O 0 A_GiveInventory("DeathStateElec");
+		MPLY H 0
 		{
 			A_PlayerScream();
 			A_PlaySound("player/zap",CHAN_7);
 		}
-		PLAY HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 1
+		MPLY HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 1
 		{
 			A_SetScale(frandom(0.95,1.06));
 			A_SpawnItemEx("MetaZappy",random((0-radius),radius),random((0-radius),radius),random(8,56),0,0,0);
 		}
-		PLAY H 10 A_SetScale(1.0);
-		PLAY I 10;
-		PLAY J 10 A_NoBlocking;
-		PLAY K 10;
-		PLAY L -1;
+		MPLY H 10 A_SetScale(1.0);
+		MPLY I 10;
+		MPLY J 10 A_NoBlocking;
+		MPLY K 10;
+		MPLY L -1;
 		Stop;
 	Death.Crush:
-		PLAY H 10 A_GiveInventory("DeathStateGibbed");
-		PLAY I 10 A_PlaySound("*crushed");
-		PLAY J 10 A_NoBlocking;
-		PLAY K 10;
-		PLAY L -1;
+		MPLY H 10 A_GiveInventory("DeathStateGibbed");
+		MPLY I 10 A_PlaySound("*crushed");
+		MPLY J 10 A_NoBlocking;
+		MPLY K 10;
+		MPLY L -1;
 		Stop;
 	XDeath.ExplodingBarrel:
 	XDeath.Explosive:
 	XDeath:
-		PLAY O 0 A_GiveInventory("DeathStateGibbed");
-		PLAY O 5;
+		MPLY O 0 A_GiveInventory("DeathStateGibbed");
+		MPLY O 5;
 		TNT1 A 0 A_SkullPop("MetaPlayerSkull");
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
 		TNT1 A -1;
@@ -335,7 +335,7 @@ class MetaDoomPlayer : PlayerPawn
 		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
 		A_GiveInventory("InventoryFuel_TheArtifact", 1);
 		
-		// Play a noise when your shit's basically refilled. This is done when
+		// MPLY a noise when your shit's basically refilled. This is done when
 		// it's one tic away from being refilled as a cheap way to avoid having
 		// to work out a "proper" but more complicated way.
 		if (

@@ -24,12 +24,12 @@ class MetaHealthBonus : Health replaces HealthBonus
 	States
 	{
 	Spawn:
-		BON1 A 0;
-		BON1 A 0 A_JumpIf(meta_lootspawns == 0, 2);
-		BON1 A 0 A_SpawnItem("LootSpawner");
-		BON1 A 0;
+		HCRM A 0;
+		HCRM A 0 A_JumpIf(meta_lootspawns == 0, 2);
+		HCRM A 0 A_SpawnItem("LootSpawner");
+		HCRM A 0;
 	DoALoop:
-		BON1 ABCDCB 4;
+		HCRM ABCDCB 4;
 		Loop;
 	}
 }
@@ -66,7 +66,7 @@ class MetaStimpack : Health replaces Stimpack
 	States
 	{
 	Spawn:
-		STIM A -1;
+		STMP A -1;
 		Stop;
 	}
 }
@@ -90,17 +90,17 @@ class MetaMedikit : Health replaces Medikit
 	States
 	{
 	Spawn:
-		MEDI A 0;
-		MEDI A 0 A_Jump(16, "SpawnInv");
+		MKIT A 0;
+		MKIT A 0 A_Jump(16, "SpawnInv");
 		goto Chill;
 	SpawnInv:
-		MEDI A 0 A_Jump(256, "ShieldWall");
+		MKIT A 0 A_Jump(256, "ShieldWall");
 		goto Chill;
 	ShieldWall:
-		MEDI A 0 A_SpawnLoot("ShieldWallPickup");
+		MKIT A 0 A_SpawnLoot("ShieldWallPickup");
 		goto Chill;
 	Chill:
-		MEDI A -1;
+		MKIT A -1;
 		Stop;
 	}
 }

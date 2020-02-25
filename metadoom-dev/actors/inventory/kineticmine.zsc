@@ -32,7 +32,6 @@ class KineticMinePickup : CustomInventory
 		stop;
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("KineticMine", 1);
-		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
 		stop;
 	}
 }
@@ -48,7 +47,6 @@ class KineticMinePickupRetrieve : KineticMinePickup
 	{
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("KineticMine", 1);
-		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 1);
 		stop;
 	}
 }

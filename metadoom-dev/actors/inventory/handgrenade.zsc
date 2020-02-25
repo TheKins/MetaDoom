@@ -30,7 +30,6 @@ class HandGrenadePickup : CustomInventory
 		stop;
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("HandGrenade", 1);
-		//TNT1 A 0 A_GiveInventory ("GrenadeAmmo", 3);
 		stop;
 	}
 }

@@ -40,7 +40,7 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 	States
 	{
 	Spawn:
-		BAR1 ABCDEFGHIJKLM 3;
+		BARL ABCDEFGHIJKLM 3;
 		Loop;
 	Pain:
 		BEXP A 0;

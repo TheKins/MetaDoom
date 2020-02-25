@@ -71,9 +71,6 @@ class LootItem : ScoreItem
 		Inventory.Amount 500;
 		Inventory.PickupMessage "$GOTLOOT6";
 		inventory.pickupsound "items/loot";
-		BounceType "Grenade";
-		Bouncefactor 0.0;
-		WallBouncefactor 1.0;
 		-COUNTITEM
 		+BLOCKASPLAYER
 	}
@@ -81,11 +78,7 @@ class LootItem : ScoreItem
 	States
 	{
 	Spawn:
-		LOOT F 0;
-		"####" "#" 0;
-		goto Sit;
-	Sit:
-		"####" "#" -1;
+		LOOT F -1;
 		loop;
 	}
 }
@@ -105,9 +98,8 @@ class LootGoblet : LootItem
 	States
 	{
 	Spawn:
-		LOOT F 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT F -1;
+		loop;
 	}
 }
 
@@ -126,9 +118,8 @@ class LootDagger : LootItem
 	States
 	{
 	Spawn:
-		LOOT A 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT A -1;
+		loop;
 	}
 }
 
@@ -147,9 +138,8 @@ class LootChest : LootItem
 	States
 	{
 	Spawn:
-		LOOT B 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT B -1;
+		loop;
 	}
 }
 
@@ -168,9 +158,8 @@ class LootSceptre : LootItem
 	States
 	{
 	Spawn:
-		LOOT C 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT C -1;
+		loop;
 	}
 }
 
@@ -189,9 +178,8 @@ class LootBible : LootItem
 	States
 	{
 	Spawn:
-		LOOT D 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT D -1;
+		loop;
 	}
 }
 
@@ -210,9 +198,8 @@ class LootCrown : LootItem
 	States
 	{
 	Spawn:
-		LOOT E 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT E -1;
+		loop;
 	}
 }
 
@@ -232,9 +219,8 @@ class LootCredits : LootItem
 	States
 	{
 	Spawn:
-		LOOT G 0;
-		"####" "#" 0;
-		goto Sit;
+		LOOT G -1;
+		loop;
 	}
 }
 

@@ -52,12 +52,12 @@ pulselight HEALTHCRUMB
 
 object MetaHealthBonus
 {
-    frame BON1 { light HEALTHCRUMB }
+    frame HCRM { light HEALTHCRUMB }
 }
 
 object MetaHealthBonusNoItemSpawn
 {
-    frame BON1 { light HEALTHCRUMB }
+    frame HCRM { light HEALTHCRUMB }
 }
 
 object MetaHealthPinata
@@ -77,15 +77,15 @@ object MetaArmorPinata
 
 object MetaStimpack
 {
-    frame STIM { light HEALTHCRUMB }
+    frame STMP { light HEALTHCRUMB }
 }
 
 object MetaMedikit
 {
-    frame MEDI { light ARMORBLUE }
+    frame MKIT { light ARMORBLUE }
 }
 
 object MetaMedikitNoItemSpawn
 {
-    frame MEDI { light ARMORBLUE }
+    frame MKIT { light ARMORBLUE }
 }
