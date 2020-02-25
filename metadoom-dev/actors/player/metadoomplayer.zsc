@@ -348,6 +348,7 @@ class MetaDoomPlayer : PlayerPawn
 		)
 		{
 			A_PlaySound("inventory/refresh",CHAN_UI,1.0,0,ATTN_NONE,true);
+			A_GiveInventory("GimmeCooldownFlash", 1);
 		}
 		
 		// Fire Extinguisher Self-Sprayed FX

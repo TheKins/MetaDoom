@@ -63,3 +63,28 @@ class InventoryFuel_ShieldWall : Counter 	{ Default	{ Inventory.MaxAmount INV_CO
 class InventoryFuel_SiphonGrenade : Counter { Default	{ Inventory.MaxAmount INV_COOLDOWN_SIPHON; } }
 class InventoryFuel_TeslaRocket : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
 class InventoryFuel_TheArtifact : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_ARTIFACT; } }
+
+// For Holy Water Pistol
+class GimmeCooldownFlash : CustomInventory
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.ISHEALTH
+		+INVENTORY.ISARMOR
+	}
+		
+	States
+	{
+	Spawn:
+		MEGA A 6 BRIGHT;
+		Stop;
+	Pickup:
+		TNT1 A 0 
+		{
+			player.bonuscount = BONUSADD;
+		}
+		Stop;
+	}
+}	
