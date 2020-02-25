@@ -387,7 +387,7 @@ class MetaDoomStatusBar : BaseStatusBar
 				}
 				
 				// Render the icon half-transparent (greyed out) if we're still
-				// under cooldown and unable to spawn Cyberdemons to death with
+				// under cooldown and unable to spam Cyberdemons to death with
 				// Siphon Grenades. Yeah, I know you.
 				if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) < invCooldownCap[i])
 				{
@@ -397,8 +397,6 @@ class MetaDoomStatusBar : BaseStatusBar
 				}
 			}
 		}
-		
-		//DrawString(mSmallFont2, FormatNumber(GetAmount("GrenadeAmmo"), 3), (219, 192), DI_ITEM_OFFSETS|DI_TEXT_ALIGN_RIGHT, Font.CR_WHITE);
 		
 		if (isInventoryBarVisible())
 		{

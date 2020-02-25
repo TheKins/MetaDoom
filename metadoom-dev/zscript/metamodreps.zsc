@@ -16,7 +16,7 @@ Replacement Scripts
 // Support for various Doom 64-themed mods
 class MetaDoom64Replacements : EventHandler
 {
-    override void CheckReplacement(ReplaceEvent e) //override void WorldTick() //WorldLoaded(WorldEvent e)
+    override void CheckReplacement(ReplaceEvent e)
 	{
 		static const string oldActor[] =
 		{
