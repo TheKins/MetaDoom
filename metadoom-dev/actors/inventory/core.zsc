@@ -6,42 +6,6 @@ Inventory Core
 ----------------------------
 */
 
-/*
-// This is shared by all the inventory items, because being lumped with 25 pre-buff
-// Shield Walls and 0 grenades seemed like a pretty shitty fate to lump a player with.
-class GrenadeAmmo : Ammo
-{
-	Default
-	{
-		Inventory.PickupMessage "$GOTROCKET";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 25;
-		Ammo.BackpackAmount 0;
-		Ammo.BackpackMaxAmount 25;
-		Inventory.Icon "ROCKA0";
-	}
-	
-	States
-	{
-	Spawn:
-		ROCK A -1;
-		Stop;
-	}
-}
-*/
-
-// This is used to detect usage of the IDKFA cheat
-// and dole out inventory items as appopriate
-class MetaCheatDetector : MetaPistol
-{
-	Default
-	{
-		Weapon.SelectionOrder 0;
-	}
-}
-
-//class InventoryCooldownToken : _Boolean {}
-
 // Inventory cooldown stuff. When the player's InventoryFuel is less than the
 // item's MaxAmount, the item is greyed out and can't be used, conveniently
 // preventing spamming Cyberdemons to death with Siphon Grenades.
@@ -64,7 +28,8 @@ class InventoryFuel_SiphonGrenade : Counter { Default	{ Inventory.MaxAmount INV_
 class InventoryFuel_TeslaRocket : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
 class InventoryFuel_TheArtifact : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_ARTIFACT; } }
 
-// For Holy Water Pistol
+// For making an item pickup flash after an inventory item cooldown is finished.
+// Yeah, it's kinda a gross hack, but that's life, y'know?
 class GimmeCooldownFlash : CustomInventory
 {
 	Default
@@ -88,3 +53,13 @@ class GimmeCooldownFlash : CustomInventory
 		Stop;
 	}
 }	
+
+// This is used to detect usage of the IDKFA cheat
+// and dole out inventory items as appopriate
+class MetaCheatDetector : MetaPistol
+{
+	Default
+	{
+		Weapon.SelectionOrder 0;
+	}
+}

@@ -315,7 +315,7 @@ class MetaDoomPlayer : PlayerPawn
 		Super.Die(source,inflictor,dmgflags,MeansOfDeath);
 	}
 	
-	// Per-Tick FX
+	// Per-Tick scripts and suck
 	override void Tick()
 	{
 		// Tell voodoo dolls to fuck right off
@@ -335,7 +335,9 @@ class MetaDoomPlayer : PlayerPawn
 		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
 		A_GiveInventory("InventoryFuel_TheArtifact", 1);
 		
-		// Play a noise when your shit's basically refilled
+		// Play a noise when your shit's basically refilled. This is done when
+		// it's one tic away from being refilled as a cheap way to avoid having
+		// to work out a "proper" but more complicated way.
 		if (
 		(CountInv("InventoryFuel_HandGrenade") == INV_COOLDOWN_GENERIC-1)
 		|| (CountInv("InventoryFuel_DogCollar") == INV_COOLDOWN_GENERIC-1)
@@ -470,6 +472,7 @@ class MetaDoomPlayer : PlayerPawn
 	// Footsteps Code
 	Footsteps fsteps;
 
+	// Stuff that happens the moment the player is spawned.
 	override void PostBeginPlay()
 	{
 		// Tell voodoo dolls to get proper stuffed
@@ -481,7 +484,7 @@ class MetaDoomPlayer : PlayerPawn
 		
 		Super.PostBeginPlay();
 	
-		// Restore Inventory Cooldown Junk
+		// Recharge all inventory items immediately.
 		A_GiveInventory("InventoryFuel_HandGrenade", 999);
 		A_GiveInventory("InventoryFuel_DogCollar", 999);
 		A_GiveInventory("InventoryFuel_Hologram", 999);
@@ -501,6 +504,8 @@ class MetaDoomPlayer : PlayerPawn
 	}
 }
 
+// The player's severed skull gib. Used when the player is gibbed, and possibly
+// by other death states in the future...
 class MetaPlayerSkull : PlayerChunk
 {
 	Default
