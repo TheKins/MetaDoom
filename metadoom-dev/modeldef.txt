@@ -13,7 +13,7 @@ Model SiphonExplosionFX
    Path "models/" 
    Model 0 "siphonball.md3" 
    Skin 0 "siphonball.png"
-   Scale 3.0 3.0 4.0
+   Scale 2.9 2.9 3.9
    ROTATING
    Rotation-Speed 32
    Rotation-Vector 16 16 16
