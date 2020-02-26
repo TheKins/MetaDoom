@@ -45,7 +45,7 @@ Optional Content Changes:
   and greater mod/mapset compatibility! Hell yes.
 - The "Optional Props" CVar is still present, though, listed in the menu as
   "Allow Breakable Props", for mapsets that reskin these objects without changing
-  their actors, in such a way that we can't automatically detect them.
+  their actors' behavior, making them undetectable.
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
@@ -57,13 +57,11 @@ Weapon Changes:
   second of it. Please add psprite scaling, Mr. Chicken...
 - Added new bindable keys to quickly switch directly to the Holy Water Pistol,
   Fire Extinguisher and SoulCube without fumbling through the rest of the arsenal.
-- Renamed "Explosion" actor to be less generic and thus less likely to have an
-  actor name conflict with other mods or mappacks like KDiZD Lite.
 
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
   support and better compatibility with custom mapsets that replace the original
-  font graphics like Hell Revealed 2.
+  font graphics like Ancient Aliens and Hell Revealed 2.
 - The Game Over screen in Ultra-Nightmare mode will now provide a more accurate
   description of your demise beyond just dying to "something really mean".
 - The Game Over screen in Ultra-Nightmare mode now uses the "Nightmare!" menu font.
@@ -72,6 +70,9 @@ UI Changes:
   current state of the mod.
 - Added proper support for GZDoom's hilariously inflexible Alternate HUD.
 - Added a unique background for the Quit confirmation menu.
+- Fixed a number of visual issues with the options menu, like Tooltips being cut
+  off by the bottom of the screen and the background just not drawing sometimes.
+- Reorganized the MetaDoom Options menu.
 - Reskinned the sliders in the Options Menus.
   
 Item Changes:
@@ -89,32 +90,39 @@ Item Changes:
   around this, but every fix caused its own problems...)
 - The Siphon Grenade now has a unique pickup sound instead of reusing the Grenade's.
 - The Siphon Grenade's explosion effect has been shifted from a cheesy-looking sprite
-  to a cheesy-looking 3D model, to provide a better measurement of its radius.
+  to a cheesy-looking 3D model, to provide a better visual indicator of its radius.
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
   that have a rare chance of appearing in secret areas. Collect 'em all, and check
   'em all out in your Codex when you have a spare moment!
 
-Mapper Changes:
+Mapping Changes:
 - Added appropriate metadata etc. to allow level designers to build maps for
   MetaDoom without having their intended gameplay experience sabotaged by random
   spawns or item drops. Sure, nobody really makes maps for gameplay mods, but
   there's always a first time for everything... right?
+- Added Extinguishable Flames and Item Boxes!
 - See MAPMAKING.TXT inside the PK3 for important notes and info!
 
 Other Changes:
 - Replaced Zombie's ACS footsteps script with vsonnier's ZScript port, with some
-  minor tweaks to fix footstep sounds playing globally in multiplayer. Ouch!
+  minor tweaks to fix various issues like footstep sounds playing globally under
+  some non-ideal circumstances. Like multiplayer. Or voodoo dolls on conveyor belts.
 - Added a CVar to toggle footstep sounds.
 - Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
 - Disabled collisions between certain effects actors (gibs, casings etc.) and
   all other actors, preventing awkward-looking cases of, say, casings getting stuck
   inside a monster's head when shooting at them point-blank.
+- Various sprites and some actors have been renamed to avoid conflicts with other
+  mods causing possible bugs, both visual and otherwise (the most common of these
+  was Medkits being visually tinier than Stimpacks in some mapsets!)
 - All monsters and other shootable actors now have name tags, for use by other
   mods such as Target Spy.
 - Fixed electrical shock effects when killed by a Cacodemon not being fullbright.
 - Blood splats no longer hang over ledges and look weird.
-- Debug messages are far less spammy. Not that you'll notice...
-- Various invisible bits of housekeeping and cleaning.
+- Debug messages are far less spammy and much more informative.
+  (Not that you're supposed to notice, mind you...)
+- Various invisible bits of housekeeping and cleaning to keep MetaDoom maintainable
+  and running smoothly well into an Eternal future...!
 
 v5.666 "Klave EX" (10/06/19)
 ============================
