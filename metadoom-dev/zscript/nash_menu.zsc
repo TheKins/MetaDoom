@@ -82,7 +82,6 @@ class MetaOptionMenu : OptionMenu
 	int bgpicked;
 	int bgnum;
 	TextureID bg;
-	Font tinyBabyFont;
 	
 	override void Drawer ()
 	{
@@ -92,7 +91,7 @@ class MetaOptionMenu : OptionMenu
 			
 			if (bgnum == 1)
 			{
-				bg = TexMan.CheckForTexture("M_BGFAT", TexMan.Type_MiscPatch);
+				bg = TexMan.CheckForTexture("M_BGFAT1", TexMan.Type_MiscPatch);
 			} else if (bgnum == 2)
 			{
 				bg = TexMan.CheckForTexture("M_BGFAT2", TexMan.Type_MiscPatch);
@@ -109,8 +108,6 @@ class MetaOptionMenu : OptionMenu
 		
 		screen.DrawTexture (bg, true, 0, 0, DTA_320x200, true);
 		Super.Drawer();
-		
-			tinyBabyFont = "TINYBABY";
 
 		String tt;
 
@@ -134,12 +131,12 @@ class MetaOptionMenu : OptionMenu
 
 		if (tt.Length() > 0)
 		{
-			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 0, (Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
-			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 1024, (Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
+			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 0, (Screen.GetHeight() - (NewSmallFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
+			screen.DrawTexture (TexMan.CheckForTexture("TOOLTIPB", TexMan.Type_MiscPatch), true, 1024, (Screen.GetHeight() - (NewSmallFont.GetHeight() * CleanYfac_1 * 1.8)), DTA_CleanNoMove_1, true);
 			
 			Screen.DrawText (NewSmallFont, OptionMenuSettings.mFontColorValue,
 				(Screen.GetWidth() - NewSmallFont.StringWidth (tt) * CleanXfac_1) / 2,
-				(Screen.GetHeight() - (BigFont.GetHeight() * CleanYfac_1)),
+				(Screen.GetHeight() - (NewSmallFont.GetHeight() * CleanYfac_1)),
 				tt,
 				DTA_CleanNoMove_1, true);
 			

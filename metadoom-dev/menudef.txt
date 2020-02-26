@@ -102,17 +102,8 @@ AddOptionMenu "OptionsMenu"
 OptionMenu "MetaMenu"
 {
 	Title "$OPTMNU_METADOOM"
-	StaticText "$METAMENU_SPAWNINGHEADER", 1
-	MetaOption "$METAMENU_SPAWNINGGUNS",   "$METATOOLTIP_SPAWNINGCONTROLS",           "meta_noalts_weapons", "VanExt"
-	MetaOption "$METAMENU_SPAWNINGDUDES",   "$METATOOLTIP_SPAWNINGCONTROLS",	"meta_noalts_actors", "VanExt"
-	MetaOption "$METAMENU_MAPBREAKERS",		"$METATOOLTIP_MAPBREAKERS",			"meta_mapbreakers", "OnOff"
-	MetaOption "$METAMENU_UNIQUEBOSSES",		"$METATOOLTIP_UNIQUEBOSSES",			"meta_uniquebosses", "OnOff"
-	MetaOption "$METAMENU_SPAWNINGLIMITS",	"$METATOOLTIP_SPAWNINGLIMITS",			"meta_contentlocust", "LocustChoice"
-	MetaOption "$METAMENU_EPISODICSPAWNS",	"$METATOOLTIP_EPISODICSPAWNS",	"meta_episodicspawns", "EpisodicRules"
-	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
-	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
-	MetaOption "$METAMENU_FOOTSTEPS",	"$METATOOLTIP_FOOTSTEPS",	"meta_footsteps", "OnOff"
-	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "OnOff"
+	StaticText "$METAMENU_SUBMENUS", 1
+	Submenu "$METAMENU_SPAWNINGHEADER",			"MetaSpawningMenu"
 	StaticText " "
 	StaticText "$METAMENU_ITEMHEADER", 1
 	MetaOption "$METAMENU_RETROBERSERK",   "$METATOOLTIP_RETROBERSERK",           "meta_retroberserk", "OnOff"
@@ -129,11 +120,24 @@ OptionMenu "MetaMenu"
 	MetaSlider "$METAMENU_TOASTSIZE",	"$METATOOLTIP_TOASTSIZE",		"meta_toastsize", "1", "4", "1", "0"
 	StaticText " "
 	StaticText "$METAMENU_MISC", 1
+	MetaOption "$METAMENU_FOOTSTEPS",	"$METATOOLTIP_FOOTSTEPS",	"meta_footsteps", "OnOff"
 	MetaOption "$METAMENU_DEBUG",  "$METATOOLTIP_DEBUG",            "meta_developer", "OnOff"
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
+	Class "MetaOptionMenu"
+}
+
+OptionMenu "MetaSpawningMenu"
+{
+	Title "$OPTMNU_SPAWNING"
+	StaticText "$METAMENU_SPAWNINGHEADER", 1
+	MetaOption "$METAMENU_SPAWNINGGUNS",   "$METATOOLTIP_SPAWNINGCONTROLS",           "meta_noalts_weapons", "VanExt"
+	MetaOption "$METAMENU_SPAWNINGDUDES",   "$METATOOLTIP_SPAWNINGCONTROLS",	"meta_noalts_actors", "VanExt"
+	MetaOption "$METAMENU_MAPBREAKERS",		"$METATOOLTIP_MAPBREAKERS",			"meta_mapbreakers", "OnOff"
+	MetaOption "$METAMENU_UNIQUEBOSSES",		"$METATOOLTIP_UNIQUEBOSSES",			"meta_uniquebosses", "OnOff"
+	MetaOption "$METAMENU_SPAWNINGLIMITS",	"$METATOOLTIP_SPAWNINGLIMITS",			"meta_contentlocust", "LocustChoice"
+	MetaOption "$METAMENU_EPISODICSPAWNS",	"$METATOOLTIP_EPISODICSPAWNS",	"meta_episodicspawns", "EpisodicRules"
+	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
+	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
+	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "OnOff"
 	Class "MetaOptionMenu"
 }
 

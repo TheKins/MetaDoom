@@ -27,7 +27,9 @@ MNU_LOADGAME		= "Load Game";
 MNU_SAVEGAME		= "Save Game";
 MNU_EPISODE			= "Which Episode?";
 
+OPTMNU_SPAWNING		= "MetaDoom Spawning Options";
 OPTMNU_METADOOM		= "MetaDoom Options";
+
 
 OPTVAL_OTHER		= "Cyborg";
 
@@ -77,6 +79,7 @@ METAMENU_PERFBLOOD = "Forced Blood Fade";
 METAMENU_PERFBLOODTIME = "Blood Lifetime";
 
 METAMENU_MISC = "Miscellany";
+METAMENU_SUBMENUS = "Sub-Menus";
 
 OPTVAL_VANILLA = "Vanilla";
 OPTVAL_EXTENDED = "Extended";
