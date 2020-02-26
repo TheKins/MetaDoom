@@ -74,23 +74,26 @@ class MetaOptionalProps : EventHandler
 			
 		};
 		
-		for(int i = 0; i < oldActor.size(); i++)
+		if (meta_optional_props)
 		{
-			if ( e.Replacee == oldActor[i] ) 
+			for(int i = 0; i < oldActor.size(); i++)
 			{
-				if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
-				|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
-				|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)
-				|| (GetDefaultByType(e.Replacee).MissileState != null && GetDefaultByType(e.Replacee).MissileState.bDeHacked)
-				|| (GetDefaultByType(e.Replacee).FindState("Pain") != null && GetDefaultByType(e.Replacee).FindState("Pain").bDeHacked)
-				|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
-				|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
+				if ( e.Replacee == oldActor[i] ) 
 				{
-					if (meta_developer)
-						Console.printf("Optional: %s is DEHACKED, not replacing with %s", oldActor[i], newActor[i]);
-						break;
-				} else {
-					e.Replacement = newActor[i];
+					if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
+					|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
+					|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)
+					|| (GetDefaultByType(e.Replacee).MissileState != null && GetDefaultByType(e.Replacee).MissileState.bDeHacked)
+					|| (GetDefaultByType(e.Replacee).FindState("Pain") != null && GetDefaultByType(e.Replacee).FindState("Pain").bDeHacked)
+					|| (GetDefaultByType(e.Replacee).FindState("Death") != null && GetDefaultByType(e.Replacee).FindState("Death").bDeHacked)
+					|| (GetDefaultByType(e.Replacee).FindState("XDeath") != null && GetDefaultByType(e.Replacee).FindState("XDeath").bDeHacked))
+					{
+						if (meta_developer)
+							Console.printf("Optional: %s is DEHACKED, not replacing with %s", oldActor[i], newActor[i]);
+							break;
+					} else {
+						e.Replacement = newActor[i];
+					}
 				}
 			}
 		}

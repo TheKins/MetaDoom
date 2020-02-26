@@ -64,7 +64,7 @@ METAMENU_OPTIONAL = "Optional Content";
 METAMENU_OPTIONALDISC1 = "(Disable when playing map sets";
 METAMENU_OPTIONALDISC2 = "that replace these via DEHACKED)";
 METAMENU_OPTIONAL_MONSTERS = "WolfSS, Keen & Marines";
-METAMENU_OPTIONAL_PROPS = "Environmental Props";
+METAMENU_OPTIONAL_PROPS = "Allow Breakable Props";
 
 METAMENU_ITEMHEADER = "Item Behavior";
 METAMENU_RETROBERSERK = "Traditional Berserk";
@@ -99,7 +99,7 @@ METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises as you sprint around.
 METATOOLTIP_UNIQUEBOSSES = "Replaces bosses on certain map slots (ex. E4M8) with new bosses.";
 
 METATOOLTIP_OPTIONAL_MONSTERS = "Replace some monsters. May cause issues with DEHACKED-based mapsets.";
-METATOOLTIP_OPTIONAL_PROPS = "Replace most props. May cause issues with DEHACKED-based mapsets.";
+METATOOLTIP_OPTIONAL_PROPS = "Disable to force all props to be vanilla. Useful for some DEHACKED-based mapsets.";
 
 METATOOLTIP_RETROBERSERK = "Disables the Berserk timer, for maps that assume it's still there.";
 METATOOLTIP_PISTOLAMMO = "Pistol uses bullets and starts with 50 bullets, as is tradition.";

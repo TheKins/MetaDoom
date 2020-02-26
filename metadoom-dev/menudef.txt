@@ -112,6 +112,7 @@ OptionMenu "MetaMenu"
 	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
 	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
 	MetaOption "$METAMENU_FOOTSTEPS",	"$METATOOLTIP_FOOTSTEPS",	"meta_footsteps", "OnOff"
+	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "OnOff"
 	StaticText " "
 	StaticText "$METAMENU_ITEMHEADER", 1
 	MetaOption "$METAMENU_RETROBERSERK",   "$METATOOLTIP_RETROBERSERK",           "meta_retroberserk", "OnOff"
