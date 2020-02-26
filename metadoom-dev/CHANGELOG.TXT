@@ -72,7 +72,8 @@ UI Changes:
 - Added a unique background for the Quit confirmation menu.
 - Fixed a number of visual issues with the options menu, like Tooltips being cut
   off by the bottom of the screen and the background just not drawing sometimes.
-- Reorganized the MetaDoom Options menu.
+- Reorganized the MetaDoom Options menu, with rewritten option descriptions and
+  tooltips to make everything clearer and easier to understand.
 - Reskinned the sliders in the Options Menus.
   
 Item Changes:
