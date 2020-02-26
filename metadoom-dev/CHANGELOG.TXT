@@ -43,6 +43,9 @@ Optional Content Changes:
 - Also! All the Doom monsters are technically "Optional" now, deferring their seat
   to DEHACKED monsters like those in Eviternity and Sunlust, allowing for wider
   and greater mod/mapset compatibility! Hell yes.
+- The "Optional Props" CVar is still present, though, listed in the menu as
+  "Allow Breakable Props", for mapsets that reskin these objects without changing
+  their actors, in such a way that we can't automatically detect them.
 - Updated the sounds for a certain WolfSS variant.
 
 Weapon Changes:
