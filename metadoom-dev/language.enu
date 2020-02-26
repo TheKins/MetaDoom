@@ -48,8 +48,8 @@ TXT_IMSCORE = "Score";
 METAMENU_DEBUG = "MetaDebug";
 
 METAMENU_SPAWNINGHEADER = "Spawning Controls";
-METAMENU_SPAWNINGGUNS = "Weapon Spawning";
-METAMENU_SPAWNINGDUDES = "Actor Spawning";
+METAMENU_SPAWNINGGUNS = "Weapon Variety";
+METAMENU_SPAWNINGDUDES = "Monster Variety";
 METAMENU_SPAWNINGLIMITS = "Intelligent Spawn Rules";
 METAMENU_MAPBREAKERS = "Possible Map-Breakers";
 METAMENU_NOSPODERS = "Scary Spoders";
@@ -62,15 +62,11 @@ METAMENU_TOAST = "\"100%\" Message Customization";
 METAMENU_TOASTTYPE = "Message Type";
 METAMENU_TOASTSIZE = "Toast Size";
 
-METAMENU_OPTIONAL = "Optional Content";
-METAMENU_OPTIONALDISC1 = "(Disable when playing map sets";
-METAMENU_OPTIONALDISC2 = "that replace these via DEHACKED)";
-METAMENU_OPTIONAL_MONSTERS = "WolfSS, Keen & Marines";
-METAMENU_OPTIONAL_PROPS = "Allow Breakable Props";
+METAMENU_OPTIONAL_PROPS = "Enhanced/Breakable Props";
 
 METAMENU_ITEMHEADER = "Item Behavior";
-METAMENU_RETROBERSERK = "Traditional Berserk";
-METAMENU_PISTOLAMMO = "Pistol Uses Ammo";
+METAMENU_RETROBERSERK = "Berserk Timer";
+METAMENU_PISTOLAMMO = "Pistol Ammo";
 
 METAMENU_PERFHEADER = "Performance Controls";
 METAMENU_PERFBRASS = "Spent Brass";
@@ -89,33 +85,39 @@ OPTVAL_RESPECT = "Respected";
 OPTVAL_IGNORED = "Ignored";
 OPTVAL_SPODERS = "Allowed";
 OPTVAL_NOSPODERS = "Too Spooky";
-OPTVAL_TOASTBIG = "Loud Pop-Up \"Toast\"";
+OPTVAL_TOASTBIG = "Large Pop-Up \"Toast\"";
 OPTVAL_TOASTLITTLE = "Quiet Log Message";
+OPTVAL_VANILLAONLY = "Disallow - Vanilla Only";
+OPTVAL_WHEREPOSSIBLE = "Allow Where Possible";
+OPTVAL_UNLIMITED = "Unlimited Ammo";
+OPTVAL_TRADITIONAL = "Traditional";
+OPTVAL_MODERNBERSERK = "60 Seconds";
+OPTVAL_OLDBERSERK = "Until Map Ends";
 
-METATOOLTIP_SPAWNINGCONTROLS = "Set to \"Vanilla\" to disable most of the extended-universe stuff.";
-METATOOLTIP_SPAWNINGLIMITS = "Introduce new items gradually as you play, or all at once?";
-METATOOLTIP_MAPBREAKERS = "Allow player/monster behavior that can potentially break map progress.";
-METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during Doom 1-length episodes.";
-METATOOLTIP_NOSPODERS = "Toggle spawning Trites. Useful for hardcore arachnophobes.";
-METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless score items, ala Wolf3D or the Doom Alphas.";
-METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises as you sprint around.";
-METATOOLTIP_UNIQUEBOSSES = "Replaces bosses on certain map slots (ex. E4M8) with new bosses.";
+METATOOLTIP_SPAWNINGGUNS = "Set to \"Extended\" for additional weapons to appear as you acquire the core arsenal.";
+METATOOLTIP_SPAWNINGDUDES = "Set to \"Extended\" for additional monsters to appear as you complete levels.";
+METATOOLTIP_SPAWNINGLIMITS = "Introduce new monsters and such gradually as you play, or all at once?";
+METATOOLTIP_MAPBREAKERS = "Toggle player/monster behavior that can potentially break map progress.";
+METATOOLTIP_EPISODICSPAWNS = "Speeds up the introduction of new stuff during nine-map episodes like Doom 1, No Rest...";
+METATOOLTIP_NOSPODERS = "Toggle whether or not Trites appear. Useful for hardcore arachnophobes!";
+METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless and/or amusing score items, ala Wolf3D or the Doom Alphas.";
+METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises you make as you hoof it around those haunted bases.";
+METATOOLTIP_UNIQUEBOSSES = "Replaces bosses on certain map slots (ex. E4M8) with special unique encounters...";
 
-METATOOLTIP_OPTIONAL_MONSTERS = "Replace some monsters. May cause issues with DEHACKED-based mapsets.";
-METATOOLTIP_OPTIONAL_PROPS = "Disable to force all props to be vanilla. Useful for some DEHACKED-based mapsets.";
+METATOOLTIP_OPTIONAL_PROPS = "Useful for some DEHACKED-based mapsets that reskin the old props in unique, unfitting ways.";
 
-METATOOLTIP_RETROBERSERK = "Disables the Berserk timer, for maps that assume it's still there.";
-METATOOLTIP_PISTOLAMMO = "Pistol uses bullets and starts with 50 bullets, as is tradition.";
+METATOOLTIP_RETROBERSERK = "For maps built around the old ways. Disabling the timer also disables Quad Damage spawns.";
+METATOOLTIP_PISTOLAMMO = "Toggle between traditional and modern ammo usage (or lack thereof) for your sidearm.";
 
-METATOOLTIP_PERFBRASS = "Disables spent casings ejecting from weapons and laying around.";
-METATOOLTIP_PERFCULLER = "Increase to remove blood stains that are too close together.";
-METATOOLTIP_PERFBLOOD = "Forces carnage to fade immediately. Useful if the FPS drops!";
-METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second gore lasts before fading away.";
+METATOOLTIP_PERFBRASS = "Toggle spent casings ejecting from player weapons and laying around.";
+METATOOLTIP_PERFCULLER = "Set the personal-space range for cleaning up blood stains that are too close together.";
+METATOOLTIP_PERFBLOOD = "Forces blood stains and other carnage to fade immediately. Useful if the FPS drops!";
+METATOOLTIP_PERFBLOODTIME = "How many 35ths of a second blood 'n' gore lasts before fading away.";
 
-METATOOLTIP_TOASTTYPE = "Change the obnoxiousness of the \"All X Cleared!\" message.";
+METATOOLTIP_TOASTTYPE = "Change the obnoxiousness of the \"All Kills/Items/Secrets Cleared!\" message.";
 METATOOLTIP_TOASTSIZE = "Change the size of the \"Toast\" option. Bit buggy, mind.";
 
-METATOOLTIP_DEBUG = "Displays things of interest to developers only. Best ignored.";
+METATOOLTIP_DEBUG = "Displays reams of console spam and other things of interest to developers only. Best ignored.";
 
 // Keybinds
 MNU_MDHEADER = "MetaDoom";

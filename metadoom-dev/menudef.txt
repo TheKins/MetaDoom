@@ -106,8 +106,8 @@ OptionMenu "MetaMenu"
 	Submenu "$METAMENU_SPAWNINGHEADER",			"MetaSpawningMenu"
 	StaticText " "
 	StaticText "$METAMENU_ITEMHEADER", 1
-	MetaOption "$METAMENU_RETROBERSERK",   "$METATOOLTIP_RETROBERSERK",           "meta_retroberserk", "OnOff"
-	MetaOption "$METAMENU_PISTOLAMMO",   "$METATOOLTIP_PISTOLAMMO",           "meta_pistolammo", "OnOff"
+	MetaOption "$METAMENU_RETROBERSERK",   "$METATOOLTIP_RETROBERSERK",           "meta_retroberserk", "BerserkTimer"
+	MetaOption "$METAMENU_PISTOLAMMO",   "$METATOOLTIP_PISTOLAMMO",           "meta_pistolammo", "PistolAmmo"
 	StaticText " "
 	StaticText "$METAMENU_PERFHEADER", 1
 	MetaOption "$METAMENU_PERFBRASS",   "$METATOOLTIP_PERFBRASS",           "meta_perf_spentbrass", "OnOff"
@@ -129,15 +129,18 @@ OptionMenu "MetaSpawningMenu"
 {
 	Title "$OPTMNU_SPAWNING"
 	StaticText "$METAMENU_SPAWNINGHEADER", 1
-	MetaOption "$METAMENU_SPAWNINGGUNS",   "$METATOOLTIP_SPAWNINGCONTROLS",           "meta_noalts_weapons", "VanExt"
-	MetaOption "$METAMENU_SPAWNINGDUDES",   "$METATOOLTIP_SPAWNINGCONTROLS",	"meta_noalts_actors", "VanExt"
+	MetaOption "$METAMENU_SPAWNINGGUNS",   "$METATOOLTIP_SPAWNINGGUNS",           "meta_noalts_weapons", "VanExt"
+	MetaOption "$METAMENU_SPAWNINGDUDES",   "$METATOOLTIP_SPAWNINGDUDES",	"meta_noalts_actors", "VanExt"
+	StaticText " "
 	MetaOption "$METAMENU_MAPBREAKERS",		"$METATOOLTIP_MAPBREAKERS",			"meta_mapbreakers", "OnOff"
 	MetaOption "$METAMENU_UNIQUEBOSSES",		"$METATOOLTIP_UNIQUEBOSSES",			"meta_uniquebosses", "OnOff"
+	StaticText " "
 	MetaOption "$METAMENU_SPAWNINGLIMITS",	"$METATOOLTIP_SPAWNINGLIMITS",			"meta_contentlocust", "LocustChoice"
 	MetaOption "$METAMENU_EPISODICSPAWNS",	"$METATOOLTIP_EPISODICSPAWNS",	"meta_episodicspawns", "EpisodicRules"
+	StaticText " "
 	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
 	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
-	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "OnOff"
+	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "BreakableProps"
 	Class "MetaOptionMenu"
 }
 
@@ -163,4 +166,22 @@ OptionValue "ToastType"
 {
 	0, "$OPTVAL_TOASTBIG"
 	1, "$OPTVAL_TOASTLITTLE"
+}
+
+OptionValue "BreakableProps"
+{
+	0, "$OPTVAL_VANILLAONLY"
+	1, "$OPTVAL_WHEREPOSSIBLE"
+}
+
+OptionValue "PistolAmmo"
+{
+	0, "$OPTVAL_UNLIMITED"
+	1, "$OPTVAL_TRADITIONAL"
+}
+
+OptionValue "BerserkTimer"
+{
+	0, "$OPTVAL_MODERNBERSERK"
+	1, "$OPTVAL_OLDBERSERK"
 }
