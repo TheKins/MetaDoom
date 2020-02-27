@@ -548,24 +548,57 @@ script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);
 	
-	if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0
-	| StrCmp(StrLeft(maplump, 2), "E4") == 0 | StrCmp(StrLeft(maplump, 2), "E5") == 0)
+	if (StrCmp(StrLeft(maplump, 2), "E1") == 0
+	| StrCmp(StrLeft(maplump, 2), "E2") == 0
+	| StrCmp(StrLeft(maplump, 2), "E3") == 0
+	| StrCmp(StrLeft(maplump, 2), "E4") == 0 
+	| StrCmp(StrLeft(maplump, 2), "E5") == 0
+	| StrCmp(StrLeft(maplump, 2), "E6") == 0
+	| StrCmp(StrLeft(maplump, 2), "E7") == 0
+	| StrCmp(StrLeft(maplump, 2), "E8") == 0
+	| StrCmp(StrLeft(maplump, 2), "E9") == 0)
 	{
-		//if(GetCvar("meta_developer"))
-		//	log(s:"ACS: Map Type - Doom 1 Episodic");
+		// Doom 1 Episodic
 		SetResultValue(2);
 	}
 	else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
 	{
-		//if(GetCvar("meta_developer"))
-		//	log(s:"ACS: Map Type - Doom 2 Episodic");
+		// Doom 2 Episodic
 		SetResultValue(3);
 	}
 	else
 	{
-		//if(GetCvar("meta_developer"))
-		//	log(s:"ACS: Map Type - Doom 2... probably");
+		// Doom 2 Normal
 		SetResultValue(1);
+	}
+}
+
+script "DebugLog_GameDetector" OPEN
+{
+	if(GetCvar("meta_developer"))
+	{
+		str maplump = StrParam(n:PRINTNAME_LEVEL);
+		
+		if (StrCmp(StrLeft(maplump, 2), "E1") == 0
+		| StrCmp(StrLeft(maplump, 2), "E2") == 0
+		| StrCmp(StrLeft(maplump, 2), "E3") == 0
+		| StrCmp(StrLeft(maplump, 2), "E4") == 0 
+		| StrCmp(StrLeft(maplump, 2), "E5") == 0
+		| StrCmp(StrLeft(maplump, 2), "E6") == 0
+		| StrCmp(StrLeft(maplump, 2), "E7") == 0
+		| StrCmp(StrLeft(maplump, 2), "E8") == 0
+		| StrCmp(StrLeft(maplump, 2), "E9") == 0)
+		{
+				log(s:"Map Type: Doom 1 Episodic");
+		}
+		else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
+		{
+				log(s:"Map Type: Doom 2 Episodic");
+		}
+		else
+		{
+				log(s:"Map Type: Doom 2... probably");
+		}
 	}
 }
 
