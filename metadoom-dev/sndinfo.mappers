@@ -1,0 +1,12 @@
+/*
+----------------------------
+MetaDoom
+Sound Definitions
+Stuff for Mapmakers
+----------------------------
+*/
+
+$random props/itembox/break { props/itembox/break1 props/itembox/break2 }
+
+props/itembox/break1		itembox1
+props/itembox/break2		itembox2
