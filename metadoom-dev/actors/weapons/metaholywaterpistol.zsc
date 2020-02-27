@@ -204,9 +204,9 @@ class HolyWaterFire : Actor
 	States
 	{
 	Spawn:
-		FIRE A 0;
-		FIRE A 0 A_PlaySound("kinsie/waterpistol/flare");
-		FIRE ABCDEH 2 BRIGHT;
+		FIR2 A 0;
+		FIR2 A 0 A_PlaySound("kinsie/waterpistol/flare");
+		FIR2 ABCDEH 2 BRIGHT;
 		Stop;
 	}
 }

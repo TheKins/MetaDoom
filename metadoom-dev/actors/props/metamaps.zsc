@@ -109,15 +109,15 @@ class MetaFireParticle : Actor
 	States
 	{
 	Spawn:
-		FIRE A 0;
-		FIRE A 0
+		FIR2 A 0;
+		FIR2 A 0
 		{
 			bSPRITEFLIP = random(0,1);
 			A_SetScale(frandom(1.0,1.7),frandom(0.7,1.0)); 
 		}
-		FIRE ABCD 2 Bright A_SetScale(scale.x-0.1,scale.y+0.1);
+		FIR2 ABCD 2 Bright A_SetScale(scale.x-0.1,scale.y+0.1);
 	StartFading:
-		FIRE EFGH 2 Bright
+		FIR2 EFGH 2 Bright
 		{
 			A_SetScale(scale.x-0.1,scale.y+0.1);
 			A_FadeOut(0.2);
