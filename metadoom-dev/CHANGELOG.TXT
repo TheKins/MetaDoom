@@ -118,10 +118,15 @@ Other Changes:
   was Medkits being visually tinier than Stimpacks in some mapsets!)
 - All monsters and other shootable actors now have name tags, for use by other
   mods such as Target Spy.
+- Episodic Spawn Rules will now detect Doom 1 episodes using the "E#M#" naming
+  scheme up to Episode 9, instead of the previous limit of Episode 5.
 - Fixed electrical shock effects when killed by a Cacodemon not being fullbright.
 - Blood splats no longer hang over ledges and look weird.
 - Debug messages are far less spammy and much more informative.
   (Not that you're supposed to notice, mind you...)
+- Added a formal code license (3-Clause BSD) for the people who care about such
+  things. I doubt it'll be much of a problem since there's very little in the
+  way of compile-able code in MetaDoom, but whatever. It is what it is.
 - Various invisible bits of housekeeping and cleaning to keep MetaDoom maintainable
   and running smoothly well into an Eternal future...!
 
