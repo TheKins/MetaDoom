@@ -6,7 +6,10 @@ Stuff for Mapmakers
 ----------------------------
 */
 
-$random props/itembox/break { props/itembox/break1 props/itembox/break2 }
+$random props/mapfire { props/mapfire1 props/mapfire2 }
+props/mapfire1		mapfire1
+props/mapfire2		mapfire2
 
+$random props/itembox/break { props/itembox/break1 props/itembox/break2 }
 props/itembox/break1		itembox1
 props/itembox/break2		itembox2
