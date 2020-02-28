@@ -303,13 +303,23 @@ class MetaDoomPlayer : PlayerPawn
 		
 		CVar ironmanCVar = CVar.GetCVar("meta_ironmantemp");
 		
-		if (MeansOfDeath != "None")
+		if (!multiplayer)
 		{
-			//console.printf(MeansOfDeath);
-			ironmanCVar.SetString(MeansOfDeath);
-		} else {
-			//console.printf(source.GetClassName());
-			ironmanCVar.SetString(source.GetClassName());
+			if (MeansOfDeath != "None")
+			{
+				//console.printf(MeansOfDeath);
+				ironmanCVar.SetString(MeansOfDeath);
+			} else {
+				//console.printf(source.GetClassName());
+				ironmanCVar.SetString(source.GetClassName());
+			}
+			
+			// Emphasise copying the name of the actor that killed you, so long as
+			// it isn't you.
+			if (source != null && !(source is "MetaDoomPlayer"))
+			{
+				ironmanCVar.SetString(source.GetClassName());
+			}
 		}
 		
 		Super.Die(source,inflictor,dmgflags,MeansOfDeath);
