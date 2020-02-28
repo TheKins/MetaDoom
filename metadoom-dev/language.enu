@@ -34,7 +34,9 @@ OPTMNU_METADOOM		= "MetaDoom Options";
 OPTVAL_OTHER		= "Cyborg";
 
 // Codex
-MC_NoDesc = "No codex entry available.";
+MC_NoName = "???";
+MC_NoOrigin = "N/A";
+MC_NoDesc = "<ERROR 404 - CODEX DATA NOT FOUND>\n\nYou will need to find this entry's subject before you can learn more...";
 
 // Stats Screen
 TXT_IMKILLS = "Kills";

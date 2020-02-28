@@ -209,7 +209,7 @@ Extend Class MetaCodex_Menu
 					}
 					else
 					{
-						drawMetaText("???",4,52+(8*(i-listScroll)),"","TINYBABY",(i==itemSelected));
+						drawMetaText(Stringtable.Localize("$MC_NoName"),4,52+(8*(i-listScroll)),"","TINYBABY",(i==itemSelected));
 					}
 					//drawMetaText("$MC_"..meta_monsterlist[i].."_Name",4,52+(8*i),"","TINYBABY",(i==itemSelected));
 				}
@@ -239,8 +239,8 @@ Extend Class MetaCodex_Menu
 				else
 				{
 					//drawMetaText("???",72+4,52,"",BigFont);
-					namePrint = "???";
-					originPrint = "N/A";
+					namePrint = Stringtable.Localize("$MC_NoName");
+					originPrint = Stringtable.Localize("$MC_NoOrigin");
 				}
 				
 				originPrint = "First Appearance: \c-"..originPrint;
