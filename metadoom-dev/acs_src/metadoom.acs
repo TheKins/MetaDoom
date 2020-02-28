@@ -1,12 +1,23 @@
+/*
+----------------------------
+MetaDoom
+ACS Scripting
+General ACS Garbage
+----------------------------
+*/
 #library "metadoom"
 #include "zcommon.acs"
 
+// Global Variables
 global int 1:mapsCleared;
-
 world int 6:item_KeyType;
 world int 7:item_SkullKeyType;
 
-// Health Warning
+////////////////////////////////////////////////////////////////////////////////
+// Health Warning Message
+////////////////////////////////////////////////////////////////////////////////
+
+// Display a warning message if the player goes under 25 health
 Script "HealthWarning_Warn" ENTER
 {
 	if (GetActorProperty (0, APROP_HEALTH) <= 25 && !CheckInventory("PlayerHealthWarning"))
@@ -27,6 +38,7 @@ Script "HealthWarning_Warn" ENTER
 	restart;
 }
 
+// Make the player qualify for the message again if they go back above 25 health.
 Script "HealthWarning_Clear" ENTER
 {
 	if (GetActorProperty (0, APROP_HEALTH) > 25 && CheckInventory("PlayerHealthWarning"))
@@ -37,7 +49,11 @@ Script "HealthWarning_Clear" ENTER
 	restart;
 }
 
+////////////////////////////////////////////////////////////////////////////////
 // Melee System
+////////////////////////////////////////////////////////////////////////////////
+
+// Make the player throw hands on a key press.
 Script "MeleePunch" (void) net
 {
 	GiveInventory("MeleePunch", 1);
@@ -45,6 +61,7 @@ Script "MeleePunch" (void) net
 	TakeInventory("MeleePunch", 999);
 }
 
+// Govern non-retro berserkery.
 Script "MeleeHandleBerserk" ENTER
 {
 	If (!CheckInventory("PowerMetaBerserkTimer") && CheckInventory("MetaBerserkFist") && !GetCvar("meta_retroberserk"))
@@ -55,6 +72,7 @@ Script "MeleeHandleBerserk" ENTER
 	restart;
 }
 
+// Remove the berserk powerup(s) on starting a new map.
 Script "MeleeStripBerserkOnStart" ENTER
 {
 	TakeInventory("MetaBerserkFist", 999);
@@ -62,7 +80,11 @@ Script "MeleeStripBerserkOnStart" ENTER
 	TakeInventory("PowerStrength", 999);
 }
 
+////////////////////////////////////////////////////////////////////////////////
 // Weapon Shortcuts
+////////////////////////////////////////////////////////////////////////////////
+
+// Quick-select the Holy Water Pistol
 Script "QuickSelect_HWP" (void) net
 {
 	If (CheckInventory("MetaHolyWaterPistol"))
@@ -71,6 +93,7 @@ Script "QuickSelect_HWP" (void) net
 	}
 }
 
+// Quick Select the Fire Extinguisher
 Script "QuickSelect_FireEx" (void) net
 {
 	If (CheckInventory("MetaFireExtinguisher"))
@@ -79,6 +102,7 @@ Script "QuickSelect_FireEx" (void) net
 	}
 }
 
+// Quick Select the Soulcube (Is this needed?)
 Script "QuickSelect_SoulCube" (void) net
 {
 	If (CheckInventory("MetaSoulCube"))
@@ -87,10 +111,14 @@ Script "QuickSelect_SoulCube" (void) net
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////
 // The Artifact
+////////////////////////////////////////////////////////////////////////////////
+
+// Handles the Artifact's slow-motion effect. Blatantly ripped from High Noon Drifter.
+// TODO: Replace with ZScript version from Kizoky's Postal 2 TC?
 script "MetaBulletTime" ENTER
 {
-	// blatantly ripped from high noon drifter
 	int drawtimer;
 
 	while(true)
@@ -119,7 +147,18 @@ script "MetaBulletTime" ENTER
 	}
 }
 
-// Pistol Start Stuff
+// This was originally part of the stripping the 100% cleared markers.
+// I'm not sure why. I blame last-minute hotfixes.
+Script "StripSlowMoOnStart" ENTER
+{
+	TakeInventory("ArtifactTimer", 999);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Traditional Pistol Handling
+////////////////////////////////////////////////////////////////////////////////
+
+// Set the player up for having a pistol that can't be shot forever and a day
 script "PistolAmmoStart" ENTER
 {
 	if(GetCvar("meta_pistolammo") && !CheckInventory("PistolAmmoCoupon"))
@@ -129,7 +168,11 @@ script "PistolAmmoStart" ENTER
 	}
 }
 
-// 100% Stats Handling Stuff
+////////////////////////////////////////////////////////////////////////////////
+// 100% Cleared Messages
+////////////////////////////////////////////////////////////////////////////////
+
+// This mess handles the detection and printing of everything.
 Script "100Percent" ENTER
 {
 	if (GameType () < 2) // disqualities deathmatch and titlemap
@@ -220,18 +263,23 @@ Script "100Percent" ENTER
 	}
 }
 
+// Clear everything at the start of a new map to avoid problems.
 Script "Strip100PercentOnStart" ENTER
 {
 	TakeInventory("x100Percent_Monsters", 999);
 	TakeInventory("x100Percent_Items", 999);
 	TakeInventory("x100Percent_Secrets", 999);
 	TakeInventory("x100Percent_Running", 999);
-	
-	TakeInventory("ArtifactTimer", 999);
 }
 		
 
-// Holy Water
+////////////////////////////////////////////////////////////////////////////////
+// Holy Water Pistol
+////////////////////////////////////////////////////////////////////////////////
+
+// Handles the mechanical side of detecting that the player is sitting in fluids
+// (ooh-er) and giving them Holy Water Pistol ammo. The cosmetic side has been
+// transitioned to ZScript. This should be as well at some vague point.
 Script "TakeWater" ENTER
 {
 	str fluidtex_take[37] =
@@ -269,26 +317,11 @@ Script "TakeWater" ENTER
 	restart;
 }
 
-/*
-Script "GimmeWater" (void)
-{
-	int msgColors[22] = 
-	{
-		"\ca", "\cb", "\cc", "\cd", "\ce", "\cf", "\cg", "\ch", "\ci", "\cj", "\ck",
-		"\cl", "\cm", "\cn", "\co", "\cp", "\cq", "\cr", "\cs", "\ct", "\cu", "\cv"
-	};
+////////////////////////////////////////////////////////////////////////////////
+// Fire Extinguisher
+////////////////////////////////////////////////////////////////////////////////
 
-	int color = GetCvar("msg0color");
-	
-	PlaySound (0, "weapons/waterpistol/ammo", CHAN_ITEM|CHAN_MAYBE_LOCAL|CHAN_UI); //AmbientSound("weapons/waterpistol/ammo", 127);
-	GiveInventory("HolyWater", 1);
-	FadeTo (69, 203, 215, 0.1, 0.0);
-	FadeTo (69, 203, 215, 0.0, 0.1);
-	Log(s:msgcolors[color], l:"GOTHOLYWATER");
-}
-*/
-
-// Fire Self-Extinguish
+// Governs some stuff relating to extinguishing yourself.
 Script "FireSelfSpray_Control" (void)
 {
 	LocalAmbientSound("*ext1", 127);
@@ -300,12 +333,19 @@ Script "FireSelfSpray_Control" (void)
 	FadeTo (255, 255, 255, 0.0, 0.1);
 }
 
+// Extinguish being extinguished on map start, to fix the player becoming permanently
+// cloaked from Arch-Vile harassment if they were extinguished on map change.
 Script "StripExtinguishedOnStart" ENTER
 {
 	TakeInventory("FireExtinguished",999);
 }
 
-// Soulcube Popup
+////////////////////////////////////////////////////////////////////////////////
+// The Soulcube
+////////////////////////////////////////////////////////////////////////////////
+
+// Much like the low-health warning, this handles the message that pops up when
+// the Soul Cube is ready to scythe some fuckers.
 Script "SoulCubeMsg_Warn" ENTER
 {
 	if (CheckInventory("MetaCheatDetector"))
@@ -331,6 +371,7 @@ Script "SoulCubeMsg_Warn" ENTER
 	restart;
 }
 
+// As ever, make the player qualify to see the message again once the cube is unleashed.
 Script "SoulCubeMsg_Clear" ENTER
 {
 	if (CheckInventory("SoulAmmo") != 10 && CheckInventory("SoulCubeMessagePopped"))
@@ -341,13 +382,20 @@ Script "SoulCubeMsg_Clear" ENTER
 	restart;
 }
 
+////////////////////////////////////////////////////////////////////////////////
 // Item Variety System
+////////////////////////////////////////////////////////////////////////////////
 
+// Make every player checkable. This is definitely gonna have to be changed once
+// we move it over to ZScript... Gross.
 script "Item_Init" ENTER
 {
 	Thing_ChangeTID(0,1337+PlayerNumber());	
 }
 
+// Check if any player owns one of the following weapons, for the item checkers
+// to use as an excuse to display new weapons. This can almost certainly be done
+// better with a ThinkerIterator nowadays...
 script "Item_Shotgun" (void)
 {
 	for(int i = 1337; i < 1400; i++)
@@ -477,6 +525,7 @@ script "Item_SoulCube" (void)
 	}
 }
 
+// There can only be one.
 script "Item_Artifact" (void)
 {
 	for(int i = 1337; i < 1400; i++)
@@ -492,6 +541,13 @@ script "Item_Artifact" (void)
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Monster Variety System
+////////////////////////////////////////////////////////////////////////////////
+
+// Allow monster spawners to detect whether they're in an episode or a full game,
+// to better pace out the introduction of new "elements". Debug texts are moved
+// to a seperate script at the bottom of the page.
 script "Item_GameDetector" (void)
 {
 	str maplump = StrParam(n:PRINTNAME_LEVEL);
@@ -521,8 +577,8 @@ script "Item_GameDetector" (void)
 	}
 }
 
-// Actor Variety System
-
+// Tick up a number as you clear maps, so monster spawners can introduce new threats
+// as you clear more and more maps.
 script "Monster_Init" ENTER
 {
 	mapsCleared++;
@@ -531,6 +587,8 @@ script "Monster_Init" ENTER
 			log(s:"Mapclear Count: ", i:mapsCleared);
 }
 
+// This is how they check it. Don't uncomment the debug log if you don't want
+// a ton of useless console spam.
 script "Monster_ReturnMaps" (void)
 {
 	//if(GetCvar("meta_developer"))
@@ -539,7 +597,12 @@ script "Monster_ReturnMaps" (void)
 	SetResultValue(mapsCleared);
 }
 
-// Key Variety System
+////////////////////////////////////////////////////////////////////////////////
+// Keycard Variety System
+////////////////////////////////////////////////////////////////////////////////
+
+// Decide what skins the keycards and skull keys are going to be using in this
+// map. This is to ensure all keys use the same skin for consistency.
 script "Key_Init" OPEN
 {
 	item_KeyType = random(1,5);
@@ -552,6 +615,7 @@ script "Key_Init" OPEN
 	}
 }
 
+// And these are how they check it.
 script "Key_ReturnType" (void)
 {
 	SetResultValue(item_KeyType);
@@ -562,8 +626,12 @@ script "SkullKey_ReturnType" (void)
 	SetResultValue(item_SkullKeyType);
 }
 
-// Fix Players Being Given Old Weapons By Scripts
+////////////////////////////////////////////////////////////////////////////////
+// Inventory Fixer System
+////////////////////////////////////////////////////////////////////////////////
 
+// If the player is given an old vanilla weapon by a map script, fuck it off and
+// give them one of the new ones.
 script "PlayerInventoryFixer" ENTER
 {
 	if (CheckInventory("Chainsaw") == 1)
@@ -630,8 +698,8 @@ script "PlayerInventoryFixer" ENTER
 		SetWeapon("MetaBFG9000");
 	}
 	
-	// Precautions to prevent the player being unable to fight back
-	
+	// If the player has no weapon and isn't in the titlemap or an ironman game
+	// over screen, give them a way to defend themselves...
 	if (CheckInventory("MetaPistol") == 0
 	&& CheckInventory("MetaLastResortFist") == 0
 	&& GameType() != GAME_TITLE_MAP
@@ -681,9 +749,11 @@ script "PlayerInventoryFixer" ENTER
 	restart;
 }
 
-//Cheaty Cheaty
+////////////////////////////////////////////////////////////////////////////////
+// Cheaty Cheater Stuff
+////////////////////////////////////////////////////////////////////////////////
 
-// Give IDKFA Users the Inventory Items
+// Give IDKFA users all of the Inventory Items, for convenience's sake
 script "InventoryCheat" ENTER
 {
 	if (CheckInventory("MetaCheatDetector") == 1)
@@ -708,12 +778,12 @@ script "InventoryCheat" ENTER
 	restart;
 }
 
-// New Cheat System
+// The new console cheats! Oh boy, what dumb bullshit will I disappoint my
+// ancestors with this time?!
 Script "Impulse" (int n)
 {
 	int i;
 	AmbientSound("umpulse/default",127); // HENH HEEEEEEEEH
-	// TODO: STOP THIS FROM RUNNING WHEN CHEATS ARE DISABLED
 	
 	if (GetCVar("sv_cheats") | GameSkill() >= 4)
 	{
@@ -770,7 +840,8 @@ Script "Impulse" (int n)
 	}
 }
 
-// Fix death animations after resurrecting
+// Remove death animation inventory tokens to fix player weapon animations after
+// they use the resurrect cheat.
 script "MetaResurrectChecker" DEATH
 {
 	if (GameType() == GAME_SINGLE_PLAYER && !(ClassifyActor(0) & ACTOR_VOODOODOLL))
@@ -793,8 +864,11 @@ script "MetaResurrectChecker" DEATH
 	}
 }
 
-// don't get too brutal, kid
+////////////////////////////////////////////////////////////////////////////////
+// Miscellaney
+////////////////////////////////////////////////////////////////////////////////
 
+// Don't get too brutal, kid...
 function int unusedTID(int start, int end)
 {
     int ret = start - 1;
@@ -829,8 +903,7 @@ script "BrutalChecker" ENTER
     }
 }
 
-// Debuggery
-
+// Debug Message for the map type.
 script "DebugLog_GameDetector" OPEN
 {
 	if(GetCvar("meta_developer"))

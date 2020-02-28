@@ -1,25 +1,43 @@
+/*
+----------------------------
+MetaDoom
+ACS Scripting
+Ironman ACS Scripting
+----------------------------
+*/
 #library "metairon"
 #include "zcommon.acs"
 
+// Pulled from the main ACS so it can be read here too
 global int 1:mapsCleared;
-// You're No Ironman!
+// Ironman Global Variables
 world str 1:ironman_DeadMap;
 world int 2:ironman_KillsTally;
 world int 3:ironman_ItemsTally;
 world int 4:ironman_SecretsTally;
 world int 5:ironman_FinalScore;
 
+////////////////////////////////////////////////////////////////////////////////
+// "Ultra-Nightmare" Ironman Mode
+////////////////////////////////////////////////////////////////////////////////
 Script "Ironman_Death" DEATH
 {
+	// Transitioning to a new cluster ALWAYS plays the cluster entry/exit text
+	// screens, so we work around this with a bunch of copies of the death map,
+	// all in different clusters. Stupid? Yes. Works? Also yes.
 	int cluster = GetLevelInfo(LEVELINFO_CLUSTERNUM);
 	int deathmap = StrParam(s:"DEAD",i:cluster);
 	ironman_DeadMap = strParam(n:PRINTNAME_LEVELNAME);
+	
+	// GameSkill 666 is Ironman Mode.
 	if (GameSkill() == 666)
 	{
 		if (GameType() == GAME_SINGLE_PLAYER)
 		{
 			if(GetCvar("meta_developer"))
-				log(n:0,s:" fucked up! Heading to ", s:deathmap);
+				log(s:"Ironman: ",n:0,s:" fucked up! Heading to ", s:deathmap);
+			
+			// Screw your autosaves.
 			Autosave();
 			Autosave();
 			Autosave();
@@ -32,6 +50,8 @@ Script "Ironman_Death" DEATH
 	}
 }
 
+// Tally things up during level transitions, so we can show them during the
+// Game Over screen.
 script "Ironman_TallyUp" UNLOADING
 {
 	ironman_KillsTally = ironman_KillsTally + GetLevelInfo (LEVELINFO_KILLED_MONSTERS);
@@ -44,6 +64,8 @@ script "Ironman_TallyUp" UNLOADING
 	}
 }
 
+// This is the script for all of the DEAD maps, placed here to avoid unnecessary
+// duplication that would make maintenance a real bitch.
 script "Ironman_StatsRun" (void)
 {
 	// Figure out what language string to pluck out for the obit
@@ -55,7 +77,7 @@ script "Ironman_StatsRun" (void)
 	{
 		obit = "OBIT_IRONMAN_FALLBACK";
 	}
-		
+	
 	ClearInventory();
 	GiveInventory("DisableHUD",1);
 	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
@@ -64,6 +86,7 @@ script "Ironman_StatsRun" (void)
 	
 	FadeTo (255, 0, 0, 1.0, 0);	
 	
+	// I reiterate: Screw your autosaves.
 	Autosave();
 	Autosave();
 	Autosave();
@@ -83,6 +106,7 @@ script "Ironman_StatsRun" (void)
 	HudMessage(l:obit; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 9999.0, 1.0, 1.0);
 	delay(126);
 	
+	// Compile and print the stats we had accumulated before ventuing off into the great beyond
 	if (mapsCleared <= 2)
 	{
 		HudMessage(s:"You accomplished nothing of significance"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
@@ -102,23 +126,15 @@ script "Ironman_StatsRun" (void)
 	delay(32);
 	HudMessage(s:"Your final score is ", i:ironman_FinalScore, s:" points."; HUDMSG_FADEINOUT, 11, CR_RED, 160.0, 117.0, 9999.0, 1.0, 1.0);
 	
-	
 	ChangeCamera(64,1,0);
-	
 	FadeTo (0, 0, 0, 0.5, 1.0);
-	
 	delay(30);
-	
-	SetMusic("M_IRONM2",0);
-	
-	
-	
+	SetMusic("M_IRONM2",0);	
 	delay(32);		
 	ACS_NamedExecute("Ironman_SubtitleMessage",0);
-	
-	
 }
 
+// Display mocking jibes on the Game Over screen.
 script "Ironman_SubtitleMessage" (void)
 {
 	str deathSubtitle = "";
