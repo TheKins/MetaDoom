@@ -121,7 +121,14 @@ class KineticMineProj : Actor
 		Stop;
 	Bounce.Ceiling:
 		TNT1 A 0;
-		TNT1 A 0 A_JumpIf(CallACS("KineticMine_AmISky", 0, 0, 0) == 1, "Flying");
+		TNT1 A 0 
+		{
+			// Don't attach to the sky, you fool!
+			if (ceilingpic == TexMan.CheckForTexture("F_SKY1", TexMan.Type_Flat))
+			{
+				SetStateLabel("Flying");
+			}
+		}
 		TNT1 A 0 A_SpawnItemEx("KineticMineLurkingCeiling",0,0,999,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	Bounce.Wall:

@@ -733,17 +733,6 @@ script "PlayerInventoryFixer" ENTER
 	restart;
 }
 
-// Get Ceiling Texture for DECORATE
-script "KineticMine_AmISky" (void)
-{
-	if (CheckActorCeilingTexture(0, "F_SKY1"))
-	{
-		SetResultValue(1);
-	} else {
-		SetResultValue(0);
-	}
-}
-
 //Cheaty Cheaty
 
 // Give IDKFA Users the Inventory Items
