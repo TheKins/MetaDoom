@@ -59,7 +59,7 @@ page "Bestiary"
 		needs "Doom2";
 		name "Former Assassin";
         origin "Doom 3 (2004)";
-        description "These strange creatures were once leaders of the RRTC, but demonic influences have corrupted them, turning them into something... more than human. They seem to relish combat, taking joy in stalking their prey before ventilating them from unexpected angles with their Chaingun.\n\nThese creatures can also use their tentacle arm to pull targets closer, disorienting them and mitigating the Chaingun's accuracy issues. Using distance and cover to your advantage is highly advisable."; 
+        description "These strange creatures were once leaders of the RRTC, but demonic influences have corrupted and distorted them into something... more than human. They seem to relish combat, taking joy in stalking their prey before ventilating them from unexpected angles with their Chaingun.\n\nThese creatures can also use their tentacle arm to pull targets closer, disorienting them and mitigating the Chaingun's accuracy issues. Using distance and cover to your advantage is highly advisable."; 
 	}
 	
 	//===========================================
@@ -71,7 +71,7 @@ page "Bestiary"
 		offset -2, 0;
 		name "Imp";
 		origin "Doom (1993)";
-		description "The rank-and-file of Hell's invasion forces, the Demonic Troopers (nicknamed ''Imps'' by researchers) make up for lacking intelligence with razor-sharp claws, the ability to conjure searing balls of flame at will, and a vast numeric advantage.\n\nObservation indicates that these creatures are fairly low down the food chain, and may be fighting at the behest of other, more powerful monsters. Sadly, the most detailed study of these creatures, ''Operation: Imp Encounter'', remains strictly classified for mysterious reasons never adequately explained...";
+		description "The rank-and-file of Hell's invasion forces, the Demonic Troopers (nicknamed ''Imps'' by researchers) make up for lacking intelligence with razor-sharp claws, the ability to conjure searing balls of flame at will, and a vast numeric advantage.\n\nObservation indicates that these creatures are fairly low down the food chain, and may be fighting at the behest of other, more powerful monsters. Sadly, the most detailed study of these foul creatures, ''Operation: Imp Encounter'', remains strictly classified for reasons never adequately explained...";
 	}
 	
 	entry "MetaNightmareImp"
@@ -79,14 +79,14 @@ page "Bestiary"
 		offset 0, 4;
 		name "Nightmare Imp";
 		origin "Doom 64 (1997)";
-		description "In a freak accident, a breakout of imps near the Nuclear Plant resulted in a catastrophic meltdown, requiring the area to be evacuated and quarantined. When cleanup began a year later, cleanup crews came face to face with a mutated breed of Imps.\n\nThe Nightmare Imp's skin has lost its pigment as a result of the radiation, the translucency granting it solace in the shadows. The demon is able to channel radiation into its fireballs, allowing it to conjure more volatile orbs of energy. It's incredible how you can see right through him.";
+		description "A freak accident caused by a breakout of imps resulted in the catastrophic meltdown of the Deimos Nuclear Plant, requiring a full quarantine. When the cleanup began a year later, crews came face to face with a new breed of mutated Imps lurking in the wreckage.\n\nThe Nightmare Imp's skin has lost its pigment as a result of the radiation, the translucency granting it solace in the shadows. The demon is able to channel radiation into its fireballs, allowing it to conjure more volatile orbs of energy.\n\nIt's incredible how you can see right through him.";
 	}
 	
 	entry "MetaDoomImpLord"
 	{
 		name "Imp Lord";
 		origin "Doom (2016)";
-		description "A sub-species of Imp that appears to have attained some degree of dominance over its more common cousins, the Imp Lord bears flamboyant markings and a wider range of abilities, ranging from pouncing across rooms to actively teleporting around, disorienting and confusing prey.\n\nThere have been rumors of one of these creatures commanding a small horde of disturbing, conjoined zombies around a small city in the Middle East days before the invasion commenced, but these have never been fully substantiated.";
+		description "A sub-species of Imp that appears to have attained some degree of dominance over its more common cousins, the Imp Lord bears flamboyant markings and a wider range of abilities, ranging from pouncing across rooms to actively teleporting around, disorienting and confusing prey.\n\nThere were rumors of one of these creatures commanding a small horde of disturbing, conjoined zombies around a small city in the Middle East shortly before the invasion commenced, but these were never fully substantiated.";
 	}
 	
 	//===========================================
@@ -97,19 +97,19 @@ page "Bestiary"
 	{
 		name "Hellhound";
 		origin "Doom RPG (2005)";
-		description "Hellhounds are former UAC guarddogs that were used heavily in both guard duty and heavy defense operations. While not as susceptible to demonic possession as humans, they were able to be reanimated and turned against the living. Despite this, they are often seen with their former owners, suggesting that even in death, they are loyal to their masters. Good boy!\n\nThe hellhound will make a beeline towards their target at incredible speeds to sink their teeth into their victim. However, their fragile frame easily succumbs to most injuries.";
+		description "Hellhounds are former UAC guard dogs that were used heavily in both guard duty and defense operations. While not as susceptible to demonic possession as humans, they were able to be reanimated and turned against the living. Despite this, they are often seen with their former owners, suggesting that even in death, they are loyal to their masters. Good boy!\n\nThe Hellhound will make a beeline towards their target at incredible speeds to sink their teeth into their victim. However, their fragile frame easily succumbs to most injuries.";
 	}
 	entry "MetaDemonDog"
 	{
 		name "Demon Dog";
 		origin "Doom RPG (2005)";
-		description "Demon Dogs appear to have been military dogs before their possession, charged with dragging injured soldiers out of the line of fire while ducking and dodging and avoiding getting hit. These traits they have kept from life to unlife, dancing through enemy attacks and drawing fire away from more crucial targets.\n\nResearchers in the field have filed claims that they know how to roll over and shake hands, but not enough evidence has been provided of this to truly consider scientific fact.";
+		description "Demon Dogs appear to have been military dogs before their possession, charged with dragging injured soldiers out of the line of fire while ducking and dodging to avoid getting hit. These traits they have kept from life to unlife, dancing through enemy attacks and drawing fire away from more crucial targets.\n\nResearchers in the field have filed claims that they know how to roll over and shake hands, but not enough evidence has been provided to truly consider it scientific fact.";
 	}
 	entry "MetaCerberus"
 	{
 		name "Cerberus";
 		origin "Doom RPG (2005)";
-		description "A former UAC guard dog that has been filled with a berserker rage by demon magicks, the Cerberus can leap through the air with a supernatural force, slamming into opponents and knocking them over, leaving them stunned and ripe for the jugular-tearing.\n\nWhile they're intelligent and deadly opponents, they're still possessed dogs, and still vulnerable to tummy-rubs and/or heavy ordinance. Rumor has it they have another weakness, but discussion of it is forbidden throughout both human and demon societies...";
+		description "A former UAC guard dog that has been filled with a berserker rage by demon magicks, the Cerberus can leap through the air with a supernatural force, slamming into opponents and knocking them over, leaving them stunned and ripe for the jugular-tearing.\n\nWhile they're intelligent and deadly opponents, they're still possessed dogs, and still vulnerable to tummy-rubs and/or heavy ordinance.\n\nRumor has it they have another weakness, but discussion of it is forbidden throughout both human and demon societies...";
 	}
 	
 	//===========================================
@@ -119,7 +119,7 @@ page "Bestiary"
 	{
 		name "Pinky Demon";
         origin "Doom (1993)";
-        description "The Demonic Sergeant (humiliatingly nicknamed ''Pinky'' by forces in the field) loosely resembles a shaved gorilla with a giant, toothy mouth which it typically uses in lieu of its stumpy limbs to tear opponents apart.\n\nThese creatures appear to have low intelligence and seem to be considered by other denizens of the depths to be something between a hunting dog and a pack animal. It's not uncommon to find Pinky bones scattered around where another creature has devoured them.\n\nIt's also not uncommon for that other creature to be another Pinky...";
+        description "The Demonic Sergeant (humiliatingly dubbed ''Pinky'' by forces in the field) loosely resembles a shaved gorilla with a giant, toothy mouth which it typically uses in lieu of its stumpy limbs to tear opponents apart.\n\nThese creatures appear to have low intelligence and seem to be considered by other denizens of the depths to be something between a hunting dog and a pack animal. It's not uncommon to find Pinky bones scattered around where another creature has devoured them.\n\nIt's also not uncommon for that other creature to be another Pinky...";
 	}
 	entry "MetaBullDemon"
 	{
@@ -154,7 +154,7 @@ page "Bestiary"
 	{
 		name "Sawcubus";
 		origin "Doom II RPG (2009)";
-		description "Some time after the demon experiments began, there were reports of chainsaws turning up missing. These were shortly followed by reports of demons being seen equipped with the stolen chainsaws, followed again by UAC personnel being killed in chainsaw related accidents. Eventually, a Sawcubus was captured and studied.\n\nThe Sawcubus is limited by its speed, range, and noisiness. It usually prefers smaller, cramped spaces, where its weaknesses become its strengths. Please return all stolen chainsaws to the UAC bookkeeper.";
+		description "Some time after the demon experiments began, there were reports of chainsaws turning up missing. These were shortly followed by reports of demons being seen equipped with the stolen chainsaws, followed again by UAC personnel being killed in chainsaw related accidents. Eventually, a Sawcubus was captured and studied.\n\nThe Sawcubus is limited by its speed, range, and noisiness, and typically prefers smaller, cramped spaces where its weaknesses become its strengths. Please return all stolen chainsaws to the UAC bookkeeper.";
 	}
 	
 	//===========================================
@@ -175,7 +175,7 @@ page "Bestiary"
 		offset 0, -6;
 		name "Phantom";
 		origin "Doom 0.3 (1993)";
-		description "The Phantom is a mechanical mimic of the Lost Soul composed of a steel alloy. The UAC originally designed these as a survey drone with minimal self-defense capabilites to blend into the environment of Hell. However, due to an error in the AI's code, the drone would identify all living beings as a threat and instantly shift into combat mode. The UAC decided to cut their losses and jettison the drones into Hell.\n\nThe Phantom will dance around and fire balls of fire before charging into their target, frequently triggering infighting with other demons.";
+		description "The Phantom is a mechanical mimic of the Lost Soul composed of a steel alloy. The UAC originally designed these as a survey drone with minimal self-defense capabilites to blend into the environment of Hell. However, due to an error in the AI's code, the drone would identify all living beings as a threat and instantly shift into combat mode. The UAC decided to cut their losses and jettison the drones into Hell.\n\nThe Phantom will dance around and fire off plasma before charging into their target, frequently triggering infighting with passing demons.";
 	}
 	entry "MetaForgottenOne"
     {
@@ -183,7 +183,7 @@ page "Bestiary"
         offset 0, -16;
         name "Forgotten One";
         origin "Doom 3 (2004)";
-        description "Whereas the Lost Souls resemble the unnaturally large skulls of monsters past, the Forgotten One appears to be a human skull, having cast aside its body to follow in its horned cousin's footsteps. Even worse, many of them seem to have been recently-sourced, lurking near headless corpses and still bearing the viscera of a traumatic removal.\n\nFurther investigation has been difficult: Forgotten Ones are extremely fragile, and seem to fall apart into goo and bone marrow at the slightest touch. Research continues, but hopes of progress are low.";
+        description "Whereas the Lost Souls resemble the unnaturally large skulls of monsters past, the Forgotten One appears to be a human skull, having cast aside its body to follow in its horned cousin's footsteps. Even worse, many of them seem to have been recently-sourced, lurking near headless corpses and still bearing the viscera of a traumatic removal.\n\nFurther investigation has been difficult: Forgotten Ones are extremely fragile, and seem to fall apart into goo and bone marrow at the slightest touch. Research continues, but hopes of progress are low by even the most optimistic estimates.";
     }
 	
 	//===========================================
@@ -203,7 +203,7 @@ page "Bestiary"
 		name "Malwrath";
 		offset 0, 3;
 		origin "Doom 64 (1997)";
-		description "The Malwrath is an offshoot of the Cacodemon genus that has developed a pair of arms on its sides. These limbs allow it to channel its energy to form plasma into different shapes.\n\nThe Malwrath fires not one, not two, but three orbs of plasma at once. Not only are they tougher to dodge, but their combined heat is greater than the Cacodemon's single orb, burning through armor (and skin) with ease.";
+		description "The Malwrath is an offshoot of the Cacodemon genus that has developed a pair of arms on its sides. These limbs allow it to channel its energy to form plasma into different shapes.\n\nThe origin of its manacles have yet to be determined - is it considered a danger to other demons? Further research is required.\n\nThe Malwrath fires not one, not two, but three orbs of plasma at once. Not only are they tougher to dodge, but their combined heat is greater than the Cacodemon's single orb, burning through armor (and skin) with ease.";
 	}
 	
 	entry "MetaWretched"
@@ -223,7 +223,7 @@ page "Bestiary"
 		needs "Doom2"; 
 		name "Hell Knight";
         origin "Doom II: Hell on Earth (1994)";
-        description "These titanic creatures are pure muscle. They seem to be used primarily to guard areas from unwanted intruders, defending rather than attacking. When push comes to shove, though, they are more than equipped to fight back, using a mixture of brute force and demonic magics to fend off foes.\n\nArcheological digs seem to tell a story of the Hell Knight as a kind of gladiator-class, fighting in grand arenas for audiences of other demons. They also seem to have a genetic link to the Baron of Hell that has yet to be fully researched."; 
+        description "These titanic creatures are pure muscle. They seem to be used primarily to guard areas from unwanted intruders, defending rather than attacking. When push comes to shove, though, they are more than equipped to fight back, using a mixture of brute force and demonic magics to fend off foes.\n\nArcheological digs seem to tell a story of the Hell Knight as a kind of gladiator class, fighting in grand arenas for audiences of other demons. They also seem to have a genetic link to the Baron of Hell that has yet to be fully researched."; 
 	}
 	
 	entry "MetaBaronOfHell"
@@ -251,7 +251,7 @@ page "Bestiary"
 		offset 0, 10;
 		name "Spiborg";
         origin "Doom 64 (1997)";
-        description "This sub-species of the Arachnotron seems to have undergone impressive enhancements, with the walker having been completely rebuilt and the brain-like creature itself having developed a hardened chitinous coating to protect itself from harm. The underslung weapon has also been replaced with a previously undocumented plasma weapon, firing a single charged burst of white-hot energy.\n\nThese creatures, oddly, don't seem to have any social characteristics, standing silently to attention when not in combat. They may well be artificial creations built solely for war."; 
+        description "This sub-species of the Arachnotron seems to have undergone impressive enhancements, with the walker having been completely rebuilt and the brain-like creature itself having developed a hardened chitinous coating to protect itself from harm. The underslung weapon has also been replaced with a previously undocumented plasma weapon, firing a single charged burst of white-hot energy.\n\nThese creatures, oddly, don't seem to have any social characteristics, standing silently to attention when not in combat. They may well be artificial creations, built solely for war."; 
 	}
 	
 	//===========================================

@@ -6,7 +6,7 @@ page "Arsenal"
 	{
 		name "Chainsaw";
 		origin "Doom (1993)";
-		description "After an unfortunate shipping mix-up led to a shipping container of Chainsaws being sent to the Mars base instead of the requested Jackhammers, this humble lumber implement became a weapon of choice for criminals, sociopaths and other chemically-imbalanced individuals on UAC bases (where it is, of course, extremely illegal) all across the colonized universe. As it turns out, it's good for cutting down more than just trees... Both fire keys and the melee key offer unique means of attack.";
+		description "After an unfortunate shipping mix-up led to a shipping container of Chainsaws being sent to the Mars base instead of the requested Jackhammers, this humble lumber implement became a weapon of choice for criminals, sociopaths and other chemically-imbalanced individuals on UAC bases (where it is, of course, extremely illegal) all across the colonized universe. As it turns out, it's good for cutting down more than just trees...\nBoth fire keys and the melee key offer unique means of attack.";
 	}
 	entry "MetaAxe" 
 	{
