@@ -738,8 +738,7 @@ class CyberdemonSpawner : MetaBossSpawner // replaces Cyberdemon
 				|| mo is "MetaWolfensteinSNES"
 				|| mo is "MetaWolfensteinApple"
 				|| mo is "MetaWolfensteinMacOS"
-				|| mo is "MetaWolfensteinJava"
-				|| mo is "WolfensteinSS")
+				|| mo is "MetaWolfensteinJava")
 				{
 					SetStateLabel("Harbinger");
 					break;
