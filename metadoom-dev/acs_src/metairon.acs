@@ -46,129 +46,16 @@ script "Ironman_TallyUp" UNLOADING
 
 script "Ironman_StatsRun" (void)
 {
-	str obit;
+	// Figure out what language string to pluck out for the obit
+	str obit = StrParam(s:"OBIT_IRONMAN_",s:GetCVarString("meta_ironmantemp"));
 	
-	if (GetCVarString("meta_ironmantemp") == "MetaZombieMan")
-		obit = "You were shot dead by a Zombieman.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaHellRazer")
-		obit = "You were scorched in two by a Hell Razer.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaShotgunGuy")
-		obit = "You were splattered by a Shotgun Guy.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaZSec")
-		obit = "You were taken down by Z-Sec.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaMachineGunGuy")
-		obit = "You were tapped by a Machinegunner.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaChainGunGuy")
-		obit = "You were cut in half by a Chaingunner.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaAssassinGuy")
-		obit = "You were caught by a Former Assassin.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaDoomImp")
-		obit = "You were burned by an Imp.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaNightmareImp")
-		obit = "You were dropped by a Nightmare Imp.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaDoomImpLord")
-		obit = "You bowed down to the Imp Lord.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaHellhound")
-		obit = "You were de-jugulared by a HellHound.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaDemonDog")
-		obit = "You were de-jugulared by a Demon Dog";
-	else if (GetCVarString("meta_ironmantemp") == "MetaCerberus")
-		obit = "You were de-jugulared by a Cerberus";
-	else if (GetCVarString("meta_ironmantemp") == "MetaDemon")
-		obit = "You were devoured by a Pinky.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaBullDemon")
-		obit = "You were slammed by a Bull Demon.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaSpectre")
-		obit = "You were claimed by the darkness.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaNightmareSpectre")
-		obit = "You now know why you fear the night.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaSawcubus")
-		obit = "You were cut in half by a Sawcubus.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaTrite")
-		obit = "You were claimed by the Trites.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaCacodemon")
-		obit = "You were shocked by a Cacodemon.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaMalwraith")
-		obit = "You were split up by a Malwraith.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWretched")
-		obit = "You were licked by a Wretched.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaHellKnight")
-		obit = "You were slain by a Hell Knight.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaPainElemental")
-		obit = "You were swarmed by a Pain Elemental";
-	else if (GetCVarString("meta_ironmantemp") == "MetaBeholder")
-		obit = "You were blinked out by a Beholder.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaRahovart")
-		obit = "You were swarmed by Rahovart.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaLostSoul")
-		obit = "You were swarmed by a Lost Soul.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaPhantom")
-		obit = "You were droned out by a Phantom.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaArchVile")
-		obit = "You became a pawn of an Arch-Vile.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaSummoner")
-		obit = "You were evaporated by a Summoner.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaRevenant")
-		obit = "You were pulped by a Revenant.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaFiend")
-		obit = "You were tackled by a Fiend.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaBaronOfHell")
-		obit = "You fell before the Baron of Hell.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaArachnotron")
-		obit = "You were swatted by a Arachnotron.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaSpiborg")
-		obit = "You were disintegrated by a Spiborg.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaMancubus")
-		obit = "You were crushed by a Mancubus.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaBehemoth")
-		obit = "You were scorched by a Behemoth.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaCyberManc")
-		obit = "You were wasted by a Cyber-Mancubus.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaCyberdemon")
-		obit = "You were gibbed by the Cyberdemon.";
-	else if (GetCVarString("meta_ironmantemp") == "CyberdemonChargeDamager")
-		obit = "You were stomped by the Cyberdemon.";	
-	else if (GetCVarString("meta_ironmantemp") == "MetaSpiderMastermind")
-		obit = "You were snuffed by the Spider Mastermind.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaMotherDemon")
-		obit = "You were ended by the Mother.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaHellGuard")
-		obit = "You were wasted by the Hell Guards.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaHarbinger")
-		obit = "You were Harbinged to death.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinSS")
-		obit = "You were ray-traced from existence.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinSNES")
-		obit = "You were fatally bowdlerized.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinApple")
-		obit = "You fell to the quirks of NTSC displays.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinMacOS")
-		obit = "You went the way of Copland.";
-	else if (GetCVarString("meta_ironmantemp") == "MetaWolfensteinJava")
-		obit = "You took your turn and died.";
-	else if (GetCVarString("meta_ironmantemp") == "Drowning")
-		obit = "You went down with the ship.";
-	else if (GetCVarString("meta_ironmantemp") == "Slime")
-		obit = "You melted into a bubbling puddle of ooze.";
-	else if (GetCVarString("meta_ironmantemp") == "Crush")
-		obit = "You were pulped by the environment.";
-	else if (GetCVarString("meta_ironmantemp") == "Telefrag")
-		obit = "You were torn asunder from the inside-out.";
-	else if (GetCVarString("meta_ironmantemp") == "Falling")
-		obit = "You terminally cratered.";
-	else if (GetCVarString("meta_ironmantemp") == "Suicide")
-		obit = "You took the lame way out.";
-	else if (GetCVarString("meta_ironmantemp") == "Exit")
-		obit = "You pushed the Whopper Button. WHOO!";
-	else if (GetCVarString("meta_ironmantemp") == "Extreme")
-		obit = "You were painted all over the walls.";
-	else if (GetCVarString("meta_ironmantemp") == "InstantDeath")
-		obit = "You suffered an existence failure.";
-	else if (GetCVarString("meta_ironmantemp") == "Quake")
-		obit = "You were terminally shaken.";
-	else
-		obit = "You were killed by something really mean.";
-	
+	// If the resulting language entry is identical to the entry's name, then 
+	// it doesn't exist, so use a fallback instead
+	if (StrParam(l:obit) == obit)
+	{
+		obit = "OBIT_IRONMAN_FALLBACK";
+	}
+		
 	ClearInventory();
 	GiveInventory("DisableHUD",1);
 	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
@@ -193,7 +80,7 @@ script "Ironman_StatsRun" (void)
 	HudMessage(s:"Your Torment Has Ended"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 9999.0, 1.0, 1.0);
 	delay(35);
 	SetFont("SmallFont");
-	HudMessage(s:obit; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 9999.0, 1.0, 1.0);
+	HudMessage(l:obit; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 9999.0, 1.0, 1.0);
 	delay(126);
 	
 	if (mapsCleared <= 2)
