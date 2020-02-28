@@ -21,28 +21,7 @@
 
 import "codex/bestiary.cdx";
 
-page "Arsenal"
-{
-	layout 1;
-	
-	entry "MetaChainsaw" {}
-	entry "MetaAxe" {}
-	entry "MetaPistol" {}
-	entry "MetaShotgun" {}
-	entry "MetaHolyWaterPistol" {}
-	entry "MetaSuperShotgun" {}
-	entry "MetaFireExtinguisher" {}
-	entry "MetaMachineGun" {}
-	entry "MetaChaingun" {}
-	entry "MetaRocketLauncher" {}
-	entry "MetaGrenadeLauncher" {}
-	entry "MetaPlasmaRifle" {}
-	entry "MetaLightningGun" {}
-	entry "MetaGaussCannon" {}
-	entry "MetaBFG9000" {}
-	entry "MetaUnmaker" {}
-	entry "MetaSoulCube" {}
-}
+import "codex/weapons.cdx";
 
 import "codex/powerups.cdx";
 

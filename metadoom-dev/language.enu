@@ -33,6 +33,9 @@ OPTMNU_METADOOM		= "MetaDoom Options";
 
 OPTVAL_OTHER		= "Cyborg";
 
+// Codex
+MC_NoDesc = "No codex entry available.";
+
 // Stats Screen
 TXT_IMKILLS = "Kills";
 TXT_IMITEMS = "Items";

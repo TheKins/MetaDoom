@@ -18,6 +18,7 @@ mixin class LootSpawn
 {
 	void A_SpawnLoot(string item)
 	{
+		// If this is a MetaDoom map, don't do anything.
 		bool dothething = true;
 		
 		ThinkerIterator it = ThinkerIterator.Create("MetaDoomMapID");

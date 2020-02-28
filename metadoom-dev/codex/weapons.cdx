@@ -1,0 +1,107 @@
+page "Arsenal"
+{
+	layout 1;
+	
+	entry "MetaChainsaw"
+	{
+		name "Chainsaw";
+		origin "Doom (1993)";
+		description "After an unfortunate shipping mix-up led to a shipping container of Chainsaws being sent to the Mars base instead of the requested Jackhammers, this humble lumber implement became a weapon of choice for criminals, sociopaths and other chemically-imbalanced individuals on UAC bases (where it is, of course, extremely illegal) all across the colonized universe. As it turns out, it's good for cutting down more than just trees... Both fire keys and the melee key offer unique means of attack.";
+	}
+	entry "MetaAxe" 
+	{
+		name "Fire Axe";
+		origin "Doom RPG (2005)";
+		description "A standard-issue fireman's axe, with a flat steel head and a wooden handle. Not exactly the highest tech, but the odds of it outliving you were already pretty high before the whole demonic invasion thing. Press either fire key to swing it.\n\nThe axe instantly kills Zombified enemies, inflicts bleeding damage on others and can break barrels without exploding them, which may come in more useful than you'd first expect...";
+	}
+	entry "MetaPistol" 
+	{
+		name "EMG Sidearm";
+		origin "Doom (2016)";
+		description "One of the most recent of the UAC's military innovations, the EMG (Energy-Matter-Gel) Sidearm replaces the Berettas that had been traditionally used by security personnel with what amounts to an energy blaster, launching a hardened plasma gel at high velocities. In addition, so as to avoid another 'duct tape incident', the EMG Sidearm implements a small, lightweight flashlight under the barrel, which allows users to light their way and remain combat-ready at the same time.";
+	}
+	entry "MetaShotgun" 
+	{
+		name "Combat Shotgun";
+		origin "Doom (1993)";
+		description "The latest in a long, proud lineage, the Combat Shotgun is designed to blast enemies with a spread of high-velocity buckshot. While it's primarily designed for close-range combat, security personnel have reported reasonable amounts of success peppering enemies from other non-extreme distances.\nRecent upgrades have allowed the attachment of an underslung grenade launcher that's reasonably effective at dispersing close-knit groups, especially if you can figure out the arc...";
+	}
+	entry "MetaHolyWaterPistol" 
+	{
+		name "Holy Water Pistol";
+		origin "Doom II RPG (2009)";
+		description "UAC research has turned up a number of powerful relics, leftover from a great battle milennia ago. Why some researcher decided to shove one into a children's toy is currently unknown, but the end results are surprisingly impressive. The pistol turns any liquids inside it into Holy Water, which scorches and terrifies lower-ranking demons. You can refill the device in many fluid sources you may find, including radioactive waste. Press Alternate Fire to drink from it, restoring health and curing bad breath.";
+	}
+	entry "MetaSuperShotgun" 
+	{
+		name "Super Shotgun";
+		origin "Doom II (1994)";
+		description "Among the state-of-the-art, high-tech implements of deterrance that make up the UAC arsenal, the ''Super'' Shotgun is a curious anomaly, with very little to differentiate it from a traditional farmer's tool. While it's long been struck from the UAC's Approved Weapons List, many veteran security personnel insist on keeping theirs, and when you use it, it'll be easy to see why: a quick squeeze of the trigger effectively blankets the air in front of the user with a cloud of buckshot from both barrels.";
+	}
+	entry "MetaFireExtinguisher" 
+	{
+		name "Fire Extinguisher";
+		origin "Doom RPG (2005)";
+		description "Your standard-issue, run-of-the-mill aluminum cylinder full of chemical foam, designed for dealing with electrical fires, cooking incidents, and the burning pits of Hell Itself. Press Fire to spray it out in front of you and extinguish fireballs, burning barrels and other things that make your skin sizzle. Press Alternate Fire to spray it over yourself, which will temporarily prevent Arch-Viles from working their evil fire magicks upon you.";
+	}
+	entry "MetaMachineGun" 
+	{
+		name "Assault Rifle";
+		origin "Doom 3 (2004)";
+		description "The long-time standard issue weapon of the UAC's security forces, the Assault Rifle is at its core a traditional portable Machine Gun, peppering opponents with low-calibre bullets. It's effective, but it's believed that the next generation of the Plasma Rifle is planned to replace it once its ready for mass-production.\nAlternate fire lets the user toggle a side-mounted rack of micro-missiles. While these are much more effective, they consume your ammo much faster, and as such should be used sparingly.";
+	}
+	entry "MetaChaingun" 
+	{
+		name "Chaingun";
+		origin "Doom (1993)";
+		description "There were experiments on both sides of World War 2 to convert heavy turrets and aircraft-mounted weapons into man-portable formats. The concept continues to be flirted with by way of portable vulcan cannons, but finding people who can withstand carrying and firing the weapons is taking a lot longer than developing the tech...\nAlternate Fire converts the weapon into a stationary, triple barreled terror that can reduce practically any demon (as well as your ammo supply) to confetti in a fraction of a second!";
+	}
+	entry "MetaRocketLauncher" 
+	{
+		name "Rocket Launcher";
+		origin "Doom (1993)";
+		description "Originally popularized in the 20th century as an anti-armor weapon, the Rocket Launcher received a new breath of life in the 21st as a tool for demolition and excavation in harsh non-Earth environments. Its origins weren't long-forgotten, though, and the tool was quickly re-repurposed. By hitting the alternate fire key, any rockets you have launched will be detonated in mid-air via radio signal, spraying the general vicinity with lethal shrapnel!";
+	}
+	entry "MetaGrenadeLauncher" 
+	{
+		name "Grenade Launcher";
+		origin "Doom DLC 3: Bloodfall (2016)";
+		description "A relatively new variant of the Rocket Launcher produced at the request of several senior Heavy Weapons personnel, the Grenade Launcher is comparatively lightweight. While its projectiles are subject to gravity, they are fired out with far greater force, allowing canny Marines to safely destroy unsuspecting crowds from around corners. Alternate Fire launches an experimental ''gas bomb'', which clever Marines may find useful for generating literal chokepoints while they make good their escape.";
+	}
+	entry "MetaPlasmaRifle" 
+	{
+		name "Plasma Rifle";
+		origin "Doom (1993)";
+		description "The next generation of the UAC's standard-issue weaponry, the Plasma Rifle fires large blue blobs of energy at opponents at a frankly frightening rate. The only things stopping it from replacing the Assault Rifle are weight, the costs of Argent Energy batteries, and some dangerous heat-output issues that are still being addressed: As you fire the Plasma Rifle, a ''heat bar'' will build up. When the bar is full, hit Alternate Fire to expel this energy as a room-clearing 360-degree attack!";
+	}
+	entry "MetaLightningGun" 
+	{
+		name "Lightning Gun";
+		origin "Doom (2016)";
+		description "During the development of the Plasma Rifle, a number of failed prototypes were produced. This one failed in such a unique and interesting way that it was developed further, channeling plasma energy into a semi-predictable, short range stream of agony.  Alternate Fire launches an unstable ball of plasma energy that, upon impact, blossums into a searing mass of energy that effectively stuns enemies within the blast radius, leaving them easy pickings for other means of attack.";
+	}
+	entry "MetaGaussCannon" 
+	{
+		name "Gauss Cannon";
+		origin "Doom (2016)";
+		description "Based on Gauss Accelerator systems used in a number of industrial projects, as well as the experimental electromagnetic ''Railgun'' weapons from the early 21st century, the Gauss Cannon launches plasma charges at absurdly high velocities with extreme accuracy. The excessive speeds involved, along with the unstable makeup of the plasma charges, results in a violent explosion upon impact. Press Alternate Fire to toggle the weapon's scope, making it easier to hit enemies from a long range.";
+	}
+	entry "MetaBFG9000" 
+	{
+		name "BFG 9000";
+		origin "Doom (1993)";
+		description "The. Ultimate. Gun. The prize of the military's arsenal, the BFG 9000 combines everything the UAC knows about weaponized plasma, weaponized Argent Energy, and weaponized EVERYTHING into one 300-pound package. While it's the most powerful weapon mankind has ever laid its eyes upon, its sheer size renders it impossible for one man to wield (well, unless that one man was really, REALLY angry, but what are the odds?) It has two firing modes, but all other info is classified...";
+	}
+	entry "MetaUnmaker" 
+	{
+		name "The Unmaker";
+		origin "Doom 64 (1997)";
+		description "A mysterious weapon of demonic origin, the history and development of this weapon is shrouded in mystery and fire. Its curious ribcage-like aesthetic, grip designed for human hands and - most worrying of all - usage of standard issue Cell batteries have lead scientists, archaeologists and military brass to unite behind one single, direct question: ''What the !@#%* is this?''\nThe Alternate Fire button, strangely enough, seems to produce nothing more than a dull click. Something must be missing...";
+	}
+	entry "MetaSoulCube"
+	{
+		name "Soul Cube";
+		origin "Doom 3 (2004)";
+		description "A strange device developed by a long-extinct alien species. Next to nothing is known of it, even as archaeological efforts work to literally dig up the secret history of whoever previously occupied Mars. Some researchers claim that this is a living weapon. Others consider it a creepy-looking paperweight. When you have ten soul orbs, hitting either of the fire keys will launch off the cube, where it will home in on your target and deliver a grave blow, spewing forth a practical tidal wave of health and ammo!";
+	}
+}

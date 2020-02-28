@@ -1,7 +1,18 @@
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Level Post-Processor
+----------------------------
+*/
+
+// For changing and fixing things in pre-existing maps.
 class MetaMapFucker : LevelPostProcessor
 {
 	protected void Apply(Name checksum, String mapname)
 	{
+		// Changes my Modder Test Map to be a MetaDoom map with MetaDoom items
+		// pre-placed for perhaps a little too much ease of access
 		if (mapname ~== "TEST")
 		{
 			// Add MetaDoomMapID
