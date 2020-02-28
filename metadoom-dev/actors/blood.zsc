@@ -508,13 +508,38 @@ class BloodSplat : Actor
 		StencilColor "7b 00 00";
 		Species "BloodSplat";
 	}
-		int user_gettime;
-		int user_lifetime;
-		int user_water;
-		float user_scaleadd;
-		float user_z;
-		
-		int bloodradius;
+	
+	int user_gettime;
+	int user_lifetime;
+	int user_water;
+	float user_scaleadd;
+	float user_z;
+	
+	int bloodradius;
+	
+	static const string fluidtex_resa[] =
+	{
+		"FWATER1","FWATER2","FWATER3","FWATER4",
+		"SLIME01","SLIME02","SLIME03","SLIME04",
+		"SLIME05","SLIME06","SLIME07","SLIME08",
+		"BLOOD1","BLOOD2","BLOOD3",
+		// PSX Doom
+		"WATER01","BSLIME01","CSLIME01",
+		// BTSX
+		"FWATER02"
+	};
+	
+	static const string fluidtex_resb[] =
+	{
+		"NUKAGE1","NUKAGE2","NUKAGE3","LAVA1",
+		"LAVA2","LAVA3","LAVA4",
+		// Doom 64
+		"D64B1_01","D64B2_01","D64BLOD1","D64N1_01",
+		"D64N2_01","D64NUKG1","D64NUKG2","D64S1_01",
+		"D64S2_01","D64SLDG1","D64SLDG2","D64W1_01",
+		"D64W2_01","D64WATR1","D64WATR2","D64L1_01",
+		"D64LAVA1","D64LAVA2"
+	};
 	
 	States
 	{
@@ -523,7 +548,27 @@ class BloodSplat : Actor
 		{
 			angle = 				random(0,359);
 			user_gettime = 			GetCVar("meta_perf_bloodtime");
-			user_water = 			CallACS("BloodFX_Water", 0, 0, 0);
+			//user_water = 			CallACS("BloodFX_Water", 0, 0, 0);
+			
+			for (int i = 0; i < fluidtex_resa.Size(); ++i)
+			{
+				if (floorpic == TexMan.CheckForTexture(fluidtex_resa[i], TexMan.Type_Flat))
+				{
+					//Console.Printf ("Blood 2");
+					user_water = 2;
+					break;
+				}
+			}
+			
+			for (int i = 0; i < fluidtex_resb.Size(); ++i)
+			{
+				if (floorpic == TexMan.CheckForTexture(fluidtex_resb[i], TexMan.Type_Flat))
+				{
+					//Console.Printf ("Blood 3");
+					user_water = 3;
+					break;
+				}
+			}
 			
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
@@ -633,7 +678,27 @@ class BloodSplat_Permanent : BloodSplat
 		{
 			angle = 				random(0,359);
 			user_gettime = 			GetCVar("meta_perf_bloodtime");
-			user_water = 			CallACS("BloodFX_Water", 0, 0, 0);
+			//user_water = 			CallACS("BloodFX_Water", 0, 0, 0);
+			
+			for (int i = 0; i < fluidtex_resa.Size(); ++i)
+			{
+				if (floorpic == TexMan.CheckForTexture(fluidtex_resa[i], TexMan.Type_Flat))
+				{
+					//Console.Printf ("Blood 2");
+					user_water = 2;
+					break;
+				}
+			}
+			
+			for (int i = 0; i < fluidtex_resb.Size(); ++i)
+			{
+				if (floorpic == TexMan.CheckForTexture(fluidtex_resb[i], TexMan.Type_Flat))
+				{
+					//Console.Printf ("Blood 3");
+					user_water = 3;
+					break;
+				}
+			}
 			
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
@@ -675,7 +740,7 @@ class BloodSplat_Permanent : BloodSplat
 				A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
 			}
 			
-			if (user_water != 1)
+			if (user_water != 0)
 			{
 				return resolvestate("null");
 			}
