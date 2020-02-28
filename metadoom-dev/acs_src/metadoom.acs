@@ -573,38 +573,7 @@ script "Item_GameDetector" (void)
 	}
 }
 
-script "DebugLog_GameDetector" OPEN
-{
-	if(GetCvar("meta_developer"))
-	{
-		str maplump = StrParam(n:PRINTNAME_LEVEL);
-		
-		if (StrCmp(StrLeft(maplump, 2), "E1") == 0
-		| StrCmp(StrLeft(maplump, 2), "E2") == 0
-		| StrCmp(StrLeft(maplump, 2), "E3") == 0
-		| StrCmp(StrLeft(maplump, 2), "E4") == 0 
-		| StrCmp(StrLeft(maplump, 2), "E5") == 0
-		| StrCmp(StrLeft(maplump, 2), "E6") == 0
-		| StrCmp(StrLeft(maplump, 2), "E7") == 0
-		| StrCmp(StrLeft(maplump, 2), "E8") == 0
-		| StrCmp(StrLeft(maplump, 2), "E9") == 0)
-		{
-				log(s:"Map Type: Doom 1 Episodic");
-		}
-		else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
-		{
-				log(s:"Map Type: Doom 2 Episodic");
-		}
-		else
-		{
-				log(s:"Map Type: Doom 2... probably");
-		}
-	}
-}
-
-
 // Actor Variety System
-
 
 script "Monster_Init" ENTER
 {
@@ -714,7 +683,11 @@ script "PlayerInventoryFixer" ENTER
 	}
 	
 	// Precautions to prevent the player being unable to fight back
-	if (CheckInventory("MetaPistol") == 0 && CheckInventory("MetaLastResortFist") == 0 && GameType() != GAME_TITLE_MAP)
+	
+	if (CheckInventory("MetaPistol") == 0
+	&& CheckInventory("MetaLastResortFist") == 0
+	&& GameType() != GAME_TITLE_MAP
+	&& StrCmp(StrLeft(StrParam(n:PRINTNAME_LEVEL), 4), "DEAD") != 0)
 	{
 		if(GetCvar("meta_developer"))
 			log(s:"ACS: Player has no Pistol! Giving them some means of defending themselves...");
@@ -917,4 +890,43 @@ script "BrutalChecker" ENTER
 		HUDMSG_TYPEON | HUDMSG_LOG, 0, CR_TAN, 1.5, 0.8, 5.0,
 		0.05, 2.0);
     }
+}
+
+// Debuggery
+
+script "DebugLog_GameDetector" OPEN
+{
+	if(GetCvar("meta_developer"))
+	{
+		str maplump = StrParam(n:PRINTNAME_LEVEL);
+		
+		if (StrCmp(StrLeft(maplump, 2), "E1") == 0
+		| StrCmp(StrLeft(maplump, 2), "E2") == 0
+		| StrCmp(StrLeft(maplump, 2), "E3") == 0
+		| StrCmp(StrLeft(maplump, 2), "E4") == 0 
+		| StrCmp(StrLeft(maplump, 2), "E5") == 0
+		| StrCmp(StrLeft(maplump, 2), "E6") == 0
+		| StrCmp(StrLeft(maplump, 2), "E7") == 0
+		| StrCmp(StrLeft(maplump, 2), "E8") == 0
+		| StrCmp(StrLeft(maplump, 2), "E9") == 0)
+		{
+				log(s:"Map Type: Doom 1 Episodic");
+		}
+		else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
+		{
+				log(s:"Map Type: Doom 2 Episodic");
+		}
+		else if (StrCmp(StrLeft(maplump, 8), "TITLEMAP") == 0)
+		{
+				log(s:"Map Type: Title Screen");
+		}
+		else if (StrCmp(StrLeft(maplump, 4), "DEAD") == 0)
+		{
+				log(s:"Map Type: Ironman Game Over");
+		}
+		else
+		{
+				log(s:"Map Type: Doom 2... probably");
+		}
+	}
 }
