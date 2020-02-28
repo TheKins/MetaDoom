@@ -62,7 +62,7 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		Tag "$TAGHWP";
 		+WEAPON.AMMO_OPTIONAL
 		Inventory.PickupSound "weapons/waterpistol/get";
-		scale 0.5;
+		scale 0.75;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Holy Water Pistol"
 		//$NotAngled
@@ -154,7 +154,7 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		HWPH A 4;
 		goto Ready;
  	Spawn:
-		HWPP A -1;
+		HWPP Z -1;
 		Stop;
 	}
 }
