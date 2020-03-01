@@ -1,0 +1,97 @@
+/*
+----------------------------
+MetaDoom
+Game & Map Definitions
+Ironman Maps
+----------------------------
+*/
+
+// Doom 2 Ending Revamp
+Intermission Inter_Cast
+{
+	Image
+	{
+		// This is only here to initialize the background and the music
+		Background = "$bgcastcall"
+		Time = -70
+		Music = "$MUSIC_EVIL"
+	}
+	Link = MetaTheEnd
+}
+
+Intermission MetaTheEnd
+{
+	// no backgrounds are set here so this will reuse the previous one.
+	Image
+	{
+		Draw = "END01", 108, 68
+		Time = -5
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END02", 108, 68
+		Time = -5
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END03", 108, 68
+		Time = -5
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END04", 108, 68
+		Time = -5
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END05", 108, 68
+		Time = -5
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END06", 108, 68
+		Time = -50
+		Sound = "intermission/nextstage"
+	}
+	Image
+	{
+		Draw = "END07", 108, 68
+		Time = -5
+		Sound = "cast/shot"
+	}
+	Image
+	{
+		Draw = "END08", 108, 68
+		Time = -5
+		Sound = "cast/shot"
+	}
+	Image
+	{
+		Draw = "END09", 108, 68
+		Time = -5
+		Sound = "cast/shot"
+	}
+	Image
+	{
+		Draw = "END10", 108, 68
+		Time = -5
+		Sound = "cast/shot"
+	}
+	Image
+	{
+		Draw = "END11", 108, 68
+		Time = -5
+		Sound = "cast/shot"
+	}
+	Image
+	{
+		Draw = "END12", 108, 68
+		Time = -50
+		Sound = "cast/end"
+	}
+}

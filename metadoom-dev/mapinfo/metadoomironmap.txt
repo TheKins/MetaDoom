@@ -1,0 +1,246 @@
+/*
+----------------------------
+MetaDoom
+Game & Map Definitions
+Ironman Maps
+----------------------------
+*/
+
+// Gross workaround for Ironman Cluster Stuffs:
+// Attempting to warp the player to a different cluster results in a story text
+// screen popping up. To work around this, we have a duplicate of the Ironman
+// death map defined for many possible cluster numbers and use ACS to send the
+// player to the right one. This should cover everything in WadSmoosh...
+map DEAD0 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 0
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD1 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 1
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD2 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 2
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD3 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 3
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD4 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 4
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD5 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 5
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD6 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 6
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD7 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 7
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD8 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 8
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD9 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 9
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD10 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 10
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD11 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 11
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD12 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 12
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD13 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 13
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD14 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 14
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD15 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 15
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD16 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 16
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD17 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 17
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD18 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 18
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD19 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 19
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD20 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 20
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD21 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 21
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD22 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 22
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD23 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 23
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD24 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 24
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
+
+map DEAD25 "The Demons Gave You The Boot!"
+{
+    ResetHealth
+	cluster = 25
+	NoAutosaveHint
+	NoIntermission
+	music = "M_IRONMN"
+}
