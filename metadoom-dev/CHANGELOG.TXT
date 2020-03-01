@@ -57,6 +57,7 @@ Weapon Changes:
   second of it. Please add psprite scaling, Mr. Chicken...
 - Added new bindable keys to quickly switch directly to the Holy Water Pistol,
   Fire Extinguisher and SoulCube without fumbling through the rest of the arsenal.
+- Made the Lightning Gun pickup sprite less of an affront to God.
 
 UI Changes:
 - Converted the fonts to the modern, Unicode-friendly standard, for localization
