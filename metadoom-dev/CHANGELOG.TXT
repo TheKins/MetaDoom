@@ -85,6 +85,8 @@ Item Changes:
 - Inventory pickups and treasure items now use a new spawning method that tries
   to avoid placing items in damaging sectors, to avoid situations where those
   much-needed Siphon Grenades are stuck in lava.
+- The Hand Grenade's pickup and projectile sprites have been given a scrub-up,
+  and the projectile now has more frames, so as to animate more naturally.
 - The Shield Wall is now the colour of the player who threw it, and lets them
   walk through it freely. (In co-op all players can walk through.)
 - The Shield Wall now physically blocks other players in Deathmatch, as well as
@@ -96,6 +98,13 @@ Item Changes:
 - The rare figurine treasure items have been expanded into a new set of "Lore Items"
   that have a rare chance of appearing in secret areas. Collect 'em all, and check
   'em all out in your Codex when you have a spare moment!
+  
+Player Changes:
+- Replaced Zombie's ACS footsteps script with vsonnier's ZScript port, with some
+  minor tweaks to fix various issues like footstep sounds playing globally under
+  some non-ideal circumstances. Like multiplayer. Or voodoo dolls on conveyor belts.
+- Added a CVar to toggle footstep sounds.
+- Fixed electrical shock effects when killed by a Cacodemon not being fullbright.
 
 Mapping Changes:
 - Added appropriate metadata etc. to allow level designers to build maps for
@@ -106,10 +115,6 @@ Mapping Changes:
 - See MAPMAKING.TXT inside the PK3 for important notes and info!
 
 Other Changes:
-- Replaced Zombie's ACS footsteps script with vsonnier's ZScript port, with some
-  minor tweaks to fix various issues like footstep sounds playing globally under
-  some non-ideal circumstances. Like multiplayer. Or voodoo dolls on conveyor belts.
-- Added a CVar to toggle footstep sounds.
 - Fixed a minor bug where not all Doom 64 TC monsters would be replaced.
 - Disabled collisions between certain effects actors (gibs, casings etc.) and
   all other actors, preventing awkward-looking cases of, say, casings getting stuck
@@ -120,8 +125,7 @@ Other Changes:
 - All monsters and other shootable actors now have name tags, for use by other
   mods such as Target Spy.
 - Episodic Spawn Rules will now detect Doom 1 episodes using the "E#M#" naming
-  scheme up to Episode 9, instead of the previous limit of Episode 5.
-- Fixed electrical shock effects when killed by a Cacodemon not being fullbright.
+  scheme up to Episode 9. Previously it only went up to Episode 5.
 - Blood splats no longer hang over ledges and look weird.
 - Debug messages are far less spammy and much more informative.
   (Not that you're supposed to notice, mind you...)
