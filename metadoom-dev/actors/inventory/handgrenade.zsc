@@ -109,7 +109,7 @@ class HandGrenadeProj : Actor
 		}
 		goto Flying;
 	Flying:
-		HGRE ABCDEF 3 
+		HGRE ABCDEFGH 3 
 		{
 			if (user_timer>=44)
 			{
