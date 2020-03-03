@@ -63,7 +63,7 @@ WildWeasel (Tracer fastprojectiles effect)
 ART RESOURCES (WEAPONS AND ITEMS):
 Blue Shadow (Doom 3 Keycard Sprites)
 Cage (Doom 64 Shotgun sprites)
-Captain J (Fire Extinguisher, all sorts of other nice sprites)
+Captain J (Fire Extinguisher, Medikit, all sorts of other nice sprites)
 Eriance (Grenade Launcher parts)
 Fulsam (Gauss Cannon sprite)
 IMX (Fire Extinguisher sprites)
@@ -84,7 +84,7 @@ Cherno (3D sphere model used for Siphon Grenade explosions)
 
 ART RESOURCES (ACTORS):
 Cage (Mother Demon sprites)
-Captain J (Dog-class Former Assassin AND Sawcubus sprites)
+Captain J (Hellhound class, Former Assassin AND Sawcubus sprites)
 Das M (Former Commando sprites)
 David G./ItsNatureToDie (Cacodemon Gib Sprites, Former Lieutenant sprites, burning hands)
 Eriance (Beholder sprite)
