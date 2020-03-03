@@ -114,9 +114,6 @@ class MetaMedikitNoItemSpawn : MetaMedikit
 	Default
 	{
 		+BLOCKASPLAYER
-		BounceType "Grenade";
-		BounceFactor 0.0;
-		WallBounceFactor 1.0;
 		//$Category "Health and Armor/MetaDoom"
 		//$Title "Medikit (No Item Spawn Chance)"
 		//$NotAngled
