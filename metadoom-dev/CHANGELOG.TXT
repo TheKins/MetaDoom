@@ -57,6 +57,8 @@ Weapon Changes:
   second of it. Please add psprite scaling, Mr. Chicken...
 - Added new bindable keys to quickly switch directly to the Holy Water Pistol,
   Fire Extinguisher and SoulCube without fumbling through the rest of the arsenal.
+- Shells now spawn near Holy Water Pistols and Fire Extinguishers, to try and
+  preserve ammo balance. Ditto Cells and the BFG.
 - Made the Lightning Gun pickup sprite less of an affront to God.
 
 UI Changes:
