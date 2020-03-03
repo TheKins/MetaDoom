@@ -123,12 +123,7 @@ class MetaMedikitNoItemSpawn : MetaMedikit
 	States
 	{
 	Spawn:
-		MEDI A 0;
-		"####" "#" 0;
-		goto MoveAround;
-	MoveAround:
-		"####" "#" 35;
-		"####" "#" 0 A_Stop; // Prevents bouncing around wallsliding all day
+		MKIT A 0;
 		goto Chill;
 	}
 }
