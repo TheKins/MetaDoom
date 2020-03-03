@@ -51,6 +51,26 @@ mixin class LootSpawn
 			{
 				newitem.A_Wander();
 				
+				// Try and make spawned items stay away from items of the same type,
+				// to prevent them more or less being placed in the same place as another
+				// item spawned at the same time. This ALMOST works, except when spawners
+				// are spawned manually using the summon cheat.
+				BlockThingsIterator bit = BlockThingsIterator.Create(self,64,0);
+				while (bit.Next())
+				{
+					Actor fo = bit.thing;
+					
+					if (newitem.GetClassName() == item || fo.GetClassName() == self.GetClassName()) // && !(fo is newitem))
+					{
+						newitem.A_Face(fo, 0, 270, 180, 0, 0);
+						
+						for (int i = 0; i < 8; i++)
+						{
+							newitem.A_Wander(CHF_DONTTURN);
+						}
+					}
+				}
+				
 				// Stuck on a damage sector? Give it insane stepheight so it can haul
 				// its ass out to somewhere safe, and give it a little time.
 				if (level.PointInSector((newitem.pos.x,newitem.pos.y)).damageamount != 0)
