@@ -82,7 +82,8 @@ class MetaMedikit : Health replaces Medikit
 		Inventory.PickupSound "items/health/medi";
 		TeleFogSourceType "MetaItemFog";
 		TeleFogDestType "MetaItemFog";
-		Scale 0.5;
+		//Scale 0.5;
+		yscale 0.8;
 	}
 	
 	mixin LootSpawn;
@@ -100,8 +101,10 @@ class MetaMedikit : Health replaces Medikit
 		MKIT A 0 A_SpawnLoot("ShieldWallPickup");
 		goto Chill;
 	Chill:
-		MKIT A -1;
-		Stop;
+		MKIT A 0 A_Jump(256, random(0,3));
+	Animate:
+		MKIT ABCB 4;
+		loop;
 	}
 }
 
