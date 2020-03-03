@@ -47,12 +47,40 @@ class MetaLoreItems : EventHandler
 						// Make sure the secret isn't a closed door like in E1M1, so the item has room to spawn.
 						if (level.Sectors[i].floorplane.ZAtPoint(c) != level.Sectors[i].ceilingplane.ZAtPoint(c))
 						{
-							Actor.Spawn("MetaLoreItemSpawner", spam3);
+							Actor newitem = Actor.Spawn("MetaLoreItemSpawner", spam3);
+							
+							// Fiddle around with spawn location to try and minimise
+							// chances of overlapping a more important item.
+							BlockThingsIterator bit = BlockThingsIterator.Create(newitem,64,0);
+							while (bit.Next())
+							{
+								Actor fo = bit.thing;
+								
+								if (fo is "Inventory" || fo is "Weapon")
+								{
+									if (meta_developer)
+										Console.printf("Lore Item: Spawner at %i x %i overlapping an item, moving...", c.x, c.y);
+									//newitem.speed = 2;									
+									newitem.A_Face(fo, 0, 270, 180, 0, 0);
+									newitem.vel.x = 4;
+								}
+							}
+							
 							if (meta_developer)
-								Console.printf("Lore Item: Spawned at %i %i", c.x, c.y);
+								Console.printf("Lore Item: Spawned at %i x %i", c.x, c.y);
 						} else {
-							if (meta_developer)
-								Console.printf("Lore Item: Failed to spawn at %i %i", c.x, c.y);
+							if (meta_developer && !level.IsPointInMap(spam3))
+							{
+								Console.printf("Lore Item: Failed to spawn at %i x %i (Outside of Map)", c.x, c.y);
+							}
+							else if (meta_developer && (level.Sectors[i].floorplane.ZAtPoint(c) == level.Sectors[i].ceilingplane.ZAtPoint(c)))
+							{
+								Console.printf("Lore Item: Failed to spawn at %i x %i (Door Stuck!)", c.x, c.y);
+							}
+							else if (meta_developer)
+							{
+								Console.printf("Lore Item: Failed to spawn at %i x %i (Dunno Why, Though)", c.x, c.y);
+							}
 						}
 					} else {
 						if (meta_developer)
