@@ -55,7 +55,7 @@ mixin class LootSpawn
 				// to prevent them more or less being placed in the same place as another
 				// item spawned at the same time. This ALMOST works, except when spawners
 				// are spawned manually using the summon cheat.
-				BlockThingsIterator bit = BlockThingsIterator.Create(self,64,0);
+				BlockThingsIterator bit = BlockThingsIterator.Create(newitem,64,0);
 				while (bit.Next())
 				{
 					Actor fo = bit.thing;
