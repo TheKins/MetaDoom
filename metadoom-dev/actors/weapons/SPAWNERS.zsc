@@ -52,6 +52,8 @@ class PistolSpawner : Actor replaces Pistol
 
 class ShotgunSpawner : Actor replaces Shotgun
 {
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:
@@ -75,13 +77,20 @@ class ShotgunSpawner : Actor replaces Shotgun
 		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
 		stop;
 	HolyWaterPistol:
-		TNT1 A 0 A_SpawnItemEx("MetaHolyWaterPistolPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		TNT1 A 0 
+		{
+			A_SpawnLoot("Shell2");
+			A_SpawnLoot("Shell2");
+			A_SpawnItemEx("MetaHolyWaterPistolPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		}
 		stop;
 	}
 }
 
 class SuperShotgunSpawner : Actor replaces SuperShotgun
 {
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:
@@ -96,7 +105,12 @@ class SuperShotgunSpawner : Actor replaces SuperShotgun
 		TNT1 A 0 A_Jump(64,"FireExt");
 		goto SuperShotgun;
 	FireExt:
-		TNT1 A 0 A_SpawnItemEx("MetaFireExtinguisherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		TNT1 A 0 
+		{
+			A_SpawnLoot("Shell2");
+			A_SpawnLoot("Shell2");
+			A_SpawnItemEx("MetaFireExtinguisherPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		}
 		stop;
 	SuperShotgun:
 		TNT1 A 0 A_SpawnItemEx("MetaSuperShotgunPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
@@ -194,6 +208,8 @@ class PlasmaRifleSpawner : Actor replaces PlasmaRifle
 
 class BFGSpawner : Actor replaces BFG9000
 {
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:
@@ -215,7 +231,12 @@ class BFGSpawner : Actor replaces BFG9000
 		TNT1 A 0 A_Jump(128,"Unmaker");
 		goto BFG9000;
 	BFG9000:
-		TNT1 A 0 A_SpawnItemEx("MetaBFG9000Pickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		TNT1 A 0 
+		{
+			A_SpawnLoot("Cell2");
+			A_SpawnLoot("Cell2");
+			A_SpawnItemEx("MetaBFG9000Pickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
+		}
 		stop;
 	Unmaker:
 		TNT1 A 0 A_SpawnItemEx("MetaUnmakerPickup",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION);
