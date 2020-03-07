@@ -578,9 +578,9 @@ class BloodSplat : Actor
 			user_z = pos.z;
 						
 			//Ordinary splat?
-			if (CheckClass("BloodSplat",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatGreen",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatBlue",AAPTR_DEFAULT))
+			if (self.GetClass() == "BloodSplat" ||
+				self.GetClass() == "BloodSplatGreen" ||
+				self.GetClass() == "BloodSplatBlue")
 			{
 				if (user_water == 3)	{ return resolvestate("W"); }
 				if (user_water == 2)	{ return resolvestate("X"); }
@@ -708,9 +708,9 @@ class BloodSplat_Permanent : BloodSplat
 			user_z = pos.z;
 						
 			//Ordinary splat?
-			if (CheckClass("BloodSplat_Permanent",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatGreen_Permanent",AAPTR_DEFAULT) ||
-				CheckClass("BloodSplatBlue_Permanent",AAPTR_DEFAULT))
+			if (self.GetClass() == "BloodSplat_Permanent" ||
+				self.GetClass() == "BloodSplatGreen_Permanent" ||
+				self.GetClass() == "BloodSplatBlue_Permanent")
 			{
 				if (user_water != 1)	{ return resolvestate("Null"); }
 				bloodradius = 24;

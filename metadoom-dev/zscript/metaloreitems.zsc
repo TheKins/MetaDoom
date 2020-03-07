@@ -35,7 +35,7 @@ class MetaLoreItems : EventHandler
 			Vector3 spam3 = (c.x, c.y, level.Sectors[i].floorplane.ZAtPoint(c));
 			
 			// Is the selected sector a secret, and is its center point actually within playable space?
-			if (level.IsPointInMap(spam3) && level.Sectors[i].IsSecret())
+			if (level.IsPointInLevel(spam3) && level.Sectors[i].IsSecret())
 			{
 				if (metamap == false && meta_lootspawns == 1)
 				{
@@ -69,7 +69,7 @@ class MetaLoreItems : EventHandler
 							if (meta_developer)
 								Console.printf("Lore Item: Spawned at %i x %i", c.x, c.y);
 						} else {
-							if (meta_developer && !level.IsPointInMap(spam3))
+							if (meta_developer && !level.IsPointInLevel(spam3))
 							{
 								Console.printf("Lore Item: Failed to spawn at %i x %i (Outside of Map)", c.x, c.y);
 							}

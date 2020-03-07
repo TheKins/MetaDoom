@@ -83,7 +83,7 @@ class MetaLostSoul : MonsterCore
 	
 	override void Tick()
 	{
-		if(!level.frozen)
+		if(!isFrozen())
 		{
 			if (firetimer >= 4)
 			{
@@ -108,7 +108,6 @@ class MetaLostSoulFire : Actor
 		+NOGRAVITY;
 		+ALLOWPARTICLES;
 		+RANDOMIZE;
-		+NOTIMEFREEZE;
 		RenderStyle "add";
 		Alpha 0.5;
 		VSpeed 1;
@@ -377,7 +376,7 @@ class MetaPhantom : MonsterCore
 	
 	override void Tick()
 	{
-		if(!level.frozen)
+		if(isFrozen())
 		{
 			if (firetimer >= 4)
 			{
@@ -558,7 +557,7 @@ class MetaForgottenOne : MonsterCore
 	
 	override void Tick()
 	{
-		if(!level.frozen)
+		if(isFrozen())
 		{
 			if (firetimer >= 4)
 			{

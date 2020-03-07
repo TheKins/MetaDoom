@@ -131,7 +131,7 @@ class TeslaZapper : Actor
 	See:
 		TNT1 A 1
 		{
-			if (GetDistance(1,AAPTR_TRACER) <= 256)
+			if (FetchDistance(1,AAPTR_TRACER) <= 256)
 			{
 				if(tracer!=null)
 				{
@@ -146,6 +146,28 @@ class TeslaZapper : Actor
 	Death:
 		TNT1 A 0;
 		Stop;
+	}
+	
+	// Just a renamed, un-depreciated GetDistance() to remove a depreciation
+	// error I don't have time to properly fix. Next time, Gadget.
+	double FetchDistance(bool checkz, int ptr = AAPTR_TARGET) const
+	{
+		let target = GetPointer(ptr);
+
+		if (!target || target == self)
+		{
+			return 0;
+		}
+		else
+		{
+			let diff = Vec3To(target);
+			if (checkz)
+				diff.Z += (target.Height - self.Height) / 2;
+			else
+				diff.Z = 0.;
+
+			return diff.Length();
+		}
 	}
 }
 
