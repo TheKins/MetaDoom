@@ -6,7 +6,7 @@ Core Loading
 ----------------------------
 */
 
-version "3.4"
+version "4.3"
 
 // All Actor Definitions
 #include "zscript_actors.zsc"
