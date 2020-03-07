@@ -156,4 +156,33 @@ class MetaOptionalMonsters : EventHandler
 			}
 		}
     }
+	
+	// Un-Fuck A_BossDeath
+	override void CheckReplacee(ReplacedEvent e)
+	{
+		if (e.Replacement == "BaronOfHellSpawner")
+		{
+			e.Replacee = "BaronOfHell";
+		}
+		
+		if (e.Replacement == "MancubusSpawner")
+		{
+			e.Replacee = "Fatso";
+		}
+		
+		if (e.Replacement == "ArachnotronSpawner")
+		{
+			e.Replacee = "Arachnotron";
+		}
+		
+		if (e.Replacement == "CyberdemonSpawner")
+		{
+			e.Replacee = "Cyberdemon";
+		}
+		
+		if (e.Replacement == "SpiderMastermindSpawner")
+		{
+			e.Replacee = "SpiderMastermind";
+		}
+	}
 }
