@@ -1,10 +1,10 @@
-v666 "Titan" (NEXT)
-===================
+v666 "Titan" (10/03/20)
+=======================
 
 Monster Changes:
 - Added the "Unique Bosses" Cvar! This replaces boss monsters on certain map
   slots (like E4M8) with new bosses from throughout Doom history!
-- Added # unique boss monsters!
+- Added 3 unique boss monsters!
 - The "bleeding" and "scared" status effects have been completely rewritten to
   be much more uniform (and much less copy-paste-y) across all monsters.
 - More monsters are now scared by Holy Water. As they well should be!
