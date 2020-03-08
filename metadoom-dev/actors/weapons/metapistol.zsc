@@ -196,7 +196,7 @@ class PistolTracer : FastProjectile
 	States
 	{
 	Spawn:
-		PLSE E 1 BRIGHT;
+		PISP A 1 BRIGHT;
 		Loop;
 	Death:
 	Crash:
@@ -236,7 +236,7 @@ class PistolTracerTrail : Actor
 	States
 	{
 	Spawn:
-		PLSE E 1 BRIGHT A_FadeOut(0.3);
+		PISP A 1 BRIGHT A_FadeOut(0.3);
 		Loop;
 	}
 }
@@ -261,11 +261,11 @@ class PistolTracerSpark : Actor
 	}
 	States
 	{
-		PLSE E 1;
-		PLSE EEEEE 1  Bright A_SetTranslucent(.8,1);
-		PLSE EEEEEE 1  Bright A_SetTranslucent(.6,1);
-		PLSE EEEEEEEE 1  Bright A_SetTranslucent(.4,1);
-		PLSE EEEEEEEEEE 1 Bright A_SetTranslucent(.2,1);
+		PISP A 1;
+		PISP AAAAA 1  Bright A_SetTranslucent(.8,1);
+		PISP AAAAAA 1  Bright A_SetTranslucent(.6,1);
+		PISP AAAAAAAA 1  Bright A_SetTranslucent(.4,1);
+		PISP AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1);
 		Stop;
 	}
 	
