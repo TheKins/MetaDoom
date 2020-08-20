@@ -114,6 +114,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSG2 A 1 Offset(0,32);
 		goto Ready;
 	AltFire:
+		SSG2 A 0 A_JumpIf(meta_mapbreakers == 0, "Fire");
 		SSG2 A 3 A_JumpIf(invoker.hook != null, "Ready");
 		SSG2 A 1
 		{
