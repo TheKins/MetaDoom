@@ -264,7 +264,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 	override void drawStats (void)
 	{
 		// line height
-		int lh = IntermissionFont.GetHeight() * 3 / 2;
+		int lh = 20; //IntermissionFont.GetHeight() * 3 / 2;
 
 		drawLF();
 	
