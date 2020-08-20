@@ -320,10 +320,13 @@ class MetaDoomStatusBar : BaseStatusBar
 		// Render the Mugshot - some of the data relating to the mugshot
 		// (god mode and gib animation defs) are still in SBARINFO because
 		// (COMICAL SHRUG GESTURE). So this handles the rest.
-		if (cplayer.getgender()==1) // female mugshot
+		if (cplayer.getgender()==GENDER_FEMALE) // female mugshot
 		{
 			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "SFF"), (143, 168), DI_ITEM_OFFSETS);
-		} else if (cplayer.getgender()==2) // cyborg mugshot
+		} else if (cplayer.getgender()==GENDER_NEUTRAL) // neutral mugshot (robot)
+		{
+			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "STC"), (143, 168), DI_ITEM_OFFSETS);
+		} else if (cplayer.getgender()==GENDER_OTHER) // object mugshot... when'd this setting get added?
 		{
 			DrawTexture(GetMugShot(5, MugShot.ANIMATEDGODMODE|Mugshot.XDEATHFACE|MugShot.CUSTOM, "STC"), (143, 168), DI_ITEM_OFFSETS);
 		} else { // fallback - default doomguy

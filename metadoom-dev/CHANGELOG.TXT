@@ -18,6 +18,9 @@ UI Changes:
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
 - Fixed the line height issues with the Intermission.
 
+Other Changes:
+- HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
+
 v666 "Titan" (10/03/20)
 =======================
 

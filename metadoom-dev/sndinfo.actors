@@ -40,6 +40,21 @@ $playersound	player	female	*ext1		flayext1
 $playersound	player	female	*ext2		flayext2
 
 // Cyborg
+$playersound	player	neutral	*death		cdie
+$playersound	player	neutral	*xdeath		cdiehi
+$playeralias	player	neutral	*pain100	cplayer/hurtsmall
+$playeralias	player	neutral	*pain75		cplayer/hurtmedium
+$playeralias	player	neutral	*pain50		cplayer/hurtmedium
+$playeralias	player	neutral	*pain25		cplayer/hurtlarge
+$playeralias	player	neutral	*grunt		cplayer/land
+$playeralias	player	neutral	*land		player/feet
+$playersound	player	neutral	*jump		cjump
+$playersound	player	neutral	*usefail	cnoway
+$playersound	player	neutral	*hurtslime	cainslim
+$playersound	player	neutral	*crushed	ccrush
+$playersound	player	neutral	*ext1		clayext1
+$playersound	player	neutral	*ext2		clayext2
+
 $playersound	player	other	*death		cdie
 $playersound	player	other	*xdeath		cdiehi
 $playeralias	player	other	*pain100	cplayer/hurtsmall
