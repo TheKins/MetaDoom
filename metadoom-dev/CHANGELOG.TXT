@@ -1,3 +1,10 @@
+NEXT
+====
+
+UI Changes:
+- Added CVar filtering to the Codex. In English, that means that Trites and
+  Unique Bosses won't appear in the Codex if they've been disabled via CVar.
+
 v666 "Titan" (10/03/20)
 =======================
 

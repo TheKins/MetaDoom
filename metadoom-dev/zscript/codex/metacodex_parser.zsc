@@ -142,6 +142,21 @@ Extend Class MetaCodex_Menu
 							currentEntry = null;
 						}
 					}
+					else if(tokenboy.value ~== "Filter"&&currentEntry!=null)
+					{
+						tokenboy = tokenitup.GoThru();
+						if(tokenboy.value~=="Spoders" && meta_nospoders == true)
+						{
+							addingEntry = false;
+							currentEntry = null;
+						} 
+						
+						if(tokenboy.value~=="UniqueBoss" && meta_uniquebosses == false)
+						{
+							addingEntry = false;
+							currentEntry = null;
+						}
+					}
 					else if(tokenboy.value ~== "ForceSpawn"&&currentEntry!=null)
 					{
 						currentEntry.forceSpawn = true;
