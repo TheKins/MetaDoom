@@ -6,6 +6,9 @@ Super Shotgun
 ----------------------------
 */
 
+// Meathook code by Agent_Ash aka Jekyll Grim Pain
+// Needs SERIOUS cleanup to fit MetaDoom coding standards, but currently works.
+
 class MetaSuperShotgunPickup : WeaponGiver
 {
 	Default
@@ -45,6 +48,37 @@ class MetaSuperShotgun : MetaDoomWeapon
 		//$Color 14
 	}
 	
+	MetaHookProjectile hook;
+	bool hookFired;
+	bool draggingPlayer;
+
+	vector2 FindHooktargetOfs(int atkdist = 320) {
+		vector2 ofs;			
+		double closestDist = double.infinity;
+		actor hooktarget;
+		BlockThingsIterator itr = BlockThingsIterator.Create(owner,atkdist);
+		while (itr.next()) {
+			let next = itr.thing;
+			if (next == owner)
+				continue; 
+			if (!next.bShootable || !(next.bIsMonster || (next is "PlayerPawn")))
+				continue;
+			double dist = owner.Distance3D(next);
+			if (dist > atkdist)
+				continue;
+			if (dist < closestDist)
+				closestDist = dist;
+			if (!owner.CheckSight(next,SF_IGNOREWATERBOUNDARY))
+				continue;
+			vector3 targetpos = LevelLocals.SphericalCoords((owner.pos.x,owner.pos.y,owner.player.viewz),next.pos+(0,0,next.default.height*0.5),(owner.angle,owner.pitch));	
+			if (abs(targetpos.x) > 11 || abs(targetpos.y) > 11) {
+				continue;
+			}
+			ofs = targetpos.xy;
+		}
+		return ofs;
+	}
+	
 	States
 	{
 	Ready:
@@ -81,6 +115,26 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSG2 A 1 Offset(0,32);
 		goto Ready;
 	AltFire:
+		SSG2 A 3 A_JumpIf(invoker.hook != null, "Ready");
+		SSG2 A 1
+		{
+			if (!invoker.hook)
+			{
+				A_StartSound("ghook/fire",CHAN_AUTO);
+				vector2 ofs = invoker.FindHooktargetOfs();
+				invoker.hook = MetaHookProjectile(A_SpawnProjectile("MetaHookProjectile",37,angle:ofs.x,flags:CMF_AIMDIRECTION,pitch:pitch+ofs.y));
+			}
+		}
+		SSG2 A 1 bright Offset(0,45);
+		SSG2 A 1 bright Offset(0,48);
+		SSG2 A 1 bright Offset(0,45);
+		SSG2 A 1 Offset(0,42);
+		SSG2 A 1 Offset(0,38);
+		SSG2 A 1 Offset(0,36);
+		SSG2 A 1 Offset(0,34);
+		SSG2 A 1 Offset(0,33);
+		SSG2 A 1 Offset(0,32);
+		goto Ready;
 	Fire:
 		SSG2 A 3;
 		SSG2 B 1 bright
@@ -132,5 +186,139 @@ class MetaSuperShotgun : MetaDoomWeapon
 	Spawn:
 		SSG2 Z -1;
 		Stop;
+	}
+}
+
+Class MetaHookProjectileTrail : Actor {
+	Default {
+		renderstyle 'Translucent';
+		alpha 0.8;
+		scale 0.3;
+	}
+	override void Tick() {
+		if (isFrozen())
+			return;
+		A_FadeOut(0.1);
+	}
+	states {
+	Spawn:
+		BAL1 A -1;
+		stop;
+	}
+}
+
+Class MetaHookProjectile : Actor {
+	vector3 spawnPos;
+	int maxdistance;
+	int flytime;
+	MetaHookControl control;
+	property maxdistance : maxdistance;
+	bool hitadude;
+	Default {
+		MetaHookProjectile.maxdistance 720;
+		projectile;
+		damage 0;
+		speed 25;
+		+HITTRACER
+		+BLOODLESSIMPACT
+		scale 0.4;
+		deathsound "ghook/hit";
+	}
+	override void PostBeginPlay() {
+		super.PostBeginPlay();
+		spawnPos = pos;
+	}
+	override void Tick() {
+		super.Tick();
+		if (isFrozen())
+			return;
+		Spawn("MetaHookProjectileTrail",pos);
+		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
+			SetStateLabel("Flyback");
+	}
+	states {
+	Spawn:
+		BAL1 A 1;
+		loop;
+	Death:
+		//TNT1 A 0 A_Log("Death State");
+		goto Flyback;
+	XDeath:
+		TNT1 A 0 A_Scream();
+		//TNT1 A 0 A_Log("XDeath State");
+		BAL1 A 1 {
+			if (target && target.player)
+			{
+				if (hitadude == true)
+				{
+					target.speed = 0;
+					target.vel = target.Vec3To(self).Unit() * 25;
+					if (Distance3D(target) <= 64)
+					{
+						target.speed = target.default.speed;					
+						destroy();
+					}
+				} else {
+					SetStateLabel("Flyback");
+				}
+			}
+		}
+		wait;
+	/*
+	XDeath:
+		TnT1 A 0 A_Scream();
+		TNT1 A 0 A_Log("XDeath State");
+		BAL1 A 1 {
+			if (tracer) {
+				tracer.GiveInventory("MetaHookControl",1);
+				control = MetaHookControl(tracer.FindInventory("MetaHookControl"));
+				control.master = self;
+			}
+		}
+		goto Flyback;
+	*/
+	Flyback:
+		BAL1 A 1 {
+			if (target) {
+				flytime++;
+				vel = Vec3To(target).Unit() * 30;
+				if (Distance3D(target) <= 64 || flytime > 35*5) {
+					if (tracer)
+						tracer.TakeInventory("MetaHookControl",1);						
+					destroy();
+				}
+			}
+		}
+		loop;
+	}
+	
+	override int SpecialMissileHit (Actor victim)
+	{
+		if (victim.bISMONSTER)
+		{
+			hitadude = true;
+		}
+		
+		return -1;
+	}
+}
+		
+
+Class MetaHookControl : Inventory {
+	Default {
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.UNCLEARABLE;
+		+INVENTORY.PERSISTENTPOWER;
+		inventory.maxamount 1;
+	}	
+	override void Tick() {}
+	override void DoEffect() {
+		super.DoEffect();
+		if (!owner || !master) {
+			destroy();
+			return;	
+		}
+		owner.SetOrigin(master.pos-(0,0,owner.default.height*0.5),true);
 	}
 }
