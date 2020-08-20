@@ -5,8 +5,8 @@
 
 [enu default]
 
-//VERSION = "Development Build";
-VERSION = "v.666 \"Titan\" - 10/03/2020";
+VERSION = "Development Build";
+//VERSION = "v.666 \"Titan\" - 10/03/2020";
 
 // Startup Text
 STARTUP1 = "===========================================================";
