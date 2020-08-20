@@ -1,6 +1,13 @@
 NEXT
 ====
 
+Item Changes:
+- Dramatically increased inventory item cooldown:
+  - Hologram: 11 secs > 15 secs
+  - Siphon Grenade: 5 secs > 11 secs
+  - The Artifact: 6 secs > 17 secs
+  - All Other Items: 2 secs > 6 secs
+
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
