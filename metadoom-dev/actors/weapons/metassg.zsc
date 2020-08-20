@@ -299,7 +299,7 @@ Class MetaHookProjectile : Actor
 					hookeddude.vel = (0,0,0);
 					target.A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 					target.speed = 0;
-					target.vel = target.Vec3To(self).Unit() * 25;
+					target.vel = target.Vec3To(self).Unit() * 15;
 					if (Distance3D(target) <= 64 || hookeddude.health <= 0 || !hookeddude)
 					{
 						target.speed = target.default.speed;					
