@@ -248,7 +248,7 @@ Class MetaHookProjectile : Actor
 	{
 		MetaHookProjectile.maxdistance 720;
 		projectile;
-		DamageFunction (5);
+		DamageFunction (0);
 		speed 25;
 		+HITTRACER
 		+BLOODSPLATTER
@@ -293,7 +293,7 @@ Class MetaHookProjectile : Actor
 		{
 			if (target && target.player)
 			{
-				if (hookeddude && hookeddude.health > 0)
+				if (hookeddude && hookeddude.bISMONSTER && hookeddude.health > 0)
 				{
 					hookeddude.SetStateLabel("Pain");
 					hookeddude.vel = (0,0,0);
@@ -348,8 +348,8 @@ Class MetaHookProjectile : Actor
 	// This is used for differentiating between monsters/players (which is what
 	// we want to hook onto) and environment props and such.
 	override int SpecialMissileHit (Actor victim)
-	{
-		if ((victim.bISMONSTER = true || victim is "PlayerPawn") && victim.health > 0)
+	{		
+		if ((victim.bISMONSTER == true || victim is "PlayerPawn") && victim.health > 0)
 		{
 			victim.A_StartSound("weapons/ssg/hook/stick", 13);
 			hitadude = true;
