@@ -1,6 +1,9 @@
 NEXT
 ====
 
+Weapon Changes:
+- Added the Meathook alt-fire to the Super Shotgun! Details forthcoming...
+
 Item Changes:
 - Dramatically increased inventory item cooldown:
   - Hologram: 11 secs > 15 secs
