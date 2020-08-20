@@ -7,7 +7,6 @@ Super Shotgun
 */
 
 // Meathook code by Agent_Ash aka Jekyll Grim Pain
-// Needs SERIOUS cleanup to fit MetaDoom coding standards, but currently works.
 
 class MetaSuperShotgunPickup : WeaponGiver
 {
@@ -189,33 +188,34 @@ class MetaSuperShotgun : MetaDoomWeapon
 	}
 }
 
-Class MetaHookProjectileTrail : Actor {
-	Default {
+Class MetaHookProjectileTrail : Actor
+{
+	Default
+	{
 		renderstyle 'Translucent';
 		alpha 0.8;
 		scale 0.3;
 	}
-	override void Tick() {
+	
+	override void Tick()
+	{
 		if (isFrozen())
 			return;
 		A_FadeOut(0.1);
 	}
-	states {
+	
+	states 
+	{
 	Spawn:
 		BAL1 A -1;
 		stop;
 	}
 }
 
-Class MetaHookProjectile : Actor {
-	vector3 spawnPos;
-	int maxdistance;
-	int flytime;
-	MetaHookControl control;
-	property maxdistance : maxdistance;
-	bool hitadude;
-	actor HookedDude;
-	Default {
+Class MetaHookProjectile : Actor
+{
+	Default
+	{
 		MetaHookProjectile.maxdistance 720;
 		projectile;
 		damage 0;
@@ -223,21 +223,33 @@ Class MetaHookProjectile : Actor {
 		+HITTRACER
 		+BLOODLESSIMPACT
 		scale 0.4;
-		deathsound "ghook/hit";
 	}
-	override void PostBeginPlay() {
+	
+	vector3 spawnPos;
+	int maxdistance;
+	int flytime;
+	MetaHookControl control;
+	property maxdistance : maxdistance;
+	bool hitadude;
+	actor HookedDude;
+	
+	override void PostBeginPlay()
+	{
 		super.PostBeginPlay();
 		spawnPos = pos;
 	}
-	override void Tick() {
+	override void Tick()
+	{
 		super.Tick();
 		if (isFrozen())
 			return;
+			
 		Spawn("MetaHookProjectileTrail",pos);
 		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
 			SetStateLabel("Flyback");
 	}
-	states {
+	states
+	{
 	Spawn:
 		BAL1 A 4 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 		loop;
@@ -247,21 +259,23 @@ Class MetaHookProjectile : Actor {
 	XDeath:
 		TNT1 A 0 A_StartSound("weapons/ssg/hook/stick");
 		//TNT1 A 0 A_Log("XDeath State");
-		BAL1 A 1 {
+		BAL1 A 1
+		{
 			if (target && target.player)
 			{
-				if (hookeddude)
+				if (hookeddude && hookeddude.health > 0)
 				{
 					hookeddude.SetStateLabel("Pain");
 					hookeddude.vel = (0,0,0);
 					target.A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 					target.speed = 0;
 					target.vel = target.Vec3To(self).Unit() * 25;
-					if (Distance3D(target) <= 64)
+					if (Distance3D(target) <= 64 || hookeddude.health <= 0 || !hookeddude)
 					{
 						target.speed = target.default.speed;					
 						destroy();
 					}
+					target.speed = target.default.speed;
 				} else {
 					A_StartSound("weapons/ssg/hook/hitactor");
 					SetStateLabel("Flyback");
@@ -284,8 +298,8 @@ Class MetaHookProjectile : Actor {
 	*/
 	Flyback:
 		BAL1 A 0 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
-		BAL1 AAAA 1 {
-			
+		BAL1 AAAA 1
+		{
 			if (target) {
 				flytime++;
 				vel = Vec3To(target).Unit() * 30;
@@ -301,7 +315,7 @@ Class MetaHookProjectile : Actor {
 	
 	override int SpecialMissileHit (Actor victim)
 	{
-		if (victim.bISMONSTER)
+		if ((victim.bISMONSTER = true || victim is "PlayerPawn") && victim.health > 0)
 		{
 			hitadude = true;
 			hookeddude = victim;
@@ -312,18 +326,24 @@ Class MetaHookProjectile : Actor {
 }
 		
 
-Class MetaHookControl : Inventory {
-	Default {
+Class MetaHookControl : Inventory
+{
+	Default
+	{
 		+INVENTORY.UNDROPPABLE;
 		+INVENTORY.UNTOSSABLE;
 		+INVENTORY.UNCLEARABLE;
 		+INVENTORY.PERSISTENTPOWER;
 		inventory.maxamount 1;
 	}	
+	
 	override void Tick() {}
-	override void DoEffect() {
+	
+	override void DoEffect()
+	{
 		super.DoEffect();
-		if (!owner || !master) {
+		if (!owner || !master)
+		{
 			destroy();
 			return;	
 		}
