@@ -81,7 +81,15 @@ class MetaSuperShotgun : MetaDoomWeapon
 	States
 	{
 	Ready:
-		SSG2 A 1 A_WeaponReady;
+		SSG2 A 1 
+		{
+			if (!invoker.hook)
+			{
+				A_WeaponReady();
+			} else {
+				A_WeaponReady(WRF_DISABLESWITCH);
+			}
+		}
 		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		Loop;
 	Deselect:
@@ -313,7 +321,7 @@ Class MetaHookProjectile : Actor
 				vel = Vec3To(target).Unit() * 30;
 				if (Distance3D(target) <= 64 || flytime > 35*5) {
 					if (tracer)
-						tracer.TakeInventory("MetaHookControl",1);						
+						tracer.TakeInventory("MetaHookControl",1);
 					destroy();
 				}
 			}
