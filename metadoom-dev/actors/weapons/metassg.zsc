@@ -190,25 +190,29 @@ class MetaSuperShotgun : MetaDoomWeapon
 
 Class MetaHookProjectileTrail : Actor
 {
-	Default
-	{
-		renderstyle 'Translucent';
-		alpha 0.8;
-		scale 0.3;
-	}
-	
-	override void Tick()
-	{
-		if (isFrozen())
-			return;
-		A_FadeOut(0.1);
-	}
-	
 	states 
 	{
 	Spawn:
-		BAL1 A -1;
+		TNT1 A 0;
+		SMHT A 2;
 		stop;
+	}
+}
+
+class MetaNothingPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALWAYSPUFF
+		+PUFFONACTORS
+	}
+	States
+	{
+	Spawn:
+		TNT1 AA 0;
+		Stop;
 	}
 }
 
@@ -222,7 +226,6 @@ Class MetaHookProjectile : Actor
 		speed 25;
 		+HITTRACER
 		+BLOODLESSIMPACT
-		scale 0.4;
 	}
 	
 	vector3 spawnPos;
@@ -244,14 +247,18 @@ Class MetaHookProjectile : Actor
 		if (isFrozen())
 			return;
 			
-		Spawn("MetaHookProjectileTrail",pos);
+		// There's almost certainly a less crap way to do this, but...
+		target.bNOBLOOD = true;
+		A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 720, 1, 32, 0, "MetaHookProjectileTrail");
+		target.bNOBLOOD = false;
+		
 		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
 			SetStateLabel("Flyback");
 	}
 	states
 	{
 	Spawn:
-		BAL1 A 4 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
+		SMHK A 4 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 		loop;
 	Death:
 		TNT1 A 0 A_StartSound("weapons/ssg/hook/hitworld");
@@ -259,7 +266,7 @@ Class MetaHookProjectile : Actor
 	XDeath:
 		TNT1 A 0 A_StartSound("weapons/ssg/hook/stick");
 		//TNT1 A 0 A_Log("XDeath State");
-		BAL1 A 1
+		TNT1 A 1
 		{
 			if (target && target.player)
 			{
@@ -297,8 +304,8 @@ Class MetaHookProjectile : Actor
 		goto Flyback;
 	*/
 	Flyback:
-		BAL1 A 0 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
-		BAL1 AAAA 1
+		SMHK A 0 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
+		SMHK AAAA 1
 		{
 			if (target) {
 				flytime++;
