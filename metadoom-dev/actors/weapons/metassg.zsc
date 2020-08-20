@@ -120,7 +120,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		{
 			if (!invoker.hook)
 			{
-				A_StartSound("ghook/fire",CHAN_AUTO);
+				A_StartSound("weapons/ssg/hook/fire",CHAN_AUTO);
 				vector2 ofs = invoker.FindHooktargetOfs();
 				invoker.hook = MetaHookProjectile(A_SpawnProjectile("MetaHookProjectile",37,angle:ofs.x,flags:CMF_AIMDIRECTION,pitch:pitch+ofs.y));
 			}
@@ -214,6 +214,7 @@ Class MetaHookProjectile : Actor {
 	MetaHookControl control;
 	property maxdistance : maxdistance;
 	bool hitadude;
+	actor HookedDude;
 	Default {
 		MetaHookProjectile.maxdistance 720;
 		projectile;
@@ -238,19 +239,22 @@ Class MetaHookProjectile : Actor {
 	}
 	states {
 	Spawn:
-		BAL1 A 1;
+		BAL1 A 4 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 		loop;
 	Death:
-		//TNT1 A 0 A_Log("Death State");
+		TNT1 A 0 A_StartSound("weapons/ssg/hook/hitworld");
 		goto Flyback;
 	XDeath:
-		TNT1 A 0 A_Scream();
+		TNT1 A 0 A_StartSound("weapons/ssg/hook/stick");
 		//TNT1 A 0 A_Log("XDeath State");
 		BAL1 A 1 {
 			if (target && target.player)
 			{
-				if (hitadude == true)
+				if (hookeddude)
 				{
+					hookeddude.SetStateLabel("Pain");
+					hookeddude.vel = (0,0,0);
+					target.A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 					target.speed = 0;
 					target.vel = target.Vec3To(self).Unit() * 25;
 					if (Distance3D(target) <= 64)
@@ -259,6 +263,7 @@ Class MetaHookProjectile : Actor {
 						destroy();
 					}
 				} else {
+					A_StartSound("weapons/ssg/hook/hitactor");
 					SetStateLabel("Flyback");
 				}
 			}
@@ -278,7 +283,9 @@ Class MetaHookProjectile : Actor {
 		goto Flyback;
 	*/
 	Flyback:
-		BAL1 A 1 {
+		BAL1 A 0 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
+		BAL1 AAAA 1 {
+			
 			if (target) {
 				flytime++;
 				vel = Vec3To(target).Unit() * 30;
@@ -297,6 +304,7 @@ Class MetaHookProjectile : Actor {
 		if (victim.bISMONSTER)
 		{
 			hitadude = true;
+			hookeddude = victim;
 		}
 		
 		return -1;

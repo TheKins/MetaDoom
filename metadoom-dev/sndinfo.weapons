@@ -87,6 +87,17 @@ weapons/ssg/load1			ssgload1
 weapons/ssg/load2			ssgload2
 weapons/ssg/load3			ssgload3
 
+weapons/ssg/hook/fire			smhkfire
+weapons/ssg/hook/hitactor		smhkactr
+weapons/ssg/hook/hitworld		smhkwrld
+
+weapons/ssg/hook/chain			smhkchn1
+
+$random weapons/ssg/hook/stick { weapons/ssg/hook/stick1 weapons/ssg/hook/stick2 weapons/ssg/hook/stick3 }
+weapons/ssg/hook/stick1			smhkstk1
+weapons/ssg/hook/stick2			smhkstk2
+weapons/ssg/hook/stick3			smhkstk3
+
 $random weapons/explosion { weapons/explosion1 weapons/explosion2 weapons/explosion3 }
 weapons/explosion1			explo1
 weapons/explosion2			explo2
