@@ -131,11 +131,13 @@ class MetaSuperShotgun : MetaDoomWeapon
 		// If Mapbreakers are disabled, revert to old behavior of just doing the
 		// primary-fire thing. If the hook's in the air, don't do a damn thing.
 		SSG2 A 0 A_JumpIf(meta_mapbreakers == 0, "Fire");
+		SSG2 A 0 A_JumpIf(CountInv("Cell") < 20, "DryFire");
 		SSG2 A 3 A_JumpIf(invoker.hook != null, "Ready");
 		SSG2 A 1
 		{
 			if (!invoker.hook)
 			{
+				A_TakeInventory("Cell", 20);
 				A_StartSound("weapons/ssg/hook/fire",CHAN_AUTO);
 				vector2 ofs = invoker.FindHooktargetOfs();
 				invoker.hook = MetaHookProjectile(A_SpawnProjectile("MetaHookProjectile",37,angle:ofs.x,flags:CMF_AIMDIRECTION,pitch:pitch+ofs.y));
@@ -199,6 +201,12 @@ class MetaSuperShotgun : MetaDoomWeapon
 		TNT1 I 4 Bright A_Light1;
 		TNT1 J 3 Bright A_Light2;
 		Goto LightDone;
+	DryFire:
+		SSG2 A 1 Offset(0,34) A_PlaySound("weapons/shotgun/dry", CHAN_BODY);
+		SSG2 A 1 Offset(0,33);
+		SSG2 A 1 Offset(0,32);
+		SSG2 A 10;
+		goto Ready;
 	Spawn:
 		SSG2 Z -1;
 		Stop;
@@ -224,6 +232,7 @@ class MetaNothingPuff : Actor
 		+NOGRAVITY
 		+ALWAYSPUFF
 		+PUFFONACTORS
+		+BLOODLESSIMPACT
 	}
 	States
 	{
@@ -239,10 +248,10 @@ Class MetaHookProjectile : Actor
 	{
 		MetaHookProjectile.maxdistance 720;
 		projectile;
-		damage 0;
+		DamageFunction (5);
 		speed 25;
 		+HITTRACER
-		+BLOODLESSIMPACT
+		+BLOODSPLATTER
 	}
 	
 	vector3 spawnPos;
@@ -265,9 +274,7 @@ Class MetaHookProjectile : Actor
 			return;
 			
 		// There's almost certainly a less crap way to do this, but...
-		target.bNOBLOOD = true;
 		A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 720, 1, 32, 0, "MetaHookProjectileTrail");
-		target.bNOBLOOD = false;
 		
 		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
 			SetStateLabel("Flyback");
