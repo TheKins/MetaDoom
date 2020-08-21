@@ -345,7 +345,7 @@ class MetaDoomPlayer : PlayerPawn
 		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
 		A_GiveInventory("InventoryFuel_TheArtifact", 1);
 		
-		// MPLY a noise when your shit's basically refilled. This is done when
+		// Play a noise when your shit's basically refilled. This is done when
 		// it's one tic away from being refilled as a cheap way to avoid having
 		// to work out a "proper" but more complicated way.
 		if (
@@ -490,7 +490,7 @@ class MetaDoomPlayer : PlayerPawn
 		{
 			Super.PostBeginPlay();
 			return;
-		} 
+		}
 		
 		Super.PostBeginPlay();
 	
