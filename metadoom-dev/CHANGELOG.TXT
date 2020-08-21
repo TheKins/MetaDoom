@@ -2,8 +2,12 @@ NEXT
 ====
 
 Optional Content Changes:
-- Fixed OptionalContent inadvertantly breaking MAP02B of Doom 64 for Doom 2. This
-  is a gross hack that probably needs to be generalized, but it works for now!
+- Props will no longer be replaced by breakable MetaDoom versions if they've been
+  replaced by DECORATE or ZScript actors using the "replaces" keyword. This fixes
+  MAP02B in Doom 64 in Doom 2 (and probably other Boom maps that include DECORATE
+  alternatives for their DEHACKED actors), which relied on replacing a meat prop
+  with a passive, Spectre-y Archvile that activated an array of Voodoo Doll
+  conveyer belt scripting that I can't possibly hope to understand.
 
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun!
