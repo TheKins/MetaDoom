@@ -1,6 +1,10 @@
 NEXT
 ====
 
+Optional Content Changes:
+- Fixed OptionalContent inadvertantly breaking MAP02B of Doom 64 in Doom 2. This
+  is a gross hack that probably needs to be generalized, but it works for now!
+
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun!
   - Only available when Potential Map-Breakers are enabled.

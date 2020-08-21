@@ -80,6 +80,23 @@ class MetaOptionalProps : EventHandler
 			{
 				if ( e.Replacee == oldActor[i] ) 
 				{
+					// This is a gross goddamn hack to fix Doom 64 in Doom 2.
+					// If there's a better way to do this, please tell me.
+					if (e.Replacee.GetClassName() == "Meat4")
+					{
+						// Check if ChooserDemons are extant. If they are, don't
+						// replace Meat4 no matter what, otherwise MAP02B is boned.
+						string classname = "ChooserDemon";
+						class<Actor> cls = classname;
+						
+						if (cls != null)
+						{
+							if (meta_developer)
+								Console.printf("Optional: %s is breaking D64D2, not replacing with %s", oldActor[i], newActor[i]);
+							break;
+						}
+					}
+					
 					if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
 					|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
 					|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)
