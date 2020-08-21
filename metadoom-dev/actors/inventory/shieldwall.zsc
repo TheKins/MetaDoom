@@ -28,7 +28,11 @@ class ShieldWallPickup : CustomInventory
 		SHLD Z -1;
 		stop;
 	Pickup:
-		TNT1 A 0 A_GiveInventory ("ShieldWall", 1);
+		TNT1 A 0 
+		{
+			A_GiveInventory ("ShieldWall", 1);
+			A_GiveInventory("InventoryFuel_ShieldWall", INV_COOLDOWN_SHIELD);
+		}
 		stop;
 	}
 }

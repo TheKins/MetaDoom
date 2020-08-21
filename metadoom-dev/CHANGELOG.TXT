@@ -7,10 +7,8 @@ Monster Changes:
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
   replaced by DECORATE or ZScript actors using the "replaces" keyword. This fixes
-  MAP02B in Doom 64 in Doom 2 (and probably other Boom maps that include DECORATE
-  alternatives for their DEHACKED actors), which relied on replacing a meat prop
-  with a passive, Spectre-y Archvile that activated an array of Voodoo Doll
-  conveyer belt scripting that I can't possibly hope to understand.
+  MAP02/MAP02B in Doom 64 in Doom 2, and possibly other Boom mapsets that include
+  DECORATE alternatives for their DEHACKED actors.
 
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun!
@@ -20,9 +18,11 @@ Weapon Changes:
 Item Changes:
 - Dramatically increased inventory item cooldown:
   - Hologram: 11 secs > 15 secs
-  - Siphon Grenade: 5 secs > 11 secs
+  - Siphon Grenade & Tesla Rocket: 5 secs > 11 secs
   - The Artifact: 6 secs > 17 secs
   - All Other Items: 2 secs > 6 secs
+- Picking up an inventory item that you already have (other than the Artifact)
+  now instantly removes any remaining cooldown on that item.
 
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and

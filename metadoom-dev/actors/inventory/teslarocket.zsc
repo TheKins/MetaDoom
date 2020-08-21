@@ -29,7 +29,11 @@ class TeslaRocketPickup : CustomInventory
 		TSLA Z -1;
 		stop;
 	Pickup:
-		TNT1 A 0 A_GiveInventory ("TeslaRocket", 1);
+		TNT1 A 0 
+		{
+			A_GiveInventory ("TeslaRocket", 1);
+			A_GiveInventory("InventoryFuel_TeslaRocket", INV_COOLDOWN_SIPHON);
+		}
 		stop;
 	}
 }

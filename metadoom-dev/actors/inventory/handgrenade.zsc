@@ -29,7 +29,11 @@ class HandGrenadePickup : CustomInventory
 		HGRE Z -1;
 		stop;
 	Pickup:
-		TNT1 A 0 A_GiveInventory ("HandGrenade", 1);
+		TNT1 A 0 
+		{
+			A_GiveInventory ("HandGrenade", 1);
+			A_GiveInventory("InventoryFuel_HandGrenade", INV_COOLDOWN_GENERIC);
+		}
 		stop;
 	}
 }
