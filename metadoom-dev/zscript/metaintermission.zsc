@@ -80,11 +80,9 @@ class MetaDoomStatusScreen : DoomStatusScreen
 			break;
 	
 		case ShowNextLoc:
+		case LeavingIntermission:
 			drawShowNextLoc();
 			widescreenDatShit();
-			break;
-	
-		case LeavingIntermission:
 			break;
 
 		default:

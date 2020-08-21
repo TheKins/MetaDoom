@@ -27,7 +27,7 @@ Item Changes:
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
-- Fixed the line height issues with the Intermission.
+- Fixed various issues with the Intermission spawned by GZDoom updates.
 
 Other Changes:
 - HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
