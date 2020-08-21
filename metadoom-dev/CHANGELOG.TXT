@@ -1,6 +1,9 @@
 NEXT
 ====
 
+Monster Changes:
+- Recreated Cacodemon pain and death sounds (Thanks Decino!)
+
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
   replaced by DECORATE or ZScript actors using the "replaces" keyword. This fixes
