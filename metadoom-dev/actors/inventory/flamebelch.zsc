@@ -82,9 +82,6 @@ Class FlameBelchAttack : Actor
 		RenderRadius 512;
 	}
 	
-	double forwardvel;
-	double sidevel;
-    
 	override void Tick()
 	{
         A_Warp(AAPTR_TARGET,0,0,48,0,WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE|WARPF_COPYPITCH);
@@ -97,7 +94,7 @@ Class FlameBelchAttack : Actor
 			TNT1 A 0 NoDelay A_StartSound("inventory/flamebelch/fire", 451, 0, 1.0, ATTN_NORM, 1.0);
 			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
 			{
-				target.A_SpawnProjectile("FlameBelchFire", 48, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION);
+				target.A_SpawnProjectile("FlameBelchFire", 48, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
 			}
 			Stop;
 	}
@@ -167,8 +164,7 @@ Class FlameBelchFire : CustomProj
 			}
 			
 			A_SetScale(scale.x + 0.01);
-			vel.x = vel.x / 2;
-			vel.y = vel.y / 2;
+			A_ScaleVelocity (0.5);
 		}
 		goto Looper;
 	Looper:
