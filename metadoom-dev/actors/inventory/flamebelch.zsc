@@ -105,7 +105,7 @@ Class FlameBelchAttack : Actor
 			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
 			{
 				FLineTraceData SurfaceData;
-				target.LineTrace(target.angle + 90, 64, 0, TRF_THRUACTORS, offsetz: 0, offsetside: 0, data:SurfaceData);
+				target.LineTrace(target.angle + 90, 32, 0, TRF_THRUACTORS, offsetz: 0, offsetside: 0, data:SurfaceData);
 				
 				if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
 				{
@@ -114,7 +114,7 @@ Class FlameBelchAttack : Actor
 						
 					target.A_SpawnProjectile("FlameBelchFire", 42, 0, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
 				} else {
-					target.A_SpawnProjectile("FlameBelchFire", 42, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+					target.A_SpawnProjectile("FlameBelchFire", 42, -16, -8, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
 				}
 			}
 			Stop;

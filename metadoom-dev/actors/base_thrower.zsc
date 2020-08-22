@@ -332,7 +332,7 @@ class CustomAOE : Actor abstract
 			while (it.Next())
 			{
 				mo = it.thing;
-				if (mo.bShootable && (mo.pos.z <= pos.z+height && mo.pos.z+mo.height >= pos.z) && Distance2DSquared(mo) <= (radius+mo.radius)**2)
+				if ((mo.bISMONSTER || mo is "PlayerPawn") && (mo.pos.z <= pos.z+height && mo.pos.z+mo.height >= pos.z) && Distance2DSquared(mo) <= (radius+mo.radius)**2)
 				{
 					if (mo.health <= 0)
 					{
