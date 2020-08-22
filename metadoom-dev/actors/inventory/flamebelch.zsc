@@ -95,7 +95,7 @@ Class FlameBelchAttack : Actor
 	{
 		Spawn:
 			TNT1 A 0 NoDelay A_StartSound("inventory/flamebelch/fire", 451, 0, 1.0, ATTN_NORM, 1.0);
-			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
+			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
 			{
 				target.A_SpawnProjectile("FlameBelchFire", 48, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION);
 			}
@@ -127,7 +127,7 @@ Class FlameBelchFire : CustomProj
 		CustomProj.XScaleFactor 0.0;
 		CustomProj.YScaleFactor 0.0;
 		
-		Speed 20;
+		Speed 25;
 		RenderStyle "Add";
 		Obituary "$OB_FLAMEBELCH";
 		
@@ -166,7 +166,7 @@ Class FlameBelchFire : CustomProj
 				roll = roll - 4;
 			}
 			
-			A_SetScaleFactors(0.1, 0.1, 0.1, 0.1);
+			A_SetScale(scale.x + 0.01);
 			vel.x = vel.x / 2;
 			vel.y = vel.y / 2;
 		}
@@ -180,6 +180,8 @@ Class FlameBelchFire : CustomProj
 			} else {
 				roll = roll - 4;
 			}
+			
+			A_SetScale(scale.x + 0.02);
 			
 			A_FadeOut(0.03);
 		}
