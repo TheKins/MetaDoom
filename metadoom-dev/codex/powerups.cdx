@@ -56,7 +56,7 @@ page "Pickups"
 		itemToCheck "FlameBelch";
         name "Flame Belch";
         origin "Doom Eternal (2020)";
-        description "haha shoulder go brr";
+        description "Recently observed circulating through the black markets of the wider galaxy, the Flame Belch pod attaches to the shoulder of a standard-issue set of UAC armor. With a quick muscle clench, the user can douse enemies with gouts of intense chemical flame capable of melting solid steel. This has been observed as having a curious effect on Demonic forces, congealing their blood and viscera into hardened plates that can be used to augment and repair body armor.\n\nThe origins of this weapon remain disturbingly unknown, although some units have been observed as having the initials ''ARC'' engraved on the side...";
     }
 	entry "Artifact"
     {
