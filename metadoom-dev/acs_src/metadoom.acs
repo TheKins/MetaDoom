@@ -765,8 +765,20 @@ script "InventoryCheat" ENTER
 		GiveInventory("DogCollar", 1);
 		GiveInventory("Hologram", 1);
 		GiveInventory("KineticMine", 1);
+		GiveInventory("FlameBelch", 1);
 		GiveInventory("Artifact", 1);
 		GiveInventory("DemonKeyCheat", 3);
+		
+		GiveInventory("InventoryFuel_HandGrenade", 999);
+		GiveInventory("InventoryFuel_DogCollar", 999);
+		GiveInventory("InventoryFuel_Hologram", 999);
+		GiveInventory("InventoryFuel_KineticMine", 999);
+		GiveInventory("InventoryFuel_ShieldWall", 999);
+		GiveInventory("InventoryFuel_SiphonGrenade", 999);
+		GiveInventory("InventoryFuel_TeslaRocket", 999);
+		GiveInventory("InventoryFuel_TheArtifact", 999);
+		GiveInventory("InventoryFuel_FlameBelch", 999);
+		
 		GiveInventory("MetaCodex_DebugTheCodex", 1);
 		
 		SetActorProperty(0,APROP_Score,0);
