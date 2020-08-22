@@ -344,6 +344,7 @@ class MetaDoomPlayer : PlayerPawn
 		A_GiveInventory("InventoryFuel_SiphonGrenade", 1);
 		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
 		A_GiveInventory("InventoryFuel_TheArtifact", 1);
+		A_GiveInventory("InventoryFuel_FlameBelch", 1);
 		
 		// Play a noise when your shit's basically refilled. This is done when
 		// it's one tic away from being refilled as a cheap way to avoid having
@@ -357,6 +358,7 @@ class MetaDoomPlayer : PlayerPawn
 		|| (CountInv("InventoryFuel_SiphonGrenade") == INV_COOLDOWN_SIPHON-1)
 		|| (CountInv("InventoryFuel_TeslaRocket") == INV_COOLDOWN_GENERIC-1)
 		|| (CountInv("InventoryFuel_TheArtifact") == INV_COOLDOWN_ARTIFACT-1)
+		|| (CountInv("InventoryFuel_FlameBelch") == INV_COOLDOWN_GENERIC-1)
 		)
 		{
 			A_PlaySound("inventory/refresh",CHAN_UI,1.0,0,ATTN_NONE,true);

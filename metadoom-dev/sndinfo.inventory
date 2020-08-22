@@ -62,3 +62,21 @@ inventory/kineticmine/arm			kminarm
 inventory/artifact/get				artiget
 inventory/artifact/on				artion
 inventory/artifact/off				artioff
+
+// Flame Belch
+inventory/flamebelch/get 			getfblch
+
+$random inventory/flamebelch/fire { inventory/flamebelch/fire1 inventory/flamebelch/fire2 inventory/flamebelch/fire3 }
+inventory/flamebelch/fire1 			fblch1
+inventory/flamebelch/fire2 			fblch2
+inventory/flamebelch/fire3 			fblch3
+
+$random inventory/flamebelch/crak { inventory/flamebelch/crak1 inventory/flamebelch/crak2 inventory/flamebelch/crak3 inventory/flamebelch/crak4 }
+$limit inventory/flamebelch/crak 8
+
+inventory/flamebelch/crak1		flamcrk1
+inventory/flamebelch/crak2		flamcrk2
+inventory/flamebelch/crak3		flamcrk3
+inventory/flamebelch/crak4		flamcrk4
+
+inventory/flamebelch/sizzle		flamsizl

@@ -9,6 +9,7 @@ Actor Definitions
 // Core Actors that a bunch of shit inherits from: define above everything else!
 #include "actors/invtokens.zsc"
 #include "actors/mixins.zsc"
+#include "actors/base_thrower.zsc"
 
 // Our Hero.
 #include "actors/player/metadoomplayer.zsc"
@@ -61,6 +62,7 @@ Actor Definitions
 #include "actors/inventory/hologram.zsc"
 #include "actors/inventory/kineticmine.zsc"
 #include "actors/inventory/theartifact.zsc"
+#include "actors/inventory/flamebelch.zsc"
 #include "actors/inventory/dogcollar.zsc"
  #include "actors/weapons/metadoggun.zsc"
  

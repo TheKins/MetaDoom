@@ -353,7 +353,8 @@ class MetaDoomStatusBar : BaseStatusBar
 				"ShieldWall",
 				"SiphonGrenade",
 				"TeslaRocket",
-				"Artifact"
+				"Artifact",
+				"FlameBelch"
 			};
 
 			static const string invCooldownCounter[] =
@@ -365,7 +366,8 @@ class MetaDoomStatusBar : BaseStatusBar
 				"InventoryFuel_ShieldWall",
 				"InventoryFuel_SiphonGrenade",
 				"InventoryFuel_TeslaRocket",
-				"InventoryFuel_TheArtifact"
+				"InventoryFuel_TheArtifact",
+				"InventoryFuel_FlameBelch"
 			};
 
 			static const int invCooldownCap[] =
@@ -377,7 +379,8 @@ class MetaDoomStatusBar : BaseStatusBar
 				INV_COOLDOWN_SHIELD,
 				INV_COOLDOWN_SIPHON,
 				INV_COOLDOWN_SIPHON,
-				INV_COOLDOWN_ARTIFACT
+				INV_COOLDOWN_ARTIFACT,
+				INV_COOLDOWN_GENERIC
 			};
 			
 			for(int i = 0; i < invItem.size(); i++)

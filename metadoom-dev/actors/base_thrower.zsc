@@ -1,0 +1,796 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Flamethrower library class by Boondorl
+https://forum.zdoom.org/viewtopic.php?f=37&t=65883
+----------------------------
+*/
+
+// One minor change was made by The Kinsie - checks for the ISMONSTER flag were
+// changed to check for SHOOTABLE, to ensure that flamethrowers properly effect
+// players as well as monsters.
+
+class CustomDOT : Inventory abstract
+{
+	Array<int> ticTimers;
+	int ticRate;
+	int duration;
+	int effectTimer;
+	int effectSpawnRate;
+	
+	bool isRandom;
+	int minRandomMulti;
+	int maxRandomMulti;
+	
+	double durSec;
+	int numberOfTics;
+	int maxTotalDOTs;
+	double effectSpawnSec;
+	string stackStype;
+	string damageApplication;
+	class<Actor> effectActor;
+	
+	property IsRandom : isRandom;
+	property MinRandomMulti : minRandomMulti;
+	property MaxRandomMulti : maxRandomMulti;
+	property Duration : durSec;
+	property NumberOfTics : numberOfTics;
+	property MaxTotalDOTs : maxTotalDOTs;
+	property StackType : stackStype;
+	property DamageApplication : damageApplication;
+	property EffectSpawnRate : effectSpawnSec;
+	property EffectActor : effectActor;
+	
+	Default
+	{
+		+NODAMAGETHRUST
+		+INVENTORY.UNDROPPABLE
+	}
+	
+	override void Tick()
+	{
+		super.Tick();
+		
+		if (!duration || !ticTimers.Size() || !owner || owner.health <= 0)
+			Destroy();
+	}
+	
+	override void DoEffect()
+	{
+		super.DoEffect();
+		
+		if (isFrozen() || level.isFrozen())
+			return;
+		
+		if (effectSpawnRate && effectActor && !(effectTimer++ % effectSpawnRate))
+		{
+			double rad = sqrt(frandom(0,1));
+			double theta = frandom(0, 359.9999);
+			double ranX = owner.radius*rad*cos(theta);
+			double ranY = owner.radius*rad*sin(theta);
+			
+			Vector3 ranOfs = (ranX, ranY, frandom(0, owner.height));
+			let effect = DOTEffect(Spawn(effectActor, owner.pos + ranOfs, ALLOW_REPLACE));
+			if (effect)
+			{
+				effect.tracer = owner;
+				effect.warpOfs = ranOfs;
+			}
+		}
+		
+		if (ticRate)
+		{
+			for (uint i = 0; i < ticTimers.Size(); ++i)
+			{
+				bool doDamage;
+				if (damageApplication ~== "Delayed")
+					doDamage = !(++ticTimers[i] % ticRate);
+				else
+					doDamage = !(ticTimers[i]++ % ticRate);
+				
+				if (doDamage)
+				{
+					bool hadInvulnerable = false;
+					if (bPoisonAlways)
+					{
+						hadInvulnerable = owner.bInvulnerable;
+						owner.bInvulnerable = false;
+					}
+					
+					int realDamage = damage;
+					if (isRandom)
+						realDamage *= Random(minRandomMulti, maxRandomMulti);
+					
+					int newdam = owner.DamageMobj(self, owner.target, realDamage, damageType);
+					
+					if (bPoisonAlways && hadInvulnerable)
+						owner.bInvulnerable = true;
+					
+					if (owner.health <= 0)
+						break;
+					else if (newdam > 0)
+					{
+						if (owner.HowlSound)
+							owner.A_StartSound(owner.HowlSound, CHAN_VOICE);
+						else
+							owner.A_StartSound(owner.PainSound, CHAN_VOICE);
+					}
+				}
+				
+				if (ticTimers[i] >= duration)
+					ticTimers.Delete(i);
+			}
+		}
+	}
+	
+	override bool CanPickup(Actor toucher)
+	{
+		let currentDOT = CustomDOT(toucher.FindInventory(GetClass()));
+		if (currentDOT)
+		{
+			if (currentDOT.stackStype ~== "Stackable")
+			{
+				if (currentDOT.ticTimers.Size() < currentDOT.maxTotalDOTs)
+					currentDOT.ticTimers.Push(0);
+			}
+			else if (currentDOT.stackStype ~== "Additive")
+			{
+				if (currentDOT.bAdditivePoisonDamage)
+					currentDOT.SetDamage(currentDOT.damage + currentDOT.default.damage);
+				
+				if (currentDOT.bAdditivePoisonDuration)
+					currentDOT.duration += ceil(currentDOT.durSec * 35);
+			}
+			else
+			{
+				if (currentDOT.ticTimers.Size())
+					currentDOT.ticTimers[0] = 0;
+				else
+					currentDOT.ticTimers.Push(0);
+			}
+		}
+		
+		return super.CanPickup(toucher);
+	}
+	
+	override void BeginPlay()
+	{
+		super.BeginPlay();
+		
+		if (durSec < 0)
+			durSec = 0;
+		if (effectSpawnSec < 0)
+			effectSpawnSec = 0;
+		if (maxTotalDOTs <= 0)
+			maxTotalDOTs = 1;
+		if (numberOfTics <= 0)
+			numberOfTics = 1;
+		
+		duration = ceil(durSec * 35);
+		
+		if (damageApplication ~== "Delayed")
+			ticRate = floor(duration / max(1, numberOfTics));
+		else
+		{
+			if (numberOfTics == 1)
+				ticRate = duration + 1;
+			else
+				ticRate = floor((duration - 1) / max(1, (numberOfTics - 1)));
+		}
+		
+		if (isRandom)
+		{
+			if (!minRandomMulti)
+				minRandomMulti = 1;
+			if (!maxRandomMulti)
+				maxRandomMulti = 3;
+			if (maxRandomMulti < minRandomMulti)
+				maxRandomMulti = minRandomMulti;
+		}
+		
+		effectSpawnRate = ceil(effectSpawnSec * 35);
+		ticTimers.Push(0);
+	}
+}
+
+class DOTEffect : Actor abstract
+{
+	Vector3 baseOfs;
+	Vector3 warpOfs;
+	
+	bool noWarp;
+	
+	property NoWarp : noWarp;
+	
+	Default
+	{
+		+NOINTERACTION
+	}
+	
+	Vector3 A_ShiftWarpOffset(Vector3 ofs, bool base = false)
+	{
+		if (base)
+			warpOfs = baseOfs + ofs;
+		else
+			warpOfs += ofs;
+			
+		return warpOfs;
+	}
+	
+	Vector2 A_ShiftXYOffset(Vector2 ofs, bool base = false)
+	{
+		if (base)
+			warpOfs.xy = baseOfs.xy + ofs;
+		else
+			warpOfs.xy += ofs;
+			
+		return warpOfs.xy;
+	}
+	
+	double A_ShiftZOffset(double ofs, bool base = false)
+	{
+		if (base)
+			warpOfs.z = baseOfs.z + ofs;
+		else
+			warpOfs.z += ofs;
+			
+		return warpOfs.z;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		baseOfs = warpOfs;
+	}
+	
+	override void Tick()
+	{
+		super.Tick();
+		
+		if (!tracer || tracer.health <= 0)
+		{
+			Destroy();
+			return;
+		}
+		
+		if (isFrozen() || level.isFrozen())
+			return;
+		
+		if (!noWarp)
+			SetOrigin(tracer.pos + warpOfs, true);
+	}
+}
+
+class CustomAOE : Actor abstract
+{
+	Array<Actor> inCoolDown;
+	Array<int> coolDownTimers;
+	
+	class<Actor> effectActor;
+	class<Inventory> DOTItem;
+	int effectTimer;
+	int effectSpawnRate;
+	int coolDown;
+	
+	bool isRandom;
+	int minRandomMulti;
+	int maxRandomMulti;
+	
+	double coolDownSec;
+	double effectSpawnSec;
+	
+	property IsRandom : isRandom;
+	property MinRandomMulti : minRandomMulti;
+	property MaxRandomMulti : maxRandomMulti;
+	property CoolDown : coolDownSec;
+	property DOTItem : DOTItem;
+	property EffectSpawnRate : effectSpawnSec;
+	property EffectActor : effectActor;
+	
+	Default
+	{
+		+NOGRAVITY
+		+NOBLOCKMAP
+		+NODAMAGETHRUST
+		+NOTELEPORT
+		+MOVEWITHSECTOR
+	}
+	
+	override void Tick()
+	{
+		super.Tick();
+		
+		if (isFrozen() || level.isFrozen())
+			return;
+		
+		if (effectSpawnRate && effectActor && !(effectTimer++ % effectSpawnRate))
+		{
+			double rad = sqrt(frandom(0,1));
+			double theta = frandom(0, 359.9999);
+			double ranX = radius*rad*cos(theta);
+			double ranY = radius*rad*sin(theta);
+			
+			Vector3 spawnPos = pos + (ranX, ranY, 0);
+			Spawn(effectActor, spawnPos, ALLOW_REPLACE);
+		}
+		
+		for (uint i = 0; i < coolDownTimers.Size(); ++i)
+		{
+			if (--coolDownTimers[i] <= 0)
+			{
+				coolDownTimers.Delete(i);
+				inCoolDown.Delete(i);
+			}
+		}
+		
+		if (damage > 0 && radius > 0)
+		{
+			BlockThingsIterator it = BlockThingsIterator.Create(self);
+			Actor mo;
+			while (it.Next())
+			{
+				mo = it.thing;
+				if (mo.bShootable && (mo.pos.z <= pos.z+height && mo.pos.z+mo.height >= pos.z) && Distance2DSquared(mo) <= (radius+mo.radius)**2)
+				{
+					if (mo.health <= 0)
+					{
+						if (mo.InStateSequence(mo.CurState, mo.FindState("GenericFreezeDeath")))
+							mo.DamageMobj(self, target, 1, 'None');
+					}
+					else if (inCoolDown.Find(mo) == inCoolDown.Size())
+					{
+						int realDamage = damage;
+						if (isRandom)
+							realDamage *= Random(minRandomMulti, maxRandomMulti);
+						
+						mo.DamageMobj(self, target, realDamage, damageType);
+						inCoolDown.Push(mo);
+						coolDownTimers.Push(coolDown);
+						if (mo.bSHOOTABLE)
+							mo.A_GiveInventory(DOTItem);
+					}
+				}
+			}
+		}
+	}
+	
+	override void BeginPlay()
+	{
+		super.BeginPlay();
+		
+		if (coolDownSec < 0)
+			coolDownSec = 0;
+		if (effectSpawnSec < 0)
+			effectSpawnSec = 0;
+		
+		coolDown = ceil(coolDownSec * 35);
+		effectSpawnRate = ceil(effectSpawnSec * 35);
+		
+		if (isRandom)
+		{
+			if (!minRandomMulti)
+				minRandomMulti = 1;
+			if (!maxRandomMulti)
+				maxRandomMulti = 3;
+			if (maxRandomMulti < minRandomMulti)
+				maxRandomMulti = minRandomMulti;
+		}
+	}
+}
+
+class CustomProj : Actor abstract
+{
+	Array<Actor> alreadyHit;
+	double baseRadius;
+	double baseHeight;
+	
+	double radiusScale;
+	double heightScale;
+	double maxRadiusScale;
+	double maxHeightScale;
+	double radiusScaleFactor;
+	double heightScaleFactor;
+	
+	double maxXScale;
+	double maxYScale;
+	double xScaleFactor;
+	double yScaleFactor;
+	
+	bool isRandom;
+	int minRandomMulti;
+	int maxRandomMulti;
+	
+	int customDamage;
+	double splashDamageScale;
+	int splashDamage;
+	double splashRadiusScale;
+	double splashRadius;
+	name splashDamageType;
+	bool noSplashOnHit;
+	bool disableSplashDOT;
+	bool disablePenetration;
+	bool invertGrowth;
+	
+	class<Inventory> DOTItem;
+	class<Inventory> splashDOTItem;
+	class<Actor> AOEActor;
+
+	property DOTItem : DOTItem;
+	property SplashDOTItem : splashDOTItem;
+	property DisableSplashDOT : disableSplashDOT;
+	property AOEActor : AOEActor;
+	property DisablePenetration : disablePenetration;
+	property InvertGrowth : invertGrowth;
+	
+	property IsRandom : isRandom;
+	property MinRandomMulti : minRandomMulti;
+	property MaxRandomMulti : maxRandomMulti;
+		
+	property CustomDamage : customDamage;
+	property SplashDamageScale : splashDamageScale;
+	property SplashDamage : splashDamage;
+	property SplashDamageType : splashDamageType;
+	property SplashRadiusScale : splashRadiusScale;
+	property SplashRadius : splashRadius;
+	property NoSplashOnHit : noSplashOnHit;
+	
+	property RadiusScale : radiusScale;
+	property HeightScale : heightScale;
+	property MaxRadiusScale : maxRadiusScale;
+	property MaxHeightScale : maxHeightScale;
+	property RadiusScaleFactor : radiusScaleFactor;
+	property HeightScaleFactor : heightScaleFactor;
+	
+	property MaxXScale : maxXScale;
+	property MaxYScale : maxYScale;
+	property XScaleFactor : xScaleFactor;
+	property YScaleFactor : yScaleFactor;
+	
+	Default
+	{
+		Projectile;
+	}
+	
+	bool A_SpawnAreaOfEffect()
+	{
+		bool spawnedAOE = false;
+		
+		if (AOEActor && pos.z <= floorz + MaxStepHeight)
+		{
+			spawnedAOE = true;
+					
+			ThinkerIterator it = ThinkerIterator.Create(AOEActor, STAT_DEFAULT);
+			double radiusSquared = (2*GetDefaultByType(AOEActor).radius)**2;
+			Actor mo;
+			while (mo = Actor(it.Next()))
+			{
+				if (abs(pos.z - mo.pos.z) <= MaxStepHeight && Distance2DSquared(mo) <= radiusSquared)
+				{
+					spawnedAOE = false;
+					break;
+				}
+			}
+					
+			if (spawnedAOE)
+			{
+				let newAOE = CustomAOE(Spawn(AOEActor, (pos.x, pos.y, floorz), ALLOW_REPLACE));
+				if (newAOE)
+					newAOE.target = target;
+			}
+		}
+		
+		return spawnedAOE;
+	}
+	
+	int A_Splash(int flags = XF_HURTSOURCE, bool alert = false, int fulldamagedistance = 0, int nails = 0, int naildamage = 10, class<Actor> pufftype = "BulletPuff")
+	{
+		int damage = splashDamage + ceil(customDamage * splashDamageScale);
+		int distance = splashRadius + ceil(radius * splashRadiusScale);
+		name damageType = splashDamageType ? splashDamageType : self.damageType;
+			
+		if (distance <= 0)
+			distance = damage;
+		
+		if (damage != 0 && distance > 0 && !disableSplashDOT && (splashDOTItem || DOTItem))
+		{
+			BlockThingsIterator it = BlockThingsIterator.Create(self, distance);
+			Actor mo;
+			while (it.Next())
+			{
+				mo = it.thing;
+				if (noSplashOnHit && tracer == mo)
+					continue;
+				else if (mo.bSHOOTABLE && GetRadiusDamage(mo, damage, distance, fulldamagedistance, bOldRadiusDmg) > 0 && CheckSight(mo, SF_IGNOREVISIBILITY|SF_IGNOREWATERBOUNDARY))
+				{
+					if (mo.health <= 0)
+					{
+						if (mo.InStateSequence(mo.CurState, mo.FindState("GenericFreezeDeath")))
+							mo.DamageMobj(self, target, 1, 'None');
+					}
+					else
+						mo.A_GiveInventory(splashDOTItem ? splashDOTItem : DOTItem);
+				}
+			}
+		}
+		
+		bool hadNoDamage = false;
+		if (noSplashOnHit && tracer)
+		{
+			hadNoDamage = tracer.bNoDamage;
+			tracer.bNoDamage = true;
+		}
+		
+		int count = A_Explode(damage, distance, flags | XF_EXPLICITDAMAGETYPE, alert, fulldamagedistance, nails, naildamage, pufftype, damagetype);
+		
+		if (noSplashOnHit && tracer && !hadNoDamage)
+			tracer.bNoDamage = false;
+		
+		return count;
+	}
+	
+	void A_SetMaxScales(double newMaxRadius = -1, double newMaxHeight = -1, double newMaxXScale = -1, double newMaxYScale = -1, bool invert = false)
+	{
+		if (invert)
+			invertGrowth = !invertGrowth;
+		
+		if (newMaxRadius >= 0)
+			maxRadiusScale = newMaxRadius;
+		if (newMaxHeight >= 0)
+			maxHeightScale = newMaxHeight;
+		if (newMaxXScale >= 0)
+			maxXScale = min(4, newMaxXScale);
+		if (newMaxYScale >= 0)
+			maxYScale = min(4, newMaxYScale);
+		
+		if (maxRadiusScale < 0)
+			maxRadiusScale = 0;
+		if (maxHeightScale < 0)
+			maxHeightScale = 0;
+		
+		if (maxXScale < 0)
+			maxXScale = 0;
+		if (maxYScale < 0)
+			maxYScale = 0;
+			
+		if (invertGrowth)
+		{	
+			if (maxRadiusScale > radiusScale)
+				maxRadiusScale = radiusScale;
+			if (maxHeightScale > heightScale)
+				maxHeightScale = heightScale;
+			
+			if (maxXScale > scale.x)
+				maxXScale = scale.x;
+			if (maxYScale > scale.y)
+				maxYScale = scale.y;
+		}
+		else
+		{
+			if (maxRadiusScale < radiusScale)
+				maxRadiusScale = radiusScale;
+			if (maxHeightScale < heightScale)
+				maxHeightScale = heightScale;
+			
+			if (maxXScale < scale.x)
+				maxXScale = scale.x;
+			if (maxYScale < scale.y)
+				maxYScale = scale.y;
+		}
+	}
+	
+	void A_SetScaleFactors(double newRadiusFactor = -1, double newHeightFactor = -1, double newXScaleFactor = -1, double newYScaleFactor = -1)
+	{
+		if (newRadiusFactor >= 0)
+			radiusScaleFactor = newRadiusFactor;
+		if (newHeightFactor >= 0)
+			heightScaleFactor = newHeightFactor;
+		if (newXScaleFactor >= 0)
+			xScaleFactor = newXScaleFactor;
+		if (newYScaleFactor >= 0)
+			yScaleFactor = newYScaleFactor;
+		
+		if (radiusScaleFactor < 0)
+			radiusScaleFactor = 0;
+		if (heightScaleFactor < 0)
+			heightScaleFactor = 0;
+		
+		if (xScaleFactor < 0)
+			xScaleFactor = 0;
+		if (yScaleFactor < 0)
+			yScaleFactor = 0;
+	}
+	
+	void A_SetScales(double newRadiusScale = -1, double newHeightScale = -1, double newXScale = -1, double newYScale = -1)
+	{
+		if (newRadiusScale >= 0)
+			radiusScale = newRadiusScale;
+		if (newHeightScale >= 0)
+			heightScale = newHeightScale;
+		if (newXScale >= 0)
+			scale.x = min(4, newXScale);
+		if (newYScale >= 0)
+			scale.y = min(4, newYScale);
+			
+		if (radiusScale < 0)
+			radiusScale = 0;
+		if (heightScale < 0)
+			heightScale = 0;
+			
+		if (scale.x < 0)
+			scale.x = 0;
+		if (scale.y < 0)
+			scale.y = 0;
+	}
+	
+	override void BeginPlay()
+	{
+		super.BeginPlay();
+		
+		if (maxXScale > 4)
+			maxXScale = 4;
+		if (maxYScale > 4)
+			maxYScale = 4;
+		
+		if (invertGrowth)
+		{
+			if (maxRadiusScale < 0)
+				maxRadiusScale = 0;
+			if (maxHeightScale < 0)
+				maxHeightScale = 0;
+			
+			if (maxRadiusScale > radiusScale)
+				maxRadiusScale = radiusScale;
+			if (maxHeightScale > heightScale)
+				maxHeightScale = heightScale;
+			
+			if (maxXScale < 0)
+				maxXScale = 0;
+			if (maxYScale < 0)
+				maxYScale = 0;
+			
+			if (maxXScale > scale.x)
+				maxXScale = scale.x;
+			if (maxYScale > scale.y)
+				maxYScale = scale.y;
+		}
+		else
+		{
+			if (maxRadiusScale <= 0)
+				maxRadiusScale = 1;
+			if (maxHeightScale <= 0)
+				maxHeightScale = 1;
+			
+			if (maxRadiusScale < radiusScale)
+				maxRadiusScale = radiusScale;
+			if (maxHeightScale < heightScale)
+				maxHeightScale = heightScale;
+			
+			if (maxXScale <= 0)
+				maxXScale = 1;
+			if (maxYScale <= 0)
+				maxYScale = 1;
+			
+			if (maxXScale < scale.x)
+				maxXScale = scale.x;
+			if (maxYScale < scale.y)
+				maxYScale = scale.y;
+		}
+		
+		if (radiusScale <= 0)
+			radiusScale = 1;
+		if (heightScale <= 0)
+			heightScale = 1;
+		
+		if (radiusScaleFactor < 0)
+			radiusScaleFactor = 0;
+		if (heightScaleFactor < 0)
+			heightScaleFactor = 0;
+			
+		if (scale.x <= 0)
+			scale.x = 1;
+		if (scale.y <= 0)
+			scale.y = 1;
+		
+		if (xScaleFactor < 0)
+			xScaleFactor = 0;
+		if (yScaleFactor < 0)
+			yScaleFactor = 0;
+		
+		if (noSplashOnHit)
+			bHitTracer = true;
+		
+		if (isRandom)
+		{
+			if (!minRandomMulti)
+				minRandomMulti = 1;
+			if (!maxRandomMulti)
+				maxRandomMulti = 8;
+			if (maxRandomMulti < minRandomMulti)
+				maxRandomMulti = minRandomMulti;
+		}
+		
+		baseHeight = height;
+		baseRadius = radius;
+		A_SetSize(radius*radiusScale, height*heightScale);
+	}
+	
+	override void Tick()
+	{
+		super.Tick();
+		
+		if (isFrozen() || level.isFrozen())
+			return;
+
+		if (invertGrowth)
+		{
+			if (scale.x > maxXScale)
+				scale.x -= min(xScaleFactor, scale.x - maxXScale);
+			
+			if (radiusScale > maxRadiusScale)
+				radiusScale -= min(radiusScaleFactor, radiusScale - maxRadiusScale);
+			
+			if (scale.y > maxYScale)
+				scale.y -= min(yScaleFactor, scale.y - maxYScale);
+			
+			if (heightScale > maxHeightScale)
+				heightScale -= min(heightScaleFactor, heightScale - maxHeightScale);
+		}
+		else
+		{
+			if (scale.x < maxXScale)
+				scale.x += min(xScaleFactor, maxXScale - scale.x);
+			
+			if (radiusScale < maxRadiusScale)
+				radiusScale += min(radiusScaleFactor, maxRadiusScale - radiusScale);
+			
+			if (scale.y < maxYScale)
+				scale.y += min(yScaleFactor, maxYScale - scale.y);
+			
+			if (heightScale < maxHeightScale)
+				heightScale += min(heightScaleFactor, maxHeightScale - heightScale);
+		}
+		
+		if (radiusScaleFactor || heightScaleFactor)
+			A_SetSize(baseRadius*radiusScale, baseHeight*heightScale);
+	}
+	
+	override int SpecialMissileHit(Actor victim)
+	{
+		if (victim == target || victim.health <= 0)
+		{
+			if (victim.InStateSequence(victim.CurState, victim.FindState("GenericFreezeDeath")))
+				victim.DamageMobj(self, target, 1, 'None');
+				
+			return 1;
+		}
+		else if (!victim.bShootable)
+			return -1;
+		
+		if (alreadyHit.Find(victim) == alreadyHit.Size())
+		{
+			int realDamage = customDamage;
+			if (isRandom)
+				realDamage *= Random(minRandomMulti, maxRandomMulti);
+			
+			int newdam = victim.DamageMobj(self, target, realDamage, damageType);
+			if (victim.bSHOOTABLE && victim.health > 0 && newdam > 0)
+				victim.A_GiveInventory(DOTItem);
+				
+			if (!victim.bNoBlood && !victim.bDormant && !victim.bInvulnerable)
+			{
+				victim.TraceBleed(newdam > 0 ? newdam : realDamage, self);
+				if (bBloodSplatter)
+					SpawnBlood(pos, angle+180, newdam > 0 ? newdam : realDamage);
+			}
+			
+			alreadyHit.Push(victim);
+		}
+		
+		if (disablePenetration)
+			return -1;
+		
+		return 1;
+	}
+}

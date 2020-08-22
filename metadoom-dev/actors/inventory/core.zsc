@@ -27,6 +27,7 @@ class InventoryFuel_ShieldWall : Counter 	{ Default	{ Inventory.MaxAmount INV_CO
 class InventoryFuel_SiphonGrenade : Counter { Default	{ Inventory.MaxAmount INV_COOLDOWN_SIPHON; } }
 class InventoryFuel_TeslaRocket : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_SIPHON; } }
 class InventoryFuel_TheArtifact : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_ARTIFACT; } }
+class InventoryFuel_FlameBelch : Counter 	{ Default	{ Inventory.MaxAmount INV_COOLDOWN_GENERIC; } }
 
 // For making an item pickup flash after an inventory item cooldown is finished.
 // Yeah, it's kinda a gross hack, but that's life, y'know?

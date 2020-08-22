@@ -80,10 +80,44 @@ class MetaArmorPinata : BasicArmorBonus
 	States
 	{
 	Spawn:
-		PINH A 4 bright;
-		PINH A 4;
 		PINA A 4 bright;
 		PINA A 4;
+		loop;
+	}
+}
+
+class MetaArmorPinataFade : BasicArmorBonus
+{
+	Default
+	{
+		-COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 4;
+		Armor.Maxsaveamount 100;
+		Inventory.PickupSound "items/armor/shard";
+		Inventory.PickupMessage "$GOTPINATAARMOR";
+		TeleFogSourceType "MetaItemFog";
+		TeleFogDestType "MetaItemFog";
+		scale 0.75;
+		RenderStyle "Add";
+	}
+	
+	int lifespan;
+	
+	States
+	{
+	Spawn:
+		PINA A 0;
+		PINA A 0 { lifespan = 0; }
+	Sit:
+		PINA A 4 bright;
+		PINA A 4 { lifespan++; }
+		PINA A 0 A_JumpIf(lifespan >= 12, "Fade");
+		loop;
+	Fade:
+		PINA A 4 bright A_FadeOut(0.2);
+		PINA A 4 A_FadeOut(0.2);
 		loop;
 	}
 }
