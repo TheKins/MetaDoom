@@ -50,7 +50,11 @@ class KineticMinePickupRetrieve : KineticMinePickup
 	states
 	{
 	Pickup:
-		TNT1 A 0 A_GiveInventory ("KineticMine", 1);
+		TNT1 A 0 
+		{
+			A_GiveInventory ("KineticMine", 1);
+			A_GiveInventory("InventoryFuel_KineticMine", INV_COOLDOWN_GENERIC);
+		}
 		stop;
 	}
 }
