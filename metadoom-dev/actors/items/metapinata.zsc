@@ -82,6 +82,8 @@ class MetaArmorPinata : BasicArmorBonus
 	Spawn:
 		PINH A 4 bright;
 		PINH A 4;
+		PINA A 4 bright;
+		PINA A 4;
 		loop;
 	}
 }
