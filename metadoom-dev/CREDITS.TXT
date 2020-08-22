@@ -48,6 +48,7 @@ Erick194 & Gerardo194 (id Mobile game tools)
 NoirSuccubus (Doom 2016 Audio Tools)
 
 CODE RESOURCES:
+Boondorl (Flamethrower library)
 Blue Shadow (Time Freeze with sound)
 comet1338 (Fixed a z-fighting bug with flat decals)
 DavidPH (ACS advice)

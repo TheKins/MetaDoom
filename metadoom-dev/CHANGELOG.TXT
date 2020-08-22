@@ -16,6 +16,7 @@ Weapon Changes:
   - Costs 20 Cells to fire.
 
 Item Changes:
+- Added 1 new Inventory item! (Flame Belch)
 - Dramatically increased inventory item cooldown:
   - Hologram: 11 secs > 15 secs
   - Siphon Grenade & Tesla Rocket: 5 secs > 11 secs
