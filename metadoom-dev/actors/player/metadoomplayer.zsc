@@ -336,15 +336,24 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		
 		// Recharge Inventory Items
-		A_GiveInventory("InventoryFuel_HandGrenade", 1);
-		A_GiveInventory("InventoryFuel_DogCollar", 1);
-		A_GiveInventory("InventoryFuel_Hologram", 1);
-		A_GiveInventory("InventoryFuel_KineticMine", 1);
-		A_GiveInventory("InventoryFuel_ShieldWall", 1);
-		A_GiveInventory("InventoryFuel_SiphonGrenade", 1);
-		A_GiveInventory("InventoryFuel_TeslaRocket", 1);
-		A_GiveInventory("InventoryFuel_TheArtifact", 1);
-		A_GiveInventory("InventoryFuel_FlameBelch", 1);
+		if (CountInv("HandGrenade") >= 1)
+			A_GiveInventory("InventoryFuel_HandGrenade", 1);
+		if (CountInv("DogCollar") >= 1)
+			A_GiveInventory("InventoryFuel_DogCollar", 1);
+		if (CountInv("Hologram") >= 1)
+			A_GiveInventory("InventoryFuel_Hologram", 1);
+		if (CountInv("KineticMine") >= 1)
+			A_GiveInventory("InventoryFuel_KineticMine", 1);
+		if (CountInv("ShieldWall") >= 1)
+			A_GiveInventory("InventoryFuel_ShieldWall", 1);
+		if (CountInv("SiphonGrenade") >= 1)
+			A_GiveInventory("InventoryFuel_SiphonGrenade", 1);
+		if (CountInv("TeslaRocket") >= 1)
+			A_GiveInventory("InventoryFuel_TeslaRocket", 1);
+		if (CountInv("Artifact") >= 1)
+			A_GiveInventory("InventoryFuel_TheArtifact", 1);
+		if (CountInv("FlameBelch") >= 1)
+			A_GiveInventory("InventoryFuel_FlameBelch", 1);
 		
 		// Play a noise when your shit's basically refilled. This is done when
 		// it's one tic away from being refilled as a cheap way to avoid having
