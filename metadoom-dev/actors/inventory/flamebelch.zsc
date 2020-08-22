@@ -6,6 +6,17 @@ Flame Belch
 ----------------------------
 */
 
+// Seperate GFX for Codex
+class FlameBelchDummy : Actor
+{
+	States
+	{
+	Spawn:
+		FBLC Y -1;
+		loop;
+	}
+}
+
 class FlameBelchPickup : CustomInventory
 {
 	Default
@@ -15,7 +26,6 @@ class FlameBelchPickup : CustomInventory
 		inventory.icon "INVBLCH";
 		inventory.pickupsound "inventory/flamebelch/get";
 		+INVENTORY.ALWAYSPICKUP;
-		scale 0.5;
 		+BLOCKASPLAYER;
 		//$Category "MetaDoom Inventory Items"
 		//$Title "Frag Grenade"
@@ -26,7 +36,7 @@ class FlameBelchPickup : CustomInventory
 	states
 	{
 	Spawn:
-		FTHR A -1;
+		FBLC Z -1;
 		stop;
 	Pickup:
 		TNT1 A 0 
@@ -55,7 +65,7 @@ class FlameBelch : CustomInventory
 	states
 	{
 	Spawn:
-		FTHR A -1;
+		FBLC Z -1;
 		stop;
 	Use:
 		TNT1 A 0
