@@ -27,6 +27,7 @@ class MetaMapFucker : LevelPostProcessor
 			AddThing(20605, (-2112,960,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20606, (-2240,960,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20607, (-2368,960,0), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20608, (-2496,960,0), 0, SKILLS_ALL, MODES_ALL);
 			
 			// Add Treasure Shit
 			AddThing(20500, (-80,1152,0), 0, SKILLS_ALL, MODES_ALL);

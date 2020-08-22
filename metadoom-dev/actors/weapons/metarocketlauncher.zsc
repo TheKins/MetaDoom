@@ -18,6 +18,8 @@ class MetaRocketLauncherPickup : WeaponGiver
 		scale 0.75;
 	}
 	
+	mixin LootSpawn;
+	
 	States
 	{
 	Spawn:

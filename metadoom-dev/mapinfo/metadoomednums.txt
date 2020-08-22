@@ -137,6 +137,7 @@ DoomEdNums
 	20605 = "SiphonGrenadePickup"
 	20606 = "TeslaRocketPickup"
 	20607 = "ArtifactPickup"
+	20608 = "FlameBelchPickup"
 	
 	// Props
 	20700 = "MetaBloodyTwitch"

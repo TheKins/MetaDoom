@@ -28,7 +28,7 @@ class FlameBelchPickup : CustomInventory
 		+INVENTORY.ALWAYSPICKUP;
 		+BLOCKASPLAYER;
 		//$Category "MetaDoom Inventory Items"
-		//$Title "Frag Grenade"
+		//$Title "Flame Belch"
 		//$NotAngled
 		//$Color 9
 	}
