@@ -50,3 +50,34 @@ object ArtifactPickup
 {
     frame ARTI { light ArtifactSinister }
 }
+
+Flickerlight Flamer
+{
+	Color 1.0 0.6 0.0
+	Size 32
+	SecondarySize 48
+	Chance 0.6
+}
+
+Flickerlight FlamerSmall
+{
+	Color 1.0 0.6 0.0
+	Size 8
+	SecondarySize 16
+	Chance 0.6
+}
+
+Object FlameBelchFire
+{
+	frame FTHR { light Flamer }
+}
+
+Object MetaFlameEffect
+{
+	frame FTRA { light FlamerSmall }
+}
+
+Object MetaGroundFireFlame
+{
+	frame FFLA { light FlamerSmall }
+}

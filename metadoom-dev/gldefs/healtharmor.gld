@@ -75,6 +75,11 @@ object MetaArmorPinata
     frame PINA { light ARMORCRUMB }
 }
 
+object MetaArmorPinataFade
+{
+    frame PINA { light ARMORCRUMB }
+}
+
 object MetaStimpack
 {
     frame STMP { light HEALTHCRUMB }

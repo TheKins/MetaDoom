@@ -104,7 +104,18 @@ Class FlameBelchAttack : Actor
 			TNT1 A 0 NoDelay A_StartSound("inventory/flamebelch/fire", 451, 0, 1.0, ATTN_NORM, 1.0);
 			TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
 			{
-				target.A_SpawnProjectile("FlameBelchFire", 48, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+				FLineTraceData SurfaceData;
+				target.LineTrace(target.angle + 90, 64, 0, TRF_THRUACTORS, offsetz: 0, offsetside: 0, data:SurfaceData);
+				
+				if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+				{
+					if (meta_developer)
+						Console.printf("Player at %i x %i ain't got burnin' room", self.pos.x, self.pos.y);
+						
+					target.A_SpawnProjectile("FlameBelchFire", 42, 0, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+				} else {
+					target.A_SpawnProjectile("FlameBelchFire", 42, -16, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+				}
 			}
 			Stop;
 	}
@@ -134,7 +145,7 @@ Class FlameBelchFire : CustomProj
 		CustomProj.XScaleFactor 0.0;
 		CustomProj.YScaleFactor 0.0;
 		
-		Speed 25;
+		Speed 48;
 		RenderStyle "Add";
 		Obituary "$OB_FLAMEBELCH";
 		

@@ -434,13 +434,13 @@ class MonsterCore : Actor
 		}
 	}
 	
-	// When damaged by the Axe, note down the inflictor as the cause of the bleeding damage
 	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
 	{
 		// De-scare damaged monsters
 		scurredamount = 0;
 		scurredtimer = 0;
 		
+		// When damaged by the Axe, note down the inflictor as the cause of the bleeding damage
 		if (mod == "Axe")
 		{
 			bloodletter = inflictor;
