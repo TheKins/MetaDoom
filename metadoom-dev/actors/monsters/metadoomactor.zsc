@@ -95,7 +95,7 @@ class MonsterCore : Actor
 		
 	// Siphon Grenade
 	Pain.Vampire:
-		"####" # 0 A_GiveToTarget ("Health", 1);
+		//"####" # 0 A_GiveToTarget ("Health", 1);
 		"####" # 0 A_PlaySound("monsters/vamped");
 		"####" # 0 A_Jump(256,"Pain");
 		stop;
@@ -444,6 +444,13 @@ class MonsterCore : Actor
 		if (mod == "Axe")
 		{
 			bloodletter = inflictor;
+		}
+		
+		// Give Siphon Grenade user health, regardless of whether we're targeting
+		// them or not (ie. even if we're infighting or distracted by a hologram)
+		if (mod == "Vampire")
+		{
+			source.A_GiveInventory("Health", 1);
 		}
 		
 		// If on fire, spawn some Armor
