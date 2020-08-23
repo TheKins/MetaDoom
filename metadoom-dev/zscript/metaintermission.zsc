@@ -87,7 +87,7 @@ class MetaDoomStatusScreen : DoomStatusScreen
 
 		default:
 			drawNoState();
-			widescreenDatShit();
+			//widescreenDatShit();
 			break;
 		}
 	}

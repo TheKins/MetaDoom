@@ -24,6 +24,9 @@ Item Changes:
   - All Other Items: 2 secs > 6 secs
 - Picking up an inventory item that you already have (other than the Artifact)
   now instantly removes any remaining cooldown on that item.
+- Fixed Siphon Grenades not rewarding any health to their user if the affected
+  monster was targeting something else (ie. if they were infighting or distracted
+  by a Hologram item.)
 
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
