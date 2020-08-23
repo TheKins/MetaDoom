@@ -365,7 +365,7 @@ class MetaDoomPlayer : PlayerPawn
 		|| (CountInv("InventoryFuel_KineticMine") == INV_COOLDOWN_GENERIC-1)
 		|| (CountInv("InventoryFuel_ShieldWall") == INV_COOLDOWN_SHIELD-1)
 		|| (CountInv("InventoryFuel_SiphonGrenade") == INV_COOLDOWN_SIPHON-1)
-		|| (CountInv("InventoryFuel_TeslaRocket") == INV_COOLDOWN_GENERIC-1)
+		|| (CountInv("InventoryFuel_TeslaRocket") == INV_COOLDOWN_SIPHON-1)
 		|| (CountInv("InventoryFuel_TheArtifact") == INV_COOLDOWN_ARTIFACT-1)
 		|| (CountInv("InventoryFuel_FlameBelch") == INV_COOLDOWN_GENERIC-1)
 		)
