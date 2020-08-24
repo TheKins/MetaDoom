@@ -36,7 +36,7 @@ page "Arsenal"
 	{
 		name "Super Shotgun";
 		origin "Doom II (1994)";
-		description "Among the state-of-the-art, high-tech arsenal of the UAC, the ''Super'' Shotgun was once a curious anomaly, with very little to differentiate it from a traditional farmer's tool. While it remains just as effective at blanketing the air in front of the user with a cloud of buckshot, some DIY alterations have since been made in the form of a plasma-propelled Alternate-Fire ''meathook'', capable of pulling the user over to a target as a dangerous form of travel into - or out of - the heat of battle.";
+		description "Among the state-of-the-art, high-tech arsenal of the UAC, the ''Super'' Shotgun was once a curious anomaly, with very little to differentiate it from a traditional farmer's tool. While it remains just as effective at blanketing the air in front of the user with a cloud of buckshot, some DIY alterations have since been made in the form of a passively-refilled, gas-propelled Alternate-Fire ''meathook'', capable of pulling the user over to a target as a dangerous form of travel into - or out of - the heat of battle.";
 	}
 	entry "MetaFireExtinguisher" 
 	{
