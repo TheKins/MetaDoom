@@ -14,6 +14,8 @@ Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun!
   - Only available when Potential Map-Breakers are enabled.
   - Costs 20 Cells to fire.
+- Plasma Rifle has been properly ZScript-ified and converted to using overlays
+  instead of a TEXTURES rats maze, allowing for greater maintainability.
 
 Item Changes:
 - Added 1 new Inventory item! (Flame Belch)
