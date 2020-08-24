@@ -400,6 +400,7 @@ Class MetaHookProjectile : Actor
 		speed 25;
 		+HITTRACER
 		+BLOODSPLATTER
+		+BLOCKASPLAYER
 	}
 	
 	vector3 spawnPos;
