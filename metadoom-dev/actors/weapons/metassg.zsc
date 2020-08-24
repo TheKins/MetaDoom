@@ -50,6 +50,8 @@ class MetaSuperShotgun : MetaDoomWeapon
 	MetaHookProjectile hook;
 	bool hookFired;
 	bool draggingPlayer;
+	int hooktimer;
+	int hookmeter;
 
 	// I don't know what on earth any of this does - some 3D calculation stuff?
 	// but it's needed for the Meathook to work so here it is.
@@ -118,6 +120,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSG2 A 0
 		{
 			A_Overlay(-2, "Overlay.HookManager");
+			A_Overlay(2, "Overlay.CounterManager");
 		}
 		SSG2 A 1 Offset(0,90) A_PlaySound("weapons/ssg/use");
 		SSG2 A 1 Offset(0,80);
@@ -135,13 +138,14 @@ class MetaSuperShotgun : MetaDoomWeapon
 		// If Mapbreakers are disabled, revert to old behavior of just doing the
 		// primary-fire thing. If the hook's in the air, don't do a damn thing.
 		SSG2 A 0 A_JumpIf(meta_mapbreakers == 0, "Fire");
-		SSG2 A 0 A_JumpIf(CountInv("Cell") < 20, "DryFire");
+		SSG2 A 0 A_JumpIf(invoker.hookmeter < 6, "DryFire");
 		SSG2 A 3 A_JumpIf(invoker.hook != null, "Ready");
 		SSG2 A 1
 		{
 			if (!invoker.hook)
 			{
-				A_TakeInventory("Cell", 20);
+				invoker.hookmeter = 0;
+				invoker.hooktimer = 0;
 				A_StartSound("weapons/ssg/hook/fire",CHAN_AUTO);
 				vector2 ofs = invoker.FindHooktargetOfs();
 				invoker.hook = MetaHookProjectile(A_SpawnProjectile("MetaHookProjectile",37,angle:ofs.x,flags:CMF_AIMDIRECTION,pitch:pitch+ofs.y));
@@ -162,6 +166,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		{
 			A_Overlay(-2, "Overlay.HookWhileFiring");
 			A_OverlayFlags (-2, PSPF_ADDWEAPON, 1);
+			A_Overlay(2, "Overlay.CounterWhileFiring");
 		}
 		SSG2 A 3;
 		SSG2 B 1 bright
@@ -204,7 +209,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSG2 TU 3;
 		SSG2 V 1 A_PlaySound ("weapons/ssg/close", CHAN_BODY);
 		SSG2 WXY 2;
-		//SSG2 A 5 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE)
+		SSG2 A 0 A_Overlay(2, "Overlay.CounterManager");
 		Goto Ready;
 	Flash:
 		TNT1 I 4 Bright A_Light1;
@@ -270,6 +275,89 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSGH WXY 2;
 		SSGH A 0 A_Overlay(-2, "Overlay.HookManager");
 		goto Overlay.HookManager;
+		
+	Overlay.CounterManager:
+		PLAM A 0
+		{
+			if (!meta_mapbreakers)
+			{
+				A_Overlay(2, "Overlay.CounterDisplay0");
+			}
+			
+			// thanks to 3saster for teaching me what a switch statement is		
+			switch(invoker.hookmeter)
+			{
+				case 6: A_Overlay(2, "Overlay.CounterDisplay6"); break;
+				case 5: A_Overlay(2, "Overlay.CounterDisplay5"); break;
+				case 4: A_Overlay(2, "Overlay.CounterDisplay4"); break;
+				case 3: A_Overlay(2, "Overlay.CounterDisplay3"); break;
+				case 2: A_Overlay(2, "Overlay.CounterDisplay2"); break;
+				case 1: A_Overlay(2, "Overlay.CounterDisplay1"); break;
+				case 0: 
+				default: A_Overlay(2, "Overlay.CounterDisplay0"); break;
+			}
+		}
+		loop;
+		
+	Overlay.CounterDisplay0:
+		TNT1 A 1 bright;
+		TNT1 A 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay1:
+		SSGC A 1 bright;
+		SSGC A 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay2:
+		SSGC B 1 bright;
+		SSGC B 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay3:
+		SSGC C 1 bright;
+		SSGC C 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay4:
+		SSGC D 1 bright;
+		SSGC D 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay5:
+		SSGC E 1 bright;
+		SSGC E 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterDisplay6:
+		SSGC F 1 bright;
+		SSGC F 0 A_Overlay(2, "Overlay.CounterManager");
+		loop;
+	Overlay.CounterWhileFiring:
+		TNT1 A 1;
+		loop;
+	}
+	
+	override void Tick()
+	{
+		if (hookmeter < 6 && meta_mapbreakers)
+		{
+			hooktimer++;
+		}
+		
+		if (hooktimer >= 87 && hookmeter < 6)
+		{
+			hooktimer = 0;
+			hookmeter++;
+			
+			if (hookmeter == 6)
+			{
+				owner.A_StartSound("weapons/ssg/hook/charge", 17, CHANF_LOCAL, 0.5, ATTN_NONE, 1.0);
+			}
+		}
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		if (meta_mapbreakers)
+		{
+			hookmeter = 6;
+		}
 	}
 }
 

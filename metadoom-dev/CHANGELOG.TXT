@@ -13,7 +13,7 @@ Optional Content Changes:
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun!
   - Only available when Potential Map-Breakers are enabled.
-  - Costs 20 Cells to fire.
+  - Has a 15 second cooldown between uses, so don't miss.
 - The Plasma Rifle has been heavily modified under the hood to use more modern,
   ZScript-era ways of doing things, like Overlays and such.
 - The Plasma Rifle now emits sound cues as its heat meter fills, giving you an

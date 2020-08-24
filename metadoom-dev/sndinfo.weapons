@@ -92,6 +92,7 @@ weapons/ssg/hook/hitactor		smhkactr
 weapons/ssg/hook/hitworld		smhkwrld
 
 weapons/ssg/hook/chain			smhkchn1
+weapons/ssg/hook/charge			ssghcrg
 
 $random weapons/ssg/hook/stick { weapons/ssg/hook/stick1 weapons/ssg/hook/stick2 weapons/ssg/hook/stick3 }
 weapons/ssg/hook/stick1			smhkstk1
