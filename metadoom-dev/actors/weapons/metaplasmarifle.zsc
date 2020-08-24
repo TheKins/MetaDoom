@@ -108,6 +108,16 @@ class MetaPlasmaRifle : MetaDoomWeapon
 			{
 				invoker.shotsfired = 0;
 				invoker.heatlevel++;
+				
+				switch(invoker.heatlevel)
+				{
+				  case 5: A_StartSound("weapons/plasmarifle/hot", 17, CHANF_LOCAL, 1.0, ATTN_NONE, 1.0); break;
+				  case 4: A_StartSound("weapons/plasmarifle/warmup", 17, CHANF_LOCAL, 1.0, ATTN_NONE, 1.75); break;
+				  case 3: A_StartSound("weapons/plasmarifle/warmup", 17, CHANF_LOCAL, 1.0, ATTN_NONE, 1.5); break;
+				  case 2: A_StartSound("weapons/plasmarifle/warmup", 17, CHANF_LOCAL, 1.0, ATTN_NONE, 1.25); break;
+				  case 1: 
+				  default: A_StartSound("weapons/plasmarifle/warmup", 17, CHANF_LOCAL, 1.0, ATTN_NONE, 1.0); break;
+				}
 			}
 			
 			A_AlertMonsters();

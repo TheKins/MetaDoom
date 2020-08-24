@@ -139,6 +139,9 @@ weapons/plasmarifle/dry		plasdryf
 weapons/plasmarifle/hit		plashit
 weapons/plasmarifle/loop	plasloop
 
+weapons/plasmarifle/warmup	plaswarm
+weapons/plasmarifle/hot		plashot
+
 // bfg
 weapons/bfg/get		bfgget
 weapons/bfg/use		bfguse
