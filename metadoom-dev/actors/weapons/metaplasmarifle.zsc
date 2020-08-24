@@ -191,27 +191,27 @@ class MetaPlasmaRifle : MetaDoomWeapon
 		loop;
 		
 	Overlay.Display0:
-		PLAM A 1;
+		PLAM A 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	Overlay.Display1:
-		PLAM B 1;
+		PLAM B 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	Overlay.Display2:
-		PLAM C 1;
+		PLAM C 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	Overlay.Display3:
-		PLAM D 1;
+		PLAM D 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	Overlay.Display4:
-		PLAM E 1;
+		PLAM E 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	Overlay.Display5:
-		PLAM F 1;
+		PLAM F 1 bright;
 		PLAM A 0 A_Overlay(2, "Overlay.Manager");
 		loop;
 	}

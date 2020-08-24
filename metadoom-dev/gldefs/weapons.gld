@@ -227,22 +227,3 @@ object MetaLightningStunFXZappy
 {
     frame ZAPP { light MetaLightningExplosion }
 }
-
-brightmap sprite PLA0A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA0B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA0C0 { map "brightmaps/plasma3.png" }
-brightmap sprite PLA1A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA1B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA1C0 { map "brightmaps/plasma3.png" }
-brightmap sprite PLA2A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA2B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA2C0 { map "brightmaps/plasma3.png" }
-brightmap sprite PLA3A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA3B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA3C0 { map "brightmaps/plasma3.png" }
-brightmap sprite PLA4A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA4B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA4C0 { map "brightmaps/plasma3.png" }
-brightmap sprite PLA5A0 { map "brightmaps/plasma1.png" }
-brightmap sprite PLA5B0 { map "brightmaps/plasma2.png" }
-brightmap sprite PLA5C0 { map "brightmaps/plasma3.png" }
