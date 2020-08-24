@@ -279,7 +279,7 @@ Class MetaHookProjectileTrail : Actor
 	{
 	Spawn:
 		TNT1 A 0;
-		SMHT A 2;
+		SMHT A 1;
 		stop;
 	}
 }
