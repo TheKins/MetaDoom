@@ -23,8 +23,8 @@ Item Changes:
 - Added 1 new Inventory item! (Flame Belch)
 - Dramatically increased inventory item cooldown:
   - Hologram: 11 secs > 20 secs
-  - Siphon Grenade & Tesla Rocket: 5 secs > 25 secs
-  - The Artifact: 6 secs > 30 secs
+  - Siphon Grenade & Tesla Rocket: 5 secs > 30 secs
+  - The Artifact: 6 secs > 25 secs
   - Shield Wall: 9 secs > 15 secs
   - All Other Items: 2 secs > 12 secs
 - Picking up an inventory item that you already have (other than the Artifact)
