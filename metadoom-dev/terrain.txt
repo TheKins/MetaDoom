@@ -143,14 +143,14 @@ ifdoom
 floor BLOOD1 Blood
 floor BLOOD2 Blood
 floor BLOOD3 Blood
-floor SLIME01 Slime
-floor SLIME02 Slime
-floor SLIME03 Slime
-floor SLIME04 Slime
-floor SLIME05 Slime
-floor SLIME06 Slime
-floor SLIME07 Slime
-floor SLIME08 Slime
+floor optional SLIME01 Slime
+floor optional SLIME02 Slime
+floor optional SLIME03 Slime
+floor optional SLIME04 Slime
+floor optional SLIME05 Slime
+floor optional SLIME06 Slime
+floor optional SLIME07 Slime
+floor optional SLIME08 Slime
 floor NUKAGE1 Nuke
 floor NUKAGE2 Nuke
 floor NUKAGE3 Nuke
@@ -162,14 +162,14 @@ floor LAVA1 Lava
 floor LAVA2 Lava
 floor LAVA3 Lava
 floor LAVA4 Lava
-floor RROCK05 Hot
-floor RROCK06 Hot
-floor RROCK07 Hot
-floor RROCK08 Hot
-floor SLIME09 Hot
-floor SLIME10 Hot
-floor SLIME11 Hot
-floor SLIME12 Hot
+floor optional RROCK05 Hot
+floor optional RROCK06 Hot
+floor optional RROCK07 Hot
+floor optional RROCK08 Hot
+floor optional SLIME09 Hot
+floor optional SLIME10 Hot
+floor optional SLIME11 Hot
+floor optional SLIME12 Hot
 
 // PSX Doom Shit
 floor optional WATER01 Water

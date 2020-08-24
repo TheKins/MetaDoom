@@ -53,7 +53,7 @@ flat BLOOD1
     pic 1 tics 1
     pic 1 tics 1
     
-flat SLIME01
+flat optional SLIME01
     pic 1 tics 1
     pic 1 tics 1
     
@@ -65,7 +65,7 @@ flat LAVA1
     pic 1 tics 1
     pic 1 tics 1
     
-flat SLIME05
+flat optional SLIME05
     pic 1 tics 1
     pic 1 tics 1  
 	
