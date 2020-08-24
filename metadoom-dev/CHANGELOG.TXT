@@ -41,6 +41,8 @@ UI Changes:
 Other Changes:
 - HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
 - Fixed ANIMDEFS/TERRAIN warnings in console on startup when playing Doom 1.
+- Fixed blood splats checking for Juvenile Power Fantasy's performance CVars
+  instead of MetaDoom's, because copy-pasting is hard.
 
 v666 "Titan" (10/03/20)
 =======================

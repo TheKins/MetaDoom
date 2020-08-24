@@ -573,7 +573,7 @@ class BloodSplat : Actor
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
 			A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
-			A_RadiusGive("BloodReducer", GetCvar("jpf_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
+			A_RadiusGive("BloodReducer", GetCvar("meta_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
 			
 			user_z = pos.z;
 						
@@ -628,14 +628,14 @@ class BloodSplat : Actor
 			// If still ticking up the clock and not being culled...
 			if ((user_lifetime < user_gettime) && 
 			!CountInv("BloodReducer") &&
-			!GetCVar("jpf_perf_fadeblood"))
+			!GetCVar("meta_perf_fadeblood"))
 			{
 				//Keep going.
 				user_lifetime += 35;
 			}
 			else
 			{
-				if (CountInv("BloodReducer") ||	GetCVar("jpf_perf_fadeblood"))
+				if (CountInv("BloodReducer") ||	GetCVar("meta_perf_fadeblood"))
 				{	return resolvestate("FadeWait");	}
 				
 				return resolvestate("FadeOut");
@@ -703,7 +703,7 @@ class BloodSplat_Permanent : BloodSplat
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
 			A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
-			A_RadiusGive("BloodReducer", GetCvar("jpf_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
+			A_RadiusGive("BloodReducer", GetCvar("meta_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
 			
 			user_z = pos.z;
 						
