@@ -135,6 +135,13 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A 0 Offset(0,90) A_TakeInventory("MeleePunch", 999);
 		TNT1 A 0 Offset(0,90) A_Jump(256, "Select");
 		stop;
+		
+	Overlay.GenericButtonPress:
+		TNT1 A 1 A_WeaponOffset(0,34,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 	
 	// Smooth Raise and Lower code by Boondorl
