@@ -323,6 +323,15 @@ QUITMSG26 = "\"'My favorite thing is to kill demons.\nDoes this start that? Grea
 QUITMSG27 = "You found the gear, break the\nshifter off, we're staying here!";												// Noclip Documentary, Hugo Martin
 QUITMSG28 = "Don't abandon the\nIntergalactic Federation\nof Cereals!\n\n...Wait, what?";									// Chex Quest
 QUITMSG29 = "Devoid of real quit-message-ness.\nForget all you have seen!";													// v0.4 Alpha, Readme
+QUITMSG30 = "Who are you, a human,\nonce a mortal, to\ndefy our traditions?";												// Doom Eternal, Khan Maykr
+QUITMSG31 = "All hail the coming of the\nDestroyer! The Slayer's time...\nis now!";											// Doom Eternal, Dr. Thirst
+QUITMSG32 = "My soul remains guarded!\nYou can't... !!!";																	// Doom Eternal, Hell Priest
+QUITMSG33 = "Heheheheh...\n\nIf you press Y, you will\nlose all sovereignty here!";											// Doom Eternal, Hell Priest
+QUITMSG34 = "I do not fear you.\nThis match is not won yet!";																// Doom Eternal, Hell Priest
+QUITMSG35 = "The longer the Y button is on\nthis screen the stronger\nit becomes!";											// Doom Eternal, Samuel Hayden
+QUITMSG36 = "I'm sure you'll want to try\nyour weapons out before we leave...";												// Doom Eternal, Samuel Hayden
+QUITMSG37 = "There are those that\nwould seek to stop this.";																// Doom Eternal, Hooded Figure
+
 
 // Obituary strings
 // First the self-kills, then the other-kills
