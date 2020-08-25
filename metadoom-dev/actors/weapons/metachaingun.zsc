@@ -90,7 +90,7 @@ class MetaChaingun : MetaDoomWeapon
 		CHGN BCDABCD 1;
 		CHGN D 0 A_ReFire;
 	WindDown:
-		CHGN A 1 A_PlaySound("weapons/chaingun/winddown",6);
+		CHGN A 1 { A_PlaySound("weapons/chaingun/winddown",6); A_WeaponOffset(0,32,WOF_INTERPOLATE); }
 		CHGN B 2;
 		CHGN C 3;
 		CHGN D 4;
@@ -118,6 +118,7 @@ class MetaChaingun : MetaDoomWeapon
 			}
 			A_GunFlash();
 			A_Quake (3,5,0,750,0);
+			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
 		}
 		CHGN D 0 A_JumpIfNoAmmo("WindDown");
 		CHGN F 1 BRIGHT 
@@ -129,6 +130,7 @@ class MetaChaingun : MetaDoomWeapon
 				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
 			}
 			A_Quake (3,5,0,750,0);
+			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
 		}
 		CHGN D 0 A_JumpIfNoAmmo("WindDown");
 		CHGN G 1 BRIGHT 
@@ -141,6 +143,7 @@ class MetaChaingun : MetaDoomWeapon
 			}
 			A_GunFlash();
 			A_Quake (3,5,0,750,0);
+			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
 		}
 		CHGN D 0 A_JumpIfNoAmmo("WindDown");
 		CHGN H 1 BRIGHT 
@@ -152,6 +155,7 @@ class MetaChaingun : MetaDoomWeapon
 				A_FireProjectile("BulletCasingSpawn",5,0,8,-9);
 			}
 			A_Quake (3,5,0,750,0);
+			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
 		}
 		CHGN D 0 A_JumpIfNoAmmo("WindDown");
 		CHGN D 0 A_ReFire;
@@ -168,42 +172,42 @@ class MetaChaingun : MetaDoomWeapon
 		MACG E 0 A_JumpIf(CountInv("Clip") < 10, "AltfireBlank");
 		MACG E 0 SetPlayerProperty(0, 1, PROP_FROZEN);
 		MACG E 0 A_PlaySound("weapons/chaingun/turretup");
-		CHFL A 2 Offset (0,33);
-		CHFL B 2 Offset (0,34);
-		CHFL C 2 Offset (0,35);
-		CHFL D 2 Offset (0,36);
-		CHFL E 2 Offset (0,35);
-		CHFL F 2 Offset (0,34);
-		CHFL G 2 Offset (0,33);
-		CHTR A 5 Offset (0,32) A_GiveInventory("ChaingunTurretMode", 1);
+		CHFL A 2 A_WeaponOffset (0,33,WOF_INTERPOLATE);
+		CHFL B 2 A_WeaponOffset (0,34,WOF_INTERPOLATE);
+		CHFL C 2 A_WeaponOffset (0,35,WOF_INTERPOLATE);
+		CHFL D 2 A_WeaponOffset (0,36,WOF_INTERPOLATE);
+		CHFL E 2 A_WeaponOffset (0,35,WOF_INTERPOLATE);
+		CHFL F 2 A_WeaponOffset (0,34,WOF_INTERPOLATE);
+		CHFL G 2 A_WeaponOffset (0,33,WOF_INTERPOLATE);
+		CHTR A 5 { A_WeaponOffset (0,32,WOF_INTERPOLATE); A_GiveInventory("ChaingunTurretMode", 1); }
 		goto Ready;
 	AltfireEnd:
 		CHTR A 0 A_StopSound(CHAN_6);
 		MACG J 0 A_PlaySound("weapons/chaingun/turretdown");
 		MACG E 0 SetPlayerProperty(0, 0, PROP_FROZEN);
-		CHFL G 2 Offset (0,31);
-		CHFL F 2 Offset (0,30);
-		CHFL E 2 Offset (0,29);
-		CHFL D 2 Offset (0,30);
-		CHFL C 2 Offset (0,31);
-		CHFL B 2 Offset (0,32);
-		CHFL A 2 Offset (0,33);
+		CHFL G 2 A_WeaponOffset (0,31,WOF_INTERPOLATE);
+		CHFL F 2 A_WeaponOffset (0,30,WOF_INTERPOLATE);
+		CHFL E 2 A_WeaponOffset (0,29,WOF_INTERPOLATE);
+		CHFL D 2 A_WeaponOffset (0,30,WOF_INTERPOLATE);
+		CHFL C 2 A_WeaponOffset (0,31,WOF_INTERPOLATE);
+		CHFL B 2 A_WeaponOffset (0,32,WOF_INTERPOLATE);
+		CHFL A 2 A_WeaponOffset (0,33,WOF_INTERPOLATE);
 		//CHFL GFEDCBA 2
-		MACG A 0 Offset (0,32)A_TakeInventory("ChaingunTurretMode", 999);
+		MACG A 0 { A_WeaponOffset (0,32,WOF_INTERPOLATE); A_TakeInventory("ChaingunTurretMode", 999); }
 		Goto Ready;
 	AltfireDeselect:
 		CHTR A 0 A_StopSound(CHAN_6);
 		MACG J 0 A_PlaySound("weapons/chaingun/turretdown");
 		MACG E 0 SetPlayerProperty(0, 0, PROP_FROZEN);
-		CHFL G 2 Offset (0,31);
-		CHFL F 2 Offset (0,30);
-		CHFL E 2 Offset (0,29);
-		CHFL D 2 Offset (0,30);
-		CHFL C 2 Offset (0,31);
-		CHFL B 2 Offset (0,32);
-		CHFL A 2 Offset (0,33);
+		CHFL G 2 A_WeaponOffset (0,31,WOF_INTERPOLATE);
+		CHFL F 2 A_WeaponOffset (0,30,WOF_INTERPOLATE);
+		CHFL E 2 A_WeaponOffset (0,29,WOF_INTERPOLATE);
+		CHFL D 2 A_WeaponOffset (0,30,WOF_INTERPOLATE);
+		CHFL C 2 A_WeaponOffset (0,31,WOF_INTERPOLATE);
+		CHFL B 2 A_WeaponOffset (0,32,WOF_INTERPOLATE);
+		CHFL A 2 A_WeaponOffset (0,33,WOF_INTERPOLATE);
 		//CHFL GFEDCBA 2
-		MACG A 0 Offset (0,32) A_TakeInventory("ChaingunTurretMode", 999);
+		MACG A 0 { A_WeaponOffset (0,32,WOF_INTERPOLATE); A_TakeInventory("ChaingunTurretMode", 999); }
 		Goto Deselect;
 	AltfireBlank:
 		CHGN A 1 Offset(0,34) A_PlaySound("weapons/machinegun/dry", CHAN_BODY);
