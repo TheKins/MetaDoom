@@ -64,7 +64,7 @@ class MetaShotgun : MetaDoomWeapon
 		loop;
 	Fire:
 		SSH1 A 3;
-		SSH1 A 0 
+		SSH1 B 3 bright 
 		{
 			A_FireBullets (5.6, 0, 7, 5, "MetaBulletPuff");
 			A_PlaySound ("weapons/shotgun/fire", CHAN_WEAPON);
@@ -75,15 +75,11 @@ class MetaShotgun : MetaDoomWeapon
 			}
 			
 			A_GunFlash();
+			A_Overlay(14, "Overlay.Fire");
 		}
-		SSH1 B 1 bright Offset(0,45) A_SetPitch(pitch-2);
-		SSH1 B 1 bright Offset(0,42) A_SetPitch(pitch-2);
-		SSH1 C 1 bright Offset(0,40);
-		SSH1 C 1 bright Offset(0,38);
-		SSH1 D 1 Offset(0,36) A_SetPitch(pitch+1);
-		SSH1 E 2 Offset(0,34) A_SetPitch(pitch+1);
-		SSH1 F 2 Offset(0,32) A_SetPitch(pitch+1);
-		SSH1 G 2 A_SetPitch(pitch+1);
+		SSH1 C 2 bright;
+		SSH1 D 1;
+		SSH1 EFG 2;
 		SSH1 HIJ 2 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		SSH1 K 4
 		{
@@ -100,12 +96,11 @@ class MetaShotgun : MetaDoomWeapon
 		Goto Ready;
 	AltFire:
 		STG1 A 0 A_JumpIfInventory("Shell",4,"GrenadeShot");
-		STG1 A 1 Offset(0,34) A_PlaySound("weapons/shotgun/dry", CHAN_BODY);
-		STG1 A 1 Offset(0,33);
-		STG1 A 1 Offset(0,32) A_TakeInventory("RLDetonator", 1);
-		STG1 A 10;
+		STG1 A 10 { A_Overlay(14, "Overlay.GenericButtonPress"); A_PlaySound("weapons/shotgun/dry", CHAN_BODY); }
 		goto Ready;
 	GrenadeShot:
+		// Adding interpolation to this one makes it look all shaky, so let's
+		// leave it as the old code for now.
 		STG1 A 3;
 		STG1 A 0 
 		{
@@ -162,6 +157,18 @@ class MetaShotgun : MetaDoomWeapon
 	Spawn:
 		STG1 Z -1;
 		Stop;
+		
+	Overlay.Fire:
+		TNT1 B 1 { A_WeaponOffset(0,45, WOF_INTERPOLATE); A_SetPitch(pitch-2); }
+		TNT1 B 1 { A_WeaponOffset(0,42,WOF_INTERPOLATE); A_SetPitch(pitch-2); }
+		TNT1 C 1 A_WeaponOffset(0,40,WOF_INTERPOLATE);
+		TNT1 C 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
+		TNT1 D 1 { A_WeaponOffset(0,36,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
+		TNT1 E 2 { A_WeaponOffset(0,34,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
+		TNT1 F 2 { A_WeaponOffset(0,32,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
+		TNT1 G 2 A_SetPitch(pitch+1, SPF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 }
 
