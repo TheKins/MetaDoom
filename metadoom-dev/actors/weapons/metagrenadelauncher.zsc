@@ -43,6 +43,7 @@ class MetaGrenadeLauncher : MetaDoomWeapon
 		+WEAPON.ALT_AMMO_OPTIONAL
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
+		Weapon.UpSound "weapons/grenadelauncher/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Grenade Launcher"
 		//$NotAngled
@@ -62,8 +63,6 @@ class MetaGrenadeLauncher : MetaDoomWeapon
 		GLAU A 1 A_SmoothLower();
 		Loop;
 	Select:
-		GLAU A 0 A_PlaySound("weapons/grenadelauncher/use");
-	FinishSelect:
 		GLAU A 1 A_SmoothRaise();
 		loop;
 	Fire:

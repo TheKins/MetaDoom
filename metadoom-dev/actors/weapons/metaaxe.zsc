@@ -37,6 +37,7 @@ class MetaAxe : MetaDoomWeapon
 		+WEAPON.NOALERT
 		Inventory.PickupMessage "$GOTAXE";
 		Inventory.PickupSound "weapons/axe/get";
+		Weapon.UpSound "weapons/axe/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Fire Axe"
 		//$NotAngled
@@ -56,8 +57,6 @@ class MetaAxe : MetaDoomWeapon
 		AXEG A 1 A_SmoothLower();
 		Loop;
 	Select:
-		AXEG A 0 A_PlaySound("weapons/axe/use");
-	FinishSelect:
 		AXEG A 1 A_SmoothRaise();
 		loop;
 	AltFire:

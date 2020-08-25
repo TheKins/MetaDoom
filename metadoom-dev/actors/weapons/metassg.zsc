@@ -41,6 +41,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		Obituary "$OB_MPSSHOTGUN";
 		Tag "$TAG_SUPERSHOTGUN";
 		Inventory.PickupSound "weapons/ssg/get";
+		Weapon.UpSound "weapons/ssg/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Super Shotgun"
 		//$NotAngled
@@ -112,7 +113,6 @@ class MetaSuperShotgun : MetaDoomWeapon
 			A_Overlay(-2, "Overlay.HookManager");
 			A_Overlay(2, "Overlay.CounterManager");
 		}
-		SSG2 A 0 Offset(0,90) A_PlaySound("weapons/ssg/use");
 	FinishSelect:
 		SSG2 A 1 A_SmoothRaise();
 		loop;

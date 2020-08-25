@@ -60,6 +60,7 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		Inventory.Pickupmessage "$GOTFIREX";
 		Tag "$TAGFIREX";
 		Inventory.PickupSound "weapons/fireextinguisher/get";
+		Weapon.UpSound "weapons/fireextinguisher/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Fire Extinguisher"
 		//$NotAngled
@@ -80,8 +81,6 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		FIEX A 1 A_SmoothLower();
 		Loop;
 	Select:
-		FIEX A 0 A_PlaySound("weapons/fireextinguisher/use");
-	FinishSelect:
 		FIEX A 1 A_SmoothRaise();
 		loop;
 	Fire:

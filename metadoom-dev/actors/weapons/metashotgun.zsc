@@ -40,6 +40,7 @@ class MetaShotgun : MetaDoomWeapon
 		Tag "$TAG_SHOTGUN";
 		Inventory.PickupSound "weapons/shotgun/get";
 		+WEAPON.ALT_AMMO_OPTIONAL
+		Weapon.UpSound "weapons/shotgun/cock1";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Combat Shotgun"
 		//$NotAngled
@@ -59,8 +60,6 @@ class MetaShotgun : MetaDoomWeapon
 		STG1 A 1 A_SmoothLower();
 		Loop;
 	Select:
-		STG1 A 0 A_PlaySound("weapons/shotgun/cock1");
-	FinishSelect:
 		STG1 A 1 A_SmoothRaise();
 		loop;
 	Fire:

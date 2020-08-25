@@ -44,6 +44,7 @@ class MetaMachineGun : MetaDoomWeapon
 		Inventory.PickupSound "weapons/machinegun/get";
 		+WEAPON.ALT_AMMO_OPTIONAL
 		+WEAPON.NOALERT
+		Weapon.UpSound "weapons/machinegun/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Assault Rifle"
 		//$NotAngled
@@ -70,8 +71,6 @@ class MetaMachineGun : MetaDoomWeapon
 		MACG A 1 A_SmoothLower();
 		Loop;
 	Select:
-		MACG A 0 A_PlaySound("weapons/machinegun/use");
-	FinishSelect:
 		MACG A 1 A_SmoothRaise();
 		loop;
 	Fire:

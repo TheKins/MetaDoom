@@ -40,6 +40,7 @@ class MetaChaingun : MetaDoomWeapon
 		Weapon.AmmoType "Clip";
 		Weapon.AmmoGive 100;
 		Weapon.AmmoUse 1;
+		Weapon.UpSound "weapons/chaingun/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Chaingun"
 		//$NotAngled
@@ -77,8 +78,6 @@ class MetaChaingun : MetaDoomWeapon
 		CHGN A 1 A_SmoothLower();
 		Loop;
 	Select:
-		CHGN A 0 A_PlaySound("weapons/chaingun/use");
-	FinishSelect:
 		CHGN A 1 A_SmoothRaise();
 		loop;
 	Fire:

@@ -63,6 +63,7 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		+WEAPON.AMMO_OPTIONAL
 		Inventory.PickupSound "weapons/waterpistol/get";
 		scale 0.75;
+		Weapon.UpSound "weapons/waterpistol/empty";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Holy Water Pistol"
 		//$NotAngled
@@ -83,7 +84,7 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		HWPH A 1 A_SmoothLower();
 		Loop;
 	Select:
-		HWPH A 0 { A_PlaySound("weapons/waterpistol/empty"); A_GiveInventory("HolyWaterPistolEquipped",1); }
+		HWPH A 0 A_GiveInventory("HolyWaterPistolEquipped",1);
 	FinishSelect:
 		HWPH A 1 A_SmoothRaise();
 		loop;

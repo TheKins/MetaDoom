@@ -54,6 +54,7 @@ class MetaBerserkFist : MetaDoomWeapon
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 		+WEAPON.NOALERT
+		Weapon.UpSound "weapons/swap";
 	}
 	
 	States
@@ -69,8 +70,6 @@ class MetaBerserkFist : MetaDoomWeapon
 		PUNG A 1 A_SmoothLower();
 		Loop;
 	Select:
-		PUNG A 0 A_PlaySound("weapons/swap");
-	FinishSelect:
 		PUNG A 1 A_SmoothRaise();
 		loop;
 	AltFire:

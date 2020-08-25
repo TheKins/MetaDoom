@@ -47,6 +47,7 @@ class MetaRocketLauncher : MetaDoomWeapon
 		+WEAPON.NOALERT
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
+		Weapon.UpSound "weapons/rocketlauncher/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Rocket Launcher"
 		//$NotAngled
@@ -66,8 +67,6 @@ class MetaRocketLauncher : MetaDoomWeapon
 		RLAU A 1 A_SmoothLower();
 		Loop;
 	Select:
-		RLAU A 0 A_PlaySound("weapons/rocketlauncher/use");
-	FinishSelect:
 		RLAU A 1 A_SmoothRaise();
 		loop;
 	Fire:

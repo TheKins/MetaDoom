@@ -41,6 +41,7 @@ class MetaGaussCannon : MetaDoomWeapon
 		Inventory.PickupSound "weapons/gauss/get";
 		//Decal PlasmaScorch
 		damagetype "Gauss";
+		Weapon.UpSound "weapons/gauss/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "Gauss Cannon"
 		//$NotAngled
@@ -70,8 +71,6 @@ class MetaGaussCannon : MetaDoomWeapon
 		GAUS ABC 1 A_SmoothLower();
 		Loop;
 	Select:
-		GAUS A 0 A_PlaySound("weapons/gauss/use");
-	FinishSelect:
 		GAUS ABC 1 A_SmoothRaise();
 		loop;
 	Fire:

@@ -41,6 +41,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		Inventory.PickupSound "weapons/bfg/get";
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.25;
+		Weapon.UpSound "weapons/bfg/use";
 		//$Category "Weapons/MetaDoom"
 		//$Title "BFG9000"
 		//$NotAngled
@@ -61,8 +62,6 @@ Class MetaBFG9000 : MetaDoomWeapon
 		MBFG AB 1 A_SmoothLower();
 		Loop;
 	Select:
-		MBFG A 0 A_PlaySound("weapons/bfg/use");
-	FinishSelect:
 		MBFG AB 1 A_SmoothRaise();
 		loop;
 	Fire:
