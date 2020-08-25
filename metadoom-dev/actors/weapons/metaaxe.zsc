@@ -76,16 +76,14 @@ class MetaAxe : MetaDoomWeapon
 		AXEG JK 1;
 		AXEG L 1 A_CustomPunch(7 * random(1, 5), TRUE, CPF_NOTURN,"MetaAxePuff",80,0,0,"BasicArmorBonus","weapons/axe/hit");
 		AXEG MNO 1;
-		TNT1 A 1;
-		TNT1 A 1 Offset(0,32);
-		TNT1 A 8 Offset(0,90);
-		AXEG A 1 Offset(0,90);
-		AXEG A 1 Offset(0,70);
-		AXEG A 1 Offset(0,55);
-		AXEG A 1 Offset(0,44);
-		AXEG A 1 Offset(0,35);
-		AXEG A 1 Offset(0,33);
-		AXEG A 1 Offset(0,32);
+		TNT1 A 10 A_WeaponOffset(0,90);
+		AXEG A 1 A_WeaponOffset(0,90,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,70,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,55,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,44,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		AXEG A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
 		Goto Ready;
 	Spawn:
 		AXEG Z -1;
