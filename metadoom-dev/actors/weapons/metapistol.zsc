@@ -87,7 +87,7 @@ class MetaPistol : MetaDoomWeapon
 			return ResolveState(null); // this is dumb. why do i need this?
 		}
 		PIST A 4;
-		PIST B 1 bright
+		PIST B 2 bright
 		{
 			if (!meta_pistolammo || (meta_pistolammo && CountInv("Clip") > 0))
 			{
@@ -106,16 +106,14 @@ class MetaPistol : MetaDoomWeapon
 				
 				A_GunFlash();
 				A_AlertMonsters();
+				
+				A_Overlay(2, "Overlay.Recoil");
 			}
 		}
-		PIST B 1 bright Offset(0,38);
-		PIST C 1 bright Offset(0,42);
-		PIST C 1 bright Offset(0,43) A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
-		PIST D 1 bright Offset(0,38) A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
-		PIST D 1 Offset(0,35) A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
-		PIST E 1 Offset(0,33) A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
-		PIST E 1 Offset(0,32) A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
-		PIST FF 1  A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		PIST C 2 bright A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		PIST D 2 bright A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		PIST E 2 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
+		PIST F 2 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		Goto Ready;
 	NoAmmo:
 		PIST A 0;
@@ -151,6 +149,17 @@ class MetaPistol : MetaDoomWeapon
  	Spawn:
 		PIST Z -1;
 		Stop;
+		
+	Overlay.Recoil:
+		TNT1 B 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
+		TNT1 C 1 A_WeaponOffset(0,42,WOF_INTERPOLATE);
+		TNT1 C 1 A_WeaponOffset(0,43,WOF_INTERPOLATE);
+		TNT1 D 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
+		TNT1 D 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		TNT1 E 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 E 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 }
 
