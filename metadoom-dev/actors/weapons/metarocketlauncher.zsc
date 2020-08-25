@@ -71,7 +71,7 @@ class MetaRocketLauncher : MetaDoomWeapon
 		loop;
 	Fire:
 		RLAU B 0 A_GunFlash;
-		RLAU A 0 
+		RLAU B 3 bright
 		{
 			A_FireProjectile ("MetaLauncherRocket");
 			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
@@ -83,30 +83,21 @@ class MetaRocketLauncher : MetaDoomWeapon
 		
 			A_GunFlash();
 			A_AlertMonsters();
+			A_Overlay(14, "Overlay.Fire");
 		}
-		RLAU B 1 bright Offset(0,45) A_SetPitch(pitch-2);
-		RLAU B 1 bright Offset(0,48) A_SetPitch(pitch-2);
-		RLAU B 1 bright Offset(0,47);
-		RLAU C 1 bright Offset(0,46) A_SetPitch(pitch+1);
-		RLAU C 1 bright Offset(0,44) A_SetPitch(pitch+1);
-		RLAU C 1 bright Offset(0,42) A_SetPitch(pitch+1);
-		RLAU D 1 bright Offset(0,38) A_SetPitch(pitch+1) ;
-		RLAU D 1 bright Offset(0,36) A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
-		RLAU D 1 Offset(0,34) A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
-		RLAU A 1 Offset(0,33) A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
-		RLAU A 1 Offset(0,32) A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
-		RLAU A 8 A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
+		RLAU C 3 bright;
+		RLAU D 3 A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
+		RLAU A 11 A_WeaponReady(WRF_NOSWITCH|WRF_NOPRIMARY|WRF_NOBOB);
 		Goto Ready;
 	AltFire:
 		RLAU A 0;
-		RLAU A 1 Offset(0,34)
+		RLAU A 3
 		{
 				A_GiveInventory("RLDetonator", 1);
 				A_PlaySound("weapons/rocketlauncher/deto", CHAN_BODY);
+				A_Overlay(14, "Overlay.GenericButtonPress");
 		}
-		RLAU A 1 Offset(0,33);
-		RLAU A 1 Offset(0,32) A_TakeInventory("RLDetonator", 1);
-		RLAU A 10;
+		RLAU A 7 A_TakeInventory("RLDetonator", 1);
 		goto Ready;
 	Flash:
 		TNT1 A 3 Bright A_Light1;
@@ -116,6 +107,23 @@ class MetaRocketLauncher : MetaDoomWeapon
 	Spawn:
 		RLAU Z -1;
 		Stop;
+		
+	Overlay.Fire:
+		TNT1 B 1 { A_WeaponOffset(0,45,WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
+		TNT1 B 1 { A_WeaponOffset(0,52,WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
+		TNT1 B 1 A_WeaponOffset(0,53,WOF_INTERPOLATE);
+		TNT1 C 1 { A_WeaponOffset(0,50,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 C 1 { A_WeaponOffset(0,48,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 C 1 { A_WeaponOffset(0,46,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 { A_WeaponOffset(0,45,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 A_WeaponOffset(0,42,WOF_INTERPOLATE);
+		TNT1 D 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,36,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,34,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 }
 
