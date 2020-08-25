@@ -72,7 +72,7 @@ class MetaUnmaker : MetaDoomWeapon
 		UNMA A 0 A_JumpIfInventory("DemonKey", 1, "Fire_Keys1");
 	Fire_Keys0:
 		UNMA A 4;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_FireProjectile("UnmakerTracer");
 			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
@@ -84,16 +84,15 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			
+			A_Overlay(14, "Overlay.FireNoKeys");
 		}
-		UNMA B 1 bright Offset(0,42);
-		UNMA A 1 bright Offset(0,38);
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,32);
-		UNMA A 1;
+		UNMA A 1 bright;
+		UNMA A 3;
 		Goto Ready;
 	Fire_Keys1:
 		UNMA A 2;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_FireProjectile("UnmakerTracer");
 			A_PlaySound("weapons/unmaker/fire", CHAN_WEAPON);
@@ -105,14 +104,14 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			
+			A_Overlay(14, "Overlay.FireKeys");
 		}
-		UNMA B 1 bright Offset(0,40);
-		UNMA A 1 Offset(0,33);
-		UNMA A 1 Offset(0,32);
+		UNMA A 2;
 		Goto Ready;
 	Fire_Keys2:
 		UNMA A 2;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_FireProjectile("UnmakerTracer", -3);
 			A_FireProjectile("UnmakerTracer", 3, 0);
@@ -125,14 +124,14 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			
+			A_Overlay(14, "Overlay.FireKeys");
 		}
-		UNMA B 1 bright Offset(0,40);
-		UNMA A 1 Offset(0,33);
-		UNMA A 1 Offset(0,32);
+		UNMA A 2;
 		Goto Ready;
 	Fire_Keys3:
 		UNMA A 2;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_FireProjectile("UnmakerTracer", -4, 0);
 			A_FireProjectile("UnmakerTracer", 4, 0);
@@ -146,19 +145,16 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			
+			A_Overlay(14, "Overlay.FireKeys");
 		}
-		UNMA B 1 bright Offset(0,40);
-		UNMA A 1 Offset(0,33);
-		UNMA A 1 Offset(0,32);
+		UNMA A 2;
 		Goto Ready;
 	AltFire:
 		UNMA A 0;
 		UNMA A 0 A_JumpIfInventory("DemonKey", 1, "AltFire_Charge");
 	AltFire_Keys0:
-		UNMA A 1 Offset(0,34) A_PlaySound("weapons/unmaker/butan", CHAN_BODY);
-		UNMA A 1 Offset(0,33);
-		UNMA A 1 Offset(0,32);// A_TakeInventory("RLDetonator", 1);
-		UNMA A 10;
+		UNMA A 10 { A_Overlay(14, "Overlay.GenericButtonPress"); A_PlaySound("weapons/unmaker/butan", CHAN_BODY); }
 		goto Ready;
 	AltFire_Charge:
 		UNMA A 0;
@@ -173,7 +169,7 @@ class MetaUnmaker : MetaDoomWeapon
 		goto AltFire_Keys0;
 	AltFire_Keys1:
 		UNMA A 0;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_RailAttack((200),0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",0,0,4096,35,4.0,0,"UnmakerRailCore");
 			A_PlaySound("weapons/unmaker/altfire1", CHAN_WEAPON);
@@ -185,16 +181,13 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			A_Overlay(14, "Overlay.AltFire");
 		}
-		UNMA B 1 bright Offset(0,42);
-		UNMA A 1 bright Offset(0,38);
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,32);
-		UNMA A 1;
+		UNMA A 4 bright;
 		Goto Ready;
 	AltFire_Keys2:
 		UNMA A 0;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_RailAttack((200),0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
 			A_RailAttack((200),0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
@@ -207,16 +200,13 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			A_Overlay(14, "Overlay.AltFire2");
 		}
-		UNMA B 1 bright Offset(0,42);
-		UNMA A 1 bright Offset(0,38);
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,32);
-		UNMA A 1;
+		UNMA A 4 bright;
 		Goto Ready;
 	AltFire_Keys3:
 		UNMA A 0;
-		UNMA B 1 bright
+		UNMA B 2 bright
 		{
 			A_RailAttack((200),0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
 			A_RailAttack((200),0,1,"Blue","White",RGF_SILENT|RGF_FULLBRIGHT,0,"UnmakerRailPuff",4,4,4096,35,4.0,0,"UnmakerRailCore");
@@ -230,12 +220,9 @@ class MetaUnmaker : MetaDoomWeapon
 			
 			A_GunFlash();
 			A_AlertMonsters();
+			A_Overlay(14, "Overlay.AltFire3");
 		}
-		UNMA B 1 bright Offset(0,42);
-		UNMA A 1 bright Offset(0,38);
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,32);
-		UNMA A 1;
+		UNMA A 4 bright;
 		Goto Ready;
 	Flash:
 		TNT1 A 4 Bright A_Light1;
@@ -245,6 +232,60 @@ class MetaUnmaker : MetaDoomWeapon
  	Spawn:
 		UNMA Z -1;
 		Stop;
+	
+	Overlay.FireNoKeys:
+		TNT1 B 1 A_WeaponOffset(0,42,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
+	Overlay.FireKeys:
+		TNT1 B 1 A_WeaponOffset(0,40,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
+	Overlay.AltFire:
+		TNT1 B 1 { A_ZoomFactor(0.9, ZOOM_INSTANT|ZOOM_NOSCALETURNING); A_WeaponOffset(0,42,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.92, ZOOM_NOSCALETURNING); A_WeaponOffset(0,38,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.94, ZOOM_NOSCALETURNING); A_WeaponOffset(0,35,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.96, ZOOM_NOSCALETURNING); A_WeaponOffset(0,32,WOF_INTERPOLATE); }
+		TNT1 A 1 A_ZoomFactor(0.97, ZOOM_NOSCALETURNING);
+		TNT1 A 1 A_ZoomFactor(0.98, ZOOM_NOSCALETURNING);
+		TNT1 A 1 A_ZoomFactor(0.99, ZOOM_NOSCALETURNING);
+		TNT1 A 1 A_ZoomFactor(1.0, ZOOM_NOSCALETURNING);
+		TNT1 A -1;
+		stop;
+	Overlay.AltFire2:
+		TNT1 B 1 { A_ZoomFactor(0.85, ZOOM_INSTANT|ZOOM_NOSCALETURNING); A_WeaponOffset(0,46,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.86, ZOOM_NOSCALETURNING); A_WeaponOffset(0,45,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.87, ZOOM_NOSCALETURNING); A_WeaponOffset(0,43,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.89, ZOOM_NOSCALETURNING); A_WeaponOffset(0,40,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.92, ZOOM_NOSCALETURNING); A_WeaponOffset(0,38,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.94, ZOOM_NOSCALETURNING); A_WeaponOffset(0,36,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.96, ZOOM_NOSCALETURNING); A_WeaponOffset(0,34,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.98, ZOOM_NOSCALETURNING); A_WeaponOffset(0,33,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(1.0, ZOOM_NOSCALETURNING); A_WeaponOffset(0,32,WOF_INTERPOLATE); }
+		TNT1 A -1;
+		stop;
+	Overlay.AltFire3:
+		TNT1 B 1 { A_ZoomFactor(0.8, ZOOM_INSTANT|ZOOM_NOSCALETURNING); A_WeaponOffset(0,46,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.82, ZOOM_NOSCALETURNING); A_WeaponOffset(0,52,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.84, ZOOM_NOSCALETURNING); A_WeaponOffset(0,53,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.86, ZOOM_NOSCALETURNING); A_WeaponOffset(0,52,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.9, ZOOM_NOSCALETURNING); A_WeaponOffset(0,46,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.94, ZOOM_NOSCALETURNING); A_WeaponOffset(0,42,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.96, ZOOM_NOSCALETURNING); A_WeaponOffset(0,39,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(0.98, ZOOM_NOSCALETURNING); A_WeaponOffset(0,37,WOF_INTERPOLATE); }
+		TNT1 A 1 { A_ZoomFactor(1.0, ZOOM_NOSCALETURNING); A_WeaponOffset(0,36,WOF_INTERPOLATE); }
+		TNT1 A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,34,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
+		
 	}
 }
 
