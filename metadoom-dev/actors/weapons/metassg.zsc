@@ -169,7 +169,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 			A_Overlay(2, "Overlay.CounterWhileFiring");
 		}
 		SSG2 A 3;
-		SSG2 B 1 bright
+		SSG2 B 3 bright
 		{
 			A_FireBullets (11.2, 7.1, 20, 5, "MetaBulletPuff");
 			A_PlaySound ("weapons/ssg/fire", CHAN_WEAPON);
@@ -182,18 +182,12 @@ class MetaSuperShotgun : MetaDoomWeapon
 			A_GunFlash();
 			A_Quake (3,5,0,750,0);
 			A_ZoomFactor(0.9,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
+			A_Overlay(3, "Overlay.FiringRecoil");
 		}
-		SSG2 B 1 bright Offset(0,45) A_SetPitch(pitch-4);
-		SSG2 B 1 bright Offset(0,58) { A_SetPitch(pitch-4); A_ZoomFactor(0.95,ZOOM_NOSCALETURNING); }
-		SSG2 C 1 bright Offset(0,54) A_ZoomFactor(1.0,ZOOM_NOSCALETURNING);
-		SSG2 C 1 bright Offset(0,48) A_SetPitch(pitch+1);
-		SSG2 C 1 bright Offset(0,45) A_SetPitch(pitch+1);
-		SSG2 D 1 Offset(0,42) A_SetPitch(pitch+1);
-		SSG2 D 1 Offset(0,38) A_SetPitch(pitch+1);
-		SSG2 D 1 Offset(0,36) A_SetPitch(pitch+2);
-		SSG2 E 1 Offset(0,34) A_SetPitch(pitch+2);
-		SSG2 E 1 Offset(0,33);
-		SSG2 E 1 Offset(0,32) A_CheckReload();
+		SSG2 C 3;
+		SSG2 D 3;
+		SSG2 E 3;
+		SSG2 E 0 A_CheckReload();
 		SSG2 FGHIJKLM 2;
 		SSG2 N 2
 		{
@@ -330,6 +324,22 @@ class MetaSuperShotgun : MetaDoomWeapon
 	Overlay.CounterWhileFiring:
 		TNT1 A 1;
 		loop;
+		
+	Overlay.FiringRecoil:
+		TNT1 B 1;
+		TNT1 B 1 bright { A_WeaponOffset(0,45, WOF_INTERPOLATE); A_SetPitch(pitch-4, SPF_INTERPOLATE); }
+		TNT1 B 1 bright { A_WeaponOffset(0,58, WOF_INTERPOLATE); A_SetPitch(pitch-4, SPF_INTERPOLATE); A_ZoomFactor(0.95,ZOOM_NOSCALETURNING); }
+		TNT1 C 1 bright { A_WeaponOffset(0,54, WOF_INTERPOLATE); A_ZoomFactor(1.0,ZOOM_NOSCALETURNING); }
+		TNT1 C 1 bright { A_WeaponOffset(0,48, WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 C 1 bright { A_WeaponOffset(0,45, WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 { A_WeaponOffset(0,42, WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 { A_WeaponOffset(0,38, WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 { A_WeaponOffset(0,36, WOF_INTERPOLATE); A_SetPitch(pitch+2, SPF_INTERPOLATE); }
+		TNT1 E 1 { A_WeaponOffset(0,34, WOF_INTERPOLATE); A_SetPitch(pitch+2, SPF_INTERPOLATE); }
+		TNT1 E 1 A_WeaponOffset(0,33, WOF_INTERPOLATE);
+		TNT1 E 1 A_WeaponOffset(0,32, WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 	
 	override void Tick()
