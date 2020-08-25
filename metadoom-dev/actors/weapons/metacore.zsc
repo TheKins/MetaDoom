@@ -136,6 +136,76 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A 0 Offset(0,90) A_Jump(256, "Select");
 		stop;
 	}
+	
+	// Smooth Raise and Lower code by Boondorl
+	action void A_SmoothRaise(int maxSpeed = 28)
+	{
+		if (!player)
+			return;
+		
+		if (player.PendingWeapon != WP_NOCHANGE)
+		{
+			player.mo.DropWeapon();
+			return;
+		}
+		
+		if (!player.ReadyWeapon)
+			return;
+		
+		maxSpeed = abs(maxSpeed);
+		
+		let psp = player.GetPSprite(PSP_WEAPON);
+		double multi = (psp.y - WEAPONTOP) / (WEAPONBOTTOM - WEAPONTOP);
+		if (multi ~== 0)
+			--psp.y;
+		else
+			psp.y -= ceil(maxSpeed*multi);
+		
+		if (psp.y > WEAPONTOP)
+			return;
+		
+		psp.y = WEAPONTOP;
+		psp.SetState(player.ReadyWeapon.GetReadyState());
+	}
+	
+	action void A_SmoothLower(int maxSpeed = 28)
+	{
+		if (!player)
+			return;
+		
+		if (!player.ReadyWeapon)
+		{
+			player.mo.BringUpWeapon();
+			return;
+		}
+		
+		let psp = player.GetPSprite(PSP_WEAPON);
+		if (player.morphTics || (player.cheats & CF_INSTANTWEAPSWITCH))
+			psp.y = WEAPONBOTTOM;
+		else
+		{
+			maxSpeed = abs(maxSpeed);
+			
+			double multi = (psp.y - WEAPONTOP) / (WEAPONBOTTOM - WEAPONTOP);
+			if (multi ~== 0)
+				++psp.y;
+			else
+				psp.y += ceil(maxSpeed*multi);
+		}
+		
+		if (psp.y < WEAPONBOTTOM)
+			return;
+		
+		if (player.playerstate == PST_DEAD)
+		{
+			player.SetPsprite(PSP_FLASH, null);
+			psp.SetState(player.ReadyWeapon.FindState('DeadLowered'));
+			return;
+		}
+		
+		player.SetPsprite(PSP_FLASH, null);
+		player.mo.BringUpWeapon();
+	}
 }
 
 class MeleePunch : _Boolean {}

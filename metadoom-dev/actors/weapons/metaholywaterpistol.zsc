@@ -76,34 +76,17 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		Loop;
 	Deselect:
-		HWPH A 1 A_TakeInventory("HolyWaterPistolEquipped",999);
+		HWPH A 0 A_TakeInventory("HolyWaterPistolEquipped",999);
 		HWPH A 0 A_JumpIf(health <= 0, "DeadDude");
-		HWPH A 1 Offset(0,33) A_PlaySound("weapons/swap");
-		HWPH A 1 Offset(0,35);
-		HWPH A 1 Offset(0,39);
-		HWPH A 1 Offset(0,44);
-		HWPH A 1 Offset(0,49);
-		HWPH A 1 Offset(0,55);
-		HWPH A 1 Offset(0,60);
-		HWPH A 1 Offset(0,70);
-		HWPH A 1 Offset(0,80);
-		HWPH A 1 Offset(0,90);
+		HWPH A 0 A_PlaySound("weapons/swap");
 	FinishDeselect:
-		HWPH A 0 A_Lower;
+		HWPH A 1 A_SmoothLower();
 		Loop;
 	Select:
-		HWPH A 1 Offset(0,90) A_PlaySound("weapons/waterpistol/empty");
-		HWPH A 1 Offset(0,80);
-		HWPH A 1 Offset(0,70);
-		HWPH A 1 Offset(0,60);
-		HWPH A 1 Offset(0,55);
-		HWPH A 1 Offset(0,49);
-		HWPH A 1 Offset(0,44);
-		HWPH A 1 Offset(0,39);
-		HWPH A 1 Offset(0,35);
-		HWPH A 1 Offset(0,33);
-		HWPH A 1 Offset(0,32) A_GiveInventory("HolyWaterPistolEquipped",1);
-		goto Ready;
+		HWPH A 0 { A_PlaySound("weapons/waterpistol/empty"); A_GiveInventory("HolyWaterPistolEquipped",1); }
+	FinishSelect:
+		HWPH A 1 A_SmoothRaise();
+		loop;
 	Fire:
 		HWPH A 4;
 		HWPH A 0 A_JumpIfNoAmmo("NoAmmo");

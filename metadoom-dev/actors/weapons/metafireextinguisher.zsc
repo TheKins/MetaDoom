@@ -73,34 +73,17 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		Loop;
 	Deselect:
-		FIEX A 1 A_StopSound(CHAN_WEAPON);
+		FIEX A 0 A_StopSound(CHAN_WEAPON);
 		FIEX A 0 A_JumpIf(health <= 0, "DeadDude");
-		FIEX A 1 Offset(0,33) A_PlaySound("weapons/swap");
-		FIEX A 1 Offset(0,35);
-		FIEX A 1 Offset(0,39);
-		FIEX A 1 Offset(0,44);
-		FIEX A 1 Offset(0,49);
-		FIEX A 1 Offset(0,55);
-		FIEX A 1 Offset(0,60);
-		FIEX A 1 Offset(0,70);
-		FIEX A 1 Offset(0,80);
-		FIEX A 1 Offset(0,90);
+		FIEX A 0 A_PlaySound("weapons/swap");
 	FinishDeselect:
-		FIEX A 0 A_Lower;
+		FIEX A 1 A_SmoothLower();
 		Loop;
 	Select:
-		FIEX A 1 Offset(0,90) A_PlaySound("weapons/fireextinguisher/use");
-		FIEX A 1 Offset(0,80);
-		FIEX A 1 Offset(0,70);
-		FIEX A 1 Offset(0,60);
-		FIEX A 1 Offset(0,55);
-		FIEX A 1 Offset(0,49);
-		FIEX A 1 Offset(0,44);
-		FIEX A 1 Offset(0,39);
-		FIEX A 1 Offset(0,35);
-		FIEX A 1 Offset(0,33);
-		FIEX A 1 Offset(0,32);
-		goto Ready;
+		FIEX A 0 A_PlaySound("weapons/fireextinguisher/use");
+	FinishSelect:
+		FIEX A 1 A_SmoothRaise();
+		loop;
 	Fire:
 		FIEX A 0 
 		{

@@ -56,35 +56,16 @@ class MetaUnmaker : MetaDoomWeapon
 		"####" A 0 A_JumpIfInventory("MeleePunch", 1, "MeleePunch");
 		Loop;
 	Deselect:
-		UNMA A 1;
 		UNMA A 0 A_JumpIf(health <= 0, "DeadDude");
-		UNMA A 1 Offset(0,33) A_PlaySound("weapons/swap");
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,39);
-		UNMA A 1 Offset(0,44);
-		UNMA A 1 Offset(0,49);
-		UNMA A 1 Offset(0,55);
-		UNMA A 1 Offset(0,60);
-		UNMA A 1 Offset(0,70);
-		UNMA A 1 Offset(0,80);
-		UNMA A 1 Offset(0,90);
+		UNMA A 0 A_PlaySound("weapons/swap");
 	FinishDeselect:
-		UNMA A 0 A_Lower;
+		UNMA A 1 A_SmoothLower();
 		Loop;
 	Select:
-		UNMA A 1 Offset(0,90) A_PlaySound("weapons/unmaker/use");
-		UNMA A 1 Offset(0,80);
-		UNMA A 1 Offset(0,70);
-		UNMA A 1 Offset(0,60);
-		UNMA A 1 Offset(0,55);
-		UNMA A 1 Offset(0,49);
-		UNMA A 1 Offset(0,44);
-		UNMA A 1 Offset(0,39);
-		UNMA A 1 Offset(0,35);
-		UNMA A 1 Offset(0,33);
-		UNMA A 1 Offset(0,32);
-		UNMA A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
-		goto Ready;
+		UNMA A 0 A_PlaySound("weapons/unmaker/use");
+	FinishSelect:
+		UNMA A 1 A_SmoothRaise();
+		loop;
 	Fire:
 		UNMA A 0;
 		UNMA A 0 A_JumpIfInventory("DemonKey", 3, "Fire_Keys3");
