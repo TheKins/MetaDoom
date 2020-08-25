@@ -159,13 +159,13 @@ class MetaShotgun : MetaDoomWeapon
 		Stop;
 		
 	Overlay.Fire:
-		TNT1 B 1 { A_WeaponOffset(0,45, WOF_INTERPOLATE); A_SetPitch(pitch-2); }
-		TNT1 B 1 { A_WeaponOffset(0,42,WOF_INTERPOLATE); A_SetPitch(pitch-2); }
+		TNT1 B 1 { A_WeaponOffset(0,45, WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
+		TNT1 B 1 { A_WeaponOffset(0,42,WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
 		TNT1 C 1 A_WeaponOffset(0,40,WOF_INTERPOLATE);
 		TNT1 C 1 A_WeaponOffset(0,38,WOF_INTERPOLATE);
-		TNT1 D 1 { A_WeaponOffset(0,36,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
-		TNT1 E 2 { A_WeaponOffset(0,34,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
-		TNT1 F 2 { A_WeaponOffset(0,32,WOF_INTERPOLATE); A_SetPitch(pitch+1); }
+		TNT1 D 1 { A_WeaponOffset(0,36,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 E 2 { A_WeaponOffset(0,34,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 F 2 { A_WeaponOffset(0,32,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
 		TNT1 G 2 A_SetPitch(pitch+1, SPF_INTERPOLATE);
 		TNT1 A -1;
 		stop;
