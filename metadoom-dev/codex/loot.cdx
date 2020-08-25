@@ -97,4 +97,12 @@ page "Other"
         origin "Quake Champions (2017)";
         description "Humans weren't the only victims of the demonic invasion, and the demons were quick to figure out how to most hurt the marine that had caused them so much hassle. This seriously backfired by only deepening his fury...\n\nThe marine still carries this around to this day, not as a lucky charm but as a reminder of innocence lost.\n\nAfter all, it wasn't lucky for Daisy...";
 	}
+	
+	entry "LoreCheatDiskDummy"
+    {
+		itemToCheck "MetaCodex_LoreCheatDisk"
+		name "Cheat Disk";
+        origin "Doom Eternal (2020)";
+        description "Whether it's been cryptic keyboard incantations, lengthy push button codes, obscure passwords or mysterious collectable disks hidden in an alcove, there's always been ways to tip the scales in your favor via less-than-honest means. While they're most useful for testing new maps and allow less experienced or capable players to witness things that would otherwise remain unseen, any ground gained using them may feel slightly hollow.\n\nAfter all, you cheated not only the game, but yourself... right?";
+	}
 }

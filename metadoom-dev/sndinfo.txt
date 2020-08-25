@@ -61,6 +61,7 @@ items/lootraven		getravn
 items/lootdehacked	getdeh
 items/lootcomic		getcomic
 items/lootdaisy		getfoot
+items/lootcheat		getchet
 
 // Exploding barrel
 $random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }

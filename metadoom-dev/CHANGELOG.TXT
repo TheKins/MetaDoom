@@ -21,6 +21,7 @@ Weapon Changes:
 
 Item Changes:
 - Added 1 new Inventory item! (Flame Belch)
+- Added 1 new Lore Item...
 - Dramatically increased inventory item cooldown:
   - Hologram: 11 secs > 20 secs
   - Siphon Grenade & Tesla Rocket: 5 secs > 30 secs

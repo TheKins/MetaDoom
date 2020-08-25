@@ -89,3 +89,4 @@ Class MetaCodex_LoreRaven : MetaCodex_InvBase {}
 Class MetaCodex_LoreDehacked : MetaCodex_InvBase {}
 Class MetaCodex_LoreComic : MetaCodex_InvBase {}
 Class MetaCodex_LoreDaisy : MetaCodex_InvBase {}
+Class MetaCodex_LoreCheatDisk : MetaCodex_InvBase {}
