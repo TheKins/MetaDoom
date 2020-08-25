@@ -106,7 +106,7 @@ class MetaChaingun : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/chaingun/fire",CHAN_WEAPON);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

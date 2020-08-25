@@ -99,7 +99,7 @@ class MetaPistol : MetaDoomWeapon
 				}
 				A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
 				
-				if (CountInv("PowerDamage") > 0)
+				if (CountInv("PowerMetaDamage") > 0)
 				{
 					A_PlaySound("powerups/quad/use", CHAN_5);
 				}

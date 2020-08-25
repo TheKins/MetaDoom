@@ -73,7 +73,7 @@ class MetaChainsaw : MetaDoomWeapon
 			A_PlaySound ("weapons/chainsaw/attack", CHAN_WEAPON, 1.0, 1);
 			A_Saw ("null","weapons/chainsaw/attackhit");
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -93,7 +93,7 @@ class MetaChainsaw : MetaDoomWeapon
 			A_StopSound(CHAN_WEAPON);
 			A_PlaySound ("weapons/chainsaw/slash", CHAN_BODY);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -130,7 +130,7 @@ class MetaChainsaw : MetaDoomWeapon
 			A_WeaponOffset(1,65,WOF_INTERPOLATE);
 			A_PlaySound ("weapons/chainsaw/slash", CHAN_BODY);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

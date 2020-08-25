@@ -88,7 +88,7 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/fireextinguisher/fire", CHAN_WEAPON, 1.0, 1);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

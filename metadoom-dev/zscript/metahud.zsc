@@ -186,7 +186,7 @@ class MetaDoomStatusBar : BaseStatusBar
 		}
 		
 		// special powerup timer for invuln sphere
-		if (CheckInventory("PowerInvulnerable", 1))
+		if (CheckInventory("PowerMetaInvulnerable", 1))
 		{
 			int itemTimeLeft, itemDuration;
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("MetaInvulnerabilitySphere");

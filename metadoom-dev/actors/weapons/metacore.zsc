@@ -103,7 +103,7 @@ Class MetaDoomWeapon : Weapon
 		{
 			A_PlaySound("weapons/melee/wiff");
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -122,7 +122,7 @@ Class MetaDoomWeapon : Weapon
 		{
 			A_PlaySound("weapons/melee/wiff");
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

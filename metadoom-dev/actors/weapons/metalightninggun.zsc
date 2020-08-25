@@ -81,7 +81,7 @@ class MetaLightningGun : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/lightninggun/loop",6,1,1);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -95,7 +95,7 @@ class MetaLightningGun : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/lightninggun/loop",6,1,1);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

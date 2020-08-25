@@ -71,7 +71,7 @@ class MetaDogGun_HellHound : MetaDoomWeapon
 		{
 			A_PlaySound("monsters/hellhound/bite");
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -93,7 +93,7 @@ class MetaDogGun_HellHound : MetaDoomWeapon
 			A_FireProjectile("MetaDogBomb_HellHound",0,0,0,0,FPF_NOAUTOAIM);
 			A_PlaySound("weapons/grenadethrow", CHAN_WEAPON);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}			

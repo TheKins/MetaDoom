@@ -78,7 +78,7 @@ class MetaBerserkFist : MetaDoomWeapon
 		{
 			A_PlaySound("weapons/melee/wiff");
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

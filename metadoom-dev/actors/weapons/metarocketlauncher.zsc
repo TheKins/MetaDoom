@@ -76,7 +76,7 @@ class MetaRocketLauncher : MetaDoomWeapon
 			A_FireProjectile ("MetaLauncherRocket");
 			A_PlaySound ("weapons/rocketlauncher/fire", CHAN_WEAPON);
 		
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

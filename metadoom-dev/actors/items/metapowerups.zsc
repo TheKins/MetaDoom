@@ -16,7 +16,7 @@ class MetaRadSuit : PowerupGiver replaces RadSuit
 		+INVENTORY.ALWAYSPICKUP
 		Inventory.MaxAmount 0;
 		Inventory.PickupMessage "$GOTSUIT";
-		powerup.type "PowerIronFeet";
+		powerup.type "PowerMetaIronFeet";
 		Inventory.PickupSound "powerups/radsuit";
 		TeleFogSourceType "MetaItemFog";
 		TeleFogDestType "MetaItemFog";
@@ -27,6 +27,42 @@ class MetaRadSuit : PowerupGiver replaces RadSuit
 	Spawn:
 		SUIT A -1 Bright;
 		Stop;
+	}
+}
+
+class PowerMetaIronFeet : PowerIronFeet
+{
+	int runoutwarnings;
+	int runouttimer;
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/radsuit", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_RADSUIT", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/radsuit", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/radsuit", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/radsuit", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
 	}
 }
 
@@ -121,6 +157,9 @@ class MetaBerserkTimer : PowerupGiver
 
 class PowerMetaBerserkTimer : Powerup
 {
+	int runoutwarnings;
+	int runouttimer;
+	
 	Default
 	{
 		Powerup.Duration -40;
@@ -131,7 +170,6 @@ class PowerMetaBerserkTimer : Powerup
 	{
 		
 		Super.InitEffect();
-
 		let player = Owner.player;
 	}
 
@@ -141,6 +179,36 @@ class PowerMetaBerserkTimer : Powerup
 		if (Owner == null) return;
 		let player = Owner.player;
 	}	
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/berserk", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_BERSERK", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/berserk", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/berserk", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/berserk", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
+	}
 }
 
 // LightAmp
@@ -152,7 +220,7 @@ class MetaLightAmp : PowerupGiver replaces Infrared
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
 		Inventory.MaxAmount 0;
-		powerup.type "PowerLightAmp";
+		powerup.type "PowerMetaLightAmp";
 		Inventory.PickupMessage "$GOTVISOR";
 		Inventory.PickupSound "items/lightamp";
 		TeleFogSourceType "MetaItemFog";
@@ -168,6 +236,42 @@ class MetaLightAmp : PowerupGiver replaces Infrared
 	}
 }
 
+class PowerMetaLightAmp : PowerLightAmp
+{
+	int runoutwarnings;
+	int runouttimer;
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/lightamp", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_LIGHTAMP", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/lightamp", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/lightamp", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/lightamp", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
+	}
+}
+
 // Haste
 // Has a 25% chance of spawning a Hologram alongside it
 class MetaHasteSphere : PowerupGiver replaces BlurSphere
@@ -180,7 +284,7 @@ class MetaHasteSphere : PowerupGiver replaces BlurSphere
 		+INVENTORY.BIGPOWERUP
 		+FLOATBOB
 		Inventory.MaxAmount 0;
-		powerup.type "PowerSpeed";
+		powerup.type "PowerMetaSpeed";
 		Speed 1.5;
 		scale 0.75;
 		RenderStyle "Translucent";
@@ -240,6 +344,42 @@ class MetaHasteSphereNoItemChance : CustomInventory
 		TNT1 A 0 A_GiveInventory("MetaHasteSphere", 1);
 		Stop;
 	}
+}
+
+class PowerMetaSpeed : PowerSpeed
+{
+	int runoutwarnings;
+	int runouttimer;
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/haste", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_HASTE", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/haste", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/haste", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/haste", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
+	}
 }	
 
 // Invuln
@@ -254,7 +394,7 @@ class MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
 		+FLOATBOB
 		scale 0.75;
 		Inventory.MaxAmount 0;
-		powerup.type "PowerInvulnerable";
+		powerup.type "PowerMetaInvulnerable";
 		//Powerup.Color InverseMap
 		Powerup.Color "00 00 FF", 0.3; //1.0, 1.0, 0.3
 		Inventory.PickupMessage "$GOTINVUL";
@@ -270,6 +410,42 @@ class MetaInvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
 		Loop;
 	}
 }
+
+class PowerMetaInvulnerable : PowerInvulnerable
+{
+	int runoutwarnings;
+	int runouttimer;
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/invuln", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_INVULN", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/invuln", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/invuln", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/invuln", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
+	}
+}	
 
 // Soulsphere
 class MetaSoulsphere : Health replaces Soulsphere
@@ -360,7 +536,7 @@ class MetaQuadDamage : PowerupGiver
 		+INVENTORY.BIGPOWERUP
 		+FLOATBOB
 		Inventory.MaxAmount 0;
-		powerup.type "PowerDamage";
+		powerup.type "PowerMetaDamage";
 		Powerup.Duration -60;
 		damagefactor "normal", 4;
 		damagefactor "SoulCube", 1;
@@ -384,3 +560,39 @@ class MetaQuadDamage : PowerupGiver
 		Loop;
 	}
 }
+
+class PowerMetaDamage : PowerDamage
+{
+	int runoutwarnings;
+	int runouttimer;
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (runoutwarnings > 0)
+		{
+			runouttimer++;
+		}
+		
+		if (isBlinking() && runoutwarnings == 0)
+		{
+			owner.A_StartSound("powerups/runninglow/quad", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			owner.A_Log ("$RUNOUT_QUAD", 1);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 1) {
+			owner.A_StartSound("powerups/runninglow/quad", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 2) {
+			owner.A_StartSound("powerups/runninglow/quad", 999, CHANF_LOCAL|CHANF_UI, 1.0, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		} else if (runouttimer >= 35 && runoutwarnings == 3) {
+			owner.A_StartSound("powerups/runninglow/quad", 999, CHANF_LOCAL|CHANF_UI, 0.5, ATTN_NONE, 1.0);
+			runoutwarnings++;
+			runouttimer = 0;
+		}
+	}
+}	

@@ -149,7 +149,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 			A_FireBullets (11.2, 7.1, 20, 5, "MetaBulletPuff");
 			A_PlaySound ("weapons/ssg/fire", CHAN_WEAPON);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

@@ -76,7 +76,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 			A_FireProjectile("MetaBFGBall");
 			A_PlaySound ("weapons/bfg/fire1", CHAN_WEAPON);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}
@@ -101,7 +101,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		{
 			A_PlaySound ("weapons/bfg/fire2", CHAN_WEAPON);
 			
-			if (CountInv("PowerDamage") > 0)
+			if (CountInv("PowerMetaDamage") > 0)
 			{
 				A_PlaySound("powerups/quad/use", CHAN_5);
 			}

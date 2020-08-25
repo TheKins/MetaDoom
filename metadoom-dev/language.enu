@@ -256,6 +256,13 @@ TAGFLAMEBELCH = "Flame Belch";
 GOTHASTE = "HasteSphere!";
 GOTQUAD = "Quad Damage!";
 
+RUNOUT_RADSUIT = "Rad Suit air supply is running out...";
+RUNOUT_BERSERK = "Berserk is running out...";
+RUNOUT_LIGHTAMP = "Light Amp batteries are almost drained...";
+RUNOUT_HASTE = "HasteSphere is dissipating...";
+RUNOUT_INVULN = "Invulnerability is dissipating...";
+RUNOUT_QUAD = "Quad Damage is running out...";
+
 // Redefined Old Messages
 GOTARMOR = "Picked up the Security Armor.";
 GOTMEGA = "Picked up the Combat Armor!";
