@@ -400,6 +400,8 @@ class MetaDoomStatusBar : BaseStatusBar
 					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS, 0.5);
 				} else if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) >= invCooldownCap[i]){
 					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
+				} else {
+					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
 				}
 			}
 		}
