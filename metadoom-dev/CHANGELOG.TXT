@@ -18,6 +18,8 @@ Weapon Changes:
   ZScript-era ways of doing things, like Overlays and such.
 - The Plasma Rifle now emits sound cues as its heat meter fills, giving you an
   audible indicator of how close you are to that heat blast in intense battles.
+- Lots of other under-the-hood changes to simplify weapon code and provide minor
+  aesthetic improvements, like movement interpolation and such.
 
 Item Changes:
 - Added 1 new Inventory item! (Flame Belch)
