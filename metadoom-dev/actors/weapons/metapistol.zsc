@@ -124,7 +124,7 @@ class MetaPistol : MetaDoomWeapon
 		goto Ready;
 	AltFire:
 		PIST A 0;
-		PIST A 1 Offset(0,34)
+		PIST A 10
 		{
 			if (CountInv("PistolFlashlight") == 0)
 			{
@@ -136,10 +136,9 @@ class MetaPistol : MetaDoomWeapon
 				A_RemoveChildren(1,RMVF_EVERYTHING,"BF_CoolFlashlight");
 				A_PlaySound("weapons/flashlight/off", CHAN_BODY);
 			}
+			
+			A_Overlay(14, "Overlay.GenericButtonPress");
 		}
-		PIST A 1 Offset(0,33);
-		PIST A 1 Offset(0,32);
-		PIST A 10;
 		goto Ready;
 	Flash:
 		TNT1 A 4 Bright A_Light1;
