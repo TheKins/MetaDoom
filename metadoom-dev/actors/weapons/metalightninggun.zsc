@@ -122,27 +122,19 @@ class MetaLightningGun : MetaDoomWeapon
 		THUN ABCABCABC 1;
 		goto Ready;
 	StunShot:
-		THUN DE 2 bright A_PlaySound("weapons/lightninggun/altfire");
-		THUN D 0 A_GunFlash;
-		THUN F 0 
+		THUN DE 2 bright;
+		THUN F 3 bright 
 		{
+			A_PlaySound("weapons/lightninggun/altfire");
 			A_FireProjectile ("MetaLightningStunProj");
 			A_GunFlash();
 			A_AlertMonsters();
+			A_Overlay(14, "Overlay.StunShot");
 		}
-		THUN F 1 bright Offset(0,45) A_SetPitch(pitch-2);
-		THUN F 1 bright Offset(0,48) A_SetPitch(pitch-2);
-		THUN F 1 bright Offset(0,47);
-		THUN E 1 bright Offset(0,46) A_SetPitch(pitch+1);
-		THUN E 1 bright Offset(0,44) A_SetPitch(pitch+1);
-		THUN E 1 bright Offset(0,42) A_SetPitch(pitch+1);
-		THUN D 1 bright Offset(0,38) A_SetPitch(pitch+1) ;
-		THUN D 1 bright Offset(0,36); //A_PlaySound("weapons/lightninggun/stop")
-		THUN D 1 Offset(0,34);
-		THUN D 1 Offset(0,33);
-		THUN A 1 Offset(0,32);
-		THUN B 1;
-		THUN CABCABCABC 1;
+		THUN E 3 bright;
+		THUN D 2 bright;
+		THUN D 2;
+		THUN ABCABCABCABC 1;
 		THUN A 0 A_Refire;
 		Goto Ready;
 		
@@ -154,6 +146,21 @@ class MetaLightningGun : MetaDoomWeapon
 	Spawn:
 		THUN Z -1;
 		Stop;
+		
+	Overlay.StunShot:
+		TNT1 F 1 { A_WeaponOffset(0,45,WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
+		TNT1 F 1 { A_WeaponOffset(0,48,WOF_INTERPOLATE); A_SetPitch(pitch-2, SPF_INTERPOLATE); }
+		TNT1 F 1 A_WeaponOffset(0,47,WOF_INTERPOLATE);
+		TNT1 E 1 { A_WeaponOffset(0,46,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 E 1 { A_WeaponOffset(0,44,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 E 1 { A_WeaponOffset(0,42,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 { A_WeaponOffset(0,38,WOF_INTERPOLATE); A_SetPitch(pitch+1, SPF_INTERPOLATE); }
+		TNT1 D 1 A_WeaponOffset(0,36,WOF_INTERPOLATE);
+		TNT1 D 1 A_WeaponOffset(0,34,WOF_INTERPOLATE);
+		TNT1 D 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		TNT1 A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		TNT1 A -1;
+		stop;
 	}
 }
 
