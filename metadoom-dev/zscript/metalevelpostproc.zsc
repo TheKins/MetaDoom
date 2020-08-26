@@ -11,6 +11,14 @@ class MetaMapFucker : LevelPostProcessor
 {
 	protected void Apply(Name checksum, String mapname)
 	{
+		// Randomize start position of scrolling on titlemap and ironman death screen
+		// "But Kinsie", you ask, "Why not do this in the map ACS?" Good question, with
+		// a bad answer: It wouldn't work no matter how hard I tried.
+		if (mapname ~== "TITLEMAP" || mapname.Left(4) ~== "DEAD")
+		{
+			level.lines[0].sidedef[0].SetTextureXOffset(Side.mid,random(-720, 3460));
+		}
+		
 		// Changes my Modder Test Map to be a MetaDoom map with MetaDoom items
 		// pre-placed for perhaps a little too much ease of access
 		if (mapname ~== "TEST")
