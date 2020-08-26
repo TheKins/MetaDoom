@@ -401,7 +401,12 @@ class MetaDoomStatusBar : BaseStatusBar
 				} else if (CPlayer.mo.InvSel is invItem[i] && GetAmount(invCooldownCounter[i]) >= invCooldownCap[i]){
 					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
 				} else {
+					// original inventory item handling, for demon key cheat and non-metadoom inventory items
 					DrawInventoryIcon(CPlayer.mo.InvSel, (185, 168), DI_ITEM_OFFSETS);
+					if (CPlayer.mo.InvSel.Amount > 1)
+					{
+						DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (219, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+					}
 				}
 			}
 		}
