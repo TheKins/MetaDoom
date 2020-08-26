@@ -16,7 +16,7 @@ class MetaMapFucker : LevelPostProcessor
 		// a bad answer: It wouldn't work no matter how hard I tried.
 		if (mapname ~== "TITLEMAP" || mapname.Left(4) ~== "DEAD")
 		{
-			level.lines[0].sidedef[0].SetTextureXOffset(Side.mid,random(-720, 3460));
+			level.lines[0].sidedef[0].SetTextureXOffset(Side.mid,random(-720, 2199));
 		}
 		
 		// Changes my Modder Test Map to be a MetaDoom map with MetaDoom items
