@@ -42,6 +42,7 @@ UI Changes:
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
 - Fixed various issues with the Intermission spawned by GZDoom updates.
 - Fixed the "Demon Key Cheat" inventory item not displaying on the HUD.
+- Updated the logo artwork.
 
 Other Changes:
 - HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
