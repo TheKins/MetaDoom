@@ -143,12 +143,12 @@ SKILL_NIGHTMARE = "Nightmare!";
 SKILL_IRONMAN = "Ultra-Nightmare!!";
 
 // Skill Descriptions
-SKILLDESCRIPTION2 = "\c[White]An easy romp through the playground.\nNot many monsters here. This is good when\nyou're still finding your footing.\n\n\c[Red]Easy monster placement, ammo is doubled,\ndamage is halved.";
-SKILLDESCRIPTION3 = "\c[White]This is good when you know how things work,\nbut you still panic too much. Panic is a\nbad thing when you're surrounded by evil.\n\n\c[Red]Easy monster placement.";
-SKILLDESCRIPTION4 = "\c[White]The demons are out in force and they'll\ntake great pleasure in hurting you\nas much as you let them.\n\n\c[Red]Normal monster placement.";
-SKILLDESCRIPTION5 = "\c[White]So you think you're tough? Prove it!\n\n\c[Red]Hard monster placement.";
-SKILLDESCRIPTION6 = "\c[White]One mistake can be the difference between\nliving and a gruesome death.\n\n\c[Red]Hard monster placement,\nfast monsters, no cheats.";
-SKILLDESCRIPTION7 = "\c[White]This is Nightmare with one major adjustment:\n\c[White]If you die, your campaign is \c[Red]OVER.\c[White] No re-dos!\n\n\c[Red]Hard monster placement, fast monsters,\nno cheats, \c[Orange]IRONMAN MODE.";
+SKILLDESCRIPTION2 = "\c[White]An easy romp through the playground. Not many monsters\nhere. This is good when you're still finding your footing.\n\n\c[Red]Easy monster placement, ammo is doubled, damage is halved.";
+SKILLDESCRIPTION3 = "\c[White]This is good when you know how things work, but you still\npanic too much. Panic is a bad thing when you're\nsurrounded by evil.\n\c[Red]Easy monster placement.";
+SKILLDESCRIPTION4 = "\c[White]The demons are out in force and they'll take great pleasure\nin hurting you as much as you let them.\n\n\c[Red]Normal monster placement.";
+SKILLDESCRIPTION5 = "\c[White]So you think you're tough?\nProve it!\n\n\c[Red]Hard monster placement.";
+SKILLDESCRIPTION6 = "\c[White]One mistake can be the difference between\nliving and a gruesome death.\n\n\c[Red]Hard monster placement, fast monsters, no cheats.";
+SKILLDESCRIPTION7 = "\c[White]This is Nightmare with one major adjustment:\n\c[White]If you die, your campaign is \c[Red]OVER.\c[White] No re-dos!\n\c[Red]Hard monster placement, fast monsters,\nno cheats, \c[Orange]IRONMAN MODE.";
 
 NIGHTMARE = "Are you sure? This skill level\nisn't even REMOTELY fair.";
 IRONMANCONFIRM = "Just to be sure, are you willing\nto put yourself through this?";
