@@ -10,7 +10,6 @@ Core Definitions
 gameinfo
 {
 	titlemusic = "M_LWAI"
-	intermissionmusic = "M_INTER"
 	quitsound = "titlemap/rpggib"
 	playerclasses = "MetaDoomPlayer"
 	CursorPic = "CURSOR"

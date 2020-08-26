@@ -48,6 +48,7 @@ Other Changes:
 - Fixed ANIMDEFS/TERRAIN warnings in console on startup when playing Doom 1.
 - Fixed blood splats checking for Juvenile Power Fantasy's performance CVars
   instead of MetaDoom's, because copy-pasting is hard.
+- Removed the IDKFA Intermission music. Intermission themes are a mapset's job!
 
 v666 "Titan" (10/03/20)
 =======================

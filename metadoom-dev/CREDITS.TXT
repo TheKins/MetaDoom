@@ -119,7 +119,7 @@ Xenaero (Chainsaw ScriptedMarine sprites)
 Xim (Rocket Launcher and Machinegun ScriptedMarine sprites)
 
 NOISE RESOURCES:
-Andrew Hulshult (Intermission music cover - https://youtu.be/eDdKv097yaU )
+Andrew Hulshult (D_INTRO cover - https://youtu.be/AGK1dr-Ql0w )
 Captain J (WolfSS firing sound, Some Archvile Sounds)
 DiosPercha (Ironman Game Over music - https://youtu.be/cWcGxCS9Xmg )
 Leslie Wai (TITLEMAP music remix - https://youtu.be/tS0OwOaK28U )
