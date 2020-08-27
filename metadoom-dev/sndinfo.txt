@@ -71,10 +71,11 @@ items/lootdaisy		getfoot
 items/lootcheat		getchet
 
 // Exploding barrel
-$random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 }
+$random barrel/explode { barrel/explode1 barrel/explode2 barrel/explode3 barrel/explode4 }
 barrel/explode1				barrel1
 barrel/explode2				barrel2
 barrel/explode3				barrel3
+barrel/explode4				barrel3
 
 $random barrel/hit { barrel/hit1 barrel/hit2 barrel/hit3 }
 barrel/hit1		brlhit1
