@@ -44,9 +44,10 @@ Xaser (Doom 4 sound recordings, "ARGENT" resources)
 
 TOOLS USED:
 Adrian Dale (Pinball FX Tools)
-DTZxPorter & id-daemon (Doom 2016 model tools)
+DTZxPorter & id-daemon (Doom 2016 and Doom Eternal model tools)
 Erick194 & Gerardo194 (id Mobile game tools)
 NoirSuccubus (Doom 2016 Audio Tools)
+other1 (Doom Eternal Sound Renamer)
 
 CODE RESOURCES:
 Boondorl (Flamethrower library, smooth weapon raise/lower)
