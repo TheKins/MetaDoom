@@ -339,7 +339,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 			owner.A_TakeInventory("MeatHookRefill", 999);
 		}
 		
-		if (hookmeter < 6 && meta_mapbreakers)
+		if (owner != null && owner.health > 0 && hookmeter < 6 && meta_mapbreakers)
 		{
 			hooktimer++;
 		}
