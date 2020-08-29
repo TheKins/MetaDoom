@@ -509,7 +509,7 @@ class MetaMalwraithCrush : Actor
 
 // The Wretched is based on Doom 4's Caco, and has a version of the nasty tongue
 // attack from the Hell Followed DLC. Its tounge attack is, again, based on the
-// Grappling Hook code created by Jekyll Grim Pain that I previously used for
+// Grappling Hook code created by Jekyll Grim Payne that I previously used for
 // the SSG's meathook.
 
 class MetaWretched : MonsterCore

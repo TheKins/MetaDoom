@@ -8,7 +8,7 @@ Super Shotgun
 
 class MeatHookRefill : _Boolean {}
 
-// Meathook code by Agent_Ash aka Jekyll Grim Pain
+// Meathook code by Agent_Ash aka Jekyll Grim Payne
 
 class MetaSuperShotgunPickup : WeaponGiver
 {
