@@ -776,7 +776,7 @@ Class WretchedTongue : Actor
 		goto Flyback;
 	XDeath:
 		WTNG A 0 A_Scream();
-		BAL1 A 1
+		WTNG A 1
 		{
 			if (tracer) {
 				tracer.GiveInventory("MetaHookControl",1);
