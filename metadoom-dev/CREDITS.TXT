@@ -137,6 +137,7 @@ SPECIAL THANKS TO:
 Id Software (...for everything.)
 Boondorl (ZScript babysitter)
 Civvie11 (Research assistance)
+Decino (Research assistance)
 Doom Wiki (Research assistance)
 Gutawer (ZScript babysitter)
 pagb666 (Research assistance)

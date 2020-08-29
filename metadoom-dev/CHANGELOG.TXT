@@ -5,6 +5,8 @@ Monster Changes:
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
 - The Wretched's tongue and Former Assassin's tentacle are both now far more, for
   lack of a better term, grappling-hook-y. (Thanks Jekyll Grim Payne!)
+- The Wretched's tongue and Former Assassin's tentacle will no longer be used
+  if Potential Map Breakers is disabled.
 
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
