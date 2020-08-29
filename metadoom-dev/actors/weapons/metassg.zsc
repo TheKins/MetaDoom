@@ -504,7 +504,7 @@ Class MetaHookProjectile : Actor
 	// we want to hook onto) and environment props and such.
 	override int SpecialMissileHit (Actor victim)
 	{		
-		if ((victim.bISMONSTER == true || victim is "PlayerPawn") && victim.health > 0)
+		if ((victim.bISMONSTER == true || victim is "PlayerPawn") && victim.health > 0 && victim != target)
 		{
 			victim.A_StartSound("weapons/ssg/hook/stick", 13);
 			hitadude = true;
