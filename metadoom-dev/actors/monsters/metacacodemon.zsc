@@ -718,11 +718,15 @@ Class WretchedTongue : Actor
 	int flytime;
 	MetaHookControl control;
 	property maxdistance : maxdistance;
+	bool roadback;
+	float soundpitch;
 	
 	override void PostBeginPlay()
 	{
 		super.PostBeginPlay();
 		spawnPos = pos;
+		A_StartSound("monsters/wretched/tongueloop", 333, CHANF_LOOP, 0.25, ATTN_NORM, 1.0);
+		soundpitch = 1.0;
 	}
 	
 	override void Tick()
@@ -737,6 +741,15 @@ Class WretchedTongue : Actor
 		
 		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
 			SetStateLabel("Flyback");
+			
+		if (roadback)
+		{
+			soundpitch = soundpitch - 0.1;
+		} else {
+			soundpitch = soundpitch + 0.1;
+		}
+		
+		A_SoundPitch(333, soundpitch);
 	}
 	
 	states
@@ -745,7 +758,7 @@ Class WretchedTongue : Actor
 		WTNG A 1;
 		loop;
 	Death:
-		WTNG A 0;
+		WTNG A 0 A_StartSound("monsters/wretched/hitwall");
 		/*
 		WTNG A 1
 		{
@@ -775,7 +788,9 @@ Class WretchedTongue : Actor
 	Flyback:
 		WTNG A 1
 		{
-			if (target) {
+			if (target)
+			{
+				roadback = true;
 				flytime++;
 				vel = Vec3To(target).Unit() * 30;
 				if (Distance3D(target) <= 64 || flytime > 35*5) {

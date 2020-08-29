@@ -309,6 +309,8 @@ monsters/wretched/pain		wretpain
 monsters/wretched/die		wretdie
 monsters/wretched/tongue	wrettung
 monsters/wretched/pull		wretpull
+monsters/wretched/tongueloop	wretloop
+monsters/wretched/hitwall	wretwall
 $random monsters/wretched/idle { monsters/wretched/idle1 monsters/wretched/idle2 }
 monsters/wretched/idle1		wretidl1
 monsters/wretched/idle2		wretidl2
