@@ -3,6 +3,7 @@ NEXT
 
 Monster Changes:
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
+- Wretched's tongue is now far more grappling-hook-y.
 
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been

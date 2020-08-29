@@ -508,8 +508,9 @@ class MetaMalwraithCrush : Actor
 }
 
 // The Wretched is based on Doom 4's Caco, and has a version of the nasty tongue
-// attack from the Hell Followed DLC. I don't much like it's sprites, just
-// quietly, but they'll do for now.
+// attack from the Hell Followed DLC. Its tounge attack is, again, based on the
+// Grappling Hook code created by Jekyll Grim Pain that I previously used for
+// the SSG's meathook.
 
 class MetaWretched : MonsterCore
 {
@@ -540,6 +541,37 @@ class MetaWretched : MonsterCore
 		//$Title "Wretched"
 		//$Color 12
 	}
+	
+	WretchedTongue hook;
+	bool hookFired;
+	bool draggingPlayer;
+
+	vector2 FindHooktargetOfs(int atkdist = 320) {
+		vector2 ofs;			
+		double closestDist = double.infinity;
+		actor hooktarget;
+		BlockThingsIterator itr = BlockThingsIterator.Create(self,atkdist);
+		while (itr.next()) {
+			let next = itr.thing;
+			if (next == self)
+				continue; 
+			if (!next.bShootable || !(next.bIsMonster || (next is "PlayerPawn")))
+				continue;
+			double dist = self.Distance3D(next);
+			if (dist > atkdist)
+				continue;
+			if (dist < closestDist)
+				closestDist = dist;
+			if (!self.CheckSight(next,SF_IGNOREWATERBOUNDARY))
+				continue;
+			vector3 targetpos = LevelLocals.SphericalCoords((self.pos.x,self.pos.y,self.pos.z + 24),next.pos+(0,0,next.default.height*0.5),(self.angle,self.pitch));	
+			if (abs(targetpos.x) > 11 || abs(targetpos.y) > 11) {
+				continue;
+			}
+			ofs = targetpos.xy;
+		}
+		return ofs;
+	}
 
 	States
 	{
@@ -567,9 +599,23 @@ class MetaWretched : MonsterCore
 	MissileTongue:
 		WRET A 5 A_FaceTarget;
 		WRET H 5 A_FaceTarget;
-		WRET I 0 A_Stop;
-		WRET I 20 { A_FaceTarget(); A_SpawnProjectile ("WretchedTongue", 24, 0, 0); }
-		WRET JA 5 A_FaceTarget;
+		WRET I 0
+		{
+			A_Stop();
+			A_FaceTarget();
+			hook = WretchedTongue(A_SpawnProjectile ("WretchedTongue", 24, 0, 0));
+		}
+	MissileTongueLoop:
+		WRET I 1
+		{
+			if (!hook)
+			{
+				SetStateLabel("MissileTongueEnd");
+			}
+		}
+		loop;
+	MissileTongueEnd:
+		WRET JA 5;
 		Goto See;
 	Melee:
 		WRET A 4 A_FaceTarget;
@@ -580,13 +626,27 @@ class MetaWretched : MonsterCore
 		WRET J 4 A_FaceTarget;
 		Goto See;
 	Pain:
-		WRET K 3;
+		WRET K 3
+		{
+			if (hook)
+			{
+				hook.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+			}
+		}
 		WRET K 6 A_Pain;
 		Goto See;
 	Death:
-		WRET L 0 A_GiveToTarget("ScoreItem", 500);
-		WRET L 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
-		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		WRET L 0 
+		{
+			if (hook)
+			{
+				hook.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+			}
+			
+			A_GiveToTarget("ScoreItem", 500);
+			bSPRITEFLIP = random(0,1); // random chance of sprite flipping
+			A_SpawnItem("SoulSpawner");
+		}
 		WRET L 6 { bFLOATBOB = 0; }
 		WRET M 6 A_Scream;
 		WRET N 6;
@@ -601,10 +661,18 @@ class MetaWretched : MonsterCore
 		Stop;
 	Death.Gauss:
 	XDeath:
-		TNT1 A 0 A_SpawnItem("SoulSpawner");
-		WRET L 0 A_GiveToTarget("ScoreItem", 400);
-		WRET L 0 { bFLOATBOB = 0; }
-		WRET L 3 A_Fall;
+		WRET L 3
+		{
+			if (hook)
+			{
+				hook.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
+			}
+			
+			A_GiveToTarget("ScoreItem", 400);
+			A_SpawnItem("SoulSpawner");
+			bFLOATBOB = 0;
+			A_Fall();
+		} 
 		TNT1 A 0 A_PlaySound("monsters/caco/gib");
 		TNT1 A 0
 		{
@@ -632,6 +700,106 @@ class MetaWretched : MonsterCore
 	}
 }
 
+Class WretchedTongue : Actor
+{
+	Default
+	{
+		WretchedTongue.maxdistance 420;
+		projectile;
+		damage 0;
+		speed 15;
+		+HITTRACER
+		+BLOODLESSIMPACT
+		SeeSound "monsters/wretched/tongue";
+	}
+	
+	vector3 spawnPos;
+	int maxdistance;
+	int flytime;
+	MetaHookControl control;
+	property maxdistance : maxdistance;
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		spawnPos = pos;
+	}
+	
+	override void Tick()
+	{
+		super.Tick();
+		
+		if (isFrozen())
+			return;
+			
+		if (target)
+			A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 4096, 1, 32, 0, "WretchedTongueTrail", -4);
+		
+		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
+			SetStateLabel("Flyback");
+	}
+	
+	states
+	{
+	Spawn:
+		WTNG A 1;
+		loop;
+	Death:
+		WTNG A 0;
+		/*
+		WTNG A 1
+		{
+			if (target && target.player) {
+				target.speed = 0;
+				target.vel = target.Vec3To(self).Unit() * 25;
+				if (Distance3D(target) <= 64) {
+					target.speed = target.default.speed;					
+					destroy();
+				}
+			}
+		}
+		wait;
+		*/
+		goto Flyback;
+	XDeath:
+		WTNG A 0 A_Scream();
+		BAL1 A 1
+		{
+			if (tracer) {
+				tracer.GiveInventory("MetaHookControl",1);
+				control = MetaHookControl(tracer.FindInventory("MetaHookControl"));
+				control.master = self;
+			}
+		}
+		goto Flyback;
+	Flyback:
+		WTNG A 1
+		{
+			if (target) {
+				flytime++;
+				vel = Vec3To(target).Unit() * 30;
+				if (Distance3D(target) <= 64 || flytime > 35*5) {
+					if (tracer)
+						tracer.TakeInventory("MetaHookControl",1);						
+					destroy();
+				}
+			}
+		}
+		loop;
+	}
+	
+	override int SpecialMissileHit (Actor victim)
+	{		
+		if ((victim.bISMONSTER == true || victim is "PlayerPawn") && victim.health > 0 && victim != target)
+		{
+			victim.A_StartSound("monsters/wretched/pull", 13);
+		}
+		
+		return -1;
+	}
+}
+
+/*
 class WretchedTongue : LoreShot
 {
 	Default
@@ -649,13 +817,13 @@ class WretchedTongue : LoreShot
 	States
 	{
 	Spawn:
-		WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItem("WretchedTongueTrail");
+		WTNG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 4096, 1, 32, 0, "MetaHookProjectileTrail"); //A_SpawnItem("WretchedTongueTrail");
 		stop;
 	Death:
 		WTNG A 0 A_PlaySound("monsters/wretched/pull");
 		Stop;
 	}
-}
+}*/
 
 class WretchedTongueTrail : Actor
 {
@@ -670,7 +838,7 @@ class WretchedTongueTrail : Actor
 	{
 	Spawn:
 		WTNG A 0;
-		WTNG A 32;
+		WTNG A 1;
 		stop;
 	}
 }
