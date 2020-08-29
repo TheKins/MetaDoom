@@ -3,7 +3,8 @@ NEXT
 
 Monster Changes:
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
-- Wretched's tongue is now far more grappling-hook-y. (Thanks Jekyll Grim Payne!)
+- The Wretched's tongue and Former Assassin's tentacle are both now far more, for
+  lack of a better term, grappling-hook-y. (Thanks Jekyll Grim Payne!)
 
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
