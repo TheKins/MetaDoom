@@ -212,7 +212,7 @@ page "Bestiary"
 		name "Wretched";
 		offset 0, 3;
 		origin "Doom (2016)";
-		description "The Wretched is a voracious breed of Cacodemon that has evolved to consume more energy than normal. To compensate, the Wretched possesses an extremely long tongue that can be extended across large distances, allowing the demon to hunt more prey efficiently.\n\nIf the prey is caught in the demon's tongue, they will be thrust towards the Wretched with incredible speed. However, sometimes it will miscalculate and launch their victim behind them, disorienting both the prey and the demon.";
+		description "The Wretched is a voracious breed of Cacodemon that has evolved to consume more energy than normal. To compensate, the Wretched possesses an extremely long tongue that can be extended across large distances, allowing the demon to hunt more prey efficiently.\n\nIf prey is caught in the demon's tongue, it will be pulled to the Wretched, where it quickly becomes lunch.\n\nThe Wretched has an utterly voracious appetite and has been observed attempting to devour anything in sight - including, in one particularly messy case, an abandoned cache of Grenades...";
 	}
 	
 	//===========================================
