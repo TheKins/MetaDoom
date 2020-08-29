@@ -428,7 +428,7 @@ Class MetaHookProjectile : Actor
 			return;
 			
 		// There's almost certainly a less crap way to do this, but...
-		A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 720, 1, 32, 0, "MetaHookProjectileTrail");
+		A_CustomRailgun (0, 0, 0, 0, RGF_SILENT|RGF_NOPIERCING|RGF_CENTERZ, 1, 0, "MetaNothingPuff", 0, 0, 4096, 1, 32, 0, "MetaHookProjectileTrail");
 		
 		if (level.Vec3Diff(pos, spawnPos).length() > maxdistance && !inStateSequence(curstate,FindState("Flyback")))
 			SetStateLabel("Flyback");
