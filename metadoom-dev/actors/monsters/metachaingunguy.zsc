@@ -346,7 +346,7 @@ Class AssassinTentacle : Actor
 {
 	Default
 	{
-		AssassinTentacle.maxdistance 320;
+		AssassinTentacle.maxdistance 420;
 		projectile;
 		damage 0;
 		speed 15;

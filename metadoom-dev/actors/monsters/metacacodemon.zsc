@@ -705,7 +705,7 @@ Class WretchedTongue : Actor
 {
 	Default
 	{
-		WretchedTongue.maxdistance 420;
+		WretchedTongue.maxdistance 620;
 		projectile;
 		damage 0;
 		speed 15;
