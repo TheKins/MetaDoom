@@ -87,7 +87,7 @@ page "Pickups"
     {
         name "Berserk Pack";
         origin "Doom (1993)";
-        description "The 'Berserk' serum is the nickname given to an experimental drug developed by UAC scientists. It was initially developed to strengthen the user's immune system to fend off infections, but tests resulted in the drug heightening the patients' bloodthirst and capacity for violence.\n\nThe UAC steered the project in a new direction, resulting in a serum that would enhance the prowess of soldiers during battle.\n\nA single dosage lasts 60 seconds, and usually ends with the patient staring in horror at their blood soaked hands.";
+        description "The 'Berserk' serum is the nickname given to an experimental drug developed by UAC scientists. It was initially developed to strengthen the user's immune system to fend off infections, but tests resulted in the drug heightening the patients' bloodthirst and capacity for violence.\n\nThe UAC steered the project in a new direction, resulting in a serum that would enhance the prowess of soldiers during battle.\n\nA single dosage lasts 60 seconds, and usually ends with the patient staring in horror at their blood-soaked hands.";
     }
     entry "MetaLightAmp"
     {

@@ -52,7 +52,7 @@ page "Bestiary"
 		offset -1, 5; 
 		name "Former Commando";
         origin "Doom II: Hell on Earth (1994)";
-        description "One of the senior-most members of the RRTC, the Former Commando brings additional firepower to the field, allowing them to command forces on the front-lines. They have bought their experience and expertise to the afterlife with them.\n\nFormer Commandos are equipped with an experimental man-portable Chaingun, effectively allowing them to hose down anything they see with a horizontal rainstorm of lead. Use extreme caution when engaging them in open areas!"; 
+        description "One of the senior-most members of the RRTC, the Former Commando brings additional firepower to the field, allowing them to command forces on the front-lines. They've bought their experience and expertise to the afterlife with them.\n\nFormer Commandos are equipped with an experimental man-portable Chaingun, effectively allowing them to hose down anything they see with a horizontal rainstorm of lead. Use extreme caution when engaging them in open areas!"; 
 	}
 	entry "MetaAssassinGuy"
 	{ 
@@ -79,7 +79,7 @@ page "Bestiary"
 		offset 0, 4;
 		name "Nightmare Imp";
 		origin "Doom 64 (1997)";
-		description "A freak accident caused by a breakout of imps resulted in the catastrophic meltdown of the Deimos Nuclear Plant, requiring a full quarantine. When the cleanup began a year later, crews came face to face with a new breed of mutated Imps lurking in the wreckage.\n\nThe Nightmare Imp's skin has lost its pigment as a result of the radiation, the translucency granting it solace in the shadows. The demon is able to channel radiation into its fireballs, allowing it to conjure more volatile orbs of energy.\n\nIt's incredible how you can see right through him.";
+		description "A freak accident caused by a breakout of imps resulted in the catastrophic meltdown of the Deimos Nuclear Plant, requiring a full quarantine. When the cleanup began a year later, crews came face to face with a new breed of mutated Imps lurking in the wreckage.\n\nThe Nightmare Imp's skin has lost its pigment as a result of the radiation, the translucency granting it solace in the shadows. The demon is able to channel radiation into its fireballs, allowing it to conjure more volatile orbs of energy.\n\nIt's incredible how you can see right through him...";
 	}
 	
 	entry "MetaDoomImpLord"
@@ -353,7 +353,7 @@ page "Bestiary"
 		offset 0, 18; 
 		name "Summoner";
 		origin "Doom (2016)";
-		description "The Summoners are an advanced breed of Arch-Viles. The crown-like formation on its head and cape-like wings give off a royal aura, suggesting a high position among the demonic ranks.\n\nIn addition to resurrecting fallen demons, Summoners will open rifts and summon forces of Unwilling as cannon fodder while he readies his fire blast. To avoid damage, the demon will quickly travel through small rifts, emerging at a different location, similarly to the Imp Lord. As such, scientists have hypothesized a connection between these demons' genuses.";
+		description "The Summoners are an advanced breed of Arch-Viles. The crown-like formation on its head and cape-like wings give off a royal aura, suggesting a high position among the demonic ranks.\n\nIn addition to resurrecting fallen demons, Summoners will open rifts and summon forces of Unwilling as cannon fodder while it readies its fire blast. To avoid damage, the demon will quickly travel through small rifts, emerging at a different location, similarly to the Imp Lord. As such, scientists have hypothesized a connection between these demons' genuses.";
 	}
 	entry "MetaUnwilling"
 	{
@@ -391,7 +391,7 @@ page "Bestiary"
 		filter "UniqueBoss";
 		name "Mother Demon";
 		origin "Doom 64 (1997)";
-		description "When the first demonic invasion began, the UAC dealt with it by quarantining the afflicted outpost with apocalyptic levels of radiation. For years.\n\nWhen they returned, they found that something had survived - and mutated - into a unique and terrifying monstrosity that no human OR demon had ever witnessed before.\n\nNow, the Mother Demon feverishly works to knit her fallen peers back together, creating a new army of Hellspawn to swarm through the known cosmos...";
+		description "When the first demonic invasion began, the UAC dealt with it by quarantining the afflicted outpost with apocalyptic levels of radiation. For years.\n\nLittle did they realise that something had survived - and mutated - into a unique and terrifying monstrosity that no human OR demon had ever witnessed before.\n\nA new nightmare invented wholecloth, the Mother Demon commands respect and fear among demonkind as she creates a terrifying new army of Hellspawn to swarm through the known cosmos...";
 	}
 
 	entry "MetaHellGuard"
@@ -410,6 +410,6 @@ page "Bestiary"
 		filter "UniqueBoss";
 		name "Harbinger of Doom";
 		origin "Wolfenstein RPG (2008)";
-		description "A mysterious and ancient creature named in ancient tablets as the ''Balgaar'', the Harbinger of Doom was resurrected and summoned into the human realm by way of an occult ritual performed by the top-secret Paranormal Research Division within the German military during the darkest days of World War 2.\n\nClassified documents suggest that the Harbinger turned upon its summoners and destroyed them before being vanquished by an Allied spy wielding the Spear of Destiny, a holy relic reclaimed from the clutches of the Gestapo.";
+		description "A mysterious and ancient creature named in ancient tablets as the ''Balgaar'', the Harbinger of Doom was resurrected and summoned into the human realm by way of an occult ritual performed by the German military's top-secret Paranormal Research Division during the darkest days of World War II.\n\nClassified documents suggest that the Harbinger turned upon its summoners and destroyed them before being vanquished by an Allied spy wielding the Spear of Destiny, a holy relic reclaimed from the clutches of the Gestapo.";
 	}
 }
