@@ -249,7 +249,7 @@ class MetaAssassinGuy : MonsterCore
 		PSCM AABBCCDD 3 A_MetaChase;
 		Loop;
 	Missile:
-		PSCM E 0 A_Jump(256, "MissileTentacle"); // 64
+		PSCM E 0 A_Jump(64, "MissileTentacle"); // 64
 		PSCM E 0 A_PlaySound("weapons/chaingun/windup", CHAN_WEAPON);
 		PSCM EEEEEEEEEEEEEE 1 A_FaceTarget;
 	Brapp:
@@ -345,7 +345,7 @@ Class AssassinTentacle : Actor
 {
 	Default
 	{
-		AssassinTentacle.maxdistance 420;
+		AssassinTentacle.maxdistance 320;
 		projectile;
 		damage 0;
 		speed 15;
