@@ -394,7 +394,15 @@ class MetaGroundFireFlame : Actor
 	States
 	{
 		Spawn:
-			FFLA ABCDEFGHIJKLMN 2 Bright;
+			FFLA ABCDEFGHIJKLMN 2 Bright
+			{
+				if (waterlevel > 0)
+				{
+					A_StartSound("inventory/flamebelch/sizzle");
+					A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+					A_SpawnItem("MetaExtinguishSmokeGenerator");
+				}
+			}
 			Stop;
 	}
 	
@@ -409,13 +417,6 @@ class MetaGroundFireFlame : Actor
 		scale.y -= min(0.02, scale.y);
 		
 		A_StartSound("inventory/flamebelch/crak",CHAN_BODY,0,(scale.x / 2),ATTN_NORM,frandom(0.1,0.5));
-		
-		if (waterlevel > 0)
-		{
-			A_StartSound("inventory/flamebelch/sizzle");
-			A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
-			A_SpawnItem("MetaExtinguishSmokeGenerator");
-		}
 	}
 }
 
