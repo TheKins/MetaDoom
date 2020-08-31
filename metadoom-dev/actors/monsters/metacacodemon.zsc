@@ -591,7 +591,24 @@ class MetaWretched : MonsterCore
 		WRET AACCBBDD 3 A_MetaChase;
 		Loop;
 	Missile:
-		WRET A 0 A_Jump(64, "MissileTongue");
+		WRET A 0
+		{
+			// if the target is within tongue reach, have a 1-in-4
+			// chance of using the tongue.
+			int targdist = level.Vec3Diff(pos, target.pos).length();
+			
+			//Console.printf("Distance to Target: %i", targdist);
+			
+			if (targdist > 128 && targdist < 620)
+			{
+				int dice = random(1,4);
+				
+				if (dice == 1 && !meta_mapbreakers)
+				{
+					SetStateLabel("MissileTongue");
+				}
+			}
+		}
 		WRET E 5 A_FaceTarget;
 		WRET F 5 BRIGHT { A_FaceTarget(); A_SpawnProjectile ("MetaCacodemonBall", 24, 0, 0); }
 		WRET G 5 A_FaceTarget;
