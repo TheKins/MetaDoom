@@ -603,7 +603,7 @@ class MetaWretched : MonsterCore
 			{
 				int dice = random(1,4);
 				
-				if (dice == 1 && !meta_mapbreakers)
+				if (dice == 1 && meta_mapbreakers)
 				{
 					SetStateLabel("MissileTongue");
 				}
