@@ -354,6 +354,22 @@ class MetaSuperShotgun : MetaDoomWeapon
 				owner.A_StartSound("weapons/ssg/hook/charge", 17, CHANF_LOCAL, 0.5, ATTN_NONE, 1.0);
 			}
 		}
+		
+		if (owner != null && hook != null)
+		{
+			ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
+			Actor mo;
+			while (mo = TeleportFog(it.Next()))
+			{
+				if (mo.target == owner)
+				{
+					hook.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+					hook = null;
+					hooktimer = 0;
+					break;
+				}
+			}
+		}
 	}
 	
 	override void PostBeginPlay ()
