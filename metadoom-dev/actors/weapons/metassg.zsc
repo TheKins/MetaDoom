@@ -424,6 +424,8 @@ Class MetaHookProjectile : Actor
 		+BLOODSPLATTER
 		+BLOCKASPLAYER
 		+SKYEXPLODE
+		Radius 13;
+		Height 8;
 	}
 	
 	vector3 spawnPos;
