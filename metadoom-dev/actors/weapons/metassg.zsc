@@ -406,6 +406,7 @@ Class MetaHookProjectile : Actor
 		+HITTRACER
 		+BLOODSPLATTER
 		+BLOCKASPLAYER
+		+SKYEXPLODE
 	}
 	
 	vector3 spawnPos;
