@@ -383,6 +383,26 @@ class MetaDoomPlayer : PlayerPawn
 			A_SpawnItemEx("MetaFireExtinguisherSelfSprayFX",random(-16,16),random(-16,16),0,0,0,4);
 		}
 		
+		// Check if player has teleported, and kill any enemy hooks nearby if so
+		ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
+		Actor mo;
+		while (mo = TeleportFog(it.Next()))
+		{
+			if (mo.target == self)
+			{
+				BlockThingsIterator bit = BlockThingsIterator.Create(self,64,0);
+				while (bit.Next())
+				{
+					Actor fo = bit.thing;
+					
+					if ((fo is "WretchedTongue") || (fo is "AssassinTentacle"))
+					{
+						fo.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+					}
+				}
+			}
+		}
+		
 		Super.Tick();
 	}
 	
