@@ -384,6 +384,7 @@ class MetaDoomPlayer : PlayerPawn
 		}
 		
 		// Check if player has teleported, and kill any enemy hooks nearby if so
+		// NOTE SELF: REPLACE WITH PRE/POSTTELEPORT VIRTUALS ONCE ENGINE UPDATES
 		ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
 		Actor mo;
 		while (mo = TeleportFog(it.Next()))

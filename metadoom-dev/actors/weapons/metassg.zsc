@@ -355,6 +355,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 			}
 		}
 		
+		// NOTE SELF: REPLACE WITH PRE/POSTTELEPORT VIRTUALS ONCE ENGINE UPDATES
 		if (owner != null && hook != null)
 		{
 			ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
