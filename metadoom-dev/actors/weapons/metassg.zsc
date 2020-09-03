@@ -234,6 +234,13 @@ class MetaSuperShotgun : MetaDoomWeapon
 		SSGH E 1;
 		SSGH E 1;
 		SSGH E 1;
+		SSGH E 0
+		{
+			if (CountInv("Shell") < 2)
+			{
+				A_Overlay(-2, "Overlay.HookManager");
+			}
+		}
 		SSGH FGHIJKLM 2;
 		TNT1 N 2;
 		TNT1 OPQ 3;
