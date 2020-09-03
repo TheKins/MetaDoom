@@ -79,7 +79,7 @@ page "Other"
 		itemToCheck "MetaCodex_LoreDehacked"
 		name "DeHackEd";
         origin "The Internet (1994)";
-        description "A tool used to hack the original DOS Doom executables, DeHackEd was a first brave step towards stepping out from vanilla gameplay towards new and exciting types of mod, including the invention of the ''Total Conversion'', whole new games crammed into the Doom engine's confines.\n\nWhile the release of the engine's source code has rendered its original reason du jour irrelevant, it lives on as a universal standard for mods that can be played on nearly every source port...\n\n...except EDGE, I think. And the new official Unity thing. Universal-ish standard, then.";
+        description "A tool used to hack the original DOS Doom executables, DeHackEd was a first brave step towards stepping out from vanilla gameplay towards new and exciting types of mod, including the invention of the ''Total Conversion'', whole new games crammed into the Doom engine's confines.\n\nWhile the release of the engine's source code has rendered its original reason du jour irrelevant, it lives on as a universal standard for mods that can be played on nearly every source port...\n\n...except EDGE, I think. Universal-ish standard, then.";
 	}
 	
 	entry "LoreComicDummy"
