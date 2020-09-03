@@ -481,9 +481,32 @@ Class MetaHookProjectile : Actor
 					target.A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
 					target.speed = 0;
 					target.vel = target.Vec3To(self).Unit() * 15;
+					
+					FLineTraceData FootSurfaceData;
+					target.LineTrace(target.angle, target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: 8, data:FootSurfaceData);
+					FLineTraceData SkullSurfaceData;
+					target.LineTrace(target.angle, target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: target.height - 8, data:SkullSurfaceData);
+					
+					if (SkullSurfaceData.HitType == SkullSurfaceData.TRACE_HitWall && FootSurfaceData.HitType == FootSurfaceData.TRACE_HitWall)
+					{
+						if (meta_developer)
+							Console.printf("Hooking totally blocked, abort");
+						self.Destroy();
+					} else if (SkullSurfaceData.HitType == SkullSurfaceData.TRACE_HitWall)
+					{
+						if (meta_developer)
+							Console.printf("Hooking blocked at head, push down");
+						target.vel.z = -8;
+					} else if (FootSurfaceData.HitType == FootSurfaceData.TRACE_HitWall)
+					{
+						if (meta_developer)
+							Console.printf("Hooking blocked at feet, push up");
+						target.vel.z = 8;
+					}
+					
 					if (Distance3D(target) <= 64 || hookeddude.health <= 0 || !hookeddude)
 					{
-						target.speed = target.default.speed;					
+						target.speed = target.default.speed;
 						destroy();
 					}
 					target.speed = target.default.speed;
