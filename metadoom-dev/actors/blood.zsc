@@ -346,6 +346,67 @@ class GreenFlyingBloodFast : FlyingBloodFast
 	}
 }
 
+class FlyingBloodFakeFast : FlyingBloodFast
+{
+	Default
+	{
+	Scale 0.3;
+	Speed 12;
+	-DOOMBOUNCE
+	+FORCEXYBILLBOARD
+	-SOLID
+	}
+}
+
+class BlueFlyingBloodFakeFast : FlyingBloodFakeFast
+{
+	Default
+	{
+	decal "bluebloodsplat";
+	translation "1:191=200:207","208:255=200:207";
+	}
+	
+	states
+	{
+	Death:
+		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot");
+		TNT1 A 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
+		BLUD F 1;
+		TNT1 A 0 A_SpawnItem("BloodSplatSmallBlue", 0, 5);
+		Stop;
+	OutDamnSpot:
+		BLUD F 1;
+		stop;
+	}
+}
+
+class GreenFlyingBloodFakeFast : FlyingBloodFakeFast
+{
+	Default
+	{
+	decal "greenbloodsplat";
+	translation "168:184=112:127","185:191=11:12","16:47=112:127";
+	}
+	
+	states
+	{
+	Death:
+		TNT1 A 0 A_JumpIf(waterlevel == 2,"OutDamnSpot");
+		TNT1 A 0; //A_JumpIf(CallACS("BloodSpotToggle")==0, "OutDamnSpot")
+		BLUD F 1;
+		TNT1 A 0 
+		{
+			A_SpawnItem("BloodSplatSmallGreen"); //A_SpawnItem("XBloodspot", 0, 5)
+			A_PlaySound("effects/blood");
+		}
+		Stop;
+	OutDamnSpot:
+		BLUD F 1;
+		stop;
+	}
+}
+
+
 // "flat decal" blood splats
 // Reprogrammed by Major Cooke!
 // HEAVILY re-engineered by Kinsie in 2020
