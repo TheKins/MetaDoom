@@ -43,6 +43,16 @@ class Gibs1 : Actor
 		TNT1 A 1;
 		stop;
 	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+
+		if (waterlevel != 0)
+		{
+			A_FadeOut(0.1);
+		}
+	}
 }
 
 class BlueGibs1 : Gibs1
@@ -187,6 +197,16 @@ class FlyingBloodCheap : FlyingBlood
 			A_PlaySound("effects/blood");
 		}
 		Stop;
+	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+
+		if (vel.z == 0)
+		{
+			Destroy();
+		}
 	}
 }
 
@@ -480,7 +500,7 @@ class BloodSplat : Actor
 			
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
-			A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+			A_Warp(AAPTR_DEFAULT,0,0,0,0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
 			A_RadiusGive("BloodReducer", GetCvar("meta_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
 			
 			user_z = pos.z;
@@ -529,7 +549,7 @@ class BloodSplat : Actor
 		
 			if (user_z != pos.z)
 			{
-				A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+				A_Warp(AAPTR_DEFAULT,0,0,0,0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
 				user_z = pos.z;
 			}
 		
@@ -610,7 +630,7 @@ class BloodSplat_Permanent : BloodSplat
 			
 			//This should only be needed once. MOVEWITHSECTOR and RELATIVETOFLOOR
 			//should, in theory,  take care of everything else.
-			A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+			A_Warp(AAPTR_DEFAULT,0,0,0,0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
 			A_RadiusGive("BloodReducer", GetCvar("meta_perf_bloodcullradius"), RGF_MISSILES,1,null,"BloodSplat");
 			
 			user_z = pos.z;
@@ -655,7 +675,7 @@ class BloodSplat_Permanent : BloodSplat
 			
 			if (user_z != pos.z)
 			{
-				A_Warp(AAPTR_DEFAULT,0,0,frandom(0.0100000, 0.0199999),0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
+				A_Warp(AAPTR_DEFAULT,0,0,0,0,WARPF_NOCHECKPOSITION|WARPF_TOFLOOR);
 				user_z = pos.z;
 			}
 			
