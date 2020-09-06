@@ -74,20 +74,20 @@ class MetaDoomStatusScreen : DoomStatusScreen
 		{
 		case StatCount:
 			// draw animated background
-			bg.drawBackground(CurState, false, false);
 			widescreenDatShit();
+			bg.drawBackground(CurState, false, false);
 			drawStats();
 			break;
 	
 		case ShowNextLoc:
 		case LeavingIntermission:
-			drawShowNextLoc();
 			widescreenDatShit();
+			drawShowNextLoc();
 			break;
 
 		default:
+			widescreenDatShit();
 			drawNoState();
-			//widescreenDatShit();
 			break;
 		}
 	}

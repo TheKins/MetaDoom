@@ -50,6 +50,8 @@ UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
 - Fixed various issues with the Intermission spawned by GZDoom updates.
+- The intermission's widescreen borders no longer appear when an actual 
+  widescreen intermission image (like in the 2020 Re-Release IWAD) is in use.
 - Fixed the "Demon Key Cheat" inventory item not displaying on the HUD.
 - Updated the descriptive text on the Skill Select menu to use the Tiny Font
   instead of a scaling-distorted Small Font.
