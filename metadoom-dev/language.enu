@@ -149,6 +149,7 @@ SKILLDESCRIPTION4 = "\c[White]The demons are out in force and they'll take great
 SKILLDESCRIPTION5 = "\c[White]So you think you're tough?\nProve it!\n\n\c[Red]Hard monster placement.";
 SKILLDESCRIPTION6 = "\c[White]One mistake can be the difference between\nliving and a gruesome death.\n\n\c[Red]Hard monster placement, fast monsters, no cheats.";
 SKILLDESCRIPTION7 = "\c[White]This is Nightmare with one major adjustment:\n\c[White]If you die, your campaign is \c[Red]OVER.\c[White] No re-dos!\n\c[Red]Hard monster placement, fast monsters,\nno cheats, \c[Orange]IRONMAN MODE.";
+SKILLDESCRIPTION8 = "\c[White]The Slayer's time... is now!\n\n\c[Red]Hard monster placement, fast monsters,\nno cheats, \c[Orange]NET-SOLO MODE.";
 
 NIGHTMARE = "Are you sure? This skill level\nisn't even REMOTELY fair.";
 IRONMANCONFIRM = "Just to be sure, are you willing\nto put yourself through this?";

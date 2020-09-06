@@ -91,6 +91,16 @@ skill ironman
 	Key = "x"
 }
 
+skill secret
+{
+	FastMonsters
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "Secret"
+	PicName = "TNT1A0"
+	MustConfirm
+}
+
 DamageType MapFire
 {
     Obituary = "$OB_MAPFIRE"
