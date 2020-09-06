@@ -533,7 +533,11 @@ Class MetaHookProjectile : Actor
 		goto Flyback;
 	*/
 	Flyback:
-		SMHK A 0 A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
+		SMHK A 0 
+		{
+			A_StartSound("weapons/ssg/hook/chain", CHAN_BODY, 0, 1.0, ATTN_NORM, frandom (0.9, 1.2));
+			bNOCLIP = true;
+		}
 		SMHK AAAA 1
 		{
 			if (target) {
