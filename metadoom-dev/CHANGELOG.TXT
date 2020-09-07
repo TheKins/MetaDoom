@@ -46,6 +46,9 @@ Item Changes:
 - Powerups now play audio cues to warn you when they're about to run out.
 - Assorted minor audio updates
 
+Player Changes:
+- Fixed first-person death animations not functioning properly.
+
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
