@@ -19,6 +19,7 @@ class MetaLastResortFist : MetaDoomWeapon
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 		+WEAPON.NOALERT
+		+WEAPON.CHEATNOTWEAPON
 	}
 	
 	States
