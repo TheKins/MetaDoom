@@ -153,6 +153,7 @@ SKILLDESCRIPTION8 = "\c[White]The Slayer's time... is now!\n\n\c[Red]Hard monste
 
 NIGHTMARE = "Are you sure? This skill level\nisn't even REMOTELY fair.";
 IRONMANCONFIRM = "Just to be sure, are you willing\nto put yourself through this?";
+SECRETCONFIRM = "Are you sure? Your milage\nWILL vary significantly.";
 
 // Items
 GOTPINATAHEALTH = "Picked up some Health.";

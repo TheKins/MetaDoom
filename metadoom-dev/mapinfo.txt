@@ -98,7 +98,7 @@ skill secret
 	SpawnFilter = Nightmare
 	Name = "Secret"
 	PicName = "TNT1A0"
-	MustConfirm
+	MustConfirm = "$SECRETCONFIRM"
 }
 
 DamageType MapFire
