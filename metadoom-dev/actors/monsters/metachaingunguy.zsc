@@ -370,6 +370,8 @@ Class AssassinTentacle : Actor
 		+HITTRACER
 		+BLOODLESSIMPACT
 		SeeSound "monsters/d3chaingunner/tentacle";
+		Radius 6;
+		Height 8;
 	}
 	
 	vector3 spawnPos;
