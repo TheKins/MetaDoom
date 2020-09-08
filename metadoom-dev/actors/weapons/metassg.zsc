@@ -592,5 +592,28 @@ Class MetaHookControl : Inventory
 			return;	
 		}
 		owner.SetOrigin(master.pos-(0,0,owner.default.height*0.5),true);
+		
+		// Handle pulled players getting blocked by geometry
+		FLineTraceData FootSurfaceData;
+		owner.LineTrace(atan2(owner.vel.y, owner.vel.x), owner.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: 8, data:FootSurfaceData);
+		FLineTraceData SkullSurfaceData;
+		owner.LineTrace(atan2(owner.vel.y, owner.vel.x), owner.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: owner.height - 8, data:SkullSurfaceData);
+		
+		if (SkullSurfaceData.HitType == SkullSurfaceData.TRACE_HitWall && FootSurfaceData.HitType == FootSurfaceData.TRACE_HitWall)
+		{
+			if (meta_developer)
+				Console.printf("Hooking totally blocked, abort");
+			master.Destroy();
+		} else if (SkullSurfaceData.HitType == SkullSurfaceData.TRACE_HitWall)
+		{
+			if (meta_developer)
+				Console.printf("Hooking blocked at head, push down");
+			master.vel.z = -8;
+		} else if (FootSurfaceData.HitType == FootSurfaceData.TRACE_HitWall)
+		{
+			if (meta_developer)
+				Console.printf("Hooking blocked at feet, push up");
+			master.vel.z = 8;
+		}
 	}
 }
