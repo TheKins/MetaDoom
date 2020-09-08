@@ -27,6 +27,7 @@ The Bloated Corpse Of Midway Games (PSX/N64 assets)
 Valve Software (Footsteps, Lost Soul extinguishing, Unmaker Altfire, Hell Guard Footstep sounds)
 
 STUFF FROM OTHER MODS:
+3saster (DEHACKED parsing code from Beautiful Doom)
 AFADoomer (Difficulty Select Screen ZScript)
 D4D Team (Lots of resources and inspiration)
 D4T Team (Bull Demon charge attack code, Skull Key sprites)

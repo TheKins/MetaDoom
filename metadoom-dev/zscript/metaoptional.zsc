@@ -29,7 +29,42 @@ Replacement Scripts
 // Replace environment props with louder, breakable props
 class MetaOptionalProps : EventHandler
 {
-    override void CheckReplacement(ReplaceEvent e)
+	bool safetylock;
+
+	// Check whether a DEHACKED lump has messed with frame names in a way we
+	// can't detect any other way, and completely shut down prop replacements
+	// if that turns out to be the case (see: Demonastery)
+	// Code loosely based on Beautiful Doom's DEHACKED detector by 3saster.
+    override void OnRegister()
+	{
+		if (meta_optional_props)
+		{
+			string data = Wads.ReadLump(Wads.FindLump("DEHACKED",0,1));
+			// Delete comments
+			while(data.IndexOf("#") != -1)
+			{
+				int start = data.IndexOf("#");
+				int end   = data.IndexOf("\n",start);
+				data.Remove(start,end-start);
+			}
+			// Split Lines
+			Array<String> lines;
+			data.Split(lines, "\n");
+			
+			// Parse each line
+			for(int i=0; i<lines.Size(); i++)
+			{
+				if (lines[i].left(8) ~== "Text 4 4" && !safetylock)
+				{
+					Console.printf("Optional: DEHACKED lump is fucking with frame names, prop replacements disabled.");
+					safetylock = true;
+					break;
+				}
+			}
+		}
+	}
+	
+	override void CheckReplacement(ReplaceEvent e)
 	{
 		static const string oldActor[] =
 		{
@@ -74,7 +109,7 @@ class MetaOptionalProps : EventHandler
 			
 		};
 		
-		if (meta_optional_props)
+		if (meta_optional_props && !safetylock)
 		{
 			for(int i = 0; i < oldActor.size(); i++)
 			{
@@ -88,6 +123,7 @@ class MetaOptionalProps : EventHandler
 						break;
 					}
 					
+					// Don't replace actor if the vanilla actor has been altered by DEHACKED.
 					if (GetDefaultByType(e.Replacee).SpawnState.bDeHacked
 					|| (GetDefaultByType(e.Replacee).SeeState != null && GetDefaultByType(e.Replacee).SeeState.bDeHacked)
 					|| (GetDefaultByType(e.Replacee).MeleeState != null && GetDefaultByType(e.Replacee).MeleeState.bDeHacked)

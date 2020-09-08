@@ -17,6 +17,8 @@ Optional Content Changes:
   replaced by DECORATE or ZScript actors using the "replaces" keyword. This fixes
   MAP02/MAP02B in Doom 64 in Doom 2, and possibly other Boom mapsets that include
   DECORATE alternatives for their DEHACKED actors.
+- Props will no longer be replaced if a DEHACKED lump changes frame names using
+  DEHACKED's native string-changing method. This fixes Demonastery.
 
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun! (Thanks Jekyll Grim Payne!)
