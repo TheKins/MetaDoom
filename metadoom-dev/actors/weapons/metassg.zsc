@@ -483,9 +483,9 @@ Class MetaHookProjectile : Actor
 					target.vel = target.Vec3To(self).Unit() * 15;
 					
 					FLineTraceData FootSurfaceData;
-					target.LineTrace(target.angle, target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: 8, data:FootSurfaceData);
+					target.LineTrace(atan2(target.vel.y, target.vel.x), target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: 8, data:FootSurfaceData);
 					FLineTraceData SkullSurfaceData;
-					target.LineTrace(target.angle, target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: target.height - 8, data:SkullSurfaceData);
+					target.LineTrace(atan2(target.vel.y, target.vel.x), target.radius*2, 0, TRF_BLOCKSELF|TRF_SOLIDACTORS, offsetz: target.height - 8, data:SkullSurfaceData);
 					
 					if (SkullSurfaceData.HitType == SkullSurfaceData.TRACE_HitWall && FootSurfaceData.HitType == FootSurfaceData.TRACE_HitWall)
 					{
