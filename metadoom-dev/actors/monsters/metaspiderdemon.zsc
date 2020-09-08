@@ -63,8 +63,25 @@ class MetaSpiderMastermind : MonsterCore
 		SPID EFF 3 A_FastChase();
 		Loop;
 	Missile:
-		SPID A 0;
-		SPID A 0 A_Jump(64, "RollerTKAttack");
+		SPID A 0
+		{
+			// if the target is within reasonable reach, have a
+			// 1-in-4 chance of using the telekinetic attack
+			int targdist = level.Vec3Diff(pos, target.pos).length();
+			
+			//Console.printf("Distance to Target: %i", targdist);
+			
+			if (targdist > 164 && targdist < 1024)
+			{
+				int dice = random(1,4);
+				
+				if (dice == 1)
+				{
+					SetStateLabel("RollerTKAttack");
+				}
+			}
+		}
+		//SPID A 0 A_Jump(64, "RollerTKAttack");
 		goto RapidAttack;
 	RapidAttack:
 		SPID A 20 BRIGHT { A_FaceTarget(); A_PlaySound("monsters/spidermastermind/ready1"); }
