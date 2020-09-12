@@ -11,6 +11,8 @@ Monster Changes:
   - They will now only be used if the player is within grabbing-range.
 - The Spider Mastermind will no longer use its telekinetic attack if its target
   is too far away to be reasonably affected by it.
+- Demon Dogs and Cerberuses are more likely to spawn, and will be added to the
+  spawn list earlier on in a campaign than in previous versions.
 
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
