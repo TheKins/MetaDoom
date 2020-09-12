@@ -278,20 +278,20 @@ class PinkySpawner : MetaSpawner // replaces Demon
 		{
 			if (meta_mapbreakers)
 			{
-				return A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 12, "DogsTier3");
+				return A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 8, "DogsTier3");
 			} else {
-				return A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 6, "DogsTier2");
+				return A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 4, "DogsTier2");
 			}
 		}		
-		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 6, "DogsTier2");
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 4, "DogsTier2");
 		goto Hellhound;
 	DogsTier2:
 		TNT1 A 0; 
-		TNT1 A 0 A_Jump(128, "DemonDog");
+		TNT1 A 0 A_Jump(192, "DemonDog");
 		goto Hellhound;
 	DogsTier3:
 		TNT1 A 0; 
-		TNT1 A 0 A_Jump(128, "DemonDog", "Cerberus");
+		TNT1 A 0 A_Jump(192, "DemonDog", "Cerberus");
 		goto Hellhound;
 	Tier2:
 		TNT1 A 0; 
