@@ -71,9 +71,9 @@ UI Changes:
 
 Other Changes:
 - Explosive Barrels now handle being crushed differently, using the same oldschool
-  timing as though they had been killed by another barrel, as well as not spawning
-  debris if nobody's looking. This fixes the engine-killing lag at the start of
-  Sunlust MAP30, and probably a few other places with Boom conveyer scripting.
+  timing as being detonated by another barrel, as well as not spawning debris if
+  nobody's looking. This fixes Sunlust MAP30's engine-killing lag at startup as
+  it prepares the revival trick for later in the map.
 - HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
 - Fixed ANIMDEFS/TERRAIN warnings in console on startup when playing Doom 1.
 - Fixed various rendering issues with blood splat effects.
