@@ -120,6 +120,10 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 					A_SpawnItem("MetaGibBarrel",0,random(16,42));
 					A_SpawnItem("MetaGibBarrel",0,random(0,16));
 				}
+			} else {
+				A_PlaySound("weapons/explosion", CHAN_WEAPON);
+				A_Explode();
+				A_Quake (3,10,0,750,0);
 			}
 			
 			A_PlaySound("barrel/explode", CHAN_BODY);
