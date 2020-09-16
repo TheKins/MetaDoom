@@ -48,9 +48,12 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		{
 			A_PlaySound("barrel/hit");
 			
-			for (int i = 0; i < 3; i++)
+			if (!CheckIfSeen())
 			{
-				A_SpawnItem("GreenBlood",0,random(32,42));
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnItem("GreenBlood",0,random(32,42));
+				}
 			}
 		}
 		goto Spawn;
@@ -67,7 +70,7 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		BEXP C 5 BRIGHT;
 		goto Kaboom;
 	Kaboom:
-		BEXP D 2 BRIGHT //A_Explode
+		BEXP D 2 BRIGHT
 		{
 			A_SpawnItemEx("ExplosiveBarrelExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
 			
@@ -92,6 +95,37 @@ class MetaExplosiveBarrel : Actor replaces ExplosiveBarrel
 		BEXP U 1050 BRIGHT A_BarrelDestroy;
 		BEXP U 5 A_Respawn;
 		Wait;
+	// Handle explosive barrels getting crushed with the old timing, and with
+	// less STUFF getting spawned if nobody's around to see it.
+	Death.Crush:
+		BEXP A 5 BRIGHT;
+		BEXP B 5 BRIGHT;
+		BEXP C 5 BRIGHT;
+		goto KaboomCheap;
+	KaboomCheap:
+		BEXP D 2 BRIGHT
+		{
+			if (!CheckIfSeen())
+			{
+				A_SpawnItemEx("ExplosiveBarrelExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+				
+				for (int i = 0; i < 4; i++)
+				{
+					A_SpawnItem("GreenBlood",0,random(16,42));
+					A_SpawnProjectile ("MetaSplooshGreen", random(16,42), 0, random (0, 360), 2, random (0, 160));
+				}
+				
+				for (int i = 0; i < 3; i++)
+				{
+					A_SpawnItem("MetaGibBarrel",0,random(16,42));
+					A_SpawnItem("MetaGibBarrel",0,random(0,16));
+				}
+			}
+			
+			A_PlaySound("barrel/explode", CHAN_BODY);
+			A_Fall();
+		}
+		goto Kaboom+1;
 	Death.Axe:
 		BEXP U 0
 		{
