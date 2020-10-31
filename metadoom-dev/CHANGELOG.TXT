@@ -69,6 +69,8 @@ UI Changes:
 - Updated the screenshot scroller on the title screen and Ultra-Nightmare Game
   Over screen to have more uniformly-sized (and in some cases, better) shots
   and a random starting point so you're more likely to see different images.
+- The MetaDoom Options menu now appears in GZDoom 4.5.x's Simple Options Menu,
+  not just the Full Options Menu.
 - Updated the logo artwork to incorporate Doom 64 and reduce messiness.
 
 Other Changes:

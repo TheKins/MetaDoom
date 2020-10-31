@@ -105,6 +105,11 @@ AddOptionMenu "OptionsMenu"
 	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
 }
 
+AddOptionMenu "OptionsMenuSimple"
+{
+	Submenu "$OPTMNU_METADOOM",			"MetaMenu"
+}
+
 OptionMenu "MetaMenu"
 {
 	Title "$OPTMNU_METADOOM"
