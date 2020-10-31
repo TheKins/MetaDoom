@@ -594,18 +594,4 @@ Sprite "PUNRQ0", 320, 200
 	}
 }
 
-Sprite "UNMAA0", 158, 90
-{
-	YScale 1.260
-	Offset -81, -118
-	Patch "ZZUNMAA0", 0, 0
-}
-
-Sprite "UNMAB0", 158, 99
-{
-	YScale 1.260
-	Offset -81, -109
-	Patch "ZZUNMAB0", 0, 0
-}
-
 // End of texture definitions

@@ -24,6 +24,7 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A 1 Offset(0,32)
 		{
 			A_ClearOverlays();
+			A_OverlayScale(PSP_WEAPON, 1, 1);
 			A_StopSound(CHAN_BODY);
 			A_StopSound(CHAN_WEAPON);
 			A_StopSound(CHAN_6);
@@ -98,7 +99,11 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A -1;
 		loop;
 	MeleePunch:
-		TNT1 A 0 A_ClearOverlays();
+		TNT1 A 0 
+		{
+			A_ClearOverlays();
+			A_OverlayScale(PSP_WEAPON, 1, 1);
+		}
 		PNCH A 0 A_JumpIfInventory("PowerMetaBerserkTimer", 1, "MeleePunchBerserk");
 		PNCH A 0 A_JumpIfInventory("PowerStrength", 1, "MeleePunchBerserk");
 		PNCH A 1 
@@ -119,7 +124,11 @@ Class MetaDoomWeapon : Weapon
 		TNT1 A 0 Offset(0,90) A_Jump(256, "Select");
 		stop;
 	MeleePunchBerserk:
-		TNT1 A 0 A_ClearOverlays();
+		TNT1 A 0 
+		{
+			A_ClearOverlays();
+			A_OverlayScale(PSP_WEAPON, 1, 1);
+		}
 		PNCH A 1 
 		{
 			A_PlaySound("weapons/melee/wiff");

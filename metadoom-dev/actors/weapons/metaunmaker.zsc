@@ -63,6 +63,7 @@ class MetaUnmaker : MetaDoomWeapon
 		UNMA A 1 A_SmoothLower();
 		Loop;
 	Select:
+		UNMA A 0 A_OverlayScale(PSP_WEAPON, 1, 0.9, WOF_KEEPX);
 		UNMA A 1 A_SmoothRaise();
 		loop;
 	Fire:
