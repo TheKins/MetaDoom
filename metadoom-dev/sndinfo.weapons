@@ -221,6 +221,16 @@ weapons/unmaker/altfire3	unmaalt3
 weapons/unmaker/demonkey	unmadkey
 weapons/unmaker/butan		unmabtn
 
+$random weapons/unmaker/hit { weapons/unmaker/hit1 weapons/unmaker/hit2 weapons/unmaker/hit3 }
+weapons/unmaker/hit1		unmahit1
+weapons/unmaker/hit2		unmahit2
+weapons/unmaker/hit3		unmahit3
+
+$limit weapons/unmaker/hit 24
+$limit weapons/unmaker/hit1 24
+$limit weapons/unmaker/hit2 24
+$limit weapons/unmaker/hit3 24
+
 // soulcube
 weapons/soulcube/get		solcget
 weapons/soulcube/use		solcuse
