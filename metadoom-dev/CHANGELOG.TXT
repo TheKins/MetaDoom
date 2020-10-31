@@ -79,6 +79,8 @@ Other Changes:
 - Fixed various rendering issues with blood splat effects.
 - Fixed blood splats checking for Juvenile Power Fantasy's performance CVars
   instead of MetaDoom's, because copy-pasting is hard.
+- Set Clean scaling for main and episode select menus, for consistency with the
+  difficulty select menu in GZDoom 4.5.x.
 - Absolutely did not add any secret skill settings.
 - Removed the IDKFA Intermission music. Intermission themes are a mapset's job!
 

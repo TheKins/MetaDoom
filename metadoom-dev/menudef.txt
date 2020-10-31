@@ -18,6 +18,8 @@ DEFAULTLISTMENU
 
 LISTMENU "MainMenu"
 {
+	Size "Clean"
+	
 	StaticPatch 100, 6, "M_DOOM"
 	
 	Font "TinyBaby", MetaBlack
@@ -41,6 +43,8 @@ LISTMENU "MainMenu"
 
 ListMenu "EpisodeMenu"
 {
+	Size "Clean"
+	
 	Position 24, 25
 	StaticTextCentered 160, 4, "$MNU_EPISODE"
 	// items will be filled in by MAPINFO
@@ -48,6 +52,8 @@ ListMenu "EpisodeMenu"
 
 ListMenu "SkillMenu"
 {
+	Size "Clean"
+	
 	StaticPatch 0, 0, "M_BAR"
 	StaticTextCentered 160, 4, "$MNU_CHOOSESKILL"
 	Position 48, 33
