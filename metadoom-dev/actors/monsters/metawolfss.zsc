@@ -391,20 +391,21 @@ class MetaWolfensteinJava : MonsterCore
 	Death:
 		WJAV I 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		WJAV I 0 A_GiveToTarget("ScoreItem", 666);
-		WJAV J 0 A_Scream;
-		WJAV J 0 A_NoBlocking;
-		WJAV IJKIJKIJKIJKIJKIJK 1;
-		WJAV J 10;
-		WJAV L -1 A_PlaySound("monsters/wolfjava/thud");
+		WJAV I 0 A_Scream;
+		WJAV I 0 A_NoBlocking;
+		WJAV IIIIIIIIIIIIIIIIII 1 A_SpriteOffset(random(-1,1),0);
+		WJAV I 10 A_SpriteOffset(0,0);
+		WJAV J -1 A_PlaySound("monsters/wolfjava/thud");
 		Stop;
 	XDeath:
-		WJAV J 5;
+		WJAV I 5;
 		"####" # 0 A_Fall;
 		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
 		Stop;
 	Raise:
-		WJAV J 1 { bSPRITEFLIP = 0; }
-		WJAV IJKIJKIJK 1;
+		WJAV I 1 { bSPRITEFLIP = 0; }
+		WJAV IIIIIIIII 1 A_SpriteOffset(random(-1,1),0);
+		WJAV A 0 A_SpriteOffset(0,0);
 		Goto See;
 	}
 }
