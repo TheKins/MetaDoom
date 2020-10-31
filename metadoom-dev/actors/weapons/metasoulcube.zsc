@@ -109,7 +109,28 @@ class MetaSoulcube : MetaDoomWeapon
 		loop;
 		
 	Overlay.SoulcubeIdle:
-		SOLC ABAC 10;
+		//SOLC ABAC 10;
+		SOLC A 0 A_OverlayPivotAlign(2, PSPA_CENTER, PSPA_CENTER);
+		SOLC A 2 A_OverlayRotate(2, 5, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 4, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 3, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 2, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 1, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 5;
+		SOLC A 2 A_OverlayRotate(2, -1, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -2, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -3, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -4, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -5, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -4, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -3, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -2, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, -1, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 5;
+		SOLC A 2 A_OverlayRotate(2, 1, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 2, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 3, WOF_ADD|WOF_INTERPOLATE);
+		SOLC A 2 A_OverlayRotate(2, 4, WOF_ADD|WOF_INTERPOLATE);
 		loop;
 		
 	Overlay.SoulcubeAnim:
