@@ -276,6 +276,14 @@ class MonsterCore : Actor
 		}
 		"####" # 0 A_Jump(256,"Punched");
 		stop;
+		
+	Pain.LightningStun:
+		"####" # 0
+		{
+			A_SpriteOffset(random(-2,2), random(0,1));
+		}
+		"####" # 0 A_Jump(256,"Pain");
+		stop;
 	Death.ChainsawMelee:
 		"####" # 0
 		{
@@ -363,6 +371,8 @@ class MonsterCore : Actor
 	// Wrap the chase functions around some code to handle scarediness.
 	void A_MetaChase(statelabel melee = '_a_chase_default', statelabel missile = '_a_chase_default', int flags = 0)
 	{
+		A_SpriteOffset(0, 0);
+		
 		if (scurredamount > 0)
 		{
 			A_Chase(null, null);
@@ -374,6 +384,8 @@ class MonsterCore : Actor
 	
 	void A_MetaVileChase()
 	{
+		A_SpriteOffset(0, 0);
+		
 		if (scurredamount > 0)
 		{
 			A_Chase(null, null);
