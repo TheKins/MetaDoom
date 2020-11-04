@@ -13,6 +13,8 @@ Monster Changes:
   is too far away to be reasonably affected by it.
 - Demon Dogs and Cerberuses are more likely to spawn, and will be added to the
   spawn list earlier on in a campaign than in previous versions.
+- Fixed Arch-Viles causing a VM abort when the player they were performing their
+  magic attack on was gibbed before the explosion effect happened.
 - Monsters stunned by the Lightning Gun's stun bomb will now visibly shake while
   affected instead of being frozen in the first frame of their pain state.
 
