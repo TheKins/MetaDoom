@@ -76,6 +76,7 @@ class MetaSoulcube : MetaDoomWeapon
 			A_Overlay(2, "Overlay.SoulcubeIdle");
 			A_Overlay(3, "Overlay.SoulcubeAnim");
 			A_OverlayFlags (2, PSPF_ADDBOB, 0);
+			A_OverlayScale(PSP_WEAPON, 1, 1);
 		}
 	FinishSelect:
 		SOLH A 1 A_SmoothRaise();

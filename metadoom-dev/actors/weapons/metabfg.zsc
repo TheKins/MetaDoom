@@ -62,6 +62,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		MBFG AB 1 A_SmoothLower();
 		Loop;
 	Select:
+		MBFG A 0 A_OverlayScale(PSP_WEAPON, 1, 1);
 		MBFG AB 1 A_SmoothRaise();
 		loop;
 	Fire:

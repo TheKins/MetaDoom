@@ -60,6 +60,7 @@ class MetaPlasmaRifle : MetaDoomWeapon
 		PLA0 A 1 A_SmoothLower();
 		Loop;
 	Select:
+		PLA0 A 0 A_OverlayScale(PSP_WEAPON, 1, 1);
 		PLA0 A 0
 		{
 			A_Overlay(2, "Overlay.Manager");

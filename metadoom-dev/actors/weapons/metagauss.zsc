@@ -71,6 +71,7 @@ class MetaGaussCannon : MetaDoomWeapon
 		GAUS ABC 1 A_SmoothLower();
 		Loop;
 	Select:
+		GAUS A 0 A_OverlayScale(PSP_WEAPON, 1, 1);
 		GAUS ABC 1 A_SmoothRaise();
 		loop;
 	Fire:

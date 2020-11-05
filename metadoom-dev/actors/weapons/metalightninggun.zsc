@@ -69,6 +69,7 @@ class MetaLightningGun : MetaDoomWeapon
 		THUN ABC 1 A_SmoothLower();
 		Loop;
 	Select:
+		THUN A 0 A_OverlayScale(PSP_WEAPON, 1, 1);
 		THUN A 0 A_PlaySound("weapons/lightninggun/use");
 	FinishSelect:
 		THUN ABC 1 A_SmoothRaise();

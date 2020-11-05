@@ -67,6 +67,7 @@ class MetaRocketLauncher : MetaDoomWeapon
 		RLAU A 1 A_SmoothLower();
 		Loop;
 	Select:
+		RLAU A 0 A_OverlayScale(PSP_WEAPON, 1, 1);
 		RLAU A 1 A_SmoothRaise();
 		loop;
 	Fire:

@@ -114,6 +114,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		{
 			A_Overlay(-2, "Overlay.HookManager");
 			A_Overlay(2, "Overlay.CounterManager");
+			A_OverlayScale(PSP_WEAPON, 1, 1);
 		}
 	FinishSelect:
 		SSG2 A 1 A_SmoothRaise();
