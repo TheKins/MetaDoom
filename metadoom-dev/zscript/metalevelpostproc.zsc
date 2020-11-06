@@ -19,18 +19,6 @@ class MetaMapFucker : LevelPostProcessor
 			level.lines[0].sidedef[0].SetTextureXOffset(Side.mid,random(-720, 2199));
 		}
 		
-		// Enable multi-player only items in single player in the secret skill setting
-		if (!multiplayer && skill == 6)
-		{
-			for (int i = 0; i < 65535; i ++)
-			{
-				if (GetThingFlags(i) != MTF_SINGLE)
-				{
-					SetThingFlags(i, MTF_SINGLE);
-				}
-			}			 
-		}
-		
 		// Changes my Modder Test Map to be a MetaDoom map with MetaDoom items
 		// pre-placed for perhaps a little too much ease of access
 		if (mapname ~== "TEST")

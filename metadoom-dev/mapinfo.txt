@@ -95,6 +95,7 @@ skill secret
 {
 	FastMonsters
 	DisableCheats
+	SpawnMulti
 	SpawnFilter = Nightmare
 	Name = "Secret"
 	PicName = "TNT1A0"
