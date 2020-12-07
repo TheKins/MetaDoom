@@ -254,6 +254,14 @@ page "Bestiary"
         origin "Doom 64 (1997)";
         description "This sub-species of the Arachnotron seems to have undergone impressive enhancements, with the walker having been completely rebuilt and the brain-like creature itself having developed a hardened chitinous coating to protect itself from harm. The underslung weapon has also been replaced with a previously undocumented plasma weapon, firing a single charged burst of white-hot energy.\n\nThese creatures, oddly, don't seem to have any social characteristics, standing silently to attention when not in combat. They may well be artificial creations, built solely for war."; 
 	}
+	entry "MetaTitantula"
+	{
+		needs "Doom2"; 
+		offset 0, 10;
+		name "Titantula";
+        origin "Doom Eternal (2020)";
+        description "<TODO>"; 
+	}
 	
 	//===========================================
 	// Pain

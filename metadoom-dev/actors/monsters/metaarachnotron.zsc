@@ -282,3 +282,170 @@ class SpiborgChargeupParticle : Actor
 		Stop;
 	}
 }
+
+// The Titantula. The Doom Eternal Arachnotron. Changes attack type when below half health.
+class MetaTitantula : MonsterCore
+{
+	Default
+	{
+		Health 700;
+		Radius 64;
+		Height 64;
+		Mass 600;
+		Speed 12;
+		PainChance 128;
+		Monster;
+		+FLOORCLIP
+		+BUDDHA
+		//+BOSSDEATH
+		SeeSound "monsters/arachnotron/see";
+		PainSound "monsters/arachnotron/pain";
+		DeathSound "monsters/arachnotron/die1";
+		ActiveSound "monsters/arachnotron/idle";
+		Obituary "$OB_TITANTULA";
+		Species "BabySpider";
+		Tag "Titantula";
+		//$Category "Monsters/MetaDoom/Arachnotron"
+		//$Title "Titantula"
+		//$Color 12
+	}
+	
+	bool degunned;
+
+	States
+	{
+	Spawn:
+		SCP1 AB 10 A_Look;
+		Loop;
+	See:
+		"####" D 20;
+		"####" AA 3 A_MetaChase;
+		"####" B 3 { A_MetaChase(); A_PlaySound("monsters/arachnotron/walk"); }
+		"####" BCC 3 A_MetaChase;
+		"####" B 3 { A_MetaChase(); A_PlaySound("monsters/arachnotron/walk"); }
+		"####" B 3 A_MetaChase;
+		Goto See+1;
+	Missile:
+		"####" A 0
+		{
+			if (degunned)
+			{
+				SetStateLabel("MissileDegunned");
+			}
+		}
+		SCP1 D 20 BRIGHT A_FaceTarget;
+		SCP1 E 2 BRIGHT A_SpawnProjectile("MetaArachnotronPlasma");
+		SCP1 E 2 BRIGHT A_FaceTarget;
+		SCP1 D 1 BRIGHT A_SpidRefire;
+		Goto Missile+2;
+	MissileDegunned:
+		SCP2 D 20 BRIGHT A_FaceTarget;
+		SCP2 E 8 BRIGHT A_SpawnProjectile("GrenadeLauncherProj");
+		SCP2 D 10 BRIGHT;
+		SCP2 E 8 BRIGHT A_SpawnProjectile("GrenadeLauncherProj");
+		SCP2 D 10 BRIGHT;
+		Goto See;
+	Pain:
+		"####" F 0 A_JumpIf(degunned == false && health <= 200, "Degunned");
+		"####" F 3;
+		"####" F 3 A_Pain;
+		Goto See+2;
+	Death:
+		SCP2 G 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		SCP2 G 0 A_GiveToTarget("ScoreItem", 600);
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		SCP2 G 0 A_PlaySound("monsters/arachnotron/die2");
+		SCP2 G 20 A_Scream;
+		SCP2 H 7 A_NoBlocking;
+		SCP2 I 7;
+		SCP2 J 7 A_PlaySound("monsters/arachnotron/body");
+		SCP2 K 7;
+		SCP2 L -1 A_KillMaster; //A_BossDeath
+		Stop;
+    Raise:
+		SCP1 K 0 { bSPRITEFLIP = 0; }
+		SCP1 K 5;
+		SCP1 JIHGA 5;
+		SCP1 A 0
+		{
+			degunned = false;
+			bBUDDHA = true;
+		}
+		Goto See+2;
+	Degunned:
+		SCP2 F 0
+		{
+			A_PlaySound("monsters/arachnotron/body");
+			health = 200;
+			degunned = true;
+			bBUDDHA = false;
+			bINVULNERABLE = true;
+			A_SpawnItemEx("TitantulaGun",-32,0,16,0,0,16);
+		}
+		SCP2 F 24;
+		SCP2 F 0
+		{
+			bINVULNERABLE = false;
+		}
+		goto See;
+	}
+}
+
+class TitantulaGun : Actor
+{
+	Default
+	{
+	+DOOMBOUNCE
+	PROJECTILE;
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 2;
+	Damage 0;
+	bouncefactor 0.5;
+	SeeSound "player/helmetgib";
+	gravity 0.5;
+	Speed 5;
+	scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		SCP0 A 0;
+		goto Setup;
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1);
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt");
+		goto See;
+	See:
+		"####" # 0 A_SpawnItem("FlyingBloodCheap");
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Alt:
+		"####" # 0 A_SpawnItem("FlyingBloodCheap");
+		"####" # 0 ThrustThingZ(0,6,1,1);
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Bounce.Floor:
+		goto ChangeDir;
+	Bounce.Wall:
+		goto ChangeDir;
+	Death:
+		"####" "#" 1 A_FadeOut(0.02);
+		Wait;
+	}
+	
+	// Ignore player and enemy collisions
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		return false;
+	}
+}
