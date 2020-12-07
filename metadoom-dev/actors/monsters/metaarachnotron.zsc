@@ -305,6 +305,9 @@ class MetaTitantula : MonsterCore
 		Obituary "$OB_TITANTULA";
 		Species "BabySpider";
 		Tag "Titantula";
+		Bloodtype "Blueblood";
+		BloodColor "0 0 80";
+		Decal "bluebloodsplat";
 		//$Category "Monsters/MetaDoom/Arachnotron"
 		//$Title "Titantula"
 		//$Color 12
@@ -334,15 +337,23 @@ class MetaTitantula : MonsterCore
 			}
 		}
 		SCP1 D 20 BRIGHT A_FaceTarget;
-		SCP1 E 2 BRIGHT A_SpawnProjectile("MetaArachnotronPlasma");
+		SCP1 E 2 BRIGHT //A_SpawnProjectile("MetaTitantulaPlasma");
+		{
+			if ((ceilingz - floorz) > 76)
+			{
+				A_SpawnProjectile("MetaTitantulaPlasma",66);
+			} else {
+				A_SpawnProjectile("MetaTitantulaPlasma");
+			}
+		}
 		SCP1 E 2 BRIGHT A_FaceTarget;
 		SCP1 D 1 BRIGHT A_SpidRefire;
 		Goto Missile+2;
 	MissileDegunned:
 		SCP2 D 20 A_FaceTarget;
-		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("GrenadeLauncherProj"); }
+		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
 		SCP2 D 10;
-		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("GrenadeLauncherProj"); }
+		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
 		SCP2 D 10;
 		Goto See;
 	Pain:
@@ -450,5 +461,111 @@ class TitantulaGun : Actor
 	override bool CanCollideWith(Actor other, bool passive)
 	{
 		return false;
+	}
+}
+
+class MetaTitantulaPlasma : Actor
+{
+	Default
+	{
+		Radius 13;
+		Height 8;
+		Speed 25;
+		Damage 5;
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.75;
+		decal "ArachnotronScorch";
+		SeeSound "monsters/titantula/fire";
+	}
+
+	States
+	{
+	Spawn:
+		SCLS A 0 A_PlaySound ("weapons/plasmarifle/loop", CHAN_BODY, 1.0, 1);
+		SCLS AB 5 BRIGHT;
+		Loop;
+	Death:
+		SCLS A 0 A_PlaySound("weapons/plasmarifle/hit");
+		SCBX BCDE 5 BRIGHT;
+		Stop;
+	}
+}
+
+class MetaTitantulaGrenade : Actor
+{
+	Default
+	{
+		+CANBOUNCEWATER
+		Radius 8;
+		Height 8;
+		Speed 20;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		-NOGRAVITY
+		+USEBOUNCESTATE
+		+ROLLSPRITE
+		BounceType "Doom";
+		BounceSound "weapons/grenadelauncher/bounce";
+		Obituary "$OB_GRENLAUNCHER";
+		scale 0.5;
+		ReactionTime 60;	//Just over five seconds;
+		Damagetype "Explosive";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 ThrustThingZ(0,24,0,1);
+		goto Flying;
+	Flying:
+		SCGR ABCD 4 A_CountDown;
+		loop;
+	Bounce:
+		"####" # 0 A_Jump(128, "Bounce2", "Flying");
+		goto Bounce1;
+	Bounce1:
+		"####" # 0 A_CountDown;
+		"####" # 1 A_SetRoll((roll + 5));
+		"####" # 1 A_SetRoll((roll + 5));
+		"####" # 1 A_SetRoll((roll + 5));
+		loop;
+	Bounce2:
+		"####" # 0 A_CountDown;
+		"####" # 1 A_SetRoll((roll - 5));
+		"####" # 1 A_SetRoll((roll - 5));
+		"####" # 1 A_SetRoll((roll - 5));
+		loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("GrenadeLauncherExplosion",0,0,24,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+class MetaTitantulaGrenadeExplosion : GrenadeLauncherExplosion
+{
+	States
+	{
+	Spawn:
+	EXPL A 0;
+	EXPL A 2 BRIGHT
+	{
+		A_PlaySound("weapons/grenadelauncher/explode", CHAN_WEAPON);
+		A_Explode(32);
+		A_Quake (3,10,0,750,0);
+		A_SpawnItem("Shockwave",0,0);
+		
+		if (pos.z <= (floorz + 64))
+		{
+			A_SpawnItem("ExplosionScorchMark",0,0);
+		}
+	}
+	EXPL B 2 BRIGHT;
+	EXPL C 2 BRIGHT;
+	EXPL DEF 2;
+	Stop;
 	}
 }
