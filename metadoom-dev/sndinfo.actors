@@ -823,3 +823,22 @@ monsters/kronos/see				kronsee
 monsters/kronos/attack			kronattk
 monsters/kronos/pain			kronpain
 monsters/kronos/die				krondie
+
+// titantula
+monsters/titantula/see				scrpsee
+monsters/titantula/roam				scrproam
+monsters/titantula/grenade				scrpgren
+monsters/titantula/weakspot				scrpweak
+monsters/titantula/pain				scrppain
+monsters/titantula/die				scrpdie
+
+$random monsters/titantula/fire { monsters/titantula/fire1 monsters/titantula/fire2 monsters/titantula/fire3 }
+monsters/titantula/fire1				scrpfir1
+monsters/titantula/fire2				scrpfir2
+monsters/titantula/fire3				scrpfir3
+
+$random monsters/titantula/step { monsters/titantula/step1 monsters/titantula/step2 monsters/titantula/step3 monsters/titantula/step4 }
+monsters/titantula/step1				scrpstp1
+monsters/titantula/step2				scrpstp2
+monsters/titantula/step3				scrpstp3
+monsters/titantula/step4				scrpstp4
