@@ -260,7 +260,7 @@ page "Bestiary"
 		offset 0, 10;
 		name "Titantula";
         origin "Doom Eternal (2020)";
-        description "<TODO>"; 
+        description "Adhering to the old adage that the best way to fight fire is with fire, the UAC briefly experimented with creating their own bio-organically grown Arachnotrons with which to fight Hell's. Briefly. The first batch predictably slaughtered their creators, and the factory now runs autonomously, mass-producing increasingly powerful spiderdemons until it runs out of materials.\n\nThe scorpion-like Plasma Gun can be easily removed with enough controlled fire, though be aware: The creature also knows this, and is packing an explosive Plan B in the form of an underslung Grenade Launcher..."; 
 	}
 	
 	//===========================================
