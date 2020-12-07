@@ -70,6 +70,7 @@ ART RESOURCES (WEAPONS AND ITEMS):
 Blue Shadow (Doom 3 Keycard Sprites)
 Cage (Doom 64 Shotgun sprites)
 Captain J (Fire Extinguisher, Medikit, all sorts of other nice sprites)
+Craneo (Titantula sprites)
 Eriance (Grenade Launcher parts)
 Fulsam (Gauss Cannon sprite)
 IMX (Fire Extinguisher sprites)
