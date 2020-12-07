@@ -113,8 +113,10 @@ Class FlameBelchAttack : Actor
 						Console.printf("Player at %i x %i ain't got burnin' room", self.pos.x, self.pos.y);
 						
 					target.A_SpawnProjectile("FlameBelchFire", 42, 0, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+					target.A_SpawnProjectile("FlameBelchFireTrail", 42, 0, 0, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
 				} else {
-					target.A_SpawnProjectile("FlameBelchFire", 42, -16, -8, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+					target.A_SpawnProjectile("FlameBelchFire", 42, -8, -8, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
+					target.A_SpawnProjectile("FlameBelchFireTrail", 42, -8, -8, CMF_TRACKOWNER|CMF_AIMDIRECTION, target.pitch);
 				}
 			}
 			Stop;
@@ -237,6 +239,93 @@ Class FlameBelchFire : CustomProj
 			A_StartSound("inventory/flamebelch/sizzle");
 			A_SpawnItem("MetaExtinguishSmokeGenerator");
 			self.Destroy();
+		}
+	}
+}
+
+Class FlameBelchFireTrail : Actor
+{
+	Default
+	{
+		Radius 10;
+		Height 10;		
+		Scale 0.1;		
+		//Speed 48;
+		RenderStyle "Add";		
+		+FORCEXYBILLBOARD
+		+DONTSPLASH
+		+NoGravity
+		+Missile
+		+ROLLSPRITE
+		+ROLLCENTER
+		-SOLID
+	}
+	
+	int dir;
+	int dottimer;
+	
+	States
+	{
+	Spawn:
+		FTHR A 0 NoDelay
+		{
+			self.vel.xy += target.vel.xy;
+		}
+	SpawnLoop:
+		FTHR A 0
+		{
+			dir = random(0,1);
+			roll = random(0,360);
+		}
+		goto Start;
+	Start:
+		FTHR ABCD 1 BRIGHT
+		{
+			if (dir == 1)
+			{
+				roll = roll + 4;
+			} else {
+				roll = roll - 4;
+			}
+			
+			//A_SetScale(scale.x + 0.01);
+			A_ScaleVelocity (0.5);
+		}
+		goto Looper;
+	Looper:
+		FTHR ABCD 1 BRIGHT
+		{
+			if (dir == 1)
+			{
+				roll = roll + 4;
+			} else {
+				roll = roll - 4;
+			}
+			
+			//A_SetScale(scale.x + 0.02);
+			A_FadeOut(0.03);
+		}
+		Loop;
+	Death:
+		TNT1 A 1;
+		stop;
+	}
+	
+	override void BeginPlay()
+	{
+		speed = random(2,16);
+	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+		
+		dottimer++;
+		
+		if (dottimer >= 6)
+		{
+			A_SpawnParticle("ffff9c", SPF_FULLBRIGHT, 35, 1, Random(0,255), 0, 0, 0, Random(0,1), Random(0,1), Random(2,6), 0, 0, 0, 1.0, -1, 0.3);
+			dottimer = 0;
 		}
 	}
 }
