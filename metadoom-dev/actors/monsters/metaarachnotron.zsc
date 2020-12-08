@@ -336,7 +336,7 @@ class MetaTitantula : MonsterCore
 				SetStateLabel("MissileDegunned");
 			}
 		}
-		SCP1 D 20 BRIGHT A_FaceTarget;
+		SCP1 D 20 A_FaceTarget;
 		SCP1 E 2 BRIGHT //A_SpawnProjectile("MetaTitantulaPlasma");
 		{
 			A_FaceTarget();
@@ -349,7 +349,7 @@ class MetaTitantula : MonsterCore
 			}
 		}
 		SCP1 E 2 BRIGHT A_FaceTarget;
-		SCP1 D 1 BRIGHT A_SpidRefire;
+		SCP1 D 1 A_SpidRefire;
 		Goto Missile+2;
 	MissileDegunned:
 		SCP2 D 20 A_FaceTarget;

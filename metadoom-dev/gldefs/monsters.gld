@@ -452,3 +452,41 @@ object MetaHarbingerShot
     frame HGAPD { light HELLGUARDSHOT_X2 }
     frame HGAPE { light HELLGUARDSHOT_X3 }
 }
+
+// Arachnotron
+object MetaArachnotronPlasma
+{
+    frame APLSA { light ARACHPLAS }
+    frame APLSB { light ARACHPLAS }
+
+    frame APBXA { light ARACHPLAS_X1 }
+    frame APBXB { light ARACHPLAS_X2 }
+    frame APBXC { light ARACHPLAS_X2 }
+    frame APBXD { light ARACHPLAS_X3 }
+    frame APBXE { light ARACHPLAS_X4 }
+}
+
+// Spiborg
+object SpiborgPlasma
+{
+    frame PLSSA { light PLASMABALL }
+    frame PLSSB { light PLASMABALL }
+
+    frame PLSEA { light PLASMA_X1 }
+    frame PLSEB { light PLASMA_X2 }
+    frame PLSEC { light PLASMA_X2 }
+    frame PLSED { light PLASMA_X3 }
+    frame PLSEE { light PLASMA_X4 }
+}
+
+// Titantula
+object MetaTitantulaPlasma
+{
+    frame SCLSA { light IMPBALL }
+    frame SCLSB { light IMPBALL }
+
+    frame SCBXB { light IMPBALL_X1 }
+    frame SCBXC { light IMPBALL_X2 }
+    frame SCBXD { light IMPBALL_X2 }
+    frame SCBXE { light IMPBALL_X3 }
+}

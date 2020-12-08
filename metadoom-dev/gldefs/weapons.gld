@@ -87,6 +87,11 @@ Object CyberdemonExplosionParticle
 	frame EXPL { light MetaExplosion }
 }
 
+Object MetaTitantulaGrenadeExplosion
+{
+	frame EXPL { light MetaExplosion }
+}
+
 pointlight MetaPlasmaBall
 {
     color 0.0 0.1 1.0
