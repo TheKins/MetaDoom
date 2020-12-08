@@ -49,6 +49,7 @@ Class MetaCodex_MetaFiend : MetaCodex_InvBase {}
 
 Class MetaCodex_MetaArachnotron : MetaCodex_InvBase {}
 Class MetaCodex_MetaSpiborg: MetaCodex_InvBase {}
+Class MetaCodex_MetaTitantula: MetaCodex_InvBase {}
 
 Class MetaCodex_MetaPainElemental : MetaCodex_InvBase {}
 Class MetaCodex_MetaBeholder : MetaCodex_InvBase {}
