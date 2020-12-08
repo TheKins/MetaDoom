@@ -339,6 +339,8 @@ class MetaTitantula : MonsterCore
 		SCP1 D 20 BRIGHT A_FaceTarget;
 		SCP1 E 2 BRIGHT //A_SpawnProjectile("MetaTitantulaPlasma");
 		{
+			A_FaceTarget();
+			
 			if ((ceilingz - floorz) > 76)
 			{
 				A_SpawnProjectile("MetaTitantulaPlasma",66);
@@ -351,16 +353,16 @@ class MetaTitantula : MonsterCore
 		Goto Missile+2;
 	MissileDegunned:
 		SCP2 D 20 A_FaceTarget;
-		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
-		SCP2 D 10;
-		SCP2 E 8 BRIGHT { A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
-		SCP2 D 10;
+		SCP2 E 8 BRIGHT { A_FaceTarget(); A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
+		SCP2 D 10 A_FaceTarget;
+		SCP2 E 8 BRIGHT { A_FaceTarget(); A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
+		SCP2 D 10 A_FaceTarget;
 		Goto See;
 	Pain:
 		"####" F 0 A_JumpIf(degunned == false && health <= 200, "Degunned");
 		"####" F 3;
 		"####" F 3 A_Pain;
-		Goto See+2;
+		Goto See+1;
 	Death:
 		SCP2 G 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
 		SCP2 G 0 A_GiveToTarget("ScoreItem", 600);
@@ -382,14 +384,18 @@ class MetaTitantula : MonsterCore
 			degunned = false;
 			bBUDDHA = true;
 		}
-		Goto See+2;
+		Goto See+1;
 	Degunned:
-		SCP2 F 0
+		SCP2 Z 0
 		{
 			A_StopSound(CHAN_BODY);
 			A_StartSound("monsters/titantula/weakspot",CHAN_6,0,1.0,ATTN_NORM,1.0);
-			target.A_StartSound("monsters/titantula/weakspot",333,CHANF_UI|CHANF_LOCAL,1.0,ATTN_NONE,1.0);
-			target.A_StartSound("monsters/titantula/weakspot",334,CHANF_UI|CHANF_LOCAL,1.0,ATTN_NONE,1.0);
+			if (target is "PlayerPawn")
+			{
+				target.A_StartSound("monsters/titantula/weakspot",333,CHANF_UI|CHANF_LOCAL,1.0,ATTN_NONE,1.0);
+				target.A_StartSound("monsters/titantula/weakspot",334,CHANF_UI|CHANF_LOCAL,1.0,ATTN_NONE,1.0);
+			}
+			
 			health = 200;
 			degunned = true;
 			bBUDDHA = false;
@@ -401,12 +407,13 @@ class MetaTitantula : MonsterCore
 				A_SpawnItem("MetaGibItemBox",-32,random(0,16));
 			}
 		}
-		SCP2 F 24;
-		SCP2 F 0
+		SCP2 Z 24;
+		SCP2 Z 0
 		{
 			bINVULNERABLE = false;
+			A_FaceTarget();
 		}
-		goto See;
+		goto See+1;
 	}
 }
 
@@ -424,6 +431,7 @@ class TitantulaGun : Actor
 	-SOLID
 	+ROLLSPRITE
 	+ROLLCENTER
+	+SKYEXPLODE
 	Radius 2;
 	Damage 0;
 	bouncefactor 0.5;
