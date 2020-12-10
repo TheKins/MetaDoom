@@ -362,15 +362,23 @@ class MetaSuperShotgun : MetaDoomWeapon
 				owner.A_StartSound("weapons/ssg/hook/charge", 17, CHANF_LOCAL, 0.5, ATTN_NONE, 1.0);
 			}
 		}
-	}
-	
-	// Break any active grappling hook on teleport
-	override bool PreTeleport(vector3 destpos, double destangle, int flags)
-	{
-		hook.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
-		hook = null;
-		hooktimer = 0;
-		return Super.PreTeleport(destpos, destangle, flags);
+		
+		// NOTE SELF: REPLACE WITH PRE/POSTTELEPORT VIRTUALS ONCE ENGINE UPDATES
+		if (owner != null && hook != null)
+		{
+			ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
+			Actor mo;
+			while (mo = TeleportFog(it.Next()))
+			{
+				if (mo.target == owner)
+				{
+					hook.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+					hook = null;
+					hooktimer = 0;
+					break;
+				}
+			}
+		}
 	}
 	
 	override void PostBeginPlay ()
