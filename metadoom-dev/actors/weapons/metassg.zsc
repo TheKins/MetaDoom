@@ -562,7 +562,8 @@ Class MetaHookProjectile : Actor
 	}
 }
 		
-// Mostly used for the pulling enemies towards the player, I think...
+// Handles getting pulled towards a thing. Typically towards a monster pulling
+// the player towards them by way of some prehensile appendage.
 Class MetaHookControl : Inventory
 {
 	Default
@@ -584,7 +585,10 @@ Class MetaHookControl : Inventory
 			destroy();
 			return;	
 		}
-		owner.SetOrigin(master.pos-(0,0,owner.default.height*0.5),true);
+		// Using SetOrigin has a bad habit of "skipping" line triggers the player
+		// passes when being pulled. So instead, we go for the gross hacks.
+		//owner.SetOrigin(master.pos-(0,0,owner.default.height*0.5),true);
+		owner.vel = master.vel;
 		
 		// Handle pulled players getting blocked by geometry
 		FLineTraceData FootSurfaceData;
