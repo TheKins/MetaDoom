@@ -383,28 +383,23 @@ class MetaDoomPlayer : PlayerPawn
 			A_SpawnItemEx("MetaFireExtinguisherSelfSprayFX",random(-16,16),random(-16,16),0,0,0,4);
 		}
 		
-		// Check if player has teleported, and kill any enemy hooks nearby if so
-		// NOTE SELF: REPLACE WITH PRE/POSTTELEPORT VIRTUALS ONCE ENGINE UPDATES
-		ThinkerIterator it = ThinkerIterator.Create("TeleportFog");
-		Actor mo;
-		while (mo = TeleportFog(it.Next()))
+		Super.Tick();
+	}
+	
+	// Break any monster grappling hooks on teleport
+	override bool PreTeleport(vector3 destpos, double destangle, int flags)
+	{
+		BlockThingsIterator bit = BlockThingsIterator.Create(self,64,0);
+		while (bit.Next())
 		{
-			if (mo.target == self)
+			Actor fo = bit.thing;
+			
+			if ((fo is "WretchedTongue") || (fo is "AssassinTentacle"))
 			{
-				BlockThingsIterator bit = BlockThingsIterator.Create(self,64,0);
-				while (bit.Next())
-				{
-					Actor fo = bit.thing;
-					
-					if ((fo is "WretchedTongue") || (fo is "AssassinTentacle"))
-					{
-						fo.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
-					}
-				}
+				fo.A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
 			}
 		}
-		
-		Super.Tick();
+		return Super.PreTeleport(destpos, destangle, flags);
 	}
 	
 	// This version of DeathThink() is copy-pasted and modified slightly to allow
