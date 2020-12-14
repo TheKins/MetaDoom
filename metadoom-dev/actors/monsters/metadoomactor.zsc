@@ -487,6 +487,32 @@ class MonsterCore : Actor
 		return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
 	}
 	
+	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
+	{
+		// If on fire when killed, spawn some Armor
+		if (CountInv("MetaBurnDOT"))
+		{
+			int twiddle;
+			
+			twiddle = GetSpawnHealth() / 25;
+			
+			if (twiddle < 4)
+			{
+				twiddle = 4;
+			} else if (twiddle > 12)
+			{
+				twiddle = 12;
+			}
+			
+			for (int i = 0; i < twiddle; i++) 
+			{
+				A_SpawnItemEx("MetaArmorPinataFade",random(0,radius/2),random(0,radius/2),random(16,height),random(2,8),0,random(4,8),random(0,365),SXF_NOCHECKPOSITION);
+			}
+		}
+		
+		Super.Die(source,inflictor,dmgflags,MeansOfDeath);
+	}
+	
 	// A_CheckSolidFooting("State", flags)
 	// Checks if the actor is on a solid object, jumps if true.
 	// Flags (somewhat self explanatary):
