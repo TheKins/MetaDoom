@@ -1,15 +1,19 @@
 /*
-----------------------------
-MetaDoom
-Actor Definitions
-Flamethrower library class by Boondorl
-https://forum.zdoom.org/viewtopic.php?f=37&t=65883
-----------------------------
-*/
+================================================================================
+ Splot2 ZScript Code
+ 
+ Author: Boondorl
+ 
+ Purpose: Flamethrower library class
+ 
+ Comment: https://forum.zdoom.org/viewtopic.php?f=37&t=65883
+ 
+ One minor change was made by The Kinsie - checks for the ISMONSTER flag were
+ changed to check for SHOOTABLE, to ensure that flamethrowers properly effect
+ players as well as monsters.
 
-// One minor change was made by The Kinsie - checks for the ISMONSTER flag were
-// changed to check for SHOOTABLE, to ensure that flamethrowers properly effect
-// players as well as monsters.
+================================================================================
+*/
 
 class CustomDOT : Inventory abstract
 {
@@ -60,7 +64,10 @@ class CustomDOT : Inventory abstract
 	{
 		super.DoEffect();
 		
-		if (isFrozen() || level.isFrozen())
+		if (!owner || isFrozen() || level.isFrozen())
+			return;
+			
+		if (bDestroyed)
 			return;
 		
 		if (effectSpawnRate && effectActor && !(effectTimer++ % effectSpawnRate))
@@ -89,33 +96,36 @@ class CustomDOT : Inventory abstract
 				else
 					doDamage = !(ticTimers[i]++ % ticRate);
 				
-				if (doDamage)
+				if (!doDamage)
+					continue;
+				
+				if (bDestroyed)
+					return;
+
+				bool hadInvulnerable = false;
+				if (bPoisonAlways)
 				{
-					bool hadInvulnerable = false;
-					if (bPoisonAlways)
-					{
-						hadInvulnerable = owner.bInvulnerable;
-						owner.bInvulnerable = false;
-					}
-					
-					int realDamage = damage;
-					if (isRandom)
-						realDamage *= Random(minRandomMulti, maxRandomMulti);
-					
-					int newdam = owner.DamageMobj(self, owner.target, realDamage, damageType);
-					
-					if (bPoisonAlways && hadInvulnerable)
-						owner.bInvulnerable = true;
-					
-					if (owner.health <= 0)
-						break;
-					else if (newdam > 0)
-					{
-						if (owner.HowlSound)
-							owner.A_StartSound(owner.HowlSound, CHAN_VOICE);
-						else
-							owner.A_StartSound(owner.PainSound, CHAN_VOICE);
-					}
+					hadInvulnerable = owner.bInvulnerable;
+					owner.bInvulnerable = false;
+				}
+				
+				int realDamage = damage;
+				if (isRandom)
+					realDamage *= Random(minRandomMulti, maxRandomMulti);
+				
+				int newdam = owner.DamageMobj(self, owner.target, realDamage, damageType);
+				
+				if (bPoisonAlways && hadInvulnerable)
+					owner.bInvulnerable = true;
+				
+				if (!owner || (owner && owner.health <= 0))
+					return;
+				else if (owner && newdam > 0)
+				{
+					if (owner.HowlSound)
+						owner.A_StartSound(owner.HowlSound, CHAN_VOICE);
+					else
+						owner.A_StartSound(owner.PainSound, CHAN_VOICE);
 				}
 				
 				if (ticTimers[i] >= duration)
@@ -332,7 +342,7 @@ class CustomAOE : Actor abstract
 			while (it.Next())
 			{
 				mo = it.thing;
-				if ((mo.bISMONSTER || mo is "PlayerPawn") && (mo.pos.z <= pos.z+height && mo.pos.z+mo.height >= pos.z) && Distance2DSquared(mo) <= (radius+mo.radius)**2)
+				if (mo.bShootable && (mo.pos.z <= pos.z+height && mo.pos.z+mo.height >= pos.z) && Distance2DSquared(mo) <= (radius+mo.radius)**2)
 				{
 					if (mo.health <= 0)
 					{
