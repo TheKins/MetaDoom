@@ -247,7 +247,7 @@ class MetaBurnDOT : CustomDOT
 {
 	Default
 	{
-		DamageFunction (5);
+		Damage 5;
 		DamageType "Fire";
 		
 		CustomDOT.NumberOfTics 3;
