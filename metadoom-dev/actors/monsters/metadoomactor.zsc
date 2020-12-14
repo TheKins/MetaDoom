@@ -469,7 +469,16 @@ class MonsterCore : Actor
 		// Based on Shadsy's Mega Imp code from Reelism 2
 		if (CountInv("MetaBurnDOT") && mod != "Fire")
 		{
-			for (int i = 0; i < 1+(damage/25); i++) 
+			int twiddle;
+			
+			if (damage >= 100)
+			{
+				twiddle = 8;
+			} else {
+				twiddle = (damage / 25);
+			}
+			
+			for (int i = 0; i < 1+ twiddle; i++) 
 			{
 				A_SpawnItemEx("MetaArmorPinataFade",random(0,radius/2),random(0,radius/2),random(16,height),random(2,8),0,random(4,8),random(0,365),SXF_NOCHECKPOSITION);
 			}
