@@ -294,7 +294,7 @@ class MetaBehemothFireTrail : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		+ALLOWPARTICLES
 		+RANDOMIZE

@@ -169,7 +169,7 @@ class MetaMotherBallTrailSmoke : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		+DONTSPLASH
 		RenderStyle "Translucent";
@@ -654,7 +654,7 @@ class MetaHarbingerTeleportFog : Actor
 {
 	default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOTELEPORT
 		+NOGRAVITY
 		+ZDOOMTRANS

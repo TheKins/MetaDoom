@@ -51,7 +51,7 @@ class Shockwave : Actor
 	+NOCLIP
 	+FLATSPRITE
 	+NOGRAVITY
-	+NOBLOCKMAP
+	+NOINTERACTION
 	+ROLLCENTER
 	Renderstyle "Add";
 	}

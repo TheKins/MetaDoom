@@ -416,7 +416,7 @@ class MetaBaronBallEffect : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		Radius 0;
 		Height 1;
@@ -445,7 +445,7 @@ class HellKnightShockwave : Actor
 		+NOCLIP
 		+FLATSPRITE
 		+NOGRAVITY
-		+NOBLOCKMAP
+		+NOINTERACTION
 		Renderstyle "Add";
 	}
 
@@ -473,7 +473,7 @@ class BaronShockwave : Actor
 		+NOCLIP
 		+FLATSPRITE
 		+NOGRAVITY
-		+NOBLOCKMAP
+		+NOINTERACTION
 		Renderstyle "Add";
 	}
 

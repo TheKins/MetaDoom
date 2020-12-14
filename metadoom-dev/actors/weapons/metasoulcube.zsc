@@ -220,7 +220,7 @@ class SoulCubeTrail1 : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		RenderStyle "Add";
 		Alpha 1;
@@ -240,7 +240,7 @@ class SoulCubeTrail2 : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		+FLATSPRITE
 		RenderStyle "Add";

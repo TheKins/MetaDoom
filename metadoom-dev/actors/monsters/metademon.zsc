@@ -312,7 +312,7 @@ class BullDemonChargeFire : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		RenderStyle "Add";
 		Alpha 1;
@@ -361,7 +361,7 @@ class BullDemonShockwave : Actor
 		+NOCLIP
 		+WALLSPRITE
 		+NOGRAVITY
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+ROLLCENTER
 		Renderstyle "Add";
 	}

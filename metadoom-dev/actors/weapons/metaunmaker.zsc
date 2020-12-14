@@ -336,7 +336,7 @@ class UnmakerTracerTrail : Actor
 		Alpha 1;
 		RenderStyle "Add";
 		Speed 0;
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		+NOTELEPORT
 		+CANNOTPUSH
@@ -513,7 +513,7 @@ class UnmakerRailPuffShockwave : Actor
 	{
 		+WALLSPRITE
 		+NOGRAVITY
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOCLIP
 		scale 0.5;
 		Renderstyle "add";

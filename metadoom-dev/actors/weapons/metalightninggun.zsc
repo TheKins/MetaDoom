@@ -196,6 +196,7 @@ class LightningTrailParticle : Actor
 		Radius 8;
 		Height 8;
 		+RANDOMIZE
+		+NOINTERACTION
 		RenderStyle "Add";
 		Alpha 0.75;
 		scale 0.25;

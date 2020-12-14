@@ -370,7 +370,7 @@ class CyberdemonChargeFire : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		RenderStyle "Add";
 		Alpha 1;

@@ -118,7 +118,7 @@ class DoomImpBallEffect : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		Radius 0;
 		Height 1;
@@ -435,7 +435,7 @@ class MetaImpLordTeleportFog : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOTELEPORT
 		+NOGRAVITY
 		RenderStyle "Add";
@@ -454,7 +454,7 @@ class MetaImpLordTeleportFogParticle : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOTELEPORT
 		+NOGRAVITY
 		+MISSILE

@@ -506,7 +506,7 @@ class AssassinTentacleTrail : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP
+		+NOINTERACTION
 		+NOGRAVITY
 		scale 0.8;
 	}

@@ -104,7 +104,7 @@ class MetaLostSoulFire : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP;
+		+NOINTERACTION
 		+NOGRAVITY;
 		+ALLOWPARTICLES;
 		+RANDOMIZE;
@@ -140,7 +140,7 @@ class MetaLostSoulExplosion : Actor
 		Height 8;
 		RenderStyle "add";
 		Alpha 0.5;
-		+NOBLOCKMAP;
+		+NOINTERACTION
 		+NOGRAVITY;
 		scale 2;
 	}
@@ -273,7 +273,7 @@ class MetaLostSoulSteam : Actor
 	{
 		vspeed 2;
 		scale 2;
-		+NOBLOCKMAP;
+		+NOINTERACTION
 		+NOGRAVITY;
 	}
 	
@@ -479,7 +479,7 @@ class MetaPhantomExplosion : Actor
 		Height 8;
 		RenderStyle "add";
 		Alpha 0.5;
-		+NOBLOCKMAP;
+		+NOINTERACTION
 		+NOGRAVITY;
 		scale 2;
 	}
@@ -578,7 +578,7 @@ class MetaForgottenOneFire : Actor
 {
 	Default
 	{
-		+NOBLOCKMAP;
+		+NOINTERACTION
 		+NOGRAVITY;
 		+ALLOWPARTICLES;
 		+RANDOMIZE;
