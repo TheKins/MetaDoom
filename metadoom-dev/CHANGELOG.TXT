@@ -99,7 +99,8 @@ Other Changes:
 - Removed the IDKFA Intermission music. Intermission themes are a mapset's job!
 
 KNOWN ISSUES:
-- Grappling Hooks do not currently behave properly around line portals.
+- Grappling Hooks do not currently behave properly around interactive line portals.
+  Static Eternity-style line portals and Floor/Ceiling sector portals work fine.
 
 v666 "Titan" (10/03/20)
 =======================
