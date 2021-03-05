@@ -183,6 +183,7 @@ GOTLOOTFIG1 = "Picked up an old, familiar figurine!";
 GOTLOOTFIG2 = "Picked up a dark and scary figurine!";
 GOTLOOTFIG3 = "Picked up a trend-setting figurine!";
 GOTLOOTFIG4 = "Picked up an oddly blurry figurine!";
+GOTLOOTFIG5 = "Picked up a strangely quirky figurine!";
 GOTLOOTSKATE = "Picked up a pro skateboard!";
 GOTLOOTHISSY = "Picked up an old plush toy!";
 GOTLOOTPUMPKIN = "Picked up a fragile pumpkin!";

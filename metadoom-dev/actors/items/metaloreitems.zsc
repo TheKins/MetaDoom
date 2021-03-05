@@ -25,6 +25,7 @@ class MetaLoreItemSpawner : Actor
 		"LootFigurine2",
 		"LootFigurine3",
 		"LootFigurine4",
+		"LootFigurine5",
 		"LoreSkateboard",
 		"LoreHissy",
 		"LorePumpkin",
@@ -200,6 +201,31 @@ class LootFigurine4 : MetaLoreItem
 	Pickup:
 		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
 		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine4");
+		stop;
+	}
+}
+
+// Doom Eternal
+class LootFigurine5 : MetaLoreItem
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTLOOTFIG5";
+		inventory.pickupsound "items/lootfig5";
+		//$Category "MetaDoom Loot/Lore Items (6666pt)"
+		//$Title "Figurine - Doom Eternal"
+		//$NotAngled
+		//$Color 19
+	}
+	
+	States
+	{
+	Spawn:
+		LFIG E -1;
+		loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory ("ScoreItem", 6666);
+		TNT1 A 0 A_GiveInventory ("MetaCodex_LootFigurine5");
 		stop;
 	}
 }

@@ -33,6 +33,14 @@ page "Other"
         origin "Doom (2016)";
         description "After years in the development wilderness, this marine cast aside anonymity and branded himself as The Doom Slayer, clad in a full-body suit of heavy, visually complex armor dubbed the Praetor Suit.\n\nThis was routinely criticised at first, with many uncomplimentary references to the green space marines that the original ''Doom Guy'' inspired, although he has since grown a fanbase of his own though his mute expressions of rage.\n\nHe was last seen trading in his sleeves for a space fortress...";
     }
+	
+	entry "LootFigurine5"
+    {
+		itemToCheck "MetaCodex_LootFigurine5";
+        name "Quirky Figurine";
+        origin "Doom Eternal (2020)";
+        description "When the marine returned to Earth, he bought with him a host of different armored suits, suited to different environments and situations.\n\nSome of these were equipped with life support systems, additional armor plating, and means of traversal. Other suits were... clear signs that perhaps he'd been alone in his space fortress for maybe a little too long.\n\nOr maybe he's somehow developed a sick sense of humor in defiance of all he's been through? It will forever remain a mystery...";
+    }
 
 	entry "LoreSkateboardDummy"
     {
