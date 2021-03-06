@@ -126,6 +126,8 @@ class MetaBeholder : MonsterCore
 		BEHO F 5 A_FaceTarget;
 		BEHO G 5 BRIGHT
 		{
+			A_FaceTarget();
+			
 			A_PainAttack("MetaForgottenOne");
 			/*A_PainAttack("MetaForgottenOne",32,PAF_NOTARGET);
 			A_PainAttack("MetaForgottenOne",64,PAF_NOTARGET);
@@ -138,7 +140,8 @@ class MetaBeholder : MonsterCore
 			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-32,SXF_NOCHECKPOSITION);
 			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-64,SXF_NOCHECKPOSITION);
 		}
-		BEHO HI 5;
+		BEHO H 5 BRIGHT A_FaceTarget;
+		BEHO I 5 A_FaceTarget;
 		BEHO Z 10;
 		Goto See;
 	Melee:
