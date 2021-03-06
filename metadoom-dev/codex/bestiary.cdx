@@ -280,7 +280,7 @@ page "Bestiary"
         needs "Doom2"; 
 		offset 0, 3;
         name "Beholder";
-        origin "Doom RPG (2005)";
+        origin "Doom Eternal (2020)";
         description "A strange relative of the Pain Elemental, the Beholder seemingly evolved under the assumption that quantity is better than quality, eschewing the well-documented Lost Souls for a shotgun-esque spray of smaller, less stable creatures that have yet to be properly examined.\n\nStrangely, this creature doesn't seem as interested in actively hunting prey as its cousins, instead preferring to observe quietly from a distance."; 
     }
     entry "MetaRahovart"

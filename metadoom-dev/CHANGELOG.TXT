@@ -4,6 +4,7 @@ NEXT
 Monster Changes:
 - Added # new monsters! (Titantula)
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
+- Completely replaced the Beholder's sprites with new and cool ones!
 - The Wretched's tongue and Former Assassin's tentacle have both undergone an
   assortment of changes:
   - They are both now far more, for lack of a better term, grappling-hook-y.
@@ -18,7 +19,7 @@ Monster Changes:
   magic attack on was gibbed before the explosion effect happened.
 - Monsters stunned by the Lightning Gun's stun bomb will now visibly shake while
   affected instead of being frozen in the first frame of their pain state.
-- The Hell Knight's walk animation has been altered to be less exaggerated.
+- Altered the Hell Knight's walk animation to be less exaggerated.
 - Arachnotrons and Spiborgs now have proper OpenGL light defs for their attacks.
 
 Optional Content Changes:

@@ -74,8 +74,8 @@ class MetaPainElemental : MonsterCore
 	}
 }
 
-// This horrible thing uses some mediocre custom sprite and fires out Forgotten
-// Ones like a shotgun. I'd like to revise this a little one day.
+// This horrible thing fires out Forgotten Ones like a shotgun. I've redone the
+// sprites, but I'd still like to revise this a little further at some point.
 
 class MetaBeholder : MonsterCore
 {
@@ -105,17 +105,26 @@ class MetaBeholder : MonsterCore
 	States
 	{
 	Spawn:
-		BEHO A 10 A_Look;
+		BEHO Z 10 A_Look;
 		Loop;
 	See:
-		BEHO AAAAAAAA 3 A_MetaChase;
-		BEHO AAAAAAAA 3 A_MetaChase("Melee", null);
+		"####" A 0 
+		{
+			// if too close to the ground, punt the wretched up in the air
+			// slightly to avoid FLOATBOB ugliness
+			if (pos.z <= (floorz + 16))
+			{
+				ThrustThingZ(0,2,0,0);
+			}
+		}
+		BEHO AACCBBDD 3 A_MetaChase;
+		BEHO AACCBBDD 3 A_MetaChase("Melee", null);
 		Loop;
 	Missile:
-		BEHO B 0 A_PlaySound("monsters/beholder/fire");
-		BEHO B 5 A_FaceTarget;
-		BEHO C 5 A_FaceTarget;
-		BEHO D 5 BRIGHT
+		BEHO E 0 A_PlaySound("monsters/beholder/fire");
+		BEHO E 5 A_FaceTarget;
+		BEHO F 5 A_FaceTarget;
+		BEHO G 5 BRIGHT
 		{
 			A_PainAttack("MetaForgottenOne");
 			/*A_PainAttack("MetaForgottenOne",32,PAF_NOTARGET);
@@ -129,28 +138,28 @@ class MetaBeholder : MonsterCore
 			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-32,SXF_NOCHECKPOSITION);
 			A_SpawnItemEx("MetaForgottenOne",0,0,32,8,0,0,-64,SXF_NOCHECKPOSITION);
 		}
-		BEHO CB 5;
-		BEHO A 10;
+		BEHO HI 5;
+		BEHO Z 10;
 		Goto See;
 	Melee:
-		BEHO B 4 A_FaceTarget;
-		BEHO C 4 A_FaceTarget;
-		BEHO D 4 BRIGHT A_FaceTarget;
-		BEHO A 0 BRIGHT A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", "PainElementalBite", 1);
-		BEHO A 4 A_FaceTarget;
+		BEHO J 4 A_FaceTarget;
+		BEHO K 4 A_FaceTarget;
+		BEHO L 4 A_CustomMeleeAttack(10, "monsters/painelemental/bite", "monsters/painelemental/bite", "PainElementalBite", 1);
+		BEHO Z 4 A_FaceTarget;
 		Goto See;
 	Pain:
-		BEHO E 3;
-		BEHO E 3 A_Pain;
-		BEHO E 6;
+		BEHO M 3;
+		BEHO M 3 A_Pain;
+		BEHO M 6;
 		Goto See;
 	Death:
-		BEHO G 0 A_GiveToTarget("ScoreItem", 500);
+		BEHO N 0 A_GiveToTarget("ScoreItem", 500);
 		TNT1 A 0 A_SpawnItem("SoulSpawner");
-		BEHO H 8 BRIGHT { bFLOATBOB = 0; }
-		BEHO I 8 BRIGHT A_Scream;
-		BEHO J 8 BRIGHT;
-		BEHO K 8 BRIGHT A_PainDie("MetaForgottenOne");
+		BEHO N 8 BRIGHT { bFLOATBOB = 0; }
+		BEHO O 8 BRIGHT A_Scream;
+		BEHO P 8 BRIGHT;
+		BEHO Q 8 BRIGHT A_PainDie("MetaForgottenOne");
+		BEHO RS 8 BRIGHT;
 		Stop;
 	}
 }
