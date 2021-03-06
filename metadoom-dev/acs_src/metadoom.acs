@@ -177,6 +177,11 @@ Script "100Percent" ENTER
 {
 	if (GameType () < 2) // disqualities deathmatch and titlemap
 	{
+		if (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) == 0)
+		{
+			GiveInventory("x100Percent_Monsters", 1);
+		}
+		
 		if (!CheckInventory("x100Percent_Monsters") & !CheckInventory("x100Percent_Running") & (GetLevelInfo (LEVELINFO_KILLED_MONSTERS) == GetLevelInfo (LEVELINFO_TOTAL_MONSTERS)) & (GetLevelInfo (LEVELINFO_TOTAL_MONSTERS) != 0))
 		{
 			GiveInventory("x100Percent_Running", 1);

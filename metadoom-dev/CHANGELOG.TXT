@@ -77,6 +77,8 @@ UI Changes:
 - Fixed the "Demon Key Cheat" inventory item not displaying on the HUD.
 - Updated the descriptive text on the Skill Select menu to use the Tiny Font
   instead of a scaling-distorted Small Font.
+- Disabled the 100% Monster Kills toast triggering if the map had 0 monsters in
+  it when it loaded. Mostly for my sanity when testing stuff.
 - Updated the screenshot scroller on the title screen and Ultra-Nightmare Game
   Over screen to have more uniformly-sized (and in some cases, better) shots
   and a random starting point so you're more likely to see different images.
