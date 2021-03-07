@@ -251,6 +251,20 @@ monsters/machinegunner/die3			zmggdie3
 monsters/machinegunner/idle			zmggidle
 monsters/machinegunner/pain			zmggpain
 
+// chaingunner
+$random monsters/chaingunner/see 	{ monsters/chaingunner/see1 monsters/chaingunner/see2 monsters/chaingunner/see3 }
+monsters/chaingunner/see1			zcggsee1
+monsters/chaingunner/see2			zcggsee2
+monsters/chaingunner/see3			zcggsee3
+
+$random monsters/chaingunner/die 	{ monsters/chaingunner/die1 monsters/chaingunner/die2 monsters/chaingunner/die3 }
+monsters/chaingunner/die1			zcggdie1
+monsters/chaingunner/die2			zcggdie2
+monsters/chaingunner/die3			zcggdie3
+
+monsters/chaingunner/idle			zcggidle
+monsters/chaingunner/pain			zcggpain
+
 // Imp
 $random monsters/imp/see 	{ monsters/imp/see1 monsters/imp/see2 }
 monsters/imp/see1			imp1see1

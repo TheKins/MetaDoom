@@ -102,10 +102,10 @@ class MetaChainGunGuy : MonsterCore
 		Monster;
 		+FLOORCLIP
 		+DOHARMSPECIES
-		SeeSound "monsters/machinegunner/see";
-		PainSound "monsters/machinegunner/pain";
-		DeathSound "monsters/machinegunner/die";
-		ActiveSound "monsters/machinegunner/idle";
+		SeeSound "monsters/chaingunner/see";
+		PainSound "monsters/chaingunner/pain";
+		DeathSound "monsters/chaingunner/die";
+		ActiveSound "monsters/chaingunner/idle";
 		AttackSound "chainguy/attack";
 		Obituary "$OB_CGUNGUY";
 		Dropitem "MetaChainGun";

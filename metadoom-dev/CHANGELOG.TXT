@@ -23,6 +23,7 @@ Monster Changes:
   spawn list earlier on in a campaign than in previous versions.
 - Fixed Arch-Viles causing a VM abort if the player they were performing their
   magic attack on was gibbed before the explosion effect happened.
+- Former Lieutenants and Former Commandoes now have seperate sets of sounds.
 - Monsters stunned by the Lightning Gun's stun bomb will now visibly shake while
   affected instead of being frozen in the first frame of their pain state.
 - Altered the Hell Knight's walk animation to be less exaggerated.
