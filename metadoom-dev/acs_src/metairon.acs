@@ -68,7 +68,7 @@ script "Ironman_StatsRun" (void)
 		obit = "OBIT_IRONMAN_FALLBACK";
 	}
 	
-	ClearInventory();
+	//ClearInventory();
 	GiveInventory("DisableHUD",1);
 	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
 	Light_Glow (2, 192, 128, 64);
@@ -94,7 +94,7 @@ script "Ironman_StatsRun" (void)
 	HudMessage(l:obit; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 9999.0, 1.0, 1.0);
 	delay(126);
 	
-	// Compile and print the stats we had accumulated before ventuing off into the great beyond
+	// Compile and print the stats we had accumulated before venturing off into the great beyond
 	if (mapsCleared <= 2)
 	{
 		HudMessage(s:"You accomplished nothing of significance"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
