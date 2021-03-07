@@ -10,10 +10,13 @@ Monster Changes:
     (Thanks Jekyll Grim Payne!)
   - They will no longer be used if Potential Map Breakers is disabled.
   - They will now only be used if the player is within grabbing-range.
-- The Beholder has been heavily revamped. It now has new and cool sprites and
-  sounds, and a reworked version of its attack. In addition, the Forgotten Ones
-  it spawns will all be killed when the Beholder dies, and it won't spawn any
-  extra upon death like the other Pain Elemental variants.
+- The Beholder has been heavily revamped to be more fun and interesting.
+  - Added cool new sprites and sounds from Doom Eternal.
+  - Forgotten Ones are now spawned in a row of sorts, and all launch straight
+    into their charge attack.
+  - Forgotten Ones will now die instantly once the Beholder that spawned them
+    is killed, and are no longer spawned as part of a Beholder's death.
+  - Fixed Forgotten Ones occasionally flickering when on the floor.
 - The Spider Mastermind will no longer use its telekinetic attack if its target
   is too far away to be reasonably affected by it.
 - Demon Dogs and Cerberuses are more likely to spawn, and will be added to the
@@ -24,6 +27,7 @@ Monster Changes:
   affected instead of being frozen in the first frame of their pain state.
 - Altered the Hell Knight's walk animation to be less exaggerated.
 - Arachnotrons and Spiborgs now have proper OpenGL light defs for their attacks.
+- Assorted minor audio updates.
 
 Optional Content Changes:
 - Props will no longer be replaced by breakable MetaDoom versions if they've been
@@ -31,7 +35,8 @@ Optional Content Changes:
   MAP02/MAP02B in Doom 64 in Doom 2, and possibly other Boom mapsets that include
   DECORATE alternatives for their DEHACKED actors.
 - Props will no longer be replaced if a DEHACKED lump changes frame names using
-  DEHACKED's native string-changing method. This fixes Demonastery.
+  DEHACKED's native string-changing method. This fixes Demonastery and possibly
+  other Boom mapsets that do such things.
 
 Weapon Changes:
 - Added the Meathook alt-fire to the Super Shotgun! (Thanks Jekyll Grim Payne!)
@@ -49,7 +54,7 @@ Weapon Changes:
   time they re-raise after a melee attack.
 - Lots of other under-the-hood changes to simplify weapon code and provide minor
   aesthetic improvements, like movement interpolation and such.
-- Assorted minor audio updates
+- Assorted minor audio updates.
 
 Item Changes:
 - Added 1 new Inventory item! (Flame Belch)
@@ -67,7 +72,7 @@ Item Changes:
   monster was targeting something else (ie. if they were infighting or distracted
   by a Hologram item.)
 - Powerups now play audio cues to warn you when they're about to run out.
-- Assorted minor audio updates
+- Assorted minor audio updates.
 
 Player Changes:
 - Fixed first-person death animations not functioning properly.
