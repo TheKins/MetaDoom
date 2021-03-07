@@ -4,7 +4,7 @@ NEXT
 Monster Changes:
 - Added # new monsters! (Titantula)
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
-- Completely replaced the Beholder's sprites with new and cool ones!
+- Completely replaced the Beholder's sprites and sounds with new and cool ones!
 - The Wretched's tongue and Former Assassin's tentacle have both undergone an
   assortment of changes:
   - They are both now far more, for lack of a better term, grappling-hook-y.
