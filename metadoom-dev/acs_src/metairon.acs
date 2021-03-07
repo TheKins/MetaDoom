@@ -55,6 +55,20 @@ Script "Ironman_Death" DEATH
 	}
 }
 
+// Tally things up during level transitions, so we can show them during the
+// Game Over screen.
+script "Ironman_TallyUp" UNLOADING
+{
+	ironman_KillsTally = ironman_KillsTally + GetLevelInfo (LEVELINFO_KILLED_MONSTERS);
+	ironman_ItemsTally = ironman_ItemsTally + GetLevelInfo (LEVELINFO_FOUND_ITEMS);
+	ironman_SecretsTally = ironman_SecretsTally + GetLevelInfo (LEVELINFO_FOUND_SECRETS);
+	
+	for(int i = 1337; i < 1400; i++)
+	{
+		ironman_FinalScore = ironman_FinalScore + GetActorProperty(i, APROP_Score);
+	}
+}
+
 // This is the script for all of the DEAD maps, placed here to avoid unnecessary
 // duplication that would make maintenance a real bitch.
 script "Ironman_StatsRun" (void)
