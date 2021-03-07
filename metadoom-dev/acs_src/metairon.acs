@@ -96,13 +96,17 @@ script "Ironman_StatsRun" (void)
 	delay(126);
 	
 	// Compile and print the stats we had accumulated before venturing off into the great beyond
-	if (mapsCleared <= 2)
+	if (mapsCleared <= 1)
 	{
 		HudMessage(s:"You accomplished nothing of significance"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
 		delay(8);	
 		HudMessage(s:"before crumbling into a bloody heap."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
+	} else if ( mapsCleared == 2) {
+		HudMessage(s:"You completed one paltry level before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
+		delay(8);	
+		HudMessage(s:ironman_DeadMap, s:" became your grave."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
 	} else {
-		HudMessage(s:"You completed ", i:mapsCleared - 2, s:" levels before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
+		HudMessage(s:"You completed ", i:mapsCleared - 1, s:" levels before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
 		delay(8);	
 		HudMessage(s:ironman_DeadMap, s:" staked its claim."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
 	}
