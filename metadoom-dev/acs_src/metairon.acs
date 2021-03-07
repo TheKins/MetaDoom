@@ -41,10 +41,11 @@ Script "Ironman_Death" DEATH
 				log(s:"Ironman: ",n:0,s:" fucked up!");
 			
 			// Screw your autosaves.
-			Autosave();
-			Autosave();
-			Autosave();
-			Autosave();
+			for(int j = 0; j < GetCVar("autosavecount"); j++ )
+			{
+				Autosave();
+			}
+			
 			FadeTo (255, 0, 0, 1.0, 0);	
 			SetMusic("M_IRONMN",0);
 			
