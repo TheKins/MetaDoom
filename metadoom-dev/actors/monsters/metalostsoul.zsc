@@ -530,6 +530,15 @@ class MetaForgottenOne : MonsterCore
 		FGTN A 6 A_Look;
 		Loop;
 	See:
+		FGTN A 0 
+		{
+			// if too close to the ground, punt the wretched up in the air
+			// slightly to avoid FLOATBOB ugliness
+			if (pos.z <= (floorz + 16))
+			{
+				ThrustThingZ(0,2,0,0);
+			}
+		}
 		FGTN A 1 A_Chase;
 		FGTN AAAAA 1 A_Chase(null,null);
 		Loop;

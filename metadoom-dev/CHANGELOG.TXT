@@ -4,13 +4,16 @@ NEXT
 Monster Changes:
 - Added # new monsters! (Titantula)
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
-- Completely replaced the Beholder's sprites and sounds with new and cool ones!
 - The Wretched's tongue and Former Assassin's tentacle have both undergone an
   assortment of changes:
   - They are both now far more, for lack of a better term, grappling-hook-y.
     (Thanks Jekyll Grim Payne!)
   - They will no longer be used if Potential Map Breakers is disabled.
   - They will now only be used if the player is within grabbing-range.
+- The Beholder has been heavily revamped. It now has new and cool sprites and
+  sounds, and a reworked version of its attack. In addition, the Forgotten Ones
+  it spawns will all be killed when the Beholder dies, and it won't spawn any
+  extra upon death like the other Pain Elemental variants.
 - The Spider Mastermind will no longer use its telekinetic attack if its target
   is too far away to be reasonably affected by it.
 - Demon Dogs and Cerberuses are more likely to spawn, and will be added to the
