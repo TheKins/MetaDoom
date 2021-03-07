@@ -22,38 +22,7 @@ world int 5:ironman_FinalScore;
 ////////////////////////////////////////////////////////////////////////////////
 Script "Ironman_Death" DEATH
 {
-	// Transitioning to a new cluster ALWAYS plays the cluster entry/exit text
-	// screens, so we work around this with a bunch of copies of the death map,
-	// all in different clusters. Stupid? Yes. Works? Also yes.
-	int cluster = GetLevelInfo(LEVELINFO_CLUSTERNUM);
-	int deathmap = StrParam(s:"DEAD",i:cluster);
 	ironman_DeadMap = strParam(n:PRINTNAME_LEVELNAME);
-	
-	// GameSkill 666 is Ironman Mode.
-	if (GameSkill() == 666)
-	{
-		if (GameType() == GAME_SINGLE_PLAYER)
-		{
-			if(GetCvar("meta_developer"))
-				log(s:"Ironman: ",n:0,s:" fucked up! Heading to ", s:deathmap);
-			
-			// Screw your autosaves.
-			Autosave();
-			Autosave();
-			Autosave();
-			Autosave();
-			Autosave();
-			FadeTo (255, 0, 0, 1.0, 0);	
-			SetMusic("M_IRONMN",0);
-			ChangeLevel(deathmap, 0, CHANGELEVEL_NOINTERMISSION|CHANGELEVEL_RESETHEALTH|CHANGELEVEL_RESETINVENTORY);
-		}
-	}
-}
-
-// Tally things up during level transitions, so we can show them during the
-// Game Over screen.
-script "Ironman_TallyUp" UNLOADING
-{
 	ironman_KillsTally = ironman_KillsTally + GetLevelInfo (LEVELINFO_KILLED_MONSTERS);
 	ironman_ItemsTally = ironman_ItemsTally + GetLevelInfo (LEVELINFO_FOUND_ITEMS);
 	ironman_SecretsTally = ironman_SecretsTally + GetLevelInfo (LEVELINFO_FOUND_SECRETS);
@@ -61,6 +30,27 @@ script "Ironman_TallyUp" UNLOADING
 	for(int i = 1337; i < 1400; i++)
 	{
 		ironman_FinalScore = ironman_FinalScore + GetActorProperty(i, APROP_Score);
+	}
+	
+	// GameSkill 666 is Ironman Mode.
+	if (GameSkill() == 666)
+	{
+		if (GameType() == GAME_SINGLE_PLAYER)
+		{
+			if(GetCvar("meta_developer"))
+				log(s:"Ironman: ",n:0,s:" fucked up!");
+			
+			// Screw your autosaves.
+			Autosave();
+			Autosave();
+			Autosave();
+			Autosave();
+			FadeTo (255, 0, 0, 1.0, 0);	
+			SetMusic("M_IRONMN",0);
+			
+			SetActivator (0, AAPTR_NULL);
+			ACS_NamedExecuteAlways("Ironman_StatsRun",0,0,0,0);
+		}
 	}
 }
 
@@ -86,19 +76,17 @@ script "Ironman_StatsRun" (void)
 	
 	FadeTo (255, 0, 0, 1.0, 0);	
 	
-	// I reiterate: Screw your autosaves.
-	Autosave();
-	Autosave();
-	Autosave();
-	Autosave();
-	Autosave();
 	SetMusic("M_IRONMN",0);
 	delay(8);
-	FadeTo (0, 0, 0, 1.0, 1.0);
+	FadeTo (0, 0, 0, 0.5, 1.0);
 	
 	delay(16);
 	
 	SetHudSize(320,200,1);
+	
+	SetFont("IRONDEAD");
+	HudMessage(s:"a"; HUDMSG_FADEINOUT, 512, CR_RED, 160.0, 100.0, 9999.0, 1.0, 1.0);
+	
 	SetFont("BIGMARE");
 	HudMessage(s:"Your Torment Has Ended"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 9999.0, 1.0, 1.0);
 	delay(35);
@@ -126,8 +114,8 @@ script "Ironman_StatsRun" (void)
 	delay(32);
 	HudMessage(s:"Your final score is ", i:ironman_FinalScore, s:" points."; HUDMSG_FADEINOUT, 11, CR_RED, 160.0, 117.0, 9999.0, 1.0, 1.0);
 	
-	ChangeCamera(64,1,0);
-	FadeTo (0, 0, 0, 0.5, 1.0);
+	//ChangeCamera(64,1,0);
+	//FadeTo (0, 0, 0, 0.5, 1.0);
 	delay(30);
 	SetMusic("M_IRONM2",0);	
 	delay(32);		

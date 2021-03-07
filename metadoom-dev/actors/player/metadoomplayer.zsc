@@ -422,6 +422,13 @@ class MetaDoomPlayer : PlayerPawn
 
 		player.Uncrouch();
 		TickPSprites();
+		
+		// Disable respawning in Ironman mode.
+		// Thanks Matt for suggesting this hack for Reelism 2
+		if (G_SkillPropertyInt(SKILLP_ACSReturn) == 666)
+		{
+			player.cmd.buttons&=~BT_USE;
+		}
 
 		player.onground = (pos.Z <= floorz);
 		if (self is "PlayerChunk")
@@ -629,4 +636,20 @@ class MetaPlayerSkull : PlayerChunk
 		PLHD B -1 A_CheckPlayerDone;
 		Wait;
 	}
+	
+	override void DeathThink ()
+	{
+		// Disable respawning in Ironman mode.
+		// Thanks Matt for suggesting this hack for Reelism 2
+		if (G_SkillPropertyInt(SKILLP_ACSReturn) == 666)
+		{
+			player.cmd.buttons&=~BT_USE;
+			super.DeathThink();
+		}
+		else
+		{
+			player.cmd.buttons&=BT_USE;
+			super.DeathThink();
+		}
+    }
 }

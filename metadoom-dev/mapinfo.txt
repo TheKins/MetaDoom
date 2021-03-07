@@ -116,5 +116,4 @@ map TITLEMAP "Welcome to MetaDoom"
 }
 
 include "mapinfo/metadoomednums.txt"
-include "mapinfo/metadoomironmap.txt"
 include "mapinfo/metadoomend.txt"
