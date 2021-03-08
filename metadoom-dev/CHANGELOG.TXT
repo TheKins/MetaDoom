@@ -100,6 +100,7 @@ UI Changes:
   likely to see different images.
 - The MetaDoom Options menu now appears in GZDoom 4.5.x's Simple Options Menu,
   not just the Full Options Menu.
+- Updated the Credits and Help screen artwork to be widescreen-friendly.
 - Updated the logo artwork to incorporate Doom 64 and reduce messiness.
 
 Other Changes:

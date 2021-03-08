@@ -42,6 +42,7 @@ SeanTheBermanator (Doom and Quake Sound Bulb audio)
 Shadsy (Projectile sticking code from Reelism 2)
 TerminusEst13 (Slow-motion implementation from High Noon Drifter)
 Upset & Half-Dead (Doom 3 model ports to Source Engine)
+Red Menace & Smug Bastard (D:E Pain Elemental port to Source Engine)
 Xaser (Doom 4 sound recordings, "ARGENT" resources)
 
 TOOLS USED:
