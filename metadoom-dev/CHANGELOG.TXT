@@ -47,6 +47,8 @@ Weapon Changes:
   ZScript-era ways of doing things, like Overlays and such.
 - The Plasma Rifle now emits sound cues as its heat meter fills, giving you an
   audible indicator of how close you are to that heat blast in intense battles.
+- The Machinegun's micro-rockets now briefly stick in enemies and players before
+  exploding, ala their original appearances in Doom 2016 and Doom Eternal.
 - The Unmaker's pixel aspect ratio correction change from the previous release
   has been redone to use GZDoom 4.5.x's overlay scaling instead of TEXTURES.
 - The Soul Cube's animation has been completely redone using fancy overlay stuff

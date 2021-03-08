@@ -191,12 +191,94 @@ class MicroRocket : Actor
 		Obituary "$OB_METAMG_MISSILE";
 		scale 0.5;
 		Decal "RevenantScorch";
+		+BLOODSPLATTER
 	}
+	
+	actor thingwehit;
 	
 	States
 	{
 	Spawn:
 		MISL A 1 Bright;
+		Loop;
+	Death:
+		MISL A 4 Bright;
+		TNT1 A 0 A_SpawnItemEx("MicroRocketExplosion",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	XDeath: // pulled from shadsy's reelism 2 work
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			if (thingwehit && (thingwehit is "MonsterCore" || thingwehit is "PlayerPawn"))
+			{
+				A_StartSound("hitflesh");
+				actor sticker = Spawn("MicroRocketStuck",self.pos);
+				sticker.master = self.thingwehit;
+				sticker.angle = self.angle;
+				sticker.target = self.target;
+				sticker.SetOrigin(sticker.pos-((sticker.pos.XY-sticker.master.pos.XY)/1.4),true);
+			} else {
+				SetStateLabel("Death");
+			}
+		}
+		Stop;
+	}
+	
+	override int SpecialMissileHit(Actor victim)
+	{
+		thingwehit = victim;
+		return Super.SpecialMissileHit(victim);
+	}
+}
+
+class MicroRocketStuck : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		+NOGRAVITY;
+		Obituary "$OB_METAMG_MISSILE";
+	}
+	
+	double xoffset;
+	double yoffset;
+	double zoffset;
+	int timer;
+	
+	States
+	{
+	Spawn:
+		MISL A 0;
+		MISL A 0
+		{
+			if (master)
+			{
+				// no nails for demigods
+				if (master.bNODAMAGE == true)
+				{
+					SetStateLabel("Death");
+				}
+				self.xoffset = master.pos.x-self.pos.x;
+				self.yoffset = master.pos.y-self.pos.y;
+				self.zoffset = master.pos.z-self.pos.z;
+			}
+		}
+		Goto StuckLoop;
+	StuckLoop:
+		MISL A 1
+		{
+			if (master)
+			{
+				SetOrigin(master.pos-(self.xoffset,self.yoffset,self.zoffset),true);
+				self.timer += 1;
+			}
+			if (!master || (master && master.health <= 0) || self.timer >= 17 || (master && self.pos.z > master.pos.z + master.height))
+			{
+				return A_Jump(256,"Death");
+			}
+			return state(null);
+		}
 		Loop;
 	Death:
 		MISL A 4 Bright;
