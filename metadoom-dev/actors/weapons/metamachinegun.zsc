@@ -239,6 +239,7 @@ class MicroRocketStuck : Actor
 		Height 8;
 		+NOGRAVITY;
 		Obituary "$OB_METAMG_MISSILE";
+		scale 0.5;
 	}
 	
 	double xoffset;
