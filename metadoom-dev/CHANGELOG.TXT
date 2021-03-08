@@ -116,6 +116,7 @@ Other Changes:
 - Set Clean scaling for main and episode select menus, for consistency with the
   difficulty select menu in GZDoom 4.5.x.
 - Absolutely did not add any secret skill settings.
+- Updated the Title music to a higher bitrate version.
 - Removed the IDKFA Intermission music. Intermission themes are a mapset's job!
 
 KNOWN ISSUES:
