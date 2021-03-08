@@ -317,9 +317,10 @@ class MetaDoomPlayer : PlayerPawn
 			{
 				//console.printf(MeansOfDeath);
 				ironmanCVar.SetString(MeansOfDeath);
-			} else {
-				//console.printf(source.GetClassName());
+			} else if (source) {
 				ironmanCVar.SetString(source.GetClassName());
+			} else {
+				ironmanCVar.SetString("Suicide");
 			}
 			
 			// Emphasise copying the name of the actor that killed you, so long as
