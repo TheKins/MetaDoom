@@ -41,6 +41,14 @@ page "Other"
         origin "Doom Eternal (2020)";
         description "When the marine returned to Earth, he bought with him a host of different armored suits, suited to different environments and situations.\n\nSome of these were equipped with life support systems, additional armor plating, and means of traversal. Other suits were... clear signs that perhaps he'd been alone in his space fortress for maybe a little too long.\n\nOr maybe he's somehow developed a sick sense of humor in defiance of all he's been through? It will forever remain a mystery...";
     }
+	
+	entry "LootFigurine6"
+    {
+		itemToCheck "MetaCodex_LootFigurine6";
+        name "Misplaced Figurine";
+        origin "??? (2001)";
+        description "<ERROR - ARTIFACT DATA NOT FOUND>\n<SCAN ARTIFACT? :> y>\n\nSearching: .................\n<FATAL ERROR (BLAM!) - ILLEGAL EXCEPTION THROWN IN 0x34377777>\n<ERROR ANALYSIS: ARTIFACT NOT OF THIS OR ANY KNOWN REALITIES>\n\n<SUBMIT AN ERROR REPORT? :> n>\n\n<PERSONAL NOTES>\n(What a strange statue. It looks like one of the marines, but also not. A distorted reflection in a house of mirrors. What could have bought this here? Just another answer to beat out of the UAC...)";
+    }
 
 	entry "LoreSkateboardDummy"
     {
