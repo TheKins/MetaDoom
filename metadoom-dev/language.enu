@@ -342,6 +342,9 @@ QUITMSG34 = "I do not fear you.\nThis match is not won yet!";																// 
 QUITMSG35 = "The longer the Y button is on\nthis screen the stronger\nit becomes!";											// Doom Eternal, Samuel Hayden
 QUITMSG36 = "I'm sure you'll want to try\nyour weapons out before we leave...";												// Doom Eternal, Samuel Hayden
 QUITMSG37 = "There are those that\nwould seek to stop this.";																// Doom Eternal, Hooded Figure
+QUITMSG38 = "Our time will come.\nIf you survive, I\nwill be waiting for you.";												// Doom Eternal TAG, Dark Lord
+QUITMSG39 = "Thanks for playing!\n\nHell wouldn't be the\nsame without you.";												// Doom Eternal TAG, Intern
+QUITMSG40 = "Be grateful.\n\nDespite your transgressions,\nyou are given the honor to\nserve the gods... yet again.";		// Doom Eternal TAG, Seraphim
 
 
 // Obituary strings
