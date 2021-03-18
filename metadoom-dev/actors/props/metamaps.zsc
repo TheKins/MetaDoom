@@ -240,3 +240,46 @@ class MetaGibItemBox : MetaGibBarrel
 		goto ChangeDir;
 	}
 }
+
+// Meathook Target - prototype, needs some work
+class MetaMeathookTarget : Actor
+{
+	Default
+	{
+		Radius 13;
+		Height 13;
+		Health 1;
+		Monster;
+		-SOLID
+		+NODAMAGE
+		+NOGRAVITY
+		scale 2.0;
+	}
+	
+	int gimmetimer;
+	
+	States
+	{
+	Spawn:
+	Pain:
+		PLSS A 1 Bright;
+		Loop;
+	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		if (other is "PlayerPawn" && gimmetimer == 0)
+		{
+			other.A_GiveInventory("MeatHookRefill", 1);
+			gimmetimer = 35;
+		}
+		return false;
+		//return CanCollideWith(other, passive);
+	}
+	
+	override void Tick()
+	{
+		gimmetimer--;
+		Super.Tick();
+	}
+}
