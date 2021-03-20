@@ -61,6 +61,8 @@ class MetaMapFucker : LevelPostProcessor
 			AddThing(20518, (352,1280,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20519, (400,1280,0), 0, SKILLS_ALL, MODES_ALL);
 			
+			AddThing(20521, (864,1426,0), 0, SKILLS_ALL, MODES_ALL);
+			
 			// Add Fire
 			AddThing(20732, (608,1504,0), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20732, (672,1504,0), 0, SKILLS_ALL, MODES_ALL);
