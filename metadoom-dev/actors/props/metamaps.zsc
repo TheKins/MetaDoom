@@ -246,8 +246,8 @@ class MetaMeathookTarget : Actor
 {
 	Default
 	{
-		Radius 32;
-		Height 32;
+		Radius 38;
+		Height 38;
 		Health 1;
 		+SHOOTABLE
 		-SOLID
@@ -278,8 +278,8 @@ class MetaMeathookTarget : Actor
 	
 	override void Tick()
 	{
-		A_RadiusGive("MetaGrappleGrav", 64, RGF_PLAYERS, 1);
-		A_RadiusGive("MeatHookRefill", 64, RGF_PLAYERS, 1);
+		A_RadiusGive("MetaGrappleGrav", 72, RGF_PLAYERS, 1);
+		A_RadiusGive("MeatHookRefill", 72, RGF_PLAYERS, 1);
 		Super.Tick();
 	}
 }
