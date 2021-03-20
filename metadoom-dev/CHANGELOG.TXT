@@ -81,6 +81,8 @@ Player Changes:
 - Fixed first-person death animations not functioning properly.
 - Fixed a VM abort when killed by Sector_SetDamage under certain circumstances,
   like the lava in TNT02 of The Ultimate Torment and Torture: Supportive Edition.
+- Fixed a bug where you would occasionally spawn splashes on liquid surfaces well
+  underneigh you when in midair or flying while footsteps were enabled.
 
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
@@ -104,6 +106,9 @@ UI Changes:
   not just the Full Options Menu.
 - Updated the Credits and Help screen artwork to be widescreen-friendly.
 - Updated the logo artwork to incorporate Doom 64 and reduce messiness.
+
+Mapping Changes:
+- Added Meathook Grapple Targets!
 
 Other Changes:
 - Explosive Barrels now handle being crushed differently, using the same oldschool
