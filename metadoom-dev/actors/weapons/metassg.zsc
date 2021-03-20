@@ -341,9 +341,12 @@ class MetaSuperShotgun : MetaDoomWeapon
 	{
 		if (owner != null && owner.CountInv("MeatHookRefill") > 0)
 		{
-			hooktimer = 0;
-			hookmeter = 6;
-			owner.A_StartSound("weapons/ssg/hook/charge", 17, CHANF_LOCAL, 0.5, ATTN_NONE, 1.0);
+			if (hookmeter != 6)
+			{
+				hooktimer = 0;
+				hookmeter = 6;
+				owner.A_StartSound("weapons/ssg/hook/charge", 17, CHANF_LOCAL, 0.5, ATTN_NONE, 1.0);
+			}
 			owner.A_TakeInventory("MeatHookRefill", 999);
 		}
 		

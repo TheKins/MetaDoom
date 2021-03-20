@@ -177,4 +177,5 @@ DoomEdNums
 	20731 = "MetaTechPillar"
 	20732 = "MetaFire"
 	20733 = "MetaItemBox"
+	20734 = "MetaMeathookTarget"
 }

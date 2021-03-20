@@ -254,9 +254,10 @@ class MetaMeathookTarget : Actor
 		+NODAMAGE
 		+NOGRAVITY
 		scale 2.0;
+		//$Category "MetaDoom Props & Objects"
+		//$Title "Meathook Grapple Target"
+		//$Color 11
 	}
-	
-	int gimmetimer;
 	
 	States
 	{
@@ -268,18 +269,16 @@ class MetaMeathookTarget : Actor
 	
 	override bool CanCollideWith(Actor other, bool passive)
 	{
-		if (other is "PlayerPawn" && gimmetimer == 0)
+		if (other is "PlayerPawn")
 		{
-			other.A_GiveInventory("MeatHookRefill", 1);
-			gimmetimer = 35;
+			other.vel.z = other.vel.z + 2;
 		}
 		return false;
-		//return CanCollideWith(other, passive);
 	}
 	
 	override void Tick()
 	{
-		gimmetimer--;
+		A_RadiusGive("MeatHookRefill", 64, RGF_PLAYERS, 1);
 		Super.Tick();
 	}
 }
