@@ -249,7 +249,7 @@ class MetaMeathookTarget : Actor
 		Radius 32;
 		Height 32;
 		Health 1;
-		Monster;
+		+SHOOTABLE
 		-SOLID
 		+NODAMAGE
 		+NOGRAVITY
@@ -270,14 +270,44 @@ class MetaMeathookTarget : Actor
 	{
 		if (other is "PlayerPawn")
 		{
-			other.vel.z = other.vel.z + 2;
+			//other.vel.z = other.vel.z + 2;
+			//other.A_GiveInventory("MetaGrappleGrav", 1);
 		}
 		return false;
 	}
 	
 	override void Tick()
 	{
+		A_RadiusGive("MetaGrappleGrav", 64, RGF_PLAYERS, 1);
 		A_RadiusGive("MeatHookRefill", 64, RGF_PLAYERS, 1);
 		Super.Tick();
+	}
+}
+
+// Temporarily disable gravity on a player after they finish using a grapple
+// point, to give them a moment to aim for another grapple spot
+class MetaGrappleGrav : Inventory
+{
+	int ticktock;
+	
+	override void DoEffect()
+	{
+		if (owner)
+		{
+			owner.gravity = 0;
+			ticktock++;
+		}
+		
+		if (ticktock == 8)
+		{
+			owner.A_TakeInventory("MetaGrappleGrav", 999);
+		}
+		Super.DoEffect();
+	}
+	
+	override void DetachFromOwner()
+	{
+		owner.gravity = owner.default.gravity;
+		Super.DetachFromOwner();
 	}
 }

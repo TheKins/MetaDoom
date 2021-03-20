@@ -70,11 +70,12 @@ class MetaMapFucker : LevelPostProcessor
 			AddThing(20733, (1456,1312,0), 0, SKILLS_ALL, MODES_ALL);
 			
 			// Add Meathook Targets
-			AddThing(20734, (314,589,219), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20734, (314,589,159), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20734, (314,1063,396), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20734, (314,1439,632), 0, SKILLS_ALL, MODES_ALL);
-			AddThing(20734, (314,1711,925), 0, SKILLS_ALL, MODES_ALL);
-			AddThing(20734, (612,1803,1074), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20734, (314,1711,825), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20734, (314,1903,985), 0, SKILLS_ALL, MODES_ALL);
+			AddThing(20734, (612,1803,64), 0, SKILLS_ALL, MODES_ALL);
 			
 			
 		}

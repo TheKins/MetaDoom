@@ -69,7 +69,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 			let next = itr.thing;
 			if (next == owner)
 				continue; 
-			if (!next.bShootable || !(next.bIsMonster || (next is "PlayerPawn")))
+			if (!next.bShootable || !(next.bIsMonster || (next is "PlayerPawn") || (next is "MetaMeathookTarget")))
 				continue;
 			double dist = owner.Distance3D(next);
 			if (dist > atkdist)
@@ -474,7 +474,7 @@ Class MetaHookProjectile : Actor
 		{
 			if (target && target.player)
 			{
-				if (hookeddude && hookeddude.bISMONSTER && hookeddude.health > 0)
+				if (hookeddude && (hookeddude.bISMONSTER || hookeddude is "MetaMeathookTarget") && hookeddude.health > 0)
 				{
 					hookeddude.SetStateLabel("Pain");
 					hookeddude.vel = (0,0,0);
@@ -558,7 +558,7 @@ Class MetaHookProjectile : Actor
 	// we want to hook onto) and environment props and such.
 	override int SpecialMissileHit (Actor victim)
 	{		
-		if ((victim.bISMONSTER == true || victim is "PlayerPawn") && victim.health > 0 && victim != target)
+		if ((victim.bISMONSTER == true || victim is "MetaMeathookTarget" || victim is "PlayerPawn") && victim.health > 0 && victim != target)
 		{
 			victim.A_StartSound("weapons/ssg/hook/stick", 13);
 			hitadude = true;
