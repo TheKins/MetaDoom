@@ -247,13 +247,12 @@ class MetaMeathookTarget : Actor
 	Default
 	{
 		Radius 13;
-		Height 13;
+		Height 26;
 		Health 1;
 		Monster;
 		-SOLID
 		+NODAMAGE
 		+NOGRAVITY
-		scale 2.0;
 		//$Category "MetaDoom Props & Objects"
 		//$Title "Meathook Grapple Target"
 		//$Color 11
@@ -263,7 +262,7 @@ class MetaMeathookTarget : Actor
 	{
 	Spawn:
 	Pain:
-		PLSS A 1 Bright;
+		HOGR ABCD 4 Bright;
 		Loop;
 	}
 	
