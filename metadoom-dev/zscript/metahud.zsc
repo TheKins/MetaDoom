@@ -246,7 +246,36 @@ class MetaDoomStatusBar : BaseStatusBar
 	
 	void DrawAmmo()
 	{
-		DrawImage("AMICON", (283, 180), DI_ITEM_OFFSETS);
+		if (CheckWeaponSelected("MetaPistol") && meta_pistolammo == 0)
+		{
+			DrawImage("AMICNBAT", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "Shell")
+		{
+			DrawImage("AMICNSHL", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "RocketAmmo")
+		{
+			DrawImage("AMICNRCK", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "Cell")
+		{
+			DrawImage("AMICNPLS", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "HolyWater")
+		{
+			DrawImage("AMICNWAT", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "HalonCannister")
+		{
+			DrawImage("AMICNEXT", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "BFGAmmo")
+		{
+			DrawImage("AMICNBFG", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "SoulAmmo")
+		{
+			DrawImage("AMICNSOL", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 is "DogGunHealth")
+		{
+			DrawImage("HPICON", (283, 180), DI_ITEM_OFFSETS);
+		} else {
+			DrawImage("AMICON", (283, 180), DI_ITEM_OFFSETS);
+		}
 		DrawImage("HUDBAR", (225, 180), DI_ITEM_OFFSETS);
 		
 		// Draw current ammo amounts

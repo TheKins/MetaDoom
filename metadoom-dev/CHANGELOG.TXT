@@ -91,6 +91,7 @@ UI Changes:
 - The intermission's widescreen borders no longer appear when an actual 
   widescreen intermission image (like in the 2020 Re-Release IWAD) is in use.
 - Fixed the "Demon Key Cheat" inventory item not displaying on the HUD.
+- Added per-ammotype icons to the ammo counter on the HUD.
 - Updated the descriptive text on the Skill Select menu to use the Tiny Font
   instead of a scaling-distorted Small Font.
 - Disabled the 100% Monster Kills toast triggering if the map had 0 monsters in
