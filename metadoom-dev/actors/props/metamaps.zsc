@@ -246,8 +246,8 @@ class MetaMeathookTarget : Actor
 {
 	Default
 	{
-		Radius 13;
-		Height 26;
+		Radius 32;
+		Height 32;
 		Health 1;
 		Monster;
 		-SOLID
