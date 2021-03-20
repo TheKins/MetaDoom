@@ -121,6 +121,8 @@ class Footsteps : Actor
 			next_update_tics_countdown = 2;
 		}
 		
+		vel.z = 0;
+		
 		Super.Tick();
 	}  
 }
