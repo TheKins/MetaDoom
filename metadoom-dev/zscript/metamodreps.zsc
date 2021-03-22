@@ -22,6 +22,9 @@ class MetaDoom64Replacements : EventHandler
 		{
 			// Doom 64 Consolation Prize
 			"64NightmareImp","Unmaker","UnmakerUpgrade1","UnmakerUpgrade2","UnmakerUpgrade3","64MotherDemon",
+			"64FakeCell", "64FakeBlueCard", "64FakeBlueSkull", "64FakeRedCard", "64FakeRedSkull", "64FakeYellowCard",
+			"64FakeYellowSkull", "64FakeUnmakerUpgrade1", "64FakeUnmakerUpgrade2", "64FakeUnmakerUpgrade3",
+			"64FakeSoulsphere", "64FakeMegasphere"
 			// Doom 64 for Doom 2
 			"NightmareImp", "NightmareCacodemon", "D64D2Cyberdemon", "Motherdemon"
 		};
@@ -30,6 +33,9 @@ class MetaDoom64Replacements : EventHandler
 		{
 			// Doom 64 Consolation Prize
 			"NightmareImpSpawner","UnmakerSpawner","UnmakerKey1Spawner","UnmakerKey2Spawner","UnmakerKey3Spawner","MetaMotherDemon",
+			"Meta64FakeCell", "Meta64FakeBlueCard", "Meta64FakeBlueSkull", "Meta64FakeRedCard", "Meta64FakeRedSkull", "Meta64FakeYellowCard", 
+			"Meta64FakeYellowSkull", "Meta64FakeUnmakerUpgrade1", "Meta64FakeUnmakerUpgrade2", "Meta64FakeUnmakerUpgrade3",
+			"Meta64FakeSoulsphere", "Meta64FakeMegasphere"
 			// Doom 64 for Doom 2
 			"MetaNightmareImp", "MetaMalwraith", "CyberdemonSpawner_D64D2", "MetaMotherDemon"
 			

@@ -1,0 +1,314 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Cruel Fakes for Consolation Prize: Doom 64
+----------------------------
+*/
+
+class Meta64FakeCell : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+		Spawn:
+			CELL A -1;
+			Stop;
+	}
+}
+
+class Meta64FakeBlueCard : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 5, "Doom64");
+		goto Doom;
+	Doom:
+		BKEY A 10;
+		BKEY B 10 bright;
+		loop;
+	Doom3:
+		BKEY C 10;
+		BKEY D 10 bright;
+		loop;
+	Doom4:
+		BKEY E 10;
+		BKEY F 10 bright;
+		loop;
+	DoomRPG:
+		BKEY G 10;
+		BKEY H 10 bright;
+		loop;
+	Doom64:
+		BKEY I 10;
+		BKEY J 10 bright;
+		loop;
+	}
+}
+
+class Meta64FakeBlueSkull : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 2, "Doom64");
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 3, "Doom4");
+		goto Doom;
+	Doom:
+		BSKU A 10;
+		BSKU B 10 bright;
+		loop;
+	Doom64:
+		BSKU C 10;
+		BSKU D 10 bright;
+		loop;
+	Doom4:
+		TNT1 A 0 A_SetScale(0.62);
+		KSKB ABCDDDCBAA 3 Bright;
+		Loop;
+	}
+}
+
+class Meta64FakeRedCard : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 5, "Doom64");
+		goto Doom;
+	Doom:
+		RKEY A 10;
+		RKEY B 10 bright;
+		loop;
+	Doom3:
+		RKEY C 10;
+		RKEY D 10 bright;
+		loop;
+	Doom4:
+		RKEY E 10;
+		RKEY F 10 bright;
+		loop;
+	DoomRPG:
+		RKEY G 10;
+		RKEY H 10 bright;
+		loop;
+	Doom64:
+		RKEY I 10;
+		RKEY J 10 bright;
+		loop;
+	}
+}
+
+class Meta64FakeRedSkull : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 2, "Doom64");
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 3, "Doom4");
+		goto Doom;
+	Doom:
+		RSKU A 10;
+		RSKU B 10 bright;
+		loop;
+	Doom64:
+		RSKU C 10;
+		RSKU D 10 bright;
+		loop;
+	Doom4:
+		TNT1 A 0 A_SetScale(0.62);
+		KSKR ABCDDDCBAA 4 Bright;
+		Loop;
+	}
+}
+
+class Meta64FakeYellowCard : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	  Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 2, "Doom3");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 3, "Doom4");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 4, "DoomRPG");
+		TNT1 A 0 A_JumpIf(CallACS("Key_ReturnType", 0, 0, 0) == 5, "Doom64");
+		goto Doom;
+	Doom:
+		YKEY A 10;
+		YKEY B 10 bright;
+		loop;
+	Doom3:
+		YKEY C 10;
+		YKEY D 10 bright;
+		loop;
+	Doom4:
+		YKEY E 10;
+		YKEY F 10 bright;
+		loop;
+	DoomRPG:
+		YKEY G 10;
+		YKEY H 10 bright;
+		loop;
+	Doom64:
+		YKEY I 10;
+		YKEY J 10 bright;
+		loop;
+	}
+}
+
+class Meta64FakeYellowSkull : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 1;
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 2, "Doom64");
+		TNT1 A 0 A_JumpIf(CallACS("SkullKey_ReturnType", 0, 0, 0) == 3, "Doom4");
+		goto Doom;
+	Doom:
+		YSKU A 10;
+		YSKU B 10 bright;
+		loop;
+	Doom64:
+		YSKU C 10;
+		YSKU D 10 bright;
+		loop;
+	Doom4:
+		TNT1 A 0 A_SetScale(0.62);
+		KSKY ABCDDDCBAA 3 Bright;
+		Loop;
+	}
+}
+
+class Meta64FakeUnmakerUpgrade1 : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		ART1 ABCDE 3 bright;
+		loop;
+	}
+}
+
+class Meta64FakeUnmakerUpgrade2 : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		ART2 ABCDE 3 bright;
+		loop;
+	}
+}
+
+class Meta64FakeUnmakerUpgrade3 : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+	}
+	
+	States
+	{
+	Spawn:
+		ART3 ABCDE 3 bright;
+		loop;
+	}
+}
+
+class Meta64FakeSoulsphere : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+		scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright;
+		Loop;
+	}
+}
+
+class Meta64FakeMegasphere : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+		scale 0.75;
+	}
+	
+	States
+	{
+		Spawn:
+			MEGA ABCD 6 BRIGHT;
+			Loop;
+	}
+}

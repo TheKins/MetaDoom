@@ -120,6 +120,7 @@ Other Changes:
   timing as being detonated by another barrel, as well as not spawning debris if
   nobody's looking. This fixes Sunlust MAP30's engine-killing lag at startup as
   it prepares the revival trick for later in the map.
+- Added the "fake" stand-in items for Consolation Prize: Doom 64.
 - HUD Mugshot and Player Sounds now correctly handle the "Object" gender option.
 - Fixed ANIMDEFS/TERRAIN warnings in console on startup when playing Doom 1.
 - Fixed various rendering issues with blood splat effects.
