@@ -57,6 +57,10 @@ Weapon Changes:
   time they re-raise after a melee attack.
 - Lots of other under-the-hood changes to simplify weapon code and provide minor
   aesthetic improvements, like movement interpolation and such.
+- Weapon spawners now pass on their TID to the weapon they spawn, just like the
+  monster spawners started doing back in v1.2, waaay back in 2016. How did I
+  forget to port this fix over!? Anyway, this fixes some secrets in Consolation
+  Prize: Doom 64 and probably some other places too.
 - Assorted minor audio updates.
 
 Item Changes:
