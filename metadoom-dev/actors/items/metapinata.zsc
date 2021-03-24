@@ -14,7 +14,7 @@ class MetaHealthPinata : Health
 	Default
 	{
 		-COUNTITEM
-		+INVENTORY.ALWAYSPICKUP
+		//+INVENTORY.ALWAYSPICKUP
 		Inventory.Amount 2;
 		Inventory.PickupMessage "$GOTPINATAHEALTH";
 		Inventory.PickupSound "items/health/shard";
@@ -41,6 +41,15 @@ class MetaHealthPinata : Health
 		PINH A 4 A_FadeOut(0.2);
 		loop;
 	}
+	
+	override bool TryPickup(in out Actor toucher)
+    {
+		if (toucher == target)
+			return false;
+		else
+			bALWAYSPICKUP = true;
+			return Super.TryPickup(toucher);
+    }
 }
 
 // This one, not so much.

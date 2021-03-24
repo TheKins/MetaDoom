@@ -121,11 +121,11 @@ class MetaDoomPlayer : PlayerPawn
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 16, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
 		}
 		goto Death;
 	XDeath.KrautBoot:
@@ -135,16 +135,16 @@ class MetaDoomPlayer : PlayerPawn
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 16, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
 		}
 		goto XDeath;
 	Pain.BerserkFist:
@@ -155,7 +155,7 @@ class MetaDoomPlayer : PlayerPawn
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
 			angle = oldangle;
 		}
 		goto Pain;
@@ -165,8 +165,8 @@ class MetaDoomPlayer : PlayerPawn
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
 		}
 		goto Death;
 	XDeath.BerserkFist:
@@ -175,9 +175,9 @@ class MetaDoomPlayer : PlayerPawn
 			A_FaceTarget();
 			ThrustThing(angle*256/360+128, 64, 1, 0);
 			ThrustThingZ(0,32,0,1);
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
-			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360));
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
+			A_SpawnItemEx("MetaHealthPinata",0,0,32,random(0,8),0,random(0,8),random(0,360),SXF_SETTARGET);
 		}
 		goto XDeath;
 	Pain.MapFire:

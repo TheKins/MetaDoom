@@ -87,6 +87,7 @@ Player Changes:
   like the lava in TNT02 of The Ultimate Torment and Torture: Supportive Edition.
 - Fixed a bug where you would occasionally spawn splashes on liquid surfaces well
   underneigh you when in midair or flying while footsteps were enabled.
+- Players can no longer pick up the Health melee'd out of them in Deathmatch.
 
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
