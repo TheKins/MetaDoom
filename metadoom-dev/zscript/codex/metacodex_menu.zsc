@@ -470,7 +470,7 @@ Class MetaCodex_Menu : GenericMenu
 				MetaCodex_Particle kachiga = new("MetaCodex_Particle");
 				kachiga.alpha = 1.0;
 				Vector2 funScale = loadedEntries[itemSelected].particleScale;
-				kachiga.scale = (funScale.x*frandom(1.0,1.7),funScale.y*frandom(0.7,1.0));
+				kachiga.scale = (funScale.x*frandom[scally](1.0,1.7),funScale.y*frandom[scally](0.7,1.0));
 				//Console.Printf(""..loadedEntries[itemSelected].particleActor);
 				kachiga.stateUse = GetDefaultByType((class<Actor>)(loadedEntries[itemSelected].particleActor)).SpawnState;
 				fireParticles.Push(kachiga);
