@@ -21,7 +21,7 @@ class MetaListMenu : ListMenu
 		
 		if (bgpicked == 0)
 		{
-			bgnum = random(1,4);
+			bgnum = random[bg](1,4);
 			
 			if (bgnum == 1)
 			{
@@ -62,7 +62,7 @@ class MetaFatOptionMenu : OptionMenu
 		
 		if (bgpicked == 0)
 		{
-			bgnum = random(1,4);
+			bgnum = random[bg](1,4);
 			
 			if (bgnum == 1)
 			{
@@ -100,7 +100,7 @@ class MetaMessageBoxMenu : MessageBoxMenu
 		
 		/*if (bgpicked == 0)
 		{
-			bgnum = random(1,4);
+			bgnum = random[bg](1,4);
 			
 			if (bgnum == 1)
 			{

@@ -338,7 +338,7 @@ class StaticIconListMenu : ExtendedListMenu
 	{
 		if (bgpicked == 0)
 		{
-			bgnum = random(1,4);
+			bgnum = random[bg](1,4);
 			
 			if (bgnum == 1)
 			{
