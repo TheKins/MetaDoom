@@ -504,7 +504,7 @@ Class MetaHookProjectile : Actor
 						target.vel.z = 8;
 					}
 					
-					if (Distance3D(target) <= 64 || hookeddude.health <= 0 || !hookeddude)
+					if (Distance3D(target) <= 64 || hookeddude.health <= 0 || !hookeddude || target.blockingmobj != null || target.Distance3D(hookeddude) <= 64)
 					{
 						target.speed = target.default.speed;
 						destroy();
