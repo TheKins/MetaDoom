@@ -91,6 +91,7 @@ Player Changes:
 UI Changes:
 - Added CVar filtering to the Codex. In English, that means that Trites and
   Unique Bosses won't appear in the Codex if they've been disabled via CVar.
+- Fixed a multiplayer desync relating to filling out Codex pages.
 - Fixed various issues with the Intermission spawned by GZDoom updates.
 - The intermission's widescreen borders no longer appear when an actual 
   widescreen intermission image (like in the 2020 Re-Release IWAD) is in use.
