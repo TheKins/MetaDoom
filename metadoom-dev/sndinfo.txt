@@ -189,6 +189,11 @@ doors/slow/openstop		DSDOROPX
 doors/slow/close		DSDORCLS
 doors/slow/closestop	DSDORCLX
 
+// Multiplayer Ironman
+ironman/playerkilled	ironkill
+ironman/lastman			ironlast
+ironman/teamwipe		ironwipe
+
 // Ignore this if you want to find cheats by yourself!
 cheats/doom3			cheatd3
 cheats/snes				cheat16b

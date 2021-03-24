@@ -17,40 +17,80 @@ world int 3:ironman_ItemsTally;
 world int 4:ironman_SecretsTally;
 world int 5:ironman_FinalScore;
 
+int ironman_playercount;
+int ironman_deadplayercount;
 ////////////////////////////////////////////////////////////////////////////////
 // "Ultra-Nightmare" Ironman Mode
 ////////////////////////////////////////////////////////////////////////////////
+Script "Ironman_CountPlayers" ENTER
+{
+	ironman_playercount++;
+}
+
 Script "Ironman_Death" DEATH
 {
-	ironman_DeadMap = strParam(n:PRINTNAME_LEVELNAME);
-	ironman_KillsTally = ironman_KillsTally + GetLevelInfo (LEVELINFO_KILLED_MONSTERS);
-	ironman_ItemsTally = ironman_ItemsTally + GetLevelInfo (LEVELINFO_FOUND_ITEMS);
-	ironman_SecretsTally = ironman_SecretsTally + GetLevelInfo (LEVELINFO_FOUND_SECRETS);
-	
-	for(int i = 1337; i < 1400; i++)
-	{
-		ironman_FinalScore = ironman_FinalScore + GetActorProperty(i, APROP_Score);
-	}
-	
-	// GameSkill 666 is Ironman Mode.
-	if (GameSkill() == 666)
-	{
-		if (GameType() == GAME_SINGLE_PLAYER)
+		ironman_DeadMap = strParam(n:PRINTNAME_LEVELNAME);
+		ironman_KillsTally = ironman_KillsTally + GetLevelInfo (LEVELINFO_KILLED_MONSTERS);
+		ironman_ItemsTally = ironman_ItemsTally + GetLevelInfo (LEVELINFO_FOUND_ITEMS);
+		ironman_SecretsTally = ironman_SecretsTally + GetLevelInfo (LEVELINFO_FOUND_SECRETS);
+		
+		for(int i = 1337; i < 1400; i++)
 		{
-			if(GetCvar("meta_developer"))
-				log(s:"Ironman: ",n:0,s:" fucked up!");
-			
-			// Screw your autosaves.
-			for(int j = 0; j < GetCVar("autosavecount"); j++ )
+			ironman_FinalScore = ironman_FinalScore + GetActorProperty(i, APROP_Score);
+		}
+		
+	if (GameType() == GAME_SINGLE_PLAYER)
+	{
+		// GameSkill 666 is Ironman Mode.
+		if (GameSkill() == 666)
+		{
+			if (GameType() == GAME_SINGLE_PLAYER)
 			{
-				Autosave();
+				if(GetCvar("meta_developer"))
+					log(s:"Ironman: ",n:0,s:" fucked up!");
+				
+				// Screw your autosaves.
+				for(int j = 0; j < GetCVar("autosavecount"); j++ )
+				{
+					Autosave();
+				}
+				
+				FadeTo (255, 0, 0, 1.0, 0);	
+				SetMusic("M_IRONMN",0);
+				
+				SetActivator (0, AAPTR_NULL);
+				ACS_NamedExecuteAlways("Ironman_StatsRun",0,0,0,0);
 			}
+		}
+	} else if (GameType() == GAME_NET_COOPERATIVE) { 
+		if (GameSkill() == 666)
+		{
+			ironman_deadplayercount++;
 			
-			FadeTo (255, 0, 0, 1.0, 0);	
-			SetMusic("M_IRONMN",0);
-			
-			SetActivator (0, AAPTR_NULL);
-			ACS_NamedExecuteAlways("Ironman_StatsRun",0,0,0,0);
+			if (ironman_deadplayercount == ironman_playercount)
+			{
+				AmbientSound("ironman/teamwipe", 127);
+				SetMusic("M_IRONMN",0);
+				SetActivator (0, AAPTR_NULL);
+				ACS_NamedExecuteAlways("Ironman_MPGameOver",0,0,0,0);
+			} else {
+				AmbientSound("ironman/playerkilled", 127);
+				delay(55);
+				if ((ironman_playercount - ironman_deadplayercount) == 1)
+				{
+					AmbientSound("ironman/lastman", 127);
+					SetActivator (0, AAPTR_NULL);
+					SetHudSize(320,200,1);
+					SetFont("SmallFont");
+					HudMessage(l:"LASTIRONMAN"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 155.0, 1.0, 0.01, 1.0);
+					delay(1);
+					HudMessage(l:"LASTIRONMAN"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 145.0, 1.0, 0.01, 1.0);
+					delay(1);
+					HudMessage(l:"LASTIRONMAN"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 153.0, 1.0, 0.01, 1.0);
+					delay(1);
+					HudMessage(l:"LASTIRONMAN"; HUDMSG_FADEINOUT, 99, CR_RED, 160.0, 150.0, 1.0, 0.01, 1.0);
+				}
+			}
 		}
 	}
 }
@@ -123,6 +163,68 @@ script "Ironman_StatsRun" (void)
 		HudMessage(s:"You completed ", i:mapsCleared - 1, s:" levels before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
 		delay(8);	
 		HudMessage(s:ironman_DeadMap, s:" staked its claim."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
+	}
+	delay(32);
+	HudMessage(s:"You took ", i:ironman_KillsTally, s:" monsters with you,"; HUDMSG_FADEINOUT, 8, CR_RED, 160.0, 85.0, 9999.0, 1.0, 1.0);
+	delay(8);
+	HudMessage(s:"but couldn't take ", i:ironman_ItemsTally, s:" items with you."; HUDMSG_FADEINOUT, 9, CR_RED, 160.0, 93.0, 9999.0, 1.0, 1.0);
+	delay(8);
+	HudMessage(s:"You found ", i:ironman_SecretsTally, s:" secrets."; HUDMSG_FADEINOUT, 10, CR_RED, 160.0, 101.0, 9999.0, 1.0, 1.0);
+	delay(32);
+	HudMessage(s:"Your final score is ", i:ironman_FinalScore, s:" points."; HUDMSG_FADEINOUT, 11, CR_RED, 160.0, 117.0, 9999.0, 1.0, 1.0);
+	
+	//ChangeCamera(64,1,0);
+	//FadeTo (0, 0, 0, 0.5, 1.0);
+	delay(30);
+	SetMusic("M_IRONM2",0);	
+	delay(32);		
+	ACS_NamedExecute("Ironman_SubtitleMessage",0);
+}
+
+script "Ironman_MPGameOver" (void)
+{
+	//ClearInventory();
+	GiveInventory("DisableHUD",1);
+	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
+	Light_Glow (2, 192, 128, 64);
+	Light_Flicker (2, 192, 128);
+	
+	FadeTo (255, 0, 0, 1.0, 0);	
+	
+	SetMusic("M_IRONMN",0);
+	delay(8);
+	FadeTo (0, 0, 0, 0.5, 1.0);
+	
+	delay(16);
+	
+	SetHudSize(320,200,1);
+	
+	SetFont("IRONDEAD");
+	HudMessage(s:"a"; HUDMSG_FADEINOUT, 512, CR_RED, 160.0, 100.0, 9999.0, 1.0, 1.0);
+	
+	SetFont("BIGMARE");
+	HudMessage(s:"Game Over"; HUDMSG_FADEINOUT, 0, CR_RED, 160.0, 32.0, 9999.0, 1.0, 1.0);
+	delay(35);
+	SetFont("SmallFont");
+	HudMessage(s:"Your squad has been wiped out."; HUDMSG_FADEINOUT, 5, CR_RED, 160.0, 45.0, 9999.0, 1.0, 1.0);
+	delay(126);
+	
+	// Compile and print the stats we had accumulated before venturing off into the great beyond
+	mapsCleared = mapsCleared / ironman_playercount;
+	
+	if (mapsCleared <= 1)
+	{
+		HudMessage(s:"You accomplished nothing of significance"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
+		delay(8);	
+		HudMessage(s:"before being slaughtered like cattle."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
+	} else if ( mapsCleared == 2) {
+		HudMessage(s:"You completed one paltry level before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
+		delay(8);	
+		HudMessage(s:ironman_DeadMap, s:" became a mass-grave."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
+	} else {
+		HudMessage(s:"You completed ", i:mapsCleared - 1, s:" levels before"; HUDMSG_FADEINOUT, 6, CR_RED, 160.0, 61.0, 9999.0, 1.0, 1.0);
+		delay(8);	
+		HudMessage(s:ironman_DeadMap, s:" staked its claims."; HUDMSG_FADEINOUT, 7, CR_RED, 160.0, 69.0, 9999.0, 1.0, 1.0);
 	}
 	delay(32);
 	HudMessage(s:"You took ", i:ironman_KillsTally, s:" monsters with you,"; HUDMSG_FADEINOUT, 8, CR_RED, 160.0, 85.0, 9999.0, 1.0, 1.0);

@@ -498,6 +498,7 @@ OB_FRIENDLY4 = "%k loses another friend.";
 
 LOWHEALTHWARNING = "Low Health!";
 SOULCUBEREADY = "SoulCube Ready!";
+LASTIRONMAN = "Last Player Standing!";
 
 // Titlemap Subtitles
 TITLEMAP0 = "Press ESC to Begin";
