@@ -422,6 +422,7 @@ class DemonKeyPickup1 : CustomInventory
 		+INVENTORY.ALWAYSPICKUP
 		+FLOATBOB
 		+BLOCKASPLAYER
+		FloatBobPhase 0;
 	}
 	
 	states

@@ -237,6 +237,7 @@ class Meta64FakeUnmakerUpgrade1 : Actor
 	{
 		-SOLID
 		+FLOATBOB
+		FloatBobPhase 0;
 	}
 	
 	States
@@ -253,6 +254,7 @@ class Meta64FakeUnmakerUpgrade2 : Actor
 	{
 		-SOLID
 		+FLOATBOB
+		FloatBobPhase 0;
 	}
 	
 	States
@@ -269,6 +271,7 @@ class Meta64FakeUnmakerUpgrade3 : Actor
 	{
 		-SOLID
 		+FLOATBOB
+		FloatBobPhase 0;
 	}
 	
 	States
