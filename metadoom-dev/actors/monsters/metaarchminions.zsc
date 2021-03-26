@@ -252,7 +252,7 @@ class MetaDemonicTrooperPistolTracer : FastProjectile
 		RenderStyle "Add";
 		Radius 2;
 		Height 2;
-		damage 5;
+		DamageFunction (random(5,15));
 		Speed 75;
 		PROJECTILE;
 		+BLOODSPLATTER
@@ -279,6 +279,16 @@ class MetaDemonicTrooperPistolTracer : FastProjectile
 	XDeath:
 		TNT1 A 3 A_PlaySound("weapons/pistol/hit");
 		Stop;
+	}
+	
+	override int DoSpecialDamage(Actor target, int damage, name damagetype)
+	{
+		if (target is "MetaDemonicTrooper" || target is "MetaInfernis")
+		{
+			damage = 0;
+		}
+		
+		return Super.DoSpecialDamage(target, damage, damagetype);
 	}
 }
 
