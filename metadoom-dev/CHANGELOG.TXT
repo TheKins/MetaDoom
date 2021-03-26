@@ -2,7 +2,7 @@ NEXT
 ====
 
 Monster Changes:
-- Added # new monsters! (Titantula)
+- Added # new monsters! (Titantula, Infernis)
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
 - The Wretched's tongue and Former Assassin's tentacle have both undergone an
   assortment of changes:

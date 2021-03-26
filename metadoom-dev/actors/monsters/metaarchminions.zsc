@@ -191,7 +191,6 @@ class MetaDemonicTrooper : MonsterCore
 		Painchance 160;
 		MONSTER;
 		-COUNTKILL
-		Translation 2;
 		Damage 100;
 		DeathSound "monsters/demonictrooper/die";
 		PainSound "monsters/demonictrooper/pain";
@@ -204,38 +203,38 @@ class MetaDemonicTrooper : MonsterCore
 	States
 	{
 	Spawn:
-		OPLA A 4 A_Look;
+		IDTR A 4 A_Look;
 		Loop;
 	See:
-		OPLA AABBCCDD 2 A_Chase;
+		IDTR AABBCCDD 2 A_Chase;
 		Loop;
 	Missile:
-		OPLA E 12 A_FaceTarget;
-		OPLA F 4 BRIGHT 
+		IDTR E 12 A_FaceTarget;
+		IDTR F 4 BRIGHT 
 		{
 			A_SpawnProjectile("MetaDemonicTrooperPistolTracer");
 			A_PlaySound("monsters/demonictrooper/fire", CHAN_WEAPON);
 		}
-		OPLA E 4 A_FaceTarget;
-		OPLA F 4 BRIGHT 
+		IDTR E 4 A_FaceTarget;
+		IDTR F 4 BRIGHT 
 		{
 			A_SpawnProjectile("MetaDemonicTrooperPistolTracer");
 			A_PlaySound("monsters/demonictrooper/fire", CHAN_WEAPON);
 		}
-		OPLA E 12 A_FaceTarget;
-		OPLA F 4 BRIGHT 
+		IDTR E 12 A_FaceTarget;
+		IDTR F 4 BRIGHT 
 		{
 			A_SpawnProjectile("MetaDemonicTrooperPistolTracer");
 			A_PlaySound("monsters/demonictrooper/fire", CHAN_WEAPON);
 		}
 		Goto See;
 	Pain:
-		OPLA G 4;
-		OPLA G 4 A_Pain;
+		IDTR G 4;
+		IDTR G 4 A_Pain;
 		Goto See;
 	Death:
 	XDeath:
-		OPLA O 5 
+		IDTR H 5 
 		{
 			A_GiveToTarget("ScoreItem", 50);
 			A_Scream();

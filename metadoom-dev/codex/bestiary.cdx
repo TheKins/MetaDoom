@@ -384,6 +384,14 @@ page "Bestiary"
 		description "The Unwilling are possessed humans that have survived past their expected lifespan. The muscles have rotted away from their emaciated bodies, appearing as if they were mummified. Their primary purpose is slave labor, shrine worship, and cannon fodder, usually under the supervision of the Summoners.\n\nDue to their debilitated state, they fight by ripping off and slinging chunks of their body at their target. Though they are weak by themselves, a group of Unwilling can be intimidating.";
 	}
 	
+	entry "MetaDemonicTrooper"
+	{
+		needs "Doom2";
+		name "Demonic Trooper";
+		origin "Doom Eternal: The Ancient Gods (2021)";
+		description "These mysterious entities, typically spotted defending Infernis-class Archviles, appear to not be demons at all, but flesh-and-blood humans clad in full body suits. Are they turncoats aiding the demons in hope of a greater life, or slaves from a realm that the demons had previously conquered?\n\nThey appear to be largely ineffective in combat, but can surprise targets from unexpected angles and distract them from more pressing threats.";
+	}
+	
 	//===========================================
 	// Bosses
 	//===========================================
