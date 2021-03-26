@@ -860,3 +860,25 @@ monsters/titantula/step4				scrpstp4
 // infernis
 monsters/infernis/plum/start			infplmst
 monsters/infernis/plum/explode			infplmxp
+
+$limit monsters/infernis/plum/start 8
+$limit monsters/infernis/plum/explode 8
+
+// demonic trooper
+monsters/demonictrooper/pain			idtpain
+
+$random monsters/demonictrooper/roam { monsters/demonictrooper/roam1 monsters/demonictrooper/roam2 monsters/demonictrooper/roam3 monsters/demonictrooper/roam4 }
+monsters/demonictrooper/roam1			idtroam1
+monsters/demonictrooper/roam2			idtroam2
+monsters/demonictrooper/roam3			idtroam3
+monsters/demonictrooper/roam4			idtroam4
+
+$random monsters/demonictrooper/fire { monsters/demonictrooper/fire1 monsters/demonictrooper/fire2 monsters/demonictrooper/fire3 }
+monsters/demonictrooper/fire1			idtfire1
+monsters/demonictrooper/fire2			idtfire2
+monsters/demonictrooper/fire3			idtfire3
+
+$random monsters/demonictrooper/die { monsters/demonictrooper/die1 monsters/demonictrooper/die2 monsters/demonictrooper/die3 }
+monsters/demonictrooper/die1			idtdie1
+monsters/demonictrooper/die2			idtdie2
+monsters/demonictrooper/die3			idtdie3

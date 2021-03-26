@@ -58,6 +58,7 @@ Class MetaCodex_MetaRahovart : MetaCodex_InvBase {}
 Class MetaCodex_MetaArchvile : MetaCodex_InvBase {}
 Class MetaCodex_MetaSummoner : MetaCodex_InvBase {}
 Class MetaCodex_MetaUnwilling : MetaCodex_InvBase {}
+Class MetaCodex_MetaInfernis : MetaCodex_InvBase {}
 
 Class MetaCodex_MetaCyberdemon: MetaCodex_InvBase {}
 Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}

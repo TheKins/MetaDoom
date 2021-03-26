@@ -363,6 +363,19 @@ page "Bestiary"
 		origin "Doom (2016)";
 		description "The Summoners are an advanced breed of Arch-Viles. The crown-like formation on its head and cape-like wings give off a royal aura, suggesting a high position among the demonic ranks.\n\nIn addition to resurrecting fallen demons, Summoners will open rifts and summon forces of Unwilling as cannon fodder while it readies its fire blast. To avoid damage, the demon will quickly travel through small rifts, emerging at a different location, similarly to the Imp Lord. As such, scientists have hypothesized a connection between these demons' genuses.";
 	}
+	entry "MetaInfernis"
+	{
+		needs "Doom2";
+		name "Infernis";
+		offset 0, 18; 
+		origin "Doom Eternal (2020)";
+		description "Commanding a surprisingly imposing presence as they lead and command legions of demons on the battlefield, these Arch-Vile elders split up their explosive hexes into smaller, more selective blasts in a bid to force targets to move out of safety and into the firing line of other demons.\n\nWhile they will actively hunt down their prey, they know when discretion is the better part of valour and will maintain a comfortable distance, summoning assistance when behind cover.";
+	}
+
+	//===========================================
+	// Arch-Vile Minions
+	//===========================================
+
 	entry "MetaUnwilling"
 	{
 		needs "Doom2";
