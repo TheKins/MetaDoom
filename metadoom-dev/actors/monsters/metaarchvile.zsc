@@ -474,6 +474,7 @@ class MetaInfernis : MonsterCore
 		{
 			if (scurredtimer == 0)
 			{
+				/*
 				// If not scared, maintain your distance from the target.
 				if (Distance3D(target) > 384)
 				{
@@ -483,6 +484,7 @@ class MetaInfernis : MonsterCore
 					bFRIGHTENED = true;
 					//Console.printf("Hidey");
 				}
+				*/
 				
 				// If hidden away, count the days until you spawn shit
 				if (CheckIfTargetInLOS())
