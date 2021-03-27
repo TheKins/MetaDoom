@@ -73,7 +73,7 @@ class MetaFire : Actor
 		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish", CHAN_VOICE, 0.8, 0, ATTN_NORM, false, 1.5);
 		goto Idle;
 	Death:
-		PRFI A 0;
+		PRFI A 0 A_StopSound(CHAN_BODY);
 		PRFI A 0 A_PlaySound("monsters/lostsoul/extinguish");
 		PRFI AAAAAAAAAAAAAAA 1 A_SpawnItem("MetaBurningBarrelSmoke",0,35);
 		stop;
