@@ -448,6 +448,7 @@ OB_SUMMONER_POPCORN = "%o was dealt with by a Summoner's servant.";
 OB_CFATSO = "%o was splashed by a Cyber-Mancubus.";
 OB_SAWCUBUS = "%o was gutted by a Sawcubus.";
 OB_INFERNIS = "%o was flushed out by an Infernis.";
+OB_INFERNIS_POPCORN = "%o was overrun by an Infernis's legions.";
 
 OB_METAFIST = "%o was Gloriously Killed by %k.";
 OB_BERSERK = "%o ate the Berserker Rage of %k.";

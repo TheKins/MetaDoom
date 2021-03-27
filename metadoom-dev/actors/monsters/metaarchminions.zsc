@@ -195,7 +195,7 @@ class MetaDemonicTrooper : MonsterCore
 		DeathSound "monsters/demonictrooper/die";
 		PainSound "monsters/demonictrooper/pain";
 		ActiveSound "monsters/demonictrooper/roam";
-		Obituary "$OB_DEMONICTROOPER";
+		Obituary "$OB_INFERNIS_POPCORN";
 		MonsterCore.CanBeScared false;
 		Tag "Demonic Trooper";
 	}
