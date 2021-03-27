@@ -858,6 +858,11 @@ monsters/titantula/step3				scrpstp3
 monsters/titantula/step4				scrpstp4
 
 // infernis
+monsters/infernis/see			infsee
+monsters/infernis/idle			infidle
+monsters/infernis/pain			infpain
+monsters/infernis/die			infdie
+
 monsters/infernis/plum/start			infplmst
 monsters/infernis/plum/explode			infplmxp
 

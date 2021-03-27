@@ -444,10 +444,10 @@ class MetaInfernis : MonsterCore
 		+QUICKTORETALIATE
 		+FLOORCLIP
 		+NOTARGET
-		SeeSound "monsters/archvile/see";
-		PainSound "monsters/archvile/pain";
-		DeathSound "monsters/archvile/die";
-		ActiveSound "monsters/archvile/idle";
+		SeeSound "monsters/infernis/see";
+		PainSound "monsters/infernis/pain";
+		DeathSound "monsters/infernis/die";
+		ActiveSound "monsters/infernis/idle";
 		MeleeSound "vile/stop";
 		Obituary "$OB_INFERNIS";
 		damagefactor "HolyWater", 1.5;
@@ -490,7 +490,7 @@ class MetaInfernis : MonsterCore
 					hidingtimer = 0;
 				} else {
 					hidingtimer++;
-					Console.printf("Hide: %i", hidingtimer);
+					//Console.printf("Hide: %i", hidingtimer);
 					
 					if (hidingtimer > 35)
 					{
