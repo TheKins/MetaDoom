@@ -109,6 +109,11 @@ DamageType MapFire
 	NoArmor
 }
 
+DamageType BelchFire
+{
+    Obituary = "$OB_FLAMETHROWER_SELF"
+}
+
 // Map Definitions
 map TITLEMAP "Welcome to MetaDoom"
 {

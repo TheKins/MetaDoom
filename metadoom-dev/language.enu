@@ -483,6 +483,9 @@ OB_TESLA = "%o was shocked by %k's Tesla Rocket.";
 OB_SIPHON = "%o was sucked dry by %k's Siphon Grenade.";
 OB_KINMINE = "%o got too close to %k's Kinetic Mine.";
 OB_FLAMEBELCH = "%o was flamed out by %k's Flame Belch.";
+OB_FLAMETHROWER = "%o was set ablaze by %k.";
+OB_FLAMETHROWER_DOT = "%o was slow-cooked by $k.";
+OB_FLAMETHROWER_SELF = "%o burned out before %g faded away.";
 
 OB_METADOG_BITE = "%o was mauled by %k's Collared Dog.";
 OB_METADOG_HELLHOUND = "%o was nailed by %k's well-thrown Hellhound.";
