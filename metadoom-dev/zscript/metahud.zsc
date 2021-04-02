@@ -273,6 +273,9 @@ class MetaDoomStatusBar : BaseStatusBar
 		} else if (CPlayer.ReadyWeapon.Ammo1 is "DogGunHealth")
 		{
 			DrawImage("HPICON", (283, 180), DI_ITEM_OFFSETS);
+		} else if (CPlayer.ReadyWeapon.Ammo1 == null)
+		{
+			DrawImage("AMICON", (283, 180), DI_ITEM_OFFSETS);
 		} else {
 			DrawImage("AMICON", (283, 180), DI_ITEM_OFFSETS);
 		}
