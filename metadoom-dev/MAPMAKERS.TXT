@@ -41,6 +41,11 @@ if the mapper specifies as such. Should function in this regard in the same way
 as the Hexen Pottery, but you'll probably want to spawn a specific actor without
 arsing around with spawnids, so be sure to tick the "String" box on the argument.
 
+GRAPPLE TARGET: These invulnerable, non-solid objects can be latched onto with
+the SSG's Meathook. When the player passes near them their Meathook cooldown
+will be refilled and their gravity will be disabled for half a second,
+potentially making chains of hooks from A to B fairer.
+
 THEMING
 -------
 MetaDoom is a mod that mashes together all of the different Doom games, so a
