@@ -426,7 +426,8 @@ class MetaSummonerWarpTrail : Actor
 
 
 
-// The Infernis. Uses the Diabolist's attack from Supercharge.
+// The Infernis. Uses the Diabolist's attack from Supercharge and summons Demonic
+// Troopers if they can't see the player.
 
 class MetaInfernis : MonsterCore
 {
@@ -453,24 +454,21 @@ class MetaInfernis : MonsterCore
 		damagefactor "HolyWater", 1.5;
 		painchance "HolyWater", 255;
 		Tag "Infernis";
+		scale 0.75;
 		//$Category "Monsters/MetaDoom/Arch-Vile"
 		//$Title "Infernis"
 		//$Color 12
 	}
-	
-	const handHeight = 80;
-	const handLeftX = -32;
-	const handRightX = 32;
 	
 	int hidingtimer;
 
 	States
 	{
 	Spawn:
-		DIAB AB 10 A_Look;
+		INF0 A 10 A_Look;
 		Loop;
 	See:
-		DIAB AABBCCDDEEFF 2 
+		INF1 AABBCCDDEEFFEEDDCCBB 2 
 		{
 			if (scurredtimer == 0)
 			{
@@ -515,25 +513,25 @@ class MetaInfernis : MonsterCore
 		Loop;
 		
 	Missile:
-		DIAB G 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE);
-		DIAB G 10 BRIGHT A_FaceTarget ;
-		DIAB H 8 BRIGHT A_VileTarget("MetaArchvileFire");
-		DIAB IJKLMN 8 BRIGHT A_FaceTarget;
-		DIAB O 0 BRIGHT A_JumpIfInTargetInventory("FireExtinguished",1,"MissileFailed");
-		DIAB O 8 BRIGHT A_VileAttack("monsters/archvile/boom", 20, 70, 70, 1, "Fire");
-		DIAB P 20 BRIGHT;
+		INF1 G 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE);
+		INF1 G 10 BRIGHT A_FaceTarget ;
+		INF1 H 8 BRIGHT A_VileTarget("MetaArchvileFire");
+		INF1 IJKLMN 8 BRIGHT A_FaceTarget;
+		INF1 O 0 BRIGHT A_JumpIfInTargetInventory("FireExtinguished",1,"MissileFailed");
+		INF1 O 8 BRIGHT A_VileAttack("monsters/archvile/boom", 20, 70, 70, 1, "Fire");
+		INF1 P 20 BRIGHT;
 		Goto See;
 	MissileFailed:
-		DIAB O 8 BRIGHT A_PlaySound("monsters/archvile/dud");
-		DIAB P 20 BRIGHT;
-		DIAB A 10;
-		DIAB Q 10;
-		DIAB A 5;
+		INF1 O 8 BRIGHT A_PlaySound("monsters/archvile/dud");
+		INF1 P 20 BRIGHT;
+		INF1 A 10;
+		INF1 T 10;
+		INF1 A 5;
 		Goto See;
 		
 	Summon:
-		DIAB A 0;
-		DIAB A 0
+		INF1 A 0;
+		INF1 A 0
 		{
 			A_StartSound("monsters/summoner/popcorn", CHAN_VOICE);
 			
@@ -542,18 +540,15 @@ class MetaInfernis : MonsterCore
 			A_SpawnItemEx("MetaInfernisPopcorn",0,0,32,4,0,0,180);
 			A_SpawnItemEx("MetaInfernisPopcorn",0,0,32,4,0,0,270);
 		}
-		DIA2 ABCBABC 8 BRIGHT;
+		INF1 QRSRQRS 8 BRIGHT;
 		Goto See;
 
 	FlushOut:
-		//DIAB G 0 A_Jump(256, "Summon");
-		DIAB GH 4 A_FaceTarget;
-		DIAB I 4
+		//INF1 G 0 A_Jump(256, "Summon");
+		INF1 GH 4 A_FaceTarget;
+		INF1 I 4
 		{
 			A_FaceTarget();
-			
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			
 			if (target)
 			{
@@ -565,18 +560,11 @@ class MetaInfernis : MonsterCore
 				}
 			}
 		}
-		DIAB II 3 
+		INF1 II 3 A_FaceTarget();
+		INF1 I 3 
 		{
 			A_FaceTarget();
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-		}
-		DIAB I 3 
-		{
-			A_FaceTarget();
-		
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
+			
 			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
@@ -587,18 +575,11 @@ class MetaInfernis : MonsterCore
 				}
 			}
 		}
-		DIAB II 3 
-		{
-			A_FaceTarget();
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-		}
-		DIAB I 3 
+		INF1 II 3 A_FaceTarget();
+		INF1 I 3 
 		{
 			A_FaceTarget();
 		
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
@@ -609,18 +590,11 @@ class MetaInfernis : MonsterCore
 				}
 			}
 		}
-		DIAB II 3 
-		{
-			A_FaceTarget();
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-		}
-		DIAB I 3 
+		INF1 II 3 A_FaceTarget();
+		INF1 I 3 
 		{
 			A_FaceTarget();
 		
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
@@ -631,39 +605,26 @@ class MetaInfernis : MonsterCore
 				}
 			}
 		}
-		DIAB II 3 
-		{
-			A_FaceTarget();
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-		}
-		DIAB I 3 A_FaceTarget;
-		DIAB JKL 4;
-		DIAB MN 5;
-		DIAB O 5;
-		DIAB P 10;
-		DIAB A 0 A_Jump(128, "Summon");
+		INF1 II 3 A_FaceTarget();
+		INF1 I 3 A_FaceTarget;
+		INF1 JKL 4;
+		INF1 MN 5;
+		INF1 O 5;
+		INF1 P 10;
+		INF1 A 0 A_Jump(128, "Summon");
 		Goto See;
-
-
-	MissileFailed:
-		//DIAB O 8 BRIGHT A_PlaySound("monsters/archvile/dud");
-		DIAB P 20 BRIGHT;
-		DIAB A 10;
-		DIAB Q 10;
-		DIAB A 5;
-		Goto See;
+		
 	Heal:
-		DIAB A 0;
-		DIAB A 0 A_PlaySound("monsters/archvile/resurrect", CHAN_VOICE);
-		DIA2 ABC 8 BRIGHT;
+		INF1 A 0;
+		INF1 A 0 A_PlaySound("monsters/archvile/resurrect", CHAN_VOICE);
+		INF1 QRS 8 BRIGHT;
 		Goto See;
 	Pain:
-		DIAB Q 0;
-		DIAB Q 5 A_Pain;
+		INF1 T 0;
+		INF1 T 5 A_Pain;
 		Goto See;
 	Death:
-		DIAB Q 7 			// Make a filthy great mess once the Archvile dies,
+		INF2 A 7 			// Make a filthy great mess once the Archvile dies,
 		{					// to make a point of it not being rez-ible.
 			bSPRITEFLIP = random(0,1);
 
@@ -685,10 +646,10 @@ class MetaInfernis : MonsterCore
 			A_SpawnItem("BloodSplat");
 			A_SpawnItem("SoulSpawner");
 		}
-		DIAD R 7 A_Scream;
-		DIAD S 7 A_NoBlocking;
-		DIAD TUVWXY 7;
-		DIAD Z -1;
+		INF2 B 7 A_Scream;
+		INF2 C 7 A_NoBlocking;
+		INF2 D 7;
+		INF2 E -1;
 		Stop;
 	}
 }
