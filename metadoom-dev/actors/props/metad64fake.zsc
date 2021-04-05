@@ -315,3 +315,84 @@ class Meta64FakeMegasphere : Actor
 			Loop;
 	}
 }
+
+class Meta64FakeInvulnerabilitySphere : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+		scale 0.75;
+	}
+	
+	States
+	{
+		Spawn:
+			PINV ABCDCB 6 Bright;
+			Loop;
+	}
+}
+
+class Meta64FakeBlursphere : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+		scale 0.75;
+	}
+	
+	States
+	{
+		Spawn:
+			HAST ABCD 2 Bright;
+			Loop;
+	}
+}
+
+class Meta64FakeBerserk : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+		Spawn:
+			PSTR A -1;
+			Stop;
+	}
+}
+
+class Meta64UnmakerUpgradeGrayedOut : Actor
+{
+	Default
+	{
+		-SOLID
+		+FLOATBOB
+		FloatBobPhase 0;
+	}
+	
+	States
+	{
+		Spawn:
+			ARTX A -1 bright;
+			loop;
+	}
+}
+
+class Meta64FakeUnmaker : Actor
+{
+	Default
+	{
+		-SOLID
+	}
+	
+	States
+	{
+		Spawn:
+			UNMA Z -1;
+			Stop;
+	}
+}
