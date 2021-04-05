@@ -556,18 +556,25 @@ class ArchVileSpawner : MetaSpawner // replaces ArchVile
 		goto Archvile;
 	Doom2Selector:
 		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 20, "VarietyPack");
+		TNT1 A 0 A_JumpIf(CallACS("Monster_ReturnMaps", 0, 0, 0) >= 15, "Tier2");
 		goto Archvile;
-	VarietyPack:
+	Tier2:
 		TNT1 A 0 A_Jump(72, "Summoner");
 		goto Archvile;
+	VarietyPack:
+		TNT1 A 0 A_Jump(72, "Summoner", "Infernis");
+		goto Archvile;
 	ContentLocustVarietyPack:
-		TNT1 A 0 A_Jump(128, "Summoner");
+		TNT1 A 0 A_Jump(128, "Summoner", "Infernis");
 		goto Archvile;
 	Archvile:
 		TNT1 A 0 A_SpawnItemEx("MetaArchVile",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
 		stop;
 	Summoner:
 		TNT1 A 0 A_SpawnItemEx("MetaSummoner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
+		stop;
+	Infernis:
+		TNT1 A 0 A_SpawnItemEx("MetaInfernis",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_NOCHECKPOSITION,0,tid);
 		stop;
 	}
 }
