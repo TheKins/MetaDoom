@@ -376,7 +376,7 @@ class MetaPhantom : MonsterCore
 	
 	override void Tick()
 	{
-		if(isFrozen())
+		if(!isFrozen())
 		{
 			if (firetimer >= 4)
 			{
