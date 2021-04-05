@@ -343,7 +343,7 @@ page "Bestiary"
 	}
 	
 	//===========================================
-	// Arch-Viles (and guest)
+	// Arch-Viles
 	//===========================================
 	
 	entry "MetaArchvile"
@@ -369,7 +369,7 @@ page "Bestiary"
 		name "Infernis";
 		offset 0, 18; 
 		origin "Doom Eternal (2020)";
-		description "Commanding a surprisingly imposing presence as they lead and command legions of demons on the battlefield, these Arch-Vile elders split up their explosive hexes into smaller, more selective blasts in a bid to force targets to move out of safety and into the firing line of other demons.\n\nWhile they will actively hunt down their prey, they know when discretion is the better part of valour and will maintain a comfortable distance, summoning assistance when behind cover.";
+		description "Commanding a surprisingly imposing presence as they lead and command legions of demons on the battlefield, these Arch-Vile elders have a greater command of their pyrokinetics, allowing them to cast lesser hexes upon opponents outside of their line of sight, in a bid to flush them out into the open for other demons to pick off.\n\nWhere lesser Arch-Viles demonstrate a child-like glee, the Infernis radiates a surpreme, almost-smug confidence - it knows it's better than everyone else on the battlefield, and is more than happy to prove it.";
 	}
 
 	//===========================================

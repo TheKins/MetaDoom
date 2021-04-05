@@ -497,7 +497,15 @@ class MetaInfernis : MonsterCore
 					if (hidingtimer > 35)
 					{
 						hidingtimer = 0;
-						SetStateLabel("Summon");
+						
+						Console.printf("%i", Distance2D(target));
+						
+						if (target && Distance2D(target) < 1024)
+						{
+							SetStateLabel("FlushOut");
+						} else {
+							SetStateLabel("Summon");
+						}
 					}
 				}
 			}
@@ -505,6 +513,23 @@ class MetaInfernis : MonsterCore
 			A_MetaVileChase();
 		}
 		Loop;
+		
+	Missile:
+		DIAB G 0 BRIGHT A_PlaySound("monsters/archvile/magic", CHAN_VOICE);
+		DIAB G 10 BRIGHT A_FaceTarget ;
+		DIAB H 8 BRIGHT A_VileTarget("MetaArchvileFire");
+		DIAB IJKLMN 8 BRIGHT A_FaceTarget;
+		DIAB O 0 BRIGHT A_JumpIfInTargetInventory("FireExtinguished",1,"MissileFailed");
+		DIAB O 8 BRIGHT A_VileAttack("monsters/archvile/boom", 20, 70, 70, 1, "Fire");
+		DIAB P 20 BRIGHT;
+		Goto See;
+	MissileFailed:
+		DIAB O 8 BRIGHT A_PlaySound("monsters/archvile/dud");
+		DIAB P 20 BRIGHT;
+		DIAB A 10;
+		DIAB Q 10;
+		DIAB A 5;
+		Goto See;
 		
 	Summon:
 		DIAB A 0;
@@ -520,7 +545,7 @@ class MetaInfernis : MonsterCore
 		DIA2 ABCBABC 8 BRIGHT;
 		Goto See;
 
-	Missile:
+	FlushOut:
 		//DIAB G 0 A_Jump(256, "Summon");
 		DIAB GH 4 A_FaceTarget;
 		DIAB I 4
@@ -530,7 +555,7 @@ class MetaInfernis : MonsterCore
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			
-			if (target && CheckIfTargetInLOS())
+			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
 				{
@@ -552,7 +577,7 @@ class MetaInfernis : MonsterCore
 		
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			if (target && CheckIfTargetInLOS())
+			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
 				{
@@ -574,7 +599,7 @@ class MetaInfernis : MonsterCore
 		
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			if (target && CheckIfTargetInLOS())
+			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
 				{
@@ -596,7 +621,7 @@ class MetaInfernis : MonsterCore
 		
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handLeftX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
 			A_SpawnItemEx("MetaInfernisFireDust", 0, handRightX, handHeight, frandom(-2, 2), frandom(-2, 2), frandom(2, 6), 0);
-			if (target && CheckIfTargetInLOS())
+			if (target)
 			{
 				if (!target.CountInv("FireExtinguished"))
 				{
@@ -617,6 +642,7 @@ class MetaInfernis : MonsterCore
 		DIAB MN 5;
 		DIAB O 5;
 		DIAB P 10;
+		DIAB A 0 A_Jump(128, "Summon");
 		Goto See;
 
 
