@@ -358,6 +358,13 @@ class MetaTitantula : MonsterCore
 		SCP2 E 8 BRIGHT { A_FaceTarget(); A_StartSound("monsters/titantula/grenade"); A_SpawnProjectile("MetaTitantulaGrenade"); }
 		SCP2 D 10 A_FaceTarget;
 		Goto See;
+	Pain.SoulCube:
+		"####" F 0
+		{
+			bBUDDHA = false;			
+			A_DamageSelf (1000, "Soulcube", DMSS_FOILBUDDHA, null, "None", AAPTR_TARGET, AAPTR_TARGET);
+		}
+		goto Pain;
 	Pain:
 		"####" F 0 A_JumpIf(degunned == false && health <= 200, "Degunned");
 		"####" F 3;
