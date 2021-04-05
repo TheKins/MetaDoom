@@ -28,6 +28,7 @@ Monster Changes:
   affected instead of being frozen in the first frame of their pain state.
 - Altered the Hell Knight's walk animation to be less exaggerated.
 - Arachnotrons and Spiborgs now have proper OpenGL light defs for their attacks.
+- Fixed the Phantom's fire trail not spawning, and improved its palette swap.
 - Assorted minor audio updates.
 
 Optional Content Changes:

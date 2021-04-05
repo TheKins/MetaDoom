@@ -397,7 +397,7 @@ class MetaPhantomFire : MetaLostSoulFire
 {
 	Default
 	{
-		translation "176:191=113:127";
+		translation "176:191=112:127", "208:223=112:127", "232:235=112:127", "16:47=112:127", "160:167=112:127";
 	}
 }
 
