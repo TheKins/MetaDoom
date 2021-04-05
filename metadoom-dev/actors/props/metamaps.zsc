@@ -279,8 +279,21 @@ class MetaMeathookTarget : Actor
 	
 	override void Tick()
 	{
+		// Refill the player's hook cooldown and give the player a half-second
+		// of zero gravity when they get close to the target
 		A_RadiusGive("MetaGrappleGrav", 72, RGF_PLAYERS, 1);
 		A_RadiusGive("MeatHookRefill", 72, RGF_PLAYERS, 1);
+		
+		// Make the target only shootable when a meathook exists in the world
+		bSHOOTABLE = false;
+		
+		ThinkerIterator it = ThinkerIterator.Create("MetaHookProjectile");
+		Actor mo;
+        while (mo = MetaHookProjectile(it.Next()))
+        {
+			bSHOOTABLE = true;
+		}
+		
 		Super.Tick();
 	}
 }
