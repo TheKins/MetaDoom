@@ -1,0 +1,207 @@
+/*
+----------------------------
+MetaDoom
+Actor Definitions
+Tests and Prototypes
+----------------------------
+*/
+
+class MetaTest : MonsterCore
+{
+	Default
+	{
+		Health 500;
+		Radius 20;
+		Height 56;
+		Speed 8;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		-DOHARMSPECIES
+		+NODAMAGE
+		+NOBLOOD
+		DeathSound "*death";
+		PainSound "*pain50";
+		Obituary "$OB_ZOMBIE";
+		damagefactor "HolyWater", 0;
+		painchance "HolyWater", 0;
+		painchance "Fist", 0;
+		Tag "Test";
+		//$Category "Monsters/MetaDoom/"
+		//$Title "Test"
+		//$Color 12
+	}
+	
+	States
+	{
+	Spawn:
+		AGRD AB 10 A_Look;
+		Loop;
+	See:
+		AGRD AAAABBBBCCCCDDDD 2 A_MetaChase("Missile","Missile",CHF_FASTCHASE);
+		Loop;
+	Missile:
+		AGRD A 0
+		{
+			if (target && target.health > 0)
+			{
+				Console.printf("%i", Distance3D(target));
+				
+				if (Distance3D(target) < 168)
+				{
+					Console.printf("Too close, shotgun.");
+					SetStateLabel("MissileShotgun");
+				} else if (Distance3D(target) > 230) {
+					Console.printf("Too far, axes.");
+					SetStateLabel("MissileAxe");
+				} else {
+					Console.printf("Sweet spot!");
+					SetStateLabel("MissileSweetSpot");
+				}
+			}
+		}
+		Goto See;
+	MissileShotgun:
+		AGRD E 10 A_FaceTarget;
+		AGRD F 10 BRIGHT
+		{
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,16));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-16,16),CMF_OFFSETPITCH,random(-4,4));
+			A_SpawnProjectile("MonsterShotgunGuyTracer",32,0,random(-2,2),CMF_OFFSETPITCH,random(-2,2));
+			A_PlaySound("monsters/shotgunguy/fire");
+		}
+		AGRD E 10;
+		Goto See;
+	MissileAxe:
+		AGRD E 8 A_FaceTarget;
+		AGRD F 8 BRIGHT
+		{
+			A_SpawnProjectile("MetaTestAxe");
+			A_PlaySound("monsters/revenant/wiff");
+		}
+		AGRD E 8;
+		Goto See;
+	MissileSweetSpot:
+		AGRD O 0
+		{
+			A_Stop();
+			A_FaceTarget();
+			A_Recoil(-32);
+			A_PlaySound("menu/activate");
+			
+			bFORCEPAIN = 1;
+			bNODAMAGE = 0;
+			bNOBLOOD = 0;
+		}
+		AGRD OAOAOAOA 2;
+		AGRD O 8
+		{
+			A_CustomMeleeAttack(random(1, 10) * 6, "monsters/revenant/hit");
+		}
+		AGRD A 0
+		{
+			bFORCEPAIN = 0;
+			bNODAMAGE = 1;
+			bNOBLOOD = 1;
+		}
+		Goto See;
+		
+	Pain:
+		AGRD A 0
+		{
+			if (bNODAMAGE)
+			{
+				SetStateLabel("PainShield");
+			} else {
+				SetStateLabel("Stunned");
+			}
+		}
+		goto See;
+	PainShield:
+		AGRD O 0
+		{
+			bInvulnerable = true;
+		}
+		AGRD OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 1
+		{
+			A_FaceTarget();
+		}
+		AGRD O 0
+		{
+			bInvulnerable = false;
+		}
+		//POSS G 3 A_Pain;
+		Goto See;
+		
+	Stunned:
+		AGRD A 0
+		{
+			bNOPAIN = 1;
+			bNODAMAGE = 0;
+			bNOBLOOD = 0;
+			
+			A_Pain();
+		}
+		AGRD AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1
+		{
+			angle = random(0,360);
+			
+			A_SpawnItem("HolySweat",0,height-2);
+		}
+		AGRD A 8
+		{
+			bNOPAIN = 0;
+			bNODAMAGE = 1;
+			bNOBLOOD = 1;
+			
+			A_FaceTarget();
+		}
+		goto See;
+		
+	Death:
+		AGRD G 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		AGRD G 5 A_GiveToTarget("ScoreItem", 100);
+		AGRD H 5 A_Scream;
+		AGRD I 5 A_NoBlocking;
+		AGRD JKLM 5;
+		AGRD N -1 A_PlaySound("bodyfalls/medium");
+		Stop;
+	XDeath:
+		TNT1 A 0 A_SpawnItem("SoulSpawner");
+		AGRD G 5 A_GiveToTarget("ScoreItem", 100);
+		"####" # 0 A_Fall;
+		TNT1 A 0 A_SpawnItemEx("MetaGibber",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS);
+		Stop;
+	}
+}
+
+class MetaTestAxe : Actor 
+{
+	Default
+	{
+		Radius 10;
+		Height 8;
+		Speed 18;
+		Damage 2;
+		Projectile;
+		-NOBLOCKMAP
+		-ACTIVATEIMPACT
+		-ACTIVATEPCROSS
+		+WINDTHRUST
+		+THRUGHOST
+		DeathSound "monsters/imp/fireball/hit";
+	}
+
+	States
+	{
+	Spawn:
+		SPAX A 3 BRIGHT A_StartSound("monsters/revenant/wiff");
+		SPAX BC 3 BRIGHT;
+		Loop;
+	Death:
+		SPAX DEF 6 BRIGHT;
+		Stop;
+	}
+}
