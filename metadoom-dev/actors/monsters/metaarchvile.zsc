@@ -492,11 +492,13 @@ class MetaInfernis : MonsterCore
 						// If the target is within 1024 units and you haven't done
 						// it yet, do the Diabolist's attack from Supercharge and
 						// flush the sucker out! Otherwise, summon Demonic Troopers.
-						if (target && Distance2D(target) < 1024 && firsthide == true)
+						if (target && Distance2D(target) < 1024 && firsthide)
 						{
+							//Console.printf("Throwing down a trap");
+							firsthide = false;
 							SetStateLabel("FlushOut");
-							firsthide == false;
 						} else {
+							//Console.printf("Doing a summon");
 							SetStateLabel("Summon");
 						}
 					}
