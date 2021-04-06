@@ -427,7 +427,7 @@ class MetaSummonerWarpTrail : Actor
 
 
 // The Infernis. Uses the Diabolist's attack from Supercharge and summons Demonic
-// Troopers if they can't see the player.
+// Troopers if they can't see the player, acts like a standard Archie if they can.
 
 class MetaInfernis : MonsterCore
 {
@@ -461,6 +461,7 @@ class MetaInfernis : MonsterCore
 	}
 	
 	int hidingtimer;
+	bool firsthide;
 
 	States
 	{
@@ -472,35 +473,28 @@ class MetaInfernis : MonsterCore
 		{
 			if (scurredtimer == 0)
 			{
-				/*
-				// If not scared, maintain your distance from the target.
-				if (Distance3D(target) > 384)
-				{
-					bFRIGHTENED = false;
-					//Console.printf("Chasey");
-				} else {
-					bFRIGHTENED = true;
-					//Console.printf("Hidey");
-				}
-				*/
-				
-				// If hidden away, count the days until you spawn shit
+				// If you can't see the target, count the days until you do a
+				// nasty to them.
 				if (CheckIfTargetInLOS())
 				{
 					hidingtimer = 0;
+					firsthide = true;
 				} else {
 					hidingtimer++;
-					//Console.printf("Hide: %i", hidingtimer);
 					
 					if (hidingtimer > 35)
 					{
 						hidingtimer = 0;
 						
-						Console.printf("%i", Distance2D(target));
+						//Console.printf("%i", Distance2D(target));
 						
-						if (target && Distance2D(target) < 1024)
+						// If the target is within 1024 units and you haven't done
+						// it yet, do the Diabolist's attack from Supercharge and
+						// flush the sucker out! Otherwise, summon Demonic Troopers.
+						if (target && Distance2D(target) < 1024 && firsthide == true)
 						{
 							SetStateLabel("FlushOut");
+							firsthide == false;
 						} else {
 							SetStateLabel("Summon");
 						}
