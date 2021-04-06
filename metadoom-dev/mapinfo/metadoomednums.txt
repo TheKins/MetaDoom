@@ -69,6 +69,7 @@ DoomEdNums
 	20054 = "MetaRover"
 	20055 = "MetaCatacomb"
 	20056 = "MetaTitantula"
+	20057 = "MetaInfernis"
 	
 	// Weapons
 	20101 = "MetaShotgun"
