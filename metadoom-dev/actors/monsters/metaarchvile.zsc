@@ -455,6 +455,7 @@ class MetaInfernis : MonsterCore
 		painchance "HolyWater", 255;
 		Tag "Infernis";
 		scale 0.75;
+		yscale 0.7;
 		//$Category "Monsters/MetaDoom/Arch-Vile"
 		//$Title "Infernis"
 		//$Color 12
