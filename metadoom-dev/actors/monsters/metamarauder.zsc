@@ -170,13 +170,16 @@ class MetaMarauder : MonsterCore
 			{
 				if (Distance3D(target) < 168)
 				{
-					Console.printf("%i: Too close, shotgun.", Distance3D(target));
+					if (meta_developer)
+						Console.printf("%i: Too close, shotgun.", Distance3D(target));
 					SetStateLabel("MissileShotgun");
 				} else if (Distance3D(target) > 240) {
-					Console.printf("%i: Too far, axes.", Distance3D(target));
+					if (meta_developer)
+						Console.printf("%i: Too far, axes.", Distance3D(target));
 					SetStateLabel("MissileAxe");
 				} else {
-					Console.printf("%i: Sweet spot!", Distance3D(target));
+					if (meta_developer)
+						Console.printf("%i: Sweet spot!", Distance3D(target));
 					SetStateLabel("MissileSweetSpot");
 				}
 			}
