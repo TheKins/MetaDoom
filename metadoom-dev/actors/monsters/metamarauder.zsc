@@ -184,6 +184,7 @@ class MetaMarauder : MonsterCore
 			A_FaceTarget();
 			//A_Recoil(-32);
 			A_PlaySound("monsters/marauder/eyeflare");
+			A_SpawnItemEx("MetaMarauderEyeflash", 1, 0, 56, 0, 0, 0, SXF_SETMASTER);
 			
 			bFORCEPAIN = 1;
 			bNODAMAGE = 0;
@@ -435,5 +436,28 @@ class MetaMarauderPopcorn : Actor
 			A_SpawnItem("MetaSpiritWolf");
 		}
 		Stop;
+	}
+}
+
+class MetaMarauderEyeflash : Actor
+{
+	Default
+	{
+		-SOLID
+		+NOGRAVITY
+		scale 0.4;
+	}
+	
+	States
+	{
+		Spawn:
+			BFE1 ABCD 1 BRIGHT
+			{
+				if (target)
+				{
+					A_Warp(AAPTR_TARGET, 1, 0, 54, target.angle, WARPF_ABSOLUTEANGLE);
+				}
+			}
+			stop;
 	}
 }
