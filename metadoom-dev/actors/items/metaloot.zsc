@@ -31,7 +31,7 @@ class LootSpawner : Actor
 			Actor mo;
 			while (mo = MetaDoomMapID(it.Next()))
 			{
-				if (meta_developer)
+				if (meta_developer == 2)
 					Console.printf("Loot: This is a MetaDoom map, no loot spawning!");
 				self.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
 			}
