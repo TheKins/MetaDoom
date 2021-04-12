@@ -308,7 +308,11 @@ GOTBACKPACK = "Picked up a Backpack full of Ammo!";
 // Marauder Warning
 MARAUDWARNING0 = "You feel a cold breath on the back of your neck...";
 MARAUDWARNING1 = "An eye is upon you...";
-MARAUDWARNING2 = "Something is watching you...";
+MARAUDWARNING2 = "Someone, or something, is watching you...";
+MARAUDWARNING3 = "A vision of axes dances through your mind...";
+MARAUDWARNING4 = "Alert: Terror level raised!"; // i had to slip a synthetik reference somewhere
+MARAUDWARNING5 = "The demonic threat level pings to level five...";
+MARAUDWARNING6 = "An eye is upon you... Are you ready to go?"; // powerman 5000 still exist?!?
 
 // Quit Messages
 QUITMSG = "Are you sure you want to\nquit this great game?";

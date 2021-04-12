@@ -930,7 +930,7 @@ script "Marauder_Warning" (void)
 	SetActivator (0, AAPTR_NULL);
 	delay(8);
 	
-	str message = StrParam(s:"MARAUDWARNING", i:random(0,2));
+	str message = StrParam(s:"MARAUDWARNING", i:random(0,6));
 	log(s:"\cg", l:message);
 }
 
