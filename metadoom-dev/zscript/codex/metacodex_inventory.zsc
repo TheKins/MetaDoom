@@ -19,6 +19,7 @@ Class MetaCodex_MetaDoomImpLord : MetaCodex_InvBase {}
 Class MetaCodex_MetaHellHound : MetaCodex_InvBase {}
 Class MetaCodex_MetaDemonDog : MetaCodex_InvBase {}
 Class MetaCodex_MetaCerberus : MetaCodex_InvBase {}
+Class MetaCodex_MetaSpiritWolf : MetaCodex_InvBase {}
 
 Class MetaCodex_MetaDemon : MetaCodex_InvBase {}
 Class MetaCodex_MetaBullDemon : MetaCodex_InvBase {}
@@ -62,6 +63,7 @@ Class MetaCodex_MetaInfernis : MetaCodex_InvBase {}
 Class MetaCodex_MetaUnwilling : MetaCodex_InvBase {}
 Class MetaCodex_MetaDemonicTrooper : MetaCodex_InvBase {}
 
+Class MetaCodex_MetaMarauder: MetaCodex_InvBase {}
 Class MetaCodex_MetaCyberdemon: MetaCodex_InvBase {}
 Class MetaCodex_MetaSpiderMastermind: MetaCodex_InvBase {}
 

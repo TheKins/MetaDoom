@@ -148,6 +148,7 @@ OptionMenu "MetaSpawningMenu"
 	StaticText " "
 	MetaOption "$METAMENU_UNIQUEBOSSES",		"$METATOOLTIP_UNIQUEBOSSES",			"meta_uniquebosses", "OnOff"
 	MetaOption "$METAMENU_NOSPODERS",	"$METATOOLTIP_NOSPODERS",				"meta_nospoders", "OffOn"
+	MetaOption "$METAMENU_MARAUDERS",	"$METATOOLTIP_MARAUDERS",				"meta_marauders", "Marauders"
 	MetaOption "$METAMENU_LOOTSPAWNS",	"$METATOOLTIP_LOOTSPAWNS",	"meta_lootspawns", "OnOff"
 	MetaOption "$METAMENU_OPTIONAL_PROPS",	"$METATOOLTIP_OPTIONAL_PROPS",	"meta_optional_props", "BreakableProps"
 	Class "MetaOptionMenu"
@@ -193,4 +194,11 @@ OptionValue "BerserkTimer"
 {
 	0, "$OPTVAL_MODERNBERSERK"
 	1, "$OPTVAL_OLDBERSERK"
+}
+
+OptionValue "Marauders"
+{
+	0, "$OPTVAL_OFF"
+	1, "$OPTVAL_ON"
+	2, "$OPTVAL_ALWAYS"
 }

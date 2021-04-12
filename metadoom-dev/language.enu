@@ -62,6 +62,7 @@ METAMENU_EPISODICSPAWNS = "Episodic Spawn Rules";
 METAMENU_LOOTSPAWNS = "Treasure Items";
 METAMENU_FOOTSTEPS = "Player Footsteps";
 METAMENU_UNIQUEBOSSES = "Unique Bosses";
+METAMENU_MARAUDERS = "Allow Marauders";
 
 METAMENU_TOAST = "\"100%\" Message Customization";
 METAMENU_TOASTTYPE = "Message Type";
@@ -108,6 +109,7 @@ METATOOLTIP_NOSPODERS = "Toggle whether or not Trites appear. Useful for hardcor
 METATOOLTIP_LOOTSPAWNS = "Toggle spawning pointless and/or amusing score items, ala Wolf3D or the Doom Alphas.";
 METATOOLTIP_FOOTSTEPS = "Toggle those loud stomping noises you make as you hoof it around those haunted bases.";
 METATOOLTIP_UNIQUEBOSSES = "Replaces bosses on certain map slots (ex. E4M8) with special unique encounters...";
+METATOOLTIP_MARAUDERS = "Toggle whether or not Marauders start hunting you after you acquire certain weapons...";
 
 METATOOLTIP_OPTIONAL_PROPS = "Useful for some DEHACKED-based mapsets that reskin the old props in unique, unfitting ways.";
 
@@ -302,6 +304,11 @@ GOTBACKPACK = "Picked up a Backpack full of Ammo!";
 100_MONSTERS = "All Monsters Destroyed!";
 100_ITEMS = "All Items Found!";
 100_SECRETS = "All Secrets Found!";
+
+// Marauder Warning
+MARAUDWARNING0 = "You feel a cold breath on the back of your neck...";
+MARAUDWARNING1 = "An eye is upon you...";
+MARAUDWARNING2 = "Something is watching you...";
 
 // Quit Messages
 QUITMSG = "Are you sure you want to\nquit this great game?";

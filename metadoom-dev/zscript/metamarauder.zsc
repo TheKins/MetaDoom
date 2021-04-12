@@ -1,0 +1,125 @@
+/*
+----------------------------
+MetaDoom
+ZScript Definitions
+Marauder Spawner
+----------------------------
+*/
+
+Class MetaMarauderSpawnScript : EventHandler
+{
+	Array<Actor> Things;
+	bool maraudme;
+	bool metamap;
+	
+	override void WorldLoaded(WorldEvent e)
+	{
+		Things.Clear();
+		int levelcount;
+		int gametype;
+		int maxrauds;
+		int rauds;
+		
+		ThinkerIterator it = ThinkerIterator.Create("MetaDoomMapID");
+		Actor mo;
+        while (mo = MetaDoomMapID(it.Next()))
+        {
+			if (meta_developer)
+				Console.printf("Marauders: This is a MetaDoom map, no automatic Marauders!");
+			metamap = true;
+		}
+		
+		// are we in single player? and are we re-entering a hub level?
+		if (!multiplayer && !deathmatch && e.IsReopen == false && meta_marauders)
+		{
+			ThinkerIterator it = ThinkerIterator.Create("PlayerPawn");
+			Actor mo;
+			while (mo = PlayerPawn(it.Next()))
+			{
+				if (mo.CheckInventory("MetaBFG9000", 1)
+				|| mo.CheckInventory("MetaUnmaker", 1)
+				|| mo.CheckInventory("MetaSoulCube", 1)
+				|| meta_marauders == 2)
+				{
+					if (!metamap)
+						maraudme = true;
+				}
+				
+				let seedboy = Actor.Spawn("Actor", (0,0,0));	
+				levelcount = seedboy.ACS_ScriptCall("Monster_ReturnMaps");
+				Console.printf("%i maps cleared", levelcount);
+				
+				gametype = seedboy.ACS_ScriptCall("Item_GameDetector");
+				
+				if (gametype == 2)
+					Console.printf("Doom 1 Episodic");
+				else if (gametype == 3)
+					Console.printf("Doom 2 Episodic");
+				else
+					Console.printf("Doom 2 Normal");
+					
+				if (gametype == 2 || gametype == 3)
+				{
+					if (levelcount >= 6)
+					{
+						maxrauds = 4;
+					} else if (levelcount >= 4) {
+						maxrauds = 3;
+					} else {
+						maxrauds = 1;
+					}
+				} else {
+					if (levelcount >= 25)
+					{
+						maxrauds = 8;
+					} else if (levelcount >= 15) {
+						maxrauds = 3;
+					} else {
+						maxrauds = 1;
+					}
+				}
+				
+				if (meta_developer || !metamap)
+					Console.printf("Max rauds %i", maxrauds);
+			}
+		}
+		
+		if (maraudme)
+		{
+			for (int j = 0; j < maxrauds; j++)
+			{
+				Vector3 checkpos = Level.PickDeathmatchStart();
+				
+				// Means there is no deathmatch starts.
+				if (checkpos ~== (0,0,0))
+					return;
+				
+				if (Things.Size() > 0)
+				{
+					bool cont = false;
+					for (int i = 0; i < Things.Size(); i++)
+					{
+						if (Things[i].pos == checkpos)
+						{
+							cont = true;
+							break;
+						}
+					}
+					if (cont) continue;
+				}
+				// spawn a little sumptin'-sumptin'
+				Actor n = Actor.Spawn("MetaMarauderSpawner", checkpos);
+				rauds++;
+				if (meta_developer)
+					Console.printf("Marauder spawned at %i x %i", checkpos.x, checkpos.y);
+				if (n) Things.Push(n);
+			}
+			
+			if (rauds > 0)
+			{
+				let seedboy = Actor.Spawn("Actor", (0,0,0));	
+				seedboy.ACS_ScriptCall("Marauder_Warning");
+			}
+		}
+	}
+}

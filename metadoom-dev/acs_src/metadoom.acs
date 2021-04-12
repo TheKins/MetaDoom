@@ -925,6 +925,15 @@ script "BrutalChecker" ENTER
     }
 }
 
+script "Marauder_Warning" (void)
+{
+	SetActivator (0, AAPTR_NULL);
+	delay(8);
+	
+	str message = StrParam(s:"MARAUDWARNING", i:random(0,2));
+	log(s:"\cg", l:message);
+}
+
 // Debug Message for the map type.
 script "DebugLog_GameDetector" OPEN
 {

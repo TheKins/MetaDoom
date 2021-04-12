@@ -156,6 +156,12 @@ Extend Class MetaCodex_Menu
 							addingEntry = false;
 							currentEntry = null;
 						}
+						
+						if(tokenboy.value~=="Marauder" && meta_marauders == false)
+						{
+							addingEntry = false;
+							currentEntry = null;
+						}
 					}
 					else if(tokenboy.value ~== "ForceSpawn"&&currentEntry!=null)
 					{
