@@ -117,7 +117,7 @@ class PowerTimeFreezerSound : PowerTimeFreezer
 			return;
 
 		// When this powerup is in effect, pause the music.
-		S_PauseSound(false, true);
+		//S_PauseSound(false, true);
 
 		// Give the player and his teammates the power to move when time is frozen.
 		freezemask = 1 << Owner.PlayerNumber();
