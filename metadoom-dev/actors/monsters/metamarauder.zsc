@@ -127,6 +127,7 @@ class MetaMarauder : MonsterCore
 	
 	bool stunned;
 	bool shielding;
+	int shielddamage;
 	
 	States
 	{
@@ -244,6 +245,13 @@ class MetaMarauder : MonsterCore
 			bInvulnerable = false;
 			A_RemoveChildren(true, RMVF_EVERYTHING);
 			shielding = false;
+			
+			if (shielddamage > 100)
+			{
+				SetStateLabel("Summon");
+			}
+			
+			shielddamage = 0;
 		}
 		Goto See;
 		
@@ -273,6 +281,20 @@ class MetaMarauder : MonsterCore
 			A_FaceTarget();
 		}
 		goto See;
+		
+	Summon:
+		MARU G 0;
+		MARU G 0
+		{
+			shielddamage = 0;
+			
+			A_StartSound("monsters/summoner/popcorn", CHAN_VOICE);
+			
+			A_SpawnItemEx("MetaMarauderPopcorn",0,0,32,4,0,0,90);
+			A_SpawnItemEx("MetaMarauderPopcorn",0,0,32,4,0,0,270);
+		}
+		MARU GHI 4 BRIGHT;
+		Goto See;
 		
 	Death:
 		MARU R 0 { bSPRITEFLIP = random(0,1); } // random chance of sprite flipping
@@ -306,6 +328,11 @@ class MetaMarauder : MonsterCore
 		if (stunned)
 		{
 			A_Pain();
+		}
+		
+		if (shielding)
+		{
+			shielddamage = shielddamage + damage;
 		}
 		
 		return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
@@ -362,5 +389,51 @@ class MetaMarauderShield : Actor
 				}
 			}
 			Loop;
+	}
+}
+
+class MetaMarauderPopcorn : Actor
+{
+	Default
+	{
+		+CANBOUNCEWATER
+		Radius 20;
+		Height 56;
+		Speed 20;
+		Damage 0;
+		PROJECTILE;
+		+RANDOMIZE
+		+NOGRAVITY
+		gravity 0.5;
+		scale 0.5;
+	}
+
+	States
+	{
+	Spawn:
+		BOSF A 0;
+		BOSF ABCDABCD 3 BRIGHT;
+	Death:
+		TNT1 A 0 
+		{
+			A_PlaySound("inventory/siphongrenade/explode");
+			A_SpawnItem("MetaArchvileFire");
+			
+			BlockThingsIterator it = BlockThingsIterator.Create(self,32,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				
+				if (mo is "MetaSpiritWolf")
+				{
+					if (meta_developer)
+						Console.printf("Marauder Popcorn %i x %i uncomfortable with popcorn proximity", self.pos.x, self.pos.y);
+					SetStateLabel("See");
+					break;
+				}
+			}
+			A_SpawnItem("MetaSpiritWolf");
+		}
+		Stop;
 	}
 }
