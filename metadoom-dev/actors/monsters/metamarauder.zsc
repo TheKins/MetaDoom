@@ -18,6 +18,28 @@ class MetaMarauderSpawner : Actor
 	states
 	{
 		Spawn:
+			TNT1 A 0;
+			TNT1 A 1
+			{
+				BlockThingsIterator it = BlockThingsIterator.Create(self,128,0);
+				while (it.Next())
+				{
+					Actor mo = it.thing;
+					
+					if (mo is "PlayerPawn")
+					{
+						if (meta_developer)
+							Console.printf("Marauder spawner too close to player start, waiting...");
+						SetStateLabel("WaitADamnSec");
+						break;
+					}
+				}
+			}
+			goto Watch;
+		WaitADamnSec:
+			TNT1 A 2100;
+			goto Watch;
+		Watch:
 			TNT1 A 1 A_LookEx (0, 0, 512, 640, 360, "SpawnShit");
 			loop;
 		SpawnShit:
