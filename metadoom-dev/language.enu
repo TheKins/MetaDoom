@@ -99,6 +99,10 @@ OPTVAL_UNLIMITED = "Unlimited Ammo";
 OPTVAL_TRADITIONAL = "Traditional";
 OPTVAL_MODERNBERSERK = "60 Seconds";
 OPTVAL_OLDBERSERK = "Until Map Ends";
+OPTVAL_MARAUDERS_NEVER = "Never Spawn";
+OPTVAL_MARAUDERS_SUPER = "Spawn After Superweapons";
+OPTVAL_MARAUDERS_ALWAYS = "Always Spawn";
+OPTVAL_MARAUDERS_BAD = "Don't Choose This";
 
 METATOOLTIP_SPAWNINGGUNS = "Set to \"Extended\" for additional weapons to appear as you acquire the core arsenal.";
 METATOOLTIP_SPAWNINGDUDES = "Set to \"Extended\" for additional monsters to appear as you complete levels.";

@@ -198,7 +198,8 @@ OptionValue "BerserkTimer"
 
 OptionValue "Marauders"
 {
-	0, "$OPTVAL_OFF"
-	1, "$OPTVAL_ON"
-	2, "$OPTVAL_ALWAYS"
+	0, "$OPTVAL_MARAUDERS_NEVER"
+	1, "$OPTVAL_MARAUDERS_SUPER"
+	2, "$OPTVAL_MARAUDERS_ALWAYS"
+	3, "$OPTVAL_MARAUDERS_BAD"
 }

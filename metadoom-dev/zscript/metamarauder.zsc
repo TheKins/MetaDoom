@@ -39,7 +39,7 @@ Class MetaMarauderSpawnScript : EventHandler
 				if (mo.CheckInventory("MetaBFG9000", 1)
 				|| mo.CheckInventory("MetaUnmaker", 1)
 				|| mo.CheckInventory("MetaSoulCube", 1)
-				|| meta_marauders == 2)
+				|| meta_marauders > 1)
 				{
 					if (!metamap)
 						maraudme = true;
@@ -78,6 +78,9 @@ Class MetaMarauderSpawnScript : EventHandler
 						maxrauds = 1;
 					}
 				}
+				
+				if (meta_marauders == 3)
+					maxrauds = 100;
 				
 				if (meta_developer || !metamap)
 					Console.printf("Max rauds %i", maxrauds);
