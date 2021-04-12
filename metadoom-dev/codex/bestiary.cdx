@@ -116,7 +116,7 @@ page "Bestiary"
 		name "Spirit Wolf";
 		origin "Doom Eternal (2020)";
 		filter "Marauder";
-		description "These etherial creatures are rarely seen, and even in an era where mythological nightmares run riot, their existence is largely waved off as a hallucination. Ancient tablets found during the Martian archeological digs speak of loyal beasts who would accompany ancient warriors into battle, defending them tooth-and-claw all the way to the death... and beyond.\n\nAre these those very creatures? And if so, why are they accompanying Marauders into waging their war against the living?";
+		description "These etherial creatures are rarely seen, and even in an era where mythological nightmares run riot, their existence is largely waved off as a hallucination. Ancient tablets found during the Martian archeological digs speak of loyal beasts who would accompany ancient warriors into battle, defending them tooth-and-claw all the way to the death... and beyond.\n\nAre these those very creatures? And if so, why are they accompanying the dreaded Marauders into waging their war against the living?";
 	}
 	
 	//===========================================
@@ -408,7 +408,7 @@ page "Bestiary"
 		name "Marauder";
 		origin "Doom Eternal (2020)";
 		filter "Marauder";
-		description "As great in power as they are small in number, the dreaded Marauders endlessly roam areas under demonic invasion, seemingly seeming out specific individuals and eliminating them with terrifying efficiency. Once you've got their attention, look out! They'll create portals where you least expect them and actively work to ruin your day.\n\nExactly who, or what, they're looking for is unknown, but holding weapons of a certain power level will absolutely bring you to their attention...";
+		description "As great in power as they are small in number, the dreaded Marauders endlessly roam areas under demonic invasion, seemingly seeking out specific individuals and eliminating them with terrifying efficiency. Once you've got their attention, look out! They'll create portals where you least expect them and actively work to ruin your day.\n\nExactly who, or what, they're looking for is unknown, but holding weapons of a certain power level will absolutely bring you to their attention...";
 	}
 	
 	entry "MetaCyberdemon"
