@@ -13,6 +13,10 @@ class MetaMarauderSpawner : Actor
 		radius 64;
 		height 64;
 		-SOLID
+		//$Category "Monsters/MetaDoom/Marauder"
+		//$Title "Marauder Portal (Proximity Based)"
+		//$Color 12
+		//$Sprite PARUA0
 	}
 	
 	states
@@ -142,7 +146,7 @@ class MetaMarauder : MonsterCore
 		painchance "HolyWater", 0;
 		painchance "Fist", 0;
 		Tag "Marauder";
-		//$Category "Monsters/MetaDoom/"
+		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Marauder"
 		//$Color 12
 	}

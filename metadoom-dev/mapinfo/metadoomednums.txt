@@ -70,6 +70,9 @@ DoomEdNums
 	20055 = "MetaCatacomb"
 	20056 = "MetaTitantula"
 	20057 = "MetaInfernis"
+	20058 = "MetaMarauderSpawner"
+	20059 = "MetaMarauder"
+	20060 = "MetaSpiritWolf"
 	
 	// Weapons
 	20101 = "MetaShotgun"
