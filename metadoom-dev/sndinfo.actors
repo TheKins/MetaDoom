@@ -887,3 +887,29 @@ $random monsters/demonictrooper/die { monsters/demonictrooper/die1 monsters/demo
 monsters/demonictrooper/die1			idtdie1
 monsters/demonictrooper/die2			idtdie2
 monsters/demonictrooper/die3			idtdie3
+
+// marauder!
+monsters/marauder/portal/open				marprtl1
+monsters/marauder/portal/enter				marprtl2
+monsters/marauder/portal/close				marprtl3
+
+monsters/marauder/axe/charge				maraxchg
+monsters/marauder/axe/fly					maraxfly
+monsters/marauder/axe/hitworld				maraxhit
+monsters/marauder/axe/hitactor				marmelee
+
+monsters/marauder/charge				marchrg
+monsters/marauder/eyeflare				mareyes
+
+$random monsters/marauder/pain { monsters/marauder/pain1 monsters/marauder/pain2 monsters/marauder/pain3 }
+monsters/marauder/pain1				marpain1
+monsters/marauder/pain2				marpain2
+monsters/marauder/pain3				marpain3
+
+$random monsters/marauder/effort { monsters/marauder/effort1 monsters/marauder/effort2 }
+monsters/marauder/effort1				marthrv1
+monsters/marauder/effort2				marthrv2
+
+$random monsters/marauder/die { monsters/marauder/die1 monsters/marauder/die2 }
+monsters/marauder/die1				mardie1
+monsters/marauder/die2				mardie2
