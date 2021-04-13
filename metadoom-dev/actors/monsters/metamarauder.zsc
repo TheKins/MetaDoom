@@ -132,7 +132,7 @@ class MetaMarauder : MonsterCore
 		Radius 20;
 		Height 56;
 		Speed 8;
-		PainChance 200;
+		PainChance 255;
 		Monster;
 		+FLOORCLIP
 		-DOHARMSPECIES
@@ -144,7 +144,7 @@ class MetaMarauder : MonsterCore
 		Obituary "$OB_MARAUDER";
 		damagefactor "HolyWater", 0;
 		painchance "HolyWater", 0;
-		painchance "Fist", 0;
+		painchance "Axe", 0;
 		Tag "Marauder";
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Marauder"
@@ -180,17 +180,19 @@ class MetaMarauder : MonsterCore
 				} else {
 					if (meta_developer)
 						Console.printf("%i: Sweet spot!", Distance3D(target));
-						
+					
+					A_FaceTarget();
+					
 					FLineTraceData SurfaceData;
 					FLineTraceData SurfaceDataL;
 					FLineTraceData SurfaceDataR;
-					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, data:SurfaceData);
-					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, offsetside: 24, data:SurfaceDataL);
-					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, offsetside: -24, data:SurfaceDataR);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, data:SurfaceData);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 32, data:SurfaceDataL);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -32, data:SurfaceDataR);
 					
-					if (SurfaceData.HitType != SurfaceData.TRACE_HitNone
-					|| SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone
-					|| SurfaceDataR.HitType != SurfaceDataR.TRACE_HitNone )
+					if ((SurfaceData.HitType != SurfaceData.TRACE_HitNone && SurfaceData.HitActor != target)
+					|| (SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone && SurfaceData.HitActor != target)
+					|| (SurfaceDataR.HitType != SurfaceDataR.TRACE_HitNone && SurfaceData.HitActor != target))
 					{
 						if (meta_developer)
 								Console.printf("Marauder at %i x %i ain't charging into a wall.", self.pos.x, self.pos.y);
@@ -258,7 +260,8 @@ class MetaMarauder : MonsterCore
 			bNOBLOOD = 1;
 		}
 		Goto See;
-		
+	Pain.LightningStun:
+	Pain.Axe:
 	Pain:
 		MARU A 0
 		{
@@ -384,6 +387,12 @@ class MetaMarauder : MonsterCore
 		
 		return Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
 	}
+	
+	override void Tick()
+	{
+		A_TakeInventory("BleedingCounter", 99999);
+		Super.Tick();
+	}	
 }
 
 class MetaMarauderAxe : Actor 
