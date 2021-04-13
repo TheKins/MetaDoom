@@ -128,7 +128,7 @@ class MetaMarauder : MonsterCore
 {
 	Default
 	{
-		Health 500;
+		Health 700;
 		Radius 20;
 		Height 56;
 		Speed 8;
@@ -161,7 +161,21 @@ class MetaMarauder : MonsterCore
 		MARU AB 10 A_Look;
 		Loop;
 	See:
+		MARU A 0 A_Jump (256, "SeeDodgy", "SeeFast", "SeeStraight");
+	SeeDodgy:
+		MARU A 0 { speed = 8; }
 		MARU AAAABBBBCCCCDDDD 2 A_MetaChase("Missile","Missile",CHF_FASTCHASE);
+		MARU A 0 A_Jump (64, "See");
+		loop;
+	SeeFast:
+		MARU A 0 { speed = 16; }
+		MARU AAAABBBBCCCCDDDD 2 A_MetaChase("Missile","Missile");
+		MARU A 0 A_Jump (64, "See");
+		Loop;
+	SeeStraight:
+		MARU A 0 { speed = 16; }
+		MARU AAAABBBBCCCCDDDD 2 A_MetaChase("Missile","Missile", CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN);
+		MARU A 0 A_Jump (64, "See");
 		Loop;
 	Missile:
 		MARU A 0
