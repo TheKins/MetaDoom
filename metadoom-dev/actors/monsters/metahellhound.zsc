@@ -335,6 +335,7 @@ class MetaSpiritWolf : MetaCerberus
 		Obituary "$OB_DOGM";
 		Tag "Spirit Wolf";
 		+BRIGHT
+		+NOINFIGHTING
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Spirit Wolf"
 		//$Color 12
