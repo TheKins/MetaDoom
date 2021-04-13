@@ -201,8 +201,8 @@ class MetaMarauder : MonsterCore
 					FLineTraceData SurfaceDataL;
 					FLineTraceData SurfaceDataR;
 					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, data:SurfaceData);
-					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 32, data:SurfaceDataL);
-					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -32, data:SurfaceDataR);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 48, data:SurfaceDataL);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -48, data:SurfaceDataR);
 					
 					if ((SurfaceData.HitType != SurfaceData.TRACE_HitNone && SurfaceData.HitActor != target)
 					|| (SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone && SurfaceData.HitActor != target)
@@ -389,6 +389,12 @@ class MetaMarauder : MonsterCore
 	
 	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
 	{
+		// Stop Marauder from getting stunned by nearby enemies when attacking player
+		if (!shielding && source != target)
+		{
+			damage = 0;
+		}
+		
 		if (stunned)
 		{
 			A_Pain();
