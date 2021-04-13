@@ -180,7 +180,24 @@ class MetaMarauder : MonsterCore
 				} else {
 					if (meta_developer)
 						Console.printf("%i: Sweet spot!", Distance3D(target));
-					SetStateLabel("MissileSweetSpot");
+						
+					FLineTraceData SurfaceData;
+					FLineTraceData SurfaceDataL;
+					FLineTraceData SurfaceDataR;
+					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, data:SurfaceData);
+					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, offsetside: 24, data:SurfaceDataL);
+					self.LineTrace(self.angle, 240, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: 28, offsetside: -24, data:SurfaceDataR);
+					
+					if (SurfaceData.HitType != SurfaceData.TRACE_HitNone
+					|| SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone
+					|| SurfaceDataR.HitType != SurfaceDataR.TRACE_HitNone )
+					{
+						if (meta_developer)
+								Console.printf("Marauder at %i x %i ain't charging into a wall.", self.pos.x, self.pos.y);
+							SetStateLabel("See");
+					} else {
+						SetStateLabel("MissileSweetSpot");
+					}
 				}
 			}
 		}
