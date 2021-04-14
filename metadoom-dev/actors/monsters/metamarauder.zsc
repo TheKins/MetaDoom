@@ -147,6 +147,10 @@ class MetaMarauder : MonsterCore
 		damagefactor "HolyWater", 0;
 		painchance "HolyWater", 0;
 		painchance "Axe", 0;
+		damagefactor "ChaingunTurret", 0.2;
+		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
+		MonsterCore.CanBeScared false;
 		Tag "Marauder";
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Marauder"
@@ -163,17 +167,44 @@ class MetaMarauder : MonsterCore
 		MARU AB 10 A_Look;
 		Loop;
 	See:
-		MARU A 0 A_Jump (256, "SeeDodgy", "SeeFast");
+		MARU A 0
+		{
+			if (CheckIfTargetInLOS())
+			{
+				if (Distance3D(target) < 384)
+				{
+					SetStateLabel("SeeDodgy");	
+				} else {
+					SetStateLabel("SeeFast");
+				}
+			} else {
+				SetStateLabel("SeeFast");
+			}
+		}
+		//MARU A 0 A_Jump (256, "SeeDodgy", "SeeFast");
 	SeeDodgy:
 		MARU A 0 { speed = 8; }
 		MARU AAAABBBBCCCCDDDD 2 A_MarauderChase("Missile","Missile",CHF_FASTCHASE);
-		MARU A 0 A_Jump (64, "See");
-		loop;
+		goto See;
 	SeeFast:
-		MARU A 0 { speed = 16; }
-		MARU AAAABBBBCCCCDDDD 2 A_MarauderChase("Missile","Missile");
-		MARU A 0 A_Jump (64, "See");
-		Loop;
+		MARU A 0 { speed = 12; }
+		MARU AA 1 A_MarauderChase("Missile","Missile");
+		MARU AA 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU AA 1 A_MarauderChase("Missile","Missile");
+		MARU AA 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU BB 1 A_MarauderChase("Missile","Missile");
+		MARU BB 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU BB 1 A_MarauderChase("Missile","Missile");
+		MARU BB 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU CC 1 A_MarauderChase("Missile","Missile");
+		MARU CC 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU CC 1 A_MarauderChase("Missile","Missile");
+		MARU CC 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU DD 1 A_MarauderChase("Missile","Missile");
+		MARU DD 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		MARU DD 1 A_MarauderChase("Missile","Missile");
+		MARU DD 1 A_MarauderChase("Missile","Missile", CHF_DONTTURN);
+		goto See;
 	Missile:
 		MARU A 0
 		{
@@ -198,17 +229,27 @@ class MetaMarauder : MonsterCore
 					FLineTraceData SurfaceDataL;
 					FLineTraceData SurfaceDataR;
 					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, data:SurfaceData);
-					self.LineTrace(self.angle, 96, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 10, data:SurfaceDataL);
-					self.LineTrace(self.angle, 96, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -10, data:SurfaceDataR);
+					int dizz = SurfaceData.distance;
+					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 10, data:SurfaceDataL);
+					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -10, data:SurfaceDataR);
 					
-					if ((SurfaceData.HitType != SurfaceData.TRACE_HitNone && SurfaceData.HitActor != target)
-					|| (SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone && SurfaceData.HitActor != target)
-					|| (SurfaceDataR.HitType != SurfaceDataR.TRACE_HitNone && SurfaceData.HitActor != target))
+					if (SurfaceData.HitType != SurfaceData.TRACE_HitNone && SurfaceData.HitActor != target)
 					{
 						if (meta_developer)
 								Console.printf("Marauder at %i x %i ain't charging into a wall.", self.pos.x, self.pos.y);
 							SetStateLabel("See");
 					} else {
+						self.LineTrace(self.angle, dizz / 2, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 5, data:SurfaceDataL);
+						self.LineTrace(self.angle, dizz / 2, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -5, data:SurfaceDataR);
+						
+						if ((SurfaceDataL.HitType != SurfaceDataL.TRACE_HitNone && SurfaceData.HitActor != target)
+						|| (SurfaceDataR.HitType != SurfaceDataR.TRACE_HitNone && SurfaceData.HitActor != target))
+						{
+							if (meta_developer)
+									Console.printf("Marauder at %i x %i ain't sideswiping a wall.", self.pos.x, self.pos.y);
+								SetStateLabel("See");
+						}
+					
 						SetStateLabel("MissileSweetSpot");
 					}
 				}
