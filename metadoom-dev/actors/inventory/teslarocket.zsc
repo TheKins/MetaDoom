@@ -140,10 +140,10 @@ class TeslaZapper : Actor
 				if(tracer!=null)
 				{
 					A_PlaySound("weapons/bfg/spray");
-					tracer.DamageMobj(target,target,5,'Normal',0,AngleTo(tracer)); //directly damages the tracer, attributing the damage to the projectile's owner
+					tracer.DamageMobj(target,target,3,'Tesla',0,AngleTo(tracer)); //directly damages the tracer, attributing the damage to the projectile's owner
 				}
 				target = tracer; //we don't need the owner anymore, but we do need the target to shoot this laser effect at
-				A_CustomRailgun(0, 0, "", "", RGF_SILENT | RGF_NOPIERCING, 1, 0, "MetaBulletPuff", 0, 0, 256, 0, 4, 0, "TeslaZapperTrail");
+				A_CustomRailgun(0, 0, "", "", RGF_SILENT | RGF_NOPIERCING, 1, 0, "TeslaZapperTrail", 0, 0, 256, 0, 4, 0, "TeslaZapperTrail");
 			}
 		}
 		Goto Death;
@@ -183,6 +183,7 @@ class TeslaZapperTrail : Actor
 		Alpha 0.75;
 		Scale 0.5;
 		+NOINTERACTION
+		damagetype "Tesla";
 	}
 	
 	States

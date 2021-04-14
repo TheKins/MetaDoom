@@ -43,6 +43,7 @@ class MetaCyberdemon : MonsterCore
 		damagefactor "SpiderdemonTKAttack", 0.5;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
 		scale 0.75;
 		MonsterCore.CanBeScared false;
 		Tag "Cyberdemon";

@@ -36,6 +36,7 @@ class MetaMotherDemon : MonsterCore
 		painchance "ChaingunTurret", 0;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Mother Demon";
 		//$Category "Monsters/MetaDoom/Bosses"
@@ -272,6 +273,7 @@ class MetaHellGuard : MonsterCore
 		painchance "ChaingunTurret", 0;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Hell Guard";
 		//$Category "Monsters/MetaDoom/Bosses"
@@ -518,6 +520,7 @@ class MetaHarbinger : MonsterCore
 		damagefactor "SpiderdemonTKAttack", 0.5;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Harbinger of Doom";
 		//$Category "Monsters/MetaDoom/Bosses"
@@ -703,6 +706,7 @@ class MetaKronos : MonsterCore
 		damagefactor "SpiderdemonTKAttack", 0.5;
 		painchance "Vampire", 128;
 		damagefactor "Vampire", 0.25;
+		damagefactor "Tesla", 0.25;
 		MonsterCore.CanBeScared false;
 		Tag "Kronos";
 		//$Category "Monsters/MetaDoom/Bosses"

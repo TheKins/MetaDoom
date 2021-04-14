@@ -82,6 +82,7 @@ Item Changes:
 - Fixed Siphon Grenades not rewarding any health to their user if the affected
   monster was targeting something else (ie. if they were infighting or distracted
   by a Hologram item.)
+- Tesla Rocket damage has been nerfed, and bosses are now resistant to them.
 - Powerups now play audio cues to warn you when they're about to run out.
 - Assorted minor audio updates.
 
