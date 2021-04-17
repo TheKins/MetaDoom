@@ -22,6 +22,8 @@ class RedCard2 : Key replaces RedCard
 		+DONTGIB
 	}
 	
+	mixin NoPickupSoundCutOff;
+	
 	States
 	{
 	Spawn:
@@ -67,6 +69,8 @@ class YellowCard2 : Key replaces YellowCard
 		+NOTDMATCH
 		+DONTGIB
 	}
+	
+	mixin NoPickupSoundCutOff;
 	
 	States
 	{
@@ -114,6 +118,8 @@ class BlueCard2 : Key replaces BlueCard
 		+DONTGIB
 	}
 	
+	mixin NoPickupSoundCutOff;
+	
 	States
 	{
 	Spawn:
@@ -160,6 +166,8 @@ class RedSkull2 : Key replaces RedSkull
 		+DONTGIB
 	}
 	
+	mixin NoPickupSoundCutOff;
+	
 	States
 	{
 	Spawn:
@@ -196,6 +204,8 @@ class YellowSkull2 : Key replaces YellowSkull
 		+DONTGIB
 	}
 	
+	mixin NoPickupSoundCutOff;
+	
 	States
 	{
 	Spawn:
@@ -231,6 +241,8 @@ class BlueSkull2 : Key replaces BlueSkull
 		+NOTDMATCH
 		+DONTGIB
 	}
+	
+	mixin NoPickupSoundCutOff;
 	
 	States
 	{

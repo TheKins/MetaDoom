@@ -84,6 +84,7 @@ Item Changes:
   by a Hologram item.)
 - Tesla Rocket damage has been nerfed, and bosses are now resistant to them.
 - Powerups now play audio cues to warn you when they're about to run out.
+- Key pickup sounds no longer get cut off by other pickup sounds.
 - Assorted minor audio updates.
 
 Player Changes:
