@@ -79,7 +79,8 @@ class MetaMapFucker : LevelPostProcessor
 			AddThing(20734, (314,1903,985), 0, SKILLS_ALL, MODES_ALL);
 			AddThing(20734, (612,1803,64), 0, SKILLS_ALL, MODES_ALL);
 			
-			
+			// Add Marauder
+			AddThing(20058, (22,3339,0), 0, SKILLS_ALL, MODES_ALL);
 		}
 	}
 }
