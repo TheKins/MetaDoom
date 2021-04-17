@@ -13,6 +13,8 @@ class MetaMarauderSpawner : Actor
 		radius 64;
 		height 64;
 		-SOLID
+		+ISMONSTER
+		+COUNTKILL
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Marauder Portal (Proximity Based)"
 		//$Color 12
@@ -48,7 +50,11 @@ class MetaMarauderSpawner : Actor
 			loop;
 		SpawnShit:
 			TNT1 A 0 A_FaceTarget();
-			TNT1 A 0 A_SpawnItemEx("MetaMarauderPortal", 0, 0, 0, 0, 0, 0, 0, SXF_SETTARGET);
+			TNT1 A 0 
+			{
+				A_SpawnItemEx("MetaMarauderPortal", 0, 0, 0, 0, 0, 0, 0, SXF_SETTARGET);
+				ClearCounters();
+			}
 			stop;
 	}
 }
@@ -67,6 +73,8 @@ class MetaMarauderPortal : Actor
 		+ROLLSPRITE
 		+ROLLCENTER
 		+INTERPOLATEANGLES
+		+ISMONSTER
+		+COUNTKILL
 	}
 	
 	states
@@ -97,6 +105,7 @@ class MetaMarauderPortal : Actor
 			A_FaceTarget();
 			A_StartSound("monsters/marauder/portal/enter", CHAN_AUTO, 0, 1.0, ATTN_NONE);
 			A_SpawnItemEx("MetaMarauder", 0, 0, 0, 0, 0, 0, 0, SXF_SETTARGET);
+			ClearCounters();
 		}
 		PARU A 0
 		{
