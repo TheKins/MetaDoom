@@ -42,6 +42,7 @@ Class MetaBFG9000 : MetaDoomWeapon
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.25;
 		Weapon.UpSound "weapons/bfg/use";
+		Weapon.SlotNumber 7;
 		//$Category "Weapons/MetaDoom"
 		//$Title "BFG9000"
 		//$NotAngled

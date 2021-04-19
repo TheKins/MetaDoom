@@ -43,6 +43,7 @@ class MetaUnmaker : MetaDoomWeapon
 		Tag "$TAGUNMAKER";
 		Weapon.YAdjust 10;
 		Weapon.UpSound "weapons/unmaker/use";
+		Weapon.SlotNumber 7;
 		//Decal Scorch;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Unmaker"

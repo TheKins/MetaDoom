@@ -16,6 +16,7 @@ class MetaLastResortFist : MetaDoomWeapon
 		Weapon.Kickback 100;
 		Obituary "$OB_BERSERK";
 		Tag "$TAG_FIST";
+		Weapon.SlotNumber 1;
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 		+WEAPON.NOALERT
@@ -57,6 +58,7 @@ class MetaBerserkFist : MetaDoomWeapon
 		+WEAPON.MELEEWEAPON
 		+WEAPON.NOALERT
 		Weapon.UpSound "weapons/swap";
+		Weapon.SlotNumber 1;
 	}
 	
 	States

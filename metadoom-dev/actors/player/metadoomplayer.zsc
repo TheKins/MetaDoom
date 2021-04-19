@@ -40,14 +40,6 @@ class MetaDoomPlayer : PlayerPawn
 		Player.DisplayName "Slayer";
 		Player.CrouchSprite "MPLC";
 		Player.StartItem "MetaPistol";
-		Player.WeaponSlot 1, "MetaPistol", "MetaBerserkFist", "MetaLastResortFist", "MetaCheatDetector";
-		Player.WeaponSlot 2, "MetaHolyWaterPistol", "MetaShotgun";
-		Player.WeaponSlot 3, "MetaFireExtinguisher", "MetaSuperShotgun";
-		Player.WeaponSlot 4, "MetaChaingun", "MetaMachineGun";
-		Player.WeaponSlot 5, "MetaGrenadeLauncher", "MetaRocketLauncher";
-		Player.WeaponSlot 6, "MetaGaussCannon", "MetaLightningGun", "MetaPlasmaRifle";
-		Player.WeaponSlot 7, "MetaBFG9000", "MetaUnmaker", "MetaSoulcube";
-		Player.WeaponSlot 8, "MetaChainsaw", "MetaAxe";
 		
 		+NOSKIN
 		

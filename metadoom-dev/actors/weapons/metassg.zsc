@@ -44,6 +44,7 @@ class MetaSuperShotgun : MetaDoomWeapon
 		Tag "$TAG_SUPERSHOTGUN";
 		Inventory.PickupSound "weapons/ssg/get";
 		Weapon.UpSound "weapons/ssg/use";
+		Weapon.SlotNumber 3;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Super Shotgun"
 		//$NotAngled

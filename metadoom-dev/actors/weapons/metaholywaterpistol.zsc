@@ -64,6 +64,7 @@ class MetaHolyWaterPistol : MetaDoomWeapon
 		Inventory.PickupSound "weapons/waterpistol/get";
 		scale 0.75;
 		Weapon.UpSound "weapons/waterpistol/empty";
+		Weapon.SlotNumber 2;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Holy Water Pistol"
 		//$NotAngled

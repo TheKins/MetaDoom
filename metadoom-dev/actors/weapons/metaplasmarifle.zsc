@@ -38,6 +38,7 @@ class MetaPlasmaRifle : MetaDoomWeapon
 		Inventory.PickupSound "weapons/plasmarifle/get";
 		+WEAPON.NOALERT;
 		Weapon.UpSound "weapons/plasmarifle/use";
+		Weapon.SlotNumber 6;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Plasma Rifle"
 		//$NotAngled

@@ -40,6 +40,7 @@ class MetaChainsaw : MetaDoomWeapon
 		Inventory.PickupSound "weapons/chainsaw/get";
 		Weapon.YAdjust 10;
 		Weapon.UpSound "weapons/chainsaw/use";
+		Weapon.SlotNumber 8;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Chainsaw"
 		//$NotAngled

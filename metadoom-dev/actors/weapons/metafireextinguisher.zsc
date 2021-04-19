@@ -61,6 +61,7 @@ class MetaFireExtinguisher : MetaDoomWeapon
 		Tag "$TAGFIREX";
 		Inventory.PickupSound "weapons/fireextinguisher/get";
 		Weapon.UpSound "weapons/fireextinguisher/use";
+		Weapon.SlotNumber 3;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Fire Extinguisher"
 		//$NotAngled

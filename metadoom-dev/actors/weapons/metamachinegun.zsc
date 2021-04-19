@@ -45,6 +45,7 @@ class MetaMachineGun : MetaDoomWeapon
 		+WEAPON.ALT_AMMO_OPTIONAL
 		+WEAPON.NOALERT
 		Weapon.UpSound "weapons/machinegun/use";
+		Weapon.SlotNumber 4;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Assault Rifle"
 		//$NotAngled

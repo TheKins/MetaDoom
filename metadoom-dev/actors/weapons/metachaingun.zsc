@@ -41,6 +41,7 @@ class MetaChaingun : MetaDoomWeapon
 		Weapon.AmmoGive 100;
 		Weapon.AmmoUse 1;
 		Weapon.UpSound "weapons/chaingun/use";
+		Weapon.SlotNumber 4;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Chaingun"
 		//$NotAngled
