@@ -47,7 +47,6 @@ class MetaSoulcube : MetaDoomWeapon
 		+INVENTORY.UNTOSSABLE
 		+FLOATBOB
 		Weapon.UpSound "weapons/soulcube/use";
-		Weapon.SlotNumber 7;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Soul Cube"
 		//$NotAngled

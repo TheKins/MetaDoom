@@ -41,7 +41,6 @@ class MetaPistol : MetaDoomWeapon
 		+WEAPON.NOALERT
 		+INVENTORY.UNTOSSABLE
 		Weapon.UpSound "weapons/pistol/use";
-		Weapon.SlotNumber 1;
 	}
 	
 	States

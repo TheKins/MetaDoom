@@ -42,7 +42,6 @@ class MetaGaussCannon : MetaDoomWeapon
 		//Decal PlasmaScorch
 		damagetype "Gauss";
 		Weapon.UpSound "weapons/gauss/use";
-		Weapon.SlotNumber 6;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Gauss Cannon"
 		//$NotAngled

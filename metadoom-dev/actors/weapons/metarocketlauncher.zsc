@@ -48,7 +48,6 @@ class MetaRocketLauncher : MetaDoomWeapon
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
 		Weapon.UpSound "weapons/rocketlauncher/use";
-		Weapon.SlotNumber 5;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Rocket Launcher"
 		//$NotAngled

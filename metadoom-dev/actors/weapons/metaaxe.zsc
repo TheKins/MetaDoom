@@ -38,7 +38,6 @@ class MetaAxe : MetaDoomWeapon
 		Inventory.PickupMessage "$GOTAXE";
 		Inventory.PickupSound "weapons/axe/get";
 		Weapon.UpSound "weapons/axe/use";
-		Weapon.SlotNumber 8;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Fire Axe"
 		//$NotAngled

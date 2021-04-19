@@ -41,7 +41,6 @@ class MetaShotgun : MetaDoomWeapon
 		Inventory.PickupSound "weapons/shotgun/get";
 		+WEAPON.ALT_AMMO_OPTIONAL
 		Weapon.UpSound "weapons/shotgun/cock1";
-		Weapon.SlotNumber 2;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Combat Shotgun"
 		//$NotAngled

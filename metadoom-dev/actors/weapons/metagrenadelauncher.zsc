@@ -44,7 +44,6 @@ class MetaGrenadeLauncher : MetaDoomWeapon
 		Weapon.BobRangeX 0.5;
 		Weapon.BobRangey 0.75;
 		Weapon.UpSound "weapons/grenadelauncher/use";
-		Weapon.SlotNumber 5;
 		//$Category "Weapons/MetaDoom"
 		//$Title "Grenade Launcher"
 		//$NotAngled
