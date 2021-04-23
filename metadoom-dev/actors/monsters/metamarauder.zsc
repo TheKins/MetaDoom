@@ -180,7 +180,10 @@ class MetaMarauder : MonsterCore
 	See:
 		MARU A 0
 		{
-			if (CheckIfTargetInLOS())
+			if (self.pos.z != self.floorz)
+			{
+				SetStateLabel("SeeFast");
+			} else if (CheckIfTargetInLOS())
 			{
 				if (Distance3D(target) < 384)
 				{
@@ -490,12 +493,6 @@ class MetaMarauder : MonsterCore
 	void A_MarauderChase(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
 	{
 		DoClimbing();
-		
-		if (self.pos.z != self.floorz)
-		{
-			A_Recoil(-3);
-		}
-		
 		A_MetaChase(melee, missile, flags);
 		
 		
@@ -513,14 +510,21 @@ class MetaMarauder : MonsterCore
 			if (SurfaceData.HitLine.Flags & Line.ML_TWOSIDED)
 			{
 				FLineTraceData ConfirmData;
-				self.LineTrace(self.angle, SurfaceData.Distance + 16, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: self.height, data:ConfirmData);
 				
-				if (ConfirmData.HitType == SurfaceData.TRACE_HitNone)
+				for (int i = self.height; i < 170; i = i + 10)
 				{
-					//Console.printf ("Rock!");
-					self.vel.z = 10;
-				} else {				
-					//angle = angle + 180;
+					self.LineTrace(self.angle, SurfaceData.Distance + 16, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: i, data:ConfirmData);
+				
+					if (ConfirmData.HitType == SurfaceData.TRACE_HitNone)
+					{
+						Console.printf("Height: %i, Vel: %f", i, (i / 6));
+						self.vel.z = i / 6;
+						A_FaceTarget();
+						A_Recoil(-3);
+						break;
+					} else {				
+						
+					}
 				}
 			}
 		}
