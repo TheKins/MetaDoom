@@ -335,10 +335,12 @@ class MetaSpiritWolf : MetaCerberus
 		SeeSound "monsters/cerberus/see";
 		Obituary "$OB_DOGM";
 		Tag "Spirit Wolf";
+		species "SpiritWolf";
 		+BRIGHT
 		+NOINFIGHTING
 		+NOBLOCKMONST
 		+BLOCKASPLAYER
+		+THRUSPECIES
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Spirit Wolf"
 		//$Color 12
