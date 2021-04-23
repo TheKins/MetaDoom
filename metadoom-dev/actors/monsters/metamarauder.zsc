@@ -242,10 +242,10 @@ class MetaMarauder : MonsterCore
 					FLineTraceData SurfaceData;
 					FLineTraceData SurfaceDataL;
 					FLineTraceData SurfaceDataR;
-					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: 8, data:SurfaceData);
+					self.LineTrace(self.angle, 240, 0, TRF_BLOCKSELF, offsetz: MaxStepHeight + 2, data:SurfaceData);
 					int dizz = SurfaceData.distance;
-					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: 10, data:SurfaceDataL);
-					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: 8, offsetside: -10, data:SurfaceDataR);
+					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: MaxStepHeight + 2, offsetside: 10, data:SurfaceDataL);
+					self.LineTrace(self.angle, dizz, 0, TRF_BLOCKSELF, offsetz: MaxStepHeight + 2, offsetside: -10, data:SurfaceDataR);
 					
 					if (SurfaceData.HitType != SurfaceData.TRACE_HitNone && SurfaceData.HitActor != target)
 					{
