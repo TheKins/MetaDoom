@@ -490,3 +490,89 @@ object MetaTitantulaPlasma
     frame SCBXD { light IMPBALL_X2 }
     frame SCBXE { light IMPBALL_X3 }
 }
+
+// Marauder Shit
+pointlight REDAXE
+{
+    color 1.0 0.5 0.5
+    size 32
+	attenuate 1
+}
+
+flickerlight REDAXE_X1
+{
+    color 0.7 0.3 0.3
+    size 48
+    secondarySize 72
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight REDAXE_X2
+{
+    color 0.4 0.2 0.2
+    size 72
+    secondarySize 84
+    chance 0.3
+	attenuate 1
+}
+
+flickerlight REDAXE_X3
+{
+    color 0.2 0.1 0.1
+    size 84
+    secondarySize 96
+    chance 0.3
+	attenuate 1
+}
+
+object MetaMarauderAxe
+{
+    frame SPAXA { light REDAXE }
+    frame SPAXB { light REDAXE }
+	frame SPAXC { light REDAXE }
+
+    frame SPAXD { light REDAXE_X1 }
+    frame SPAXE { light REDAXE_X2 }
+    frame SPAXF { light REDAXE_X3 }
+}
+
+pointlight MARSSHIELD
+{
+    color 1.0 0.5 0.5
+    size 48
+	attenuate 1
+}
+
+object MetaMarauderShield
+{
+    frame MARS { light MARSSHIELD }
+}
+
+object MetaMarauder
+{
+    frame MARUF { light ZOMBIEATK }
+	
+	frame MARUK { light REDAXE }
+	frame MARUL { light REDAXE }
+	frame MARUM { light REDAXE }
+	frame MARUN { light REDAXE }
+	frame MARUO { light REDAXE }
+	frame MARUP { light REDAXE }
+}
+
+pulselight SPIRITWOLF
+{
+    color 0.0 1.0 0.0
+    size 32
+    secondarySize 24
+    interval 2.0
+    offset 0 16 0
+	dontlightself 1
+	attenuate 0
+}
+
+object MetaSpiritWolf
+{
+    frame MDOG  { light SPIRITWOLF    }
+}
