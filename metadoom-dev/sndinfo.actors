@@ -893,6 +893,9 @@ monsters/marauder/portal/open				marprtl1
 monsters/marauder/portal/enter				marprtl2
 monsters/marauder/portal/close				marprtl3
 
+monsters/marauder/fire						marfire
+monsters/marauder/shield					marshld1
+
 monsters/marauder/axe/charge				maraxchg
 monsters/marauder/axe/fly					maraxfly
 monsters/marauder/axe/hitworld				maraxhit

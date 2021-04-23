@@ -330,12 +330,15 @@ class MetaSpiritWolf : MetaCerberus
 		Health 100;
 		Speed 8;
 		FastSpeed 13;
+		radius 15;
 		ActiveSound "monsters/cerberus/bark";
 		SeeSound "monsters/cerberus/see";
 		Obituary "$OB_DOGM";
 		Tag "Spirit Wolf";
 		+BRIGHT
 		+NOINFIGHTING
+		+NOBLOCKMONST
+		+BLOCKASPLAYER
 		//$Category "Monsters/MetaDoom/Marauder"
 		//$Title "Spirit Wolf"
 		//$Color 12
