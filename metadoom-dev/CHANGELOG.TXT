@@ -1,5 +1,5 @@
-NEXT
-====
+v7 "Ghost" (24/04/21)
+=====================
 
 Monster Changes:
 - Added # new monsters! (Titantula, Infernis)
