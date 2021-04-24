@@ -46,8 +46,8 @@ page "Other"
     {
 		itemToCheck "MetaCodex_LootFigurine6";
         name "Misplaced Figurine";
-        origin "??? (2001)";
-        description "<ERROR - ARTIFACT DATA NOT FOUND>\n<SCAN ARTIFACT? :> y>\n\nSearching: .................\n<FATAL ERROR (BLAM!) - ILLEGAL EXCEPTION THROWN IN 0x34377777>\n<ERROR ANALYSIS: ARTIFACT NOT OF THIS OR ANY KNOWN REALITIES>\n\n<SUBMIT AN ERROR REPORT? :> n>\n\n<PERSONAL NOTES>\n(What a strange statue. It looks like one of the marines, but also not. A distorted reflection in a house of mirrors. What could have bought this here? Just another answer to beat out of the UAC...)";
+        origin "Halo: Combat Evolved (2001)";
+        description "The success of the Marine - and the Doom series - inspired a small legion of copycat killers, often in their own armored suits, all waging their own personal wars against some sinister menace from beyond the stars. This particular fighter left very little about his aesthetic inspiration to the imagination, but differed greatly in ability and sheer scope of arsenal. Which is to say, he was pretty sure that two guns were enough for all of you.\n\nFate has recently conspired to bring this figure into the Marine's orbit. Whether they collide, unite, or just kind of ignore each other is a tale yet to be written...";
     }
 
 	entry "LoreSkateboardDummy"
