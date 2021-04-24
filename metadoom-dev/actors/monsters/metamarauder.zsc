@@ -517,7 +517,8 @@ class MetaMarauder : MonsterCore
 				
 					if (ConfirmData.HitType == SurfaceData.TRACE_HitNone)
 					{
-						Console.printf("Height: %i, Vel: %f", i, (i / 6));
+						if (meta_developer)
+							Console.printf("Height: %i, Vel: %f", i, (i / 6));
 						self.vel.z = i / 6;
 						A_FaceTarget();
 						A_Recoil(-3);
