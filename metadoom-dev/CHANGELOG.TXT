@@ -2,7 +2,7 @@ v7 "Ghost" (24/04/21)
 =====================
 
 Monster Changes:
-- Added # new monsters! (Titantula, Infernis)
+- Added 2 new monsters! (Titantula, Infernis)
 - Added the dreaded Marauders! You can disable or change their spawning behavior
   with the new CVar in the MetaDoom options menu.
 - Recreated Cacodemon sounds from original source materials (Thanks Decino!)
