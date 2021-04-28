@@ -129,7 +129,7 @@ class MetaZSec : MonsterCore
 		ZSEC A 0;
 		ZSEC A 0
 		{
-			if (meta_mapbreakers == 1)
+			if (meta_mapbreakers == 0)
 			{
 				bNODROPOFF = 1;
 			}
