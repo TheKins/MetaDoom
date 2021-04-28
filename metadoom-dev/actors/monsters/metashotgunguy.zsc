@@ -126,14 +126,6 @@ class MetaZSec : MonsterCore
 	States
 	{
 	Spawn:
-		ZSEC A 0;
-		ZSEC A 0
-		{
-			if (meta_mapbreakers == 0)
-			{
-				bNODROPOFF = 1;
-			}
-		}
 		ZSEC AB 10 A_Look;
 		Loop;
 	See:
@@ -208,5 +200,17 @@ class MetaZSec : MonsterCore
 		ZSEC L 5 { bSPRITEFLIP = 0; }
 		ZSEC KJIH 5;
 		Goto See;
+	}
+	
+	override void Tick()
+	{
+		if (meta_mapbreakers == 0)
+		{
+			bNODROPOFF = 1;
+		} else {
+			bNODROPOFF = 0;
+		}
+		
+		Super.Tick();
 	}
 }
