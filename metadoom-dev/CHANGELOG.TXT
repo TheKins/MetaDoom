@@ -4,6 +4,9 @@ NEXT
 Monster Changes:
 - Fixed an issue where handling of the Potential Map-Breakers CVar was reversed
   for the Z-Sec and their dodge roll.
+- Marauder spawners will now attempt to remove any other Marauder spawners in a
+  128-unit radius, accounting for cases where Deathmatch Spawns were all placed
+  in a big clump by a disinterested level designer.
 
 v7 "Ghost" (24/04/21)
 =====================
