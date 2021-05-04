@@ -342,8 +342,13 @@ class MetaMarauder : MonsterCore
 			shielddamage = 101;
 		}
 		goto PainShield;
+	Pain.Vampire:
 	Pain.LightningStun:
 	Pain.Axe:
+	Pain.Fist:
+	Pain.BerserkFist:
+	Pain.KrautBoot:
+	Pain.ChainsawMelee:
 	Pain:
 		MARU A 0
 		{

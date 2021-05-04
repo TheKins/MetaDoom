@@ -7,6 +7,9 @@ Monster Changes:
 - Marauder spawners will now attempt to remove any other Marauder spawners in a
   128-unit radius, accounting for cases where Deathmatch Spawns were all placed
   in a big clump by a disinterested level designer.
+- Marauders no longer drop health when punched, fixing an exploit where you could
+  bully them into fully healing you on a whim. Indeed, most custom damagetype
+  effects are now disabled on Marauders.
 
 v7 "Ghost" (24/04/21)
 =====================
