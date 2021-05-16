@@ -10,6 +10,10 @@ Monster Changes:
 - Marauders no longer drop health when punched, fixing an exploit where you could
   bully them into fully healing you on a whim. Indeed, most custom damagetype
   effects are now disabled on Marauders.
+  
+UI Changes:
+- Fixed an oversight that caused most powerups to no longer unlock their
+  appropriate Codex entries when collected.
 
 v7 "Ghost" (24/04/21)
 =====================

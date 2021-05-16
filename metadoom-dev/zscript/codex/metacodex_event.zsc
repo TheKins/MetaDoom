@@ -41,23 +41,23 @@ Class MetaCodex_Event : EventHandler
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaBerserk",1);
 			}
-			if(players[consoleplayer].mo.FindInventory("PowerIronFeet"))
+			if(players[consoleplayer].mo.FindInventory("PowerMetaIronFeet"))
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaRadSuit",1);
 			}
-			if(players[consoleplayer].mo.FindInventory("PowerLightAmp"))
+			if(players[consoleplayer].mo.FindInventory("PowerMetaLightAmp"))
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaLightAmp",1);
 			}
-			if(players[consoleplayer].mo.FindInventory("PowerSpeed"))
+			if(players[consoleplayer].mo.FindInventory("PowerMetaSpeed"))
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaHasteSphere",1);
 			}
-			if(players[consoleplayer].mo.FindInventory("PowerDamage"))
+			if(players[consoleplayer].mo.FindInventory("PowerMetaDamage"))
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaQuadDamage",1);
 			}
-			if(players[consoleplayer].mo.FindInventory("PowerInvulnerable"))
+			if(players[consoleplayer].mo.FindInventory("PowerMetaInvulnerable"))
 			{
 				players[consoleplayer].mo.GiveInventory("MetaCodex_MetaInvulnerabilitySphere",1);
 			}
