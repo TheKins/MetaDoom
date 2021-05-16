@@ -1,5 +1,5 @@
-NEXT
-====
+v7.1 "Ghost" (16/05/21)
+=======================
 
 Monster Changes:
 - Fixed an issue where handling of the Potential Map-Breakers CVar was reversed
