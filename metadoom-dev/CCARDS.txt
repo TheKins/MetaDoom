@@ -1,0 +1,6 @@
+excludeactor MetaKeen
+excludeactor MetaBudo
+excludeactor MetaDave
+excludeactor MetaHovertank
+excludeactor MetaRover
+excludeactor MetaCatacomb
