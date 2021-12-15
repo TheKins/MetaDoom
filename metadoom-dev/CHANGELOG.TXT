@@ -5,6 +5,9 @@ Optional Content Changes:
 - The various replacements for Commander Keen will no longer be targeted for
   monster effects when playing with the Corruption Cards mod (Thanks DrPySpy!)
 
+Other Changes:
+- Updated Menu Close sound using the original source material (Thanks ColorSphere!)
+
 
 v7.1 "Ghost" (16/05/21)
 =======================
