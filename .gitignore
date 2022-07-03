@@ -4,7 +4,6 @@
 *.bak
 *.pk7
 *.7z
-*.bat
 
 # folders with big bulky things that shouldn't go on git like psd files
 /artsrc/*
