@@ -4,6 +4,10 @@ NEXT
 Optional Content Changes:
 - The various replacements for Commander Keen will no longer be targeted for
   monster effects when playing with the Corruption Cards mod (Thanks DrPySpy!)
+  
+Weapon Changes:
+- The SSG can now be manually selected if you're out of ammo, to allow for using
+  the meathook for navigation while out of ammo.
 
 Other Changes:
 - Updated Menu Close sound using the original source material (Thanks ColorSphere!)
