@@ -11,6 +11,7 @@ Weapon Changes:
 
 Other Changes:
 - Updated Menu Close sound using the original source material (Thanks ColorSphere!)
+- Replaced an exit message I never really liked.
 
 
 v7.1 "Ghost" (16/05/21)
