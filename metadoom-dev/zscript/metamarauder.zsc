@@ -30,7 +30,7 @@ Class MetaMarauderSpawnScript : EventHandler
 		}
 		
 		// are we in single player? and are we re-entering a hub level?
-		if (!multiplayer && !deathmatch && e.IsReopen == false && meta_marauders)
+		if ( !deathmatch && e.IsReopen == false && meta_marauders )
 		{
 			ThinkerIterator it = ThinkerIterator.Create("PlayerPawn");
 			Actor mo;
