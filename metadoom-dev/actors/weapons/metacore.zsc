@@ -200,6 +200,9 @@ Class MetaDoomWeapon : Weapon
 		}
 		
 		let psp = player.GetPSprite(PSP_WEAPON);
+		
+		if ( psp.y < WEAPONTOP ) psp.y = WEAPONTOP; // [Py] in case weapon offsets cause the weapon to go above the usual height (i.e. lightning gun offsets)
+		
 		if (player.morphTics || (player.cheats & CF_INSTANTWEAPSWITCH))
 			psp.y = WEAPONBOTTOM;
 		else
