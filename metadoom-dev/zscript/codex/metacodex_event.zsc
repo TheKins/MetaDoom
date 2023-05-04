@@ -17,7 +17,7 @@ Class MetaCodex_Event : EventHandler
 		{
 			return;
 		}
-		if ( Meta_ThingExists(e.Thing.GetClassName()) && Meta_ThingExists("MetaCodex_"..e.Thing.GetClassName()) )
+		if ( !multiplayer && Meta_ThingExists(e.Thing.GetClassName()) && Meta_ThingExists("MetaCodex_"..e.Thing.GetClassName()) )
 		{
 			if(e.Thing.target.player!=null&&e.Thing.target.player==players[consoleplayer]&&!e.Thing.target.FindInventory("MetaCodex_"..e.Thing.GetClassName()))
 			{
