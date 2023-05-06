@@ -4,3 +4,5 @@ excludeactor MetaDave
 excludeactor MetaHovertank
 excludeactor MetaRover
 excludeactor MetaCatacomb
+excludeactor MetaMarauderSpawner
+excludeactor MetaMarauderPortal
