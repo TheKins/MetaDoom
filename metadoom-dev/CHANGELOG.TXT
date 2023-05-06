@@ -1,6 +1,11 @@
 NEXT
 ====
 
+Monster Changes:
+- Marauders will now appear in co-op mode. (Thanks DrPySpy!)
+- The flashy portals used for the Marauder's entrance are no longer wrongly
+  targeted for monster effects when playing with the Corruption Cards mod.
+
 Optional Content Changes:
 - The various replacements for Commander Keen will no longer be targeted for
   monster effects when playing with the Corruption Cards mod (Thanks DrPySpy!)
@@ -8,6 +13,9 @@ Optional Content Changes:
 Weapon Changes:
 - The SSG can now be manually selected if you're out of ammo, to allow for using
   the meathook for navigation while out of ammo.
+- Minor under-the-hood adjustments to Shotgun aimpunch and animation (Thanks DrPySpy!)
+- Fixed an issue where you weren't able to switch away from the Lightning Gun
+  under certain circumstances (Thanks DrPySpy!)
 
 Other Changes:
 - Updated Menu Close sound using the original source material (Thanks ColorSphere!)
