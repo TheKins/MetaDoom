@@ -462,6 +462,7 @@ class MetaInfernis : MonsterCore
 	}
 	
 	int hidingtimer;
+	int popcorncount;
 	bool firsthide;
 
 	States
@@ -492,7 +493,7 @@ class MetaInfernis : MonsterCore
 						// If the target is within 1024 units and you haven't done
 						// it yet, do the Diabolist's attack from Supercharge and
 						// flush the sucker out! Otherwise, summon Demonic Troopers.
-						if (target && Distance2D(target) < 1024 && firsthide)
+						if (popcorncount >= 5 || (target && Distance2D(target) < 1024 && firsthide))
 						{
 							//Console.printf("Throwing down a trap");
 							firsthide = false;
@@ -532,6 +533,7 @@ class MetaInfernis : MonsterCore
 		{
 			A_StartSound("monsters/summoner/popcorn", CHAN_VOICE);
 			
+			popcorncount++;
 			A_SpawnItemEx("MetaInfernisPopcorn",0,0,32,4,0,0,0);
 			A_SpawnItemEx("MetaInfernisPopcorn",0,0,32,4,0,0,90);
 			A_SpawnItemEx("MetaInfernisPopcorn",0,0,32,4,0,0,180);

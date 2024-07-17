@@ -5,6 +5,9 @@ Monster Changes:
 - Marauders will now appear in co-op mode. (Thanks DrPySpy!)
 - The flashy portals used for the Marauder's entrance are no longer wrongly
   targeted for monster effects when playing with the Corruption Cards mod.
+- Infernis will now only summon Demonic Troopers a limited number of times,
+  allowing them to create a large group of distracting "popcorn" monsters
+  without creating a full-on legion that's tedious to deal with.
 
 Optional Content Changes:
 - The various replacements for Commander Keen will no longer be targeted for
