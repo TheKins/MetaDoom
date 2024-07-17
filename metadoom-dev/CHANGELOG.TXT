@@ -25,6 +25,7 @@ Item Changes:
 
 Other Changes:
 - Updated Menu Close sound using the original source material (Thanks ColorSphere!)
+- Added a load screen graphic so it's not just a black screen.
 - Replaced an exit message I never really liked.
 
 
