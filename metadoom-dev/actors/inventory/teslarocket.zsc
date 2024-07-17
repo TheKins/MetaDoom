@@ -60,11 +60,12 @@ class TeslaRocket : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_TeslaRocket") >= INV_COOLDOWN_SIPHON)
+			if (CountInv("InventoryFuel_TeslaRocket") >= INV_COOLDOWN_SIPHON && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_PlaySound ("inventory/teslarocket/throw");
 				A_FireProjectile("TeslaRocketProj",0,0,0,0,FPF_NOAUTOAIM | CMF_TRACKOWNER);
 				A_TakeInventory("InventoryFuel_TeslaRocket", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

@@ -60,10 +60,11 @@ class HandGrenade : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_HandGrenade") >= INV_COOLDOWN_GENERIC)
+			if (CountInv("InventoryFuel_HandGrenade") >= INV_COOLDOWN_GENERIC && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_FireProjectile("HandGrenadeProj",0,0);
 				A_TakeInventory("InventoryFuel_HandGrenade", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

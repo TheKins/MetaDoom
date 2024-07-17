@@ -349,6 +349,12 @@ class MetaDoomPlayer : PlayerPawn
 		// Recharge Inventory Items
 		if (health > 0)
 		{
+			// Anti-Spam Thing
+			if (CountInv("InventoryFuel_SpamProtector") < INV_COOLDOWN_NOSPAM)
+			{
+				A_GiveInventory("InventoryFuel_SpamProtector", 1);
+			}
+
 			if (CountInv("HandGrenade") >= 1)
 				A_GiveInventory("InventoryFuel_HandGrenade", 1);
 			if (CountInv("DogCollar") >= 1)

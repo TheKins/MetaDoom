@@ -81,10 +81,11 @@ class KineticMine : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_KineticMine") >= INV_COOLDOWN_GENERIC)
+			if (CountInv("InventoryFuel_KineticMine") >= INV_COOLDOWN_GENERIC && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_FireProjectile("KineticMineProj",0,0);
 				A_TakeInventory("InventoryFuel_KineticMine", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

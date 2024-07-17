@@ -61,11 +61,12 @@ class DogCollar : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_DogCollar") >= INV_COOLDOWN_GENERIC)
+			if (CountInv("InventoryFuel_DogCollar") >= INV_COOLDOWN_GENERIC && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_PlaySound("inventory/dogcollar/toss");
 				A_FireProjectile("DogCollarProj",0,0);
 				A_TakeInventory("InventoryFuel_DogCollar", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

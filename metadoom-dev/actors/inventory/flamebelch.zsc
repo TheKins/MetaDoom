@@ -70,10 +70,11 @@ class FlameBelch : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_FlameBelch") >= INV_COOLDOWN_GENERIC)
+			if (CountInv("InventoryFuel_FlameBelch") >= INV_COOLDOWN_GENERIC && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_FireProjectile("FlameBelchAttack",0, 0, 0, CMF_TRACKOWNER);
 				A_TakeInventory("InventoryFuel_FlameBelch", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

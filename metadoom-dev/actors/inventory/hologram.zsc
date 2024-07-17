@@ -60,10 +60,11 @@ class Hologram : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_Hologram") >= INV_COOLDOWN_HOLOGRAM)
+			if (CountInv("InventoryFuel_Hologram") >= INV_COOLDOWN_HOLOGRAM && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_FireProjectile("HologramProj",0,0,0,0,FPF_TRANSFERTRANSLATION); //A_SpawnItemEx("HologramSam",32,0,8,0,0,0,0,SXF_TRANSFERTRANSLATION)
 				A_TakeInventory("InventoryFuel_Hologram", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}

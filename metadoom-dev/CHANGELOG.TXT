@@ -17,6 +17,12 @@ Weapon Changes:
 - Fixed an issue where you weren't able to switch away from the Lightning Gun
   under certain circumstances (Thanks DrPySpy!)
 
+Item Changes:
+- Inventory items now have an additional anti-spam mechanism which means you can
+  only use one inventory item every second. (This also means that the "Use all
+  inventory items at once" keybind no longer works, but that also means you can
+  no longer evaporate every boss instantly...)
+
 Other Changes:
 - Updated Menu Close sound using the original source material (Thanks ColorSphere!)
 - Replaced an exit message I never really liked.

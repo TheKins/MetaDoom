@@ -60,11 +60,12 @@ class Artifact : CustomInventory
 	Use:
 		TNT1 A 0
 		{
-			if (CountInv("InventoryFuel_TheArtifact") >= INV_COOLDOWN_ARTIFACT)
+			if (CountInv("InventoryFuel_TheArtifact") >= INV_COOLDOWN_ARTIFACT && CountInv("InventoryFuel_SpamProtector") == INV_COOLDOWN_NOSPAM)
 			{
 				A_PlaySound("inventory/artifact/on");
 				A_GiveInventory("ArtifactTimer", 175);
 				A_TakeInventory("InventoryFuel_TheArtifact", 999);
+				A_TakeInventory("InventoryFuel_SpamProtector", 999);
 			} else {
 				A_PlaySound("menu/invalid");
 			}
